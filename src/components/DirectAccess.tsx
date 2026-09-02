@@ -6,39 +6,44 @@ const DirectAccess = () => {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section ref={ref} className="bg-[#171717] py-24 text-white md:py-32 lg:py-36">
-      <div className="container mx-auto grid gap-12 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:px-12">
+    <section ref={ref} className="flex min-h-[100svh] items-center bg-[#171717] py-16 text-white md:py-20 lg:py-0">
+      <div className="mx-auto grid w-full max-w-[1240px] gap-12 px-6 md:px-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16 lg:px-12">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 22 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.75 }}
+          className="lg:py-10"
         >
-          <span className="mb-5 block text-[10px] uppercase tracking-[0.2em] text-white/45">The difference</span>
-          <h2 className="editorial-serif mb-5 text-4xl leading-[0.95] md:text-5xl">Direct access.<br />No hand-offs.</h2>
-          <p className="max-w-sm text-sm leading-6 text-white/58">Your matter stays close to the lawyer responsible for it. Fewer layers, clearer advice, faster decisions.</p>
+          <span className="mb-5 block text-[10px] uppercase tracking-[0.2em] text-white/42">The difference</span>
+          <h2 className="editorial-serif text-[clamp(3rem,4.6vw,5rem)] leading-[0.91] text-white">
+            Direct access.<br />No hand-offs.
+          </h2>
+          <p className="mt-6 max-w-[430px] text-[15px] leading-6 text-white/58">
+            Your matter stays close to the lawyer responsible for it. Fewer layers, clearer advice, and faster decisions when timing matters.
+          </p>
 
-          <div className="mt-12 grid max-w-sm grid-cols-2 gap-10 border-t border-white/12 pt-7">
+          <div className="mt-14 grid max-w-[420px] grid-cols-2 gap-10 border-t border-white/12 pt-7">
             <div>
-              <div className="editorial-serif text-3xl">1:1</div>
-              <div className="mt-2 text-[10px] uppercase tracking-[0.18em] text-white/40">Partner access</div>
+              <div className="editorial-serif text-[2.7rem] leading-none">1:1</div>
+              <div className="mt-2 text-[10px] uppercase tracking-[0.18em] text-white/38">Partner access</div>
             </div>
             <div>
-              <div className="editorial-serif text-3xl">04</div>
-              <div className="mt-2 text-[10px] uppercase tracking-[0.18em] text-white/40">Core practice areas</div>
+              <div className="editorial-serif text-[2.7rem] leading-none">04</div>
+              <div className="mt-2 text-[10px] uppercase tracking-[0.18em] text-white/38">Core practice areas</div>
             </div>
           </div>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
+          initial={{ opacity: 0, scale: 0.985 }}
           animate={isInView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.85, delay: 0.08 }}
-          className="ml-auto w-full max-w-xl overflow-hidden"
+          transition={{ duration: 0.9, delay: 0.08 }}
+          className="ml-auto w-full overflow-hidden rounded-[2px] lg:h-[72svh] lg:max-h-[760px] lg:min-h-[560px]"
         >
           <img
-            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1400&q=85"
+            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1400&q=88"
             alt="Attorney portrait"
-            className="aspect-[4/5] w-full object-cover grayscale-[20%]"
+            className="aspect-[4/5] h-full w-full object-cover object-center grayscale-[15%] lg:aspect-auto"
           />
         </motion.div>
       </div>
