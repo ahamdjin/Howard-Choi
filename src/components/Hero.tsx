@@ -14,20 +14,20 @@ import heroLawOffice from "@/assets/law-firm/hero-law-office.webp";
 
 const slides = [
   {
+    image: heroCityBoardroom,
+    alt: "Law firm boardroom overlooking the city",
+  },
+  {
     image: heroLawOffice,
     alt: "Traditional law office and desk",
   },
   {
+    image: heroJusticeLibrary,
+    alt: "Lady Justice in a private law library",
+  },
+  {
     image: heroCourthouse,
     alt: "Courthouse interior",
-  },
-  {
-    image: heroJusticeLibrary,
-    alt: "Scales of justice in a law library",
-  },
-  {
-    image: heroCityBoardroom,
-    alt: "Law firm boardroom overlooking the city",
   },
 ];
 
@@ -81,7 +81,7 @@ const Hero = () => {
   const contentY = useTransform(scrollY, [0, transitionEnd * 0.72], [0, -22]);
 
   return (
-    <section className="relative h-[100svh] min-h-[680px] w-full overflow-hidden bg-black">
+    <section className="relative h-[100svh] min-h-[680px] w-full overflow-hidden bg-[#17130f]">
       <motion.div
         initial={shouldReduceMotion ? false : { opacity: 0.72, scale: 1.04, filter: "blur(10px)" }}
         animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
@@ -108,7 +108,7 @@ const Hero = () => {
       </motion.div>
 
       <motion.div
-        className="absolute inset-0 bg-black"
+        className="absolute inset-0 bg-[#17130f]"
         style={shouldReduceMotion ? { opacity: 0.42 } : { opacity: shadeOpacity }}
       />
 
@@ -117,12 +117,12 @@ const Hero = () => {
         style={shouldReduceMotion ? undefined : { opacity: contentOpacity, filter: contentFilter, y: contentY }}
       >
         <div className="site-shell pb-24 md:pb-28">
-          <div className="max-w-[680px]">
+          <div className="max-w-[680px] text-[#f3eee5]">
             <motion.p
               initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.18, duration: 0.7 }}
-              className="mb-4 text-[13px] font-medium tracking-[-0.01em] text-white/90 md:text-sm"
+              className="mb-4 text-[13px] font-medium tracking-[-0.01em] text-[#f3eee5]/88 md:text-sm"
             >
               Business &amp; Litigation Counsel
             </motion.p>
@@ -131,7 +131,7 @@ const Hero = () => {
               initial={shouldReduceMotion ? false : { opacity: 0, y: 16, filter: "blur(9px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               transition={{ delay: 0.27, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-              className="editorial-serif text-[clamp(3.35rem,5.2vw,5.35rem)] leading-[0.91] text-white"
+              className="editorial-serif text-[clamp(3.35rem,5.2vw,5.35rem)] leading-[0.91] tracking-[-0.025em] text-[#f3eee5]"
             >
               Discreet counsel for high-stakes matters.
             </motion.h1>
@@ -140,7 +140,7 @@ const Hero = () => {
               initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.7 }}
-              className="mt-5 max-w-[560px] text-[15px] font-light leading-6 text-white/76 md:text-base"
+              className="mt-5 max-w-[560px] text-[15px] leading-6 text-[#f3eee5]/74 md:text-base"
             >
               Corporate, litigation, and regulatory counsel for founders and businesses when the decisions cannot wait.
             </motion.p>
@@ -153,14 +153,14 @@ const Hero = () => {
             >
               <button
                 onClick={() => document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })}
-                className="inline-flex w-fit items-center gap-3 rounded-full bg-white px-6 py-3 text-[13px] font-medium text-black transition-transform duration-300 hover:scale-[1.015]"
+                className="liquid-cta inline-flex w-fit items-center gap-3 rounded-full px-6 py-3 text-[13px] font-medium"
               >
-                Schedule a Consultation
-                <ArrowRight className="h-4 w-4" />
+                <span className="relative z-10">Schedule a Consultation</span>
+                <ArrowRight className="relative z-10 h-4 w-4" />
               </button>
               <a
                 href="tel:+12125550148"
-                className="text-[13px] text-white/84 transition-opacity hover:opacity-70 md:text-sm"
+                className="text-[13px] text-[#f3eee5]/82 transition-opacity hover:opacity-70 md:text-sm"
               >
                 Or call (+1) 212 555 0148
               </a>
@@ -178,13 +178,13 @@ const Hero = () => {
                     key={avatar}
                     src={avatar}
                     alt={`Client review ${index + 1}`}
-                    className="h-9 w-9 rounded-full border-2 border-white object-cover"
+                    className="h-9 w-9 rounded-full border-2 border-[#f3eee5] object-cover"
                   />
                 ))}
               </div>
               <div>
-                <div className="text-[13px] leading-none tracking-[0.12em] text-white">★★★★★</div>
-                <p className="mt-1 text-[12px] text-white/72">4.9/5 from 120+ client reviews</p>
+                <div className="text-[13px] leading-none tracking-[0.12em] text-[#f3eee5]">★★★★★</div>
+                <p className="mt-1 text-[12px] text-[#f3eee5]/70">4.9/5 from 120+ client reviews</p>
               </div>
             </motion.div>
           </div>
@@ -204,11 +204,11 @@ const Hero = () => {
                 setCurrentSlide(index);
                 setProgress(0);
               }}
-              className="h-px flex-1 overflow-hidden bg-white/30"
+              className="h-px flex-1 overflow-hidden bg-[#f3eee5]/28"
               aria-label={`Go to slide ${index + 1}`}
             >
               <div
-                className="h-full bg-white transition-all duration-100 ease-linear"
+                className="h-full bg-[#f3eee5] transition-all duration-100 ease-linear"
                 style={{ width: index === currentSlide ? `${progress}%` : index < currentSlide ? "100%" : "0%" }}
               />
             </button>
