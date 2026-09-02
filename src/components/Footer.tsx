@@ -39,7 +39,15 @@ const Footer = () => {
             <div className="mb-5 text-[12px] text-muted-foreground">Contact</div>
             <div className="space-y-3 text-[13px] text-muted-foreground">
               <a href="mailto:hello@howardchoilaw.com" className="block hover:text-foreground">hello@howardchoilaw.com</a>
-              <p>(+1) 212 555 0148</p>
+              <a href="tel:+17146900007" className="block hover:text-foreground">+1 714-690-0007</a>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=6301+Beach+Blvd%2C+Buena+Park%2C+CA+90621"
+                target="_blank"
+                rel="noreferrer"
+                className="block max-w-[210px] leading-5 hover:text-foreground"
+              >
+                6301 Beach Blvd<br />Buena Park, CA 90621
+              </a>
               <p>Mon–Fri · 9:00–5:00</p>
               <p>Consultations by appointment</p>
             </div>
