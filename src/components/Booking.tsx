@@ -41,10 +41,18 @@ const Booking = () => {
               Schedule a consultation
               <ArrowRight className="h-4 w-4" />
             </a>
-            <a href="tel:+12125550148" className="text-[13px] text-white/68 hover:text-white">
-              Or call (+1) 212 555 0148
+            <a href="tel:+17146900007" className="text-[13px] text-white/68 hover:text-white">
+              Or call (+1) 714-690-0007
             </a>
           </div>
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=6301+Beach+Blvd%2C+Buena+Park%2C+CA+90621"
+            target="_blank"
+            rel="noreferrer"
+            className="mt-6 inline-block text-[12px] text-white/42 transition-colors hover:text-white/68"
+          >
+            6301 Beach Blvd, Buena Park, CA 90621
+          </a>
         </motion.div>
       </div>
     </section>
