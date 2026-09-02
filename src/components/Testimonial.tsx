@@ -1,25 +1,58 @@
-import { motion, useInView } from "framer-motion";
+import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
 import { useRef } from "react";
 
-const Testimonial = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.25 });
+const quote = "Measured advice, commercial clarity, and absolute discretion through a complex cross-border transaction.";
+const words = quote.split(" ");
+
+const ReadWord = ({
+  word,
+  index,
+  total,
+  progress,
+}: {
+  word: string;
+  index: number;
+  total: number;
+  progress: MotionValue<number>;
+}) => {
+  const start = (index / total) * 0.82;
+  const end = Math.min(start + 0.17, 1);
+  const color = useTransform(progress, [start, end], ["rgba(30,28,25,0.20)", "rgba(30,28,25,1)"]);
 
   return (
-    <section ref={ref} className="bg-background py-28 md:py-36 lg:py-44">
-      <div className="container mx-auto px-6 text-center lg:px-12">
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.75 }}
-          className="mx-auto max-w-3xl"
-        >
-          <div className="mb-5 text-xs tracking-[0.35em]">★★★★★</div>
-          <blockquote className="editorial-serif text-3xl leading-[1.08] text-foreground/70 md:text-4xl lg:text-5xl">
-            “Measured advice, commercial clarity, and absolute discretion through a complex cross-border transaction.”
+    <motion.span style={{ color }} className="inline">
+      {word}{" "}
+    </motion.span>
+  );
+};
+
+const Testimonial = () => {
+  const ref = useRef<HTMLElement | null>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start 78%", "end 38%"],
+  });
+
+  return (
+    <section ref={ref} className="flex min-h-[100svh] items-center bg-background py-20 md:py-24">
+      <div className="mx-auto w-full max-w-[1240px] px-6 text-center md:px-10 lg:px-12">
+        <div className="mx-auto max-w-[900px]">
+          <div className="mb-7 text-[12px] tracking-[0.34em] text-foreground">★★★★★</div>
+          <blockquote className="editorial-serif text-[clamp(2.8rem,4.5vw,5rem)] leading-[1.02]">
+            “{words.map((word, index) => (
+              <ReadWord
+                key={`${word}-${index}`}
+                word={word}
+                index={index}
+                total={words.length}
+                progress={scrollYProgress}
+              />
+            ))}”
           </blockquote>
-          <p className="mt-7 text-[10px] uppercase tracking-[0.16em] text-muted-foreground">Private client · Business owner</p>
-        </motion.div>
+          <p className="mt-9 text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+            Private client · Business owner
+          </p>
+        </div>
       </div>
     </section>
   );
