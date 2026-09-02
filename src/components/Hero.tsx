@@ -97,6 +97,9 @@ const Hero = () => {
               key={currentSlide}
               src={slides[currentSlide].image}
               alt={slides[currentSlide].alt}
+              loading="eager"
+              decoding="async"
+              fetchPriority={currentSlide === 0 ? "high" : "auto"}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -178,6 +181,10 @@ const Hero = () => {
                     key={avatar}
                     src={avatar}
                     alt={`Client review ${index + 1}`}
+                    loading="lazy"
+                    decoding="async"
+                    width={36}
+                    height={36}
                     className="h-9 w-9 rounded-full border-2 border-[#f3eee5] object-cover"
                   />
                 ))}
