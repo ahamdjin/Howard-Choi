@@ -53,8 +53,12 @@ const Navigation = () => {
                 {label}
               </button>
             ))}
-            <button type="button" onClick={() => goTo("#booking")} className={`rounded-full px-5 py-2.5 text-[10px] uppercase tracking-[0.14em] ${dark ? "bg-white text-black" : "bg-foreground text-background"}`}>
-              Schedule a consultation
+            <button
+              type="button"
+              onClick={() => goTo("#booking")}
+              className="liquid-cta inline-flex items-center rounded-full px-5 py-2.5 text-[10px] uppercase tracking-[0.14em]"
+            >
+              <span className="relative z-10">Schedule a consultation</span>
             </button>
           </div>
 
@@ -72,8 +76,12 @@ const Navigation = () => {
                     {label}
                   </button>
                 ))}
-                <button type="button" onClick={() => goTo("#booking")} className="mt-4 rounded-full bg-white px-5 py-3 text-[10px] uppercase tracking-[0.14em] text-black">
-                  Schedule a consultation
+                <button
+                  type="button"
+                  onClick={() => goTo("#booking")}
+                  className="liquid-cta mt-4 inline-flex rounded-full px-5 py-3 text-[10px] uppercase tracking-[0.14em]"
+                >
+                  <span className="relative z-10">Schedule a consultation</span>
                 </button>
               </div>
             </motion.div>
