@@ -32,7 +32,7 @@
     --input: 30 8% 86%;
     --ring: 30 8% 20%;
 
-    --radius: 0.18rem;
+    --radius: 0.25rem;
     --hero-gradient: none;
     --overlay-gradient: linear-gradient(180deg, transparent 0%, hsl(0 0% 0% / 0.45) 100%);
     --soft-shadow: 0 2px 8px hsl(0 0% 0% / 0.04);
@@ -57,20 +57,11 @@
 
   html {
     scroll-behavior: smooth;
-    width: 100%;
-    min-height: 100%;
-  }
-
-  body,
-  #root {
-    width: 100%;
-    min-height: 100%;
-    margin: 0;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: "DM Sans", system-ui, sans-serif;
+    margin: 0;
   }
 }
 
@@ -86,6 +77,16 @@
   .editorial-serif {
     font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
     font-weight: 500;
-    letter-spacing: -0.025em;
+  }
+
+  .site-shell {
+    width: min(calc(100% - 3rem), 1170px);
+    margin-inline: auto;
+  }
+
+  @media (max-width: 640px) {
+    .site-shell {
+      width: min(calc(100% - 2rem), 1170px);
+    }
   }
 }
