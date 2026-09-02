@@ -100,6 +100,10 @@ const Locations = () => {
 
   const overviewOpacity = useTransform(scrollYProgress, [0.72, 0.86], [0, 1]);
   const overviewY = useTransform(scrollYProgress, [0.72, 0.86], [30, 0]);
+  const overviewCardY1 = useTransform(scrollYProgress, [0.74, 0.86], [24, 0]);
+  const overviewCardY2 = useTransform(scrollYProgress, [0.76, 0.88], [34, 0]);
+  const overviewCardY3 = useTransform(scrollYProgress, [0.78, 0.9], [44, 0]);
+  const overviewCardYs = [overviewCardY1, overviewCardY2, overviewCardY3];
 
   return (
     <section id="practice" ref={ref} className="relative bg-background lg:h-[340svh]">
@@ -140,7 +144,7 @@ const Locations = () => {
 
             <motion.article
               className="absolute inset-0 will-change-transform"
-              style={shouldReduceMotion ? undefined : { y: secondY, scale: secondScale, x: 0, zIndex: 20 }}
+              style={shouldReduceMotion ? undefined : { y: secondY, scale: secondScale, zIndex: 20 }}
             >
               <motion.div style={shouldReduceMotion ? undefined : { y: secondLift }} className="h-full">
                 <FeatureCard practice={practices[1]} index={1} />
@@ -178,14 +182,7 @@ const Locations = () => {
                 <motion.article
                   key={practice.title}
                   className="h-[min(44svh,460px)] min-h-[360px]"
-                  initial={false}
-                  style={
-                    shouldReduceMotion
-                      ? undefined
-                      : {
-                          y: useTransform(overviewOpacity, [0, 1], [22 + index * 8, 0]),
-                        }
-                  }
+                  style={shouldReduceMotion ? undefined : { y: overviewCardYs[index] }}
                 >
                   <OverviewCard practice={practice} />
                 </motion.article>
