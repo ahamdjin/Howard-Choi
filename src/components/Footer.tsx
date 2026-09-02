@@ -1,89 +1,58 @@
-import { Tent, Instagram, Facebook, Twitter, Mail } from "lucide-react";
-import { Link } from "react-router-dom";
+import brandLogo from "@/assets/law-firm/howard-choi-logo.png";
+
 const Footer = () => {
-  return <footer className="bg-foreground text-background py-20 lg:py-24">
-      <div className="container mx-auto px-6 lg:px-12">
-        <div className="flex flex-col gap-10 lg:gap-12">
-          {/* Brand Row */}
+  return (
+    <footer className="bg-background py-24 text-foreground md:py-28 lg:py-32">
+      <div className="site-shell">
+        <div className="grid gap-12 border-b border-black/10 pb-16 md:grid-cols-4 lg:gap-16">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <Tent className="h-4 w-4" />
-              <span className="text-sm font-normal tracking-wide">Wild Haven</span>
+            <div className="mb-5 flex items-center gap-2">
+              <span className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-[2px]">
+                <img src={brandLogo} alt="" className="h-full w-full scale-[1.65] object-cover invert" />
+              </span>
+              <span className="text-[15px] font-medium">Howard Choi Law</span>
             </div>
-            <p className="text-background/70 text-xs font-light leading-relaxed max-w-xs">
-              Creating meaningful connections with nature through sustainable off-grid experiences.
+            <p className="max-w-xs text-[13px] leading-6 text-muted-foreground">
+              Focused legal counsel for businesses, founders, and private clients navigating important decisions.
             </p>
           </div>
 
-          {/* Pages Row - Two Columns on Mobile */}
           <div>
-            <h4 className="text-sm font-medium mb-4">Pages</h4>
-            <ul className="grid grid-cols-2 gap-x-8 gap-y-3">
-              <li>
-                <Link to="/" className="text-background/70 hover:text-background smooth-hover text-xs font-light">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/locations" className="text-background/70 hover:text-background smooth-hover text-xs font-light">
-                  Locations
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" className="text-background/70 hover:text-background smooth-hover text-xs font-light">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-background/70 hover:text-background smooth-hover text-xs font-light">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <a href="/#booking" className="text-background/70 hover:text-background smooth-hover text-xs font-light">
-                  Book Now
-                </a>
-              </li>
-              <li>
-                <Link to="/admin" className="text-background/70 hover:text-background smooth-hover text-xs font-light">
-                  Admin Panel
-                </Link>
-              </li>
-            </ul>
+            <div className="mb-5 text-[12px] text-muted-foreground">Practice</div>
+            <div className="space-y-3 text-[13px]">
+              <a href="#practice" className="block hover:opacity-60">Corporate</a>
+              <a href="#practice" className="block hover:opacity-60">Litigation</a>
+              <a href="#practice" className="block hover:opacity-60">Regulatory</a>
+            </div>
           </div>
 
-          {/* Contact Row */}
           <div>
-            <h4 className="text-sm font-medium mb-4">Contact Us</h4>
-            <div className="flex flex-col gap-2 mb-8">
-              <a href="mailto:hello@wildhaven.com" className="text-background/70 hover:text-background smooth-hover text-xs font-light flex items-center gap-2">
-                <Mail className="h-3 w-3" />
-                hello@wildhaven.com
-              </a>
-              <p className="text-background/70 text-xs font-light">
-                Mon - Fri: 9am - 5pm
-              </p>
+            <div className="mb-5 text-[12px] text-muted-foreground">Firm</div>
+            <div className="space-y-3 text-[13px]">
+              <a href="#approach" className="block hover:opacity-60">Approach</a>
+              <a href="#faq" className="block hover:opacity-60">FAQ</a>
+              <a href="#booking" className="block hover:opacity-60">Consultation</a>
             </div>
+          </div>
 
-            <h4 className="text-sm font-medium mb-4">Follow Us</h4>
-            <div className="flex items-center gap-4">
-              <a href="#" className="text-background/70 hover:text-background smooth-hover">
-                <Instagram className="h-4 w-4" />
-              </a>
-              <a href="#" className="text-background/70 hover:text-background smooth-hover">
-                <Facebook className="h-4 w-4" />
-              </a>
-              <a href="#" className="text-background/70 hover:text-background smooth-hover">
-                <Twitter className="h-4 w-4" />
-              </a>
+          <div>
+            <div className="mb-5 text-[12px] text-muted-foreground">Contact</div>
+            <div className="space-y-3 text-[13px] text-muted-foreground">
+              <a href="mailto:hello@howardchoilaw.com" className="block hover:text-foreground">hello@howardchoilaw.com</a>
+              <p>(+1) 212 555 0148</p>
+              <p>Mon–Fri · 9:00–5:00</p>
+              <p>Consultations by appointment</p>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-background/20 pt-8 mt-12 text-center text-background/50 text-xs font-light">
-          <p>&copy; 2026 Wild Haven. All rights reserved.</p>
+        <div className="flex flex-col gap-4 pt-8 text-[11px] text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+          <span>© 2026 Howard Choi Law</span>
+          <span>Attorney advertising · Placeholder content</span>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default Footer;

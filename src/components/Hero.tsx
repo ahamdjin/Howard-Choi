@@ -1,21 +1,48 @@
-import { useState, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, TreePine } from "lucide-react";
-import heroImage from "@/assets/hero-camping.jpg";
-import forestImage from "@/assets/spot-forest.jpg";
-import lakeImage from "@/assets/spot-lake.jpg";
-import meadowImage from "@/assets/spot-meadow.jpg";
+import { useCallback, useEffect, useState } from "react";
+import {
+  AnimatePresence,
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import heroCityBoardroom from "@/assets/law-firm/hero-city-boardroom.webp";
+import heroCourthouse from "@/assets/law-firm/hero-courthouse.webp";
+import heroJusticeLibrary from "@/assets/law-firm/hero-justice-library.webp";
+import heroLawOffice from "@/assets/law-firm/hero-law-office.webp";
 
 const slides = [
-  { image: heroImage, alt: "Off-grid camping in nature" },
-  { image: forestImage, alt: "Forest camping spot" },
-  { image: lakeImage, alt: "Lakeside retreat" },
-  { image: meadowImage, alt: "Meadow camping experience" },
+  {
+    image: heroJusticeLibrary,
+    alt: "Lady Justice in a private law library",
+  },
+  {
+    image: heroCityBoardroom,
+    alt: "Law firm boardroom overlooking the city",
+  },
+  {
+    image: heroLawOffice,
+    alt: "Traditional law office and desk",
+  },
+  {
+    image: heroCourthouse,
+    alt: "Courthouse interior",
+  },
+];
+
+const reviewAvatars = [
+  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80",
+  "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80",
+  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80",
 ];
 
 const SLIDE_DURATION = 5000;
 
 const Hero = () => {
+  const shouldReduceMotion = useReducedMotion();
+  const { scrollY } = useScroll();
+  const [viewportHeight, setViewportHeight] = useState(900);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [progress, setProgress] = useState(0);
 
@@ -24,100 +51,170 @@ const Hero = () => {
     setProgress(0);
   }, []);
 
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index);
-    setProgress(0);
-  };
+  useEffect(() => {
+    const updateViewportHeight = () => setViewportHeight(window.innerHeight || 900);
+    updateViewportHeight();
+    window.addEventListener("resize", updateViewportHeight);
+    return () => window.removeEventListener("resize", updateViewportHeight);
+  }, []);
 
   useEffect(() => {
-    const progressInterval = setInterval(() => {
+    const interval = window.setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           nextSlide();
           return 0;
         }
-        return prev + (100 / (SLIDE_DURATION / 50));
+        return prev + 100 / (SLIDE_DURATION / 50);
       });
     }, 50);
-
-    return () => clearInterval(progressInterval);
+    return () => window.clearInterval(interval);
   }, [nextSlide]);
 
+  const transitionEnd = viewportHeight * 0.95;
+  const imageScale = useTransform(scrollY, [0, transitionEnd], [1, 1.07]);
+  const imageFilter = useTransform(scrollY, [0, transitionEnd], ["blur(0px)", "blur(3.5px)"]);
+  const imageY = useTransform(scrollY, [0, transitionEnd], ["0%", "-1.25%"]);
+  const shadeOpacity = useTransform(scrollY, [0, transitionEnd], [0.42, 0.56]);
+  const contentOpacity = useTransform(scrollY, [0, transitionEnd * 0.72], [1, 0]);
+  const contentFilter = useTransform(scrollY, [0, transitionEnd * 0.72], ["blur(0px)", "blur(9px)"]);
+  const contentY = useTransform(scrollY, [0, transitionEnd * 0.72], [0, -22]);
+
   return (
-    <section className="relative h-screen w-full overflow-hidden">
-      {/* Image Ticker */}
-      <AnimatePresence mode="popLayout">
+    <section className="relative h-[100svh] min-h-[680px] w-full overflow-hidden bg-[#17130f]">
+      <motion.div
+        initial={shouldReduceMotion ? false : { opacity: 0.72, scale: 1.04, filter: "blur(10px)" }}
+        animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+        transition={{ duration: 1.35, ease: [0.22, 1, 0.36, 1] }}
+        className="absolute inset-0"
+      >
         <motion.div
-          key={currentSlide}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="absolute inset-0"
+          className="absolute inset-0 will-change-transform"
+          style={shouldReduceMotion ? undefined : { scale: imageScale, filter: imageFilter, y: imageY }}
         >
-          <img
-            src={slides[currentSlide].image}
-            alt={slides[currentSlide].alt}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/30" />
-        </motion.div>
-      </AnimatePresence>
-
-      {/* Bottom-Left Text Content */}
-      <div className="absolute bottom-20 left-6 md:left-12 lg:left-16 z-10 text-white">
-        {/* Tree Icon */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-          className="mb-4"
-        >
-          <TreePine className="w-6 h-6 text-white stroke-[1.5]" />
-        </motion.div>
-
-        {/* Headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight max-w-md text-left flex flex-col"
-        >
-          <span>Disconnect</span>
-          <span>to Reconnect</span>
-        </motion.h1>
-
-        {/* CTA Button */}
-        <motion.button
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.5 }}
-          onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
-          className="mt-6 flex items-center gap-3 bg-white text-foreground px-6 py-3 rounded-full text-sm tracking-wide hover:bg-white/90 transition-colors"
-        >
-          Book Now
-          <ArrowRight className="w-4 h-4" />
-        </motion.button>
-      </div>
-
-      {/* Progress Bars */}
-      <div className="absolute bottom-8 left-6 md:left-12 lg:left-16 right-6 md:right-12 lg:right-16 z-10 flex gap-2">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToSlide(index)}
-            className="flex-1 h-[2px] bg-white/30 overflow-hidden cursor-pointer"
-            aria-label={`Go to slide ${index + 1}`}
-          >
-            <div
-              className="h-full bg-white transition-all duration-100 ease-linear"
-              style={{
-                width: index === currentSlide ? `${progress}%` : index < currentSlide ? "100%" : "0%",
-              }}
+          <AnimatePresence mode="sync" initial={false}>
+            <motion.img
+              key={currentSlide}
+              src={slides[currentSlide].image}
+              alt={slides[currentSlide].alt}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
+              className="absolute inset-0 h-full w-full object-cover"
             />
-          </button>
-        ))}
-      </div>
+          </AnimatePresence>
+        </motion.div>
+      </motion.div>
+
+      <motion.div
+        className="absolute inset-0 bg-[#17130f]"
+        style={shouldReduceMotion ? { opacity: 0.42 } : { opacity: shadeOpacity }}
+      />
+
+      <motion.div
+        className="absolute inset-0 z-10 flex items-end"
+        style={shouldReduceMotion ? undefined : { opacity: contentOpacity, filter: contentFilter, y: contentY }}
+      >
+        <div className="site-shell pb-24 md:pb-28">
+          <div className="max-w-[680px] text-[#f3eee5]">
+            <motion.p
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.18, duration: 0.7 }}
+              className="mb-4 text-[13px] font-medium tracking-[-0.01em] text-[#f3eee5]/88 md:text-sm"
+            >
+              Business &amp; Litigation Counsel
+            </motion.p>
+
+            <motion.h1
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 16, filter: "blur(9px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ delay: 0.27, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+              className="editorial-serif text-[clamp(3.35rem,5.2vw,5.35rem)] leading-[0.91] tracking-[-0.025em] text-[#f3eee5]"
+            >
+              Discreet counsel for high-stakes matters.
+            </motion.h1>
+
+            <motion.p
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.7 }}
+              className="mt-5 max-w-[560px] text-[15px] leading-6 text-[#f3eee5]/74 md:text-base"
+            >
+              Corporate, litigation, and regulatory counsel for founders and businesses when the decisions cannot wait.
+            </motion.p>
+
+            <motion.div
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.7 }}
+              className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center"
+            >
+              <button
+                onClick={() => document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })}
+                className="liquid-cta inline-flex w-fit items-center gap-3 rounded-full px-6 py-3 text-[13px] font-medium"
+              >
+                <span className="relative z-10">Schedule a Consultation</span>
+                <ArrowRight className="relative z-10 h-4 w-4" />
+              </button>
+              <a
+                href="tel:+12125550148"
+                className="text-[13px] text-[#f3eee5]/82 transition-opacity hover:opacity-70 md:text-sm"
+              >
+                Or call (+1) 212 555 0148
+              </a>
+            </motion.div>
+
+            <motion.div
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.62, duration: 0.7 }}
+              className="mt-7 flex items-center gap-3"
+            >
+              <div className="flex -space-x-2">
+                {reviewAvatars.map((avatar, index) => (
+                  <img
+                    key={avatar}
+                    src={avatar}
+                    alt={`Client review ${index + 1}`}
+                    className="h-9 w-9 rounded-full border-2 border-[#f3eee5] object-cover"
+                  />
+                ))}
+              </div>
+              <div>
+                <div className="text-[13px] leading-none tracking-[0.12em] text-[#f3eee5]">★★★★★</div>
+                <p className="mt-1 text-[12px] text-[#f3eee5]/70">4.9/5 from 120+ client reviews</p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </motion.div>
+
+      <motion.div
+        className="absolute inset-x-0 bottom-6 z-20"
+        style={shouldReduceMotion ? undefined : { opacity: contentOpacity }}
+      >
+        <div className="site-shell flex gap-2">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              type="button"
+              onClick={() => {
+                setCurrentSlide(index);
+                setProgress(0);
+              }}
+              className="h-px flex-1 overflow-hidden bg-[#f3eee5]/28"
+              aria-label={`Go to slide ${index + 1}`}
+            >
+              <div
+                className="h-full bg-[#f3eee5] transition-all duration-100 ease-linear"
+                style={{ width: index === currentSlide ? `${progress}%` : index < currentSlide ? "100%" : "0%" }}
+              />
+            </button>
+          ))}
+        </div>
+      </motion.div>
     </section>
   );
 };
