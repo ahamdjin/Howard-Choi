@@ -23,7 +23,12 @@ const Auth = () => {
   const { toast } = useToast();
 
   useEffect(() => {
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+    const client = supabase;
+    if (!client) {
+      return;
+    }
+
+    const { data: { subscription } } = client.auth.onAuthStateChange(
       (event, session) => {
         if (session) {
           navigate("/admin");
@@ -31,7 +36,7 @@ const Auth = () => {
       }
     );
 
-    supabase.auth.getSession().then(({ data: { session } }) => {
+    client.auth.getSession().then(({ data: { session } }) => {
       if (session) {
         navigate("/admin");
       }
@@ -53,11 +58,21 @@ const Auth = () => {
       return;
     }
 
+    const client = supabase;
+    if (!client) {
+      toast({
+        title: "Authentication Unavailable",
+        description: "Connect a Supabase project to enable admin authentication.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setLoading(true);
 
     try {
       if (isLogin) {
-        const { error } = await supabase.auth.signInWithPassword({ email, password });
+        const { error } = await client.auth.signInWithPassword({ email, password });
         if (error) {
           toast({
             title: "Login Failed",
@@ -68,7 +83,7 @@ const Auth = () => {
           });
         }
       } else {
-        const { error } = await supabase.auth.signUp({
+        const { error } = await client.auth.signUp({
           email,
           password,
           options: {

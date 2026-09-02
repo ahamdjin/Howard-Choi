@@ -30,15 +30,20 @@ function createSupabaseFetch(supabaseKey: string): typeof fetch {
   };
 }
 
-// Import the supabase client like this:
-// import { supabase } from "@/integrations/supabase/client";
-
-export const supabase = createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
-  global: {
-    fetch: createSupabaseFetch(SUPABASE_PUBLISHABLE_KEY),
-  },
-  auth: {
-    persistSession: true,
-    autoRefreshToken: true,
+function createSupabaseClient() {
+  if (!SUPABASE_URL || !SUPABASE_PUBLISHABLE_KEY) {
+    return null;
   }
-});
+
+  return createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
+    global: {
+      fetch: createSupabaseFetch(SUPABASE_PUBLISHABLE_KEY),
+    },
+    auth: {
+      persistSession: true,
+      autoRefreshToken: true,
+    }
+  });
+}
+
+export const supabase = createSupabaseClient();
