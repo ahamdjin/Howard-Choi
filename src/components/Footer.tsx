@@ -3,7 +3,7 @@ import { Scale } from "lucide-react";
 const Footer = () => {
   return (
     <footer className="bg-background py-16 text-foreground md:py-20">
-      <div className="container mx-auto px-6 lg:px-12">
+      <div className="site-shell">
         <div className="grid gap-10 border-b border-black/10 pb-12 md:grid-cols-4">
           <div>
             <div className="mb-4 flex items-center gap-2">
