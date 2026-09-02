@@ -1,4 +1,4 @@
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } from "framer-motion";
 import { useRef } from "react";
 import commercialLitigationImage from "@/assets/law-firm/practice-commercial-litigation.webp";
 import corporateLawImage from "@/assets/law-firm/practice-corporate-law.webp";
@@ -28,53 +28,74 @@ const practices = [
   },
 ];
 
-const FeatureCard = ({
-  practice,
-  index,
-}: {
-  practice: (typeof practices)[number];
-  index: number;
-}) => (
-  <div className="grid h-full overflow-hidden rounded-[4px] bg-[#e8e4de] shadow-[0_24px_70px_rgba(29,24,19,0.14)] lg:grid-cols-[1.55fr_0.85fr]">
-    <div className="relative min-h-[330px] overflow-hidden lg:min-h-0">
-      <img src={practice.image} alt={practice.alt} className="absolute inset-0 h-full w-full object-cover" />
-      <div className="absolute inset-0 bg-[#17130f]/10" />
-    </div>
+type Practice = (typeof practices)[number];
 
-    <div className="flex flex-col justify-between px-8 py-8 text-[#211c17] xl:px-10 xl:py-10">
-      <div>
-        <div className="mb-8 text-[12px] tracking-[0.1em] text-[#211c17]/45">0{index + 1}</div>
-        <h3 className="editorial-serif max-w-[300px] text-[clamp(2.7rem,4vw,4.5rem)] leading-[0.9] tracking-[-0.025em]">
+type MorphCardProps = {
+  practice: Practice;
+  index: number;
+  columns?: MotionValue<string>;
+  detailOpacity?: MotionValue<number>;
+  overlayOpacity?: MotionValue<number>;
+};
+
+const MorphCard = ({ practice, index, columns, detailOpacity, overlayOpacity }: MorphCardProps) => (
+  <motion.div
+    className="relative grid h-full overflow-hidden rounded-[4px] bg-[#e8e4de] shadow-[0_24px_70px_rgba(29,24,19,0.14)]"
+    style={columns ? { gridTemplateColumns: columns } : undefined}
+  >
+    <div className="relative min-w-0 overflow-hidden">
+      <img src={practice.image} alt={practice.alt} className="absolute inset-0 h-full w-full object-cover" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#15110d]/74 via-[#17130f]/7 to-transparent" />
+
+      <motion.div
+        className="absolute inset-x-0 bottom-0 z-10 p-6 text-[#f3eee5] md:p-7"
+        style={overlayOpacity ? { opacity: overlayOpacity } : { opacity: 1 }}
+      >
+        <div className="mb-2 text-[10px] tracking-[0.12em] text-[#f3eee5]/55">0{index + 1}</div>
+        <h3 className="editorial-serif text-[clamp(1.8rem,2.35vw,2.35rem)] leading-[0.96] tracking-[-0.018em]">
           {practice.title}
         </h3>
-        <p className="mt-6 max-w-[310px] text-[15px] leading-6 text-[#211c17]/68">{practice.description}</p>
-      </div>
-
-      <div className="mt-8 border-t border-[#211c17]/14 pt-5">
-        {practice.points.map((point) => (
-          <div key={point} className="flex items-center justify-between border-b border-[#211c17]/10 py-2.5 text-[13px] text-[#211c17]/68 last:border-b-0">
-            <span>{point}</span>
-            <span className="text-[#211c17]/35">↗</span>
-          </div>
-        ))}
-      </div>
+        <p className="mt-2 max-w-[310px] text-[13px] leading-5 text-[#f3eee5]/72">{practice.description}</p>
+      </motion.div>
     </div>
-  </div>
+
+    <motion.div
+      className="min-w-0 overflow-hidden bg-[#e8e4de]"
+      style={detailOpacity ? { opacity: detailOpacity } : undefined}
+    >
+      <div className="flex h-full min-w-[290px] flex-col justify-between px-8 py-8 text-[#211c17] xl:px-10 xl:py-10">
+        <div>
+          <div className="mb-8 text-[12px] tracking-[0.1em] text-[#211c17]/45">0{index + 1}</div>
+          <h3 className="editorial-serif max-w-[300px] text-[clamp(2.7rem,4vw,4.5rem)] leading-[0.9] tracking-[-0.025em]">
+            {practice.title}
+          </h3>
+          <p className="mt-6 max-w-[310px] text-[15px] leading-6 text-[#211c17]/68">{practice.description}</p>
+        </div>
+
+        <div className="mt-8 border-t border-[#211c17]/14 pt-5">
+          {practice.points.map((point) => (
+            <div
+              key={point}
+              className="flex items-center justify-between border-b border-[#211c17]/10 py-2.5 text-[13px] text-[#211c17]/68 last:border-b-0"
+            >
+              <span>{point}</span>
+              <span className="text-[#211c17]/35">↗</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </motion.div>
+  </motion.div>
 );
 
-const OverviewCard = ({ practice }: { practice: (typeof practices)[number] }) => (
-  <div className="group relative h-full overflow-hidden rounded-[3px] bg-[#181511]">
-    <img
-      src={practice.image}
-      alt={practice.alt}
-      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]"
-    />
+const MobileCard = ({ practice, index }: { practice: Practice; index: number }) => (
+  <div className="relative h-full overflow-hidden rounded-[3px] bg-[#181511]">
+    <img src={practice.image} alt={practice.alt} className="absolute inset-0 h-full w-full object-cover" />
     <div className="absolute inset-0 bg-gradient-to-t from-[#15110d]/95 via-[#15110d]/18 to-transparent" />
-    <div className="absolute inset-x-0 bottom-0 p-6 text-[#f3eee5] md:p-7">
-      <h3 className="editorial-serif mb-2 text-[clamp(1.85rem,2.4vw,2.35rem)] leading-none tracking-[-0.018em]">
-        {practice.title}
-      </h3>
-      <p className="max-w-[300px] text-[13px] leading-5 text-[#f3eee5]/72">{practice.description}</p>
+    <div className="absolute inset-x-0 bottom-0 p-6 text-[#f3eee5]">
+      <div className="mb-2 text-[10px] tracking-[0.12em] text-[#f3eee5]/55">0{index + 1}</div>
+      <h3 className="editorial-serif text-[2rem] leading-none">{practice.title}</h3>
+      <p className="mt-2 max-w-[300px] text-[13px] leading-5 text-[#f3eee5]/72">{practice.description}</p>
     </div>
   </div>
 );
@@ -87,23 +108,37 @@ const Locations = () => {
     offset: ["start start", "end end"],
   });
 
-  const secondY = useTransform(scrollYProgress, [0.12, 0.32], ["112%", "0%"]);
-  const thirdY = useTransform(scrollYProgress, [0.34, 0.54], ["112%", "0%"]);
+  // Story phase: cards arrive one over another.
+  const firstTop = useTransform(scrollYProgress, [0, 0.32, 0.54, 0.64, 0.9], ["17%", "14%", "12%", "17%", "43%"]);
+  const secondTop = useTransform(scrollYProgress, [0, 0.12, 0.32, 0.54, 0.64, 0.9], ["112%", "112%", "17%", "14%", "17%", "43%"]);
+  const thirdTop = useTransform(scrollYProgress, [0, 0.34, 0.54, 0.64, 0.9], ["112%", "112%", "17%", "17%", "43%"]);
 
-  const firstScale = useTransform(scrollYProgress, [0.12, 0.32, 0.34, 0.54], [1, 0.97, 0.97, 0.945]);
-  const firstY = useTransform(scrollYProgress, [0.12, 0.32, 0.54], [0, -18, -34]);
-  const secondScale = useTransform(scrollYProgress, [0.34, 0.54], [1, 0.97]);
-  const secondLift = useTransform(scrollYProgress, [0.34, 0.54], [0, -18]);
+  // Resolution phase: the very same cards become the final 3-column overview.
+  const cardWidth = useTransform(scrollYProgress, [0.64, 0.9], ["100%", "32%"]);
+  const cardHeight = useTransform(scrollYProgress, [0.64, 0.9], ["66%", "45%"]);
+  const firstLeft = useTransform(scrollYProgress, [0.64, 0.9], ["0%", "0%"]);
+  const secondLeft = useTransform(scrollYProgress, [0.64, 0.9], ["0%", "34%"]);
+  const thirdLeft = useTransform(scrollYProgress, [0.64, 0.9], ["0%", "68%"]);
 
-  const featureOpacity = useTransform(scrollYProgress, [0.64, 0.76], [1, 0]);
-  const featureScale = useTransform(scrollYProgress, [0.64, 0.76], [1, 0.965]);
+  // The feature content physically collapses into the compact card treatment.
+  const columns = useTransform(scrollYProgress, [0.64, 0.86], ["1.55fr 0.85fr", "1fr 0fr"]);
+  const detailOpacity = useTransform(scrollYProgress, [0.64, 0.79], [1, 0]);
+  const overlayOpacity = useTransform(scrollYProgress, [0.7, 0.88], [0, 1]);
+  const cardShadow = useTransform(
+    scrollYProgress,
+    [0.64, 0.9],
+    ["0 24px 70px rgba(29,24,19,0.14)", "0 0 0 rgba(29,24,19,0)"]
+  );
 
-  const overviewOpacity = useTransform(scrollYProgress, [0.72, 0.86], [0, 1]);
-  const overviewY = useTransform(scrollYProgress, [0.72, 0.86], [30, 0]);
-  const overviewCardY1 = useTransform(scrollYProgress, [0.74, 0.86], [24, 0]);
-  const overviewCardY2 = useTransform(scrollYProgress, [0.76, 0.88], [34, 0]);
-  const overviewCardY3 = useTransform(scrollYProgress, [0.78, 0.9], [44, 0]);
-  const overviewCardYs = [overviewCardY1, overviewCardY2, overviewCardY3];
+  // Only after the cards have almost found their final positions does the summary arrive.
+  const headerOpacity = useTransform(scrollYProgress, [0.82, 0.94], [0, 1]);
+  const headerY = useTransform(scrollYProgress, [0.82, 0.94], [18, 0]);
+
+  const cardStyles = [
+    { top: firstTop, left: firstLeft, zIndex: 10 },
+    { top: secondTop, left: secondLeft, zIndex: 20 },
+    { top: thirdTop, left: thirdLeft, zIndex: 30 },
+  ];
 
   return (
     <section id="practice" ref={ref} className="relative bg-background lg:h-[340svh]">
@@ -121,75 +156,68 @@ const Locations = () => {
         </div>
 
         <div className="grid gap-3">
-          {practices.map((practice) => (
+          {practices.map((practice, index) => (
             <article key={practice.title} className="h-[430px]">
-              <OverviewCard practice={practice} />
+              <MobileCard practice={practice} index={index} />
             </article>
           ))}
         </div>
       </div>
 
       <div className="sticky top-0 hidden h-[100svh] overflow-hidden lg:block">
-        <motion.div
-          className="absolute inset-0 flex items-center"
-          style={shouldReduceMotion ? undefined : { opacity: featureOpacity, scale: featureScale }}
-        >
-          <div className="site-shell relative h-[min(66svh,650px)] min-h-[500px]">
-            <motion.article
-              className="absolute inset-0 will-change-transform"
-              style={shouldReduceMotion ? undefined : { scale: firstScale, y: firstY, zIndex: 10 }}
-            >
-              <FeatureCard practice={practices[0]} index={0} />
-            </motion.article>
-
-            <motion.article
-              className="absolute inset-0 will-change-transform"
-              style={shouldReduceMotion ? undefined : { y: secondY, scale: secondScale, zIndex: 20 }}
-            >
-              <motion.div style={shouldReduceMotion ? undefined : { y: secondLift }} className="h-full">
-                <FeatureCard practice={practices[1]} index={1} />
-              </motion.div>
-            </motion.article>
-
-            <motion.article
-              className="absolute inset-0 will-change-transform"
-              style={shouldReduceMotion ? undefined : { y: thirdY, zIndex: 30 }}
-            >
-              <FeatureCard practice={practices[2]} index={2} />
-            </motion.article>
-          </div>
-        </motion.div>
-
-        <motion.div
-          className="absolute inset-0 flex items-center"
-          style={shouldReduceMotion ? undefined : { opacity: overviewOpacity, y: overviewY }}
-        >
-          <div className="site-shell w-full py-[clamp(3rem,6vh,5rem)]">
-            <div className="mb-[clamp(2rem,4vh,3.5rem)] grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
-              <div>
-                <span className="mb-5 block text-[13px] text-muted-foreground">Areas of Practice</span>
-                <h2 className="editorial-serif max-w-[690px] text-[clamp(3rem,4.7vw,5rem)] leading-[0.93] tracking-[-0.02em]">
-                  Counsel across<br />every stage of growth.
-                </h2>
-              </div>
-              <p className="max-w-[410px] text-[15px] leading-6 text-muted-foreground lg:pb-1">
-                Focused expertise across the matters that shape a growing business — from formation and transactions to disputes and ongoing counsel.
-              </p>
+        <div className="site-shell relative h-full">
+          <motion.div
+            className="absolute left-0 right-0 top-[11%] z-40 grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end"
+            style={shouldReduceMotion ? { opacity: 1 } : { opacity: headerOpacity, y: headerY }}
+          >
+            <div>
+              <span className="mb-5 block text-[13px] text-muted-foreground">Areas of Practice</span>
+              <h2 className="editorial-serif max-w-[690px] text-[clamp(3rem,4.7vw,5rem)] leading-[0.93] tracking-[-0.02em]">
+                Counsel across<br />every stage of growth.
+              </h2>
             </div>
+            <p className="max-w-[410px] text-[15px] leading-6 text-muted-foreground lg:pb-1">
+              Focused expertise across the matters that shape a growing business — from formation and transactions to disputes and ongoing counsel.
+            </p>
+          </motion.div>
 
-            <div className="grid grid-cols-3 gap-3">
-              {practices.map((practice, index) => (
-                <motion.article
-                  key={practice.title}
-                  className="h-[min(44svh,460px)] min-h-[360px]"
-                  style={shouldReduceMotion ? undefined : { y: overviewCardYs[index] }}
-                >
-                  <OverviewCard practice={practice} />
-                </motion.article>
-              ))}
-            </div>
-          </div>
-        </motion.div>
+          {practices.map((practice, index) => {
+            const style = cardStyles[index];
+
+            return (
+              <motion.article
+                key={practice.title}
+                className="absolute will-change-[top,left,width,height]"
+                style={
+                  shouldReduceMotion
+                    ? {
+                        top: "43%",
+                        left: `${index * 34}%`,
+                        width: "32%",
+                        height: "45%",
+                        zIndex: index + 10,
+                      }
+                    : {
+                        top: style.top,
+                        left: style.left,
+                        width: cardWidth,
+                        height: cardHeight,
+                        zIndex: style.zIndex,
+                        boxShadow: cardShadow,
+                      }
+                }
+              >
+                <MorphCard
+                  practice={practice}
+                  index={index}
+                  columns={shouldReduceMotion ? undefined : columns}
+                  detailOpacity={shouldReduceMotion ? undefined : detailOpacity}
+                  overlayOpacity={shouldReduceMotion ? undefined : overlayOpacity}
+                />
+              </motion.article>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
