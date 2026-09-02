@@ -35,7 +35,7 @@ const Testimonial = () => {
 
   return (
     <section ref={ref} className="flex min-h-[100svh] items-center bg-background py-20 md:py-24">
-      <div className="mx-auto w-full max-w-[1240px] px-6 text-center md:px-10 lg:px-12">
+      <div className="site-shell w-full text-center">
         <div className="mx-auto max-w-[900px]">
           <div className="mb-7 text-[12px] tracking-[0.34em] text-foreground">★★★★★</div>
           <blockquote className="editorial-serif text-[clamp(2.8rem,4.5vw,5rem)] leading-[1.02]">
