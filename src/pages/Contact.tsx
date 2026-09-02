@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import { User, Mail, MessageSquare, FileText } from "lucide-react";
+import { User, Mail, MessageSquare, FileText, Phone, MapPin } from "lucide-react";
 import bannerImage from "@/assets/detail-meadow-1.jpg";
 
 const Contact = () => {
@@ -72,16 +72,32 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           className="max-w-md mx-auto"
         >
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <span className="text-[11px] uppercase tracking-wider text-muted-foreground mb-4 block">
               Contact
             </span>
-            <h1 className="text-2xl md:text-3xl font-light tracking-tight text-foreground mb-4">
-              Get in Touch
+            <h1 className="editorial-serif text-3xl md:text-4xl tracking-tight text-foreground mb-4">
+              Start a Conversation
             </h1>
-            <p className="text-sm text-muted-foreground font-light">
-              Have a question or want to book a stay? We'd love to hear from you.
+            <p className="text-sm leading-6 text-muted-foreground">
+              Have a legal matter you’d like to discuss? Share the outline and we’ll help determine the right next step.
             </p>
+
+            <div className="mt-7 flex flex-col items-center gap-2.5 text-[13px] text-muted-foreground">
+              <a href="tel:+17146900007" className="inline-flex items-center gap-2 transition-colors hover:text-foreground">
+                <Phone className="h-3.5 w-3.5" />
+                +1 714-690-0007
+              </a>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=6301+Beach+Blvd%2C+Buena+Park%2C+CA+90621"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 transition-colors hover:text-foreground"
+              >
+                <MapPin className="h-3.5 w-3.5" />
+                6301 Beach Blvd, Buena Park, CA 90621
+              </a>
+            </div>
           </div>
 
           <Card className="p-8 lg:p-10 shadow-soft border border-border bg-card">
