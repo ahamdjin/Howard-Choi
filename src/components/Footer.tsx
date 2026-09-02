@@ -1,4 +1,4 @@
-import brandLogo from "@/assets/law-firm/howard-choi-logo.png";
+import brandLogo from "@/assets/law-firm/howard-choi-mark.webp";
 
 const Footer = () => {
   return (
@@ -8,7 +8,7 @@ const Footer = () => {
           <div>
             <div className="mb-5 flex items-center gap-2">
               <span className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-[2px]">
-                <img src={brandLogo} alt="" className="h-full w-full scale-[1.65] object-cover invert" />
+                <img src={brandLogo} alt="" width={28} height={28} loading="lazy" decoding="async" className="h-full w-full object-cover invert" />
               </span>
               <span className="text-[15px] font-medium">Howard Choi Law</span>
             </div>
