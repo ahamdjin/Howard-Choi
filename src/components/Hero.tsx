@@ -1,123 +1,156 @@
-import { useState, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import { ArrowRight, TreePine } from "lucide-react";
 import heroImage from "@/assets/hero-camping.jpg";
-import forestImage from "@/assets/spot-forest.jpg";
-import lakeImage from "@/assets/spot-lake.jpg";
-import meadowImage from "@/assets/spot-meadow.jpg";
-
-const slides = [
-  { image: heroImage, alt: "Off-grid camping in nature" },
-  { image: forestImage, alt: "Forest camping spot" },
-  { image: lakeImage, alt: "Lakeside retreat" },
-  { image: meadowImage, alt: "Meadow camping experience" },
-];
-
-const SLIDE_DURATION = 5000;
 
 const Hero = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [progress, setProgress] = useState(0);
-
-  const nextSlide = useCallback(() => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-    setProgress(0);
-  }, []);
-
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index);
-    setProgress(0);
-  };
+  const shouldReduceMotion = useReducedMotion();
+  const { scrollY } = useScroll();
+  const [viewportHeight, setViewportHeight] = useState(900);
 
   useEffect(() => {
-    const progressInterval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          nextSlide();
-          return 0;
-        }
-        return prev + (100 / (SLIDE_DURATION / 50));
-      });
-    }, 50);
+    const updateViewportHeight = () => setViewportHeight(window.innerHeight || 900);
+    updateViewportHeight();
+    window.addEventListener("resize", updateViewportHeight);
 
-    return () => clearInterval(progressInterval);
-  }, [nextSlide]);
+    return () => window.removeEventListener("resize", updateViewportHeight);
+  }, []);
+
+  const transitionEnd = viewportHeight * 0.95;
+
+  // Chambers-style scroll treatment: the hero stays pinned while the image
+  // subtly pushes in and softens, then the copy gently disappears before the
+  // following light section scrolls over the top of it.
+  const imageScale = useTransform(scrollY, [0, transitionEnd], [1, 1.075]);
+  const imageFilter = useTransform(
+    scrollY,
+    [0, transitionEnd],
+    ["blur(0px)", "blur(3.5px)"],
+  );
+  const imageY = useTransform(scrollY, [0, transitionEnd], ["0%", "-1.5%"]);
+  const shadeOpacity = useTransform(scrollY, [0, transitionEnd], [0.3, 0.46]);
+
+  const contentOpacity = useTransform(
+    scrollY,
+    [0, transitionEnd * 0.72],
+    [1, 0],
+  );
+  const contentFilter = useTransform(
+    scrollY,
+    [0, transitionEnd * 0.72],
+    ["blur(0px)", "blur(9px)"],
+  );
+  const contentY = useTransform(scrollY, [0, transitionEnd * 0.72], [0, -24]);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden">
-      {/* Image Ticker */}
-      <AnimatePresence mode="popLayout">
-        <motion.div
-          key={currentSlide}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="absolute inset-0"
-        >
-          <img
-            src={slides[currentSlide].image}
-            alt={slides[currentSlide].alt}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/30" />
-        </motion.div>
-      </AnimatePresence>
+    <section className="relative h-screen w-full overflow-hidden bg-black">
+      {/* Entrance blur/zoom + scroll-linked push-in. The nested layers let the
+          initial animation and the scroll animation combine cleanly. */}
+      <motion.div
+        initial={
+          shouldReduceMotion
+            ? false
+            : { opacity: 0.72, scale: 1.045, filter: "blur(10px)" }
+        }
+        animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+        transition={{ duration: 1.35, ease: [0.22, 1, 0.36, 1] }}
+        className="absolute inset-0"
+      >
+        <motion.img
+          src={heroImage}
+          alt="Off-grid camping in nature"
+          className="h-full w-full object-cover will-change-transform"
+          style={
+            shouldReduceMotion
+              ? undefined
+              : {
+                  scale: imageScale,
+                  filter: imageFilter,
+                  y: imageY,
+                }
+          }
+        />
+      </motion.div>
 
-      {/* Bottom-Left Text Content */}
-      <div className="absolute bottom-20 left-6 md:left-12 lg:left-16 z-10 text-white">
-        {/* Tree Icon */}
+      <motion.div
+        className="absolute inset-0 bg-black"
+        style={shouldReduceMotion ? { opacity: 0.3 } : { opacity: shadeOpacity }}
+      />
+
+      {/* The content gets a soft blur on load, then blurs/fades out as the
+          next section approaches — intentionally restrained, not theatrical. */}
+      <motion.div
+        className="absolute bottom-20 left-6 z-10 text-white md:left-12 lg:left-16"
+        style={
+          shouldReduceMotion
+            ? undefined
+            : {
+                opacity: contentOpacity,
+                filter: contentFilter,
+                y: contentY,
+              }
+        }
+      >
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
+          initial={
+            shouldReduceMotion
+              ? false
+              : { opacity: 0, y: 10, filter: "blur(8px)" }
+          }
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ delay: 0.2, duration: 0.75, ease: "easeOut" }}
           className="mb-4"
         >
-          <TreePine className="w-6 h-6 text-white stroke-[1.5]" />
+          <TreePine className="h-6 w-6 stroke-[1.5] text-white" />
         </motion.div>
 
-        {/* Headline */}
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight max-w-md text-left flex flex-col"
+          initial={
+            shouldReduceMotion
+              ? false
+              : { opacity: 0, y: 18, filter: "blur(10px)" }
+          }
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ delay: 0.3, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          className="flex max-w-md flex-col text-left text-4xl font-light tracking-tight md:text-5xl lg:text-6xl"
         >
           <span>Disconnect</span>
           <span>to Reconnect</span>
         </motion.h1>
 
-        {/* CTA Button */}
         <motion.button
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.5 }}
-          onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
-          className="mt-6 flex items-center gap-3 bg-white text-foreground px-6 py-3 rounded-full text-sm tracking-wide hover:bg-white/90 transition-colors"
+          initial={
+            shouldReduceMotion
+              ? false
+              : { opacity: 0, y: 10, filter: "blur(6px)" }
+          }
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ delay: 0.48, duration: 0.7, ease: "easeOut" }}
+          onClick={() =>
+            document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })
+          }
+          className="mt-6 flex items-center gap-3 rounded-full bg-white px-6 py-3 text-sm tracking-wide text-foreground transition-colors hover:bg-white/90"
         >
           Book Now
-          <ArrowRight className="w-4 h-4" />
+          <ArrowRight className="h-4 w-4" />
         </motion.button>
-      </div>
+      </motion.div>
 
-      {/* Progress Bars */}
-      <div className="absolute bottom-8 left-6 md:left-12 lg:left-16 right-6 md:right-12 lg:right-16 z-10 flex gap-2">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToSlide(index)}
-            className="flex-1 h-[2px] bg-white/30 overflow-hidden cursor-pointer"
-            aria-label={`Go to slide ${index + 1}`}
-          >
-            <div
-              className="h-full bg-white transition-all duration-100 ease-linear"
-              style={{
-                width: index === currentSlide ? `${progress}%` : index < currentSlide ? "100%" : "0%",
-              }}
-            />
-          </button>
-        ))}
-      </div>
+      <motion.div
+        initial={shouldReduceMotion ? false : { opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.1, duration: 0.7 }}
+        className="absolute bottom-8 right-6 z-10 hidden items-center gap-3 text-[10px] uppercase tracking-[0.22em] text-white/75 sm:flex md:right-12 lg:right-16"
+        style={shouldReduceMotion ? undefined : { opacity: contentOpacity }}
+      >
+        <span>Scroll</span>
+        <span className="h-px w-10 bg-white/50" />
+      </motion.div>
     </section>
   );
 };
