@@ -24,21 +24,21 @@ const Locations = () => {
   const isInView = useInView(ref, { once: true, amount: 0.15 });
 
   return (
-    <section id="practice" ref={ref} className="bg-background py-28 md:py-36 lg:py-44">
-      <div className="container mx-auto px-6 lg:px-12">
+    <section id="practice" ref={ref} className="flex min-h-[100svh] items-center bg-background py-20 md:py-24 lg:py-28">
+      <div className="mx-auto w-full max-w-[1240px] px-6 md:px-10 lg:px-12">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.75 }}
-          className="mb-14 grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end"
+          className="mb-12 grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end"
         >
           <div>
             <span className="mb-5 block text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Areas of Practice</span>
-            <h2 className="editorial-serif max-w-2xl text-4xl font-normal leading-[0.98] tracking-tight md:text-5xl lg:text-6xl">
+            <h2 className="editorial-serif max-w-[690px] text-[clamp(3rem,4.7vw,5rem)] leading-[0.93]">
               Counsel across<br />every stage of growth.
             </h2>
           </div>
-          <p className="max-w-sm text-sm leading-6 text-muted-foreground lg:pb-1">
+          <p className="max-w-[410px] text-[15px] leading-6 text-muted-foreground lg:pb-1">
             Focused expertise across the matters that shape a growing business — from formation and transactions to disputes and ongoing counsel.
           </p>
         </motion.div>
@@ -47,20 +47,20 @@ const Locations = () => {
           {practices.map((practice, index) => (
             <motion.article
               key={practice.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 26 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: index * 0.09 }}
-              className="group relative min-h-[390px] overflow-hidden bg-neutral-900"
+              className="group relative min-h-[360px] overflow-hidden rounded-[2px] bg-neutral-900 md:min-h-[400px] lg:min-h-[430px]"
             >
               <img
                 src={practice.image}
                 alt=""
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035]"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-black/5" />
-              <div className="absolute inset-x-0 bottom-0 p-6 text-white">
-                <h3 className="editorial-serif mb-2 text-2xl">{practice.title}</h3>
-                <p className="max-w-xs text-xs leading-5 text-white/72">{practice.description}</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-black/5" />
+              <div className="absolute inset-x-0 bottom-0 p-6 text-white md:p-7">
+                <h3 className="editorial-serif mb-2 text-[2rem] leading-none">{practice.title}</h3>
+                <p className="max-w-[300px] text-[13px] leading-5 text-white/72">{practice.description}</p>
               </div>
             </motion.article>
           ))}
