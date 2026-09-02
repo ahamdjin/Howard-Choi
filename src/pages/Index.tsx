@@ -7,13 +7,26 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden bg-background">
       <Navigation />
-      <Hero />
-      <Locations />
-      <Experience />
-      <Booking />
-      <Footer />
+
+      {/* Keep the first image pinned while the light section physically scrolls
+          over it, mirroring the simple layered transition used in Chambers. */}
+      <div className="relative isolate">
+        <div className="sticky top-0 z-0 h-screen">
+          <Hero />
+        </div>
+
+        <div className="relative z-10 bg-background">
+          <Locations />
+        </div>
+      </div>
+
+      <div className="relative z-20 bg-background">
+        <Experience />
+        <Booking />
+        <Footer />
+      </div>
     </div>
   );
 };
