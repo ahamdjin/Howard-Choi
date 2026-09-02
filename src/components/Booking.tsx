@@ -36,10 +36,10 @@ const Booking = () => {
           <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
               href="mailto:hello@howardchoilaw.com"
-              className="inline-flex items-center gap-3 rounded-full bg-white px-6 py-3 text-[13px] font-medium text-black transition-transform hover:scale-[1.015]"
+              className="liquid-cta inline-flex items-center gap-3 rounded-full px-6 py-3 text-[13px] font-medium"
             >
-              Schedule a consultation
-              <ArrowRight className="h-4 w-4" />
+              <span className="relative z-10">Schedule a consultation</span>
+              <ArrowRight className="relative z-10 h-4 w-4" />
             </a>
             <a href="tel:+17146900007" className="text-[13px] text-white/68 hover:text-white">
               Or call (+1) 714-690-0007
