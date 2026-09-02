@@ -7,17 +7,23 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-background">
+    <div className="min-h-screen overflow-x-clip bg-background">
       <Navigation />
 
-      {/* Keep the first image pinned while the light section physically scrolls
-          over it, mirroring the simple layered transition used in Chambers. */}
-      <div className="relative isolate">
-        <div className="sticky top-0 z-0 h-screen">
+      {/* Chambers-style layering:
+          The hero is genuinely pinned to the viewport while the following
+          opaque section remains in the normal document flow and slides over it.
+
+          Important: do not use overflow-x-hidden on an ancestor here. It can
+          create a scrolling ancestor and prevent position: sticky from sticking
+          to the viewport. overflow-x-clip avoids horizontal spill without
+          interfering with sticky positioning. */}
+      <div className="relative">
+        <div className="sticky top-0 z-0 h-screen w-full">
           <Hero />
         </div>
 
-        <div className="relative z-10 bg-background">
+        <div className="relative z-10 w-full bg-background">
           <Locations />
         </div>
       </div>
