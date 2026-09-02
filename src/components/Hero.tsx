@@ -14,16 +14,16 @@ import heroLawOffice from "@/assets/law-firm/hero-law-office.webp";
 
 const slides = [
   {
+    image: heroJusticeLibrary,
+    alt: "Lady Justice in a private law library",
+  },
+  {
     image: heroCityBoardroom,
     alt: "Law firm boardroom overlooking the city",
   },
   {
     image: heroLawOffice,
     alt: "Traditional law office and desk",
-  },
-  {
-    image: heroJusticeLibrary,
-    alt: "Lady Justice in a private law library",
   },
   {
     image: heroCourthouse,
