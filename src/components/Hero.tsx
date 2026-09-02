@@ -6,17 +6,25 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import { ArrowRight, TreePine } from "lucide-react";
-import heroImage from "@/assets/hero-camping.jpg";
-import forestImage from "@/assets/spot-forest.jpg";
-import lakeImage from "@/assets/spot-lake.jpg";
-import meadowImage from "@/assets/spot-meadow.jpg";
+import { ArrowRight, Scale } from "lucide-react";
 
 const slides = [
-  { image: heroImage, alt: "Off-grid camping in nature" },
-  { image: forestImage, alt: "Forest camping spot" },
-  { image: lakeImage, alt: "Lakeside retreat" },
-  { image: meadowImage, alt: "Meadow camping experience" },
+  {
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1800&q=88",
+    alt: "Legal documents on a desk",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1800&q=88",
+    alt: "Business handshake",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1800&q=88",
+    alt: "Professional team meeting",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=88",
+    alt: "Modern professional office",
+  },
 ];
 
 const SLIDE_DURATION = 5000;
@@ -33,85 +41,46 @@ const Hero = () => {
     setProgress(0);
   }, []);
 
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index);
-    setProgress(0);
-  };
-
   useEffect(() => {
     const updateViewportHeight = () => setViewportHeight(window.innerHeight || 900);
     updateViewportHeight();
     window.addEventListener("resize", updateViewportHeight);
-
     return () => window.removeEventListener("resize", updateViewportHeight);
   }, []);
 
   useEffect(() => {
-    const progressInterval = window.setInterval(() => {
+    const interval = window.setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           nextSlide();
           return 0;
         }
-
         return prev + 100 / (SLIDE_DURATION / 50);
       });
     }, 50);
-
-    return () => window.clearInterval(progressInterval);
+    return () => window.clearInterval(interval);
   }, [nextSlide]);
 
   const transitionEnd = viewportHeight * 0.95;
-
-  // Chambers-style scroll treatment: the whole hero image layer remains pinned
-  // while the active carousel image gently pushes in and softens underneath the
-  // following light section.
   const imageScale = useTransform(scrollY, [0, transitionEnd], [1, 1.075]);
-  const imageFilter = useTransform(
-    scrollY,
-    [0, transitionEnd],
-    ["blur(0px)", "blur(3.5px)"],
-  );
+  const imageFilter = useTransform(scrollY, [0, transitionEnd], ["blur(0px)", "blur(3.5px)"]);
   const imageY = useTransform(scrollY, [0, transitionEnd], ["0%", "-1.5%"]);
-  const shadeOpacity = useTransform(scrollY, [0, transitionEnd], [0.3, 0.46]);
-
-  const contentOpacity = useTransform(
-    scrollY,
-    [0, transitionEnd * 0.72],
-    [1, 0],
-  );
-  const contentFilter = useTransform(
-    scrollY,
-    [0, transitionEnd * 0.72],
-    ["blur(0px)", "blur(9px)"],
-  );
+  const shadeOpacity = useTransform(scrollY, [0, transitionEnd], [0.46, 0.58]);
+  const contentOpacity = useTransform(scrollY, [0, transitionEnd * 0.72], [1, 0]);
+  const contentFilter = useTransform(scrollY, [0, transitionEnd * 0.72], ["blur(0px)", "blur(9px)"]);
   const contentY = useTransform(scrollY, [0, transitionEnd * 0.72], [0, -24]);
 
   return (
     <section className="relative h-screen w-full overflow-hidden bg-black">
-      {/* Initial entrance treatment + scroll-linked treatment live on wrappers,
-          so all four carousel images share the same zoom/blur behavior. */}
       <motion.div
-        initial={
-          shouldReduceMotion
-            ? false
-            : { opacity: 0.72, scale: 1.045, filter: "blur(10px)" }
-        }
+        initial={shouldReduceMotion ? false : { opacity: 0.72, scale: 1.045, filter: "blur(10px)" }}
         animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
         transition={{ duration: 1.35, ease: [0.22, 1, 0.36, 1] }}
         className="absolute inset-0"
       >
         <motion.div
           className="absolute inset-0 will-change-transform"
-          style={
-            shouldReduceMotion
-              ? undefined
-              : {
-                  scale: imageScale,
-                  filter: imageFilter,
-                  y: imageY,
-                }
-          }
+          style={shouldReduceMotion ? undefined : { scale: imageScale, filter: imageFilter, y: imageY }}
         >
           <AnimatePresence mode="sync" initial={false}>
             <motion.img
@@ -128,70 +97,60 @@ const Hero = () => {
         </motion.div>
       </motion.div>
 
-      <motion.div
-        className="absolute inset-0 bg-black"
-        style={shouldReduceMotion ? { opacity: 0.3 } : { opacity: shadeOpacity }}
-      />
+      <motion.div className="absolute inset-0 bg-black" style={shouldReduceMotion ? { opacity: 0.46 } : { opacity: shadeOpacity }} />
 
       <motion.div
-        className="absolute bottom-20 left-6 z-10 text-white md:left-12 lg:left-16"
-        style={
-          shouldReduceMotion
-            ? undefined
-            : {
-                opacity: contentOpacity,
-                filter: contentFilter,
-                y: contentY,
-              }
-        }
+        className="absolute bottom-24 left-6 z-10 max-w-2xl text-white md:left-12 lg:left-16"
+        style={shouldReduceMotion ? undefined : { opacity: contentOpacity, filter: contentFilter, y: contentY }}
       >
         <motion.div
-          initial={
-            shouldReduceMotion
-              ? false
-              : { opacity: 0, y: 10, filter: "blur(8px)" }
-          }
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 10, filter: "blur(8px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ delay: 0.2, duration: 0.75, ease: "easeOut" }}
-          className="mb-4"
+          transition={{ delay: 0.2, duration: 0.75 }}
+          className="mb-5"
         >
-          <TreePine className="h-6 w-6 stroke-[1.5] text-white" />
+          <Scale className="h-5 w-5 stroke-[1.4]" />
         </motion.div>
 
-        <motion.h1
-          initial={
-            shouldReduceMotion
-              ? false
-              : { opacity: 0, y: 18, filter: "blur(10px)" }
-          }
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ delay: 0.3, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="flex max-w-md flex-col text-left text-4xl font-light tracking-tight md:text-5xl lg:text-6xl"
+        <motion.p
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.26, duration: 0.7 }}
+          className="mb-4 text-[10px] uppercase tracking-[0.2em] text-white/70"
         >
-          <span>Disconnect</span>
-          <span>to Reconnect</span>
+          Business law · Litigation · Strategic counsel
+        </motion.p>
+
+        <motion.h1
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 18, filter: "blur(10px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ delay: 0.32, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          className="editorial-serif max-w-2xl text-5xl font-normal leading-[0.92] tracking-tight md:text-6xl lg:text-7xl"
+        >
+          Discreet counsel for high-stakes matters.
         </motion.h1>
 
-        <motion.button
-          initial={
-            shouldReduceMotion
-              ? false
-              : { opacity: 0, y: 10, filter: "blur(6px)" }
-          }
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ delay: 0.48, duration: 0.7, ease: "easeOut" }}
-          onClick={() =>
-            document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })
-          }
-          className="mt-6 flex items-center gap-3 rounded-full bg-white px-6 py-3 text-sm tracking-wide text-foreground transition-colors hover:bg-white/90"
+        <motion.p
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.46, duration: 0.7 }}
+          className="mt-5 max-w-xl text-sm leading-6 text-white/72"
         >
-          Book Now
+          Clear, commercially minded advice for businesses and private clients when the decisions matter most.
+        </motion.p>
+
+        <motion.button
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.56, duration: 0.7 }}
+          onClick={() => document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })}
+          className="mt-7 inline-flex items-center gap-3 rounded-full bg-white px-6 py-3 text-[10px] uppercase tracking-[0.14em] text-black"
+        >
+          Schedule a consultation
           <ArrowRight className="h-4 w-4" />
         </motion.button>
       </motion.div>
 
-      {/* Restore the original four-image timeline controls. They fade away with
-          the hero copy as the white section moves over the pinned image. */}
       <motion.div
         className="absolute bottom-8 left-6 right-6 z-10 flex gap-2 md:left-12 md:right-12 lg:left-16 lg:right-16"
         style={shouldReduceMotion ? undefined : { opacity: contentOpacity }}
@@ -200,20 +159,13 @@ const Hero = () => {
           <button
             key={index}
             type="button"
-            onClick={() => goToSlide(index)}
-            className="h-[2px] flex-1 cursor-pointer overflow-hidden bg-white/30"
+            onClick={() => { setCurrentSlide(index); setProgress(0); }}
+            className="h-[2px] flex-1 overflow-hidden bg-white/25"
             aria-label={`Go to slide ${index + 1}`}
           >
             <div
               className="h-full bg-white transition-all duration-100 ease-linear"
-              style={{
-                width:
-                  index === currentSlide
-                    ? `${progress}%`
-                    : index < currentSlide
-                      ? "100%"
-                      : "0%",
-              }}
+              style={{ width: index === currentSlide ? `${progress}%` : index < currentSlide ? "100%" : "0%" }}
             />
           </button>
         ))}
