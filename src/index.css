@@ -6,39 +6,29 @@
   :root {
     --background: 40 16% 97%;
     --foreground: 30 8% 11%;
-
     --card: 40 16% 98%;
     --card-foreground: 30 8% 11%;
-
     --popover: 40 16% 98%;
     --popover-foreground: 30 8% 11%;
-
     --primary: 30 8% 11%;
     --primary-foreground: 40 16% 97%;
-
     --secondary: 35 10% 92%;
     --secondary-foreground: 30 8% 11%;
-
     --muted: 35 10% 92%;
     --muted-foreground: 30 4% 44%;
-
     --accent: 35 10% 92%;
     --accent-foreground: 30 8% 11%;
-
     --destructive: 0 70% 55%;
     --destructive-foreground: 0 0% 100%;
-
     --border: 30 8% 86%;
     --input: 30 8% 86%;
     --ring: 30 8% 20%;
-
     --radius: 0.25rem;
     --hero-gradient: none;
     --overlay-gradient: linear-gradient(180deg, transparent 0%, hsl(0 0% 0% / 0.45) 100%);
     --soft-shadow: 0 2px 8px hsl(0 0% 0% / 0.04);
     --hover-shadow: 0 4px 16px hsl(0 0% 0% / 0.08);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
     --sidebar-background: 40 16% 97%;
     --sidebar-foreground: 30 8% 11%;
     --sidebar-primary: 30 8% 11%;
@@ -62,6 +52,15 @@
   body {
     @apply bg-background text-foreground antialiased;
     margin: 0;
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+    font-weight: 400;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
   }
 }
 
@@ -75,8 +74,8 @@
   }
 
   .editorial-serif {
-    font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-    font-weight: 500;
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+    font-weight: 400;
   }
 
   .site-shell {
