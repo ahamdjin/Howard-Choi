@@ -15,7 +15,7 @@ const Booking = () => {
       />
       <div className="absolute inset-0 -z-10 bg-black/55" />
 
-      <div className="container mx-auto px-6 lg:px-12">
+      <div className="site-shell">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
