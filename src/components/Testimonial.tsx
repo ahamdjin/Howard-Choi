@@ -30,15 +30,15 @@ const Testimonial = () => {
   const ref = useRef<HTMLElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start 78%", "end 38%"],
+    offset: ["start 88%", "end 36%"],
   });
 
   return (
-    <section ref={ref} className="flex min-h-[100svh] items-center bg-background py-20 md:py-24">
+    <section ref={ref} className="flex min-h-[76svh] items-center bg-background pb-16 pt-10 md:min-h-[80svh] md:pb-20 md:pt-12">
       <div className="site-shell w-full text-center">
         <div className="mx-auto max-w-[760px]">
-          <div className="mb-7 text-[12px] tracking-[0.26em] text-foreground">★★★★★</div>
-          <blockquote className="editorial-serif text-[clamp(2.25rem,3.25vw,3.75rem)] leading-[1.06] tracking-[-0.018em]">
+          <div className="mb-6 text-[12px] tracking-[0.22em] text-foreground">★★★★★</div>
+          <blockquote className="editorial-serif text-[clamp(2.2rem,3.15vw,3.6rem)] leading-[1.06] tracking-[-0.018em]">
             “{words.map((word, index) => (
               <ReadWord
                 key={`${word}-${index}`}
@@ -50,7 +50,7 @@ const Testimonial = () => {
             ))}”
           </blockquote>
 
-          <div className="mt-9 flex items-center justify-center gap-3 text-left">
+          <div className="mt-8 flex items-center justify-center gap-3 text-left">
             <img
               src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=82"
               alt="Marcus Ellison"
