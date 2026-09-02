@@ -1,115 +1,70 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef, useState } from "react";
-import { Link } from "react-router-dom";
-import { MapPin, Star, ArrowRight } from "lucide-react";
-import { Card } from "./ui/card";
-import { Button } from "./ui/button";
-import { getFeaturedLocations } from "@/data/locations";
-import { useIsMobile } from "@/hooks/use-mobile";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
+const practices = [
+  {
+    title: "Corporate Law",
+    description: "Day-to-day counsel, contracts, governance, and strategic support for growing companies.",
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=85",
+  },
+  {
+    title: "Commercial Litigation",
+    description: "Clear, decisive representation when business disputes become high-stakes.",
+    image: "https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1200&q=85",
+  },
+  {
+    title: "Regulatory & Compliance",
+    description: "Practical guidance through complex obligations, risk, and regulatory change.",
+    image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85",
+  },
+];
 
 const Locations = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
-  const isMobile = useIsMobile();
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  
-  const featuredLocations = getFeaturedLocations();
-
-  const getCardStyle = (index: number) => {
-    const baseRotation = [-4, 0, 4];
-    const baseX = [-280, 0, 280];
-    return { rotate: baseRotation[index], x: baseX[index] };
-  };
-
-  const renderCard = (location: ReturnType<typeof getFeaturedLocations>[number]) => (
-    <Link to={`/location/${location.id}`} className="block">
-      <div className="relative h-48 overflow-hidden">
-        <img src={location.image} alt={location.name} className="w-full h-full object-cover" />
-        <div className="absolute top-3 right-3 bg-card/95 backdrop-blur-sm px-2 py-1 rounded-md flex items-center gap-1">
-          <Star className="h-3 w-3 fill-primary text-primary" />
-          <span className="font-light text-xs">{location.rating}</span>
-        </div>
-      </div>
-      <div className="p-6">
-        <h3 className="text-base font-normal mb-1 text-card-foreground tracking-tight">{location.name}</h3>
-        <div className="flex items-center gap-1 text-muted-foreground mb-4 text-xs font-light">
-          <MapPin className="h-3 w-3" />
-          <span>{location.location}</span>
-        </div>
-        <div className="flex flex-wrap gap-1.5 mb-5">
-          {location.features.map((feature) => (
-            <span key={feature} className="text-[10px] uppercase tracking-wide px-2 py-1 bg-accent text-accent-foreground rounded-sm font-light">{feature}</span>
-          ))}
-        </div>
-        <div className="flex items-center justify-between">
-          <div>
-            <span className="text-xl font-light text-foreground">${location.price}</span>
-            <span className="text-muted-foreground text-xs font-light">/night</span>
-          </div>
-          <Button variant="ghost" size="sm" className="text-primary hover:text-primary/80 text-xs font-light">
-            View Details
-            <ArrowRight className="ml-1 h-3 w-3" />
-          </Button>
-        </div>
-      </div>
-    </Link>
-  );
+  const isInView = useInView(ref, { once: true, amount: 0.15 });
 
   return (
-    <section id="locations" className="py-32 lg:py-40 bg-background" ref={ref}>
+    <section id="practice" ref={ref} className="bg-background py-28 md:py-36 lg:py-44">
       <div className="container mx-auto px-6 lg:px-12">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.75 }}
+          className="mb-14 grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end"
         >
-          <span className="text-[11px] uppercase tracking-wider text-muted-foreground mb-4 block">
-            Our Locations
-          </span>
-          <h2 className="text-2xl md:text-3xl font-light mb-4 text-foreground tracking-tight">
-            Featured Spots
-          </h2>
-          <p className="text-sm text-muted-foreground max-w-md mx-auto font-light">
-            Handpicked spots where nature's beauty meets sustainable comfort
+          <div>
+            <span className="mb-5 block text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Areas of Practice</span>
+            <h2 className="editorial-serif max-w-2xl text-4xl font-normal leading-[0.98] tracking-tight md:text-5xl lg:text-6xl">
+              Counsel across<br />every stage of growth.
+            </h2>
+          </div>
+          <p className="max-w-sm text-sm leading-6 text-muted-foreground lg:pb-1">
+            Focused expertise across the matters that shape a growing business — from formation and transactions to disputes and ongoing counsel.
           </p>
         </motion.div>
 
-        {isMobile ? (
-          <div className="flex flex-col gap-6 w-full overflow-hidden">
-            {featuredLocations.map((location, index) => (
-              <div key={location.id} className="w-full">
-                <Card className="overflow-hidden border border-border bg-card shadow-lg w-full">
-                  {renderCard(location)}
-                </Card>
+        <div className="grid gap-3 md:grid-cols-3">
+          {practices.map((practice, index) => (
+            <motion.article
+              key={practice.title}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7, delay: index * 0.09 }}
+              className="group relative min-h-[390px] overflow-hidden bg-neutral-900"
+            >
+              <img
+                src={practice.image}
+                alt=""
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-black/5" />
+              <div className="absolute inset-x-0 bottom-0 p-6 text-white">
+                <h3 className="editorial-serif mb-2 text-2xl">{practice.title}</h3>
+                <p className="max-w-xs text-xs leading-5 text-white/72">{practice.description}</p>
               </div>
-            ))}
-          </div>
-        ) : (
-          <div className="relative flex justify-center items-center h-[500px]">
-            {featuredLocations.map((location, index) => {
-              const isHovered = hoveredIndex === index;
-              const cardStyle = getCardStyle(index);
-              return (
-                <motion.div
-                  key={location.id}
-                  initial={{ opacity: 0, y: 50, ...cardStyle }}
-                  animate={isInView ? { opacity: 1, y: isHovered ? -20 : 0, rotate: isHovered ? 0 : cardStyle.rotate, x: cardStyle.x, scale: isHovered ? 1.05 : 1, zIndex: isHovered ? 50 : 10 - Math.abs(index - 1) } : {}}
-                  transition={{ duration: 0.4, delay: isInView && !hoveredIndex ? index * 0.15 : 0, ease: "easeOut" }}
-                  onMouseEnter={() => setHoveredIndex(index)}
-                  onMouseLeave={() => setHoveredIndex(null)}
-                  className="absolute w-[320px] cursor-pointer"
-                  style={{ zIndex: isHovered ? 50 : 10 - Math.abs(index - 1) }}
-                >
-                  <Card className={`overflow-hidden border border-border bg-card transition-shadow duration-300 ${isHovered ? 'shadow-2xl' : 'shadow-lg'}`}>
-                    {renderCard(location)}
-                  </Card>
-                </motion.div>
-              );
-            })}
-          </div>
-        )}
+            </motion.article>
+          ))}
+        </div>
       </div>
     </section>
   );
