@@ -25,7 +25,7 @@ const Locations = () => {
 
   return (
     <section id="practice" ref={ref} className="flex min-h-[100svh] items-center bg-background py-20 md:py-24 lg:py-28">
-      <div className="mx-auto w-full max-w-[1240px] px-6 md:px-10 lg:px-12">
+      <div className="site-shell w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
