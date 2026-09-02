@@ -33,7 +33,7 @@ const Navigation = () => {
       transition={{ duration: 0.7 }}
       className={`fixed inset-x-0 top-0 z-[100] transition-colors duration-500 ${open ? "bg-[#171717]" : scrolled ? "bg-background/92 backdrop-blur-xl" : "bg-transparent"}`}
     >
-      <div className="container mx-auto px-6 py-5 lg:px-12">
+      <div className="site-shell py-5">
         <div className="flex items-center justify-between">
           <button type="button" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className={`flex items-center gap-2 ${dark ? "text-white" : "text-foreground"}`}>
             <Scale className="h-4 w-4" />
