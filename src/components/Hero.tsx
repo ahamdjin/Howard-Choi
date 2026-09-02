@@ -159,10 +159,10 @@ const Hero = () => {
                 <ArrowRight className="relative z-10 h-4 w-4" />
               </button>
               <a
-                href="tel:+12125550148"
+                href="tel:+17146900007"
                 className="text-[13px] text-[#f3eee5]/82 transition-opacity hover:opacity-70 md:text-sm"
               >
-                Or call (+1) 212 555 0148
+                Or call (+1) 714-690-0007
               </a>
             </motion.div>
 
