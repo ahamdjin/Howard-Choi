@@ -46,6 +46,10 @@ const Experience = () => {
     return () => window.clearTimeout(timer);
   }, [active, isInView]);
 
+  const rowTemplate = steps
+    .map((_, index) => (index === active ? "2.2fr" : "1fr"))
+    .join(" ");
+
   return (
     <section
       id="approach"
@@ -59,13 +63,13 @@ const Experience = () => {
           transition={{ duration: 0.72 }}
           className="max-w-[620px]"
         >
-          <span className="editorial-serif mb-5 block text-[15px] font-semibold leading-none text-foreground">
+          <span className="mb-5 block text-[15px] font-semibold leading-none text-foreground">
             How we work
           </span>
-          <h2 className="editorial-serif text-[clamp(3.15rem,4.3vw,4.25rem)] leading-[0.96] tracking-[-0.02em]">
+          <h2 className="editorial-serif text-[clamp(3.15rem,4.3vw,4.25rem)] leading-[0.96] tracking-[-0.025em]">
             A Clear path forward.
           </h2>
-          <p className="editorial-serif mt-5 max-w-[500px] text-[clamp(1.15rem,1.6vw,1.42rem)] leading-[1.22] text-foreground/60">
+          <p className="mt-5 max-w-[500px] text-[clamp(1.08rem,1.5vw,1.32rem)] leading-[1.28] text-foreground/58">
             From first conversation to resolved matter<br className="hidden sm:block" /> and nothing left to guess at.
           </p>
         </motion.div>
@@ -82,26 +86,29 @@ const Experience = () => {
                 key={steps[active].image}
                 src={steps[active].image}
                 alt={`${steps[active].title} legal process`}
-                initial={{ opacity: 0, scale: 1.02, filter: "blur(4px)" }}
+                initial={{ opacity: 0, scale: 1.018, filter: "blur(3px)" }}
                 animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.62, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }}
                 className="absolute inset-0 h-full w-full object-cover"
               />
             </AnimatePresence>
-            <div className="absolute inset-0 bg-black/[0.08]" />
+            <div className="absolute inset-0 bg-black/[0.06]" />
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, x: 16 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.09 }}
-            className="grid gap-3 lg:h-full"
-            style={{
-              gridTemplateRows: steps
-                .map((_, index) => (index === active ? "2.2fr" : "1fr"))
-                .join(" "),
+            animate={{
+              opacity: isInView ? 1 : 0,
+              x: isInView ? 0 : 16,
+              gridTemplateRows: rowTemplate,
             }}
+            transition={{
+              opacity: { duration: 0.8, delay: 0.09 },
+              x: { duration: 0.8, delay: 0.09 },
+              gridTemplateRows: { duration: 0.62, ease: [0.22, 1, 0.36, 1] },
+            }}
+            className="grid h-[560px] min-h-0 gap-3 lg:h-full"
           >
             {steps.map((step, index) => {
               const open = active === index;
@@ -110,23 +117,23 @@ const Experience = () => {
                 <motion.article
                   key={step.title}
                   layout
-                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  className="relative min-h-[94px] overflow-hidden rounded-[4px] bg-[#e6e4e1]"
+                  transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                  className="relative min-h-0 overflow-hidden rounded-[4px] bg-[#e6e4e1]"
                 >
                   <button
                     type="button"
                     onClick={() => setActive(index)}
-                    className="flex h-full w-full flex-col px-7 py-6 text-left md:px-8"
+                    className="flex h-full w-full min-h-0 flex-col px-7 py-6 text-left md:px-8"
                     aria-expanded={open}
                   >
                     <div className="flex w-full items-start justify-between gap-6">
-                      <span className="editorial-serif text-[clamp(2.2rem,3vw,3rem)] leading-none tracking-[-0.02em]">
+                      <span className="editorial-serif text-[clamp(2rem,2.75vw,2.75rem)] leading-none tracking-[-0.02em]">
                         {step.title}
                       </span>
                       {open ? (
-                        <X className="mt-1 h-5 w-5 shrink-0 stroke-[1.7]" />
+                        <X className="mt-1 h-5 w-5 shrink-0 stroke-[1.65]" />
                       ) : (
-                        <Plus className="mt-1 h-5 w-5 shrink-0 stroke-[1.7]" />
+                        <Plus className="mt-1 h-5 w-5 shrink-0 stroke-[1.65]" />
                       )}
                     </div>
 
@@ -136,14 +143,14 @@ const Experience = () => {
                           initial={{ opacity: 0, y: 8 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -4 }}
-                          transition={{ duration: 0.28, delay: 0.04 }}
+                          transition={{ duration: 0.3, delay: 0.05 }}
                           className="mt-auto max-w-[470px] pt-5"
                         >
-                          <p className="text-[15px] leading-6 text-foreground/90">{step.body}</p>
+                          <p className="text-[15px] leading-6 text-foreground/88">{step.body}</p>
                           <div className="mt-4 space-y-2.5">
                             {step.points.map((point) => (
-                              <div key={point} className="flex items-center gap-3 text-[13px] text-foreground/70">
-                                <Check className="h-4 w-4 shrink-0 stroke-[1.7]" />
+                              <div key={point} className="flex items-center gap-3 text-[13px] text-foreground/68">
+                                <Check className="h-4 w-4 shrink-0 stroke-[1.65]" />
                                 <span>{point}</span>
                               </div>
                             ))}
