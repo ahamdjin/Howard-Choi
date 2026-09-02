@@ -117,7 +117,7 @@ const Hero = () => {
         style={shouldReduceMotion ? undefined : { opacity: contentOpacity, filter: contentFilter, y: contentY }}
       >
         <div className="site-shell pb-24 md:pb-28">
-          <div className="max-w-[680px] text-[#f3eee5]">
+          <div className="max-w-[700px] text-[#f3eee5]">
             <motion.p
               initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
@@ -131,7 +131,7 @@ const Hero = () => {
               initial={shouldReduceMotion ? false : { opacity: 0, y: 16, filter: "blur(9px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               transition={{ delay: 0.27, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-              className="editorial-serif text-[clamp(3.35rem,5.2vw,5.35rem)] leading-[0.91] tracking-[-0.025em] text-[#f3eee5]"
+              className="editorial-serif text-[clamp(3rem,4.5vw,4.75rem)] leading-[0.93] tracking-[-0.024em] text-[#f3eee5]"
             >
               Discreet counsel for high-stakes matters.
             </motion.h1>
