@@ -17,7 +17,7 @@ const FAQ = () => {
 
   return (
     <section id="faq" ref={ref} className="bg-background pb-28 md:pb-36 lg:pb-44">
-      <div className="container mx-auto px-6 lg:px-12">
+      <div className="site-shell">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
