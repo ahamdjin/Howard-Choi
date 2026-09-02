@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import brandLogo from "@/assets/law-firm/howard-choi-logo.png";
+import brandLogo from "@/assets/law-firm/howard-choi-mark.webp";
 
 const navItems = [
   ["Practice", "#practice"],
@@ -16,7 +16,7 @@ const Navigation = () => {
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     onScroll();
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -41,7 +41,10 @@ const Navigation = () => {
               <img
                 src={brandLogo}
                 alt=""
-                className={`h-full w-full scale-[1.65] object-cover transition-[filter] duration-500 ${dark ? "" : "invert"}`}
+                width={28}
+                height={28}
+                decoding="async"
+                className={`h-full w-full object-cover transition-[filter] duration-500 ${dark ? "" : "invert"}`}
               />
             </span>
             <span className="text-sm font-medium tracking-tight">Howard Choi Law</span>
