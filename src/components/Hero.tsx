@@ -68,18 +68,18 @@ const Hero = () => {
   }, [nextSlide]);
 
   const transitionEnd = viewportHeight * 0.95;
-  const imageScale = useTransform(scrollY, [0, transitionEnd], [1, 1.075]);
+  const imageScale = useTransform(scrollY, [0, transitionEnd], [1, 1.07]);
   const imageFilter = useTransform(scrollY, [0, transitionEnd], ["blur(0px)", "blur(3.5px)"]);
-  const imageY = useTransform(scrollY, [0, transitionEnd], ["0%", "-1.5%"]);
-  const shadeOpacity = useTransform(scrollY, [0, transitionEnd], [0.43, 0.56]);
+  const imageY = useTransform(scrollY, [0, transitionEnd], ["0%", "-1.25%"]);
+  const shadeOpacity = useTransform(scrollY, [0, transitionEnd], [0.42, 0.56]);
   const contentOpacity = useTransform(scrollY, [0, transitionEnd * 0.72], [1, 0]);
   const contentFilter = useTransform(scrollY, [0, transitionEnd * 0.72], ["blur(0px)", "blur(9px)"]);
-  const contentY = useTransform(scrollY, [0, transitionEnd * 0.72], [0, -24]);
+  const contentY = useTransform(scrollY, [0, transitionEnd * 0.72], [0, -22]);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-black">
+    <section className="relative h-[100svh] min-h-[680px] w-full overflow-hidden bg-black">
       <motion.div
-        initial={shouldReduceMotion ? false : { opacity: 0.72, scale: 1.045, filter: "blur(10px)" }}
+        initial={shouldReduceMotion ? false : { opacity: 0.72, scale: 1.04, filter: "blur(10px)" }}
         animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
         transition={{ duration: 1.35, ease: [0.22, 1, 0.36, 1] }}
         className="absolute inset-0"
@@ -105,105 +105,111 @@ const Hero = () => {
 
       <motion.div
         className="absolute inset-0 bg-black"
-        style={shouldReduceMotion ? { opacity: 0.43 } : { opacity: shadeOpacity }}
+        style={shouldReduceMotion ? { opacity: 0.42 } : { opacity: shadeOpacity }}
       />
 
       <motion.div
-        className="absolute bottom-20 left-6 z-10 max-w-3xl text-white md:left-12 lg:left-16"
+        className="absolute inset-0 z-10 flex items-end"
         style={shouldReduceMotion ? undefined : { opacity: contentOpacity, filter: contentFilter, y: contentY }}
       >
-        <motion.p
-          initial={shouldReduceMotion ? false : { opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.7 }}
-          className="mb-5 text-sm font-medium tracking-[-0.01em] text-white/90 md:text-base"
-        >
-          Business &amp; Litigation Counsel
-        </motion.p>
+        <div className="mx-auto w-full max-w-[1240px] px-6 pb-24 md:px-10 md:pb-28 lg:px-12">
+          <div className="max-w-[680px]">
+            <motion.p
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.18, duration: 0.7 }}
+              className="mb-4 text-[13px] font-medium tracking-[-0.01em] text-white/90 md:text-sm"
+            >
+              Business &amp; Litigation Counsel
+            </motion.p>
 
-        <motion.h1
-          initial={shouldReduceMotion ? false : { opacity: 0, y: 18, filter: "blur(10px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ delay: 0.3, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="editorial-serif max-w-3xl text-4xl font-normal leading-[1.02] tracking-[-0.035em] sm:text-5xl md:text-6xl lg:text-[4.4rem]"
-        >
-          Discreet counsel for high-stakes matters.
-        </motion.h1>
+            <motion.h1
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 16, filter: "blur(9px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{ delay: 0.27, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+              className="editorial-serif text-[clamp(3.35rem,5.2vw,5.35rem)] leading-[0.91] text-white"
+            >
+              Discreet counsel for high-stakes matters.
+            </motion.h1>
 
-        <motion.p
-          initial={shouldReduceMotion ? false : { opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.44, duration: 0.7 }}
-          className="mt-5 max-w-xl text-base font-light leading-7 text-white/78 md:text-lg"
-        >
-          Corporate, litigation, and regulatory counsel for founders and businesses when the decisions cannot wait.
-        </motion.p>
+            <motion.p
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.7 }}
+              className="mt-5 max-w-[560px] text-[15px] font-light leading-6 text-white/76 md:text-base"
+            >
+              Corporate, litigation, and regulatory counsel for founders and businesses when the decisions cannot wait.
+            </motion.p>
 
-        <motion.div
-          initial={shouldReduceMotion ? false : { opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.54, duration: 0.7 }}
-          className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center"
-        >
-          <button
-            onClick={() => document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })}
-            className="inline-flex w-fit items-center gap-3 rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition-transform duration-300 hover:scale-[1.02]"
-          >
-            Schedule a Consultation
-            <ArrowRight className="h-4 w-4" />
-          </button>
-          <a
-            href="tel:+12125550148"
-            className="text-sm text-white/88 transition-opacity hover:opacity-70 md:text-base"
-          >
-            Or call (+1) 212 555 0148
-          </a>
-        </motion.div>
+            <motion.div
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.7 }}
+              className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center"
+            >
+              <button
+                onClick={() => document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })}
+                className="inline-flex w-fit items-center gap-3 rounded-full bg-white px-6 py-3 text-[13px] font-medium text-black transition-transform duration-300 hover:scale-[1.015]"
+              >
+                Schedule a Consultation
+                <ArrowRight className="h-4 w-4" />
+              </button>
+              <a
+                href="tel:+12125550148"
+                className="text-[13px] text-white/84 transition-opacity hover:opacity-70 md:text-sm"
+              >
+                Or call (+1) 212 555 0148
+              </a>
+            </motion.div>
 
-        <motion.div
-          initial={shouldReduceMotion ? false : { opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.66, duration: 0.7 }}
-          className="mt-8 flex items-center gap-4"
-        >
-          <div className="flex -space-x-2.5">
-            {reviewAvatars.map((avatar, index) => (
-              <img
-                key={avatar}
-                src={avatar}
-                alt={`Client review ${index + 1}`}
-                className="h-10 w-10 rounded-full border-2 border-white object-cover"
-              />
-            ))}
+            <motion.div
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.62, duration: 0.7 }}
+              className="mt-7 flex items-center gap-3"
+            >
+              <div className="flex -space-x-2">
+                {reviewAvatars.map((avatar, index) => (
+                  <img
+                    key={avatar}
+                    src={avatar}
+                    alt={`Client review ${index + 1}`}
+                    className="h-9 w-9 rounded-full border-2 border-white object-cover"
+                  />
+                ))}
+              </div>
+              <div>
+                <div className="text-[13px] leading-none tracking-[0.12em] text-white">★★★★★</div>
+                <p className="mt-1 text-[12px] text-white/72">4.9/5 from 120+ client reviews</p>
+              </div>
+            </motion.div>
           </div>
-          <div>
-            <div className="text-[15px] leading-none tracking-[0.12em] text-white">★★★★★</div>
-            <p className="mt-1 text-sm text-white/78">4.9/5 from 120+ client reviews</p>
-          </div>
-        </motion.div>
+        </div>
       </motion.div>
 
       <motion.div
-        className="absolute bottom-7 left-6 right-6 z-10 flex gap-2 md:left-12 md:right-12 lg:left-16 lg:right-16"
+        className="absolute bottom-6 left-1/2 z-20 w-full max-w-[1240px] -translate-x-1/2 px-6 md:px-10 lg:px-12"
         style={shouldReduceMotion ? undefined : { opacity: contentOpacity }}
       >
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            type="button"
-            onClick={() => {
-              setCurrentSlide(index);
-              setProgress(0);
-            }}
-            className="h-[2px] flex-1 overflow-hidden bg-white/25"
-            aria-label={`Go to slide ${index + 1}`}
-          >
-            <div
-              className="h-full bg-white transition-all duration-100 ease-linear"
-              style={{ width: index === currentSlide ? `${progress}%` : index < currentSlide ? "100%" : "0%" }}
-            />
-          </button>
-        ))}
+        <div className="flex gap-2">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              type="button"
+              onClick={() => {
+                setCurrentSlide(index);
+                setProgress(0);
+              }}
+              className="h-px flex-1 overflow-hidden bg-white/30"
+              aria-label={`Go to slide ${index + 1}`}
+            >
+              <div
+                className="h-full bg-white transition-all duration-100 ease-linear"
+                style={{ width: index === currentSlide ? `${progress}%` : index < currentSlide ? "100%" : "0%" }}
+              />
+            </button>
+          ))}
+        </div>
       </motion.div>
     </section>
   );
