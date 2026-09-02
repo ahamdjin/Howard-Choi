@@ -1,21 +1,27 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import commercialLitigationImage from "@/assets/law-firm/practice-commercial-litigation.webp";
+import corporateLawImage from "@/assets/law-firm/practice-corporate-law.webp";
+import regulatoryComplianceImage from "@/assets/law-firm/practice-regulatory-compliance.webp";
 
 const practices = [
   {
     title: "Corporate Law",
     description: "Day-to-day counsel, contracts, governance, and strategic support for growing companies.",
-    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=85",
+    image: corporateLawImage,
+    alt: "Attorney reviewing a corporate agreement",
   },
   {
     title: "Commercial Litigation",
     description: "Clear, decisive representation when business disputes become high-stakes.",
-    image: "https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1200&q=85",
+    image: commercialLitigationImage,
+    alt: "Commercial litigation counsel reviewing a case file",
   },
   {
     title: "Regulatory & Compliance",
     description: "Practical guidance through complex obligations, risk, and regulatory change.",
-    image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85",
+    image: regulatoryComplianceImage,
+    alt: "Legal advisers discussing a regulatory matter",
   },
 ];
 
@@ -54,7 +60,7 @@ const Locations = () => {
             >
               <img
                 src={practice.image}
-                alt=""
+                alt={practice.alt}
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-black/5" />

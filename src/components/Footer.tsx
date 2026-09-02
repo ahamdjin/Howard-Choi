@@ -1,4 +1,4 @@
-import { Scale } from "lucide-react";
+import brandMark from "@/assets/law-firm/howard-choi-mark.webp";
 
 const Footer = () => {
   return (
@@ -7,7 +7,9 @@ const Footer = () => {
         <div className="grid gap-12 border-b border-black/10 pb-16 md:grid-cols-4 lg:gap-16">
           <div>
             <div className="mb-5 flex items-center gap-2">
-              <Scale className="h-4 w-4" />
+              <span className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-[2px] bg-black">
+                <img src={brandMark} alt="" className="h-full w-full scale-[1.65] object-cover" />
+              </span>
               <span className="text-[15px] font-medium">Howard Choi Law</span>
             </div>
             <p className="max-w-xs text-[13px] leading-6 text-muted-foreground">

@@ -7,23 +7,27 @@ import {
   useTransform,
 } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import heroCityBoardroom from "@/assets/law-firm/hero-city-boardroom.webp";
+import heroCourthouse from "@/assets/law-firm/hero-courthouse.webp";
+import heroJusticeLibrary from "@/assets/law-firm/hero-justice-library.webp";
+import heroLawOffice from "@/assets/law-firm/hero-law-office.webp";
 
 const slides = [
   {
-    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1800&q=88",
-    alt: "Legal documents on a desk",
+    image: heroLawOffice,
+    alt: "Traditional law office and desk",
   },
   {
-    image: "https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1800&q=88",
-    alt: "Business handshake",
+    image: heroCourthouse,
+    alt: "Courthouse interior",
   },
   {
-    image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1800&q=88",
-    alt: "Professional team meeting",
+    image: heroJusticeLibrary,
+    alt: "Scales of justice in a law library",
   },
   {
-    image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=88",
-    alt: "Modern professional office",
+    image: heroCityBoardroom,
+    alt: "Law firm boardroom overlooking the city",
   },
 ];
 

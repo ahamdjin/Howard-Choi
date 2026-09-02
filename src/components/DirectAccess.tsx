@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import leadCounselImage from "@/assets/law-firm/lead-counsel.avif";
 
 const DirectAccess = () => {
   const ref = useRef(null);
@@ -41,8 +42,8 @@ const DirectAccess = () => {
           className="ml-auto w-full overflow-hidden rounded-[2px] lg:h-[72svh] lg:max-h-[760px] lg:min-h-[560px]"
         >
           <img
-            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1400&q=88"
-            alt="Attorney portrait"
+            src={leadCounselImage}
+            alt="Lead counsel in her office"
             className="aspect-[4/5] h-full w-full object-cover object-center grayscale-[15%] lg:aspect-auto"
           />
         </motion.div>

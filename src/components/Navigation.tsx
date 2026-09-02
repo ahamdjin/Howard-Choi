@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, Scale, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import brandMark from "@/assets/law-firm/howard-choi-mark.webp";
 
 const navItems = [
   ["Practice", "#practice"],
@@ -36,7 +37,9 @@ const Navigation = () => {
       <div className="site-shell py-5">
         <div className="flex items-center justify-between">
           <button type="button" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className={`flex items-center gap-2 ${dark ? "text-white" : "text-foreground"}`}>
-            <Scale className="h-4 w-4" />
+            <span className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-[2px] bg-black">
+              <img src={brandMark} alt="" className="h-full w-full scale-[1.65] object-cover" />
+            </span>
             <span className="text-sm font-medium tracking-tight">Howard Choi Law</span>
           </button>
 
