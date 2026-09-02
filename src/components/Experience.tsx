@@ -1,102 +1,77 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { AnimatePresence, motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Leaf, Wifi, Droplets, Sun } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
 
-const features = [
-  {
-    icon: Leaf,
-    title: "100% Off-Grid",
-    description: "Completely sustainable living with solar power and composting systems",
-    videoUrl: "https://videos.pexels.com/video-files/4460100/4460100-hd_1920_1080_30fps.mp4",
-  },
-  {
-    icon: Wifi,
-    title: "Digital Detox",
-    description: "No wifi, no signal - just pure connection with nature and yourself",
-    videoUrl: "https://videos.pexels.com/video-files/4280450/4280450-hd_1920_1080_30fps.mp4",
-  },
-  {
-    icon: Droplets,
-    title: "Natural Water",
-    description: "Fresh spring water and eco-friendly facilities for your comfort",
-    videoUrl: "https://videos.pexels.com/video-files/5487781/5487781-hd_1920_1080_30fps.mp4",
-  },
-  {
-    icon: Sun,
-    title: "Scenic Views",
-    description: "Wake up to breathtaking sunrises in untouched wilderness",
-    videoUrl: "https://videos.pexels.com/video-files/4460098/4460098-hd_1920_1080_30fps.mp4",
-  },
+const steps = [
+  { title: "Consult", body: "We start by understanding the matter, the commercial context, and what a good outcome actually looks like." },
+  { title: "Strategy", body: "You get a clear plan: priorities, risks, options, and the practical path forward." },
+  { title: "Resolution", body: "We move the matter forward with focused execution and direct communication." },
+  { title: "Ongoing Counsel", body: "When the relationship continues, you keep direct access without layers of hand-offs." },
 ];
 
 const Experience = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.15 });
+  const [active, setActive] = useState(0);
 
   return (
-    <section id="experience" className="py-32 lg:py-40 bg-secondary/30" ref={ref}>
+    <section id="approach" ref={ref} className="bg-background pb-28 md:pb-36 lg:pb-44">
       <div className="container mx-auto px-6 lg:px-12">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          transition={{ duration: 0.75 }}
+          className="mb-12 max-w-xl"
         >
-          <span className="text-[11px] uppercase tracking-wider text-muted-foreground mb-4 block">
-            The Experience
-          </span>
-          <h2 className="text-2xl md:text-3xl font-light mb-4 text-foreground tracking-tight">
-            Simplicity Meets Comfort
-          </h2>
-          <p className="text-sm text-muted-foreground max-w-md mx-auto font-light">
-            Embrace simplicity without sacrificing comfort
-          </p>
+          <span className="mb-4 block text-[10px] uppercase tracking-[0.2em] text-muted-foreground">How we work</span>
+          <h2 className="editorial-serif mb-4 text-4xl leading-none md:text-5xl">A clear path forward.</h2>
+          <p className="max-w-md text-sm leading-6 text-muted-foreground">From the first conversation to resolution, the process stays clear, direct, and deliberate.</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-6">
-          {features.map((feature, index) => {
-            const Icon = feature.icon;
-            const isHovered = hoveredIndex === index;
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 0, scale: 1 }}
-                animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0 }}
-                whileHover={{ y: -4, scale: 1.01 }}
-                transition={{ duration: 0.3 }}
-                onHoverStart={() => setHoveredIndex(index)}
-                onHoverEnd={() => setHoveredIndex(null)}
-                className="relative overflow-hidden bg-white/60 backdrop-blur-md border border-white/80 rounded-lg p-6 group hover:bg-black/50 hover:shadow-xl hover:shadow-primary/5 cursor-pointer"
-              >
-                {/* Video Background */}
-                <video
-                  src={feature.videoUrl}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-30 transition-opacity duration-500 z-0"
-                />
-                
-                {/* Content */}
-                <div className="relative z-10 flex items-center gap-5">
-                  <div className="flex-shrink-0 inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 group-hover:bg-white/20 transition-colors duration-300">
-                    <Icon className="h-5 w-5 text-primary group-hover:text-white transition-colors duration-300" />
-                  </div>
-                  <div className="flex flex-col">
-                    <h3 className="text-sm font-normal mb-1 text-foreground group-hover:text-white tracking-tight transition-colors duration-300">
-                      {feature.title}
-                    </h3>
-                    <p className="text-xs text-muted-foreground group-hover:text-white/90 leading-relaxed font-light transition-colors duration-300">
-                      {feature.description}
-                    </p>
-                  </div>
+        <div className="grid gap-4 lg:grid-cols-[1.05fr_0.95fr]">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.08 }}
+            className="min-h-[520px] overflow-hidden bg-neutral-200"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1400&q=85"
+              alt="Counsel in discussion"
+              className="h-full w-full object-cover"
+            />
+          </motion.div>
+
+          <div className="bg-[#e9e7e4]">
+            {steps.map((step, index) => {
+              const open = active === index;
+              return (
+                <div key={step.title} className="border-b border-black/10 last:border-b-0">
+                  <button
+                    type="button"
+                    onClick={() => setActive(index)}
+                    className="flex w-full items-center justify-between px-6 py-5 text-left"
+                  >
+                    <span className="editorial-serif text-2xl">{step.title}</span>
+                    {open ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {open && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                      >
+                        <p className="px-6 pb-6 text-sm leading-6 text-muted-foreground">{step.body}</p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
-              </motion.div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
