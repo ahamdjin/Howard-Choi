@@ -112,7 +112,7 @@ const Hero = () => {
         className="absolute inset-0 z-10 flex items-end"
         style={shouldReduceMotion ? undefined : { opacity: contentOpacity, filter: contentFilter, y: contentY }}
       >
-        <div className="mx-auto w-full max-w-[1240px] px-6 pb-24 md:px-10 md:pb-28 lg:px-12">
+        <div className="site-shell pb-24 md:pb-28">
           <div className="max-w-[680px]">
             <motion.p
               initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }}
@@ -188,10 +188,10 @@ const Hero = () => {
       </motion.div>
 
       <motion.div
-        className="absolute bottom-6 left-1/2 z-20 w-full max-w-[1240px] -translate-x-1/2 px-6 md:px-10 lg:px-12"
+        className="absolute inset-x-0 bottom-6 z-20"
         style={shouldReduceMotion ? undefined : { opacity: contentOpacity }}
       >
-        <div className="flex gap-2">
+        <div className="site-shell flex gap-2">
           {slides.map((_, index) => (
             <button
               key={index}
