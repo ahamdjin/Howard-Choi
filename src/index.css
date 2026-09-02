@@ -89,38 +89,57 @@
     position: relative;
     isolation: isolate;
     overflow: hidden;
-    border: 1px solid rgba(243, 238, 229, 0.76);
+    border: 1px solid rgba(243, 238, 229, 0.78);
     background: #f3eee5;
     color: #2a241f;
     transition:
-      color 480ms cubic-bezier(0.22, 1, 0.36, 1),
+      color 420ms cubic-bezier(0.22, 1, 0.36, 1),
       transform 320ms cubic-bezier(0.22, 1, 0.36, 1),
       border-color 320ms ease;
   }
 
-  .liquid-cta::before {
+  .liquid-cta::before,
+  .liquid-cta::after {
     content: "";
     position: absolute;
+    left: 50%;
     z-index: 0;
-    top: 100%;
-    left: -12%;
-    width: 124%;
-    height: 180%;
-    border-radius: 48% 52% 0 0 / 18% 18% 0 0;
+    width: 145%;
+    height: 240%;
+    bottom: -242%;
+    transform: translateX(-50%) rotate(0deg);
+    transform-origin: 50% 50%;
+    border-radius: 46% 54% 44% 56% / 52% 42% 58% 48%;
+    transition: transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+  }
+
+  .liquid-cta::before {
     background: #2b241e;
-    transform: translateY(0) rotate(-1deg);
-    transition: transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .liquid-cta::after {
+    width: 132%;
+    height: 225%;
+    bottom: -232%;
+    background: #40352c;
+    opacity: 0.92;
+    transition-duration: 820ms;
   }
 
   @media (hover: hover) {
     .liquid-cta:hover {
       color: #f3eee5;
-      border-color: #f3eee5;
+      border-color: rgba(243, 238, 229, 0.95);
       transform: translateY(-1px);
     }
 
     .liquid-cta:hover::before {
-      transform: translateY(-58%) rotate(0deg);
+      transform: translate(-50%, -83%) rotate(5deg);
+    }
+
+    .liquid-cta:hover::after {
+      transform: translate(-50%, -78%) rotate(-6deg);
     }
   }
 
