@@ -45,9 +45,9 @@ const SmoothScroll = () => {
 
     const animate = () => {
       const distance = target - current;
-      current += distance * 0.115;
+      current += distance * 0.095;
 
-      if (Math.abs(distance) < 0.28) {
+      if (Math.abs(distance) < 0.24) {
         current = target;
         window.scrollTo(0, current);
         animating = false;
@@ -66,11 +66,11 @@ const SmoothScroll = () => {
       if (event.deltaMode === WheelEvent.DOM_DELTA_LINE) delta *= 16;
       if (event.deltaMode === WheelEvent.DOM_DELTA_PAGE) delta *= window.innerHeight;
 
-      delta = Math.max(-150, Math.min(150, delta));
+      delta = Math.max(-165, Math.min(165, delta));
       if (Math.abs(delta) < 0.01) return;
 
       event.preventDefault();
-      target += delta * 0.9;
+      target += delta * 0.96;
       clampTarget();
 
       if (!animating) {
