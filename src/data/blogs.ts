@@ -16,6 +16,7 @@ export type BlogPost = {
   image: string;
   alt: string;
   intro: string;
+  takeaway: string;
   sections: BlogSection[];
 };
 
@@ -32,6 +33,8 @@ export const blogPosts: BlogPost[] = [
     alt: "Private law office with a desk and legal books",
     intro:
       "Not every disagreement needs a lawyer on day one. But waiting too long can narrow options, weaken leverage, or allow a manageable issue to become expensive. The useful question is not whether a disagreement feels serious — it is whether the business position is beginning to change.",
+    takeaway:
+      "The earlier you understand your contractual position, the more options you usually preserve.",
     sections: [
       {
         heading: "Watch the position, not the temperature",
@@ -68,6 +71,8 @@ export const blogPosts: BlogPost[] = [
     alt: "Dark law firm boardroom overlooking the city",
     intro:
       "A commercial agreement is rarely just a price and a signature. The provisions that matter most often appear in the parts nobody expects to use: termination, liability, ownership, renewal, and dispute mechanics.",
+    takeaway:
+      "A contract should be read as an operating system for the relationship, not simply a document to sign.",
     sections: [
       {
         heading: "Understand how you get out",
