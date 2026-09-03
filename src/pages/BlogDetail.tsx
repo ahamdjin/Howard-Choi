@@ -1,14 +1,21 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { useRef } from "react";
 import { Link, useParams } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { blogPosts, getBlogBySlug } from "@/data/blogs";
+import brandMark from "@/assets/law-firm/howard-choi-mark.webp";
 
 const BlogDetail = () => {
   const { slug } = useParams();
   const post = slug ? getBlogBySlug(slug) : undefined;
+  const articleRef = useRef<HTMLElement | null>(null);
   const { scrollY } = useScroll();
+  const { scrollYProgress } = useScroll({
+    target: articleRef,
+    offset: ["start start", "end end"],
+  });
   const imageY = useTransform(scrollY, [0, 1000], [0, 130]);
   const imageScale = useTransform(scrollY, [0, 1000], [1, 1.025]);
 
@@ -31,7 +38,13 @@ const BlogDetail = () => {
     <div className="min-h-screen overflow-x-clip bg-background">
       <Navigation />
 
-      <article className="relative">
+      <motion.div
+        aria-hidden="true"
+        className="fixed inset-x-0 top-0 z-[120] h-[2px] origin-left bg-[#8b7864]"
+        style={{ scaleX: scrollYProgress }}
+      />
+
+      <article ref={articleRef} className="relative">
         <header className="sticky top-0 flex h-[66svh] min-h-[540px] items-end overflow-hidden bg-[#17130f] text-[#f3eee5]">
           <motion.img
             src={post.image}
@@ -68,43 +81,123 @@ const BlogDetail = () => {
         </header>
 
         <div className="relative z-10 bg-background">
-          <div className="site-shell py-16 md:py-20 lg:py-24">
-            <div className="mx-auto max-w-[790px]">
-              <motion.p
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.68 }}
-                className="editorial-serif border-b border-foreground/12 pb-10 text-[clamp(1.55rem,2.15vw,2.1rem)] leading-[1.18] tracking-[-0.014em] text-foreground/92"
-              >
-                {post.intro}
-              </motion.p>
-
-              <div className="py-12 md:py-14">
-                {post.sections.map((section, index) => (
-                  <motion.section
-                    key={section.heading}
-                    initial={{ opacity: 0, y: 16 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.16 }}
-                    transition={{ duration: 0.62 }}
-                    className="border-b border-foreground/10 py-10 first:pt-0 last:border-b-0 last:pb-0 md:py-12"
-                  >
-                    <div className="mb-4 text-[11px] tracking-[0.12em] text-foreground/38">0{index + 1}</div>
-                    <h2 className="editorial-serif max-w-[700px] text-[clamp(2.15rem,3.1vw,3.25rem)] leading-[0.98] tracking-[-0.022em] text-foreground">
-                      {section.heading}
-                    </h2>
-
-                    <div className="mt-6 max-w-[730px] space-y-6 text-[17px] leading-[1.72] text-foreground/82 md:text-[18px]">
-                      {section.paragraphs.map((paragraph) => (
-                        <p key={paragraph}>{paragraph}</p>
-                      ))}
+          <div className="site-shell py-14 md:py-18 lg:py-22">
+            <div className="mx-auto grid max-w-[1080px] gap-10 lg:grid-cols-[210px_minmax(0,790px)] lg:gap-16 xl:gap-20">
+              <aside className="hidden lg:block">
+                <div className="sticky top-28 border-t border-foreground/14 pt-5">
+                  <div className="text-[10px] uppercase tracking-[0.15em] text-foreground/38">Article</div>
+                  <div className="mt-5 space-y-4 border-b border-foreground/10 pb-6 text-[12px] leading-5">
+                    <div>
+                      <div className="text-foreground/38">Practice</div>
+                      <div className="mt-1 text-foreground/76">{post.category}</div>
                     </div>
-                  </motion.section>
-                ))}
-              </div>
+                    <div>
+                      <div className="text-foreground/38">Published</div>
+                      <div className="mt-1 text-foreground/76">{post.date}</div>
+                    </div>
+                    <div>
+                      <div className="text-foreground/38">Reading time</div>
+                      <div className="mt-1 text-foreground/76">{post.readingTime}</div>
+                    </div>
+                  </div>
 
-              <div className="border-y border-foreground/12 py-7 text-[13px] leading-6 text-foreground/52">
-                This article is general information only and is not legal advice. Specific matters depend on their own facts and applicable law.
+                  <div className="pt-6">
+                    <div className="mb-4 text-[10px] uppercase tracking-[0.15em] text-foreground/38">In this article</div>
+                    <nav className="space-y-3">
+                      {post.sections.map((section, index) => (
+                        <a
+                          key={section.heading}
+                          href={`#article-section-${index + 1}`}
+                          className="group flex gap-3 text-[12px] leading-5 text-foreground/48 transition-colors hover:text-foreground"
+                        >
+                          <span className="text-foreground/26">0{index + 1}</span>
+                          <span>{section.heading}</span>
+                        </a>
+                      ))}
+                    </nav>
+                  </div>
+                </div>
+              </aside>
+
+              <div className="min-w-0">
+                <motion.div
+                  initial={{ opacity: 0, y: 14 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.68 }}
+                >
+                  <div className="mb-5 flex items-center gap-3 text-[11px] text-foreground/42 lg:hidden">
+                    <span>{post.category}</span>
+                    <span>·</span>
+                    <span>{post.readingTime}</span>
+                  </div>
+
+                  <p className="editorial-serif text-[clamp(1.62rem,2.2vw,2.18rem)] leading-[1.17] tracking-[-0.014em] text-foreground/94">
+                    {post.intro}
+                  </p>
+                </motion.div>
+
+                <motion.blockquote
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.35 }}
+                  transition={{ duration: 0.62 }}
+                  className="my-10 rounded-[3px] bg-[#1a1714] px-7 py-8 text-[#f3eee5] md:my-12 md:px-9 md:py-10"
+                >
+                  <div className="mb-5 text-[10px] uppercase tracking-[0.16em] text-[#f3eee5]/38">Key point</div>
+                  <p className="editorial-serif max-w-[680px] text-[clamp(1.8rem,2.65vw,2.65rem)] leading-[1.04] tracking-[-0.018em]">
+                    “{post.takeaway}”
+                  </p>
+                </motion.blockquote>
+
+                <div className="border-t border-foreground/12">
+                  {post.sections.map((section, index) => (
+                    <motion.section
+                      id={`article-section-${index + 1}`}
+                      key={section.heading}
+                      initial={{ opacity: 0, y: 16 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.16 }}
+                      transition={{ duration: 0.62 }}
+                      className="scroll-mt-28 border-b border-foreground/10 py-10 last:border-b-0 md:py-12"
+                    >
+                      <div className="mb-4 flex items-center gap-3">
+                        <span className="text-[11px] tracking-[0.12em] text-foreground/34">0{index + 1}</span>
+                        <span className="h-px w-8 bg-foreground/12" />
+                      </div>
+                      <h2 className="editorial-serif max-w-[700px] text-[clamp(2.05rem,3vw,3.15rem)] leading-[0.98] tracking-[-0.022em] text-foreground">
+                        {section.heading}
+                      </h2>
+
+                      <div className="mt-6 max-w-[730px] space-y-6 text-[17px] leading-[1.75] text-foreground/84 md:text-[18px]">
+                        {section.paragraphs.map((paragraph, paragraphIndex) => (
+                          <p
+                            key={paragraph}
+                            className={index === 0 && paragraphIndex === 0 ? "first-letter:float-left first-letter:mr-2 first-letter:mt-1 first-letter:font-serif first-letter:text-[4.1rem] first-letter:leading-[0.72] first-letter:text-foreground" : undefined}
+                          >
+                            {paragraph}
+                          </p>
+                        ))}
+                      </div>
+                    </motion.section>
+                  ))}
+                </div>
+
+                <div className="mt-10 rounded-[3px] bg-[#e9e6e1] p-7 md:p-8">
+                  <div className="flex items-start gap-4">
+                    <img src={brandMark} alt="" width={42} height={42} loading="lazy" decoding="async" className="h-10 w-10 shrink-0 object-cover invert" />
+                    <div>
+                      <div className="text-[12px] font-medium text-foreground">Howard Choi Law</div>
+                      <div className="mt-1 text-[12px] text-foreground/46">Business &amp; Litigation Counsel</div>
+                      <p className="mt-4 max-w-[590px] text-[13px] leading-6 text-foreground/58">
+                        Practical legal insight for founders, businesses, and private clients navigating consequential decisions.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-8 border-t border-foreground/12 pt-6 text-[12px] leading-5 text-foreground/46">
+                  This article is general information only and is not legal advice. Specific matters depend on their own facts and applicable law.
+                </div>
               </div>
             </div>
           </div>
