@@ -163,7 +163,7 @@ const HeroKo = () => {
         <div className="site-shell pb-24 md:pb-28">
           <div className="max-w-[760px] text-[#f3eee5]">
             <motion.p initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.18, duration: 0.7 }} className="mb-4 text-[13px] font-medium text-[#f3eee5]/88">
-              기업 · 소송 법률자문
+              사고 · 상해 법률상담
             </motion.p>
 
             <motion.h1
@@ -173,11 +173,11 @@ const HeroKo = () => {
               style={koSerif}
               className="text-[clamp(2.75rem,4.2vw,4.35rem)] font-medium leading-[1.12] tracking-[-0.05em] text-[#f3eee5]"
             >
-              중요한 순간을 위한 신중하고 명확한 법률자문.
+              부에나파크 사고 변호사.
             </motion.h1>
 
             <motion.p initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.7 }} className="mt-5 max-w-[590px] text-[15px] leading-7 text-[#f3eee5]/74">
-              기업, 소송, 규제 문제에서 창업자와 기업이 중요한 결정을 내릴 때 직접적이고 실질적인 자문을 제공합니다.
+              부에나파크와 오렌지카운티에서 사고로 부상을 입은 분들을 위해 명확하고 신속한 법률 대응을 제공합니다.
             </motion.p>
 
             <motion.div initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.7 }} className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center">
