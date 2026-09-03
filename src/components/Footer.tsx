@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import brandLogo from "@/assets/law-firm/howard-choi-mark.webp";
 
 const Footer = () => {
@@ -20,18 +21,20 @@ const Footer = () => {
           <div>
             <div className="mb-5 text-[12px] text-muted-foreground">Practice</div>
             <div className="space-y-3 text-[13px]">
-              <a href="#practice" className="block hover:opacity-60">Corporate</a>
-              <a href="#practice" className="block hover:opacity-60">Litigation</a>
-              <a href="#practice" className="block hover:opacity-60">Regulatory</a>
+              <a href="/#practice" className="block hover:opacity-60">Corporate</a>
+              <a href="/#practice" className="block hover:opacity-60">Litigation</a>
+              <a href="/#practice" className="block hover:opacity-60">Regulatory</a>
             </div>
           </div>
 
           <div>
             <div className="mb-5 text-[12px] text-muted-foreground">Firm</div>
             <div className="space-y-3 text-[13px]">
-              <a href="#approach" className="block hover:opacity-60">Approach</a>
-              <a href="#faq" className="block hover:opacity-60">FAQ</a>
-              <a href="#booking" className="block hover:opacity-60">Consultation</a>
+              <a href="/#approach" className="block hover:opacity-60">Approach</a>
+              <a href="/#faq" className="block hover:opacity-60">FAQ</a>
+              <Link to="/blogs" className="block hover:opacity-60">Blogs</Link>
+              <Link to="/contact" className="block hover:opacity-60">Contact</Link>
+              <a href="/#booking" className="block hover:opacity-60">Consultation</a>
             </div>
           </div>
 
@@ -56,7 +59,7 @@ const Footer = () => {
 
         <div className="flex flex-col gap-4 pt-8 text-[11px] text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <span>© 2026 Howard Choi Law</span>
-          <span>Attorney advertising · Placeholder content</span>
+          <span>Attorney advertising · General information only</span>
         </div>
       </div>
     </footer>
