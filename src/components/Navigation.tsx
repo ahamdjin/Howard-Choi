@@ -1,17 +1,22 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import brandLogo from "@/assets/law-firm/howard-choi-mark.webp";
 
 const navItems = [
   ["Practice", "#practice"],
   ["Approach", "#approach"],
   ["FAQ", "#faq"],
+  ["Blogs", "/blogs"],
+  ["Contact", "/contact"],
 ];
 
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -21,8 +26,27 @@ const Navigation = () => {
   }, []);
 
   const goTo = (href: string) => {
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    if (href.startsWith("#")) {
+      if (location.pathname === "/") {
+        document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+      } else {
+        navigate("/");
+        window.setTimeout(() => {
+          document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+        }, 80);
+      }
+    } else {
+      navigate(href);
+    }
     setOpen(false);
+  };
+
+  const goHome = () => {
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/");
+    }
   };
 
   const dark = !scrolled && !open;
@@ -36,7 +60,7 @@ const Navigation = () => {
     >
       <div className="site-shell py-5">
         <div className="flex items-center justify-between">
-          <button type="button" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className={`flex items-center gap-2 ${dark ? "text-white" : "text-foreground"}`}>
+          <button type="button" onClick={goHome} className={`flex items-center gap-2 ${dark ? "text-white" : "text-foreground"}`}>
             <span className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-[2px]">
               <img
                 src={brandLogo}
@@ -50,12 +74,20 @@ const Navigation = () => {
             <span className="text-sm font-medium tracking-tight">Howard Choi Law</span>
           </button>
 
-          <div className="hidden items-center gap-8 md:flex">
-            {navItems.map(([label, href]) => (
-              <button key={href} type="button" onClick={() => goTo(href)} className={`text-[10px] uppercase tracking-[0.16em] transition-opacity hover:opacity-55 ${dark ? "text-white" : "text-foreground"}`}>
-                {label}
-              </button>
-            ))}
+          <div className="hidden items-center gap-5 lg:flex xl:gap-7">
+            {navItems.map(([label, href]) => {
+              const active = href.startsWith("/") && location.pathname.startsWith(href);
+              return (
+                <button
+                  key={href}
+                  type="button"
+                  onClick={() => goTo(href)}
+                  className={`text-[10px] uppercase tracking-[0.15em] transition-opacity hover:opacity-55 ${dark ? "text-white" : "text-foreground"} ${active ? "opacity-100" : "opacity-76"}`}
+                >
+                  {label}
+                </button>
+              );
+            })}
             <button
               type="button"
               onClick={() => goTo("#booking")}
@@ -65,14 +97,14 @@ const Navigation = () => {
             </button>
           </div>
 
-          <button type="button" className={`md:hidden ${dark || open ? "text-white" : "text-foreground"}`} onClick={() => setOpen((value) => !value)} aria-label="Toggle menu">
+          <button type="button" className={`lg:hidden ${dark || open ? "text-white" : "text-foreground"}`} onClick={() => setOpen((value) => !value)} aria-label="Toggle menu">
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
 
         <AnimatePresence>
           {open && (
-            <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden md:hidden">
+            <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden lg:hidden">
               <div className="space-y-1 pb-4 pt-7 text-white">
                 {navItems.map(([label, href]) => (
                   <button key={href} type="button" onClick={() => goTo(href)} className="block w-full py-3 text-left text-xs uppercase tracking-[0.16em]">
