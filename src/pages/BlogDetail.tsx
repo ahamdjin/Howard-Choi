@@ -9,7 +9,8 @@ const BlogDetail = () => {
   const { slug } = useParams();
   const post = slug ? getBlogBySlug(slug) : undefined;
   const { scrollY } = useScroll();
-  const imageY = useTransform(scrollY, [0, 800], [0, 110]);
+  const imageY = useTransform(scrollY, [0, 1000], [0, 130]);
+  const imageScale = useTransform(scrollY, [0, 1000], [1, 1.025]);
 
   if (!post) {
     return (
@@ -30,88 +31,95 @@ const BlogDetail = () => {
     <div className="min-h-screen overflow-x-clip bg-background">
       <Navigation />
 
-      <article>
-        <header className="relative flex h-[70svh] min-h-[560px] items-end overflow-hidden bg-[#17130f] text-[#f3eee5]">
+      <article className="relative">
+        <header className="sticky top-0 flex h-[66svh] min-h-[540px] items-end overflow-hidden bg-[#17130f] text-[#f3eee5]">
           <motion.img
             src={post.image}
             alt={post.alt}
-            style={{ y: imageY }}
+            style={{ y: imageY, scale: imageScale }}
             fetchPriority="high"
             decoding="async"
-            className="absolute inset-0 h-[115%] w-full object-cover"
+            className="absolute inset-0 h-[118%] w-full object-cover"
           />
-          <div className="absolute inset-0 bg-[#17130f]/62" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#17130f]/86 via-[#17130f]/12 to-[#17130f]/18" />
+          <div className="absolute inset-0 bg-[#17130f]/64" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#17130f]/88 via-[#17130f]/10 to-[#17130f]/18" />
 
-          <div className="site-shell relative z-10 pb-14 md:pb-16 lg:pb-20">
-            <Link to="/blogs" className="mb-8 inline-flex items-center gap-2 text-[12px] text-[#f3eee5]/64 transition-colors hover:text-[#f3eee5]">
-              <ArrowLeft className="h-3.5 w-3.5" /> Back to insights
+          <div className="site-shell relative z-10 pb-14 md:pb-16">
+            <Link
+              to="/blogs"
+              className="mb-7 inline-flex items-center gap-2 text-[12px] text-[#f3eee5]/62 transition-colors hover:text-[#f3eee5]"
+            >
+              <ArrowLeft className="h-3.5 w-3.5" /> Back to journal
             </Link>
-            <div className="max-w-[900px]">
-              <div className="mb-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-[12px] text-[#f3eee5]/62">
+
+            <div className="max-w-[860px]">
+              <div className="mb-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-[12px] text-[#f3eee5]/60">
                 <span>{post.category}</span>
+                <span>·</span>
                 <span>{post.date}</span>
+                <span>·</span>
                 <span>{post.readingTime}</span>
               </div>
-              <h1 className="editorial-serif text-[clamp(3.2rem,5.5vw,6rem)] leading-[0.91] tracking-[-0.028em]">
+              <h1 className="editorial-serif text-[clamp(2.85rem,4.8vw,5rem)] leading-[0.93] tracking-[-0.026em]">
                 {post.title}
               </h1>
             </div>
           </div>
         </header>
 
-        <div className="site-shell py-20 md:py-24 lg:py-28">
-          <div className="mx-auto max-w-[820px]">
-            <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-              className="editorial-serif border-b border-foreground/10 pb-12 text-[clamp(1.8rem,2.8vw,2.8rem)] leading-[1.1] tracking-[-0.018em] text-foreground/82"
-            >
-              {post.intro}
-            </motion.p>
+        <div className="relative z-10 bg-background">
+          <div className="site-shell py-16 md:py-20 lg:py-24">
+            <div className="mx-auto max-w-[790px]">
+              <motion.p
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.68 }}
+                className="editorial-serif border-b border-foreground/12 pb-10 text-[clamp(1.55rem,2.15vw,2.1rem)] leading-[1.18] tracking-[-0.014em] text-foreground/92"
+              >
+                {post.intro}
+              </motion.p>
 
-            <div className="space-y-14 py-14 md:py-16">
-              {post.sections.map((section, index) => (
-                <motion.section
-                  key={section.heading}
-                  initial={{ opacity: 0, y: 18 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.65, delay: index * 0.04 }}
-                  className="grid gap-5 md:grid-cols-[0.32fr_1fr] md:gap-10"
-                >
-                  <div className="text-[11px] tracking-[0.12em] text-muted-foreground">0{index + 1}</div>
-                  <div>
-                    <h2 className="editorial-serif text-[clamp(2rem,3vw,3rem)] leading-[0.98] tracking-[-0.02em]">
+              <div className="py-12 md:py-14">
+                {post.sections.map((section, index) => (
+                  <motion.section
+                    key={section.heading}
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.16 }}
+                    transition={{ duration: 0.62 }}
+                    className="border-b border-foreground/10 py-10 first:pt-0 last:border-b-0 last:pb-0 md:py-12"
+                  >
+                    <div className="mb-4 text-[11px] tracking-[0.12em] text-foreground/38">0{index + 1}</div>
+                    <h2 className="editorial-serif max-w-[700px] text-[clamp(2.15rem,3.1vw,3.25rem)] leading-[0.98] tracking-[-0.022em] text-foreground">
                       {section.heading}
                     </h2>
-                    <div className="mt-6 space-y-5 text-[15px] leading-7 text-foreground/68 md:text-[16px]">
+
+                    <div className="mt-6 max-w-[730px] space-y-6 text-[17px] leading-[1.72] text-foreground/82 md:text-[18px]">
                       {section.paragraphs.map((paragraph) => (
                         <p key={paragraph}>{paragraph}</p>
                       ))}
                     </div>
-                  </div>
-                </motion.section>
-              ))}
-            </div>
+                  </motion.section>
+                ))}
+              </div>
 
-            <div className="border-y border-foreground/10 py-8 text-[12px] leading-5 text-muted-foreground">
-              This article is general information only and is not legal advice. Specific matters depend on their own facts and applicable law.
+              <div className="border-y border-foreground/12 py-7 text-[13px] leading-6 text-foreground/52">
+                This article is general information only and is not legal advice. Specific matters depend on their own facts and applicable law.
+              </div>
             </div>
           </div>
         </div>
       </article>
 
       {related && (
-        <section className="border-t border-foreground/10 bg-[#e9e6e1] py-16 md:py-20">
+        <section className="relative z-10 border-t border-foreground/10 bg-[#e9e6e1] py-14 md:py-18">
           <div className="site-shell">
-            <span className="text-[12px] text-foreground/48">Read next</span>
-            <Link to={`/blogs/${related.slug}`} className="group mt-5 grid gap-8 lg:grid-cols-[1fr_0.8fr] lg:items-end">
-              <h2 className="editorial-serif max-w-[820px] text-[clamp(2.5rem,4vw,4.6rem)] leading-[0.94] tracking-[-0.025em]">
+            <span className="text-[11px] text-foreground/44">Read next</span>
+            <Link to={`/blogs/${related.slug}`} className="group mt-4 grid gap-7 lg:grid-cols-[1fr_0.7fr] lg:items-end">
+              <h2 className="editorial-serif max-w-[760px] text-[clamp(2.25rem,3.5vw,3.8rem)] leading-[0.96] tracking-[-0.023em]">
                 {related.title}
               </h2>
-              <div className="flex items-center justify-between border-t border-foreground/15 pt-5 text-[13px] text-foreground/68">
+              <div className="flex items-center justify-between border-t border-foreground/15 pt-4 text-[12px] text-foreground/64">
                 <span>{related.category}</span>
                 <span className="inline-flex items-center gap-2 transition-transform duration-300 group-hover:translate-x-1">
                   Read article <ArrowRight className="h-4 w-4" />
@@ -122,7 +130,9 @@ const BlogDetail = () => {
         </section>
       )}
 
-      <Footer />
+      <div className="relative z-10">
+        <Footer />
+      </div>
     </div>
   );
 };
