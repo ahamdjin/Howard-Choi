@@ -82,7 +82,7 @@ const Navigation = () => {
                   key={href}
                   type="button"
                   onClick={() => goTo(href)}
-                  className={`text-[10px] uppercase tracking-[0.15em] transition-opacity hover:opacity-55 ${dark ? "text-white" : "text-foreground"} ${active ? "opacity-100" : "opacity-76"}`}
+                  className={`text-[10px] uppercase tracking-[0.15em] transition-opacity hover:opacity-55 ${dark ? "text-white" : "text-foreground"} ${active ? "opacity-100" : "opacity-75"}`}
                 >
                   {label}
                 </button>
