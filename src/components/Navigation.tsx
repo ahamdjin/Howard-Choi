@@ -12,6 +12,14 @@ const navItems = [
   ["Contact", "/contact"],
 ];
 
+const toKoreanPath = (pathname: string) => {
+  if (pathname === "/") return "/ko/";
+  if (pathname === "/blogs") return "/ko/blogs";
+  if (pathname.startsWith("/blogs/")) return pathname.replace("/blogs/", "/ko/blogs/");
+  if (pathname === "/contact") return "/ko/contact";
+  return "/ko/";
+};
+
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -74,7 +82,7 @@ const Navigation = () => {
             <span className="text-sm font-medium tracking-tight">Howard Choi Law</span>
           </button>
 
-          <div className="hidden items-center gap-5 lg:flex xl:gap-7">
+          <div className="hidden items-center gap-4 lg:flex xl:gap-6">
             {navItems.map(([label, href]) => {
               const active = href.startsWith("/") && location.pathname.startsWith(href);
               return (
@@ -88,6 +96,13 @@ const Navigation = () => {
                 </button>
               );
             })}
+            <button
+              type="button"
+              onClick={() => navigate(toKoreanPath(location.pathname))}
+              className={`border-l pl-4 text-[10px] tracking-[0.08em] transition-opacity hover:opacity-55 ${dark ? "border-white/20 text-white/72" : "border-foreground/15 text-foreground/62"}`}
+            >
+              한국어
+            </button>
             <button
               type="button"
               onClick={() => goTo("#booking")}
@@ -111,6 +126,9 @@ const Navigation = () => {
                     {label}
                   </button>
                 ))}
+                <button type="button" onClick={() => navigate(toKoreanPath(location.pathname))} className="block w-full py-3 text-left text-[12px] text-white/68">
+                  한국어
+                </button>
                 <button
                   type="button"
                   onClick={() => goTo("#booking")}
