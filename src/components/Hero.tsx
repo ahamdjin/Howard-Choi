@@ -127,7 +127,7 @@ const Hero = () => {
               transition={{ delay: 0.18, duration: 0.7 }}
               className="mb-4 text-[13px] font-medium tracking-[-0.01em] text-[#f3eee5]/88 md:text-sm"
             >
-              Business &amp; Litigation Counsel
+              Accident &amp; Injury Counsel
             </motion.p>
 
             <motion.h1
@@ -136,7 +136,7 @@ const Hero = () => {
               transition={{ delay: 0.27, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
               className="editorial-serif text-[clamp(3rem,4.5vw,4.75rem)] leading-[0.93] tracking-[-0.024em] text-[#f3eee5]"
             >
-              Discreet counsel for high-stakes matters.
+              Accident attorney in Buena Park.
             </motion.h1>
 
             <motion.p
@@ -145,7 +145,7 @@ const Hero = () => {
               transition={{ delay: 0.4, duration: 0.7 }}
               className="mt-5 max-w-[560px] text-[15px] leading-6 text-[#f3eee5]/74 md:text-base"
             >
-              Corporate, litigation, and regulatory counsel for founders and businesses when the decisions cannot wait.
+              Clear, responsive legal representation for people injured in accidents in Buena Park and across Orange County.
             </motion.p>
 
             <motion.div
