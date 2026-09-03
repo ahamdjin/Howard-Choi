@@ -50,7 +50,7 @@ const KoreanNavigation = () => {
     }
   };
 
-  const dark = !scrolled && !open;
+  const dark = open || !scrolled;
 
   return (
     <motion.nav
@@ -100,28 +100,48 @@ const KoreanNavigation = () => {
             </button>
           </div>
 
-          <button type="button" className={`lg:hidden ${dark || open ? "text-white" : "text-foreground"}`} onClick={() => setOpen((value) => !value)} aria-label="메뉴 열기">
-            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          <button type="button" className={`lg:hidden ${dark ? "text-white" : "text-foreground"}`} onClick={() => setOpen((value) => !value)} aria-label="메뉴 열기">
+            {open ? <X className="h-6 w-6 stroke-[1.6]" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
 
         <AnimatePresence>
           {open && (
-            <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden lg:hidden">
-              <div className="space-y-1 pb-4 pt-7 text-white">
-                {navItems.map(([label, href]) => (
-                  <button key={href} type="button" onClick={() => goTo(href)} className="block w-full py-3 text-left text-[13px]">
-                    {label}
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
+              className="overflow-hidden lg:hidden"
+            >
+              <div className="flex min-h-[calc(100svh-68px)] flex-col pb-5 pt-8 text-white">
+                <div className="space-y-1">
+                  {navItems.map(([label, href]) => (
+                    <button
+                      key={href}
+                      type="button"
+                      onClick={() => goTo(href)}
+                      style={{ fontFamily: '"Noto Serif KR", serif' }}
+                      className="block w-full py-3.5 text-left text-[clamp(1.4rem,6vw,1.8rem)] font-medium tracking-[-0.035em] text-white transition-opacity active:opacity-55"
+                    >
+                      {label}
+                    </button>
+                  ))}
+                </div>
+
+                <div className="mt-auto border-t border-white/10 pt-6">
+                  <div className="mb-4 flex items-center justify-between gap-4">
+                    <span className="text-[10px] tracking-[0.08em] text-white/38">언어</span>
+                    <LanguageSwitch />
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => goTo("#booking")}
+                    className="liquid-cta flex w-full items-center justify-center rounded-full px-5 py-4 text-[11px] font-medium"
+                  >
+                    <span className="relative z-10">상담 예약</span>
                   </button>
-                ))}
-                <LanguageSwitch className="mt-3" />
-                <button
-                  type="button"
-                  onClick={() => goTo("#booking")}
-                  className="liquid-cta mt-4 inline-flex rounded-full px-5 py-3 text-[11px] font-medium"
-                >
-                  <span className="relative z-10">상담 예약</span>
-                </button>
+                </div>
               </div>
             </motion.div>
           )}
