@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import brandLogo from "@/assets/law-firm/howard-choi-mark.webp";
+import LanguageSwitch from "@/components/LanguageSwitch";
 
 const navItems = [
   ["Practice", "#practice"],
@@ -11,14 +12,6 @@ const navItems = [
   ["Blogs", "/blogs"],
   ["Contact", "/contact"],
 ];
-
-const toKoreanPath = (pathname: string) => {
-  if (pathname === "/") return "/ko/";
-  if (pathname === "/blogs") return "/ko/blogs";
-  if (pathname.startsWith("/blogs/")) return pathname.replace("/blogs/", "/ko/blogs/");
-  if (pathname === "/contact") return "/ko/contact";
-  return "/ko/";
-};
 
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -96,13 +89,7 @@ const Navigation = () => {
                 </button>
               );
             })}
-            <button
-              type="button"
-              onClick={() => navigate(toKoreanPath(location.pathname))}
-              className={`border-l pl-4 text-[10px] tracking-[0.08em] transition-opacity hover:opacity-55 ${dark ? "border-white/20 text-white/72" : "border-foreground/15 text-foreground/62"}`}
-            >
-              한국어
-            </button>
+            <LanguageSwitch />
             <button
               type="button"
               onClick={() => goTo("#booking")}
@@ -126,9 +113,7 @@ const Navigation = () => {
                     {label}
                   </button>
                 ))}
-                <button type="button" onClick={() => navigate(toKoreanPath(location.pathname))} className="block w-full py-3 text-left text-[12px] text-white/68">
-                  한국어
-                </button>
+                <LanguageSwitch className="mt-3" />
                 <button
                   type="button"
                   onClick={() => goTo("#booking")}
