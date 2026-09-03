@@ -10,8 +10,12 @@ import SmoothScroll from "./components/SmoothScroll";
 
 const BlogDetail = lazy(() => import("./pages/BlogDetail"));
 const Blogs = lazy(() => import("./pages/Blogs"));
-const LocationDetail = lazy(() => import("./pages/LocationDetail"));
 const Contact = lazy(() => import("./pages/Contact"));
+const KoIndex = lazy(() => import("./pages/KoIndex"));
+const KoBlogs = lazy(() => import("./pages/KoBlogs"));
+const KoBlogDetail = lazy(() => import("./pages/KoBlogDetail"));
+const KoContact = lazy(() => import("./pages/KoContact"));
+const LocationDetail = lazy(() => import("./pages/LocationDetail"));
 const Locations = lazy(() => import("./pages/Locations"));
 const About = lazy(() => import("./pages/About"));
 const Admin = lazy(() => import("./pages/Admin"));
@@ -33,10 +37,16 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/blogs/:slug" element={<BlogDetail />} />
+            <Route path="/contact" element={<Contact />} />
+
+            <Route path="/ko" element={<KoIndex />} />
+            <Route path="/ko/blogs" element={<KoBlogs />} />
+            <Route path="/ko/blogs/:slug" element={<KoBlogDetail />} />
+            <Route path="/ko/contact" element={<KoContact />} />
+
             <Route path="/locations" element={<Locations />} />
             <Route path="/location/:id" element={<LocationDetail />} />
             <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
             <Route path="/auth" element={<Auth />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="*" element={<NotFound />} />
