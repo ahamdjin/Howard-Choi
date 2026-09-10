@@ -42,37 +42,37 @@ const FAQ = ({ locale = "en" }: FAQProps) => {
   const ko = locale === "ko";
 
   return (
-    <section id="faq" ref={ref} className="relative flex min-h-[100svh] items-center bg-[#f3efe8] py-24 text-foreground md:py-28 lg:py-32">
-      <div className="site-shell w-full">
-        <div className="grid gap-14 lg:grid-cols-[0.72fr_1.28fr] lg:items-start lg:gap-20 xl:gap-28">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.72 }} className="lg:sticky lg:top-28">
-            <span className="mb-5 block text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">{copy.eyebrow}</span>
+    <section id="faq" ref={ref} className="relative h-[100svh] overflow-y-auto bg-[#f3efe8] text-foreground lg:overflow-hidden">
+      <div className="site-shell flex h-full w-full items-center py-16 md:py-20 lg:py-20">
+        <div className="grid w-full gap-8 lg:grid-cols-[0.58fr_1.42fr] lg:items-start lg:gap-16 xl:gap-24">
+          <motion.div initial={{ opacity: 0, y: 16 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.68 }}>
+            <span className="mb-4 block text-[9px] font-medium uppercase tracking-[0.18em] text-muted-foreground">{copy.eyebrow}</span>
             <h2
               style={ko ? { fontFamily: '"Noto Serif KR", serif' } : undefined}
-              className={`${ko ? "text-[clamp(2.6rem,4.5vw,4.5rem)] font-medium leading-[1.22] tracking-[-0.05em]" : "editorial-serif text-[clamp(3.2rem,5vw,5.25rem)] leading-[0.96] tracking-[-0.03em]"} max-w-[620px]`}
+              className={`${ko ? "text-[clamp(2rem,2.55vw,3rem)] font-medium leading-[1.3] tracking-[-0.045em]" : "editorial-serif text-[clamp(2rem,2.7vw,3.2rem)] leading-[1.04] tracking-[-0.026em]"} max-w-[520px]`}
             >
               {copy.title}
             </h2>
-            <p className="mt-6 max-w-[430px] text-[15px] leading-6 text-foreground/54">{copy.body}</p>
-            <div className="mt-10 flex items-center gap-4 border-t border-foreground/12 pt-4 text-[10px] font-medium uppercase tracking-[0.14em] text-foreground/32">
+            <p className="mt-4 max-w-[390px] text-[13px] leading-5 text-foreground/52">{copy.body}</p>
+            <div className="mt-6 flex max-w-[390px] items-center gap-3 border-t border-foreground/12 pt-3 text-[9px] font-medium uppercase tracking-[0.14em] text-foreground/30">
               <span>05</span><span>{ko ? "질문" : "Questions"}</span>
             </div>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, y: 22 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.76, delay: 0.07 }} className="border-t border-foreground/14">
+          <motion.div initial={{ opacity: 0, y: 18 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.72, delay: 0.06 }} className="border-t border-foreground/14">
             {copy.questions.map(([question, answer], index) => {
               const active = open === index;
               return (
                 <div key={question} className="border-b border-foreground/12">
-                  <button type="button" onClick={() => setOpen(active ? null : index)} className="grid w-full grid-cols-[34px_1fr_auto] items-center gap-3 py-6 text-left md:grid-cols-[44px_1fr_auto] md:gap-5 md:py-7" aria-expanded={active}>
-                    <span className="text-[10px] tabular-nums text-foreground/28">{String(index + 1).padStart(2, "0")}</span>
-                    <span className={`${ko ? "text-[15px] leading-7 md:text-[17px]" : "text-[16px] leading-6 md:text-[18px]"} font-medium tracking-[-0.015em]`}>{question}</span>
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full border border-foreground/12 transition-colors duration-300 hover:bg-foreground hover:text-background">{active ? <Minus className="h-3.5 w-3.5 stroke-[1.45]" /> : <Plus className="h-3.5 w-3.5 stroke-[1.45]" />}</span>
+                  <button type="button" onClick={() => setOpen(active ? null : index)} className="grid w-full grid-cols-[28px_1fr_auto] items-center gap-2.5 py-[17px] text-left md:grid-cols-[36px_1fr_auto] md:gap-4 md:py-5" aria-expanded={active}>
+                    <span className="text-[9px] tabular-nums text-foreground/26">{String(index + 1).padStart(2, "0")}</span>
+                    <span className={`${ko ? "text-[13px] leading-6 md:text-[14px]" : "text-[13px] leading-5 md:text-[15px]"} font-medium tracking-[-0.012em]`}>{question}</span>
+                    <span className="flex h-7 w-7 items-center justify-center rounded-full border border-foreground/12 transition-colors duration-300 hover:bg-foreground hover:text-background">{active ? <Minus className="h-3 w-3 stroke-[1.45]" /> : <Plus className="h-3 w-3 stroke-[1.45]" />}</span>
                   </button>
                   <AnimatePresence initial={false}>
                     {active && (
-                      <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ height: { duration: 0.42, ease: [0.22, 1, 0.36, 1] }, opacity: { duration: 0.24 } }} className="overflow-hidden">
-                        <p className={`max-w-[760px] pb-7 pl-[47px] pr-10 text-[14px] text-foreground/58 md:pb-8 md:pl-[69px] md:pr-16 ${ko ? "leading-7" : "leading-6"}`}>{answer}</p>
+                      <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ height: { duration: 0.38, ease: [0.22, 1, 0.36, 1] }, opacity: { duration: 0.22 } }} className="overflow-hidden">
+                        <p className={`max-w-[860px] pb-5 pl-[40px] pr-9 text-[12px] text-foreground/55 md:pb-6 md:pl-[52px] md:pr-14 ${ko ? "leading-6" : "leading-5"}`}>{answer}</p>
                       </motion.div>
                     )}
                   </AnimatePresence>
