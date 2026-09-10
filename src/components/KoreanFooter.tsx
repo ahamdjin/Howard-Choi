@@ -1,66 +1,36 @@
 import { Link } from "react-router-dom";
 import brandLogo from "@/assets/law-firm/howard-choi-mark.webp";
+import { brand, practiceAreas, serviceLocations } from "@/data/injurySite";
 
 const KoreanFooter = () => {
   return (
     <footer className="bg-background py-24 text-foreground md:py-28 lg:py-32" style={{ fontFamily: '"Noto Sans KR", sans-serif' }}>
       <div className="site-shell">
-        <div className="grid gap-12 border-b border-black/10 pb-16 md:grid-cols-4 lg:gap-16">
+        <div className="grid gap-12 border-b border-black/10 pb-16 md:grid-cols-4 lg:gap-14">
           <div>
-            <div className="mb-5 flex items-center gap-2">
-              <span className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-[2px]">
-                <img src={brandLogo} alt="" width={28} height={28} loading="lazy" decoding="async" className="h-full w-full object-cover invert" />
-              </span>
-              <span className="text-[15px] font-medium">Howard Choi Law</span>
-            </div>
-            <p className="max-w-xs text-[13px] leading-6 text-muted-foreground">
-              중요한 의사결정을 앞둔 기업, 창업자, 개인 고객을 위한 집중도 높은 법률자문.
-            </p>
+            <div className="mb-5 flex items-center gap-2.5"><span className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-[2px]"><img src={brandLogo} alt="" width={28} height={28} loading="lazy" decoding="async" className="h-full w-full object-cover invert" /></span><span className="text-[14px] font-medium tracking-[-0.02em]">{brand.name}</span></div>
+            <p className="max-w-[280px] text-[13px] leading-6 text-muted-foreground">부에나파크와 인근 지역을 중심으로 사고 및 개인 상해 사건을 지원합니다.</p>
+            <a href={brand.phoneHref} className="mt-5 block text-[13px] font-medium hover:opacity-60">{brand.phoneDisplay}</a>
           </div>
 
           <div>
             <div className="mb-5 text-[12px] text-muted-foreground">업무 분야</div>
-            <div className="space-y-3 text-[13px]">
-              <a href="/ko/#practice" className="block hover:opacity-60">기업 자문</a>
-              <a href="/ko/#practice" className="block hover:opacity-60">상사 소송</a>
-              <a href="/ko/#practice" className="block hover:opacity-60">규제 · 컴플라이언스</a>
-            </div>
+            <div className="space-y-3 text-[13px]">{practiceAreas.slice(0, 5).map((practice) => <Link key={practice.slug} to={`/ko/practice-areas/${practice.slug}`} className="block hover:opacity-60">{practice.koTitle}</Link>)}<Link to="/ko/practice-areas" className="block text-muted-foreground hover:text-foreground">전체 보기 →</Link></div>
+          </div>
+
+          <div>
+            <div className="mb-5 text-[12px] text-muted-foreground">서비스 지역</div>
+            <div className="grid grid-cols-2 gap-x-5 gap-y-3 text-[13px] md:grid-cols-1">{serviceLocations.map((location) => <Link key={location.slug} to={`/ko/locations/${location.slug}`} className="block hover:opacity-60">{location.koName}</Link>)}</div>
           </div>
 
           <div>
             <div className="mb-5 text-[12px] text-muted-foreground">로펌</div>
-            <div className="space-y-3 text-[13px]">
-              <a href="/ko/#approach" className="block hover:opacity-60">업무 방식</a>
-              <a href="/ko/#faq" className="block hover:opacity-60">FAQ</a>
-              <Link to="/ko/blogs" className="block hover:opacity-60">인사이트</Link>
-              <Link to="/ko/contact" className="block hover:opacity-60">문의</Link>
-              <a href="/ko/#booking" className="block hover:opacity-60">상담 예약</a>
-            </div>
-          </div>
-
-          <div>
-            <div className="mb-5 text-[12px] text-muted-foreground">연락처</div>
-            <div className="space-y-3 text-[13px] text-muted-foreground">
-              <a href="mailto:hello@howardchoilaw.com" className="block hover:text-foreground">hello@howardchoilaw.com</a>
-              <a href="tel:+17146900007" className="block hover:text-foreground">+1 714-690-0007</a>
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=6301+Beach+Blvd%2C+Buena+Park%2C+CA+90621"
-                target="_blank"
-                rel="noreferrer"
-                className="block max-w-[210px] leading-5 hover:text-foreground"
-              >
-                6301 Beach Blvd<br />Buena Park, CA 90621
-              </a>
-              <p>월–금 · 오전 9시–오후 5시</p>
-              <p>상담은 예약제로 진행됩니다</p>
-            </div>
+            <div className="space-y-3 text-[13px]"><Link to="/ko/attorney" className="block hover:opacity-60">Howard Choi 변호사</Link><Link to="/ko/results" className="block hover:opacity-60">사건 결과</Link><Link to="/ko/blogs" className="block hover:opacity-60">법률 블로그</Link><Link to="/ko/about" className="block hover:opacity-60">소개</Link><Link to="/ko/contact" className="block hover:opacity-60">문의</Link></div>
+            <div className="mt-7 text-[12px] leading-5 text-muted-foreground">{brand.address}</div>
           </div>
         </div>
 
-        <div className="flex flex-col gap-4 pt-8 text-[11px] text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <span>© 2026 Howard Choi Law</span>
-          <span>변호사 광고 · 일반 정보 제공 목적</span>
-        </div>
+        <div className="flex flex-col gap-4 pt-8 text-[11px] text-muted-foreground sm:flex-row sm:items-center sm:justify-between"><span>© 2026 {brand.name}</span><span>변호사 광고 · 일반 정보 제공 목적 · 과거 결과가 유사한 결과를 보장하지 않습니다</span></div>
       </div>
     </footer>
   );
