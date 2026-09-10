@@ -4,6 +4,9 @@ import { ArrowRight, Check, Minus, Plus, X } from "lucide-react";
 import KoreanNavigation from "@/components/KoreanNavigation";
 import KoreanFooter from "@/components/KoreanFooter";
 import KoreanLocations from "@/components/KoreanLocations";
+import Testimonial from "@/components/Testimonial";
+import ReviewsSection from "@/components/ReviewsSection";
+import FAQ from "@/components/FAQ";
 import heroCityBoardroom from "@/assets/law-firm/hero-city-boardroom.webp";
 import heroCourthouse from "@/assets/law-firm/hero-courthouse.webp";
 import heroJusticeLibrary from "@/assets/law-firm/hero-justice-library.webp";
@@ -156,7 +159,7 @@ const KoIndex = () => (
   <div className="min-h-[100svh] overflow-x-clip bg-background" style={{ fontFamily: '"Noto Sans KR", sans-serif' }}>
     <KoreanNavigation />
     <div className="relative"><div className="sticky top-0 z-0 h-[100svh] w-full"><HeroKo /></div><div className="relative z-10 w-full bg-background"><KoreanLocations /></div></div>
-    <div className="relative z-20 bg-background"><ExperienceKo /><DirectAccessKo /><FAQKo /><BookingKo /><KoreanFooter /></div>
+    <div className="relative z-20 bg-background"><ExperienceKo /><DirectAccessKo /><Testimonial locale="ko" /><ReviewsSection locale="ko" /><FAQ locale="ko" /><BookingKo /><KoreanFooter /></div>
   </div>
 );
 

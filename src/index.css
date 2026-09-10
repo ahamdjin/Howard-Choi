@@ -81,7 +81,7 @@
   }
 
   .site-shell {
-    width: min(calc(100% - 3rem), 1170px);
+    width: min(calc(100% - 3rem), 1320px);
     margin-inline: auto;
   }
 
@@ -145,7 +145,7 @@
 
   @media (max-width: 640px) {
     .site-shell {
-      width: min(calc(100% - 2rem), 1170px);
+      width: min(calc(100% - 2rem), 1320px);
     }
   }
 }
