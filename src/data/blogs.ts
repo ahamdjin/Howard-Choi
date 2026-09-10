@@ -12,6 +12,7 @@ export type BlogPost = {
   excerpt: string;
   category: string;
   date: string;
+  publishedAt: string;
   readingTime: string;
   image: string;
   alt: string;
@@ -28,6 +29,7 @@ export const blogPosts: BlogPost[] = [
       "A practical way to recognize when a commercial disagreement has moved beyond routine negotiation and needs legal strategy.",
     category: "Commercial Litigation",
     date: "September 3, 2026",
+    publishedAt: "2026-09-03",
     readingTime: "5 min read",
     image: heroLawOffice,
     alt: "Private law office with a desk and legal books",
@@ -66,6 +68,7 @@ export const blogPosts: BlogPost[] = [
       "Five areas worth slowing down for before a contract becomes an operating constraint, a cost center, or a future dispute.",
     category: "Corporate Law",
     date: "August 21, 2026",
+    publishedAt: "2026-08-21",
     readingTime: "6 min read",
     image: heroCityBoardroom,
     alt: "Dark law firm boardroom overlooking the city",
