@@ -1,0 +1,100 @@
+import { useState, type ReactNode } from "react";
+import {
+  createRootRoute,
+  HeadContent,
+  Outlet,
+  Scripts,
+  useRouterState,
+} from "@tanstack/react-router";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import SmoothScroll from "@/components/SmoothScroll";
+import ScrollToTop from "@/components/ScrollToTop";
+import NotFound from "@/pages/NotFound";
+import appCss from "@/index.css?url";
+import brandMark from "@/assets/law-firm/howard-choi-mark.webp";
+
+export const Route = createRootRoute({
+  head: () => ({
+    meta: [
+      { charSet: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1.0" },
+      { title: "Howard Choi Law — Business & Litigation Counsel" },
+      {
+        name: "description",
+        content: "Business, litigation, and regulatory counsel with direct access and clear strategic advice.",
+      },
+      { name: "author", content: "Howard Choi Law" },
+      { property: "og:title", content: "Howard Choi Law — Business & Litigation Counsel" },
+      {
+        property: "og:description",
+        content: "Direct, commercially minded counsel for high-stakes matters.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "icon", type: "image/webp", href: brandMark },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..600&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@400;500;600&display=swap",
+      },
+    ],
+  }),
+  notFoundComponent: NotFound,
+  component: RootComponent,
+});
+
+function AppProviders({ children }: { children: ReactNode }) {
+  const [queryClient] = useState(() => new QueryClient());
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <SmoothScroll />
+        <ScrollToTop />
+        {children}
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+}
+
+function RootComponent() {
+  return (
+    <RootDocument>
+      <AppProviders>
+        <Outlet />
+      </AppProviders>
+    </RootDocument>
+  );
+}
+
+function RootDocument({ children }: { children: ReactNode }) {
+  const pathname = useRouterState({ select: (state) => state.location.pathname });
+  const lang = pathname === "/ko" || pathname.startsWith("/ko/") ? "ko" : "en";
+
+  return (
+    <html lang={lang}>
+      <head>
+        <HeadContent />
+      </head>
+      <body>
+        {children}
+        <Scripts />
+        <script
+          async
+          src="https://widgets.leadconnectorhq.com/loader.js"
+          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+          data-widget-id="6a9841dd05dab92683f66d82"
+        />
+      </body>
+    </html>
+  );
+}
