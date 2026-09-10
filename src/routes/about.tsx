@@ -1,8 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
-import About from "@/pages/About";
-import { noIndexSeo } from "@/lib/seo";
+import { AboutFirmPage } from "@/pages/InjurySitePages";
+import { buildSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/about")({
-  head: () => noIndexSeo("About | Howard Choi Law"),
-  component: About,
+  head: () => buildSeo({
+    title: "About | Buena Park Injury Lawyer",
+    description: "Learn about Buena Park Injury Lawyer, a focused local injury-law practice serving Buena Park and nearby communities in Orange and Los Angeles counties.",
+    path: "/about",
+    alternatePath: "/ko/about",
+    locale: "en-US",
+  }),
+  component: () => <AboutFirmPage locale="en" />,
 });
