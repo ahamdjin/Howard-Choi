@@ -1,14 +1,13 @@
 import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } from "framer-motion";
 import { useRef } from "react";
-import { Link } from "react-router-dom";
 import commercialLitigationImage from "@/assets/law-firm/practice-commercial-litigation.webp";
 import corporateLawImage from "@/assets/law-firm/practice-corporate-law.webp";
 import regulatoryComplianceImage from "@/assets/law-firm/practice-regulatory-compliance.webp";
 
 const practices = [
-  { slug: "car-accidents", title: "Car Accidents", description: "Clear representation after collisions, disputed fault, and insurance issues.", image: corporateLawImage, alt: "Legal counsel reviewing an accident claim", points: ["Rear-end & intersection crashes", "Hit-and-run claims", "Uninsured motorists"] },
-  { slug: "serious-injuries", title: "Serious Injuries", description: "Focused claims when an injury changes work, mobility, and everyday life.", image: commercialLitigationImage, alt: "Attorney reviewing a serious injury matter", points: ["Brain & head injuries", "Neck & spinal injuries", "Orthopedic trauma"] },
-  { slug: "wrongful-death", title: "Wrongful Death", description: "Careful representation for families after a fatal preventable accident.", image: regulatoryComplianceImage, alt: "Legal advisers reviewing a wrongful death matter", points: ["Fatal collisions", "Liability investigation", "Family loss"] },
+  { title: "Car Accidents", description: "Clear representation after collisions, disputed fault, and insurance issues.", image: corporateLawImage, alt: "Legal counsel reviewing an accident claim", points: ["Rear-end & intersection crashes", "Hit-and-run claims", "Uninsured motorists"] },
+  { title: "Serious Injuries", description: "Focused claims when an injury changes work, mobility, and everyday life.", image: commercialLitigationImage, alt: "Attorney reviewing a serious injury matter", points: ["Brain & head injuries", "Neck & spinal injuries", "Orthopedic trauma"] },
+  { title: "Wrongful Death", description: "Careful representation for families after a fatal preventable accident.", image: regulatoryComplianceImage, alt: "Legal advisers reviewing a wrongful death matter", points: ["Fatal collisions", "Liability investigation", "Family loss"] },
 ];
 
 type Practice = (typeof practices)[number];
@@ -35,16 +34,7 @@ const MorphCard = ({ practice, index, columns, detailOpacity, overlayOpacity }: 
 );
 
 const MobileCard = ({ practice, index }: { practice: Practice; index: number }) => (
-  <Link to={`/practice-areas/${practice.slug}`} className="group relative block h-full overflow-hidden rounded-[3px] bg-[#181511]">
-    <img src={practice.image} alt={practice.alt} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-active:scale-[1.015]" />
-    <div className="absolute inset-0 bg-gradient-to-t from-[#15110d]/95 via-[#15110d]/18 to-transparent" />
-    <div className="absolute inset-x-0 bottom-0 p-5 text-[#f3eee5] sm:p-6">
-      <div className="mb-2 text-[10px] tracking-[0.12em] text-[#f3eee5]/55">0{index + 1}</div>
-      <h3 className="editorial-serif text-[1.85rem] leading-none">{practice.title}</h3>
-      <p className="mt-2 max-w-[300px] text-[12px] leading-5 text-[#f3eee5]/72 sm:text-[13px]">{practice.description}</p>
-      <div className="mt-4 text-[10px] uppercase tracking-[0.12em] text-[#f3eee5]/50">View practice →</div>
-    </div>
-  </Link>
+  <div className="relative h-full overflow-hidden rounded-[3px] bg-[#181511]"><img src={practice.image} alt={practice.alt} className="absolute inset-0 h-full w-full object-cover" /><div className="absolute inset-0 bg-gradient-to-t from-[#15110d]/95 via-[#15110d]/18 to-transparent" /><div className="absolute inset-x-0 bottom-0 p-6 text-[#f3eee5]"><div className="mb-2 text-[10px] tracking-[0.12em] text-[#f3eee5]/55">0{index + 1}</div><h3 className="editorial-serif text-[2rem] leading-none">{practice.title}</h3><p className="mt-2 max-w-[300px] text-[13px] leading-5 text-[#f3eee5]/72">{practice.description}</p></div></div>
 );
 
 const Locations = () => {
@@ -69,13 +59,9 @@ const Locations = () => {
 
   return (
     <section id="practice" ref={ref} className="relative bg-background lg:h-[340svh]">
-      <div className="site-shell py-16 sm:py-20 md:py-24 lg:hidden">
-        <div className="mb-9 grid gap-5 sm:mb-12 sm:gap-8">
-          <div><span className="mb-4 block text-[12px] text-muted-foreground sm:mb-5 sm:text-[13px]">Practice Areas</span><h2 className="editorial-serif max-w-[690px] text-[clamp(2.55rem,11vw,4.5rem)] leading-[0.95] tracking-[-0.02em]">Injury counsel for<br />what happens next.</h2></div>
-          <p className="max-w-[430px] text-[14px] leading-6 text-muted-foreground sm:text-[15px]">Focused on the accidents and serious injuries that can change a person's health, work, finances, and family life.</p>
-        </div>
-        <div className="grid gap-2.5 sm:gap-3">{practices.map((practice, index) => <article key={practice.title} className="h-[355px] sm:h-[390px]"><MobileCard practice={practice} index={index} /></article>)}</div>
-        <Link to="/practice-areas" className="mt-7 inline-flex border-b border-foreground/20 pb-1 text-[12px] text-foreground/62">View all practice areas →</Link>
+      <div className="site-shell py-20 md:py-24 lg:hidden">
+        <div className="mb-12 grid gap-8"><div><span className="mb-5 block text-[13px] text-muted-foreground">Practice Areas</span><h2 className="editorial-serif max-w-[690px] text-[clamp(3rem,12vw,4.5rem)] leading-[0.93] tracking-[-0.02em]">Injury counsel for<br />what happens next.</h2></div><p className="max-w-[430px] text-[15px] leading-6 text-muted-foreground">Focused on the accidents and serious injuries that can change a person's health, work, finances, and family life.</p></div>
+        <div className="grid gap-3">{practices.map((practice, index) => <article key={practice.title} className="h-[430px]"><MobileCard practice={practice} index={index} /></article>)}</div>
       </div>
 
       <div className="sticky top-0 hidden h-[100svh] overflow-hidden lg:block">

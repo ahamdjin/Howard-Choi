@@ -1,15 +1,14 @@
 import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } from "framer-motion";
 import { useRef } from "react";
-import { Link } from "react-router-dom";
 import commercialLitigationImage from "@/assets/law-firm/practice-commercial-litigation.webp";
 import corporateLawImage from "@/assets/law-firm/practice-corporate-law.webp";
 import regulatoryComplianceImage from "@/assets/law-firm/practice-regulatory-compliance.webp";
 
 const koSerif = { fontFamily: '"Noto Serif KR", serif' } as const;
 const practices = [
-  { slug: "car-accidents", title: "자동차 사고", description: "충돌 사고, 과실 분쟁 및 보험 문제 이후의 상해 청구를 명확하게 다룹니다.", image: corporateLawImage, alt: "사고 상해 청구를 검토하는 법률 자문", points: ["후방 추돌·교차로 사고", "뺑소니 사고", "무보험 운전자 사고"] },
-  { slug: "serious-injuries", title: "중대 상해", description: "부상이 업무, 이동, 일상생활을 크게 바꾼 사건에 집중합니다.", image: commercialLitigationImage, alt: "중대 상해 사건을 검토하는 변호사", points: ["뇌·두부 손상", "목·척추 부상", "정형외과적 외상"] },
-  { slug: "wrongful-death", title: "부당 사망", description: "예방 가능했던 사고로 가족을 잃은 유가족을 신중하게 지원합니다.", image: regulatoryComplianceImage, alt: "부당 사망 사건을 검토하는 법률 자문", points: ["치명적 차량 사고", "책임 조사", "유가족 손실"] },
+  { title: "자동차 사고", description: "충돌 사고, 과실 분쟁 및 보험 문제 이후의 상해 청구를 명확하게 다룹니다.", image: corporateLawImage, alt: "사고 상해 청구를 검토하는 법률 자문", points: ["후방 추돌·교차로 사고", "뺑소니 사고", "무보험 운전자 사고"] },
+  { title: "중대 상해", description: "부상이 업무, 이동, 일상생활을 크게 바꾼 사건에 집중합니다.", image: commercialLitigationImage, alt: "중대 상해 사건을 검토하는 변호사", points: ["뇌·두부 손상", "목·척추 부상", "정형외과적 외상"] },
+  { title: "부당 사망", description: "예방 가능했던 사고로 가족을 잃은 유가족을 신중하게 지원합니다.", image: regulatoryComplianceImage, alt: "부당 사망 사건을 검토하는 법률 자문", points: ["치명적 차량 사고", "책임 조사", "유가족 손실"] },
 ];
 
 type Practice = (typeof practices)[number];
@@ -22,18 +21,7 @@ const MorphCard = ({ practice, index, columns, detailOpacity, overlayOpacity }: 
   </motion.div>
 );
 
-const MobileCard = ({ practice, index }: { practice: Practice; index: number }) => (
-  <Link to={`/ko/practice-areas/${practice.slug}`} className="group relative block h-full overflow-hidden rounded-[3px] bg-[#181511]">
-    <img src={practice.image} alt={practice.alt} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-active:scale-[1.015]" />
-    <div className="absolute inset-0 bg-gradient-to-t from-[#15110d]/95 via-[#15110d]/18 to-transparent" />
-    <div className="absolute inset-x-0 bottom-0 p-5 text-[#f3eee5] sm:p-6">
-      <div className="mb-2 text-[10px] tracking-[0.12em] text-[#f3eee5]/55">0{index + 1}</div>
-      <h3 style={koSerif} className="text-[1.75rem] font-medium leading-[1.16] tracking-[-0.04em]">{practice.title}</h3>
-      <p className="mt-2 max-w-[320px] text-[12px] leading-6 text-[#f3eee5]/72 sm:text-[13px]">{practice.description}</p>
-      <div className="mt-4 text-[10px] tracking-[0.06em] text-[#f3eee5]/50">업무 분야 보기 →</div>
-    </div>
-  </Link>
-);
+const MobileCard = ({ practice, index }: { practice: Practice; index: number }) => <div className="relative h-full overflow-hidden rounded-[3px] bg-[#181511]"><img src={practice.image} alt={practice.alt} className="absolute inset-0 h-full w-full object-cover" /><div className="absolute inset-0 bg-gradient-to-t from-[#15110d]/95 via-[#15110d]/18 to-transparent" /><div className="absolute inset-x-0 bottom-0 p-6 text-[#f3eee5]"><div className="mb-2 text-[10px] tracking-[0.12em] text-[#f3eee5]/55">0{index + 1}</div><h3 style={koSerif} className="text-[1.85rem] font-medium leading-[1.16] tracking-[-0.04em]">{practice.title}</h3><p className="mt-2 max-w-[320px] text-[13px] leading-6 text-[#f3eee5]/72">{practice.description}</p></div></div>;
 
 const KoreanLocations = () => {
   const ref = useRef<HTMLElement | null>(null);
@@ -57,11 +45,7 @@ const KoreanLocations = () => {
 
   return (
     <section id="practice" ref={ref} className="relative bg-background lg:h-[340svh]">
-      <div className="site-shell py-16 sm:py-20 md:py-24 lg:hidden">
-        <div className="mb-9 grid gap-5 sm:mb-12 sm:gap-8"><div><span className="mb-4 block text-[12px] text-muted-foreground sm:mb-5 sm:text-[13px]">업무 분야</span><h2 style={koSerif} className="max-w-[720px] text-[clamp(2.3rem,9.5vw,4rem)] font-medium leading-[1.18] tracking-[-0.045em]">사고 이후 필요한<br />상해 법률자문.</h2></div><p className="max-w-[440px] text-[14px] leading-7 text-muted-foreground sm:text-[15px]">건강, 업무, 경제적 상황과 가족의 일상을 바꿀 수 있는 사고와 중대 상해 사건에 집중합니다.</p></div>
-        <div className="grid gap-2.5 sm:gap-3">{practices.map((practice, index) => <article key={practice.title} className="h-[355px] sm:h-[390px]"><MobileCard practice={practice} index={index} /></article>)}</div>
-        <Link to="/ko/practice-areas" className="mt-7 inline-flex border-b border-foreground/20 pb-1 text-[12px] text-foreground/62">전체 업무 분야 보기 →</Link>
-      </div>
+      <div className="site-shell py-20 md:py-24 lg:hidden"><div className="mb-12 grid gap-8"><div><span className="mb-5 block text-[13px] text-muted-foreground">업무 분야</span><h2 style={koSerif} className="max-w-[720px] text-[clamp(2.5rem,10vw,4rem)] font-medium leading-[1.18] tracking-[-0.045em]">사고 이후 필요한<br />상해 법률자문.</h2></div><p className="max-w-[440px] text-[15px] leading-7 text-muted-foreground">건강, 업무, 경제적 상황과 가족의 일상을 바꿀 수 있는 사고와 중대 상해 사건에 집중합니다.</p></div><div className="grid gap-3">{practices.map((practice, index) => <article key={practice.title} className="h-[430px]"><MobileCard practice={practice} index={index} /></article>)}</div></div>
       <div className="sticky top-0 hidden h-[100svh] overflow-hidden lg:block"><div className="site-shell relative h-full"><motion.div className="absolute left-0 right-0 top-[11%] z-40 grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end" style={shouldReduceMotion ? { opacity: 1 } : { opacity: headerOpacity, y: headerY }}><div><span className="mb-5 block text-[13px] text-muted-foreground">업무 분야</span><h2 style={koSerif} className="max-w-[760px] text-[clamp(2.45rem,3.9vw,4rem)] font-medium leading-[1.18] tracking-[-0.045em]">사고 이후 필요한<br />상해 법률자문.</h2></div><p className="max-w-[440px] text-[15px] leading-7 text-muted-foreground lg:pb-1">건강, 업무, 경제적 상황과 가족의 일상을 바꿀 수 있는 사고와 중대 상해 사건에 집중합니다.</p></motion.div>{practices.map((practice, index) => { const style = cardStyles[index]; return <motion.article key={practice.title} className="absolute will-change-[top,left,width,height]" style={shouldReduceMotion ? { top: "43%", left: `${index * 34}%`, width: "32%", height: "45%", zIndex: index + 10 } : { top: style.top, left: style.left, width: cardWidth, height: cardHeight, zIndex: style.zIndex, boxShadow: cardShadow }}><MorphCard practice={practice} index={index} columns={shouldReduceMotion ? undefined : columns} detailOpacity={shouldReduceMotion ? undefined : detailOpacity} overlayOpacity={shouldReduceMotion ? undefined : overlayOpacity} /></motion.article>; })}</div></div>
     </section>
   );
