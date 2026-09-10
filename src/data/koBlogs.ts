@@ -12,6 +12,7 @@ export type KoreanBlogPost = {
   excerpt: string;
   category: string;
   date: string;
+  publishedAt: string;
   readingTime: string;
   image: string;
   alt: string;
@@ -28,6 +29,7 @@ export const koBlogPosts: KoreanBlogPost[] = [
       "일상적인 협상으로 해결하던 의견 차이가 언제 법률 전략이 필요한 상사 분쟁으로 넘어가는지 살펴봅니다.",
     category: "상사 소송",
     date: "2026년 9월 3일",
+    publishedAt: "2026-09-03",
     readingTime: "약 5분",
     image: heroLawOffice,
     alt: "법률 서적과 책상이 있는 프라이빗 로펌 사무실",
@@ -66,6 +68,7 @@ export const koBlogPosts: KoreanBlogPost[] = [
       "계약이 운영상의 제약, 예상치 못한 비용 또는 향후 분쟁으로 이어지기 전에 반드시 천천히 확인해야 할 핵심 조항들입니다.",
     category: "기업 자문",
     date: "2026년 8월 21일",
+    publishedAt: "2026-08-21",
     readingTime: "약 6분",
     image: heroCityBoardroom,
     alt: "도시가 내려다보이는 어두운 로펌 회의실",
