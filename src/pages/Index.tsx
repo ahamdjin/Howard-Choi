@@ -1,9 +1,9 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
+import TrustSignals from "@/components/TrustSignals";
 import Locations from "@/components/Locations";
 import Experience from "@/components/Experience";
 import DirectAccess from "@/components/DirectAccess";
-import Testimonial from "@/components/Testimonial";
 import FAQ from "@/components/FAQ";
 import Booking from "@/components/Booking";
 import Footer from "@/components/Footer";
@@ -19,6 +19,7 @@ const Index = () => {
         </div>
 
         <div className="relative z-10 w-full bg-background">
+          <TrustSignals />
           <Locations />
         </div>
       </div>
@@ -26,7 +27,6 @@ const Index = () => {
       <div className="relative z-20 bg-background">
         <Experience />
         <DirectAccess />
-        <Testimonial />
         <FAQ />
         <Booking />
         <Footer />
