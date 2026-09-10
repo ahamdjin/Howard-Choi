@@ -1,11 +1,11 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const toKoreanPath = (pathname: string) => {
-  if (pathname === "/") return "/ko/";
+  if (pathname === "/") return "/ko";
   if (pathname === "/blogs") return "/ko/blogs";
   if (pathname.startsWith("/blogs/")) return pathname.replace("/blogs/", "/ko/blogs/");
   if (pathname === "/contact") return "/ko/contact";
-  return "/ko/";
+  return "/ko";
 };
 
 const toEnglishPath = (pathname: string) => {
@@ -22,17 +22,14 @@ type LanguageSwitchProps = {
 
 const LanguageSwitch = ({ className = "" }: LanguageSwitchProps) => {
   const location = useLocation();
-  const navigate = useNavigate();
   const korean = location.pathname === "/ko" || location.pathname.startsWith("/ko/");
-
-  const switchLanguage = () => {
-    navigate(korean ? toEnglishPath(location.pathname) : toKoreanPath(location.pathname));
-  };
+  const targetPath = korean ? toEnglishPath(location.pathname) : toKoreanPath(location.pathname);
 
   return (
-    <button
-      type="button"
-      onClick={switchLanguage}
+    <a
+      href={targetPath}
+      hrefLang={korean ? "en-US" : "ko-US"}
+      lang={korean ? "en" : "ko"}
       aria-label={korean ? "Switch to English" : "한국어로 전환"}
       className={`group inline-flex h-8 items-center overflow-hidden rounded-full border border-[#211c17]/14 bg-[#ded8cf]/95 px-1.5 text-[9px] shadow-[0_4px_18px_rgba(20,16,12,0.14)] backdrop-blur-md transition-all duration-300 hover:bg-[#e8e2d9] hover:shadow-[0_5px_22px_rgba(20,16,12,0.18)] ${className}`}
     >
@@ -52,7 +49,7 @@ const LanguageSwitch = ({ className = "" }: LanguageSwitchProps) => {
       >
         한국어
       </span>
-    </button>
+    </a>
   );
 };
 
