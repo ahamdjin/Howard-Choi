@@ -7,6 +7,13 @@ import { fileURLToPath } from "node:url";
 
 const rootDir = fileURLToPath(new URL(".", import.meta.url));
 
+const shouldPrerender = (routePath: string) => {
+  if (routePath === "/ko") return false;
+  if (routePath === "/about" || routePath === "/locations" || routePath.startsWith("/location/")) return false;
+  if (routePath.startsWith("/admin") || routePath.startsWith("/auth")) return false;
+  return true;
+};
+
 export default defineConfig({
   server: {
     host: "::",
@@ -18,8 +25,7 @@ export default defineConfig({
         enabled: true,
         crawlLinks: true,
         failOnError: true,
-        filter: ({ path: routePath }) =>
-          !routePath.startsWith("/admin") && !routePath.startsWith("/auth"),
+        filter: ({ path: routePath }) => shouldPrerender(routePath),
       },
     }),
     nitro(),
