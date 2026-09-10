@@ -13,6 +13,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import SmoothScroll from "@/components/SmoothScroll";
 import ScrollToTop from "@/components/ScrollToTop";
 import NotFound from "@/pages/NotFound";
+import { legalServiceJsonLd, webSiteJsonLd } from "@/lib/seo";
 import appCss from "@/index.css?url";
 import brandMark from "@/assets/law-firm/howard-choi-mark.webp";
 
@@ -21,19 +22,9 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1.0" },
-      { title: "Howard Choi Law — Business & Litigation Counsel" },
-      {
-        name: "description",
-        content: "Business, litigation, and regulatory counsel with direct access and clear strategic advice.",
-      },
+      { title: "Howard Choi Law" },
       { name: "author", content: "Howard Choi Law" },
-      { property: "og:title", content: "Howard Choi Law — Business & Litigation Counsel" },
-      {
-        property: "og:description",
-        content: "Direct, commercially minded counsel for high-stakes matters.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
+      { name: "theme-color", content: "#17130f" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -43,6 +34,16 @@ export const Route = createRootRoute({
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..600&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@400;500;600&display=swap",
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(legalServiceJsonLd),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(webSiteJsonLd),
       },
     ],
   }),
