@@ -9,16 +9,14 @@ const rootDir = fileURLToPath(new URL(".", import.meta.url));
 
 const shouldPrerender = (routePath: string) => {
   if (routePath === "/ko") return false;
-  if (routePath === "/about" || routePath === "/locations" || routePath.startsWith("/location/")) return false;
+  if (routePath === "/results" || routePath === "/ko/results") return false;
+  if (routePath.startsWith("/location/")) return false;
   if (routePath.startsWith("/admin") || routePath.startsWith("/auth")) return false;
   return true;
 };
 
 export default defineConfig({
-  server: {
-    host: "::",
-    port: 8080,
-  },
+  server: { host: "::", port: 8080 },
   plugins: [
     tanstackStart({
       prerender: {
