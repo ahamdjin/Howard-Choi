@@ -1,11 +1,5 @@
 import { useState, type ReactNode } from "react";
-import {
-  createRootRoute,
-  HeadContent,
-  Outlet,
-  Scripts,
-  useRouterState,
-} from "@tanstack/react-router";
+import { createRootRoute, HeadContent, Outlet, Scripts, useRouterState } from "@tanstack/react-router";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/toaster";
@@ -22,8 +16,8 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1.0" },
-      { title: "Howard Choi Law" },
-      { name: "author", content: "Howard Choi Law" },
+      { title: "Buena Park Injury Lawyer" },
+      { name: "author", content: "Buena Park Injury Lawyer" },
       { name: "theme-color", content: "#17130f" },
     ],
     links: [
@@ -31,20 +25,11 @@ export const Route = createRootRoute({
       { rel: "icon", type: "image/webp", href: brandMark },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..600&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@400;500;600&display=swap",
-      },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..600&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@400;500;600&display=swap" },
     ],
     scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify(legalServiceJsonLd),
-      },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify(webSiteJsonLd),
-      },
+      { type: "application/ld+json", children: JSON.stringify(legalServiceJsonLd) },
+      { type: "application/ld+json", children: JSON.stringify(webSiteJsonLd) },
     ],
   }),
   notFoundComponent: NotFound,
@@ -53,49 +38,15 @@ export const Route = createRootRoute({
 
 function AppProviders({ children }: { children: ReactNode }) {
   const [queryClient] = useState(() => new QueryClient());
-
-  return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <SmoothScroll />
-        <ScrollToTop />
-        {children}
-      </TooltipProvider>
-    </QueryClientProvider>
-  );
+  return <QueryClientProvider client={queryClient}><TooltipProvider><Toaster /><Sonner /><SmoothScroll /><ScrollToTop />{children}</TooltipProvider></QueryClientProvider>;
 }
 
 function RootComponent() {
-  return (
-    <RootDocument>
-      <AppProviders>
-        <Outlet />
-      </AppProviders>
-    </RootDocument>
-  );
+  return <RootDocument><AppProviders><Outlet /></AppProviders></RootDocument>;
 }
 
 function RootDocument({ children }: { children: ReactNode }) {
   const pathname = useRouterState({ select: (state) => state.location.pathname });
   const lang = pathname === "/ko" || pathname.startsWith("/ko/") ? "ko" : "en";
-
-  return (
-    <html lang={lang}>
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-        <script
-          async
-          src="https://widgets.leadconnectorhq.com/loader.js"
-          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-          data-widget-id="6a9841dd05dab92683f66d82"
-        />
-      </body>
-    </html>
-  );
+  return <html lang={lang}><head><HeadContent /></head><body>{children}<Scripts /><script async src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a9841dd05dab92683f66d82" /></body></html>;
 }
