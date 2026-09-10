@@ -1,8 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
-import Locations from "@/pages/Locations";
-import { noIndexSeo } from "@/lib/seo";
+import { LocationsPage } from "@/pages/InjurySitePages";
+import { buildSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/locations")({
-  head: () => noIndexSeo("Locations | Howard Choi Law"),
-  component: Locations,
+  head: () => buildSeo({
+    title: "Locations Served | Buena Park Injury Lawyer",
+    description: "Buena Park Injury Lawyer serves Buena Park, Fullerton, Anaheim, Cerritos, La Mirada, and La Habra for accident and personal injury matters.",
+    path: "/locations",
+    alternatePath: "/ko/locations",
+    locale: "en-US",
+  }),
+  component: () => <LocationsPage locale="en" />,
 });
