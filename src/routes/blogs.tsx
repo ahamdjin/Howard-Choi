@@ -3,14 +3,12 @@ import Blogs from "@/pages/Blogs";
 import { buildSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/blogs")({
-  head: () =>
-    buildSeo({
-      title: "Legal Insights & Articles | Howard Choi Law",
-      description:
-        "Practical legal insights from Howard Choi Law on business disputes, contracts, corporate matters, risk, and consequential legal decisions.",
-      path: "/blogs",
-      alternatePath: "/ko/blogs",
-      locale: "en-US",
-    }),
+  head: () => buildSeo({
+    title: "Personal Injury Law Blog | Buena Park Injury Lawyer",
+    description: "Clear, practical guides on car accidents, personal injury claims, insurance, evidence, medical documentation, and recovery after an accident in California.",
+    path: "/blogs",
+    alternatePath: "/ko/blogs",
+    locale: "en-US",
+  }),
   component: Blogs,
 });
