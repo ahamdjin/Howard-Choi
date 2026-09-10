@@ -45,8 +45,17 @@ function RootComponent() {
   return <RootDocument><AppProviders><Outlet /></AppProviders></RootDocument>;
 }
 
+function ViewportFrame() {
+  return (
+    <div
+      aria-hidden="true"
+      className="pointer-events-none fixed inset-0 z-[110] rounded-[16px] border-[5px] border-[#f3efe7] shadow-[inset_0_0_0_1px_rgba(33,28,23,0.035)] sm:rounded-[18px] sm:border-[7px]"
+    />
+  );
+}
+
 function RootDocument({ children }: { children: ReactNode }) {
   const pathname = useRouterState({ select: (state) => state.location.pathname });
   const lang = pathname === "/ko" || pathname.startsWith("/ko/") ? "ko" : "en";
-  return <html lang={lang}><head><HeadContent /></head><body>{children}<Scripts /><script async src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a9841dd05dab92683f66d82" /></body></html>;
+  return <html lang={lang}><head><HeadContent /></head><body><ViewportFrame />{children}<Scripts /><script async src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a9841dd05dab92683f66d82" /></body></html>;
 }
