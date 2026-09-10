@@ -1,65 +1,52 @@
 import { Link } from "react-router-dom";
 import brandLogo from "@/assets/law-firm/howard-choi-mark.webp";
+import { brand, practiceAreas, serviceLocations } from "@/data/injurySite";
 
 const Footer = () => {
   return (
     <footer className="bg-background py-24 text-foreground md:py-28 lg:py-32">
       <div className="site-shell">
-        <div className="grid gap-12 border-b border-black/10 pb-16 md:grid-cols-4 lg:gap-16">
+        <div className="grid gap-12 border-b border-black/10 pb-16 md:grid-cols-4 lg:gap-14">
           <div>
-            <div className="mb-5 flex items-center gap-2">
-              <span className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-[2px]">
-                <img src={brandLogo} alt="" width={28} height={28} loading="lazy" decoding="async" className="h-full w-full object-cover invert" />
-              </span>
-              <span className="text-[15px] font-medium">Howard Choi Law</span>
+            <div className="mb-5 flex items-center gap-2.5">
+              <span className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-[2px]"><img src={brandLogo} alt="" width={28} height={28} loading="lazy" decoding="async" className="h-full w-full object-cover invert" /></span>
+              <span className="text-[14px] font-medium tracking-[-0.02em]">{brand.name}</span>
             </div>
-            <p className="max-w-xs text-[13px] leading-6 text-muted-foreground">
-              Focused legal counsel for businesses, founders, and private clients navigating important decisions.
-            </p>
+            <p className="max-w-[270px] text-[13px] leading-6 text-muted-foreground">Accident and personal-injury counsel centered on Buena Park and nearby communities.</p>
+            <a href={brand.phoneHref} className="mt-5 block text-[13px] font-medium hover:opacity-60">{brand.phoneDisplay}</a>
           </div>
 
           <div>
-            <div className="mb-5 text-[12px] text-muted-foreground">Practice</div>
+            <div className="mb-5 text-[12px] text-muted-foreground">Practice Areas</div>
             <div className="space-y-3 text-[13px]">
-              <a href="/#practice" className="block hover:opacity-60">Corporate</a>
-              <a href="/#practice" className="block hover:opacity-60">Litigation</a>
-              <a href="/#practice" className="block hover:opacity-60">Regulatory</a>
+              {practiceAreas.slice(0, 5).map((practice) => <Link key={practice.slug} to={`/practice-areas/${practice.slug}`} className="block hover:opacity-60">{practice.title}</Link>)}
+              <Link to="/practice-areas" className="block text-muted-foreground hover:text-foreground">View all →</Link>
+            </div>
+          </div>
+
+          <div>
+            <div className="mb-5 text-[12px] text-muted-foreground">Locations</div>
+            <div className="grid grid-cols-2 gap-x-5 gap-y-3 text-[13px] md:grid-cols-1">
+              {serviceLocations.map((location) => <Link key={location.slug} to={`/locations/${location.slug}`} className="block hover:opacity-60">{location.name}</Link>)}
             </div>
           </div>
 
           <div>
             <div className="mb-5 text-[12px] text-muted-foreground">Firm</div>
             <div className="space-y-3 text-[13px]">
-              <a href="/#approach" className="block hover:opacity-60">Approach</a>
-              <a href="/#faq" className="block hover:opacity-60">FAQ</a>
-              <Link to="/blogs" className="block hover:opacity-60">Blogs</Link>
+              <Link to="/attorney" className="block hover:opacity-60">Howard Choi</Link>
+              <Link to="/results" className="block hover:opacity-60">Results</Link>
+              <Link to="/blogs" className="block hover:opacity-60">Law Blog</Link>
+              <Link to="/about" className="block hover:opacity-60">About</Link>
               <Link to="/contact" className="block hover:opacity-60">Contact</Link>
-              <a href="/#booking" className="block hover:opacity-60">Consultation</a>
             </div>
-          </div>
-
-          <div>
-            <div className="mb-5 text-[12px] text-muted-foreground">Contact</div>
-            <div className="space-y-3 text-[13px] text-muted-foreground">
-              <a href="mailto:hello@howardchoilaw.com" className="block hover:text-foreground">hello@howardchoilaw.com</a>
-              <a href="tel:+17146900007" className="block hover:text-foreground">+1 714-690-0007</a>
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=6301+Beach+Blvd%2C+Buena+Park%2C+CA+90621"
-                target="_blank"
-                rel="noreferrer"
-                className="block max-w-[210px] leading-5 hover:text-foreground"
-              >
-                6301 Beach Blvd<br />Buena Park, CA 90621
-              </a>
-              <p>Mon–Fri · 9:00–5:00</p>
-              <p>Consultations by appointment</p>
-            </div>
+            <div className="mt-7 text-[12px] leading-5 text-muted-foreground">{brand.address}</div>
           </div>
         </div>
 
         <div className="flex flex-col gap-4 pt-8 text-[11px] text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <span>© 2026 Howard Choi Law</span>
-          <span>Attorney advertising · General information only</span>
+          <span>© 2026 {brand.name}</span>
+          <span>Attorney advertising · General information only · Prior results do not guarantee a similar outcome</span>
         </div>
       </div>
     </footer>
