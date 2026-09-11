@@ -51,6 +51,8 @@ function RootDocument({ children }: { children: ReactNode }) {
   const pathname = useRouterState({ select: (state) => state.location.pathname });
   const lang = pathname === "/ko" || pathname.startsWith("/ko/") ? "ko" : "en";
   const innerSitePage = /^\/(?:ko\/)?(?:practice-areas|locations|attorney|results|about)(?:\/|$)/.test(pathname);
+  const contactPage = pathname === "/contact" || pathname === "/ko/contact";
+
   return (
     <html lang={lang}>
       <head><HeadContent /></head>
@@ -59,8 +61,12 @@ function RootDocument({ children }: { children: ReactNode }) {
           {children}
         </div>
         <Scripts />
-        <script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_9bc9b1c38e8446d69a248bc862fae75a" />
-        <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript" />
+        {contactPage ? (
+          <>
+            <script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_9bc9b1c38e8446d69a248bc862fae75a" />
+            <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript" />
+          </>
+        ) : null}
         <script async src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a9841dd05dab92683f66d82" />
       </body>
     </html>

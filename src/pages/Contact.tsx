@@ -1,34 +1,14 @@
-import { useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { CalendarDays, Mail, MapPin, Phone } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import GHLCalendar from "@/components/GHLCalendar";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import WebsiteInquiryForm from "@/components/WebsiteInquiryForm";
 import heroCityBoardroom from "@/assets/law-firm/hero-city-boardroom.webp";
 
 const Contact = () => {
   const { scrollY } = useScroll();
   const heroY = useTransform(scrollY, [0, 700], [0, 90]);
-  const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = event.target;
-    setFormData((current) => ({ ...current, [name]: value }));
-  };
-
-  const openEmail = (subject: string, body: string) => {
-    window.location.href = `mailto:hello@howardchoilaw.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  };
-
-  const handleMessageSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    openEmail(
-      formData.subject || "Website inquiry",
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
-    );
-  };
 
   return (
     <div className="min-h-screen overflow-x-clip bg-background">
@@ -106,47 +86,7 @@ const Contact = () => {
               A short outline is enough. Avoid sending confidential or time-sensitive information until an attorney-client relationship has been confirmed.
             </p>
 
-            <form onSubmit={handleMessageSubmit} className="mt-8 space-y-3">
-              <div className="grid gap-3 sm:grid-cols-2">
-                <Input
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  placeholder="Name"
-                  className="h-12 rounded-[2px] border-foreground/10 bg-background/70 px-4 text-[13px] shadow-none"
-                />
-                <Input
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  placeholder="Email"
-                  className="h-12 rounded-[2px] border-foreground/10 bg-background/70 px-4 text-[13px] shadow-none"
-                />
-              </div>
-              <Input
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                required
-                placeholder="Subject"
-                className="h-12 rounded-[2px] border-foreground/10 bg-background/70 px-4 text-[13px] shadow-none"
-              />
-              <Textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                placeholder="A brief outline of the matter"
-                rows={7}
-                className="resize-none rounded-[2px] border-foreground/10 bg-background/70 p-4 text-[13px] leading-6 shadow-none"
-              />
-              <button type="submit" className="liquid-cta mt-2 inline-flex rounded-full px-6 py-3 text-[12px] font-medium">
-                <span className="relative z-10">Send inquiry</span>
-              </button>
-            </form>
+            <WebsiteInquiryForm locale="en" />
           </motion.section>
 
           <motion.section

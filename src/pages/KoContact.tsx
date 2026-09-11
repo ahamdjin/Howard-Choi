@@ -1,11 +1,9 @@
-import { useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { CalendarDays, Mail, MapPin, Phone } from "lucide-react";
 import KoreanNavigation from "@/components/KoreanNavigation";
 import KoreanFooter from "@/components/KoreanFooter";
 import GHLCalendar from "@/components/GHLCalendar";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import WebsiteInquiryForm from "@/components/WebsiteInquiryForm";
 import heroCityBoardroom from "@/assets/law-firm/hero-city-boardroom.webp";
 
 const koSerif = { fontFamily: '"Noto Serif KR", serif' } as const;
@@ -13,24 +11,6 @@ const koSerif = { fontFamily: '"Noto Serif KR", serif' } as const;
 const KoContact = () => {
   const { scrollY } = useScroll();
   const heroY = useTransform(scrollY, [0, 700], [0, 90]);
-  const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = event.target;
-    setFormData((current) => ({ ...current, [name]: value }));
-  };
-
-  const openEmail = (subject: string, body: string) => {
-    window.location.href = `mailto:hello@howardchoilaw.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  };
-
-  const handleMessageSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    openEmail(
-      formData.subject || "웹사이트 문의",
-      `이름: ${formData.name}\n이메일: ${formData.email}\n\n${formData.message}`
-    );
-  };
 
   return (
     <div className="min-h-screen overflow-x-clip bg-background" style={{ fontFamily: '"Noto Sans KR", sans-serif' }}>
@@ -82,15 +62,7 @@ const KoContact = () => {
               짧은 개요만으로 충분합니다. 변호사-의뢰인 관계가 확인되기 전에는 기밀정보나 긴급한 민감정보를 보내지 마세요.
             </p>
 
-            <form onSubmit={handleMessageSubmit} className="mt-8 space-y-3">
-              <div className="grid gap-3 sm:grid-cols-2">
-                <Input name="name" value={formData.name} onChange={handleChange} required placeholder="이름" className="h-12 rounded-[2px] border-foreground/10 bg-background/70 px-4 text-[13px] shadow-none" />
-                <Input name="email" type="email" value={formData.email} onChange={handleChange} required placeholder="이메일" className="h-12 rounded-[2px] border-foreground/10 bg-background/70 px-4 text-[13px] shadow-none" />
-              </div>
-              <Input name="subject" value={formData.subject} onChange={handleChange} required placeholder="문의 제목" className="h-12 rounded-[2px] border-foreground/10 bg-background/70 px-4 text-[13px] shadow-none" />
-              <Textarea name="message" value={formData.message} onChange={handleChange} required placeholder="사안의 간단한 개요" rows={7} className="resize-none rounded-[2px] border-foreground/10 bg-background/70 p-4 text-[13px] leading-6 shadow-none" />
-              <button type="submit" className="liquid-cta mt-2 inline-flex rounded-full px-6 py-3 text-[12px] font-medium"><span className="relative z-10">문의 보내기</span></button>
-            </form>
+            <WebsiteInquiryForm locale="ko" />
           </motion.section>
 
           <motion.section id="calendar" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.08 }} transition={{ duration: 0.68, delay: 0.06 }} className="scroll-mt-24 rounded-[4px] bg-[#1a1714] p-4 text-[#f3eee5] md:p-6">
