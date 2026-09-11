@@ -44,9 +44,15 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-4 pt-8 text-[11px] text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+        <div className="grid gap-5 pt-8 text-[11px] text-muted-foreground lg:grid-cols-[auto_1fr_auto] lg:items-center">
           <span>© 2026 {brand.name}</span>
-          <span>Attorney advertising · General information only · Prior results do not guarantee a similar outcome</span>
+          <div className="flex flex-wrap gap-x-4 gap-y-2 lg:justify-center">
+            <Link to="/privacy-policy" className="hover:text-foreground">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-foreground">Terms of Use</Link>
+            <Link to="/disclaimer" className="hover:text-foreground">Legal Disclaimer</Link>
+            <Link to="/accessibility" className="hover:text-foreground">Accessibility</Link>
+          </div>
+          <span className="max-w-[430px] lg:text-right">Attorney advertising · General information only · Prior results do not guarantee a similar outcome</span>
         </div>
       </div>
     </footer>
