@@ -122,11 +122,11 @@ const hasSlot = (days: AvailabilityDays, requestedSlot: string) => {
   );
 };
 
-const safeFailureReason = (message: string) => {
-  if (/\b(401|403)\b/.test(message)) return "permissions" as const;
-  if (/slot|availability|available|date range/i.test(message)) return "slot" as const;
-  if (/phone|contact/i.test(message)) return "contact" as const;
-  return "booking" as const;
+const bookingError = (message: string) => {
+  if (/\b(401|403)\b/.test(message)) return new Error("permissions: HighLevel token is missing a required write scope");
+  if (/slot|availability|available|date range/i.test(message)) return new Error("slot: the selected time is no longer available");
+  if (/phone|contact/i.test(message)) return new Error("contact: HighLevel could not create or update the contact");
+  return new Error("booking: HighLevel could not create the appointment");
 };
 
 export const getGhlAvailability = createServerFn({ method: "POST" })
@@ -153,15 +153,11 @@ export const bookGhlAppointment = createServerFn({ method: "POST" })
 
     const selectedTime = new Date(data.startTime).getTime();
     if (Number.isNaN(selectedTime) || !isBusinessHourSlot(data.startTime)) {
-      return {
-        configured: true as const,
-        success: false as const,
-        reason: "hours" as const,
-      };
+      throw new Error("slot: appointments are available from 8:00 AM to 5:00 PM Pacific");
     }
 
-    // Re-check HighLevel immediately before creating anything. The custom UI is
-    // only allowed to book a slot HighLevel itself still reports as free.
+    // Re-check the exact slot against HighLevel immediately before booking.
+    // We never create a contact or appointment unless GHL still reports it free.
     try {
       const liveAvailability = await fetchAvailability(
         selectedTime - 12 * 60 * 60 * 1000,
@@ -169,20 +165,13 @@ export const bookGhlAppointment = createServerFn({ method: "POST" })
       );
 
       if (!hasSlot(liveAvailability, data.startTime)) {
-        return {
-          configured: true as const,
-          success: false as const,
-          reason: "slot" as const,
-        };
+        throw new Error("slot: the selected time is no longer available");
       }
     } catch (error) {
       const message = error instanceof Error ? error.message : "Availability validation failed";
       console.error("GHL booking availability validation failed:", message);
-      return {
-        configured: true as const,
-        success: false as const,
-        reason: safeFailureReason(message),
-      };
+      if (message.startsWith("slot:")) throw error;
+      throw bookingError(message);
     }
 
     let contactId = "";
@@ -210,11 +199,7 @@ export const bookGhlAppointment = createServerFn({ method: "POST" })
     } catch (error) {
       const message = error instanceof Error ? error.message : "Contact upsert failed";
       console.error("GHL calendar contact upsert failed:", message);
-      return {
-        configured: true as const,
-        success: false as const,
-        reason: safeFailureReason(message),
-      };
+      throw bookingError(message);
     }
 
     try {
@@ -244,7 +229,6 @@ export const bookGhlAppointment = createServerFn({ method: "POST" })
 
       return {
         configured: true as const,
-        success: true as const,
         appointmentId: appointment.id || "",
         startTime: appointment.startTime || data.startTime,
         status: appointment.appointmentStatus || "confirmed",
@@ -252,10 +236,6 @@ export const bookGhlAppointment = createServerFn({ method: "POST" })
     } catch (error) {
       const message = error instanceof Error ? error.message : "Appointment creation failed";
       console.error("GHL appointment creation failed:", message);
-      return {
-        configured: true as const,
-        success: false as const,
-        reason: safeFailureReason(message),
-      };
+      throw bookingError(message);
     }
   });
