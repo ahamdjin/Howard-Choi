@@ -149,3 +149,30 @@
     }
   }
 }
+
+/* Homepage frame: the header stays flat while the hero is clipped by the page frame.
+   This keeps the source image untouched and creates the same warm-white reveal on
+   the sides and beneath the first viewport. Applies to both EN and KO homepages. */
+nav + .relative > .sticky.top-0.h-\[100svh\] {
+  box-sizing: border-box;
+  padding-top: 60px;
+  padding-bottom: 7px;
+  background: hsl(var(--background));
+}
+
+nav + .relative > .sticky.top-0.h-\[100svh\] > section {
+  height: 100% !important;
+  min-height: 0 !important;
+  border-radius: clamp(20px, 1.8vw, 30px);
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  nav + .relative > .sticky.top-0.h-\[100svh\] {
+    padding-bottom: 5px;
+  }
+
+  nav + .relative > .sticky.top-0.h-\[100svh\] > section {
+    border-radius: 20px;
+  }
+}
