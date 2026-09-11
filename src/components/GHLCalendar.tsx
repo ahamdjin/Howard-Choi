@@ -1,16 +1,19 @@
 import { useEffect, useMemo, useState } from "react";
 import { ArrowLeft, ArrowRight, Check, Clock, LoaderCircle, Phone } from "lucide-react";
-import { bookGhlAppointment, getGhlAvailability } from "@/lib/ghl-calendar";
 
 type GHLCalendarProps = {
   locale?: "en" | "ko";
 };
 
-type AvailabilityDays = Record<string, { slots?: string[] }>;
+type AvailabilityDays = Record<string, { slots?: string[] } | string[]>;
 
 export const GHL_CALENDAR_ID = "GpAHipyEcevlPgeso3ZO";
 export const GHL_LOCATION_ID = "gfYUTFnb4HXoCMB4p3Xk";
 const PACIFIC_TIMEZONE = "America/Los_Angeles";
+const VIBE_API_URL = "https://backend.leadconnectorhq.com/vibe-ai";
+const PUBLIC_CALENDAR_BASE = "https://backend.leadconnectorhq.com/calendars";
+const BUSINESS_OPEN_MINUTES = 8 * 60;
+const BUSINESS_CLOSE_MINUTES = 17 * 60;
 
 const pad = (value: number) => String(value).padStart(2, "0");
 const dateKey = (date: Date) => `${date.getUTCFullYear()}-${pad(date.getUTCMonth() + 1)}-${pad(date.getUTCDate())}`;
@@ -56,20 +59,54 @@ const monthRange = (month: Date) => ({
   endDate: Date.UTC(month.getUTCFullYear(), month.getUTCMonth() + 1, 0, 23, 59, 59),
 });
 
+const getSlotsForDate = (days: AvailabilityDays, key: string) => {
+  const day = days[key];
+  if (!day) return [];
+  if (Array.isArray(day)) return day;
+  return Array.isArray(day.slots) ? day.slots : [];
+};
+
+const pacificMinutes = (slot: string) => {
+  const date = new Date(slot);
+  if (Number.isNaN(date.getTime())) return -1;
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone: PACIFIC_TIMEZONE,
+    hour: "2-digit",
+    minute: "2-digit",
+    hourCycle: "h23",
+  }).formatToParts(date);
+  const hour = Number(parts.find((part) => part.type === "hour")?.value ?? -1);
+  const minute = Number(parts.find((part) => part.type === "minute")?.value ?? -1);
+  return hour >= 0 && minute >= 0 ? hour * 60 + minute : -1;
+};
+
+const withinBusinessHours = (slot: string) => {
+  const minutes = pacificMinutes(slot);
+  return minutes >= BUSINESS_OPEN_MINUTES && minutes < BUSINESS_CLOSE_MINUTES;
+};
+
+const filterAvailability = (days: AvailabilityDays): AvailabilityDays =>
+  Object.fromEntries(
+    Object.keys(days || {}).map((key) => [
+      key,
+      { slots: getSlotsForDate(days, key).filter(withinBusinessHours) },
+    ]),
+  );
+
 const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
   const isKorean = locale === "ko";
   const todayKey = pacificTodayKey();
   const currentMonth = firstOfMonth(todayKey);
   const [month, setMonth] = useState(currentMonth);
   const [availability, setAvailability] = useState<AvailabilityDays>({});
-  const [configured, setConfigured] = useState<boolean | null>(null);
   const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState(false);
   const [selectedDate, setSelectedDate] = useState<string>("");
   const [selectedSlot, setSelectedSlot] = useState("");
   const [booking, setBooking] = useState(false);
   const [bookedSlot, setBookedSlot] = useState("");
   const [error, setError] = useState("");
-  const [details, setDetails] = useState({ fullName: "", email: "", phone: "" });
+  const [details, setDetails] = useState({ firstName: "", lastName: "", email: "", phone: "", notes: "" });
   const [consent, setConsent] = useState(false);
 
   const calendarDays = useMemo(() => buildMonthGrid(month), [month]);
@@ -96,27 +133,32 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
 
   useEffect(() => {
     let active = true;
+    const { startDate, endDate } = monthRange(month);
     setLoading(true);
+    setLoadError(false);
     setError("");
     setSelectedDate("");
     setSelectedSlot("");
 
-    getGhlAvailability({ data: monthRange(month) })
-      .then((result) => {
-        if (!active) return;
-        setConfigured(result.configured);
-        const days = result.days as AvailabilityDays;
-        setAvailability(days);
-        if (result.configured) {
-          const firstAvailable = Object.keys(days)
-            .sort()
-            .find((key) => key >= todayKey && (days[key]?.slots?.length || 0) > 0);
-          if (firstAvailable) setSelectedDate(firstAvailable);
-        }
+    fetch(
+      `${PUBLIC_CALENDAR_BASE}/${GHL_CALENDAR_ID}/free-slots?startDate=${startDate}&endDate=${endDate}&timezone=${encodeURIComponent(PACIFIC_TIMEZONE)}`,
+    )
+      .then(async (response) => {
+        if (!response.ok) throw new Error(`Availability request failed (${response.status})`);
+        return response.json() as Promise<AvailabilityDays>;
       })
-      .catch(() => {
+      .then((rawDays) => {
         if (!active) return;
-        setConfigured(false);
+        const days = filterAvailability(rawDays || {});
+        setAvailability(days);
+        const firstAvailable = Object.keys(days)
+          .sort()
+          .find((key) => key >= todayKey && getSlotsForDate(days, key).length > 0);
+        if (firstAvailable) setSelectedDate(firstAvailable);
+      })
+      .catch((caught) => {
+        console.error("HighLevel public calendar availability failed:", caught);
+        if (active) setLoadError(true);
       })
       .finally(() => {
         if (active) setLoading(false);
@@ -153,7 +195,7 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
     );
   }
 
-  const slots = selectedDate ? availability[selectedDate]?.slots || [] : [];
+  const slots = selectedDate ? getSlotsForDate(availability, selectedDate) : [];
   const canGoBack = month > currentMonth;
 
   const handleBook = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -163,33 +205,37 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
     setError("");
 
     try {
-      const result = await bookGhlAppointment({
-        data: {
-          fullName: details.fullName,
-          email: details.email,
-          phone: details.phone,
-          startTime: selectedSlot,
-        },
+      const response = await fetch(`${VIBE_API_URL}/booking/submit`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          locationId: GHL_LOCATION_ID,
+          calendarId: GHL_CALENDAR_ID,
+          firstName: details.firstName.trim(),
+          lastName: details.lastName.trim(),
+          email: details.email.trim(),
+          phone: details.phone.trim(),
+          notes: details.notes.trim(),
+          selectedSlot,
+          selectedTimezone: PACIFIC_TIMEZONE,
+          sessionId: typeof crypto !== "undefined" && "randomUUID" in crypto ? crypto.randomUUID() : `${Date.now()}-${Math.random()}`,
+        }),
       });
 
-      if (!result.configured) {
-        setConfigured(false);
-        setError(isKorean ? "예약 연결을 불러올 수 없습니다. 잠시 후 다시 시도해 주세요." : "The booking connection is temporarily unavailable. Please try again shortly.");
-        return;
+      if (!response.ok) {
+        const payload = await response.json().catch(() => ({}));
+        console.error("HighLevel public booking failed:", response.status, payload);
+        throw new Error("BOOKING_FAILED");
       }
 
-      setBookedSlot(result.startTime || selectedSlot);
+      setBookedSlot(selectedSlot);
     } catch (caught) {
-      const message = caught instanceof Error ? caught.message : "";
+      console.error("HighLevel public booking error:", caught);
       setError(
         isKorean
-          ? "선택한 시간이 방금 예약되었거나 예약을 완료할 수 없습니다. 다른 시간을 선택해 주세요."
-          : message.includes("slot")
-            ? "That time was just taken. Please choose another available time."
-            : "We couldn't complete the booking. Please choose another time or call the office.",
+          ? "예약을 완료할 수 없습니다. 다른 시간을 선택하거나 잠시 후 다시 시도해 주세요."
+          : "We couldn't complete the booking. Please choose another time or try again shortly.",
       );
-      const refreshed = await getGhlAvailability({ data: monthRange(month) }).catch(() => null);
-      if (refreshed?.configured) setAvailability(refreshed.days as AvailabilityDays);
     } finally {
       setBooking(false);
     }
@@ -197,8 +243,8 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
 
   return (
     <div className="overflow-hidden rounded-[3px] bg-[#f9f8f6] text-[#1e1c1a]">
-      <div className="grid lg:grid-cols-[1.08fr_0.92fr]">
-        <div className="border-b border-[#1e1c1a]/10 p-5 md:p-7 lg:border-b-0 lg:border-r">
+      <div className="grid xl:grid-cols-[1.02fr_0.98fr]">
+        <div className="border-b border-[#1e1c1a]/10 p-5 md:p-7 xl:border-b-0 xl:border-r">
           <div className="flex items-center justify-between gap-4">
             <div>
               <span className="text-[9px] font-medium uppercase tracking-[0.15em] text-[#1e1c1a]/38">
@@ -237,7 +283,7 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
             {calendarDays.map((day) => {
               const key = dateKey(day);
               const inMonth = sameMonth(day, month);
-              const daySlots = availability[key]?.slots || [];
+              const daySlots = getSlotsForDate(availability, key);
               const available = inMonth && key >= todayKey && daySlots.length > 0;
               const selected = key === selectedDate;
               return (
@@ -267,17 +313,17 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
           </div>
 
           <div className="mt-6 flex items-center justify-between border-t border-[#1e1c1a]/10 pt-4 text-[10px] text-[#1e1c1a]/38">
-            <span>{isKorean ? "표시된 날짜에 예약 가능" : "Available dates are highlighted"}</span>
+            <span>{isKorean ? "오전 8시–오후 5시 예약 가능" : "Booking window · 8:00 AM–5:00 PM"}</span>
             <span>Pacific Time</span>
           </div>
         </div>
 
         <div className="bg-[#f1eee8] p-5 md:p-7">
-          {loading || configured === null ? (
+          {loading ? (
             <div className="flex min-h-[360px] items-center justify-center text-[#1e1c1a]/42">
               <LoaderCircle className="h-5 w-5 animate-spin" />
             </div>
-          ) : configured === false ? (
+          ) : loadError ? (
             <div className="flex min-h-[360px] flex-col justify-center">
               <span className="text-[9px] font-medium uppercase tracking-[0.15em] text-[#1e1c1a]/38">
                 {isKorean ? "예약 연결" : "Calendar connection"}
@@ -285,11 +331,6 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
               <h3 className="editorial-serif mt-3 max-w-[340px] text-[1.9rem] leading-[1.02] tracking-[-0.02em]">
                 {isKorean ? "예약 가능 시간을 불러오지 못했습니다." : "We couldn't load the available times."}
               </h3>
-              <p className="mt-4 max-w-[360px] text-[11px] leading-5 text-[#1e1c1a]/46">
-                {isKorean
-                  ? "잠시 후 페이지를 새로고침하거나 사무실로 전화해 주세요."
-                  : "Please refresh in a moment. If the issue continues, you can call the office directly."}
-              </p>
               <button
                 type="button"
                 onClick={() => window.location.reload()}
@@ -310,7 +351,7 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
                 {dayFormatter.format(fromDateKey(selectedDate))}
               </h3>
 
-              <div className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3">
+              <div className="mt-5 grid max-h-[250px] grid-cols-2 gap-2 overflow-y-auto pr-1 sm:grid-cols-3 xl:grid-cols-2 2xl:grid-cols-3">
                 {slots.map((slot) => (
                   <button
                     type="button"
@@ -337,16 +378,27 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
                     {isKorean ? "03 · 연락처" : "03 · Your details"}
                   </span>
                   <div className="mt-4 space-y-2.5">
-                    <input
-                      required
-                      name="full_name"
-                      autoComplete="name"
-                      value={details.fullName}
-                      onChange={(event) => setDetails((value) => ({ ...value, fullName: event.target.value }))}
-                      placeholder={isKorean ? "성명" : "Full name"}
-                      className="h-11 w-full border border-[#1e1c1a]/10 bg-[#f9f8f6] px-3.5 text-[12px] outline-none transition-colors placeholder:text-[#1e1c1a]/30 focus:border-[#1e1c1a]/35"
-                    />
-                    <div className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+                    <div className="grid gap-2.5 sm:grid-cols-2 xl:grid-cols-1 2xl:grid-cols-2">
+                      <input
+                        required
+                        name="first_name"
+                        autoComplete="given-name"
+                        value={details.firstName}
+                        onChange={(event) => setDetails((value) => ({ ...value, firstName: event.target.value }))}
+                        placeholder={isKorean ? "이름" : "First name"}
+                        className="h-11 w-full border border-[#1e1c1a]/10 bg-[#f9f8f6] px-3.5 text-[12px] outline-none transition-colors placeholder:text-[#1e1c1a]/30 focus:border-[#1e1c1a]/35"
+                      />
+                      <input
+                        required
+                        name="last_name"
+                        autoComplete="family-name"
+                        value={details.lastName}
+                        onChange={(event) => setDetails((value) => ({ ...value, lastName: event.target.value }))}
+                        placeholder={isKorean ? "성" : "Last name"}
+                        className="h-11 w-full border border-[#1e1c1a]/10 bg-[#f9f8f6] px-3.5 text-[12px] outline-none transition-colors placeholder:text-[#1e1c1a]/30 focus:border-[#1e1c1a]/35"
+                      />
+                    </div>
+                    <div className="grid gap-2.5 sm:grid-cols-2 xl:grid-cols-1 2xl:grid-cols-2">
                       <input
                         required
                         type="email"
@@ -358,7 +410,6 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
                         className="h-11 w-full border border-[#1e1c1a]/10 bg-[#f9f8f6] px-3.5 text-[12px] outline-none transition-colors placeholder:text-[#1e1c1a]/30 focus:border-[#1e1c1a]/35"
                       />
                       <input
-                        required
                         type="tel"
                         name="phone"
                         autoComplete="tel"
@@ -368,7 +419,13 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
                         className="h-11 w-full border border-[#1e1c1a]/10 bg-[#f9f8f6] px-3.5 text-[12px] outline-none transition-colors placeholder:text-[#1e1c1a]/30 focus:border-[#1e1c1a]/35"
                       />
                     </div>
-                    <label className="flex cursor-pointer items-start gap-3 pt-2 text-[10px] leading-5 text-[#1e1c1a]/48">
+                    <textarea
+                      value={details.notes}
+                      onChange={(event) => setDetails((value) => ({ ...value, notes: event.target.value }))}
+                      placeholder={isKorean ? "추가 메모 (선택 사항)" : "Additional notes (optional)"}
+                      className="min-h-[76px] w-full resize-none border border-[#1e1c1a]/10 bg-[#f9f8f6] px-3.5 py-3 text-[12px] outline-none transition-colors placeholder:text-[#1e1c1a]/30 focus:border-[#1e1c1a]/35"
+                    />
+                    <label className="flex cursor-pointer items-start gap-3 pt-1 text-[10px] leading-5 text-[#1e1c1a]/48">
                       <input
                         required
                         type="checkbox"
@@ -378,8 +435,8 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
                       />
                       <span>
                         {isKorean
-                          ? "이 상담과 관련된 전화, 문자 및 이메일 안내를 받는 데 동의합니다. 동의는 변호사 선임의 조건이 아닙니다."
-                          : "I agree to receive appointment-related calls, texts, and emails about this consultation. Consent is not a condition of hiring the firm."}
+                          ? "이 상담과 관련된 전화, 문자 및 이메일 안내를 받는 데 동의합니다."
+                          : "I agree to receive appointment-related calls, texts, and emails about this consultation."}
                       </span>
                     </label>
                   </div>
