@@ -54,7 +54,7 @@ const KoContact = () => {
           </a>
         </div>
 
-        <div className="grid gap-5 lg:grid-cols-[0.78fr_1.22fr]">
+        <div className="grid items-start gap-5 lg:grid-cols-[0.78fr_1.22fr]">
           <motion.section initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.18 }} transition={{ duration: 0.68 }} className="rounded-[4px] bg-[#e9e6e1] p-7 md:p-9">
             <span className="text-[11px] text-foreground/48">메시지 보내기</span>
             <h2 style={koSerif} className="mt-3 text-[clamp(1.95rem,2.8vw,2.9rem)] font-medium leading-[1.22] tracking-[-0.04em]">어떤 도움이 필요한지 간단히 알려주세요.</h2>
@@ -65,8 +65,8 @@ const KoContact = () => {
             <WebsiteInquiryForm locale="ko" />
           </motion.section>
 
-          <motion.section id="calendar" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.08 }} transition={{ duration: 0.68, delay: 0.06 }} className="scroll-mt-24 rounded-[4px] bg-[#1a1714] p-4 text-[#f3eee5] md:p-6">
-            <div className="flex items-start justify-between gap-6 px-3 pb-5 pt-3 md:px-4 md:pb-6 md:pt-4">
+          <motion.section id="calendar" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.08 }} transition={{ duration: 0.68, delay: 0.06 }} className="flex min-h-[760px] w-full scroll-mt-24 flex-col rounded-[4px] bg-[#1a1714] p-4 text-[#f3eee5] md:p-6 lg:min-h-[820px]">
+            <div className="flex shrink-0 items-start justify-between gap-6 px-3 pb-5 pt-3 md:px-4 md:pb-6 md:pt-4">
               <div>
                 <span className="text-[11px] text-[#f3eee5]/42">상담</span>
                 <h2 style={koSerif} className="mt-3 max-w-[540px] text-[clamp(1.9rem,2.7vw,2.85rem)] font-medium leading-[1.22] tracking-[-0.04em]">가능한 상담 시간을 예약하세요.</h2>
@@ -77,10 +77,8 @@ const KoContact = () => {
               <CalendarDays className="mt-1 h-5 w-5 shrink-0 text-[#f3eee5]/42" />
             </div>
 
-            <GHLCalendar locale="ko" />
-
-            <div className="px-3 pb-2 pt-4 text-[11px] leading-5 text-[#f3eee5]/38 md:px-4">
-              예약 가능 시간과 확인은 HighLevel 일정 시스템을 통해 관리됩니다.
+            <div className="min-h-0 w-full flex-1 [&>div]:h-full [&>div]:min-h-full [&>div]:w-full [&>div>div]:h-full [&_iframe]:h-full [&_iframe]:min-h-full [&_iframe]:w-full">
+              <GHLCalendar locale="ko" />
             </div>
           </motion.section>
         </div>
