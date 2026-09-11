@@ -84,6 +84,14 @@
   padding-bottom: clamp(2.25rem, 4vw, 3.5rem) !important;
 }
 
+/* The HighLevel chat launcher floats above the bottom-right corner on mobile.
+   Keep the language/call controls in the open mobile navigation comfortably above it. */
+@media (max-width: 1023px) {
+  nav .overflow-y-auto {
+    padding-bottom: calc(env(safe-area-inset-bottom) + 7.5rem) !important;
+  }
+}
+
 @media (max-width: 767px) {
   .inner-site-page section.relative[class*="min-h-[100svh]"]:not([class*="bg-[#171717]"]) > .site-shell {
     padding-top: 3.25rem !important;
