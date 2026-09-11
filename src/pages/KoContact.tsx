@@ -27,6 +27,7 @@ const KoContact = () => {
         />
         <div className="absolute inset-0 bg-[#17130f]/64" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#17130f]/78 via-transparent to-[#17130f]/12" />
+        <div className="hero-bottom-readability" />
 
         <div className="site-shell relative z-10 pb-12 md:pb-14">
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.72 }} className="max-w-[730px]">

@@ -334,6 +334,7 @@ export const AboutFirmPage = ({ locale }: { locale: SiteLocale }) => (
           <div className="relative min-h-[48svh] overflow-hidden bg-[#D8D1C8] lg:min-h-0">
             <img src={heroOffice} alt="Law office interior" className="absolute inset-0 h-full w-full object-cover" fetchPriority="high" />
             <div className="absolute inset-0 bg-[#1E1C1A]/14" />
+            <div className="hero-bottom-readability" />
             <div className="absolute bottom-6 left-6 right-6 border-t border-white/30 pt-4 text-[9px] uppercase tracking-[0.14em] text-white/72">{brand.address}</div>
           </div>
         </div>
@@ -422,6 +423,7 @@ export const PracticeAreasPage = ({ locale }: { locale: SiteLocale }) => (
       <section className="relative min-h-[78svh] overflow-hidden bg-[#1E1C1A] pt-[60px] text-[#F3EEE5]">
         <img src={heroJustice} alt="" className="absolute inset-0 h-full w-full object-cover opacity-55" fetchPriority="high" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#1E1C1A]/95 via-[#1E1C1A]/46 to-[#1E1C1A]/24" />
+        <div className="hero-bottom-readability" />
         <div className="site-shell relative z-10 flex min-h-[calc(78svh-60px)] items-end py-10 md:py-14">
           <div className="grid w-full gap-8 border-t border-white/16 pt-5 lg:grid-cols-[0.3fr_1.7fr]">
             <Eyebrow light>{ko(locale) ? "업무 분야" : "Practice areas"}</Eyebrow>
@@ -485,6 +487,7 @@ const PracticeDetailHero = ({ locale, practice, image }: { locale: SiteLocale; p
   <section className="relative min-h-[82svh] overflow-hidden bg-[#1E1C1A] pt-[60px] text-[#F3EEE5]">
     <img src={image} alt="" className="absolute inset-0 h-full w-full object-cover opacity-52" fetchPriority="high" />
     <div className="absolute inset-0 bg-gradient-to-t from-[#1E1C1A]/96 via-[#1E1C1A]/52 to-[#1E1C1A]/24" />
+    <div className="hero-bottom-readability" />
     <div className="site-shell relative z-10 flex min-h-[calc(82svh-60px)] items-end py-10 md:py-14">
       <div className="grid w-full gap-8 border-t border-white/16 pt-5 lg:grid-cols-[0.3fr_1.7fr]">
         <div><Eyebrow light>{ko(locale) ? "업무 분야" : "Practice area"}</Eyebrow><div className="mt-5 text-[9px] leading-5 text-white/34">Buena Park<br />{brand.phoneDisplay}</div></div>
@@ -597,6 +600,7 @@ export const ResultsPage = ({ locale }: { locale: SiteLocale }) => (
       <section className="relative min-h-[78svh] overflow-hidden bg-[#1E1C1A] pt-[60px] text-[#F3EEE5]">
         <img src={heroBoardroom} alt="" className="absolute inset-0 h-full w-full object-cover opacity-52" fetchPriority="high" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#1E1C1A]/96 via-[#1E1C1A]/50 to-[#1E1C1A]/24" />
+        <div className="hero-bottom-readability" />
         <div className="site-shell relative z-10 flex min-h-[calc(78svh-60px)] items-end py-10 md:py-14">
           <div className="grid w-full gap-8 border-t border-white/16 pt-5 lg:grid-cols-[0.3fr_1.7fr]">
             <Eyebrow light>{ko(locale) ? "사건 결과" : "Results"}</Eyebrow>

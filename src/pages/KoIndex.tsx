@@ -83,6 +83,7 @@ const HeroKo = () => {
         </motion.div>
       </motion.div>
       <motion.div className="absolute inset-0 bg-[#17130f]" style={shouldReduceMotion ? { opacity: 0.42 } : { opacity: shadeOpacity }} />
+      <div className="hero-bottom-readability" />
       <motion.div className="absolute inset-0 z-10 flex items-end" style={shouldReduceMotion ? undefined : { opacity: contentOpacity, filter: contentFilter, y: contentY }}>
         <div className="site-shell pb-24 md:pb-28">
           <div className="max-w-[760px] text-[#f3eee5]">

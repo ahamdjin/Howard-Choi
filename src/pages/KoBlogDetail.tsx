@@ -51,6 +51,7 @@ const KoBlogDetail = () => {
           />
           <div className="absolute inset-0 bg-[#17130f]/64" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#17130f]/88 via-[#17130f]/10 to-[#17130f]/18" />
+          <div className="hero-bottom-readability" />
 
           <div className="site-shell relative z-10 pb-14 md:pb-16">
             <Link to="/ko/blogs" className="mb-7 inline-flex items-center gap-2 text-[12px] text-[#f3eee5]/62 transition-colors hover:text-[#f3eee5]">

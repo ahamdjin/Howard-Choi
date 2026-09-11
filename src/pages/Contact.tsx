@@ -25,6 +25,7 @@ const Contact = () => {
         />
         <div className="absolute inset-0 bg-[#17130f]/64" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#17130f]/78 via-transparent to-[#17130f]/12" />
+        <div className="hero-bottom-readability" />
 
         <div className="site-shell relative z-10 pb-12 md:pb-14">
           <motion.div

@@ -128,6 +128,7 @@ export const LocationsPage = ({ locale }: { locale: SiteLocale }) => (
       <section className="relative min-h-[82svh] overflow-hidden bg-[#1E1C1A] pt-[60px] text-[#F3EEE5]">
         <img src={heroBoardroom} alt="" className="absolute inset-0 h-full w-full object-cover opacity-58" fetchPriority="high" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#1E1C1A]/96 via-[#1E1C1A]/48 to-[#1E1C1A]/22" />
+        <div className="hero-bottom-readability" />
         <div className="site-shell relative z-10 flex min-h-[calc(82svh-60px)] items-end py-10 md:py-14">
           <div className="grid w-full gap-8 border-t border-white/16 pt-5 lg:grid-cols-[0.3fr_1.7fr]">
             <div>
@@ -270,6 +271,7 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
         <section className="relative min-h-[82svh] overflow-hidden bg-[#1E1C1A] pt-[60px] text-[#F3EEE5]">
           <img src={locationImages[index % locationImages.length]} alt="" className="absolute inset-0 h-full w-full object-cover opacity-56" fetchPriority="high" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#1E1C1A]/96 via-[#1E1C1A]/48 to-[#1E1C1A]/24" />
+          <div className="hero-bottom-readability" />
           <div className="site-shell relative z-10 flex min-h-[calc(82svh-60px)] items-end py-10 md:py-14">
             <div className="grid w-full gap-8 border-t border-white/16 pt-5 lg:grid-cols-[0.3fr_1.7fr]">
               <div>

@@ -56,6 +56,7 @@ const BlogDetail = () => {
           />
           <div className="absolute inset-0 bg-[#17130f]/64" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#17130f]/88 via-[#17130f]/10 to-[#17130f]/18" />
+          <div className="hero-bottom-readability" />
 
           <div className="site-shell relative z-10 pb-14 md:pb-16">
             <Link

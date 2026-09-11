@@ -19,6 +19,7 @@ const Blogs = () => {
           <motion.img src={heroJusticeLibrary} alt="Law library and Lady Justice" style={{ y: imageY, scale: heroScale }} fetchPriority="high" decoding="async" className="absolute inset-0 h-[112%] w-full object-cover object-center" />
           <div className="absolute inset-0 bg-[#17130f]/58" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#17130f]/90 via-[#17130f]/14 to-[#17130f]/22" />
+          <div className="hero-bottom-readability" />
           <div className="site-shell relative z-10 flex h-full items-end pb-10 pt-[72px] md:pb-12 lg:pb-14">
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.72 }} className="grid w-full gap-8 border-t border-white/18 pt-5 lg:grid-cols-[0.38fr_1.62fr] lg:gap-12 xl:gap-16">
               <div><span className="text-[9px] font-medium uppercase tracking-[0.17em] text-[#f3eee5]/48">Law Blog</span><div className="mt-4 hidden text-[10px] leading-5 text-[#f3eee5]/34 lg:block">Practical injury-law guides<br />Buena Park, California</div></div>
