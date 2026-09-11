@@ -1,0 +1,89 @@
+media:
+  input: public/images/blog
+  output: /images/blog
+  rename: safe
+  extensions: [avif, webp, jpg, jpeg, png]
+
+content:
+  - name: blog
+    label: Law Blog
+    type: collection
+    path: content/blog
+    format: json-frontmatter
+    filename:
+      template: "{fields.slug}.md"
+      field: false
+    view:
+      fields: [title, category, publishedAt, published]
+      primary: title
+      sort: [publishedAt, title]
+      search: [title, category, excerpt]
+      default:
+        sort: publishedAt
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: slug
+        label: Slug
+        type: string
+        required: true
+        pattern:
+          regex: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          message: "Use lowercase words separated by hyphens."
+      - name: published
+        label: Published
+        type: boolean
+      - name: excerpt
+        label: Excerpt
+        type: text
+        required: true
+      - name: category
+        label: Category
+        type: string
+        required: true
+      - name: publishedAt
+        label: Publish date
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: readingTime
+        label: Reading time
+        type: string
+        description: "Optional. Leave blank to calculate it automatically."
+      - name: image
+        label: Featured image
+        type: image
+        description: "Optional for the two existing demo posts; new posts should select an image."
+      - name: alt
+        label: Image alt text
+        type: string
+      - name: intro
+        label: Opening paragraph
+        type: text
+        required: true
+      - name: takeaway
+        label: Key point
+        type: text
+        required: true
+      - name: body
+        label: Article sections
+        type: rich-text
+        required: true
+        description: "Use H2 headings for each article section. The existing site design controls how headings and paragraphs are rendered."
+        options:
+          format: markdown
+          switcher: true
+          media: false
+
+settings:
+  commit:
+    identity: app
+    templates:
+      create: "content(blog): add {filename}"
+      update: "content(blog): update {filename}"
+      delete: "content(blog): remove {filename}"
+      rename: "content(blog): rename {oldFilename} -> {newFilename}"

@@ -17,93 +17,155 @@ export type BlogPost = {
   sections: BlogSection[];
 };
 
-export const blogPosts: BlogPost[] = [
-  {
-    slug: "what-to-do-after-a-car-accident-in-california",
-    title: "What to do after a car accident in California",
-    excerpt: "A practical checklist for protecting your health, preserving useful information, and staying organized after a California collision.",
-    category: "Car Accidents",
-    date: "September 3, 2026",
-    publishedAt: "2026-09-03",
-    readingTime: "6 min read",
-    image: heroLawOffice,
-    alt: "Private law office with a desk and legal books",
-    intro: "The hours after a collision can feel surprisingly disorganized. Medical concerns, vehicle damage, insurance calls, work, and family responsibilities can all arrive at once. A simple sequence helps: deal with safety and health first, preserve what can be documented, and keep the claim organized before important details disappear.",
-    takeaway: "You do not need to solve the entire claim on day one. Protect your health, preserve the facts, and avoid creating unnecessary gaps in the record.",
-    sections: [
-      {
-        heading: "Start with safety and medical attention",
-        paragraphs: [
-          "If anyone may be injured, getting appropriate medical attention comes before building a claim. Some symptoms are obvious immediately; others become clearer after the initial shock of the collision has passed.",
-          "Keep the medical story accurate. Describe what you are actually experiencing and follow the treatment plan you receive rather than trying to predict how serious an injury may become.",
-        ],
-      },
-      {
-        heading: "Preserve the scene while it still exists",
-        paragraphs: [
-          "When it can be done safely, photographs of the vehicles, roadway, visible damage, traffic controls, and surrounding area can preserve details that may look very different a few days later.",
-          "Names and contact information for drivers and witnesses, insurance details, reports, towing information, and available camera footage can also become important parts of the record.",
-        ],
-      },
-      {
-        heading: "Be organized with insurance communications",
-        paragraphs: [
-          "Insurance companies may ask for information quickly. Keep a simple log of who contacted you, which company they represent, what was requested, and what documents you sent.",
-          "If responsibility, coverage, or the seriousness of the injuries is disputed, getting legal advice before making important decisions can help you understand the position more clearly.",
-        ],
-      },
-      {
-        heading: "Document how the injury actually affects life",
-        paragraphs: [
-          "Medical bills are only one part of the picture. Missed work, changes in mobility, help needed at home, interrupted activities, follow-up appointments, and ongoing limitations can all help explain the real effect of an injury.",
-          "A well-organized record is useful whether a claim resolves quickly or becomes more complicated later.",
-        ],
-      },
-    ],
-  },
-  {
-    slug: "what-an-injury-claim-should-document-beyond-medical-bills",
-    title: "What an injury claim should document beyond medical bills",
-    excerpt: "Why the strongest record of an injury often includes work, mobility, daily limitations, treatment progress, and the changes a bill cannot show.",
-    category: "Personal Injury",
-    date: "August 21, 2026",
-    publishedAt: "2026-08-21",
-    readingTime: "5 min read",
-    image: heroCityBoardroom,
-    alt: "Law firm conference room overlooking the city",
-    intro: "A medical bill can show that treatment happened, but it does not explain the full effect of an injury. A serious claim is easier to understand when the records also show how the injury changed work, movement, routines, responsibilities, and the course of recovery over time.",
-    takeaway: "The value of good documentation is not volume. It is creating a clear, consistent picture of what changed because of the injury.",
-    sections: [
-      {
-        heading: "Build a clear medical timeline",
-        paragraphs: [
-          "Keep treatment records, appointment information, diagnostic reports, prescriptions, referrals, and instructions in one place. The goal is not to create paperwork for its own sake; it is to make the progression of the injury understandable.",
-          "Gaps or changes in treatment may have perfectly reasonable explanations. Recording those explanations while they are fresh can be useful later.",
-        ],
-      },
-      {
-        heading: "Track work and financial disruption",
-        paragraphs: [
-          "Time away from work, modified duties, missed opportunities, transportation costs, and other accident-related expenses can be difficult to reconstruct months later.",
-          "Pay records, employer communications, calendars, receipts, and a simple contemporaneous log can help connect the financial impact to the accident.",
-        ],
-      },
-      {
-        heading: "Daily limitations can matter",
-        paragraphs: [
-          "An injury may affect sleep, driving, lifting, exercise, childcare, household tasks, or social activity long before those changes appear in a formal document.",
-          "Specific examples are more useful than exaggerated language. The aim is to describe the difference between life before the accident and life during recovery as accurately as possible.",
-        ],
-      },
-      {
-        heading: "Keep the record consistent and credible",
-        paragraphs: [
-          "Strong documentation does not mean documenting every hour. It means keeping reliable records from independent sources and preserving important information before it is lost.",
-          "If the injury is serious or the claim becomes disputed, a lawyer can help identify which records are actually important and which issues need closer attention.",
-        ],
-      },
-    ],
-  },
-];
+type BlogFrontmatter = {
+  slug: string;
+  title: string;
+  excerpt: string;
+  category: string;
+  publishedAt: string;
+  readingTime?: string;
+  image?: string;
+  alt?: string;
+  intro: string;
+  takeaway: string;
+  published?: boolean;
+};
+
+// Keep the two existing article images exactly as they are today. New CMS posts
+// can point at /images/blog/... without changing the rendering components.
+const legacyImages: Record<string, string> = {
+  "what-to-do-after-a-car-accident-in-california": heroLawOffice,
+  "what-an-injury-claim-should-document-beyond-medical-bills": heroCityBoardroom,
+};
+
+// Vite expands this at build time. Pages CMS never ships to the public website.
+const markdownModules = import.meta.glob("../../content/blog/*.md", {
+  query: "?raw",
+  import: "default",
+  eager: true,
+}) as Record<string, string>;
+
+const splitJsonFrontmatter = (raw: string): { data: BlogFrontmatter; body: string } => {
+  const source = raw.trimStart();
+  if (!source.startsWith("{")) {
+    throw new Error("Blog content must start with JSON frontmatter.");
+  }
+
+  let depth = 0;
+  let inString = false;
+  let escaped = false;
+  let end = -1;
+
+  for (let index = 0; index < source.length; index += 1) {
+    const character = source[index];
+
+    if (inString) {
+      if (escaped) escaped = false;
+      else if (character === "\\") escaped = true;
+      else if (character === '"') inString = false;
+      continue;
+    }
+
+    if (character === '"') {
+      inString = true;
+      continue;
+    }
+
+    if (character === "{") depth += 1;
+    if (character === "}") {
+      depth -= 1;
+      if (depth === 0) {
+        end = index;
+        break;
+      }
+    }
+  }
+
+  if (end === -1) {
+    throw new Error("Blog JSON frontmatter is not closed.");
+  }
+
+  const data = JSON.parse(source.slice(0, end + 1)) as BlogFrontmatter;
+  const body = source.slice(end + 1).trim();
+  return { data, body };
+};
+
+const parseSections = (body: string): BlogSection[] => {
+  const sections: BlogSection[] = [];
+  let current: BlogSection | null = null;
+  let paragraphLines: string[] = [];
+
+  const flushParagraph = () => {
+    if (!current || paragraphLines.length === 0) return;
+    current.paragraphs.push(paragraphLines.join(" ").trim());
+    paragraphLines = [];
+  };
+
+  for (const rawLine of body.split(/\r?\n/)) {
+    const line = rawLine.trim();
+
+    if (line.startsWith("## ")) {
+      flushParagraph();
+      current = { heading: line.slice(3).trim(), paragraphs: [] };
+      sections.push(current);
+      continue;
+    }
+
+    if (!line) {
+      flushParagraph();
+      continue;
+    }
+
+    if (current) paragraphLines.push(line);
+  }
+
+  flushParagraph();
+  return sections;
+};
+
+const formatPublishedDate = (publishedAt: string) =>
+  new Intl.DateTimeFormat("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(new Date(`${publishedAt}T00:00:00Z`));
+
+const estimateReadingTime = (intro: string, body: string) => {
+  const words = `${intro} ${body}`.trim().split(/\s+/).filter(Boolean).length;
+  return `${Math.max(1, Math.ceil(words / 200))} min read`;
+};
+
+const parseBlog = (raw: string): BlogPost | null => {
+  const { data, body } = splitJsonFrontmatter(raw);
+  if (data.published === false) return null;
+
+  const sections = parseSections(body);
+  const image = data.image?.trim() || legacyImages[data.slug];
+
+  if (!image) {
+    throw new Error(`Blog post "${data.slug}" is missing a featured image.`);
+  }
+
+  return {
+    slug: data.slug,
+    title: data.title,
+    excerpt: data.excerpt,
+    category: data.category,
+    date: formatPublishedDate(data.publishedAt),
+    publishedAt: data.publishedAt,
+    readingTime: data.readingTime?.trim() || estimateReadingTime(data.intro, body),
+    image,
+    alt: data.alt?.trim() || data.title,
+    intro: data.intro,
+    takeaway: data.takeaway,
+    sections,
+  };
+};
+
+export const blogPosts: BlogPost[] = Object.values(markdownModules)
+  .map(parseBlog)
+  .filter((post): post is BlogPost => Boolean(post))
+  .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
 
 export const getBlogBySlug = (slug: string) => blogPosts.find((post) => post.slug === slug);
