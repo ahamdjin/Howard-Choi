@@ -10,6 +10,8 @@ const WebsiteInquiryForm = ({ locale = "en" }: WebsiteInquiryFormProps) => {
   const [formData, setFormData] = useState({ full_name: "", email: "", subject: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const isKorean = locale === "ko";
+  const privacyHref = isKorean ? "/ko/privacy-policy" : "/privacy-policy";
+  const termsHref = isKorean ? "/ko/terms" : "/terms";
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = event.target;
@@ -90,6 +92,13 @@ const WebsiteInquiryForm = ({ locale = "en" }: WebsiteInquiryFormProps) => {
             : isKorean ? "문의 보내기" : "Send inquiry"}
         </span>
       </button>
+      <p className="max-w-[520px] pt-2 text-[10px] leading-5 text-foreground/42">
+        {isKorean ? "문의를 보내면 " : "By submitting, you acknowledge our "}
+        <a href={privacyHref} className="underline underline-offset-2 hover:text-foreground">{isKorean ? "개인정보 처리방침" : "Privacy Policy"}</a>
+        {isKorean ? " 및 " : " and "}
+        <a href={termsHref} className="underline underline-offset-2 hover:text-foreground">{isKorean ? "이용약관" : "Terms of Use"}</a>
+        {isKorean ? "을 확인한 것으로 간주됩니다." : "."}
+      </p>
     </form>
   );
 };
