@@ -1,0 +1,101 @@
+/* Content-led inner pages
+   These pages should feel like real editorial/legal information pages, not a stack of forced viewport slides. */
+
+.inner-site-page section[class*="min-h-[100svh]"] {
+  min-height: auto !important;
+}
+
+.inner-site-page section[class*="min-h-[100svh]"] > .site-shell[class*="min-h-[100svh]"] {
+  min-height: auto !important;
+}
+
+/* Standard informational sections: let the content decide the height. */
+.inner-site-page section.relative[class*="min-h-[100svh]"]:not([class*="bg-[#171717]"]) > .site-shell {
+  display: block !important;
+  padding-top: clamp(3.5rem, 5.5vw, 5rem) !important;
+  padding-bottom: clamp(3.5rem, 5.5vw, 5rem) !important;
+}
+
+.inner-site-page section.relative[class*="min-h-[100svh]"]:not([class*="bg-[#171717]"]) > .site-shell > div:nth-child(2) {
+  padding-top: clamp(1.75rem, 3vw, 2.75rem) !important;
+  padding-bottom: 0 !important;
+  align-items: stretch !important;
+}
+
+/* The old continuation rail made short sections feel artificially stretched. */
+.inner-site-page section.relative[class*="min-h-[100svh]"]:not([class*="bg-[#171717]"]) > .site-shell > div:last-child {
+  display: none !important;
+}
+
+/* Keep image-led moments substantial, but no longer tie them to viewport height. */
+.inner-site-page [class*="h-[46svh]"][class*="min-h-[320px]"] {
+  height: clamp(300px, 34vw, 500px) !important;
+  min-height: 300px !important;
+}
+
+.inner-site-page [class*="h-[36svh]"][class*="min-h-[260px]"] {
+  height: clamp(260px, 28vw, 390px) !important;
+  min-height: 260px !important;
+}
+
+/* Compact informational cards so spacing comes from hierarchy, not blank height. */
+.inner-site-page section.relative[class*="min-h-[100svh]"] [class*="min-h-[220px]"] {
+  min-height: 170px !important;
+}
+
+.inner-site-page section.relative[class*="min-h-[100svh]"] [class*="min-h-[215px]"] {
+  min-height: 170px !important;
+}
+
+.inner-site-page section.relative[class*="min-h-[100svh]"] [class*="min-h-[210px]"] {
+  min-height: 165px !important;
+}
+
+.inner-site-page section.relative[class*="min-h-[100svh]"] [class*="min-h-[190px]"] {
+  min-height: 155px !important;
+}
+
+.inner-site-page section.relative[class*="min-h-[100svh]"] [class*="min-h-[158px]"] {
+  min-height: 145px !important;
+}
+
+.inner-site-page section.relative[class*="min-h-[100svh]"] [class*="min-h-[155px]"] {
+  min-height: 140px !important;
+}
+
+.inner-site-page section.relative[class*="min-h-[100svh]"] .mt-12 {
+  margin-top: 2rem !important;
+}
+
+.inner-site-page section.relative[class*="min-h-[100svh]"] .mt-9 {
+  margin-top: 1.75rem !important;
+}
+
+/* Consultation remains a strong closing moment, but it also earns only the height it needs. */
+.inner-site-page section[class*="bg-[#171717]"][class*="min-h-[100svh]"] > .site-shell {
+  display: block !important;
+  min-height: auto !important;
+  padding-top: clamp(4rem, 6vw, 6rem) !important;
+  padding-bottom: clamp(4rem, 6vw, 6rem) !important;
+}
+
+.inner-site-page section[class*="bg-[#171717]"][class*="min-h-[100svh]"] > .site-shell > div:nth-child(2) {
+  padding-top: clamp(2.25rem, 4vw, 3.5rem) !important;
+  padding-bottom: clamp(2.25rem, 4vw, 3.5rem) !important;
+}
+
+@media (max-width: 767px) {
+  .inner-site-page section.relative[class*="min-h-[100svh]"]:not([class*="bg-[#171717]"]) > .site-shell {
+    padding-top: 3.25rem !important;
+    padding-bottom: 3.25rem !important;
+  }
+
+  .inner-site-page section.relative[class*="min-h-[100svh]"]:not([class*="bg-[#171717]"]) > .site-shell > div:nth-child(2) {
+    padding-top: 1.5rem !important;
+  }
+
+  .inner-site-page section[class*="bg-[#171717]"][class*="min-h-[100svh]"] > .site-shell {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+}
