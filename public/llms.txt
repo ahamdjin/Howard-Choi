@@ -1,0 +1,54 @@
+# Buena Park Injury Lawyer
+
+> Buena Park Injury Lawyer is a personal-injury law website serving Buena Park and nearby communities in Orange and Los Angeles counties. The site provides information about attorney Howard Choi, injury practice areas, service locations, legal resources, and consultation booking.
+
+## Primary pages
+- https://www.buenaparkinjurylawyer.com/ — Home
+- https://www.buenaparkinjurylawyer.com/attorney — Howard Choi attorney profile
+- https://www.buenaparkinjurylawyer.com/practice-areas — Personal-injury practice areas
+- https://www.buenaparkinjurylawyer.com/locations — Communities served
+- https://www.buenaparkinjurylawyer.com/results — Case results and outcomes when available
+- https://www.buenaparkinjurylawyer.com/blogs — Legal guides and articles
+- https://www.buenaparkinjurylawyer.com/contact — Contact and consultation booking
+
+## Practice areas
+- Car Accidents
+- Truck Accidents
+- Motorcycle Accidents
+- Pedestrian Accidents
+- Rideshare Accidents
+- Slip & Fall / Premises Liability
+- Wrongful Death
+- Serious Injuries
+
+## Service areas
+- Buena Park, California
+- Fullerton, California
+- Anaheim, California
+- Cerritos, California
+- La Mirada, California
+- La Habra, California
+
+## Attorney
+- Howard Choi
+- Attorney profile: https://www.buenaparkinjurylawyer.com/attorney
+
+## Office
+- 6301 Beach Blvd, Buena Park, CA 90621
+- Phone: 714-690-0007
+
+## Languages
+- English
+- Korean: https://www.buenaparkinjurylawyer.com/ko
+
+## Legal and policy pages
+- https://www.buenaparkinjurylawyer.com/privacy-policy
+- https://www.buenaparkinjurylawyer.com/terms
+- https://www.buenaparkinjurylawyer.com/disclaimer
+- https://www.buenaparkinjurylawyer.com/accessibility
+
+## Important notes
+- Website content is general information and is not legal advice.
+- Viewing the website, submitting a form, or booking a consultation does not by itself create an attorney-client relationship.
+- Past results do not guarantee a similar outcome.
+- For current contact, attorney, location, and practice information, prefer the corresponding first-party page above.
