@@ -70,49 +70,49 @@ const Contact = () => {
           </a>
         </div>
 
-        <motion.section
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.18 }}
-          transition={{ duration: 0.68 }}
-          className="mb-5 max-w-[760px] rounded-[4px] bg-[#e9e6e1] p-7 md:p-9"
-        >
-          <span className="text-[11px] text-foreground/48">Send a note</span>
-          <h2 className="editorial-serif mt-3 text-[clamp(2.1rem,3vw,3.2rem)] leading-[0.98] tracking-[-0.022em]">
-            Tell us what needs attention.
-          </h2>
-          <p className="mt-4 max-w-[470px] text-[14px] leading-6 text-foreground/58">
-            A short outline is enough. Avoid sending confidential or time-sensitive information until an attorney-client relationship has been confirmed.
-          </p>
+        <div className="grid items-start gap-5 xl:grid-cols-[0.78fr_1.22fr]">
+          <motion.section
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.18 }}
+            transition={{ duration: 0.68 }}
+            className="rounded-[4px] bg-[#e9e6e1] p-7 md:p-9 xl:sticky xl:top-24"
+          >
+            <span className="text-[11px] text-foreground/48">Send a note</span>
+            <h2 className="editorial-serif mt-3 text-[clamp(2rem,2.55vw,3rem)] leading-[0.98] tracking-[-0.022em]">
+              Tell us what needs attention.
+            </h2>
+            <p className="mt-4 max-w-[470px] text-[14px] leading-6 text-foreground/58">
+              A short outline is enough. Avoid sending confidential or time-sensitive information until an attorney-client relationship has been confirmed.
+            </p>
 
-          <WebsiteInquiryForm locale="en" />
-        </motion.section>
+            <WebsiteInquiryForm locale="en" />
+          </motion.section>
 
-        <motion.section
-          id="calendar"
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.05 }}
-          transition={{ duration: 0.68, delay: 0.06 }}
-          className="w-full scroll-mt-20 rounded-[4px] bg-[#1a1714] p-4 text-[#f3eee5] md:p-6"
-        >
-          <div className="flex items-start justify-between gap-6 px-3 pb-5 pt-3 md:px-4 md:pb-6 md:pt-4">
-            <div>
-              <span className="text-[11px] text-[#f3eee5]/42">Consultation</span>
-              <h2 className="editorial-serif mt-3 max-w-[620px] text-[clamp(2rem,2.8vw,3rem)] leading-[0.98] tracking-[-0.022em]">
-                Book an available time.
-              </h2>
-              <p className="mt-4 max-w-[620px] text-[14px] leading-6 text-[#f3eee5]/52">
-                Live availability is loaded directly from our scheduling calendar. Choose a time and complete the booking below.
-              </p>
+          <motion.section
+            id="calendar"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.05 }}
+            transition={{ duration: 0.68, delay: 0.06 }}
+            className="w-full scroll-mt-20 rounded-[4px] bg-[#1a1714] p-4 text-[#f3eee5] md:p-5"
+          >
+            <div className="flex items-start justify-between gap-6 px-3 pb-5 pt-3 md:px-4 md:pb-6 md:pt-4">
+              <div>
+                <span className="text-[11px] text-[#f3eee5]/42">Consultation</span>
+                <h2 className="editorial-serif mt-3 max-w-[620px] text-[clamp(2rem,2.8vw,3rem)] leading-[0.98] tracking-[-0.022em]">
+                  Book an available time.
+                </h2>
+                <p className="mt-4 max-w-[620px] text-[14px] leading-6 text-[#f3eee5]/52">
+                  Live availability is read from our scheduling calendar. Choose a date and time, then complete the booking directly here.
+                </p>
+              </div>
+              <CalendarDays className="mt-1 h-5 w-5 shrink-0 text-[#f3eee5]/42" />
             </div>
-            <CalendarDays className="mt-1 h-5 w-5 shrink-0 text-[#f3eee5]/42" />
-          </div>
 
-          <div className="w-full overflow-visible [&>div]:w-full [&>div]:overflow-visible [&>div>div]:w-full [&>div>div]:overflow-visible [&_iframe]:block [&_iframe]:w-full [&_iframe]:max-w-full">
             <GHLCalendar locale="en" />
-          </div>
-        </motion.section>
+          </motion.section>
+        </div>
       </main>
 
       <Footer />
