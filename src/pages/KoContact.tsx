@@ -64,8 +64,8 @@ const KoContact = () => {
           <WebsiteInquiryForm locale="ko" />
         </motion.section>
 
-        <motion.section id="calendar" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} transition={{ duration: 0.68, delay: 0.06 }} className="flex min-h-[90svh] w-full scroll-mt-20 flex-col overflow-hidden rounded-[4px] bg-[#1a1714] p-4 text-[#f3eee5] md:p-6">
-          <div className="flex shrink-0 items-start justify-between gap-6 px-3 pb-5 pt-3 md:px-4 md:pb-6 md:pt-4">
+        <motion.section id="calendar" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} transition={{ duration: 0.68, delay: 0.06 }} className="w-full scroll-mt-20 rounded-[4px] bg-[#1a1714] p-4 text-[#f3eee5] md:p-6">
+          <div className="flex items-start justify-between gap-6 px-3 pb-5 pt-3 md:px-4 md:pb-6 md:pt-4">
             <div>
               <span className="text-[11px] text-[#f3eee5]/42">상담</span>
               <h2 style={koSerif} className="mt-3 max-w-[620px] text-[clamp(1.9rem,2.7vw,2.85rem)] font-medium leading-[1.22] tracking-[-0.04em]">가능한 상담 시간을 예약하세요.</h2>
@@ -76,7 +76,7 @@ const KoContact = () => {
             <CalendarDays className="mt-1 h-5 w-5 shrink-0 text-[#f3eee5]/42" />
           </div>
 
-          <div className="min-h-[680px] w-full flex-1 [&>div]:h-full [&>div]:min-h-full [&>div]:w-full [&>div>div]:h-full [&>div>div]:min-h-full [&>div>div]:w-full [&_iframe]:h-full [&_iframe]:min-h-[680px] [&_iframe]:w-full">
+          <div className="w-full overflow-visible [&>div]:w-full [&>div]:overflow-visible [&>div>div]:w-full [&>div>div]:overflow-visible [&_iframe]:block [&_iframe]:w-full [&_iframe]:max-w-full">
             <GHLCalendar locale="ko" />
           </div>
         </motion.section>
