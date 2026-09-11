@@ -150,6 +150,17 @@
   }
 }
 
+/* Keep homepage section headings restrained. The hero H1 is intentionally untouched. */
+.home-page h2 {
+  font-size: clamp(2rem, 3vw, 3.25rem) !important;
+}
+
+@media (max-width: 640px) {
+  .home-page h2 {
+    font-size: clamp(1.8rem, 7vw, 2.35rem) !important;
+  }
+}
+
 /* Homepage frame: the header stays flat while the hero is clipped by the page frame.
    This keeps the source image untouched and creates the same warm-white reveal on
    the sides and beneath the first viewport. Applies to both EN and KO homepages. */
