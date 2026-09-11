@@ -30,7 +30,16 @@ const KoreanFooter = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-4 pt-8 text-[11px] text-muted-foreground sm:flex-row sm:items-center sm:justify-between"><span>© 2026 {brand.name}</span><span>변호사 광고 · 일반 정보 제공 목적 · 과거 결과가 유사한 결과를 보장하지 않습니다</span></div>
+        <div className="grid gap-5 pt-8 text-[11px] text-muted-foreground lg:grid-cols-[auto_1fr_auto] lg:items-center">
+          <span>© 2026 {brand.name}</span>
+          <div className="flex flex-wrap gap-x-4 gap-y-2 lg:justify-center">
+            <Link to="/ko/privacy-policy" className="hover:text-foreground">개인정보 처리방침</Link>
+            <Link to="/ko/terms" className="hover:text-foreground">이용약관</Link>
+            <Link to="/ko/disclaimer" className="hover:text-foreground">법률 고지</Link>
+            <Link to="/ko/accessibility" className="hover:text-foreground">접근성 안내</Link>
+          </div>
+          <span className="max-w-[430px] lg:text-right">변호사 광고 · 일반 정보 제공 목적 · 과거 결과가 유사한 결과를 보장하지 않습니다</span>
+        </div>
       </div>
     </footer>
   );
