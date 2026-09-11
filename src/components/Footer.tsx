@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import brandLogo from "@/assets/law-firm/howard-choi-mark.webp";
+import brandLogo from "@/assets/law-firm/howard-choi-logo.png";
 import { brand, practiceAreas, serviceLocations } from "@/data/injurySite";
 
 const Footer = () => {
@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid gap-12 border-b border-black/10 pb-16 md:grid-cols-4 lg:gap-14">
           <div>
             <div className="mb-5 flex items-center gap-2.5">
-              <span className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-[2px]"><img src={brandLogo} alt="" width={28} height={28} loading="lazy" decoding="async" className="h-full w-full object-cover invert" /></span>
+              <span className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-[2px]"><img src={brandLogo} alt="" width={28} height={28} loading="lazy" decoding="async" className="h-full w-full object-contain" /></span>
               <span className="text-[14px] font-medium tracking-[-0.02em]">{brand.name}</span>
             </div>
             <p className="max-w-[270px] text-[13px] leading-6 text-muted-foreground">Accident and personal-injury counsel centered on Buena Park and nearby communities.</p>

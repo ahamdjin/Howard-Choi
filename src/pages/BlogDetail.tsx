@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { blogPosts, getBlogBySlug } from "@/data/blogs";
-import brandMark from "@/assets/law-firm/howard-choi-mark.webp";
+import brandLogo from "@/assets/law-firm/howard-choi-logo.png";
 
 const BlogDetail = () => {
   const { slug } = useParams();
@@ -184,7 +184,7 @@ const BlogDetail = () => {
 
                 <div className="mt-10 rounded-[3px] bg-[#e9e6e1] p-7 md:p-8">
                   <div className="flex items-start gap-4">
-                    <img src={brandMark} alt="" width={42} height={42} loading="lazy" decoding="async" className="h-10 w-10 shrink-0 object-cover invert" />
+                    <img src={brandLogo} alt="" width={42} height={42} loading="lazy" decoding="async" className="h-10 w-10 shrink-0 object-contain" />
                     <div>
                       <div className="text-[12px] font-medium text-foreground">Buena Park Injury Lawyer</div>
                       <div className="mt-1 text-[12px] text-foreground/46">Accident &amp; Injury Counsel</div>

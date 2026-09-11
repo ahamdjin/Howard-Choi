@@ -10,7 +10,7 @@ import NotFound from "@/pages/NotFound";
 import { legalServiceJsonLd, webSiteJsonLd } from "@/lib/seo";
 import appCss from "@/index.css?url";
 import innerPagesCss from "@/inner-pages.css?url";
-import brandMark from "@/assets/law-firm/howard-choi-mark.webp";
+import brandFavicon from "@/assets/law-firm/howard-choi-favicon.png";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -24,7 +24,7 @@ export const Route = createRootRoute({
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "stylesheet", href: innerPagesCss },
-      { rel: "icon", type: "image/webp", href: brandMark },
+      { rel: "icon", type: "image/png", href: brandFavicon },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400..600&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@400;500;600&display=swap" },
