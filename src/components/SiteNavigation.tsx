@@ -5,7 +5,7 @@ import brandLogo from "@/assets/law-firm/howard-choi-mark.webp";
 import LanguageSwitch from "@/components/LanguageSwitch";
 import { brand, practiceAreas, serviceLocations, type SiteLocale } from "@/data/injurySite";
 
-type PanelKey = "practice" | "locations" | "attorneys" | "results" | "blog" | "menu" | null;
+type PanelKey = "practice" | "locations" | "attorneys" | "results" | "blog" | null;
 type MobileGroup = "practice" | "locations" | null;
 
 const SiteNavigation = ({ locale }: { locale: SiteLocale }) => {
@@ -33,11 +33,11 @@ const SiteNavigation = ({ locale }: { locale: SiteLocale }) => {
   const labels = ko ? {
     practice: "업무 분야", locations: "지역", attorneys: "변호사", results: "사건 결과", blog: "법률 블로그",
     menu: "메뉴", about: "소개", contact: "문의", allPractices: "전체 업무 분야", allLocations: "전체 지역",
-    firm: "로펌", language: "언어", call: "전화",
+    language: "언어", call: "전화",
   } : {
     practice: "Practice Areas", locations: "Locations", attorneys: "Attorneys", results: "Results", blog: "Law Blog",
     menu: "Menu", about: "About", contact: "Contact", allPractices: "All Practice Areas", allLocations: "All Locations",
-    firm: "Firm", language: "Language", call: "Call",
+    language: "Language", call: "Call",
   };
 
   const topItems = [
@@ -69,14 +69,14 @@ const SiteNavigation = ({ locale }: { locale: SiteLocale }) => {
   const renderPanel = () => {
     if (panel === "practice") return (
       <div className="site-shell grid gap-8 py-8 lg:grid-cols-[0.42fr_1.58fr] lg:gap-10 lg:py-10 xl:gap-14">
-        <PanelIntro number="01" eyebrow={labels.practice} title={ko ? "사고 유형에서 바로 시작하세요." : "Start with the accident, not the legal jargon."} body={ko ? "사고 유형별 정보, 담당 변호사, 관련 지역과 자료를 서로 연결합니다." : "Each practice page connects the claim, the attorneys, the locations served, results, and useful legal guides."} link={href("/practice-areas")} linkLabel={labels.allPractices} />
+        <PanelIntro number="01" eyebrow={labels.practice} title={ko ? "사고 유형에서 바로 시작하세요." : "Start with the accident, not the legal jargon."} body={ko ? "사고 유형별 정보, 담당 변호사, 관련 지역과 자료를 서로 연결합니다." : "Each practice page connects the claim, the attorney, the locations served, results, and useful legal guides."} link={href("/practice-areas")} linkLabel={labels.allPractices} />
         <div className="grid border-t border-foreground/12 sm:grid-cols-2 xl:grid-cols-4">{practiceAreas.map((practice, index) => <PanelLink key={practice.slug} number={String(index + 1).padStart(2, "0")} title={ko ? practice.koTitle : practice.title} body={ko ? practice.koDescription : practice.description} link={href(`/practice-areas/${practice.slug}`)} />)}</div>
       </div>
     );
 
     if (panel === "locations") return (
       <div className="site-shell grid gap-8 py-8 lg:grid-cols-[0.42fr_1.58fr] lg:gap-10 lg:py-10 xl:gap-14">
-        <PanelIntro number="02" eyebrow={labels.locations} title={ko ? "지역별로 필요한 정보를 연결합니다." : "A local hub for every community we serve."} body={ko ? "각 지역을 관련 업무 분야, 변호사, 결과와 법률 자료에 연결합니다." : "Location pages connect local context with practice areas, attorneys, results, and resources instead of duplicating city names."} link={href("/locations")} linkLabel={labels.allLocations} />
+        <PanelIntro number="02" eyebrow={labels.locations} title={ko ? "지역별로 필요한 정보를 연결합니다." : "A local hub for every community we serve."} body={ko ? "각 지역을 관련 업무 분야, 변호사, 결과와 법률 자료에 연결합니다." : "Location pages connect local context with practice areas, the attorney, results, and resources instead of duplicating city names."} link={href("/locations")} linkLabel={labels.allLocations} />
         <div className="grid border-t border-foreground/12 sm:grid-cols-2 lg:grid-cols-3">{serviceLocations.map((item, index) => <PanelLink key={item.slug} number={String(index + 1).padStart(2, "0")} title={ko ? item.koName : item.name} body={ko ? item.koDescription : item.description} link={href(`/locations/${item.slug}`)} />)}</div>
       </div>
     );
@@ -114,18 +114,6 @@ const SiteNavigation = ({ locale }: { locale: SiteLocale }) => {
       </div>
     );
 
-    if (panel === "menu") return (
-      <div className="site-shell py-8 lg:py-10">
-        <div className="mb-6 flex items-center gap-3 text-[9px] font-medium uppercase tracking-[0.18em] text-foreground/34"><span>06</span><span className="h-px w-8 bg-foreground/18" /><span>{labels.menu}</span></div>
-        <div className="grid border-t border-foreground/12 lg:grid-cols-[1.2fr_1fr_0.82fr_0.82fr]">
-          <div className="py-6 lg:pr-8"><div className="text-[9px] font-medium uppercase tracking-[0.14em] text-foreground/38">{labels.practice}</div><div className="mt-5 grid grid-cols-2 gap-x-6 gap-y-3 text-[12px] text-foreground/72">{practiceAreas.slice(0, 8).map((practice) => <a key={practice.slug} href={href(`/practice-areas/${practice.slug}`)} onClick={closeAll} className="hover:text-foreground">{ko ? practice.koTitle : practice.title}</a>)}</div></div>
-          <div className="border-t border-foreground/12 py-6 lg:border-l lg:border-t-0 lg:px-8"><div className="text-[9px] font-medium uppercase tracking-[0.14em] text-foreground/38">{labels.locations}</div><div className="mt-5 grid grid-cols-2 gap-x-6 gap-y-3 text-[12px] text-foreground/72">{serviceLocations.map((item) => <a key={item.slug} href={href(`/locations/${item.slug}`)} onClick={closeAll} className="hover:text-foreground">{ko ? item.koName : item.name}</a>)}</div></div>
-          <div className="border-t border-foreground/12 py-6 lg:border-l lg:border-t-0 lg:px-8"><div className="text-[9px] font-medium uppercase tracking-[0.14em] text-foreground/38">{labels.firm}</div><div className="mt-5 space-y-3 text-[12px] text-foreground/72"><a href={href("/attorney")} onClick={closeAll} className="block hover:text-foreground">{labels.attorneys}</a><a href={href("/results")} onClick={closeAll} className="block hover:text-foreground">{labels.results}</a><a href={href("/about")} onClick={closeAll} className="block hover:text-foreground">{labels.about}</a><a href={href("/contact")} onClick={closeAll} className="block hover:text-foreground">{labels.contact}</a></div></div>
-          <div className="border-t border-foreground/12 py-6 lg:border-l lg:border-t-0 lg:pl-8"><div className="text-[9px] font-medium uppercase tracking-[0.14em] text-foreground/38">{labels.blog}</div><div className="mt-5 space-y-3 text-[12px] text-foreground/72"><a href={href("/blogs")} onClick={closeAll} className="block hover:text-foreground">{labels.blog}</a><a href={brand.phoneHref} className="block hover:text-foreground">{labels.call} {brand.phoneDisplay}</a></div><div className="mt-6"><LanguageSwitch /></div></div>
-        </div>
-      </div>
-    );
-
     return null;
   };
 
@@ -135,10 +123,10 @@ const SiteNavigation = ({ locale }: { locale: SiteLocale }) => {
 
       <motion.nav initial={{ y: -10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }} onMouseLeave={() => setPanel(null)} className="fixed left-[5px] right-[5px] top-0 z-[120] overflow-hidden bg-background text-foreground sm:left-[7px] sm:right-[7px]" style={{ fontFamily: ko ? '"Noto Sans KR", sans-serif' : '"Inter", Arial, sans-serif' }}>
         <div className="site-shell h-[60px]">
-          <div className="hidden h-full grid-cols-[minmax(210px,0.86fr)_minmax(570px,2.24fr)_minmax(220px,0.90fr)] items-center lg:grid">
+          <div className="hidden h-full grid-cols-[minmax(210px,0.84fr)_minmax(560px,2.12fr)_minmax(275px,1.04fr)] items-center lg:grid">
             <a href={homeHref} onClick={closeAll} className="flex min-w-0 items-center gap-2.5 pr-5"><span className="flex h-7 w-7 shrink-0 items-center justify-center overflow-hidden rounded-[2px]"><img src={brandLogo} alt="" width={28} height={28} decoding="async" className="h-full w-full object-cover invert" /></span><span className="truncate text-[13px] font-semibold tracking-[-0.025em]">{brand.name}</span></a>
             <div className="grid h-full grid-cols-5">{topItems.map((item) => { const active = panel === item.key; return <a key={item.key} href={item.href} onMouseEnter={() => setPanel(item.key)} onFocus={() => setPanel(item.key)} onClick={closeAll} className={`flex h-full items-center justify-center gap-1.5 px-2 text-center text-[12px] font-medium tracking-[-0.02em] transition-colors xl:text-[13px] ${active ? "bg-foreground/[0.045]" : "hover:bg-foreground/[0.045]"}`}><span>{item.label}</span>{(item.key === "practice" || item.key === "locations") && <ChevronDown className={`h-3 w-3 stroke-[1.45] transition-transform duration-300 ${active ? "rotate-180" : ""}`} />}</a>; })}</div>
-            <div className="flex h-full items-center justify-end gap-3 pl-4"><a href={brand.phoneHref} onMouseEnter={() => setPanel(null)} className="hidden whitespace-nowrap text-[11px] font-medium transition-opacity hover:opacity-55 xl:block">{brand.phoneDisplay}</a><a href={href("/contact")} onMouseEnter={() => setPanel(null)} onFocus={() => setPanel(null)} onClick={closeAll} className="inline-flex h-9 items-center justify-center whitespace-nowrap border border-foreground/15 px-4 text-[10px] font-semibold uppercase tracking-[0.11em] transition-colors hover:bg-foreground hover:text-background">{labels.contact}</a><button type="button" onMouseEnter={() => setPanel("menu")} onFocus={() => setPanel("menu")} onClick={() => setPanel((current) => current === "menu" ? null : "menu")} className={`flex h-full w-12 items-center justify-center transition-colors ${panel === "menu" ? "bg-foreground/[0.045]" : "hover:bg-foreground/[0.045]"}`} aria-label={labels.menu} aria-expanded={panel === "menu"}>{panel === "menu" ? <X className="h-[21px] w-[21px] stroke-[1.35]" /> : <Menu className="h-[21px] w-[21px] stroke-[1.35]" />}</button></div>
+            <div className="flex h-full items-center justify-end gap-3 pl-4"><a href={brand.phoneHref} onMouseEnter={() => setPanel(null)} className="hidden whitespace-nowrap text-[11px] font-medium transition-opacity hover:opacity-55 xl:block">{brand.phoneDisplay}</a><a href={href("/contact")} onMouseEnter={() => setPanel(null)} onFocus={() => setPanel(null)} onClick={closeAll} className="inline-flex h-9 items-center justify-center whitespace-nowrap border border-foreground/15 px-4 text-[10px] font-semibold uppercase tracking-[0.11em] transition-colors hover:bg-foreground hover:text-background">{labels.contact}</a><LanguageSwitch /></div>
           </div>
 
           <div className="flex h-full items-center justify-between gap-3 lg:hidden"><a href={homeHref} onClick={closeAll} className="flex min-w-0 items-center gap-2.5"><span className="flex h-7 w-7 shrink-0 items-center justify-center overflow-hidden rounded-[2px]"><img src={brandLogo} alt="" width={28} height={28} decoding="async" className="h-full w-full object-cover invert" /></span><span className="max-w-[205px] truncate text-[12px] font-semibold tracking-[-0.025em] sm:max-w-[260px] sm:text-[13px]">{brand.name}</span></a><div className="flex shrink-0 items-center"><a href={brand.phoneHref} aria-label={`${labels.call} ${brand.phoneDisplay}`} className="flex h-[60px] w-11 items-center justify-center"><Phone className="h-4 w-4 stroke-[1.5]" /></a><button type="button" onClick={() => setMobileOpen((current) => !current)} className={`flex h-[60px] w-11 items-center justify-center ${mobileOpen ? "bg-foreground/[0.045]" : ""}`} aria-label={labels.menu} aria-expanded={mobileOpen}>{mobileOpen ? <X className="h-5 w-5 stroke-[1.4]" /> : <Menu className="h-5 w-5 stroke-[1.4]" />}</button></div></div>
