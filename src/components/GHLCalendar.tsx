@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { ArrowLeft, ArrowRight, Check, Clock, LoaderCircle, Phone } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Clock, LoaderCircle, Mail, MapPin, Phone, UserRound } from "lucide-react";
 
 type GHLCalendarProps = {
   locale?: "en" | "ko";
@@ -14,6 +14,8 @@ const VIBE_API_URL = "https://backend.leadconnectorhq.com/vibe-ai";
 const PUBLIC_CALENDAR_BASE = "https://backend.leadconnectorhq.com/calendars";
 const BUSINESS_OPEN_MINUTES = 8 * 60;
 const BUSINESS_CLOSE_MINUTES = 17 * 60;
+const OFFICE_ADDRESS = "6301 Beach Blvd, Buena Park, CA 90621";
+const MAPS_URL = "https://www.google.com/maps/search/?api=1&query=6301+Beach+Blvd%2C+Buena+Park%2C+CA+90621";
 
 const pad = (value: number) => String(value).padStart(2, "0");
 const dateKey = (date: Date) => `${date.getUTCFullYear()}-${pad(date.getUTCMonth() + 1)}-${pad(date.getUTCDate())}`;
@@ -123,6 +125,14 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
     timeZone: "UTC",
   });
 
+  const confirmationDateFormatter = new Intl.DateTimeFormat(isKorean ? "ko-KR" : "en-US", {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+    timeZone: PACIFIC_TIMEZONE,
+  });
+
   const timeFormatter = new Intl.DateTimeFormat(isKorean ? "ko-KR" : "en-US", {
     hour: "numeric",
     minute: "2-digit",
@@ -130,6 +140,7 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
   });
 
   const weekdays = isKorean ? ["일", "월", "화", "수", "목", "금", "토"] : ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const attorneyHref = isKorean ? "/ko/attorney" : "/attorney";
 
   useEffect(() => {
     let active = true;
@@ -170,27 +181,79 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
   }, [month, todayKey]);
 
   if (bookedSlot) {
+    const bookedDate = new Date(bookedSlot);
     return (
-      <div className="rounded-[3px] bg-[#f9f8f6] p-7 text-[#1e1c1a] md:p-10">
-        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#2b241e] text-[#f3eee5]">
-          <Check className="h-4 w-4" />
+      <div className="rounded-[3px] bg-[#f9f8f6] p-6 text-[#1e1c1a] md:p-8">
+        <div className="flex items-start justify-between gap-5 border-b border-[#1e1c1a]/10 pb-6">
+          <div className="flex items-start gap-4">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#2b241e] text-[#f3eee5]">
+              <Check className="h-4 w-4" />
+            </div>
+            <div>
+              <span className="text-[9px] font-medium uppercase tracking-[0.16em] text-[#1e1c1a]/38">
+                {isKorean ? "예약 완료" : "Consultation confirmed"}
+              </span>
+              <h3 className="editorial-serif mt-2 text-[clamp(1.9rem,2.7vw,2.8rem)] leading-[0.98] tracking-[-0.025em]">
+                {isKorean ? "상담 예약이 완료되었습니다." : "You're booked."}
+              </h3>
+            </div>
+          </div>
         </div>
-        <div className="mt-7 max-w-[590px]">
-          <span className="text-[10px] font-medium uppercase tracking-[0.16em] text-[#1e1c1a]/38">
-            {isKorean ? "예약 완료" : "Consultation booked"}
-          </span>
-          <h3 className="editorial-serif mt-3 text-[clamp(2rem,3.2vw,3.3rem)] leading-[0.98] tracking-[-0.025em]">
-            {isKorean ? "상담 일정이 예약되었습니다." : "Your consultation is on the calendar."}
-          </h3>
-          <p className="mt-5 text-[14px] leading-6 text-[#1e1c1a]/58">
-            {dayFormatter.format(new Date(bookedSlot))} · {timeFormatter.format(new Date(bookedSlot))} PT
-          </p>
-          <p className="mt-2 text-[13px] leading-6 text-[#1e1c1a]/48">
+
+        <div className="mt-6 flex items-start gap-3 rounded-[2px] bg-[#f1eee8] px-4 py-4">
+          <Mail className="mt-0.5 h-4 w-4 shrink-0 text-[#1e1c1a]/48" />
+          <p className="text-[12px] leading-5 text-[#1e1c1a]/58">
             {isKorean
-              ? "입력하신 연락처로 예약 확인 및 필요한 안내가 전송됩니다."
-              : "A booking confirmation and any appointment instructions will be sent to the contact information you provided."}
+              ? `${details.email || "입력하신 이메일"}로 예약 확인 이메일이 곧 전송됩니다.`
+              : `A confirmation email will be sent to ${details.email || "the email you provided"} shortly.`}
           </p>
         </div>
+
+        <div className="mt-6 grid gap-3 md:grid-cols-3">
+          <div className="border border-[#1e1c1a]/10 bg-white/40 p-4">
+            <div className="flex items-center gap-2 text-[9px] font-medium uppercase tracking-[0.14em] text-[#1e1c1a]/36">
+              <Clock className="h-3.5 w-3.5" /> {isKorean ? "일시" : "Date & time"}
+            </div>
+            <div className="mt-3 text-[13px] font-medium leading-5">
+              {confirmationDateFormatter.format(bookedDate)}
+            </div>
+            <div className="mt-1 text-[12px] text-[#1e1c1a]/54">
+              {timeFormatter.format(bookedDate)} PT
+            </div>
+          </div>
+
+          <a
+            href={MAPS_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="group border border-[#1e1c1a]/10 bg-white/40 p-4 transition-colors hover:bg-white/70"
+          >
+            <div className="flex items-center justify-between gap-3 text-[9px] font-medium uppercase tracking-[0.14em] text-[#1e1c1a]/36">
+              <span className="flex items-center gap-2"><MapPin className="h-3.5 w-3.5" /> {isKorean ? "상담 장소" : "Meeting location"}</span>
+              <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            </div>
+            <div className="mt-3 text-[13px] font-medium leading-5">{OFFICE_ADDRESS}</div>
+            <div className="mt-2 text-[10px] text-[#1e1c1a]/45">{isKorean ? "Google 지도에서 보기" : "Open in Google Maps"}</div>
+          </a>
+
+          <a
+            href={attorneyHref}
+            className="group border border-[#1e1c1a]/10 bg-white/40 p-4 transition-colors hover:bg-white/70"
+          >
+            <div className="flex items-center justify-between gap-3 text-[9px] font-medium uppercase tracking-[0.14em] text-[#1e1c1a]/36">
+              <span className="flex items-center gap-2"><UserRound className="h-3.5 w-3.5" /> {isKorean ? "담당 변호사" : "Attending attorney"}</span>
+              <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            </div>
+            <div className="mt-3 text-[13px] font-medium">Howard Choi</div>
+            <div className="mt-2 text-[10px] text-[#1e1c1a]/45">{isKorean ? "변호사 프로필 보기" : "View attorney profile"}</div>
+          </a>
+        </div>
+
+        <p className="mt-5 text-[10px] leading-5 text-[#1e1c1a]/42">
+          {isKorean
+            ? "일정 변경이 필요한 경우 예약 확인 이메일의 안내를 확인하거나 사무실로 연락해 주세요."
+            : "If you need to make a change, use the instructions in your confirmation email or contact the office."}
+        </p>
       </div>
     );
   }
