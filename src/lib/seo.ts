@@ -1,4 +1,4 @@
-export const SITE_URL = (import.meta.env.VITE_SITE_URL || "https://howardchoi.vercel.app").replace(/\/$/, "");
+export const SITE_URL = (import.meta.env.VITE_SITE_URL || "https://www.buenaparkinjurylawyer.com").replace(/\/$/, "");
 export const SITE_NAME = "Buena Park Injury Lawyer";
 
 export const absoluteUrl = (value: string) => {
@@ -65,7 +65,7 @@ export const legalServiceJsonLd = {
   "@type": "LegalService",
   "@id": `${SITE_URL}/#legal-service`,
   name: SITE_NAME,
-  alternateName: "Howard Choi Law",
+  alternateName: "Howard Choi, Attorney",
   url: SITE_URL,
   telephone: "+1-714-690-0007",
   address: {
@@ -86,7 +86,7 @@ export const webSiteJsonLd = {
   "@type": "WebSite",
   "@id": `${SITE_URL}/#website`,
   name: SITE_NAME,
-  alternateName: "Howard Choi Law",
+  alternateName: "Buena Park Injury Lawyer by Howard Choi",
   url: SITE_URL,
   inLanguage: ["en-US", "ko-US"],
   publisher: { "@id": `${SITE_URL}/#legal-service` },
