@@ -9,6 +9,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import NotFound from "@/pages/NotFound";
 import { legalServiceJsonLd, webSiteJsonLd } from "@/lib/seo";
 import appCss from "@/index.css?url";
+import innerPagesCss from "@/inner-pages.css?url";
 import brandMark from "@/assets/law-firm/howard-choi-mark.webp";
 
 export const Route = createRootRoute({
@@ -22,6 +23,7 @@ export const Route = createRootRoute({
     ],
     links: [
       { rel: "stylesheet", href: appCss },
+      { rel: "stylesheet", href: innerPagesCss },
       { rel: "icon", type: "image/webp", href: brandMark },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
@@ -48,10 +50,11 @@ function RootComponent() {
 function RootDocument({ children }: { children: ReactNode }) {
   const pathname = useRouterState({ select: (state) => state.location.pathname });
   const lang = pathname === "/ko" || pathname.startsWith("/ko/") ? "ko" : "en";
+  const innerSitePage = /^\/(?:ko\/)?(?:practice-areas|locations|attorney|results|about)(?:\/|$)/.test(pathname);
   return (
     <html lang={lang}>
       <head><HeadContent /></head>
-      <body>
+      <body className={innerSitePage ? "inner-site-page" : undefined}>
         <div className="min-h-screen bg-background px-[5px] pb-[5px] sm:px-[7px] sm:pb-[7px]">
           {children}
         </div>
