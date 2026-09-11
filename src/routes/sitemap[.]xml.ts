@@ -14,7 +14,7 @@ const renderUrl = (path: string, englishPath: string, koreanPath: string, lastmo
     <xhtml:link rel="alternate" hreflang="x-default" href="${xmlEscape(absoluteUrl(englishPath))}" />
   </url>`;
 
-const pair = (en: string, ko: string, lastmod = "2026-09-10") => [renderUrl(en, en, ko, lastmod), renderUrl(ko, en, ko, lastmod)];
+const pair = (en: string, ko: string, lastmod = "2026-09-11") => [renderUrl(en, en, ko, lastmod), renderUrl(ko, en, ko, lastmod)];
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
@@ -26,8 +26,13 @@ export const Route = createFileRoute("/sitemap.xml")({
           ...pair("/attorney", "/ko/attorney"),
           ...pair("/about", "/ko/about"),
           ...pair("/locations", "/ko/locations"),
+          ...pair("/results", "/ko/results"),
           ...pair("/blogs", "/ko/blogs"),
           ...pair("/contact", "/ko/contact"),
+          ...pair("/privacy-policy", "/ko/privacy-policy"),
+          ...pair("/terms", "/ko/terms"),
+          ...pair("/disclaimer", "/ko/disclaimer"),
+          ...pair("/accessibility", "/ko/accessibility"),
         ];
 
         const practiceUrls = practiceAreas.flatMap((practice) => pair(`/practice-areas/${practice.slug}`, `/ko/practice-areas/${practice.slug}`));
