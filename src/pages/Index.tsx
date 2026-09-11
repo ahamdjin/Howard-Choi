@@ -10,7 +10,7 @@ import Booking from "@/components/Booking";
 import Footer from "@/components/Footer";
 
 const Index = () => (
-  <div className="min-h-[100svh] overflow-x-clip bg-background">
+  <div className="home-page min-h-[100svh] overflow-x-clip bg-background">
     <Navigation />
     <div className="relative">
       <div className="sticky top-0 z-0 h-[100svh] w-full"><Hero /></div>
