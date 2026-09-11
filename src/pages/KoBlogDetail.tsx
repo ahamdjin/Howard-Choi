@@ -140,10 +140,10 @@ const KoBlogDetail = () => {
                   <div className="flex items-start gap-4">
                     <img src={brandMark} alt="" width={42} height={42} loading="lazy" decoding="async" className="h-10 w-10 shrink-0 object-cover invert" />
                     <div>
-                      <div className="text-[12px] font-medium text-foreground">Howard Choi Law</div>
-                      <div className="mt-1 text-[12px] text-foreground/46">기업 · 소송 법률자문</div>
+                      <div className="text-[12px] font-medium text-foreground">Buena Park Injury Lawyer</div>
+                      <div className="mt-1 text-[12px] text-foreground/46">사고 · 개인 상해 법률지원</div>
                       <p className="mt-4 max-w-[590px] text-[13px] leading-6 text-foreground/58">
-                        기업, 창업자, 개인 고객이 중요한 결정을 내릴 때 실질적으로 도움이 되는 법률 관점을 제공합니다.
+                        캘리포니아에서 사고 청구, 보험, 증거와 회복 과정을 이해하는 데 도움이 되는 실용적인 법률 정보를 제공합니다.
                       </p>
                     </div>
                   </div>
