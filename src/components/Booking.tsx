@@ -31,7 +31,7 @@ const Booking = () => {
             Legal advice begins with the right conversation.
           </h2>
           <p className="mx-auto mt-6 max-w-[570px] text-[16px] leading-7 text-white/60">
-            Choose a live consultation time from our HighLevel calendar, or call the office directly.
+            Choose a live consultation time online, or call the office directly.
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
