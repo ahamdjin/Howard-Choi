@@ -1,15 +1,14 @@
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
 
 type WebsiteInquiryFormProps = {
   locale?: "en" | "ko";
 };
 
 const WebsiteInquiryForm = ({ locale = "en" }: WebsiteInquiryFormProps) => {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
+  const [formData, setFormData] = useState({ full_name: "", email: "", subject: "", message: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const isKorean = locale === "ko";
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -19,19 +18,15 @@ const WebsiteInquiryForm = ({ locale = "en" }: WebsiteInquiryFormProps) => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (isSubmitting) return;
 
-    toast({
-      title: isKorean ? "문의가 접수되었습니다" : "Inquiry received",
-      description: isKorean
-        ? "담당자가 내용을 확인한 뒤 연락드리겠습니다."
-        : "Thank you. Our office will review your message and follow up.",
-    });
+    setIsSubmitting(true);
 
-    // Give HighLevel's external-tracking listener time to read the submitted DOM values
-    // before clearing the controlled fields.
+    // HighLevel External Tracking listens to the native submit event and reads the
+    // visible DOM fields. Keep the values in place briefly, then move to thank-you.
     window.setTimeout(() => {
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    }, 600);
+      window.location.assign(isKorean ? "/ko/thank-you" : "/thank-you");
+    }, 900);
   };
 
   return (
@@ -44,13 +39,13 @@ const WebsiteInquiryForm = ({ locale = "en" }: WebsiteInquiryFormProps) => {
     >
       <div className="grid gap-3 sm:grid-cols-2">
         <Input
-          name="name"
-          value={formData.name}
+          name="full_name"
+          value={formData.full_name}
           onChange={handleChange}
           required
           autoComplete="name"
-          placeholder={isKorean ? "이름" : "Name"}
-          aria-label={isKorean ? "이름" : "Name"}
+          placeholder={isKorean ? "성명" : "Full name"}
+          aria-label={isKorean ? "성명" : "Full name"}
           className="h-12 rounded-[2px] border-foreground/10 bg-background/70 px-4 text-[13px] shadow-none"
         />
         <Input
@@ -84,8 +79,16 @@ const WebsiteInquiryForm = ({ locale = "en" }: WebsiteInquiryFormProps) => {
         rows={7}
         className="resize-none rounded-[2px] border-foreground/10 bg-background/70 p-4 text-[13px] leading-6 shadow-none"
       />
-      <button type="submit" className="liquid-cta mt-2 inline-flex rounded-full px-6 py-3 text-[12px] font-medium">
-        <span className="relative z-10">{isKorean ? "문의 보내기" : "Send inquiry"}</span>
+      <button
+        type="submit"
+        disabled={isSubmitting}
+        className="liquid-cta mt-2 inline-flex rounded-full px-6 py-3 text-[12px] font-medium disabled:cursor-wait disabled:opacity-70"
+      >
+        <span className="relative z-10">
+          {isSubmitting
+            ? isKorean ? "전송 중..." : "Sending..."
+            : isKorean ? "문의 보내기" : "Send inquiry"}
+        </span>
       </button>
     </form>
   );
