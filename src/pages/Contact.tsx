@@ -70,7 +70,7 @@ const Contact = () => {
           </a>
         </div>
 
-        <div className="grid gap-5 lg:grid-cols-[0.78fr_1.22fr]">
+        <div className="grid items-start gap-5 lg:grid-cols-[0.78fr_1.22fr]">
           <motion.section
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -95,9 +95,9 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.08 }}
             transition={{ duration: 0.68, delay: 0.06 }}
-            className="scroll-mt-24 rounded-[4px] bg-[#1a1714] p-4 text-[#f3eee5] md:p-6"
+            className="flex min-h-[760px] w-full scroll-mt-24 flex-col rounded-[4px] bg-[#1a1714] p-4 text-[#f3eee5] md:p-6 lg:min-h-[820px]"
           >
-            <div className="flex items-start justify-between gap-6 px-3 pb-5 pt-3 md:px-4 md:pb-6 md:pt-4">
+            <div className="flex shrink-0 items-start justify-between gap-6 px-3 pb-5 pt-3 md:px-4 md:pb-6 md:pt-4">
               <div>
                 <span className="text-[11px] text-[#f3eee5]/42">Consultation</span>
                 <h2 className="editorial-serif mt-3 max-w-[540px] text-[clamp(2rem,2.8vw,3rem)] leading-[0.98] tracking-[-0.022em]">
@@ -110,10 +110,8 @@ const Contact = () => {
               <CalendarDays className="mt-1 h-5 w-5 shrink-0 text-[#f3eee5]/42" />
             </div>
 
-            <GHLCalendar locale="en" />
-
-            <div className="px-3 pb-2 pt-4 text-[11px] leading-5 text-[#f3eee5]/38 md:px-4">
-              Appointment availability and confirmations are managed through HighLevel.
+            <div className="min-h-0 w-full flex-1 [&>div]:h-full [&>div]:min-h-full [&>div]:w-full [&>div>div]:h-full [&_iframe]:h-full [&_iframe]:min-h-full [&_iframe]:w-full">
+              <GHLCalendar locale="en" />
             </div>
           </motion.section>
         </div>
