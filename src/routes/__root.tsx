@@ -59,6 +59,8 @@ function RootDocument({ children }: { children: ReactNode }) {
           {children}
         </div>
         <Scripts />
+        <script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_9bc9b1c38e8446d69a248bc862fae75a" />
+        <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript" />
         <script async src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a9841dd05dab92683f66d82" />
       </body>
     </html>

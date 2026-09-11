@@ -1,30 +1,17 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { CalendarDays, Clock, Mail, MapPin, Phone } from "lucide-react";
-import { format } from "date-fns";
+import { CalendarDays, Mail, MapPin, Phone } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Calendar } from "@/components/ui/calendar";
+import GHLCalendar from "@/components/GHLCalendar";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
 import heroCityBoardroom from "@/assets/law-firm/hero-city-boardroom.webp";
 
-const timeSlots = ["9:00 AM", "10:30 AM", "1:00 PM", "2:30 PM", "4:00 PM"];
-
 const Contact = () => {
-  const { toast } = useToast();
   const { scrollY } = useScroll();
   const heroY = useTransform(scrollY, [0, 700], [0, 90]);
-  const [selectedDate, setSelectedDate] = useState<Date>();
-  const [selectedTime, setSelectedTime] = useState("");
   const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
-
-  const today = useMemo(() => {
-    const date = new Date();
-    date.setHours(0, 0, 0, 0);
-    return date;
-  }, []);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = event.target;
@@ -40,21 +27,6 @@ const Contact = () => {
     openEmail(
       formData.subject || "Website inquiry",
       `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
-    );
-  };
-
-  const handleConsultationRequest = () => {
-    if (!selectedDate || !selectedTime) {
-      toast({
-        title: "Choose a date and time",
-        description: "Select a preferred consultation window first.",
-      });
-      return;
-    }
-
-    openEmail(
-      "Consultation request",
-      `Preferred consultation: ${format(selectedDate, "EEEE, MMMM d, yyyy")} at ${selectedTime} PT\n\nPlease confirm availability.`
     );
   };
 
@@ -86,7 +58,7 @@ const Contact = () => {
               Start with a clear conversation.
             </h1>
             <p className="mt-5 max-w-[540px] text-[14px] leading-6 text-[#f3eee5]/68 md:text-[15px]">
-              Share the outline of your matter or choose a preferred consultation time. We’ll confirm fit, conflicts, and availability before moving forward.
+              Share the outline of your matter or book an available consultation time directly below.
             </p>
           </motion.div>
         </div>
@@ -118,7 +90,7 @@ const Contact = () => {
           </a>
         </div>
 
-        <div className="grid gap-5 lg:grid-cols-[0.92fr_1.08fr]">
+        <div className="grid gap-5 lg:grid-cols-[0.78fr_1.22fr]">
           <motion.section
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -178,67 +150,30 @@ const Contact = () => {
           </motion.section>
 
           <motion.section
+            id="calendar"
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.16 }}
+            viewport={{ once: true, amount: 0.08 }}
             transition={{ duration: 0.68, delay: 0.06 }}
-            className="rounded-[4px] bg-[#1a1714] p-7 text-[#f3eee5] md:p-9"
+            className="scroll-mt-24 rounded-[4px] bg-[#1a1714] p-4 text-[#f3eee5] md:p-6"
           >
-            <div className="flex items-start justify-between gap-6">
+            <div className="flex items-start justify-between gap-6 px-3 pb-5 pt-3 md:px-4 md:pb-6 md:pt-4">
               <div>
                 <span className="text-[11px] text-[#f3eee5]/42">Consultation</span>
-                <h2 className="editorial-serif mt-3 max-w-[500px] text-[clamp(2.1rem,3vw,3.2rem)] leading-[0.98] tracking-[-0.022em]">
-                  Choose a preferred time.
+                <h2 className="editorial-serif mt-3 max-w-[540px] text-[clamp(2rem,2.8vw,3rem)] leading-[0.98] tracking-[-0.022em]">
+                  Book an available time.
                 </h2>
+                <p className="mt-4 max-w-[540px] text-[14px] leading-6 text-[#f3eee5]/52">
+                  Live availability is loaded directly from our scheduling calendar. Choose a time and complete the booking below.
+                </p>
               </div>
-              <CalendarDays className="mt-1 h-5 w-5 text-[#f3eee5]/42" />
-            </div>
-            <p className="mt-4 max-w-[500px] text-[14px] leading-6 text-[#f3eee5]/52">
-              Select a weekday and a preferred time. This is a request, not an instant booking — the office will confirm availability.
-            </p>
-
-            <div className="mt-7 grid gap-5 xl:grid-cols-[1fr_0.72fr]">
-              <div className="overflow-hidden rounded-[3px] bg-[#f4f1ec] p-2 text-[#211c17]">
-                <Calendar
-                  mode="single"
-                  selected={selectedDate}
-                  onSelect={setSelectedDate}
-                  disabled={(date) => date < today || date.getDay() === 0 || date.getDay() === 6}
-                  className="mx-auto w-fit"
-                />
-              </div>
-
-              <div>
-                <div className="mb-3 flex items-center gap-2 text-[11px] text-[#f3eee5]/46">
-                  <Clock className="h-3.5 w-3.5" /> Pacific Time
-                </div>
-                <div className="grid grid-cols-2 gap-2 xl:grid-cols-1">
-                  {timeSlots.map((time) => (
-                    <button
-                      key={time}
-                      type="button"
-                      onClick={() => setSelectedTime(time)}
-                      className={`rounded-[2px] border px-4 py-3 text-left text-[12px] transition-colors ${
-                        selectedTime === time
-                          ? "border-[#f3eee5] bg-[#f3eee5] text-[#211c17]"
-                          : "border-[#f3eee5]/14 text-[#f3eee5]/68 hover:border-[#f3eee5]/36 hover:text-[#f3eee5]"
-                      }`}
-                    >
-                      {time}
-                    </button>
-                  ))}
-                </div>
-              </div>
+              <CalendarDays className="mt-1 h-5 w-5 shrink-0 text-[#f3eee5]/42" />
             </div>
 
-            <div className="mt-6 flex flex-col gap-4 border-t border-[#f3eee5]/12 pt-5 sm:flex-row sm:items-center sm:justify-between">
-              <div className="text-[12px] text-[#f3eee5]/48">
-                {selectedDate ? format(selectedDate, "EEE, MMM d, yyyy") : "Choose a date"}
-                {selectedTime ? ` · ${selectedTime}` : ""}
-              </div>
-              <button type="button" onClick={handleConsultationRequest} className="liquid-cta inline-flex w-fit rounded-full px-6 py-3 text-[12px] font-medium">
-                <span className="relative z-10">Request this time</span>
-              </button>
+            <GHLCalendar locale="en" />
+
+            <div className="px-3 pb-2 pt-4 text-[11px] leading-5 text-[#f3eee5]/38 md:px-4">
+              Appointment availability and confirmations are managed through HighLevel.
             </div>
           </motion.section>
         </div>

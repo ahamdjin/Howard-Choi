@@ -31,11 +31,11 @@ const Booking = () => {
             Legal advice begins with the right conversation.
           </h2>
           <p className="mx-auto mt-6 max-w-[570px] text-[16px] leading-7 text-white/60">
-            Share the outline of your matter. We’ll confirm fit, conflicts, and the best next step before anything moves forward.
+            Choose a live consultation time from our HighLevel calendar, or call the office directly.
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
-              href="mailto:hello@howardchoilaw.com"
+              href="/contact#calendar"
               className="liquid-cta inline-flex items-center gap-3 rounded-full px-6 py-3 text-[13px] font-medium"
             >
               <span className="relative z-10">Schedule a consultation</span>
