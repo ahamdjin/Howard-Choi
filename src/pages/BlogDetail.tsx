@@ -186,10 +186,10 @@ const BlogDetail = () => {
                   <div className="flex items-start gap-4">
                     <img src={brandMark} alt="" width={42} height={42} loading="lazy" decoding="async" className="h-10 w-10 shrink-0 object-cover invert" />
                     <div>
-                      <div className="text-[12px] font-medium text-foreground">Howard Choi Law</div>
-                      <div className="mt-1 text-[12px] text-foreground/46">Business &amp; Litigation Counsel</div>
+                      <div className="text-[12px] font-medium text-foreground">Buena Park Injury Lawyer</div>
+                      <div className="mt-1 text-[12px] text-foreground/46">Accident &amp; Injury Counsel</div>
                       <p className="mt-4 max-w-[590px] text-[13px] leading-6 text-foreground/58">
-                        Practical legal insight for founders, businesses, and private clients navigating consequential decisions.
+                        Practical legal guidance for people navigating accident claims, insurance, evidence, and recovery in California.
                       </p>
                     </div>
                   </div>
