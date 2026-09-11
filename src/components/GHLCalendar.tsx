@@ -127,24 +127,6 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
     };
   }, [month, todayKey]);
 
-  if (configured === false && !loading) {
-    const title = isKorean ? "상담 예약 캘린더" : "Consultation booking calendar";
-    return (
-      <div className="overflow-hidden rounded-[3px] bg-[#f9f8f6]">
-        <iframe
-          src={`https://api.leadconnectorhq.com/widget/booking/${GHL_CALENDAR_ID}`}
-          style={{ width: "100%", border: "none", overflow: "hidden" }}
-          scrolling="no"
-          id={`${GHL_CALENDAR_ID}_1789093000000`}
-          title={title}
-          data-calendar-id={GHL_CALENDAR_ID}
-          data-location-id={GHL_LOCATION_ID}
-          className="block min-h-[720px] w-full bg-[#f9f8f6] md:min-h-[760px]"
-        />
-      </div>
-    );
-  }
-
   if (bookedSlot) {
     return (
       <div className="rounded-[3px] bg-[#f9f8f6] p-7 text-[#1e1c1a] md:p-10">
@@ -192,6 +174,7 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
 
       if (!result.configured) {
         setConfigured(false);
+        setError(isKorean ? "예약 연결을 불러올 수 없습니다. 잠시 후 다시 시도해 주세요." : "The booking connection is temporarily unavailable. Please try again shortly.");
         return;
       }
 
@@ -293,6 +276,30 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
           {loading || configured === null ? (
             <div className="flex min-h-[360px] items-center justify-center text-[#1e1c1a]/42">
               <LoaderCircle className="h-5 w-5 animate-spin" />
+            </div>
+          ) : configured === false ? (
+            <div className="flex min-h-[360px] flex-col justify-center">
+              <span className="text-[9px] font-medium uppercase tracking-[0.15em] text-[#1e1c1a]/38">
+                {isKorean ? "예약 연결" : "Calendar connection"}
+              </span>
+              <h3 className="editorial-serif mt-3 max-w-[340px] text-[1.9rem] leading-[1.02] tracking-[-0.02em]">
+                {isKorean ? "예약 가능 시간을 불러오지 못했습니다." : "We couldn't load the available times."}
+              </h3>
+              <p className="mt-4 max-w-[360px] text-[11px] leading-5 text-[#1e1c1a]/46">
+                {isKorean
+                  ? "잠시 후 페이지를 새로고침하거나 사무실로 전화해 주세요."
+                  : "Please refresh in a moment. If the issue continues, you can call the office directly."}
+              </p>
+              <button
+                type="button"
+                onClick={() => window.location.reload()}
+                className="mt-6 inline-flex w-fit items-center gap-2 border border-[#1e1c1a]/14 bg-[#f9f8f6] px-4 py-3 text-[11px] font-medium"
+              >
+                {isKorean ? "다시 시도" : "Try again"}
+              </button>
+              <a href="tel:+17146900007" className="mt-4 inline-flex w-fit items-center gap-2 text-[10px] text-[#1e1c1a]/46">
+                <Phone className="h-3 w-3" /> 714-690-0007
+              </a>
             </div>
           ) : selectedDate ? (
             <div>
