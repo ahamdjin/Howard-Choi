@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { AttorneyPage } from "@/pages/RichSEOInnerPages";
+import { AttorneyPage } from "@/pages/DeepSEOInnerPages";
 import { buildSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/ko/attorney")({

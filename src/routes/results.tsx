@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ResultsPage } from "@/pages/RichSEOInnerPages";
+import { ResultsPage } from "@/pages/DeepSEOInnerPages";
 import { buildSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/results")({
