@@ -1,5 +1,5 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
-import { PracticeAreaDetailPage } from "@/pages/RefinedInnerPages";
+import { PracticeAreaDetailPage } from "@/pages/RichSEOInnerPages";
 import { getPracticeArea } from "@/data/injurySite";
 import { breadcrumbJsonLd, buildSeo } from "@/lib/seo";
 
