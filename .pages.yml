@@ -6,7 +6,7 @@ media:
 
 content:
   - name: blog
-    label: Law Blog
+    label: Blogs
     type: collection
     path: content/blog
     format: json-frontmatter

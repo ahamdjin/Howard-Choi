@@ -35,7 +35,7 @@ const SiteNavigation = ({ locale }: { locale: SiteLocale }) => {
     menu: "메뉴", about: "소개", contact: "문의", allPractices: "전체 업무 분야", allLocations: "전체 지역",
     language: "언어", call: "전화",
   } : {
-    practice: "Practice Areas", locations: "Locations", attorneys: "Attorneys", results: "Results", blog: "Law Blog",
+    practice: "Practice Areas", locations: "Locations", attorneys: "Attorneys", results: "Results", blog: "Blogs",
     menu: "Menu", about: "About", contact: "Contact", allPractices: "All Practice Areas", allLocations: "All Locations",
     language: "Language", call: "Call",
   };
@@ -105,7 +105,7 @@ const SiteNavigation = ({ locale }: { locale: SiteLocale }) => {
 
     if (panel === "blog") return (
       <div className="site-shell grid gap-8 py-8 lg:grid-cols-[0.42fr_1.58fr] lg:gap-10 lg:py-10 xl:gap-14">
-        <PanelIntro number="05" eyebrow={labels.blog} title={ko ? "사고 뒤의 질문을 명확하게." : "Useful answers that connect to the rest of the site."} body={ko ? "가이드는 관련 업무 분야, 지역, 변호사와 자연스럽게 연결됩니다." : "Guides connect back to the practice area, local page, attorney, and next action."} link={href("/blogs")} linkLabel={ko ? "법률 블로그 보기" : "Browse the Law Blog"} />
+        <PanelIntro number="05" eyebrow={labels.blog} title={ko ? "사고 뒤의 질문을 명확하게." : "Useful answers that connect to the rest of the site."} body={ko ? "가이드는 관련 업무 분야, 지역, 변호사와 자연스럽게 연결됩니다." : "Guides connect back to the practice area, local page, attorney, and next action."} link={href("/blogs")} linkLabel={ko ? "법률 블로그 보기" : "Browse Blogs"} />
         <div className="grid border-t border-foreground/12 md:grid-cols-3">
           <PanelLink number="01" title={ko ? "사고 후 해야 할 일" : "After an accident"} body={ko ? "초기 단계와 증거 보존에 관한 실용적인 가이드." : "Practical guidance around first steps, evidence, and insurance."} link={href("/blogs")} />
           <PanelLink number="02" title={ko ? "보험과 청구" : "Insurance & claims"} body={ko ? "보험 연락과 청구 과정에 관한 자료." : "Clear explanations of coverage, adjusters, and claim decisions."} link={href("/blogs")} />

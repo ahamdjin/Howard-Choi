@@ -22,7 +22,7 @@ const Blogs = () => {
           <div className="hero-bottom-readability" />
           <div className="site-shell relative z-10 flex h-full items-end pb-10 pt-[72px] md:pb-12 lg:pb-14">
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.72 }} className="grid w-full gap-8 border-t border-white/18 pt-5 lg:grid-cols-[0.38fr_1.62fr] lg:gap-12 xl:gap-16">
-              <div><span className="text-[9px] font-medium uppercase tracking-[0.17em] text-[#f3eee5]/48">Law Blog</span><div className="mt-4 hidden text-[10px] leading-5 text-[#f3eee5]/34 lg:block">Practical injury-law guides<br />Buena Park, California</div></div>
+              <div><span className="text-[9px] font-medium uppercase tracking-[0.17em] text-[#f3eee5]/48">Blogs</span><div className="mt-4 hidden text-[10px] leading-5 text-[#f3eee5]/34 lg:block">Practical injury-law guides<br />Buena Park, California</div></div>
               <div className="max-w-[980px]"><h1 className="editorial-serif text-[clamp(2.35rem,3.45vw,3.9rem)] leading-[1] tracking-[-0.026em]">Clear answers for the questions that follow an accident.</h1><p className="mt-5 max-w-[700px] text-[14px] leading-6 text-[#f3eee5]/67 md:text-[15px] md:leading-7">Practical information about accident claims, insurance, evidence, injuries, and the decisions people face while recovering.</p></div>
             </motion.div>
           </div>

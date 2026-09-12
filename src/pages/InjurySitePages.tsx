@@ -108,7 +108,7 @@ const NextSteps = ({ locale }: { locale: SiteLocale }) => (
   <div className="grid border-t border-foreground/12 md:grid-cols-3">
     {[
       [isKo(locale) ? "사건 결과" : "Results", isKo(locale) ? "확인된 결과와 대표 사건" : "Verified outcomes and representative matters", "/results"],
-      [isKo(locale) ? "법률 블로그" : "Law Blog", isKo(locale) ? "사고 후 필요한 실용적인 가이드" : "Practical guidance for what comes next", "/blogs"],
+      [isKo(locale) ? "법률 블로그" : "Blogs", isKo(locale) ? "사고 후 필요한 실용적인 가이드" : "Practical guidance for what comes next", "/blogs"],
       [isKo(locale) ? "상담 문의" : "Consultation", isKo(locale) ? "현재 상황을 직접 상담하기" : "Talk through your specific situation", "/contact"],
     ].map(([label, body, path], index) => <Link key={path} to={`${prefixFor(locale)}${path}`} className="group min-h-[210px] border-b border-foreground/12 py-5 md:border-l md:px-7 md:first:border-l-0 md:first:pl-0"><div className="text-[9px] text-foreground/25">0{index + 1}</div><div className="mt-12 flex items-center justify-between text-[13px] font-medium"><span>{label}</span><ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" /></div><p className="mt-4 max-w-[300px] text-[11px] leading-5 text-foreground/46">{body}</p></Link>)}
   </div>
