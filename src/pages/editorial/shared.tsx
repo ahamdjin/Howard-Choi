@@ -65,8 +65,7 @@ export const EditorialHero = ({
 
 export type ReadingSection = { id: string; label: string };
 
-// Long-form legal pages use a persistent, active "On this page" rail so visitors
-// can keep their place while scanning the same way strong competitor resource pages do.
+// Keep long-form legal pages easy to scan with a persistent, active section index.
 export const ReadingLayout = ({
   locale,
   label,
