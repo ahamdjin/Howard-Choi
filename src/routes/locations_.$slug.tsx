@@ -12,8 +12,8 @@ export const Route = createFileRoute("/locations/$slug")({
   head: ({ loaderData }) => {
     const path = `/locations/${loaderData.slug}`;
     const seo = buildSeo({
-      title: `${loaderData.name} Injury Lawyer | Buena Park Injury Lawyer`,
-      description: loaderData.description,
+      title: `${loaderData.name} Personal Injury Lawyers | Local Accident Guide`,
+      description: `${loaderData.description} See local ${loaderData.ots.year} California OTS collision data, evidence to preserve, injury practice areas, and practical next steps after an accident.`,
       path,
       alternatePath: `/ko/locations/${loaderData.slug}`,
       locale: "en-US",
