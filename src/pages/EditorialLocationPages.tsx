@@ -14,6 +14,15 @@ import {
   serifStyle,
 } from "./editorial/shared";
 
+const locationResources: Record<string, { agency: string; agencyHref: string; court: string; courtHref: string }> = {
+  "buena-park": { agency: "Buena Park Police Department", agencyHref: "https://www.bppd.com/", court: "Orange County Superior Court", courtHref: "https://www.occourts.org/" },
+  fullerton: { agency: "Fullerton Police · Traffic Collision Reports", agencyHref: "https://www.cityoffullerton.com/government/departments/police/police-services/traffic-collision-report", court: "Orange County Superior Court", courtHref: "https://www.occourts.org/" },
+  anaheim: { agency: "Anaheim Police · Records Bureau", agencyHref: "https://pd.anaheim.net/173/Records", court: "Orange County Superior Court", courtHref: "https://www.occourts.org/" },
+  cerritos: { agency: "Los Angeles County Sheriff · Cerritos Station", agencyHref: "https://lasd.org/cerritos/", court: "Los Angeles Superior Court", courtHref: "https://www.lacourt.org/" },
+  "la-mirada": { agency: "Los Angeles County Sheriff · Norwalk Station", agencyHref: "https://lasd.org/norwalk/", court: "Los Angeles Superior Court", courtHref: "https://www.lacourt.org/" },
+  "la-habra": { agency: "La Habra Police · Operations & Services", agencyHref: "https://www.lahabraca.gov/396/Operations-Services", court: "Orange County Superior Court", courtHref: "https://www.occourts.org/" },
+};
+
 export const LocationsPage = ({ locale }: { locale: SiteLocale }) => (
   <EditorialFrame locale={locale}>
     <main>
@@ -23,7 +32,7 @@ export const LocationsPage = ({ locale }: { locale: SiteLocale }) => (
         title={isKo(locale) ? "Buena Park를 중심으로 인근 지역까지." : "Personal injury lawyers serving Buena Park and nearby communities."}
         description={isKo(locale)
           ? "Buena Park와 인근 Orange County·Los Angeles County 경계 지역의 사고·개인상해 사건을 지원합니다."
-          : "The firm is based in Buena Park and serves injured people across nearby North Orange County and Los Angeles County communities. Each local guide explains the accident context, evidence, and practical information that can matter after an injury."}
+          : "The firm is based in Buena Park and serves injured people across nearby North Orange County and Los Angeles County communities. Each local guide explains the accident context, evidence, official local resources, and practical information that can matter after an injury."}
         image={heroBoardroom}
       />
       <ReadingLayout
@@ -98,6 +107,11 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
   const name = isKo(locale) ? location.koName : location.name;
   const description = isKo(locale) ? location.koDescription : location.description;
   const statLabel = isKo(locale) ? `${location.ots.year} 교통안전 통계` : `${location.ots.year} California OTS collision data`;
+  const resource = locationResources[location.slug];
+  const isBuenaPark = location.slug === "buena-park";
+  const heroTitle = isKo(locale)
+    ? (isBuenaPark ? "부에나파크 사고·상해 가이드" : `${name} 개인상해 변호사`)
+    : (isBuenaPark ? "Buena Park Accident & Injury Guide" : `${name} Personal Injury Lawyers`);
 
   return (
     <EditorialFrame locale={locale}>
@@ -105,16 +119,24 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
         <EditorialHero
           locale={locale}
           eyebrow={isKo(locale) ? "서비스 지역" : `${location.county} · Service area`}
-          title={isKo(locale) ? `${name} 개인상해 변호사` : `${name} Personal Injury Lawyers`}
-          description={description}
+          title={heroTitle}
+          description={isBuenaPark && !isKo(locale) ? "A practical local guide to Buena Park collision data, accident records, evidence preservation, California deadlines, and the injury matters handled from the firm's Buena Park office." : description}
           image={heroJustice}
         />
         <ReadingLayout
           locale={locale}
           label={`${name} · ${isKo(locale) ? "지역 안내" : "Local injury guide"}`}
           sections={isKo(locale)
-            ? [{ id: "overview", label: "지역 안내" }, { id: "data", label: "교통사고 통계" }, { id: "cases", label: "사건 유형" }, { id: "evidence", label: "증거" }, { id: "prepare", label: "상담 준비" }, { id: "nearby", label: "인근 지역" }]
-            : [{ id: "overview", label: "Local overview" }, { id: "data", label: "Local collision data" }, { id: "cases", label: "Matters handled" }, { id: "evidence", label: "Evidence to preserve" }, { id: "prepare", label: "Prepare for a consultation" }, { id: "nearby", label: "Nearby communities" }]}
+            ? [
+                { id: "overview", label: "지역 안내" }, { id: "data", label: "교통사고 통계" }, { id: "records", label: "지역 기록" },
+                { id: "cases", label: "사건 유형" }, { id: "evidence", label: "증거" }, { id: "deadlines", label: "기한" },
+                { id: "faq", label: "자주 묻는 질문" }, { id: "nearby", label: "인근 지역" },
+              ]
+            : [
+                { id: "overview", label: "Local overview" }, { id: "data", label: "Local collision data" }, { id: "records", label: "Local records & agencies" },
+                { id: "cases", label: "Matters handled" }, { id: "evidence", label: "Evidence to preserve" }, { id: "deadlines", label: "California deadlines" },
+                { id: "faq", label: "Local claim questions" }, { id: "nearby", label: "Nearby communities" },
+              ]}
         >
           <ReadingSectionBlock
             id="overview"
@@ -145,9 +167,28 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
           </ReadingSectionBlock>
 
           <ReadingSectionBlock
+            id="records"
+            locale={locale}
+            kicker={isKo(locale) ? "03 · 지역 기록" : "03 · Local records"}
+            title={isKo(locale) ? "사고 기록은 정확한 관할기관에서 시작됩니다." : `Official local resources for an incident in ${name}.`}
+            intro={isKo(locale) ? "사고가 발생한 정확한 위치와 사건 유형에 따라 신고·기록 기관이 달라질 수 있습니다. 아래 링크는 지역 확인을 시작하기 위한 공식 자료입니다." : `The responding agency and the court that may ultimately matter depend on the exact scene, parties, and type of claim. These official resources are a practical starting point for locating reports and understanding the county system; they are not a statement that every ${name} claim is handled by one specific court.`}
+          >
+            <div className="grid border-y border-[#1E1C1A]/12 md:grid-cols-2">
+              <a href={resource.agencyHref} target="_blank" rel="noreferrer" className="group border-b border-[#1E1C1A]/12 py-6 md:border-b-0 md:pr-7">
+                <div className="text-[9px] font-semibold uppercase tracking-[0.14em] text-[#1E1C1A]/34">{isKo(locale) ? "경찰·기록" : "Police / records"}</div>
+                <div className="mt-5 flex items-center justify-between gap-4 text-[13px]"><span>{resource.agency}</span><ArrowRight className="h-3.5 w-3.5 shrink-0 transition-transform group-hover:translate-x-1" /></div>
+              </a>
+              <a href={resource.courtHref} target="_blank" rel="noreferrer" className="group py-6 md:border-l md:border-[#1E1C1A]/12 md:pl-7">
+                <div className="text-[9px] font-semibold uppercase tracking-[0.14em] text-[#1E1C1A]/34">{isKo(locale) ? "카운티 법원" : "County court resource"}</div>
+                <div className="mt-5 flex items-center justify-between gap-4 text-[13px]"><span>{resource.court}</span><ArrowRight className="h-3.5 w-3.5 shrink-0 transition-transform group-hover:translate-x-1" /></div>
+              </a>
+            </div>
+          </ReadingSectionBlock>
+
+          <ReadingSectionBlock
             id="cases"
             locale={locale}
-            kicker={isKo(locale) ? "03 · 사건" : "03 · Matters"}
+            kicker={isKo(locale) ? "04 · 사건" : "04 · Matters"}
             title={isKo(locale) ? "지역보다 사건 유형과 증거가 더 중요합니다." : `Personal injury matters we review for people in ${name}.`}
             intro={isKo(locale) ? "자동차·트럭·오토바이 사고, 보행자 사고, 승차공유 사고, 낙상과 중대 상해 등 다양한 개인상해 문제를 검토할 수 있습니다." : "The firm reviews car, truck, motorcycle, pedestrian, rideshare, premises-liability, wrongful-death, and serious-injury matters. The right approach depends on the actual accident, available evidence, responsible parties, insurance, and medical consequences—not the city name alone."}
           >
@@ -157,23 +198,42 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
           <ReadingSectionBlock
             id="evidence"
             locale={locale}
-            kicker={isKo(locale) ? "04 · 증거" : "04 · Evidence"}
+            kicker={isKo(locale) ? "05 · 증거" : "05 · Evidence"}
             title={isKo(locale) ? "지역 기록과 사고 기록을 함께 보관하세요." : `Useful records after an accident in ${name}.`}
             intro={isKo(locale) ? "현장 사진, 영상, 신고 또는 사고 보고서, 목격자, 치료 기록과 보험사 연락 내용을 가능한 한 함께 정리해 두는 것이 좋습니다." : "Preserve scene photos and video, the exact location, responding-agency or incident-report information, witness details, vehicle or property information, medical records, bills, missed-work documentation, and insurance communications. If nearby cameras may have recorded the event, identifying them early can matter."}
           />
 
           <ReadingSectionBlock
-            id="prepare"
+            id="deadlines"
             locale={locale}
-            kicker={isKo(locale) ? "05 · 준비" : "05 · Prepare"}
-            title={isKo(locale) ? "상담 전에 완벽한 파일이 필요하지는 않습니다." : "A useful consultation can start with a simple timeline."}
-            intro={isKo(locale) ? "사고 일시와 장소, 치료 상황, 상대방 또는 보험사의 연락 내용, 현재 가지고 있는 사진과 문서부터 준비하면 됩니다." : `Write down when and where the incident happened in ${name}, what treatment you have received, any time missed from work, the insurers or businesses that have contacted you, and the documents already in your possession. That is enough to identify the next records or deadlines that may matter.`}
-          />
+            kicker={isKo(locale) ? "06 · 기한" : "06 · California deadlines"}
+            title={isKo(locale) ? "사고 장소와 상대방에 따라 기한이 달라질 수 있습니다." : "The calendar can matter as much as the county line."}
+            intro={isKo(locale) ? "캘리포니아의 많은 개인상해 소송에는 일반적으로 2년의 제소 기한이 적용되지만 공공기관 관련 청구는 더 짧은 사전 청구 절차가 적용될 수 있습니다. 사건별 기한을 실제 사실관계에서 확인하는 것이 중요합니다." : "California Courts explains that many personal-injury lawsuits generally have a two-year filing deadline, while claims involving a government agency can require a much earlier government claim. Other rules and exceptions can change the answer, so the deadline should be checked from the incident date, defendants, and facts—not assumed from the city alone."}
+          >
+            <a href="https://selfhelp.courts.ca.gov/civil-lawsuit/statute-limitations" target="_blank" rel="noreferrer" className="editorial-inline-link"><span>{isKo(locale) ? "California Courts 기한 안내" : "California Courts · Statutes of limitations"}</span><ArrowRight className="h-4 w-4" /></a>
+          </ReadingSectionBlock>
+
+          <ReadingSectionBlock
+            id="faq"
+            locale={locale}
+            kicker={isKo(locale) ? "07 · 질문" : "07 · Local claim questions"}
+            title={isKo(locale) ? `${name} 사고 이후 자주 묻는 질문` : `Practical questions after an accident in ${name}.`}
+          >
+            <div className="border-t border-[#1E1C1A]/12">
+              {[
+                [isKo(locale) ? "사고가 이 도시에서 났지만 저는 다른 곳에 살아도 괜찮나요?" : `What if the accident happened in ${name}, but I live somewhere else?`, isKo(locale) ? "거주지가 다르다고 해서 사고 기록이나 청구가 사라지는 것은 아닙니다. 사고 장소, 책임 당사자, 보험, 관할과 적용 법률을 함께 확인해야 합니다." : "That is common. The useful questions are where the incident happened, where the defendants live or do business, which agency documented it, what insurance applies, and which court or venue rules may matter."],
+                [isKo(locale) ? "어느 경찰서나 기관에서 기록을 받아야 하나요?" : "How do I know which agency has the report?", isKo(locale) ? "정확한 사고 지점이 중요합니다. 도시 경찰, 보안관, CHP 또는 다른 기관이 관할할 수 있으므로 사고 당시 받은 사건번호나 담당기관 정보를 먼저 확인하세요." : "Start with the exact location and any incident or report number you were given. City police, the sheriff, CHP, a property owner, or another agency may have the relevant record depending on where and how the incident occurred."],
+                [isKo(locale) ? "지역 변호사를 꼭 선임해야 하나요?" : "Do I have to hire a lawyer located in the same city?", isKo(locale) ? "도시 이름만으로 변호사를 선택할 필요는 없습니다. 캘리포니아 자격, 사건 유형 경험, 지역 절차 이해, 소통 방식과 실제 사건을 처리할 능력을 함께 보는 것이 더 중요합니다." : "The city name alone should not decide who handles a case. California licensure, experience with the type of claim, ability to work with the relevant local records and courts, communication, and the facts of the matter are more important."],
+              ].map(([question, answer], index) => (
+                <div key={question} className="border-b border-[#1E1C1A]/12 py-6"><div className="flex gap-4"><span className="text-[10px] text-[#1E1C1A]/30">0{index + 1}</span><div><h3 style={serifStyle(locale)} className="text-[1.25rem] leading-tight">{question}</h3><p className="mt-3 max-w-[720px] text-[12px] leading-6 text-[#1E1C1A]/54">{answer}</p></div></div></div>
+              ))}
+            </div>
+          </ReadingSectionBlock>
 
           <ReadingSectionBlock
             id="nearby"
             locale={locale}
-            kicker={isKo(locale) ? "06 · 인근" : "06 · Nearby"}
+            kicker={isKo(locale) ? "08 · 인근" : "08 · Nearby"}
             title={isKo(locale) ? "인근 서비스 지역" : "Nearby communities served."}
           >
             <div className="editorial-link-grid">
