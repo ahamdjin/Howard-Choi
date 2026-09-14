@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { ArrowRight, Phone } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import KoreanNavigation from "@/components/KoreanNavigation";
@@ -76,7 +76,9 @@ export const ReadingLayout = ({
   sections: ReadingSection[];
   children: ReactNode;
 }) => {
-  const [activeId, setActiveId] = useState(sections[0]?.id ?? "");
+  const sectionIds = useMemo(() => sections.map((section) => section.id), [sections]);
+  const sectionKey = sectionIds.join("|");
+  const [activeId, setActiveId] = useState(sectionIds[0] ?? "");
   const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -84,17 +86,17 @@ export const ReadingLayout = ({
 
     const updateActiveSection = () => {
       const marker = Math.min(window.innerHeight * 0.3, 220);
-      let next = sections[0]?.id ?? "";
+      let next = sectionIds[0] ?? "";
 
-      for (const section of sections) {
-        const element = document.getElementById(section.id);
+      for (const id of sectionIds) {
+        const element = document.getElementById(id);
         if (!element) continue;
-        if (element.getBoundingClientRect().top <= marker) next = section.id;
+        if (element.getBoundingClientRect().top <= marker) next = id;
         else break;
       }
 
       const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 24;
-      if (atBottom && sections.length) next = sections[sections.length - 1].id;
+      if (atBottom && sectionIds.length) next = sectionIds[sectionIds.length - 1];
 
       setActiveId((current) => (current === next ? current : next));
     };
@@ -116,7 +118,7 @@ export const ReadingLayout = ({
       window.removeEventListener("resize", requestUpdate);
       if (frame) window.cancelAnimationFrame(frame);
     };
-  }, [sections]);
+  }, [sectionKey]);
 
   useEffect(() => {
     if (window.innerWidth >= 1024 || !navRef.current) return;
