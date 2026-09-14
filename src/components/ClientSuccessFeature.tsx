@@ -7,10 +7,10 @@ const ClientSuccessFeature = () => (
         <div className="text-[10px] text-foreground/44">Client Experience</div>
         <h2 className="editorial-serif mt-4 text-[clamp(2rem,3vw,3.4rem)] leading-[1.04] tracking-[-0.03em]">
           Clear guidance<br />
-          <span className="text-foreground/42">when it matters most.</span>
+          <span className="text-foreground/42">when the case feels complicated.</span>
         </h2>
         <p className="mx-auto mt-5 max-w-[430px] text-[13px] leading-[1.55] text-foreground/64 sm:text-[14px]">
-          Clients often remember the communication just as much as the outcome.
+          Good representation should make the process easier to understand—from medical records and insurance questions to settlement decisions and the next legal step.
         </p>
         <a
           href="/contact"
@@ -25,7 +25,7 @@ const ClientSuccessFeature = () => (
           <div className="relative min-h-[34svh] sm:min-h-[40svh] lg:min-h-[470px]">
             <img
               src="https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1200&q=84"
-              alt="Client meeting with legal counsel"
+              alt="Client meeting with personal injury legal counsel"
               className="absolute inset-0 h-full w-full object-cover grayscale-[12%]"
             />
             <div className="absolute inset-0 bg-black/[0.05]" />
@@ -54,7 +54,7 @@ const ClientSuccessFeature = () => (
               </div>
               <div>
                 <div className="editorial-serif text-[1.45rem] leading-none sm:text-[1.8rem]">1:1</div>
-                <div className="mt-2 text-[9px] leading-4 text-foreground/44 sm:text-[10px]">Attorney access</div>
+                <div className="mt-2 text-[9px] leading-4 text-foreground/44 sm:text-[10px]">Direct case-team access</div>
               </div>
             </div>
           </div>
