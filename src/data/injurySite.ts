@@ -11,7 +11,7 @@ export const brand = {
 export const practiceAreas = [
   {
     slug: "car-accidents",
-    title: "Car Accidents",
+    title: "Car Accident",
     koTitle: "자동차 사고",
     description: "Buena Park car accident lawyers helping injured people understand fault, insurance, medical losses, evidence, and the next steps after a California collision.",
     koDescription: "자동차 충돌, 교차로 사고, 고속도로 사고 및 보험 책임 분쟁 이후의 상해 청구를 집중적으로 다룹니다.",
@@ -27,7 +27,7 @@ export const practiceAreas = [
   },
   {
     slug: "truck-accidents",
-    title: "Truck Accidents",
+    title: "Truck Accident",
     koTitle: "트럭 사고",
     description: "Buena Park truck accident lawyers handling commercial-vehicle injury claims involving drivers, carriers, company records, multiple policies, and serious injuries.",
     koDescription: "상업용 트럭, 배송 차량 및 여러 회사나 보험이 관련될 수 있는 사고 청구를 다룹니다.",
@@ -43,7 +43,7 @@ export const practiceAreas = [
   },
   {
     slug: "motorcycle-accidents",
-    title: "Motorcycle Accidents",
+    title: "Motorcycle Accident",
     koTitle: "오토바이 사고",
     description: "Buena Park motorcycle accident lawyers for riders facing serious injuries, visibility disputes, turning or lane-change collisions, and insurance issues.",
     koDescription: "사고 후 중상, 시야·인지 여부에 관한 과실 다툼, 보험 문제를 겪는 오토바이 운전자를 지원합니다.",
@@ -59,7 +59,7 @@ export const practiceAreas = [
   },
   {
     slug: "pedestrian-accidents",
-    title: "Pedestrian Accidents",
+    title: "Pedestrian Accident",
     koTitle: "보행자 사고",
     description: "Buena Park pedestrian accident lawyers handling crosswalk, parking-lot, intersection, and roadway injury claims involving serious physical harm.",
     koDescription: "횡단보도, 주차장, 교차로 및 도로에서 차량에 충돌한 보행자의 상해 청구를 다룹니다.",
@@ -75,7 +75,7 @@ export const practiceAreas = [
   },
   {
     slug: "rideshare-accidents",
-    title: "Rideshare Accidents",
+    title: "Uber & Lyft Accident",
     koTitle: "우버·리프트 사고",
     description: "Buena Park Uber and Lyft accident lawyers evaluating driver app status, trip records, overlapping insurance, passenger injuries, and third-party claims.",
     koDescription: "우버, 리프트 등 앱 기반 운송 서비스 사고에서 운전자의 운행 상태와 보험 적용 범위를 검토합니다.",
@@ -123,7 +123,7 @@ export const practiceAreas = [
   },
   {
     slug: "serious-injuries",
-    title: "Serious Injuries",
+    title: "Serious Injury",
     koTitle: "중대 상해",
     description: "Buena Park serious injury lawyers handling brain, spinal, orthopedic, and other claims involving long-term treatment, future care, and earning loss.",
     koDescription: "뇌, 척추, 정형외과적 부상 등 장기적인 영향을 남길 수 있는 중대한 상해 청구를 다룹니다.",
