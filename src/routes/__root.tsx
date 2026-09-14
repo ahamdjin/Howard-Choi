@@ -6,6 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import SmoothScroll from "@/components/SmoothScroll";
 import ScrollToTop from "@/components/ScrollToTop";
+import DeferredIntegrations from "@/components/DeferredIntegrations";
 import NotFound from "@/pages/NotFound";
 import { legalServiceJsonLd, webSiteJsonLd } from "@/lib/seo";
 import appCss from "@/index.css?url";
@@ -18,7 +19,7 @@ export const Route = createRootRoute({
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1.0" },
       { title: "Buena Park Injury Lawyer" },
-      { name: "author", content: "Buena Park Injury Lawyer" },
+      { name: "author", content: "Howard Choi" },
       { name: "theme-color", content: "#17130f" },
     ],
     links: [
@@ -40,7 +41,17 @@ export const Route = createRootRoute({
 
 function AppProviders({ children }: { children: ReactNode }) {
   const [queryClient] = useState(() => new QueryClient());
-  return <QueryClientProvider client={queryClient}><TooltipProvider><Toaster /><Sonner /><SmoothScroll /><ScrollToTop />{children}</TooltipProvider></QueryClientProvider>;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <SmoothScroll />
+        <ScrollToTop />
+        {children}
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
 }
 
 function RootComponent() {
@@ -60,14 +71,8 @@ function RootDocument({ children }: { children: ReactNode }) {
         <div className="min-h-screen bg-background px-[5px] pb-[5px] sm:px-[7px] sm:pb-[7px]">
           {children}
         </div>
+        <DeferredIntegrations contactPage={contactPage} />
         <Scripts />
-        {contactPage ? (
-          <>
-            <script src="https://link.msgsndr.com/js/external-tracking.js" data-tracking-id="tk_9bc9b1c38e8446d69a248bc862fae75a" />
-            <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript" />
-          </>
-        ) : null}
-        <script async src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a9841dd05dab92683f66d82" />
       </body>
     </html>
   );
