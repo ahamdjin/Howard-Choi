@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { ArrowRight, Phone } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import KoreanNavigation from "@/components/KoreanNavigation";
@@ -76,12 +76,12 @@ export const ReadingLayout = ({
   sections: ReadingSection[];
   children: ReactNode;
 }) => {
-  const sectionIds = useMemo(() => sections.map((section) => section.id), [sections]);
-  const sectionKey = sectionIds.join("|");
-  const [activeId, setActiveId] = useState(sectionIds[0] ?? "");
+  const sectionKey = sections.map((section) => section.id).join("|");
+  const [activeId, setActiveId] = useState(sections[0]?.id ?? "");
   const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    const sectionIds = sectionKey ? sectionKey.split("|") : [];
     let frame = 0;
 
     const updateActiveSection = () => {
