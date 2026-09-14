@@ -1,4 +1,4 @@
-import { FileCheck2, Scale, ShieldCheck } from "lucide-react";
+import { ArrowRight, FileCheck2, Scale, ShieldCheck } from "lucide-react";
 import heroCourthouse from "@/assets/law-firm/hero-courthouse.webp";
 import type { SiteLocale } from "@/data/injurySite";
 import {
@@ -6,6 +6,7 @@ import {
   EditorialFrame,
   EditorialHero,
   isKo,
+  localePrefix,
   ReadingLayout,
   ReadingSectionBlock,
   serifStyle,
@@ -28,8 +29,8 @@ export const ResultsPage = ({ locale }: { locale: SiteLocale }) => (
         locale={locale}
         label={isKo(locale) ? "사건 결과 · 안내" : "Case results · Guide"}
         sections={isKo(locale)
-          ? [{ id: "principle", label: "표시 원칙" }, { id: "results", label: "승인된 결과" }, { id: "context", label: "결과의 의미" }]
-          : [{ id: "principle", label: "How results are presented" }, { id: "results", label: "Approved outcomes" }, { id: "context", label: "Why context matters" }]}
+          ? [{ id: "principle", label: "표시 원칙" }, { id: "results", label: "승인된 결과" }, { id: "calculator", label: "사건 가치 계산기" }, { id: "context", label: "결과의 의미" }]
+          : [{ id: "principle", label: "How results are presented" }, { id: "results", label: "Approved outcomes" }, { id: "calculator", label: "Case value estimator" }, { id: "context", label: "Why context matters" }]}
       >
         <ReadingSectionBlock
           id="principle"
@@ -76,9 +77,24 @@ export const ResultsPage = ({ locale }: { locale: SiteLocale }) => (
         </ReadingSectionBlock>
 
         <ReadingSectionBlock
+          id="calculator"
+          locale={locale}
+          kicker={isKo(locale) ? "03 · 계산기" : "03 · Estimator"}
+          title={isKo(locale) ? "내 사건의 가치에 영향을 주는 요소를 직접 확인하세요." : "Build an educational case-value range from the facts you know."}
+          intro={isKo(locale)
+            ? "캘리포니아 개인상해 계산기는 의료비, 소득 손실, 부상 정도, 치료 수준과 비교과실을 이용해 교육용 범위를 보여줍니다. 결과를 보기 위해 연락처를 입력할 필요가 없습니다."
+            : "The California personal-injury estimator uses medical costs, income loss, injury severity, treatment, and comparative fault to show an illustrative range. No contact information is required to see the result."}
+        >
+          <a href={`${localePrefix(locale)}/case-value-calculator`} className="editorial-inline-link">
+            <span>{isKo(locale) ? "사건 가치 계산기 시작" : "Start the case value estimator"}</span>
+            <ArrowRight className="h-4 w-4" />
+          </a>
+        </ReadingSectionBlock>
+
+        <ReadingSectionBlock
           id="context"
           locale={locale}
-          kicker={isKo(locale) ? "03 · 맥락" : "03 · Context"}
+          kicker={isKo(locale) ? "04 · 맥락" : "04 · Context"}
           title={isKo(locale) ? "두 사건이 완전히 같을 수는 없습니다." : "No two cases have exactly the same facts."}
           intro={isKo(locale)
             ? "책임, 보험 한도, 부상 정도, 치료, 증거와 당사자의 상황에 따라 결과는 크게 달라질 수 있습니다."
