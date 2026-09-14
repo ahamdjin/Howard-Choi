@@ -77,7 +77,8 @@ export const ReadingLayout = ({
   children: ReactNode;
 }) => {
   const sectionKey = sections.map((section) => section.id).join("|");
-  const [activeId, setActiveId] = useState(sections[0]?.id ?? "");
+  const firstSectionId = sections[0]?.id ?? "";
+  const [activeId, setActiveId] = useState(firstSectionId);
   const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -109,6 +110,7 @@ export const ReadingLayout = ({
       });
     };
 
+    setActiveId(firstSectionId);
     updateActiveSection();
     window.addEventListener("scroll", requestUpdate, { passive: true });
     window.addEventListener("resize", requestUpdate);
@@ -118,7 +120,7 @@ export const ReadingLayout = ({
       window.removeEventListener("resize", requestUpdate);
       if (frame) window.cancelAnimationFrame(frame);
     };
-  }, [sectionKey]);
+  }, [firstSectionId, sectionKey]);
 
   useEffect(() => {
     if (window.innerWidth >= 1024 || !navRef.current) return;
