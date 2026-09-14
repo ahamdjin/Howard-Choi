@@ -5,9 +5,9 @@ import corporateLawImage from "@/assets/law-firm/practice-corporate-law.webp";
 import regulatoryComplianceImage from "@/assets/law-firm/practice-regulatory-compliance.webp";
 
 const practices = [
-  { title: "Car Accidents", description: "Clear representation after collisions, disputed fault, and insurance issues.", image: corporateLawImage, alt: "Legal counsel reviewing an accident claim", points: ["Rear-end & intersection crashes", "Hit-and-run claims", "Uninsured motorists"] },
-  { title: "Serious Injuries", description: "Focused claims when an injury changes work, mobility, and everyday life.", image: commercialLitigationImage, alt: "Attorney reviewing a serious injury matter", points: ["Brain & head injuries", "Neck & spinal injuries", "Orthopedic trauma"] },
-  { title: "Wrongful Death", description: "Careful representation for families after a fatal preventable accident.", image: regulatoryComplianceImage, alt: "Legal advisers reviewing a wrongful death matter", points: ["Fatal collisions", "Liability investigation", "Family loss"] },
+  { title: "Car Accidents", description: "Claims involving injury, disputed fault, hit-and-run drivers, and insurance coverage after a crash.", image: corporateLawImage, alt: "Legal counsel reviewing an accident claim", points: ["Rear-end & intersection crashes", "Hit-and-run & uninsured drivers", "Medical costs & lost income"] },
+  { title: "Serious Injuries", description: "Claims where treatment, future care, mobility, work, or daily life may be affected for months or years.", image: commercialLitigationImage, alt: "Attorney reviewing a serious injury matter", points: ["Brain & head injuries", "Neck, spine & orthopedic trauma", "Future care & earning impact"] },
+  { title: "Wrongful Death", description: "Careful representation for families after a fatal accident, with attention to responsibility, evidence, insurance, and the losses left behind.", image: regulatoryComplianceImage, alt: "Legal advisers reviewing a wrongful death matter", points: ["Fatal vehicle collisions", "Liability & insurance investigation", "Financial & family loss"] },
 ];
 
 type Practice = (typeof practices)[number];
@@ -60,15 +60,15 @@ const Locations = () => {
   return (
     <section id="practice" ref={ref} className="relative bg-background lg:h-[340svh]">
       <div className="site-shell py-20 md:py-24 lg:hidden">
-        <div className="mb-12 grid gap-8"><div><span className="mb-5 block text-[13px] text-muted-foreground">Practice Areas</span><h2 className="editorial-serif max-w-[690px] text-[clamp(3rem,12vw,4.5rem)] leading-[0.93] tracking-[-0.02em]">Injury counsel for<br />what happens next.</h2></div><p className="max-w-[430px] text-[15px] leading-6 text-muted-foreground">Focused on the accidents and serious injuries that can change a person's health, work, finances, and family life.</p></div>
+        <div className="mb-12 grid gap-8"><div><span className="mb-5 block text-[13px] text-muted-foreground">Practice Areas</span><h2 className="editorial-serif max-w-[690px] text-[clamp(3rem,12vw,4.5rem)] leading-[0.93] tracking-[-0.02em]">Personal injury help for<br />what happened next.</h2></div><p className="max-w-[430px] text-[15px] leading-6 text-muted-foreground">From everyday collisions to life-changing injuries, the claim should reflect responsibility, available insurance, medical treatment, financial loss, and the evidence that connects them.</p></div>
         <div className="grid gap-3">{practices.map((practice, index) => <article key={practice.title} className="h-[430px]"><MobileCard practice={practice} index={index} /></article>)}</div>
       </div>
 
       <div className="sticky top-0 hidden h-[100svh] overflow-hidden lg:block">
         <div className="site-shell relative h-full">
           <motion.div className="absolute left-0 right-0 top-[11%] z-40 grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end" style={shouldReduceMotion ? { opacity: 1 } : { opacity: headerOpacity, y: headerY }}>
-            <div><span className="mb-5 block text-[13px] text-muted-foreground">Practice Areas</span><h2 className="editorial-serif max-w-[690px] text-[clamp(3rem,4.7vw,5rem)] leading-[0.93] tracking-[-0.02em]">Injury counsel for<br />what happens next.</h2></div>
-            <p className="max-w-[430px] text-[15px] leading-6 text-muted-foreground lg:pb-1">Focused on the accidents and serious injuries that can change a person's health, work, finances, and family life.</p>
+            <div><span className="mb-5 block text-[13px] text-muted-foreground">Practice Areas</span><h2 className="editorial-serif max-w-[690px] text-[clamp(3rem,4.7vw,5rem)] leading-[0.93] tracking-[-0.02em]">Personal injury help for<br />what happened next.</h2></div>
+            <p className="max-w-[430px] text-[15px] leading-6 text-muted-foreground lg:pb-1">From everyday collisions to life-changing injuries, the claim should reflect responsibility, available insurance, medical treatment, financial loss, and the evidence that connects them.</p>
           </motion.div>
           {practices.map((practice, index) => {
             const style = cardStyles[index];
