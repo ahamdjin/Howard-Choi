@@ -34,12 +34,12 @@ const Contact = () => {
             transition={{ duration: 0.72 }}
             className="max-w-[700px]"
           >
-            <span className="mb-4 block text-[11px] text-[#f3eee5]/62">Contact</span>
+            <span className="mb-4 block text-[11px] text-[#f3eee5]/62">Contact · Buena Park</span>
             <h1 className="editorial-serif text-[clamp(2.75rem,4.15vw,4.25rem)] leading-[0.95] tracking-[-0.024em]">
-              Start with a clear conversation.
+              Talk with a personal injury legal team about what happened.
             </h1>
             <p className="mt-5 max-w-[540px] text-[14px] leading-6 text-[#f3eee5]/68 md:text-[15px]">
-              Share the outline of your matter or book an available consultation time directly below.
+              Start with the accident date and location, your current treatment, insurance information, and the questions you need answered. A simple outline is enough for the first conversation.
             </p>
           </motion.div>
         </div>
@@ -81,10 +81,10 @@ const Contact = () => {
           >
             <span className="text-[11px] text-foreground/48">Send a note</span>
             <h2 className="editorial-serif mt-3 text-[clamp(2rem,2.55vw,3rem)] leading-[0.98] tracking-[-0.022em]">
-              Tell us what needs attention.
+              Tell us where the case stands now.
             </h2>
             <p className="mt-4 max-w-[470px] text-[14px] leading-6 text-foreground/58">
-              A short outline is enough. Avoid sending confidential or time-sensitive information until an attorney-client relationship has been confirmed.
+              Helpful starting details include where and when the accident happened, the type of injury, treatment so far, whether work has been affected, and any insurance or claim information you already have. You do not need every record before reaching out. Avoid sending confidential or time-sensitive information until an attorney-client relationship has been confirmed.
             </p>
 
             <WebsiteInquiryForm locale="en" />
@@ -102,10 +102,10 @@ const Contact = () => {
               <div>
                 <span className="text-[11px] text-[#f3eee5]/42">Consultation</span>
                 <h2 className="editorial-serif mt-3 max-w-[620px] text-[clamp(2rem,2.8vw,3rem)] leading-[0.98] tracking-[-0.022em]">
-                  Book an available time.
+                  Book an available consultation time.
                 </h2>
                 <p className="mt-4 max-w-[620px] text-[14px] leading-6 text-[#f3eee5]/52">
-                  Live availability is read from our scheduling calendar. Choose a date and time, then complete the booking directly here.
+                  Choose an available date and time, then complete the booking here. If you have photos, reports, insurance information, medical records, or correspondence already available, keep them together for the conversation; they do not all need to be uploaded in advance.
                 </p>
               </div>
               <CalendarDays className="mt-1 h-5 w-5 shrink-0 text-[#f3eee5]/42" />
