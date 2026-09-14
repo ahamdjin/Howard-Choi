@@ -12,7 +12,7 @@ export const Route = createFileRoute("/practice-areas/$slug")({
   head: ({ loaderData }) => {
     const path = `/practice-areas/${loaderData.slug}`;
     const seo = buildSeo({
-      title: `${loaderData.title} Lawyer | Buena Park Injury Lawyer`,
+      title: `Buena Park ${loaderData.title} Lawyers | Injury Claims & Next Steps`,
       description: loaderData.description,
       path,
       alternatePath: `/ko/practice-areas/${loaderData.slug}`,
