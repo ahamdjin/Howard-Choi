@@ -82,8 +82,7 @@ export const legalServiceJsonLd = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "@id": `${SITE_URL}/#legal-service`,
-  name: ATTORNEY_NAME,
-  alternateName: SITE_NAME,
+  name: SITE_NAME,
   url: SITE_URL,
   telephone: "+1-714-690-0007",
   address: {
@@ -94,9 +93,9 @@ export const legalServiceJsonLd = {
     postalCode: "90621",
     addressCountry: "US",
   },
-  employee: { "@id": `${SITE_URL}/#howard-choi` },
+  employee: [{ "@id": `${SITE_URL}/#howard-choi` }],
   areaServed: ["Buena Park", "Fullerton", "Anaheim", "Cerritos", "La Mirada", "La Habra"].map((name) => ({ "@type": "City", name })),
-  knowsAbout: ["Personal Injury", "Car Accidents", "Truck Accidents", "Motorcycle Accidents", "Pedestrian Accidents", "Wrongful Death", "Premises Liability"],
+  knowsAbout: ["Personal Injury", "Car Accidents", "Truck Accidents", "Motorcycle Accidents", "Pedestrian Accidents", "Rideshare Accidents", "Wrongful Death", "Premises Liability", "Serious Injuries"],
   knowsLanguage: ["English", "Korean"],
 };
 
@@ -105,7 +104,6 @@ export const webSiteJsonLd = {
   "@type": "WebSite",
   "@id": `${SITE_URL}/#website`,
   name: SITE_NAME,
-  alternateName: `${SITE_NAME} by ${ATTORNEY_NAME}`,
   url: SITE_URL,
   inLanguage: ["en-US", "ko-US"],
   publisher: { "@id": `${SITE_URL}/#legal-service` },
