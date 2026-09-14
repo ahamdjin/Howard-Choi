@@ -72,9 +72,15 @@ export const attorneyJsonLd = {
   "@type": "Person",
   "@id": `${SITE_URL}/#howard-choi`,
   name: ATTORNEY_NAME,
+  alternateName: "Howard Jong-yol Choi",
   url: absoluteUrl("/attorney"),
   jobTitle: "Attorney",
-  knowsLanguage: ["English", "Korean"],
+  identifier: {
+    "@type": "PropertyValue",
+    propertyID: "State Bar of California",
+    value: "284364",
+  },
+  sameAs: ["https://apps.calbar.ca.gov/attorney/Licensee/Detail/284364"],
   worksFor: { "@id": `${SITE_URL}/#legal-service` },
 };
 
