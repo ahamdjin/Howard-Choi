@@ -63,7 +63,12 @@ function RootDocument({ children }: { children: ReactNode }) {
   const pathname = useRouterState({ select: (state) => state.location.pathname });
   const lang = pathname === "/ko" || pathname.startsWith("/ko/") ? "ko" : "en";
   const innerSitePage = /^\/(?:ko\/)?(?:practice-areas|locations|attorney|results|about)(?:\/|$)/.test(pathname);
-  const contactPage = pathname === "/contact" || pathname === "/ko/contact";
+  const externalFormPage = [
+    "/contact",
+    "/ko/contact",
+    "/case-value-calculator",
+    "/ko/case-value-calculator",
+  ].includes(pathname);
 
   return (
     <html lang={lang}>
@@ -72,7 +77,7 @@ function RootDocument({ children }: { children: ReactNode }) {
         <div className="min-h-screen bg-background px-[5px] pb-[5px] sm:px-[7px] sm:pb-[7px]">
           {children}
         </div>
-        <DeferredIntegrations contactPage={contactPage} />
+        <DeferredIntegrations externalFormPage={externalFormPage} />
         <Scripts />
       </body>
     </html>
