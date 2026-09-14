@@ -124,7 +124,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
   const [state, setState] = useState<CalculatorState>(initialState);
   const [calculated, setCalculated] = useState(false);
   const [error, setError] = useState("");
-  const [review, setReview] = useState({ full_name: "", email: "" });
+  const [review, setReview] = useState({ full_name: "", email: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const caseTypes: Array<{ value: CaseType; en: string; ko: string }> = [
@@ -182,9 +182,35 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
     const severityLabel = severities.find((item) => item.value === state.severity);
     const treatmentLabel = treatments.find((item) => item.value === state.treatment);
 
-    return ko
-      ? `계산기 예상 범위: ${money(estimate.low)} – ${money(estimate.high)}\n사건: ${caseLabel?.ko || "미선택"}\n부상: ${severityLabel?.ko || "미선택"}\n치료: ${treatmentLabel?.ko || "미선택"}\n현재 의료비: ${money(state.medical)}\n향후 치료비: ${money(state.futureMedical)}\n임금 손실: ${money(state.lostWages)}\n향후 소득 손실: ${money(state.futureIncome)}\n재산 피해: ${money(state.property)}\n본인 과실: ${state.fault}%\n장기적 영향: ${state.permanent ? "예" : "아니오"}\n\n이 계산 결과에 대해 전문가의 의견을 받고 싶습니다.`
-      : `Calculator estimate: ${money(estimate.low)} – ${money(estimate.high)}\nIncident: ${caseLabel?.en || "Not selected"}\nInjury: ${severityLabel?.en || "Not selected"}\nTreatment: ${treatmentLabel?.en || "Not selected"}\nMedical bills: ${money(state.medical)}\nFuture medical care: ${money(state.futureMedical)}\nLost wages: ${money(state.lostWages)}\nFuture income loss: ${money(state.futureIncome)}\nProperty damage: ${money(state.property)}\nEstimated fault: ${state.fault}%\nLong-term effects: ${state.permanent ? "Yes" : "No"}\n\nI would like an expert opinion on this estimate.`;
+    return (ko ? [
+      `계산기 예상 범위: ${money(estimate.low)} – ${money(estimate.high)}`,
+      `사건: ${caseLabel?.ko || "미선택"}`,
+      `부상: ${severityLabel?.ko || "미선택"}`,
+      `치료: ${treatmentLabel?.ko || "미선택"}`,
+      `현재 의료비: ${money(state.medical)}`,
+      `향후 치료비: ${money(state.futureMedical)}`,
+      `임금 손실: ${money(state.lostWages)}`,
+      `향후 소득 손실: ${money(state.futureIncome)}`,
+      `재산 피해: ${money(state.property)}`,
+      `본인 과실: ${state.fault}%`,
+      `장기적 영향: ${state.permanent ? "예" : "아니오"}`,
+      "",
+      "이 계산 결과에 대해 전문가의 의견을 받고 싶습니다.",
+    ] : [
+      `Calculator estimate: ${money(estimate.low)} – ${money(estimate.high)}`,
+      `Incident: ${caseLabel?.en || "Not selected"}`,
+      `Injury: ${severityLabel?.en || "Not selected"}`,
+      `Treatment: ${treatmentLabel?.en || "Not selected"}`,
+      `Medical bills: ${money(state.medical)}`,
+      `Future medical care: ${money(state.futureMedical)}`,
+      `Lost wages: ${money(state.lostWages)}`,
+      `Future income loss: ${money(state.futureIncome)}`,
+      `Property damage: ${money(state.property)}`,
+      `Estimated fault: ${state.fault}%`,
+      `Long-term effects: ${state.permanent ? "Yes" : "No"}`,
+      "",
+      "I would like an expert opinion on this estimate.",
+    ]).join("\n");
   };
 
   const calculate = () => {
@@ -199,6 +225,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
     }
     setError("");
     setCalculated(true);
+    setReview((current) => ({ ...current, message: buildSummary() }));
     window.setTimeout(() => {
       document.getElementById("case-estimate-result")?.scrollIntoView({ behavior: "smooth", block: "center" });
     }, 60);
@@ -208,14 +235,17 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
     setState(initialState);
     setCalculated(false);
     setError("");
-    setReview({ full_name: "", email: "" });
+    setReview({ full_name: "", email: "", message: "" });
+    setIsSubmitting(false);
   };
 
   const requestReview = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (!estimate || isSubmitting) return;
     setIsSubmitting(true);
-    window.setTimeout(() => window.location.assign(ko ? "/ko/thank-you" : "/thank-you"), 900);
+    // HighLevel External Tracking listens for this native form submission.
+    // Keep the page alive briefly so its background request can complete.
+    window.setTimeout(() => window.location.assign(ko ? "/ko/thank-you" : "/thank-you"), 1600);
   };
 
   return (
@@ -256,8 +286,9 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
               <div>
                 <div className="text-[10px] text-[#211E1B]/44">{ko ? "01 · 계산하기" : "01 · Calculate"}</div>
                 <h2 className="mt-2 text-[21px] font-semibold tracking-[-0.02em]">{ko ? "핵심 정보만 입력하세요." : "Start with the facts that matter."}</h2>
+                <p className="mt-1 text-[10px] leading-4 text-[#211E1B]/42">{ko ? "빠른 계산은 핵심 정보만 사용합니다. 더 복잡한 사건은 추가 정보를 펼치세요." : "Use the core fields for a quick estimate. Open the extra details only when they apply."}</p>
               </div>
-              <button type="button" onClick={reset} className="inline-flex h-9 items-center gap-2 text-[10px] font-medium text-[#211E1B]/45 hover:text-[#211E1B]"><RotateCcw className="h-3.5 w-3.5" />{ko ? "초기화" : "Reset"}</button>
+              <button type="button" onClick={reset} className="inline-flex h-9 shrink-0 items-center gap-2 text-[10px] font-medium text-[#211E1B]/45 hover:text-[#211E1B]"><RotateCcw className="h-3.5 w-3.5" />{ko ? "초기화" : "Reset"}</button>
             </div>
 
             <div className="grid overflow-hidden rounded-[4px] border border-[#211E1B]/12 bg-white lg:grid-cols-[1.08fr_0.92fr]">
@@ -283,7 +314,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
                   <summary className="flex cursor-pointer list-none items-start justify-between gap-5 marker:hidden">
                     <span>
                       <span className="block text-[13px] font-semibold">{ko ? "더 정확한 범위를 원하시나요?" : "Want a more complete estimate?"}</span>
-                      <span className="mt-1 block max-w-[470px] text-[10px] leading-4 text-[#211E1B]/44">{ko ? "향후 치료, 향후 소득 손실, 재산 피해 또는 장기적 영향이 있다면 여기에 추가하세요." : "Add future care, future income loss, property damage, or lasting effects only if they apply to you."}</span>
+                      <span className="mt-1 block max-w-[470px] text-[10px] leading-4 text-[#211E1B]/44">{ko ? "향후 치료, 향후 소득 손실, 재산 피해 또는 장기적 영향이 있다면 여기에 추가하세요." : "Use this if treatment will continue, work loss may continue, property was damaged, or the injury may have lasting effects."}</span>
                     </span>
                     <span className="text-[18px] leading-none text-[#6E635A] transition-transform group-open:rotate-45">+</span>
                   </summary>
@@ -306,7 +337,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
                 <p className="mt-3 text-center text-[9px] text-[#211E1B]/36">{ko ? "결과를 보기 위해 이메일이 필요하지 않습니다." : "No email is required to see your result."}</p>
               </div>
 
-              <div className="border-t border-[#211E1B]/10 bg-[#F3F0EA] p-5 md:p-7 lg:border-l lg:border-t-0 lg:p-8">
+              <div className="border-t border-[#211E1B]/10 bg-[#F3F0EA] p-5 md:p-7 lg:border-l lg:border-t-0 lg:p-8" aria-live="polite">
                 <div className="text-[10px] font-medium text-[#211E1B]/44">{ko ? "예상 범위" : "Estimated range"}</div>
                 {calculated && estimate ? (
                   <div id="case-estimate-result" className="mt-4 scroll-mt-24">
@@ -322,13 +353,23 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
                     <div className="mt-4 flex gap-2 text-[9px] leading-4 text-[#211E1B]/42"><Info className="mt-0.5 h-3.5 w-3.5 shrink-0" /><p>{ko ? "법률 자문이나 실제 사건 가치에 대한 의견이 아닙니다. 보험 한도, 유치권, 인과관계, 증거 및 협상 상황은 반영하지 못합니다." : "Not legal advice or an opinion of actual case value. Policy limits, liens, causation, evidence, and negotiation posture are not fully captured."}</p></div>
 
                     <div className="mt-6 border-t border-[#211E1B]/10 pt-5">
-                      <div className="flex items-start gap-3"><Mail className="mt-0.5 h-4 w-4 shrink-0 text-[#6E635A]" /><div><h3 className="text-[13px] font-semibold">{ko ? "전문가 의견 받기" : "Get an expert opinion"}</h3><p className="mt-1 text-[9px] leading-4 text-[#211E1B]/42">{ko ? "결과를 이메일로 받고 검토를 요청하세요." : "Email the result and ask for a human review."}</p></div></div>
-                      <form id="case-value-review-form" name="case value review" data-form-name="case value review" onSubmit={requestReview} className="mt-4 grid gap-2">
-                        <input name="full_name" value={review.full_name} onChange={(event) => setReview((current) => ({ ...current, full_name: event.target.value }))} required autoComplete="name" placeholder={ko ? "성명" : "Full name"} className="h-10 rounded-[3px] border border-[#211E1B]/12 bg-white px-3 text-[12px] outline-none focus:border-[#6E635A]" />
-                        <input name="email" type="email" value={review.email} onChange={(event) => setReview((current) => ({ ...current, email: event.target.value }))} required autoComplete="email" placeholder={ko ? "이메일" : "Email"} className="h-10 rounded-[3px] border border-[#211E1B]/12 bg-white px-3 text-[12px] outline-none focus:border-[#6E635A]" />
-                        <input name="subject" value={ko ? "사건 가치 계산기 검토 요청" : "Case value calculator review"} readOnly className="sr-only" aria-hidden="true" tabIndex={-1} />
-                        <textarea name="message" value={buildSummary()} readOnly rows={2} className="resize-none rounded-[3px] border border-[#211E1B]/10 bg-white/65 p-3 text-[9px] leading-4 text-[#211E1B]/42 outline-none" aria-label={ko ? "계산 결과 요약" : "Estimate summary"} />
-                        <button type="submit" disabled={isSubmitting} className="inline-flex h-10 items-center justify-between rounded-[3px] bg-[#211E1B] px-4 text-[10px] font-semibold text-white disabled:opacity-60"><span>{isSubmitting ? (ko ? "전송 중..." : "Sending...") : (ko ? "이메일로 결과 + 검토 요청" : "Email result + request review")}</span><ArrowRight className="h-3.5 w-3.5" /></button>
+                      <div className="flex items-start gap-3"><Mail className="mt-0.5 h-4 w-4 shrink-0 text-[#6E635A]" /><div><h3 className="text-[13px] font-semibold">{ko ? "전문가 의견 받기" : "Get an expert opinion"}</h3><p className="mt-1 text-[9px] leading-4 text-[#211E1B]/42">{ko ? "이름, 이메일과 계산 요약을 팀에 보내 검토를 요청합니다." : "Send your name, email, and calculator summary to the team for review."}</p></div></div>
+
+                      <form id="case-calculater" name="Case Calculater" data-form-name="Case Calculater" onSubmit={requestReview} className="mt-4 grid gap-3">
+                        <label className="block">
+                          <span className="mb-1.5 block text-[10px] font-medium text-[#211E1B]/58">{ko ? "성명" : "Full name"}</span>
+                          <input name="full_name" value={review.full_name} onChange={(event) => setReview((current) => ({ ...current, full_name: event.target.value }))} required autoComplete="name" placeholder={ko ? "성명" : "Full name"} className="h-10 w-full rounded-[3px] border border-[#211E1B]/12 bg-white px-3 text-[12px] outline-none focus:border-[#6E635A]" />
+                        </label>
+                        <label className="block">
+                          <span className="mb-1.5 block text-[10px] font-medium text-[#211E1B]/58">{ko ? "이메일" : "Email"}</span>
+                          <input name="email" type="email" value={review.email} onChange={(event) => setReview((current) => ({ ...current, email: event.target.value }))} required autoComplete="email" placeholder="name@example.com" className="h-10 w-full rounded-[3px] border border-[#211E1B]/12 bg-white px-3 text-[12px] outline-none focus:border-[#6E635A]" />
+                        </label>
+                        <label className="block">
+                          <span className="mb-1.5 block text-[10px] font-medium text-[#211E1B]/58">{ko ? "메시지 / 계산 요약" : "Message / calculator summary"}</span>
+                          <textarea name="message" value={review.message} onChange={(event) => setReview((current) => ({ ...current, message: event.target.value }))} required rows={6} className="w-full resize-y rounded-[3px] border border-[#211E1B]/10 bg-white p-3 text-[10px] leading-5 text-[#211E1B]/62 outline-none focus:border-[#6E635A]" />
+                        </label>
+                        <button type="submit" disabled={isSubmitting} className="inline-flex h-10 items-center justify-between rounded-[3px] bg-[#211E1B] px-4 text-[10px] font-semibold text-white disabled:opacity-60"><span>{isSubmitting ? (ko ? "전송 중..." : "Sending...") : (ko ? "결과 전송 + 검토 요청" : "Send result + request review")}</span><ArrowRight className="h-3.5 w-3.5" /></button>
+                        <p className="text-[8px] leading-4 text-[#211E1B]/34">{ko ? "제출은 변호사-의뢰인 관계를 형성하지 않습니다. 기밀 또는 긴급한 정보를 보내지 마세요." : "Submitting does not create an attorney-client relationship. Do not send confidential or time-sensitive information."}</p>
                       </form>
                     </div>
                   </div>
