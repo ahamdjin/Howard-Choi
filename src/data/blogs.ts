@@ -1,5 +1,7 @@
 import heroCityBoardroom from "@/assets/law-firm/hero-city-boardroom.webp";
 import heroLawOffice from "@/assets/law-firm/hero-law-office.webp";
+import heroJusticeLibrary from "@/assets/law-firm/hero-justice-library.webp";
+import heroCourthouse from "@/assets/law-firm/hero-courthouse.webp";
 
 export type BlogSection = { heading: string; paragraphs: string[] };
 export type BlogPost = {
@@ -31,11 +33,16 @@ type BlogFrontmatter = {
   published?: boolean;
 };
 
-// Keep the two existing article images exactly as they are today. New CMS posts
-// can point at /images/blog/... without changing the rendering components.
+// Local editorial imagery keeps the legal resource library visually consistent
+// with the rest of the firm website without adding a new design system.
 const legacyImages: Record<string, string> = {
   "what-to-do-after-a-car-accident-in-california": heroLawOffice,
   "what-an-injury-claim-should-document-beyond-medical-bills": heroCityBoardroom,
+  "california-comparative-fault-personal-injury": heroCourthouse,
+  "how-much-is-my-personal-injury-case-worth-california": heroJusticeLibrary,
+  "uber-lyft-accident-insurance-california": heroCityBoardroom,
+  "truck-accident-evidence-eld-records-california": heroLawOffice,
+  "california-personal-injury-deadlines": heroCourthouse,
 };
 
 // Vite expands this at build time. Pages CMS never ships to the public website.
