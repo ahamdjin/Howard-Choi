@@ -131,6 +131,6 @@ export const articleJsonLd = ({ title, description, path, image, publishedAt, lo
   dateModified: publishedAt,
   inLanguage: locale,
   mainEntityOfPage: absoluteUrl(path),
-  author: { "@id": `${SITE_URL}/#howard-choi` },
+  author: { "@id": `${SITE_URL}/#legal-service` },
   publisher: { "@id": `${SITE_URL}/#legal-service` },
 });
