@@ -12,8 +12,8 @@ export const Route = createFileRoute("/ko/locations/$slug")({
   head: ({ loaderData }) => {
     const path = `/ko/locations/${loaderData.slug}`;
     const seo = buildSeo({
-      title: `${loaderData.koName} 사고·상해 변호사 | Buena Park Injury Lawyer`,
-      description: loaderData.koDescription,
+      title: `${loaderData.koName} 개인상해 변호사 | 지역 사고·상해 안내`,
+      description: `${loaderData.koDescription} ${loaderData.ots.year} California OTS 교통사고 통계, 사고 후 보존할 증거, 주요 개인상해 사건 유형과 상담 준비 정보를 확인하세요.`,
       path,
       alternatePath: `/locations/${loaderData.slug}`,
       locale: "ko-US",
