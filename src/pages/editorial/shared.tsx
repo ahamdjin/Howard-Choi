@@ -111,7 +111,6 @@ export const ReadingLayout = ({
       });
     };
 
-    setActiveId(firstSectionId);
     updateActiveSection();
     window.addEventListener("scroll", requestUpdate, { passive: true });
     window.addEventListener("resize", requestUpdate);
