@@ -8,7 +8,7 @@ import SmoothScroll from "@/components/SmoothScroll";
 import ScrollToTop from "@/components/ScrollToTop";
 import DeferredIntegrations from "@/components/DeferredIntegrations";
 import NotFound from "@/pages/NotFound";
-import { legalServiceJsonLd, webSiteJsonLd } from "@/lib/seo";
+import { attorneyJsonLd, legalServiceJsonLd, webSiteJsonLd } from "@/lib/seo";
 import appCss from "@/index.css?url";
 import innerPagesCss from "@/inner-pages.css?url";
 import brandFavicon from "@/assets/law-firm/howard-choi-favicon.png";
@@ -31,6 +31,7 @@ export const Route = createRootRoute({
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400..600&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@400;500;600&display=swap" },
     ],
     scripts: [
+      { type: "application/ld+json", children: JSON.stringify(attorneyJsonLd) },
       { type: "application/ld+json", children: JSON.stringify(legalServiceJsonLd) },
       { type: "application/ld+json", children: JSON.stringify(webSiteJsonLd) },
     ],
