@@ -9,6 +9,7 @@ export const Route = createFileRoute("/privacy-policy")({
     path: "/privacy-policy",
     alternatePath: "/ko/privacy-policy",
     locale: "en-US",
+    noindex: true,
   }),
   component: () => <LegalPage type="privacy" locale="en" />,
 });
