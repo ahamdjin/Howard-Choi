@@ -9,7 +9,7 @@ const appendScript = (src: string, attributes: Record<string, string> = {}) => {
   document.body.appendChild(script);
 };
 
-const DeferredIntegrations = ({ contactPage }: { contactPage: boolean }) => {
+const DeferredIntegrations = ({ externalFormPage }: { externalFormPage: boolean }) => {
   useEffect(() => {
     let cancelled = false;
     let timeoutId: number | undefined;
@@ -22,7 +22,7 @@ const DeferredIntegrations = ({ contactPage }: { contactPage: boolean }) => {
         "data-widget-id": "6a9841dd05dab92683f66d82",
       });
 
-      if (contactPage) {
+      if (externalFormPage) {
         appendScript("https://link.msgsndr.com/js/external-tracking.js", {
           "data-tracking-id": "tk_9bc9b1c38e8446d69a248bc862fae75a",
         });
@@ -43,7 +43,7 @@ const DeferredIntegrations = ({ contactPage }: { contactPage: boolean }) => {
       cancelled = true;
       if (timeoutId) window.clearTimeout(timeoutId);
     };
-  }, [contactPage]);
+  }, [externalFormPage]);
 
   return null;
 };
