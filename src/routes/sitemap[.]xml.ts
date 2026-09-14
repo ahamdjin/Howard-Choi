@@ -36,10 +36,6 @@ export const Route = createFileRoute("/sitemap.xml")({
           ...pair("/case-value-calculator", "/ko/case-value-calculator"),
           ...pair("/blogs", "/ko/blogs"),
           ...pair("/contact", "/ko/contact"),
-          ...pair("/privacy-policy", "/ko/privacy-policy"),
-          ...pair("/terms", "/ko/terms"),
-          ...pair("/disclaimer", "/ko/disclaimer"),
-          ...pair("/accessibility", "/ko/accessibility"),
         ];
 
         const practiceUrls = practiceAreas.flatMap((practice) =>
