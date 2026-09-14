@@ -4,8 +4,8 @@ import { buildSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/locations")({
   head: () => buildSeo({
-    title: "Locations Served | Buena Park Injury Lawyer",
-    description: "Buena Park Injury Lawyer serves Buena Park, Fullerton, Anaheim, Cerritos, La Mirada, and La Habra for accident and personal injury matters.",
+    title: "Personal Injury Lawyers Serving Buena Park & Nearby Cities",
+    description: "Local personal injury guides for Buena Park, Fullerton, Anaheim, Cerritos, La Mirada, and La Habra, including collision context, evidence to preserve, practice areas, and consultation preparation.",
     path: "/locations",
     alternatePath: "/ko/locations",
     locale: "en-US",
