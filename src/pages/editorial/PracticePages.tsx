@@ -112,7 +112,7 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
             id="understand"
             locale={locale}
             kicker={isKo(locale) ? "01 · 이해" : "01 · Understand"}
-            title={isKo(locale) ? `${title} 사건에서 먼저 확인할 것` : `What matters first in a ${title.toLowerCase()} claim.`}
+            title={isKo(locale) ? `${title} 사건에서 먼저 확인할 것` : "What matters first in this type of injury claim."}
             intro={intro}
           >
             <div className="editorial-callout">
