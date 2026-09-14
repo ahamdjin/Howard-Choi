@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { ArrowRight, Phone } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import KoreanNavigation from "@/components/KoreanNavigation";
@@ -9,12 +9,12 @@ import { brand, practiceAreas, type SiteLocale } from "@/data/injurySite";
 export const isKo = (locale: SiteLocale) => locale === "ko";
 export const localePrefix = (locale: SiteLocale) => (isKo(locale) ? "/ko" : "");
 export const serifStyle = (locale: SiteLocale) =>
-  isKo(locale) ? { fontFamily: '"Noto Serif KR", serif' } : undefined;
+  isKo(locale) ? { fontFamily: '\"Noto Serif KR\", serif' } : undefined;
 
 export const EditorialFrame = ({ locale, children }: { locale: SiteLocale; children: ReactNode }) => (
   <div
     className="min-h-screen overflow-x-clip bg-[#F8F7F4] text-[#1E1C1A]"
-    style={isKo(locale) ? { fontFamily: '"Noto Sans KR", sans-serif' } : undefined}
+    style={isKo(locale) ? { fontFamily: '\"Noto Sans KR\", sans-serif' } : undefined}
   >
     {isKo(locale) ? <KoreanNavigation /> : <Navigation />}
     {children}
@@ -75,29 +75,95 @@ export const ReadingLayout = ({
   label: string;
   sections: ReadingSection[];
   children: ReactNode;
-}) => (
-  <div className="site-shell editorial-reading-grid py-12 md:py-16 lg:py-20">
-    <aside className="editorial-reading-rail" aria-label={isKo(locale) ? "페이지 목차" : "On this page"}>
-      <div className="editorial-reading-rail__inner">
-        <div className="editorial-reading-rail__label">{label}</div>
-        <div className="editorial-reading-rail__rule" />
-        <nav className="editorial-reading-rail__nav">
-          {sections.map((section, index) => (
-            <a key={section.id} href={`#${section.id}`} className="editorial-reading-rail__link">
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <span>{section.label}</span>
-            </a>
-          ))}
-        </nav>
-        <div className="editorial-reading-rail__meta">
-          <span>{brand.phoneDisplay}</span>
-          <span>{isKo(locale) ? "부에나파크 · 캘리포니아" : "Buena Park · California"}</span>
+}) => {
+  const [activeId, setActiveId] = useState(sections[0]?.id ?? "");
+  const navRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    let frame = 0;
+
+    const updateActiveSection = () => {
+      const marker = Math.min(window.innerHeight * 0.3, 220);
+      let next = sections[0]?.id ?? "";
+
+      for (const section of sections) {
+        const element = document.getElementById(section.id);
+        if (!element) continue;
+        if (element.getBoundingClientRect().top <= marker) next = section.id;
+        else break;
+      }
+
+      const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 24;
+      if (atBottom && sections.length) next = sections[sections.length - 1].id;
+
+      setActiveId((current) => (current === next ? current : next));
+    };
+
+    const requestUpdate = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(() => {
+        frame = 0;
+        updateActiveSection();
+      });
+    };
+
+    updateActiveSection();
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", requestUpdate);
+
+    return () => {
+      window.removeEventListener("scroll", requestUpdate);
+      window.removeEventListener("resize", requestUpdate);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, [sections]);
+
+  useEffect(() => {
+    if (window.innerWidth >= 1024 || !navRef.current) return;
+    const activeLink = navRef.current.querySelector<HTMLElement>(`[data-section-id="${activeId}"]`);
+    if (!activeLink) return;
+
+    const nav = navRef.current;
+    const targetLeft = activeLink.offsetLeft - nav.clientWidth / 2 + activeLink.clientWidth / 2;
+    nav.scrollTo({ left: Math.max(0, targetLeft), behavior: "smooth" });
+  }, [activeId]);
+
+  return (
+    <div className="site-shell editorial-reading-grid py-12 md:py-16 lg:py-20">
+      <aside className="editorial-reading-rail" aria-label={isKo(locale) ? "페이지 목차" : "On this page"}>
+        <div className="editorial-reading-rail__inner">
+          <div className="editorial-reading-rail__eyebrow">{isKo(locale) ? "페이지 목차" : "On this page"}</div>
+          <div className="editorial-reading-rail__label">{label}</div>
+          <div className="editorial-reading-rail__rule" />
+          <nav ref={navRef} className="editorial-reading-rail__nav">
+            {sections.map((section, index) => {
+              const active = activeId === section.id;
+              return (
+                <a
+                  key={section.id}
+                  href={`#${section.id}`}
+                  data-section-id={section.id}
+                  data-active={active ? "true" : "false"}
+                  aria-current={active ? "location" : undefined}
+                  onClick={() => setActiveId(section.id)}
+                  className="editorial-reading-rail__link"
+                >
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <span>{section.label}</span>
+                </a>
+              );
+            })}
+          </nav>
+          <div className="editorial-reading-rail__meta">
+            <span>{brand.phoneDisplay}</span>
+            <span>{isKo(locale) ? "부에나파크 · 캘리포니아" : "Buena Park · California"}</span>
+          </div>
         </div>
-      </div>
-    </aside>
-    <div className="editorial-reading-content">{children}</div>
-  </div>
-);
+      </aside>
+      <div className="editorial-reading-content">{children}</div>
+    </div>
+  );
+};
 
 export const ReadingSectionBlock = ({
   id,
