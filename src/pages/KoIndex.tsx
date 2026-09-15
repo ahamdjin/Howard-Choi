@@ -4,8 +4,8 @@ import { ArrowRight, Check, Minus, Plus, X } from "lucide-react";
 import KoreanNavigation from "@/components/KoreanNavigation";
 import KoreanFooter from "@/components/KoreanFooter";
 import KoreanLocations from "@/components/KoreanLocations";
-import Testimonial from "@/components/Testimonial";
-import ReviewsSection from "@/components/ReviewsSection";
+import ClientSuccessFeature from "@/components/ClientSuccessFeature";
+
 import FAQ from "@/components/FAQ";
 import heroCityBoardroom from "@/assets/law-firm/hero-city-boardroom.webp";
 import heroCourthouse from "@/assets/law-firm/hero-courthouse.webp";
@@ -119,10 +119,10 @@ const ExperienceKo = () => {
           <h2 style={koSerif} className="text-[clamp(2.5rem,3.7vw,3.75rem)] font-medium leading-[1.2] tracking-[-0.045em]">명확한 다음 단계.</h2>
           <p className="mt-5 max-w-[540px] text-[clamp(1rem,1.35vw,1.2rem)] leading-[1.6] text-foreground/58">첫 상담부터 조사, 자료 정리, 해결까지 각 단계가 왜 필요한지 분명하게 설명합니다.</p>
         </motion.div>
-        <div className="mt-[clamp(2.8rem,6vh,4.8rem)] grid gap-5 lg:h-[min(59vh,600px)] lg:min-h-[500px] lg:grid-cols-2">
+        <div className="mt-[clamp(2.8rem,6vh,4.8rem)] grid gap-5 lg:grid-cols-2">
           <motion.div initial={{ opacity: 0, x: -16 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.8, delay: 0.05 }} className="relative min-h-[390px] overflow-hidden rounded-[4px] bg-neutral-200 lg:h-full lg:min-h-0"><AnimatePresence mode="wait" initial={false}><motion.img key={processSteps[active].image} src={processSteps[active].image} alt={`${processSteps[active].title} 과정`} initial={{ opacity: 0, scale: 1.018, filter: "blur(3px)" }} animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }} exit={{ opacity: 0 }} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="absolute inset-0 h-full w-full object-cover" /></AnimatePresence><div className="absolute inset-0 bg-black/[0.06]" /></motion.div>
-          <motion.div initial={{ opacity: 0, x: 16 }} animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : 16, gridTemplateRows: rowTemplate }} transition={{ opacity: { duration: 0.8, delay: 0.09 }, x: { duration: 0.8, delay: 0.09 }, gridTemplateRows: { duration: 0.62, ease: [0.22, 1, 0.36, 1] } }} className="grid h-[560px] min-h-0 gap-3 lg:h-full">
-            {processSteps.map((step, index) => { const expanded = active === index; return <motion.article key={step.title} layout transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }} className="relative min-h-0 overflow-hidden rounded-[4px] bg-[#e6e4e1]"><button type="button" onClick={() => setActive(index)} className="flex h-full w-full min-h-0 flex-col px-7 py-6 text-left md:px-8" aria-expanded={expanded}><div className="flex w-full items-start justify-between gap-6"><span style={koSerif} className="text-[clamp(1.7rem,2.35vw,2.35rem)] font-medium leading-[1.2] tracking-[-0.04em]">{step.title}</span>{expanded ? <X className="mt-1 h-5 w-5 shrink-0 stroke-[1.65]" /> : <Plus className="mt-1 h-5 w-5 shrink-0 stroke-[1.65]" />}</div><AnimatePresence initial={false}>{expanded && <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -4 }} transition={{ duration: 0.3, delay: 0.05 }} className="mt-auto max-w-[480px] pt-5"><p className="text-[14px] leading-7 text-foreground/88">{step.body}</p><div className="mt-4 space-y-2.5">{step.points.map((point) => <div key={point} className="flex items-center gap-3 text-[13px] text-foreground/68"><Check className="h-4 w-4 shrink-0 stroke-[1.65]" /><span>{point}</span></div>)}</div></motion.div>}</AnimatePresence></button>{expanded && isInView && <motion.div key={`ko-progress-${active}`} className="absolute bottom-0 left-0 h-[2px] w-full origin-left bg-foreground" initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: AUTO_ADVANCE_MS / 1000, ease: "linear" }} />}</motion.article>; })}
+          <motion.div initial={{ opacity: 0, x: 16 }} animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : 16, gridTemplateRows: rowTemplate }} transition={{ opacity: { duration: 0.8, delay: 0.09 }, x: { duration: 0.8, delay: 0.09 }, gridTemplateRows: { duration: 0.62, ease: [0.22, 1, 0.36, 1] } }} className="grid auto-rows-auto gap-3">
+            {processSteps.map((step, index) => { const expanded = active === index; return <motion.article key={step.title} layout transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }} className="relative min-h-0 overflow-hidden rounded-[4px] bg-[#e6e4e1]"><button type="button" onClick={() => setActive(index)} className="flex w-full flex-col px-7 py-6 text-left md:px-8" aria-expanded={expanded}><div className="flex w-full items-start justify-between gap-6"><span style={koSerif} className="text-[clamp(1.7rem,2.35vw,2.35rem)] font-medium leading-[1.2] tracking-[-0.04em]">{step.title}</span>{expanded ? <X className="mt-1 h-5 w-5 shrink-0 stroke-[1.65]" /> : <Plus className="mt-1 h-5 w-5 shrink-0 stroke-[1.65]" />}</div><AnimatePresence initial={false}>{expanded && <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -4 }} transition={{ duration: 0.3, delay: 0.05 }} className="mt-auto max-w-[480px] pt-5"><p className="text-[14px] leading-7 text-foreground/88">{step.body}</p><div className="mt-4 space-y-2.5">{step.points.map((point) => <div key={point} className="flex items-center gap-3 text-[13px] text-foreground/68"><Check className="h-4 w-4 shrink-0 stroke-[1.65]" /><span>{point}</span></div>)}</div></motion.div>}</AnimatePresence></button>{expanded && isInView && <motion.div key={`ko-progress-${active}`} className="absolute bottom-0 left-0 h-[2px] w-full origin-left bg-foreground" initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: AUTO_ADVANCE_MS / 1000, ease: "linear" }} />}</motion.article>; })}
           </motion.div>
         </div>
       </div>
@@ -160,7 +160,7 @@ const KoIndex = () => (
   <div className="min-h-[100svh] overflow-x-clip bg-background" style={{ fontFamily: '"Noto Sans KR", sans-serif' }}>
     <KoreanNavigation />
     <div className="relative"><div className="sticky top-0 z-0 h-[100svh] w-full"><HeroKo /></div><div className="relative z-10 w-full bg-background"><KoreanLocations /></div></div>
-    <div className="relative z-20 bg-background"><ExperienceKo /><DirectAccessKo /><Testimonial locale="ko" /><ReviewsSection locale="ko" /><FAQ locale="ko" /><BookingKo /><KoreanFooter /></div>
+    <div className="relative z-20 bg-background"><ExperienceKo /><DirectAccessKo /><ClientSuccessFeature locale="ko" /><FAQ locale="ko" /><BookingKo /><KoreanFooter /></div>
   </div>
 );
 

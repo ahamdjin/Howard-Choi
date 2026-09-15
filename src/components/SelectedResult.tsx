@@ -37,15 +37,15 @@ const SelectedResult = () => {
       <div className="site-shell flex min-h-[100svh] w-full flex-col py-8 sm:py-10 lg:py-12">
         <div className="grid gap-8 border-t border-white/10 pt-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:gap-16">
           <div>
-            <div className="text-[10px] text-white/42">Selected Result</div>
+            <div className="text-[10px] text-white/42">Selected Results</div>
             <h2 className="editorial-serif mt-4 text-[clamp(2.1rem,3vw,3.5rem)] leading-[1.02] tracking-[-0.03em]">
-              Built around the facts.
+              Case value starts with the facts.
             </h2>
           </div>
 
           <div className="max-w-[470px] lg:justify-self-end">
             <p className="text-[13px] leading-[1.55] text-white/62 sm:text-[14px]">
-              We prepare each case around the evidence, the medical impact, and what the injury changed for the client.
+              Results can turn on liability, available insurance, the severity and duration of the injury, medical treatment, income loss, future needs, and the quality of the evidence. No two personal injury claims are valued the same way.
             </p>
             <a
               href="/results"
@@ -94,7 +94,7 @@ const SelectedResult = () => {
         </div>
 
         <p className="mt-4 max-w-[760px] text-[9px] leading-4 text-white/28">
-          Prior results do not guarantee a similar outcome. Every matter depends on its own facts and circumstances.
+          Prior results do not guarantee a similar outcome. Every matter depends on its own facts, damages, insurance, evidence, and circumstances.
         </p>
       </div>
     </section>
