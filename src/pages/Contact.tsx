@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, CalendarDays, FileText, Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
+import PageBreadcrumb from "@/components/PageBreadcrumb";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import GHLCalendar from "@/components/GHLCalendar";
@@ -15,7 +16,7 @@ const Contact = () => {
     <div className="min-h-screen overflow-x-clip bg-background">
       <Navigation />
 
-      <section className="relative flex h-[54svh] min-h-[460px] items-end overflow-hidden bg-[#17130f] text-[#f3eee5]">
+      <section className="relative flex min-h-[100svh] items-end pt-24 md:min-h-[560px] overflow-hidden bg-[#17130f] text-[#f3eee5]">
         <motion.img
           src={heroCityBoardroom}
           alt="Private law firm conference room"
@@ -31,9 +32,11 @@ const Contact = () => {
         <div className="site-shell relative z-10 pb-12 md:pb-14">
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.72 }} className="max-w-[700px]">
             <span className="mb-4 block text-[11px] text-[#f3eee5]/62">Contact · Buena Park</span>
+            <PageBreadcrumb locale="en" title="Contact" />
             <h1 className="editorial-serif text-[clamp(2.75rem,4.15vw,4.25rem)] leading-[0.95] tracking-[-0.024em]">
               Talk with a personal injury legal team about what happened.
             </h1>
+            <div className="mt-6 flex flex-wrap gap-3"><a href="#calendar" className="inline-flex min-h-11 items-center rounded-full bg-[#f3eee5] px-5 py-3 text-sm font-semibold text-[#17130f]">Book a consultation</a><a href="#message" className="inline-flex min-h-11 items-center rounded-full border border-white/50 px-5 py-3 text-sm">Send a message</a></div>
             <p className="mt-5 max-w-[540px] text-[14px] leading-6 text-[#f3eee5]/68 md:text-[15px]">
               Start with the accident date and location, your current treatment, insurance information, and the questions you need answered. A simple outline is enough for the first conversation.
             </p>
@@ -61,7 +64,7 @@ const Contact = () => {
         </div>
 
         <div className="grid items-start gap-5 xl:grid-cols-[0.78fr_1.22fr]">
-          <motion.section initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.18 }} transition={{ duration: 0.68 }} className="rounded-[4px] bg-[#e9e6e1] p-7 md:p-9 xl:sticky xl:top-24">
+          <motion.section id="message" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.18 }} transition={{ duration: 0.68 }} className="scroll-mt-24 rounded-[4px] bg-[#e9e6e1] p-7 md:p-9 xl:sticky xl:top-24">
             <span className="text-[11px] text-foreground/48">Send a note</span>
             <h2 className="editorial-serif mt-3 text-[clamp(2rem,2.55vw,3rem)] leading-[0.98] tracking-[-0.022em]">Tell us where the case stands now.</h2>
             <p className="mt-4 max-w-[470px] text-[14px] leading-6 text-foreground/58">

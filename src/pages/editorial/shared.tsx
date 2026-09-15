@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { useLocation } from "react-router-dom";
+import PageBreadcrumb from "@/components/PageBreadcrumb";
 import { ArrowRight, Phone } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import KoreanNavigation from "@/components/KoreanNavigation";
@@ -22,17 +22,6 @@ export const EditorialFrame = ({ locale, children }: { locale: SiteLocale; child
     {isKo(locale) ? <KoreanFooter /> : <Footer />}
   </div>
 );
-
-const PageBreadcrumb = ({ locale, title }: { locale: SiteLocale; title: string }) => {
-  const { pathname } = useLocation();
-  const practice = pathname.includes("/practice-areas/");
-  const location = pathname.includes("/locations/");
-  return <nav aria-label={isKo(locale) ? "페이지 경로" : "Breadcrumb"} className="mb-6 flex flex-wrap items-center gap-2 text-xs text-white/80">
-    <a href={localePrefix(locale) || "/"} className="underline underline-offset-4">{isKo(locale) ? "홈" : "Home"}</a><span aria-hidden="true">/</span>
-    {(practice || location) && <><a href={localePrefix(locale) + (practice ? "/practice-areas" : "/locations")} className="underline underline-offset-4">{practice ? (isKo(locale) ? "업무 분야" : "Practice Areas") : (isKo(locale) ? "지역" : "Locations")}</a><span aria-hidden="true">/</span></>}
-    <span aria-current="page">{title}</span>
-  </nav>;
-};
 
 export const EditorialHero = ({
   locale,

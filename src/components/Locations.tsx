@@ -34,7 +34,7 @@ const MorphCard = ({ practice, index, columns, detailOpacity, overlayOpacity }: 
 );
 
 const MobileCard = ({ practice, index }: { practice: Practice; index: number }) => (
-  <div className="relative h-full overflow-hidden rounded-[3px] bg-[#181511]"><img src={practice.image} alt={practice.alt} className="absolute inset-0 h-full w-full object-cover" /><div className="absolute inset-0 bg-gradient-to-t from-[#15110d]/95 via-[#15110d]/18 to-transparent" /><div className="absolute inset-x-0 bottom-0 p-6 text-[#f3eee5]"><div className="mb-2 text-[10px] tracking-[0.12em] text-[#f3eee5]/55">0{index + 1}</div><h3 className="editorial-serif text-[2rem] leading-none">{practice.title}</h3><p className="mt-2 max-w-[300px] text-[13px] leading-5 text-[#f3eee5]/72">{practice.description}</p></div></div>
+  <div className="relative min-h-[calc(100svh-60px)] h-full overflow-hidden rounded-[3px] bg-[#181511]"><img src={practice.image} alt={practice.alt} className="absolute inset-0 h-full w-full object-cover" /><div className="absolute inset-0 bg-gradient-to-t from-[#15110d]/95 via-[#15110d]/18 to-transparent" /><div className="absolute inset-x-0 bottom-0 p-6 text-[#f3eee5]"><div className="mb-2 text-[10px] tracking-[0.12em] text-[#f3eee5]/55">0{index + 1}</div><h3 className="editorial-serif text-[2rem] leading-none">{practice.title}</h3><p className="mt-2 max-w-[300px] text-[13px] leading-5 text-[#f3eee5]/72">{practice.description}</p></div></div>
 );
 
 const Locations = () => {
@@ -61,7 +61,7 @@ const Locations = () => {
     <section id="practice" ref={ref} className="relative bg-background lg:h-[340svh]">
       <div className="site-shell py-20 md:py-24 lg:hidden">
         <div className="mb-12 grid gap-8"><div><span className="mb-5 block text-[13px] text-muted-foreground">Practice Areas</span><h2 className="editorial-serif max-w-[690px] text-[clamp(3rem,12vw,4.5rem)] leading-[0.93] tracking-[-0.02em]">Personal injury help for<br />what happened next.</h2></div><p className="max-w-[430px] text-[15px] leading-6 text-muted-foreground">From everyday collisions to life-changing injuries, the claim should reflect responsibility, available insurance, medical treatment, financial loss, and the evidence that connects them.</p></div>
-        <div className="grid gap-3">{practices.map((practice, index) => <article key={practice.title} className="h-[430px]"><MobileCard practice={practice} index={index} /></article>)}</div>
+        <div className="mobile-practice-panels grid gap-3">{practices.map((practice, index) => <article key={practice.title} className="min-h-[calc(100svh-60px)]"><MobileCard practice={practice} index={index} /></article>)}</div>
       </div>
 
       <div className="sticky top-0 hidden h-[100svh] overflow-hidden lg:block">

@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useRef } from "react";
 import { Link, useParams } from "react-router-dom";
+import PageBreadcrumb from "@/components/PageBreadcrumb";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { blogPosts, getBlogBySlug } from "@/data/blogs";
@@ -113,7 +114,7 @@ const BlogDetail = () => {
             <Link to="/blogs" className="mb-7 inline-flex items-center gap-2 text-[12px] text-[#f3eee5]/62 transition-colors hover:text-[#f3eee5]"><ArrowLeft className="h-3.5 w-3.5" /> Back to journal</Link>
             <div className="max-w-[860px]">
               <div className="mb-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-[12px] text-[#f3eee5]/60"><span>{post.category}</span><span>·</span><span>{post.date}</span><span>·</span><span>{post.readingTime}</span></div>
-              <h1 className="editorial-serif text-[clamp(2.85rem,4.8vw,5rem)] leading-[0.93] tracking-[-0.026em]">{post.title}</h1>
+              <PageBreadcrumb locale="en" title={post.title} /><h1 className="editorial-serif text-[clamp(2.85rem,4.8vw,5rem)] leading-[0.93] tracking-[-0.026em]">{post.title}</h1>
             </div>
           </div>
         </header>

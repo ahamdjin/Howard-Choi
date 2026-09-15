@@ -1,3 +1,4 @@
+import PageBreadcrumb from "@/components/PageBreadcrumb";
 import { useMemo, useState } from "react";
 import { ArrowRight, CheckCircle2, Info, Mail, RotateCcw } from "lucide-react";
 import heroBoardroom from "@/assets/law-firm/hero-city-boardroom.webp";
@@ -121,9 +122,14 @@ const SelectInput = ({ label, hint, value, placeholder, options, onChange }: {
 
 export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
   const ko = isKo(locale);
-  const [state, setState] = useState<CalculatorState>(initialState);
+  const [state, setInputs] = useState<CalculatorState>(initialState);
   const [calculated, setCalculated] = useState(false);
   const [error, setError] = useState("");
+  const setState = (update: React.SetStateAction<CalculatorState>) => {
+    setInputs(update);
+    setCalculated(false);
+    setError("");
+  };
   const [review, setReview] = useState({ full_name: "", email: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -228,7 +234,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
     setReview((current) => ({ ...current, message: buildSummary() }));
     window.setTimeout(() => {
       document.getElementById("case-estimate-result")?.focus({ preventScroll: true });
-      document.getElementById("case-estimate-result")?.scrollIntoView({ behavior: "smooth", block: "center" });
+      document.getElementById("case-estimate-result")?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
     }, 60);
   };
 
@@ -257,6 +263,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
             <div className="flex items-end py-10 pr-0 md:py-12 lg:pr-12 lg:py-14">
               <div className="max-w-[560px]">
                 <div className="text-[10px] font-medium text-[#f3eee5]/52">{ko ? "캘리포니아 개인상해 계산기" : "California personal injury calculator"}</div>
+                <PageBreadcrumb locale={locale} title={ko ? "예상 배상액 계산기" : "Case Value Calculator"} />
                 <h1 style={serifStyle(locale)} className={ko ? "mt-4 text-[clamp(2rem,3.6vw,3rem)] font-medium leading-[1.18] tracking-[-0.03em]" : "editorial-serif mt-4 text-[clamp(2.25rem,3.6vw,3.25rem)] leading-[0.98] tracking-[-0.026em]"}>
                   {ko ? "내 사건의 가치는 얼마일까요?" : "What could your case be worth?"}
                 </h1>
@@ -377,7 +384,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
                 ) : (
                   <div className="mt-5">
                     <div className="editorial-serif text-[2.4rem] leading-none text-[#211E1B]/20">$— – $—</div>
-                    <p className="mt-4 max-w-[300px] text-[10px] leading-5 text-[#211E1B]/44">{ko ? "왼쪽 정보를 입력하고 계산하세요." : "Enter the case details and calculate. Your result appears here."}</p>
+                    <p className="mt-4 max-w-[300px] text-[10px] leading-5 text-[#211E1B]/44">{ko ? "왼쪽 정보를 입력하고 계산하세요." : "Enter or update your details, then select “Estimate my case value” to see your result."}</p>
                     <div className="mt-7 space-y-3 border-t border-[#211E1B]/10 pt-5 text-[10px] leading-5 text-[#211E1B]/46">
                       <div className="flex gap-2"><CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0" />{ko ? "경제적 손실" : "Economic losses"}</div>
                       <div className="flex gap-2"><CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0" />{ko ? "부상 및 치료" : "Injury and treatment"}</div>

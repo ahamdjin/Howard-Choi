@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Award, Phone, Quote, Scale } from "lucide-react";
+import PageBreadcrumb from "@/components/PageBreadcrumb";
 import Navigation from "@/components/Navigation";
 import KoreanNavigation from "@/components/KoreanNavigation";
 import Footer from "@/components/Footer";
@@ -89,6 +90,7 @@ export const AttorneyPage = ({ locale }: { locale: SiteLocale }) => (
           <div className="flex min-h-[540px] flex-col justify-between gap-8 px-6 py-10 sm:px-10 lg:px-12 lg:py-12 xl:px-16">
             <div className="flex items-center justify-between border-t border-white/16 pt-4"><Eyebrow light>{ko(locale) ? "변호사" : "Attorneys"}</Eyebrow><span className="text-[9px] uppercase tracking-[0.14em] text-white/34">Buena Park · California</span></div>
             <motion.div initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+              <PageBreadcrumb locale={locale} title={ko(locale) ? "변호사" : "Attorneys"} />
               <h1 style={serif(locale)} className={`max-w-[680px] ${ko(locale) ? "text-[clamp(2.8rem,5vw,5.7rem)] font-medium leading-[1.12] tracking-[-0.05em]" : "editorial-serif text-[clamp(4rem,7.2vw,8.6rem)] leading-[0.82] tracking-[-0.055em]"}`}>
                 {ko(locale) ? <>개인상해<br />변호사</> : <>Our<br />Attorneys</>}
               </h1>

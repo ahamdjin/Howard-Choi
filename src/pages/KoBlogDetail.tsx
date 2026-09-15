@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useRef } from "react";
 import { Link, useParams } from "react-router-dom";
+import PageBreadcrumb from "@/components/PageBreadcrumb";
 import KoreanNavigation from "@/components/KoreanNavigation";
 import KoreanFooter from "@/components/KoreanFooter";
 import { getKoBlogBySlug, koBlogPosts } from "@/data/koBlogs";
@@ -113,7 +114,7 @@ const KoBlogDetail = () => {
           <div className="absolute inset-0 bg-[#17130f]/64" /><div className="absolute inset-0 bg-gradient-to-t from-[#17130f]/88 via-[#17130f]/10 to-[#17130f]/18" /><div className="hero-bottom-readability" />
           <div className="site-shell relative z-10 pb-14 md:pb-16">
             <Link to="/ko/blogs" className="mb-7 inline-flex items-center gap-2 text-[12px] text-[#f3eee5]/62 transition-colors hover:text-[#f3eee5]"><ArrowLeft className="h-3.5 w-3.5" /> 인사이트로 돌아가기</Link>
-            <div className="max-w-[900px]"><div className="mb-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-[12px] text-[#f3eee5]/60"><span>{post.category}</span><span>·</span><span>{post.date}</span><span>·</span><span>{post.readingTime}</span></div><h1 style={koSerif} className="text-[clamp(2.55rem,4.35vw,4.65rem)] font-medium leading-[1.12] tracking-[-0.048em]">{post.title}</h1></div>
+            <div className="max-w-[900px]"><div className="mb-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-[12px] text-[#f3eee5]/60"><span>{post.category}</span><span>·</span><span>{post.date}</span><span>·</span><span>{post.readingTime}</span></div><PageBreadcrumb locale="ko" title={post.title} /><h1 style={koSerif} className="text-[clamp(2.55rem,4.35vw,4.65rem)] font-medium leading-[1.12] tracking-[-0.048em]">{post.title}</h1></div>
           </div>
         </header>
 

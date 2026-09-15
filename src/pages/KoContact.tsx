@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, CalendarDays, FileText, Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
+import PageBreadcrumb from "@/components/PageBreadcrumb";
 import KoreanNavigation from "@/components/KoreanNavigation";
 import KoreanFooter from "@/components/KoreanFooter";
 import GHLCalendar from "@/components/GHLCalendar";
@@ -17,7 +18,7 @@ const KoContact = () => {
     <div className="min-h-screen overflow-x-clip bg-background" style={{ fontFamily: '"Noto Sans KR", sans-serif' }}>
       <KoreanNavigation />
 
-      <section className="relative flex h-[54svh] min-h-[460px] items-end overflow-hidden bg-[#17130f] text-[#f3eee5]">
+      <section className="relative flex min-h-[100svh] items-end pt-24 md:min-h-[560px] overflow-hidden bg-[#17130f] text-[#f3eee5]">
         <motion.img src={heroCityBoardroom} alt="프라이빗 로펌 회의실" style={{ y: heroY }} fetchPriority="high" decoding="async" className="absolute inset-0 h-[112%] w-full object-cover" />
         <div className="absolute inset-0 bg-[#17130f]/64" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#17130f]/78 via-transparent to-[#17130f]/12" />
@@ -26,7 +27,9 @@ const KoContact = () => {
         <div className="site-shell relative z-10 pb-12 md:pb-14">
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.72 }} className="max-w-[730px]">
             <span className="mb-4 block text-[11px] text-[#f3eee5]/62">문의 · Buena Park</span>
+            <PageBreadcrumb locale="ko" title="문의" />
             <h1 style={koSerif} className="text-[clamp(2.45rem,3.85vw,3.85rem)] font-medium leading-[1.18] tracking-[-0.045em]">사고 이후의 상황을 개인상해 법률팀과 이야기하세요.</h1>
+            <div className="mt-6 flex flex-wrap gap-3"><a href="#calendar" className="inline-flex min-h-11 items-center rounded-full bg-[#f3eee5] px-5 py-3 text-sm font-semibold text-[#17130f]">상담 예약</a><a href="#message" className="inline-flex min-h-11 items-center rounded-full border border-white/50 px-5 py-3 text-sm">메시지 보내기</a></div>
             <p className="mt-5 max-w-[590px] text-[14px] leading-7 text-[#f3eee5]/68 md:text-[15px]">사고 날짜와 장소, 현재 치료 상황, 보험 정보와 가장 궁금한 문제부터 알려주시면 됩니다. 첫 상담을 위해 모든 서류가 준비되어 있을 필요는 없습니다.</p>
           </motion.div>
         </div>
@@ -40,7 +43,7 @@ const KoContact = () => {
         </div>
 
         <div className="grid items-start gap-5 xl:grid-cols-[0.78fr_1.22fr]">
-          <motion.section initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.18 }} transition={{ duration: 0.68 }} className="rounded-[4px] bg-[#e9e6e1] p-7 md:p-9 xl:sticky xl:top-24">
+          <motion.section id="message" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.18 }} transition={{ duration: 0.68 }} className="scroll-mt-24 rounded-[4px] bg-[#e9e6e1] p-7 md:p-9 xl:sticky xl:top-24">
             <span className="text-[11px] text-foreground/48">메시지 보내기</span>
             <h2 style={koSerif} className="mt-3 text-[clamp(1.9rem,2.5vw,2.75rem)] font-medium leading-[1.22] tracking-[-0.04em]">현재 사건이 어느 단계인지 알려주세요.</h2>
             <p className="mt-4 max-w-[480px] text-[14px] leading-7 text-foreground/58">사고가 발생한 장소와 날짜, 부상과 치료 상황, 업무에 미친 영향, 현재 가지고 있는 보험·청구 정보가 좋은 시작점입니다. 모든 기록이 없어도 문의할 수 있습니다. 변호사-의뢰인 관계가 확인되기 전에는 기밀정보나 긴급한 민감정보를 보내지 마세요.</p>

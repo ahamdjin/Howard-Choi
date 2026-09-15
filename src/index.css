@@ -157,7 +157,9 @@
     min-height: calc(100svh - 60px);
     scroll-margin-top: 76px;
   }
-  .home-page .site-shell { padding-inline: 20px; }
+  .home-page .site-shell { width: 100%; max-width: none; padding-inline: 20px; }
+  .home-page .mobile-practice-panels { margin-inline: -20px; gap: 0; }
+  .home-page .mobile-practice-panels article > div { border-radius: 0; }
   .home-page > .relative > .sticky { position: relative; }
   .home-page nav + .relative > .sticky { padding-bottom: 0; }
   .home-page nav + .relative > .sticky > section { border-radius: 0; }

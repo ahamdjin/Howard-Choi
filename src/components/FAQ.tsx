@@ -42,8 +42,8 @@ const FAQ = ({ locale = "en" }: FAQProps) => {
   const ko = locale === "ko";
 
   return (
-    <section id="faq" ref={ref} className="relative h-[100svh] overflow-y-auto bg-[#f3efe8] text-foreground lg:overflow-hidden">
-      <div className="site-shell flex h-full w-full items-center py-16 md:py-20 lg:py-20">
+    <section id="faq" ref={ref} className="relative min-h-[100svh] bg-[#f3efe8] text-foreground">
+      <div className="site-shell flex min-h-[100svh] w-full items-center py-16 md:py-20 lg:py-20">
         <div className="grid w-full gap-8 lg:grid-cols-[0.58fr_1.42fr] lg:items-start lg:gap-16 xl:gap-24">
           <motion.div initial={{ opacity: 0, y: 16 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.68 }}>
             <span className="mb-4 block text-[9px] font-medium uppercase tracking-[0.18em] text-muted-foreground">{copy.eyebrow}</span>
