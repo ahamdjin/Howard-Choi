@@ -1,18 +1,9 @@
-import { ArrowRight, MapPin, Route, ShieldCheck } from "lucide-react";
+import { ArrowRight, Building2, FileText, MapPin, Phone, Scale, ShieldCheck } from "lucide-react";
 import { useParams } from "@tanstack/react-router";
 import heroBoardroom from "@/assets/law-firm/hero-city-boardroom.webp";
 import heroJustice from "@/assets/law-firm/hero-justice-library.webp";
-import { getServiceLocation, serviceLocations, type SiteLocale } from "@/data/injurySite";
-import {
-  ConsultationCta,
-  EditorialFrame,
-  EditorialHero,
-  isKo,
-  localePrefix,
-  ReadingLayout,
-  ReadingSectionBlock,
-  serifStyle,
-} from "./editorial/shared";
+import { brand, getServiceLocation, practiceAreas, serviceLocations, type SiteLocale } from "@/data/injurySite";
+import { EditorialFrame, isKo, localePrefix } from "./editorial/shared";
 
 const locationResources: Record<string, { agency: string; agencyHref: string; court: string; courtHref: string }> = {
   "buena-park": { agency: "Buena Park Police Department", agencyHref: "https://www.bppd.com/", court: "Orange County Superior Court", courtHref: "https://www.occourts.org/" },
@@ -23,231 +14,156 @@ const locationResources: Record<string, { agency: string; agencyHref: string; co
   "la-habra": { agency: "La Habra Police · Operations & Services", agencyHref: "https://www.lahabraca.gov/396/Operations-Services", court: "Orange County Superior Court", courtHref: "https://www.occourts.org/" },
 };
 
-export const LocationsPage = ({ locale }: { locale: SiteLocale }) => (
-  <EditorialFrame locale={locale}>
-    <main>
-      <EditorialHero
-        locale={locale}
-        eyebrow={isKo(locale) ? "서비스 지역" : "Personal injury service areas"}
-        title={isKo(locale) ? "Buena Park를 중심으로 인근 지역까지." : "Personal injury lawyers serving Buena Park and nearby communities."}
-        description={isKo(locale)
-          ? "Buena Park와 인근 Orange County·Los Angeles County 경계 지역의 사고·개인상해 사건을 지원합니다."
-          : "The firm is based in Buena Park and serves injured people across nearby North Orange County and Los Angeles County communities. Each local guide explains the accident context, evidence, official local resources, and practical information that can matter after an injury."}
-        image={heroBoardroom}
-      />
-      <ReadingLayout
-        locale={locale}
-        label={isKo(locale) ? "지역 · 서비스 범위" : "Locations · Service area"}
-        sections={isKo(locale)
-          ? [{ id: "areas", label: "서비스 지역" }, { id: "local", label: "지역 중심 접근" }, { id: "visit", label: "상담 시작" }]
-          : [{ id: "areas", label: "Communities served" }, { id: "local", label: "Why local context matters" }, { id: "visit", label: "Start a consultation" }]}
-      >
-        <ReadingSectionBlock
-          id="areas"
-          locale={locale}
-          kicker={isKo(locale) ? "01 · 지역" : "01 · Communities"}
-          title={isKo(locale) ? "가까운 지역 페이지에서 시작하세요." : "Choose the community closest to where the accident or recovery is happening."}
-          intro={isKo(locale)
-            ? "각 지역 페이지는 해당 지역에서 사고 이후 확인해야 할 일반적인 문제와 상담 시작 방법을 정리합니다."
-            : "The city does not determine whether a claim is strong, but the exact location can affect the responding agency, available video, witnesses, venue, treatment logistics, and the local records worth preserving."}
-        >
-          <div className="editorial-link-grid">
+const SectionLabel = ({ children }: { children: React.ReactNode }) => (
+  <div className="text-[10px] font-semibold uppercase tracking-[0.16em] text-black/40">{children}</div>
+);
+
+export const LocationsPage = ({ locale }: { locale: SiteLocale }) => {
+  const ko = isKo(locale);
+  const prefix = localePrefix(locale);
+  return (
+    <EditorialFrame locale={locale}>
+      <main className="bg-[#f7f6f2] pt-24 text-[#171717] md:pt-28">
+        <section className="site-shell grid min-h-[520px] overflow-hidden bg-[#171717] text-white lg:grid-cols-[0.88fr_1.12fr]">
+          <div className="flex flex-col justify-end p-7 md:p-10 lg:p-12">
+            <div className="text-[10px] font-semibold uppercase tracking-[0.16em] text-white/45">{ko ? "서비스 지역" : "Locations"}</div>
+            <h1 className="editorial-serif mt-5 text-[clamp(2.8rem,5.5vw,5.6rem)] leading-[0.91] tracking-[-0.045em]">{ko ? "가까운 지역에서 시작하세요." : "Local help starts with where you are."}</h1>
+            <p className="mt-6 max-w-[520px] text-[14px] leading-6 text-white/58">{ko ? "부에나파크를 중심으로 인근 오렌지카운티와 로스앤젤레스카운티 지역의 개인상해 사건을 지원합니다." : "Based in Buena Park and serving nearby North Orange County and Los Angeles County communities."}</p>
+          </div>
+          <div className="relative min-h-[320px]"><img src={heroBoardroom} alt="" className="absolute inset-0 h-full w-full object-cover opacity-72" /><div className="absolute inset-0 bg-black/18" /></div>
+        </section>
+
+        <section className="site-shell py-16 md:py-24">
+          <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+            <div><SectionLabel>{ko ? "지역 선택" : "Choose a location"}</SectionLabel><h2 className="editorial-serif mt-4 max-w-[720px] text-[clamp(2.2rem,4.5vw,4.3rem)] leading-[0.98] tracking-[-0.04em]">{ko ? "사고나 회복이 일어나고 있는 지역을 선택하세요." : "Choose the community closest to the accident or your recovery."}</h2></div>
+            <a href={prefix + "/contact"} className="inline-flex items-center gap-2 text-[12px] font-semibold">{ko ? "상담 시작" : "Start a consultation"}<ArrowRight className="h-4 w-4" /></a>
+          </div>
+
+          <div className="mt-10 grid border-t border-black/12 sm:grid-cols-2 lg:grid-cols-3">
             {serviceLocations.map((location, index) => (
-              <a key={location.slug} href={`${localePrefix(locale)}/locations/${location.slug}`} className="editorial-link-card">
-                <div className="editorial-link-card__top"><span>{String(index + 1).padStart(2, "0")}</span><ArrowRight className="h-3.5 w-3.5" /></div>
-                <h3 style={serifStyle(locale)}>{isKo(locale) ? location.koName : location.name}</h3>
-                <p>{isKo(locale) ? location.koDescription : location.description}</p>
+              <a key={location.slug} href={`${prefix}/locations/${location.slug}`} className="group min-h-[240px] border-b border-black/12 p-5 sm:border-r md:p-6">
+                <div className="flex items-start justify-between text-[10px] text-black/34"><span>{String(index + 1).padStart(2, "0")}</span><ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></div>
+                <MapPin className="mt-12 h-5 w-5 stroke-[1.4]" />
+                <h3 className="editorial-serif mt-5 text-[2rem] leading-none tracking-[-0.035em]">{ko ? location.koName : location.name}</h3>
+                <p className="mt-3 text-[11px] leading-5 text-black/46">{ko ? location.koDescription : location.description}</p>
               </a>
             ))}
           </div>
-        </ReadingSectionBlock>
+        </section>
 
-        <ReadingSectionBlock
-          id="local"
-          locale={locale}
-          kicker={isKo(locale) ? "02 · 지역성" : "02 · Local context"}
-          title={isKo(locale) ? "사건은 지역 이름보다 사실과 증거로 결정됩니다." : "Local context is useful when it helps preserve the right evidence."}
-          intro={isKo(locale)
-            ? "사고 장소, 도로, 관할기관, 치료 동선과 보험 문제는 사건 준비에 실제 영향을 줄 수 있습니다."
-            : "The scene, roadway or property, responding agency, nearby cameras, treatment path, county, and available insurance can all shape how an injury claim is documented. That is why each local page focuses on practical facts instead of repeating the same city description."}
-        >
-          <div className="grid border-y border-[#1E1C1A]/12 md:grid-cols-3">
-            {[MapPin, Route, ShieldCheck].map((Icon, index) => (
-              <div key={index} className="border-b border-[#1E1C1A]/12 py-6 md:border-b-0 md:border-l md:px-6 md:first:border-l-0 md:first:pl-0">
-                <Icon className="h-4 w-4 stroke-[1.3] text-[#381907]" />
-                <h3 style={serifStyle(locale)} className="mt-9 text-[1.35rem]">
-                  {isKo(locale) ? ["사고 장소", "이동·치료", "보험·책임"][index] : ["Exact incident location", "Treatment & records", "Coverage & responsibility"][index]}
-                </h3>
-                <p className="mt-3 text-[11px] leading-5 text-[#1E1C1A]/48">
-                  {isKo(locale) ? ["사고가 발생한 정확한 위치와 관련 기록을 확인합니다.", "치료 과정과 이동, 의료기록을 정리합니다.", "적용 가능한 보험과 책임 관계를 확인합니다."][index] : ["Pin down the roadway, intersection, business, property, or other place where evidence may exist.", "Keep treatment, medical records, expenses, work loss, and recovery information organized.", "Identify the drivers, owners, businesses, employers, policies, and other relationships that may matter."][index]}
-                </p>
-              </div>
-            ))}
+        <section className="border-y border-black/8 bg-white py-16 md:py-20">
+          <div className="site-shell grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
+            <div><SectionLabel>{ko ? "왜 지역 정보가 중요한가" : "Why local context matters"}</SectionLabel><h2 className="editorial-serif mt-4 text-[clamp(2rem,4vw,3.5rem)] leading-[0.98] tracking-[-0.035em]">{ko ? "지역 이름이 사건을 결정하지는 않지만, 증거를 찾는 데 도움이 됩니다." : "The city does not decide the claim. It can help you find the right evidence."}</h2></div>
+            <div className="grid sm:grid-cols-3">
+              {[
+                [MapPin, ko ? "정확한 사고 장소" : "Exact location", ko ? "도로, 교차로, 사업장 또는 사고 장소를 정확히 확인합니다." : "Roadway, intersection, business, property, or other scene where evidence may exist."],
+                [FileText, ko ? "기록과 기관" : "Records + agencies", ko ? "관할 경찰, 사고 기록 및 법원 정보를 확인합니다." : "The responding agency, collision records, and county court can depend on the exact scene."],
+                [ShieldCheck, ko ? "보험과 책임" : "Coverage + responsibility", ko ? "관련 운전자, 사업체, 소유자 및 보험을 확인합니다." : "Drivers, owners, employers, businesses, and policies can all matter to the claim."],
+              ].map(([Icon, title, body], index) => {
+                const ItemIcon = Icon as typeof MapPin;
+                return <div key={title as string} className={`border-t border-black/10 py-5 sm:border-l sm:border-t-0 sm:px-5 ${index === 0 ? "sm:border-l-0" : ""}`}><ItemIcon className="h-4 w-4 stroke-[1.4]" /><h3 className="mt-8 text-[14px] font-semibold">{title as string}</h3><p className="mt-3 text-[11px] leading-5 text-black/46">{body as string}</p></div>;
+              })}
+            </div>
           </div>
-        </ReadingSectionBlock>
-
-        <ReadingSectionBlock
-          id="visit"
-          locale={locale}
-          kicker={isKo(locale) ? "03 · 상담" : "03 · Consultation"}
-          title={isKo(locale) ? "현재 상황부터 설명해 주세요." : "You do not need every record before starting the conversation."}
-          intro={isKo(locale) ? "사고 장소, 날짜, 치료 상황과 현재 가지고 있는 보험 또는 사고 관련 문서를 알려주시면 됩니다." : "The accident location and date, current treatment, insurance information, photos, reports, and any communication you already have are enough to begin. The legal team can help identify what else may be worth preserving."}
-        />
-      </ReadingLayout>
-      <ConsultationCta locale={locale} />
-    </main>
-  </EditorialFrame>
-);
+        </section>
+      </main>
+    </EditorialFrame>
+  );
+};
 
 export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
   const params = useParams({ strict: false }) as { slug?: string };
   const location = params.slug ? getServiceLocation(params.slug) : undefined;
   if (!location) return null;
 
-  const name = isKo(locale) ? location.koName : location.name;
-  const description = isKo(locale) ? location.koDescription : location.description;
-  const statLabel = isKo(locale) ? `${location.ots.year} 교통안전 통계` : `${location.ots.year} California OTS collision data`;
+  const ko = isKo(locale);
+  const prefix = localePrefix(locale);
+  const name = ko ? location.koName : location.name;
   const resource = locationResources[location.slug];
   const isBuenaPark = location.slug === "buena-park";
-  const heroTitle = isKo(locale)
-    ? (isBuenaPark ? "부에나파크 사고·상해 가이드" : `${name} 개인상해 변호사`)
-    : (isBuenaPark ? "Buena Park Accident & Injury Guide" : `${name} Personal Injury Lawyers`);
+  const title = ko ? `${name} 개인상해 변호사` : `${name} Personal Injury Lawyer`;
 
   return (
     <EditorialFrame locale={locale}>
-      <main>
-        <EditorialHero
-          locale={locale}
-          eyebrow={isKo(locale) ? "서비스 지역" : `${location.county} · Service area`}
-          title={heroTitle}
-          description={isBuenaPark && !isKo(locale) ? "A practical local guide to Buena Park collision data, accident records, evidence preservation, California deadlines, and the injury matters handled from the firm's Buena Park office." : description}
-          image={heroJustice}
-        />
-        <ReadingLayout
-          locale={locale}
-          label={`${name} · ${isKo(locale) ? "지역 안내" : "Local injury guide"}`}
-          sections={isKo(locale)
-            ? [
-                { id: "overview", label: "지역 안내" }, { id: "data", label: "교통사고 통계" }, { id: "records", label: "지역 기록" },
-                { id: "cases", label: "사건 유형" }, { id: "evidence", label: "증거" }, { id: "deadlines", label: "기한" },
-                { id: "faq", label: "자주 묻는 질문" }, { id: "nearby", label: "인근 지역" },
-              ]
-            : [
-                { id: "overview", label: "Local overview" }, { id: "data", label: "Local collision data" }, { id: "records", label: "Local records & agencies" },
-                { id: "cases", label: "Matters handled" }, { id: "evidence", label: "Evidence to preserve" }, { id: "deadlines", label: "California deadlines" },
-                { id: "faq", label: "Local claim questions" }, { id: "nearby", label: "Nearby communities" },
-              ]}
-        >
-          <ReadingSectionBlock
-            id="overview"
-            locale={locale}
-            kicker={isKo(locale) ? "01 · 지역" : "01 · Local overview"}
-            title={isKo(locale) ? `${name}에서 사고가 발생했다면` : `If an accident happened in or around ${name}.`}
-            intro={isKo(locale) ? description : location.localIntro}
-          >
-            <div className="editorial-callout">
-              <span className="editorial-callout__label">{isKo(locale) ? "중요" : "Useful to know"}</span>
-              <p>{isKo(locale) ? "사고 장소의 사진, 경찰 또는 사고 보고서 정보, 치료 기록과 보험 관련 연락을 가능한 한 함께 보관하세요." : `${name} is in ${location.county}. Keep the exact incident location, scene photos, police or incident-report information, treatment records, and insurance communications together when possible.`}</p>
+      <main className="bg-[#f7f6f2] pt-24 text-[#171717] md:pt-28">
+        <section className="site-shell grid min-h-[600px] overflow-hidden bg-[#171717] text-white lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="flex flex-col justify-end p-7 md:p-10 lg:p-12">
+            <div className="text-[10px] font-semibold uppercase tracking-[0.16em] text-white/45">{location.county} · {ko ? "서비스 지역" : "Service area"}</div>
+            <h1 className="editorial-serif mt-5 text-[clamp(2.8rem,5.5vw,5.8rem)] leading-[0.9] tracking-[-0.048em]">{title}</h1>
+            <p className="mt-6 max-w-[540px] text-[14px] leading-6 text-white/58">{ko ? location.koDescription : location.localIntro}</p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a href={prefix + "/contact"} className="inline-flex min-h-12 items-center gap-2 bg-white px-5 text-[11px] font-semibold text-black">{ko ? "무료 상담" : "Free Consultation"}<ArrowRight className="h-4 w-4" /></a>
+              <a href={brand.phoneHref} className="inline-flex min-h-12 items-center gap-2 border border-white/20 px-5 text-[11px] font-semibold"><Phone className="h-4 w-4" />{brand.phoneDisplay}</a>
             </div>
-          </ReadingSectionBlock>
+          </div>
+          <div className="relative min-h-[340px]"><img src={heroJustice} alt="" className="absolute inset-0 h-full w-full object-cover opacity-72" /><div className="absolute inset-0 bg-black/18" /></div>
+        </section>
 
-          <ReadingSectionBlock
-            id="data"
-            locale={locale}
-            kicker={isKo(locale) ? "02 · 데이터" : "02 · Local data"}
-            title={isKo(locale) ? statLabel : `${name} collision injuries in context.`}
-            intro={isKo(locale) ? "California Office of Traffic Safety의 도시별 통계는 지역에서 발생한 교통사고의 규모를 이해하는 데 참고가 됩니다." : `California's Office of Traffic Safety reported ${location.ots.total.toLocaleString()} people killed or injured in traffic collisions in ${name} in ${location.ots.year}. The same dataset recorded ${location.ots.motorcycles} motorcycle victims, ${location.ots.pedestrians} pedestrian victims, and ${location.ots.bicyclists} bicyclist victims. These citywide numbers do not predict any individual case; they provide local safety context.`}
-          >
-            <div className="grid border-y border-[#1E1C1A]/12 sm:grid-cols-3">
-              <div className="py-6 sm:pr-6"><div className="editorial-serif text-[2.1rem]">{location.ots.total.toLocaleString()}</div><div className="mt-2 text-[10px] text-[#1E1C1A]/46">{isKo(locale) ? "사망·부상 피해자" : "Killed or injured victims"}</div></div>
-              <div className="border-t border-[#1E1C1A]/12 py-6 sm:border-l sm:border-t-0 sm:px-6"><div className="editorial-serif text-[2.1rem]">{location.ots.speed}</div><div className="mt-2 text-[10px] text-[#1E1C1A]/46">{isKo(locale) ? "과속 관련 사고" : "Speed-related fatal/injury collisions"}</div></div>
-              <div className="border-t border-[#1E1C1A]/12 py-6 sm:border-l sm:border-t-0 sm:pl-6"><div className="editorial-serif text-[2.1rem]">{location.ots.hitRun}</div><div className="mt-2 text-[10px] text-[#1E1C1A]/46">{isKo(locale) ? "뺑소니 관련 사고" : "Hit-and-run fatal/injury collisions"}</div></div>
+        <section className="site-shell py-12 md:py-16">
+          <div className="grid gap-4 lg:grid-cols-[0.72fr_1.28fr]">
+            <div className="flex min-h-[300px] flex-col justify-between bg-[#e9e5dd] p-6 md:p-8">
+              <div><SectionLabel>{isBuenaPark ? (ko ? "지역 사무실" : "Local office") : (ko ? "지역 안내" : "Local context")}</SectionLabel><MapPin className="mt-10 h-9 w-9 stroke-[1.1] text-black/45" /></div>
+              <div>
+                <h2 className="editorial-serif text-[2.3rem] leading-none tracking-[-0.04em]">{name}</h2>
+                <p className="mt-4 text-[12px] leading-5 text-black/48">{isBuenaPark ? brand.address : `${name}, ${location.county}`}</p>
+                {isBuenaPark ? <a href={brand.phoneHref} className="mt-5 inline-flex items-center gap-2 text-[11px] font-semibold">{brand.phoneDisplay}<ArrowRight className="h-4 w-4" /></a> : null}
+              </div>
             </div>
-            <a href={location.ots.source} target="_blank" rel="noreferrer" className="editorial-inline-link mt-5"><span>{isKo(locale) ? "California OTS 데이터 보기" : "View the California OTS city data"}</span><ArrowRight className="h-4 w-4" /></a>
-          </ReadingSectionBlock>
 
-          <ReadingSectionBlock
-            id="records"
-            locale={locale}
-            kicker={isKo(locale) ? "03 · 지역 기록" : "03 · Local records"}
-            title={isKo(locale) ? "사고 기록은 정확한 관할기관에서 시작됩니다." : `Official local resources for an incident in ${name}.`}
-            intro={isKo(locale) ? "사고가 발생한 정확한 위치와 사건 유형에 따라 신고·기록 기관이 달라질 수 있습니다. 아래 링크는 지역 확인을 시작하기 위한 공식 자료입니다." : `The responding agency and the court that may ultimately matter depend on the exact scene, parties, and type of claim. These official resources are a practical starting point for locating reports and understanding the county system; they are not a statement that every ${name} claim is handled by one specific court.`}
-          >
-            <div className="grid border-y border-[#1E1C1A]/12 md:grid-cols-2">
-              <a href={resource.agencyHref} target="_blank" rel="noreferrer" className="group border-b border-[#1E1C1A]/12 py-6 md:border-b-0 md:pr-7">
-                <div className="text-[9px] font-semibold uppercase tracking-[0.14em] text-[#1E1C1A]/34">{isKo(locale) ? "경찰·기록" : "Police / records"}</div>
-                <div className="mt-5 flex items-center justify-between gap-4 text-[13px]"><span>{resource.agency}</span><ArrowRight className="h-3.5 w-3.5 shrink-0 transition-transform group-hover:translate-x-1" /></div>
-              </a>
-              <a href={resource.courtHref} target="_blank" rel="noreferrer" className="group py-6 md:border-l md:border-[#1E1C1A]/12 md:pl-7">
-                <div className="text-[9px] font-semibold uppercase tracking-[0.14em] text-[#1E1C1A]/34">{isKo(locale) ? "카운티 법원" : "County court resource"}</div>
-                <div className="mt-5 flex items-center justify-between gap-4 text-[13px]"><span>{resource.court}</span><ArrowRight className="h-3.5 w-3.5 shrink-0 transition-transform group-hover:translate-x-1" /></div>
-              </a>
+            <div className="bg-white p-6 md:p-8 lg:p-10">
+              <SectionLabel>{ko ? "사고 후" : "After an accident"}</SectionLabel>
+              <h2 className="editorial-serif mt-4 max-w-[700px] text-[clamp(2rem,4vw,3.8rem)] leading-[0.98] tracking-[-0.04em]">{ko ? "지금 필요한 정보부터 정리하세요." : "Start with the facts that can disappear first."}</h2>
+              <div className="mt-9 grid border-t border-black/10 sm:grid-cols-3">
+                {[
+                  ["01", ko ? "현장" : "Scene", ko ? "사진, 영상, 위치 및 목격자." : "Photos, video, exact location, and witness details."],
+                  ["02", ko ? "치료" : "Treatment", ko ? "치료 기록, 증상, 비용 및 업무 손실." : "Medical records, symptoms, bills, and work loss."],
+                  ["03", ko ? "보험" : "Insurance", ko ? "보험 카드, 연락 및 청구 정보." : "Policies, claim numbers, adjuster communications, and coverage information."],
+                ].map(([number, itemTitle, body]) => <div key={number} className="border-b border-black/10 py-5 sm:border-l sm:px-5 sm:first:border-l-0"><div className="text-[9px] text-black/34">{number}</div><h3 className="mt-5 text-[14px] font-semibold">{itemTitle}</h3><p className="mt-3 text-[11px] leading-5 text-black/46">{body}</p></div>)}
+              </div>
             </div>
-          </ReadingSectionBlock>
+          </div>
+        </section>
 
-          <ReadingSectionBlock
-            id="cases"
-            locale={locale}
-            kicker={isKo(locale) ? "04 · 사건" : "04 · Matters"}
-            title={isKo(locale) ? "지역보다 사건 유형과 증거가 더 중요합니다." : `Personal injury matters we review for people in ${name}.`}
-            intro={isKo(locale) ? "자동차·트럭·오토바이 사고, 보행자 사고, 승차공유 사고, 낙상과 중대 상해 등 다양한 개인상해 문제를 검토할 수 있습니다." : "The firm reviews car, truck, motorcycle, pedestrian, rideshare, premises-liability, wrongful-death, and serious-injury matters. The right approach depends on the actual accident, available evidence, responsible parties, insurance, and medical consequences—not the city name alone."}
-          >
-            <a href={`${localePrefix(locale)}/practice-areas`} className="editorial-inline-link"><span>{isKo(locale) ? "업무 분야 보기" : "View personal injury practice areas"}</span><ArrowRight className="h-4 w-4" /></a>
-          </ReadingSectionBlock>
-
-          <ReadingSectionBlock
-            id="evidence"
-            locale={locale}
-            kicker={isKo(locale) ? "05 · 증거" : "05 · Evidence"}
-            title={isKo(locale) ? "지역 기록과 사고 기록을 함께 보관하세요." : `Useful records after an accident in ${name}.`}
-            intro={isKo(locale) ? "현장 사진, 영상, 신고 또는 사고 보고서, 목격자, 치료 기록과 보험사 연락 내용을 가능한 한 함께 정리해 두는 것이 좋습니다." : "Preserve scene photos and video, the exact location, responding-agency or incident-report information, witness details, vehicle or property information, medical records, bills, missed-work documentation, and insurance communications. If nearby cameras may have recorded the event, identifying them early can matter."}
-          />
-
-          <ReadingSectionBlock
-            id="deadlines"
-            locale={locale}
-            kicker={isKo(locale) ? "06 · 기한" : "06 · California deadlines"}
-            title={isKo(locale) ? "사고 장소와 상대방에 따라 기한이 달라질 수 있습니다." : "The calendar can matter as much as the county line."}
-            intro={isKo(locale) ? "캘리포니아의 많은 개인상해 소송에는 일반적으로 2년의 제소 기한이 적용되지만 공공기관 관련 청구는 더 짧은 사전 청구 절차가 적용될 수 있습니다. 사건별 기한을 실제 사실관계에서 확인하는 것이 중요합니다." : "California Courts explains that many personal-injury lawsuits generally have a two-year filing deadline, while claims involving a government agency can require a much earlier government claim. Other rules and exceptions can change the answer, so the deadline should be checked from the incident date, defendants, and facts—not assumed from the city alone."}
-          >
-            <a href="https://selfhelp.courts.ca.gov/civil-lawsuit/statute-limitations" target="_blank" rel="noreferrer" className="editorial-inline-link"><span>{isKo(locale) ? "California Courts 기한 안내" : "California Courts · Statutes of limitations"}</span><ArrowRight className="h-4 w-4" /></a>
-          </ReadingSectionBlock>
-
-          <ReadingSectionBlock
-            id="faq"
-            locale={locale}
-            kicker={isKo(locale) ? "07 · 질문" : "07 · Local claim questions"}
-            title={isKo(locale) ? `${name} 사고 이후 자주 묻는 질문` : `Practical questions after an accident in ${name}.`}
-          >
-            <div className="border-t border-[#1E1C1A]/12">
-              {[
-                [isKo(locale) ? "사고가 이 도시에서 났지만 저는 다른 곳에 살아도 괜찮나요?" : `What if the accident happened in ${name}, but I live somewhere else?`, isKo(locale) ? "거주지가 다르다고 해서 사고 기록이나 청구가 사라지는 것은 아닙니다. 사고 장소, 책임 당사자, 보험, 관할과 적용 법률을 함께 확인해야 합니다." : "That is common. The useful questions are where the incident happened, where the defendants live or do business, which agency documented it, what insurance applies, and which court or venue rules may matter."],
-                [isKo(locale) ? "어느 경찰서나 기관에서 기록을 받아야 하나요?" : "How do I know which agency has the report?", isKo(locale) ? "정확한 사고 지점이 중요합니다. 도시 경찰, 보안관, CHP 또는 다른 기관이 관할할 수 있으므로 사고 당시 받은 사건번호나 담당기관 정보를 먼저 확인하세요." : "Start with the exact location and any incident or report number you were given. City police, the sheriff, CHP, a property owner, or another agency may have the relevant record depending on where and how the incident occurred."],
-                [isKo(locale) ? "지역 변호사를 꼭 선임해야 하나요?" : "Do I have to hire a lawyer located in the same city?", isKo(locale) ? "도시 이름만으로 변호사를 선택할 필요는 없습니다. 캘리포니아 자격, 사건 유형 경험, 지역 절차 이해, 소통 방식과 실제 사건을 처리할 능력을 함께 보는 것이 더 중요합니다." : "The city name alone should not decide who handles a case. California licensure, experience with the type of claim, ability to work with the relevant local records and courts, communication, and the facts of the matter are more important."],
-              ].map(([question, answer], index) => (
-                <div key={question} className="border-b border-[#1E1C1A]/12 py-6"><div className="flex gap-4"><span className="text-[10px] text-[#1E1C1A]/30">0{index + 1}</span><div><h3 style={serifStyle(locale)} className="text-[1.25rem] leading-tight">{question}</h3><p className="mt-3 max-w-[720px] text-[12px] leading-6 text-[#1E1C1A]/54">{answer}</p></div></div></div>
-              ))}
+        <section className="bg-white py-16 md:py-24">
+          <div className="site-shell">
+            <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between"><div><SectionLabel>{ko ? "업무 분야" : "Cases we handle"}</SectionLabel><h2 className="editorial-serif mt-4 text-[clamp(2.2rem,4.5vw,4.2rem)] leading-[0.98] tracking-[-0.04em]">{ko ? `${name}에서 다루는 주요 사고 유형.` : `Personal injury help in ${name}.`}</h2></div><a href={prefix + "/practice-areas"} className="inline-flex items-center gap-2 text-[12px] font-semibold">{ko ? "전체 업무 분야" : "All practice areas"}<ArrowRight className="h-4 w-4" /></a></div>
+            <div className="mt-10 grid border-t border-black/12 sm:grid-cols-2 lg:grid-cols-4">
+              {practiceAreas.slice(0, 8).map((practice, index) => <a key={practice.slug} href={`${prefix}/practice-areas/${practice.slug}`} className="group min-h-[180px] border-b border-black/12 p-5 sm:border-r"><div className="flex justify-between text-[9px] text-black/34"><span>{String(index + 1).padStart(2, "0")}</span><ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></div><h3 className="editorial-serif mt-12 text-[1.45rem] leading-none tracking-[-0.03em]">{ko ? practice.koTitle : practice.title}</h3></a>)}
             </div>
-          </ReadingSectionBlock>
+          </div>
+        </section>
 
-          <ReadingSectionBlock
-            id="nearby"
-            locale={locale}
-            kicker={isKo(locale) ? "08 · 인근" : "08 · Nearby"}
-            title={isKo(locale) ? "인근 서비스 지역" : "Nearby communities served."}
-          >
-            <div className="editorial-link-grid">
-              {serviceLocations.filter((item) => item.slug !== location.slug).slice(0, 4).map((item) => (
-                <a key={item.slug} href={`${localePrefix(locale)}/locations/${item.slug}`} className="editorial-link-card">
-                  <div className="editorial-link-card__top"><span>→</span><ArrowRight className="h-3.5 w-3.5" /></div>
-                  <h3 style={serifStyle(locale)}>{isKo(locale) ? item.koName : item.name}</h3>
-                  <p>{isKo(locale) ? item.koDescription : item.description}</p>
-                </a>
-              ))}
+        <section className="bg-[#171717] py-16 text-white md:py-20">
+          <div className="site-shell grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
+            <div><div className="text-[10px] font-semibold uppercase tracking-[0.16em] text-white/40">{location.ots.year} · California OTS</div><h2 className="editorial-serif mt-4 text-[clamp(2.1rem,4vw,3.7rem)] leading-[0.98] tracking-[-0.04em]">{ko ? `${name} 교통사고 통계.` : `${name} collision data, in context.`}</h2><p className="mt-5 max-w-[450px] text-[12px] leading-6 text-white/46">{ko ? "도시 전체 통계는 개별 사건의 결과를 예측하지 않습니다. 지역 교통안전 상황을 이해하기 위한 참고 자료입니다." : "Citywide numbers do not predict an individual claim. They are useful only as local traffic-safety context."}</p></div>
+            <div className="grid border-y border-white/14 sm:grid-cols-3">
+              <div className="py-7 sm:pr-6"><div className="editorial-serif text-[3rem] leading-none">{location.ots.total.toLocaleString()}</div><div className="mt-3 text-[9px] uppercase tracking-[0.12em] text-white/38">{ko ? "사망·부상 피해자" : "Killed or injured"}</div></div>
+              <div className="border-t border-white/14 py-7 sm:border-l sm:border-t-0 sm:px-6"><div className="editorial-serif text-[3rem] leading-none">{location.ots.speed}</div><div className="mt-3 text-[9px] uppercase tracking-[0.12em] text-white/38">{ko ? "과속 관련" : "Speed-related"}</div></div>
+              <div className="border-t border-white/14 py-7 sm:border-l sm:border-t-0 sm:pl-6"><div className="editorial-serif text-[3rem] leading-none">{location.ots.hitRun}</div><div className="mt-3 text-[9px] uppercase tracking-[0.12em] text-white/38">{ko ? "뺑소니 관련" : "Hit-and-run"}</div></div>
             </div>
-          </ReadingSectionBlock>
-        </ReadingLayout>
-        <ConsultationCta locale={locale} />
+          </div>
+        </section>
+
+        <section className="site-shell py-16 md:py-24">
+          <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+            <div><SectionLabel>{ko ? "지역 자료" : "Local resources"}</SectionLabel><h2 className="editorial-serif mt-4 text-[clamp(2rem,4vw,3.6rem)] leading-[0.98] tracking-[-0.04em]">{ko ? "공식 기록은 정확한 기관에서 시작됩니다." : "Official records start with the right local agency."}</h2></div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <a href={resource?.agencyHref} target="_blank" rel="noreferrer" className="group min-h-[190px] border border-black/10 bg-white p-5"><Building2 className="h-5 w-5 stroke-[1.4]" /><div className="mt-10 text-[10px] uppercase tracking-[0.12em] text-black/35">{ko ? "사고 기록" : "Police / records"}</div><h3 className="mt-3 text-[14px] font-semibold">{resource?.agency}</h3><ArrowRight className="mt-5 h-4 w-4 transition-transform group-hover:translate-x-1" /></a>
+              <a href={resource?.courtHref} target="_blank" rel="noreferrer" className="group min-h-[190px] border border-black/10 bg-white p-5"><Scale className="h-5 w-5 stroke-[1.4]" /><div className="mt-10 text-[10px] uppercase tracking-[0.12em] text-black/35">{ko ? "법원" : "Court"}</div><h3 className="mt-3 text-[14px] font-semibold">{resource?.court}</h3><ArrowRight className="mt-5 h-4 w-4 transition-transform group-hover:translate-x-1" /></a>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-t border-black/8 bg-white py-14 md:py-18">
+          <div className="site-shell">
+            <SectionLabel>{ko ? "인근 지역" : "Nearby communities"}</SectionLabel>
+            <div className="mt-6 flex flex-wrap gap-2">{serviceLocations.filter((item) => item.slug !== location.slug).map((item) => <a key={item.slug} href={`${prefix}/locations/${item.slug}`} className="inline-flex min-h-10 items-center border border-black/12 px-4 text-[11px] font-semibold transition-colors hover:bg-black hover:text-white">{ko ? item.koName : item.name}</a>)}</div>
+          </div>
+        </section>
+
+        <section className="bg-[#171717] py-16 text-white md:py-20">
+          <div className="site-shell flex flex-col gap-8 md:flex-row md:items-end md:justify-between"><div><div className="text-[10px] font-semibold uppercase tracking-[0.16em] text-white/40">{ko ? "무료 상담" : "Free consultation"}</div><h2 className="editorial-serif mt-4 max-w-[760px] text-[clamp(2.5rem,5vw,5rem)] leading-[0.94] tracking-[-0.04em]">{ko ? `${name}에서 발생한 사고에 대해 이야기해 보세요.` : `Tell us what happened in ${name}.`}</h2></div><a href={prefix + "/contact"} className="inline-flex min-h-12 shrink-0 items-center gap-3 bg-white px-6 text-[12px] font-semibold text-black">{ko ? "상담 시작" : "Start a conversation"}<ArrowRight className="h-4 w-4" /></a></div>
+        </section>
       </main>
     </EditorialFrame>
   );
