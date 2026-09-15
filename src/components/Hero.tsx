@@ -92,7 +92,7 @@ const Hero = () => {
               Personal injury lawyers in Buena Park.
             </motion.h1>
             <motion.p initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.7 }} className="mt-5 max-w-[560px] text-[15px] leading-6 text-[#f3eee5]/74 md:text-base">
-              Legal representation for people injured in car, truck, motorcycle, pedestrian, rideshare, premises-liability, and other serious accidents across Buena Park and nearby communities.
+              Understand your options after an accident. Get clear guidance on your injury claim and the next step toward recovery.
             </motion.p>
             <motion.div initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.7 }} className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center">
               <button onClick={() => document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })} className="liquid-cta inline-flex w-fit items-center gap-3 rounded-full px-6 py-3 text-[13px] font-medium">

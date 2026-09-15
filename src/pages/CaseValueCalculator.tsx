@@ -67,7 +67,7 @@ const clampMoney = (value: string, max = 5_000_000) => {
 const InputLabel = ({ children, hint }: { children: React.ReactNode; hint?: string }) => (
   <span className="mb-2 block">
     <span className="block text-[13px] font-semibold text-[#211E1B]">{children}</span>
-    {hint ? <span className="mt-1 block text-[10px] leading-4 text-[#211E1B]/42">{hint}</span> : null}
+    {hint ? <span className="mt-1 block text-[13px] leading-5 text-[#211E1B]/70">{hint}</span> : null}
   </span>
 );
 
@@ -80,7 +80,7 @@ const CurrencyInput = ({ label, hint, value, onChange }: {
   <label className="block">
     <InputLabel hint={hint}>{label}</InputLabel>
     <div className="flex h-11 items-center rounded-[3px] border border-[#211E1B]/14 bg-white px-3 focus-within:border-[#6E635A]">
-      <span className="mr-2 text-[13px] text-[#211E1B]/42">$</span>
+      <span className="mr-2 text-[13px] text-[#211E1B]/70">$</span>
       <input
         type="number"
         min="0"
@@ -89,7 +89,7 @@ const CurrencyInput = ({ label, hint, value, onChange }: {
         value={value || ""}
         placeholder="0"
         onChange={(event) => onChange(clampMoney(event.target.value))}
-        className="w-full bg-transparent text-[15px] font-medium tabular-nums text-[#211E1B] outline-none placeholder:text-[#211E1B]/25"
+        className="w-full bg-transparent text-[16px] font-medium tabular-nums text-[#211E1B] outline-none placeholder:text-[#211E1B]/25"
       />
     </div>
   </label>
@@ -109,7 +109,7 @@ const SelectInput = ({ label, hint, value, placeholder, options, onChange }: {
       <select
         value={value}
         onChange={(event) => onChange(event.target.value)}
-        className="h-11 w-full appearance-none rounded-[3px] border border-[#211E1B]/14 bg-white px-3 pr-9 text-[15px] text-[#211E1B] outline-none focus:border-[#6E635A]"
+        className="h-11 w-full appearance-none rounded-[3px] border border-[#211E1B]/14 bg-white px-3 pr-9 text-[16px] text-[#211E1B] outline-none focus:border-[#6E635A]"
       >
         <option value="">{placeholder}</option>
         {options.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
@@ -227,6 +227,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
     setCalculated(true);
     setReview((current) => ({ ...current, message: buildSummary() }));
     window.setTimeout(() => {
+      document.getElementById("case-estimate-result")?.focus({ preventScroll: true });
       document.getElementById("case-estimate-result")?.scrollIntoView({ behavior: "smooth", block: "center" });
     }, 60);
   };
@@ -286,7 +287,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
               <div>
                 <div className="text-[10px] text-[#211E1B]/44">{ko ? "01 · 계산하기" : "01 · Calculate"}</div>
                 <h2 className="mt-2 text-[21px] font-semibold tracking-[-0.02em]">{ko ? "핵심 정보만 입력하세요." : "Start with the facts that matter."}</h2>
-                <p className="mt-1 text-[10px] leading-4 text-[#211E1B]/42">{ko ? "빠른 계산은 핵심 정보만 사용합니다. 더 복잡한 사건은 추가 정보를 펼치세요." : "Use the core fields for a quick estimate. Open the extra details only when they apply."}</p>
+                <p className="mt-1 text-[13px] leading-5 text-[#211E1B]/70">{ko ? "빠른 계산은 핵심 정보만 사용합니다. 더 복잡한 사건은 추가 정보를 펼치세요." : "Use the core fields for a quick estimate. Open the extra details only when they apply."}</p>
               </div>
               <button type="button" onClick={reset} className="inline-flex h-9 shrink-0 items-center gap-2 text-[10px] font-medium text-[#211E1B]/45 hover:text-[#211E1B]"><RotateCcw className="h-3.5 w-3.5" />{ko ? "초기화" : "Reset"}</button>
             </div>
@@ -294,7 +295,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
             <div className="grid overflow-hidden rounded-[4px] border border-[#211E1B]/12 bg-white lg:grid-cols-[1.08fr_0.92fr]">
               <div className="p-5 md:p-7 lg:p-8">
                 <div className="grid gap-5 sm:grid-cols-2">
-                  <SelectInput label={ko ? "사건 유형" : "Incident type"} hint={ko ? "사고의 종류" : "What happened"} value={state.caseType} placeholder={ko ? "선택" : "Choose"} options={caseTypes.map((item) => ({ value: item.value, label: ko ? item.ko : item.en }))} onChange={(value) => setState((current) => ({ ...current, caseType: value as CaseType | "" }))} />
+                  <SelectInput label={ko ? "사건 유형" : "Incident type"} hint={ko ? "선택 사항" : "Optional — what happened"} value={state.caseType} placeholder={ko ? "선택" : "Choose"} options={caseTypes.map((item) => ({ value: item.value, label: ko ? item.ko : item.en }))} onChange={(value) => setState((current) => ({ ...current, caseType: value as CaseType | "" }))} />
                   <SelectInput label={ko ? "부상 정도" : "Injury severity"} hint={ko ? "회복과 생활 영향" : "Recovery and daily impact"} value={state.severity} placeholder={ko ? "선택" : "Choose"} options={severities.map((item) => ({ value: item.value, label: ko ? item.ko : item.en }))} onChange={(value) => setState((current) => ({ ...current, severity: value as Severity | "" }))} />
                   <SelectInput label={ko ? "치료 수준" : "Treatment level"} hint={ko ? "가장 높은 치료 수준" : "Highest care received"} value={state.treatment} placeholder={ko ? "선택" : "Choose"} options={treatments.map((item) => ({ value: item.value, label: ko ? item.ko : item.en }))} onChange={(value) => setState((current) => ({ ...current, treatment: value as Treatment | "" }))} />
                   <CurrencyInput label={ko ? "현재 의료비" : "Medical bills"} hint={ko ? "현재까지 발생한 치료비" : "Treatment costs so far"} value={state.medical} onChange={(value) => setState((current) => ({ ...current, medical: value }))} />
@@ -314,7 +315,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
                   <summary className="flex cursor-pointer list-none items-start justify-between gap-5 marker:hidden">
                     <span>
                       <span className="block text-[13px] font-semibold">{ko ? "더 정확한 범위를 원하시나요?" : "Want a more complete estimate?"}</span>
-                      <span className="mt-1 block max-w-[470px] text-[10px] leading-4 text-[#211E1B]/44">{ko ? "향후 치료, 향후 소득 손실, 재산 피해 또는 장기적 영향이 있다면 여기에 추가하세요." : "Use this if treatment will continue, work loss may continue, property was damaged, or the injury may have lasting effects."}</span>
+                      <span className="mt-1 block max-w-[470px] text-[13px] leading-5 text-[#211E1B]/44">{ko ? "향후 치료, 향후 소득 손실, 재산 피해 또는 장기적 영향이 있다면 여기에 추가하세요." : "Use this if treatment will continue, work loss may continue, property was damaged, or the injury may have lasting effects."}</span>
                     </span>
                     <span className="text-[18px] leading-none text-[#6E635A] transition-transform group-open:rotate-45">+</span>
                   </summary>
@@ -324,12 +325,12 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
                     <CurrencyInput label={ko ? "재산 피해" : "Property damage"} hint={ko ? "차량 또는 기타 재산 피해" : "Vehicle or other property loss"} value={state.property} onChange={(value) => setState((current) => ({ ...current, property: value }))} />
                     <label className="flex min-h-[70px] cursor-pointer items-start gap-3 rounded-[3px] border border-[#211E1B]/10 bg-white px-4 py-3">
                       <input type="checkbox" checked={state.permanent} onChange={(event) => setState((current) => ({ ...current, permanent: event.target.checked }))} className="mt-0.5 h-4 w-4 accent-[#6E635A]" />
-                      <span><span className="block text-[12px] font-semibold leading-5">{ko ? "장기적 또는 영구적 영향" : "Long-term or permanent effects"}</span><span className="mt-1 block text-[10px] leading-4 text-[#211E1B]/42">{ko ? "흉터, 장애, 기능 제한 등" : "Scarring, disability, lasting limitations"}</span></span>
+                      <span><span className="block text-[12px] font-semibold leading-5">{ko ? "장기적 또는 영구적 영향" : "Long-term or permanent effects"}</span><span className="mt-1 block text-[13px] leading-5 text-[#211E1B]/70">{ko ? "흉터, 장애, 기능 제한 등" : "Scarring, disability, lasting limitations"}</span></span>
                     </label>
                   </div>
                 </details>
 
-                {error ? <div className="mt-5 rounded-[3px] bg-[#F4ECE7] px-4 py-3 text-[11px] font-medium text-[#7B4435]">{error}</div> : null}
+                {error ? <div role="alert" className="mt-5 rounded-[3px] bg-[#F4ECE7] px-4 py-3 text-[11px] font-medium text-[#7B4435]">{error}</div> : null}
 
                 <button type="button" onClick={calculate} className="mt-6 inline-flex h-11 w-full items-center justify-between rounded-[3px] bg-[#211E1B] px-5 text-[12px] font-semibold text-white hover:bg-[#342F2B]">
                   <span>{ko ? "예상 범위 계산" : "Estimate my case value"}</span><ArrowRight className="h-4 w-4" />
@@ -340,7 +341,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
               <div className="border-t border-[#211E1B]/10 bg-[#F3F0EA] p-5 md:p-7 lg:border-l lg:border-t-0 lg:p-8" aria-live="polite">
                 <div className="text-[10px] font-medium text-[#211E1B]/44">{ko ? "예상 범위" : "Estimated range"}</div>
                 {calculated && estimate ? (
-                  <div id="case-estimate-result" className="mt-4 scroll-mt-24">
+                  <div id="case-estimate-result" tabIndex={-1} className="mt-4 scroll-mt-24">
                     <div style={serifStyle(locale)} className={ko ? "text-[1.9rem] font-medium leading-tight" : "editorial-serif text-[clamp(2rem,3.6vw,3rem)] leading-[0.98] tracking-[-0.035em]"}>{money(estimate.low)} – {money(estimate.high)}</div>
                     <p className="mt-3 text-[10px] leading-5 text-[#211E1B]/46">{ko ? "입력한 정보만을 바탕으로 한 교육용 범위입니다." : "Educational range based only on the facts you entered."}</p>
 
@@ -350,10 +351,10 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
                       <div className="flex items-center justify-between gap-4 py-2 text-[11px]"><span className="text-[#211E1B]/50">{ko ? "과실 조정" : "Fault adjustment"}</span><strong>× {estimate.faultFactor.toFixed(2)}</strong></div>
                     </div>
 
-                    <div className="mt-4 flex gap-2 text-[9px] leading-4 text-[#211E1B]/42"><Info className="mt-0.5 h-3.5 w-3.5 shrink-0" /><p>{ko ? "법률 자문이나 실제 사건 가치에 대한 의견이 아닙니다. 보험 한도, 유치권, 인과관계, 증거 및 협상 상황은 반영하지 못합니다." : "Not legal advice or an opinion of actual case value. Policy limits, liens, causation, evidence, and negotiation posture are not fully captured."}</p></div>
+                    <div className="mt-4 flex gap-2 text-[9px] leading-4 text-[#211E1B]/70"><Info className="mt-0.5 h-3.5 w-3.5 shrink-0" /><p>{ko ? "법률 자문이나 실제 사건 가치에 대한 의견이 아닙니다. 보험 한도, 유치권, 인과관계, 증거 및 협상 상황은 반영하지 못합니다." : "Not legal advice or an opinion of actual case value. Policy limits, liens, causation, evidence, and negotiation posture are not fully captured."}</p></div>
 
                     <div className="mt-6 border-t border-[#211E1B]/10 pt-5">
-                      <div className="flex items-start gap-3"><Mail className="mt-0.5 h-4 w-4 shrink-0 text-[#6E635A]" /><div><h3 className="text-[13px] font-semibold">{ko ? "전문가 의견 받기" : "Get an expert opinion"}</h3><p className="mt-1 text-[9px] leading-4 text-[#211E1B]/42">{ko ? "이름, 이메일과 계산 요약을 팀에 보내 검토를 요청합니다." : "Send your name, email, and calculator summary to the team for review."}</p></div></div>
+                      <div className="flex items-start gap-3"><Mail className="mt-0.5 h-4 w-4 shrink-0 text-[#6E635A]" /><div><h3 className="text-[13px] font-semibold">{ko ? "전문가 의견 받기" : "Get an expert opinion"}</h3><p className="mt-1 text-[9px] leading-4 text-[#211E1B]/70">{ko ? "이름, 이메일과 계산 요약을 팀에 보내 검토를 요청합니다." : "Send your name, email, and calculator summary to the team for review."}</p></div></div>
 
                       <form id="case-calculater" name="Case Calculater" data-form-name="Case Calculater" onSubmit={requestReview} className="mt-4 grid gap-3">
                         <label className="block">
@@ -396,7 +397,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
               <div className="absolute inset-0 bg-black/12" />
             </div>
             <div className="flex flex-col justify-center py-2 lg:pl-6">
-              <div className="text-[10px] text-[#211E1B]/42">{ko ? "02 · 계산 방식" : "02 · How it works"}</div>
+              <div className="text-[10px] text-[#211E1B]/70">{ko ? "02 · 계산 방식" : "02 · How it works"}</div>
               <h2 className="mt-3 text-[22px] font-semibold tracking-[-0.025em]">{ko ? "세 가지가 범위를 만듭니다." : "Three things shape the range."}</h2>
               <div className="mt-8 border-t border-[#211E1B]/12">
                 {[
@@ -441,7 +442,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
           <div className="site-shell">
             <div className="grid gap-8 border-t border-[#211E1B]/12 pt-5 lg:grid-cols-[0.7fr_1.3fr] lg:gap-12">
               <div>
-                <div className="text-[10px] text-[#211E1B]/42">{ko ? "04 · 무엇이 가치를 바꾸나요" : "04 · What changes case value"}</div>
+                <div className="text-[10px] text-[#211E1B]/70">{ko ? "04 · 무엇이 가치를 바꾸나요" : "04 · What changes case value"}</div>
                 <h2 className="mt-3 max-w-[360px] text-[22px] font-semibold tracking-[-0.025em]">{ko ? "숫자 밖의 사실도 중요합니다." : "The facts around the numbers matter."}</h2>
               </div>
               <div className="grid gap-x-8 sm:grid-cols-2">
@@ -470,7 +471,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
               <div className="absolute inset-0 bg-black/[0.08]" />
             </div>
             <div className="flex flex-col justify-center lg:pl-6">
-              <div className="text-[10px] text-[#211E1B]/42">{ko ? "05 · 다음 단계" : "05 · What to do next"}</div>
+              <div className="text-[10px] text-[#211E1B]/70">{ko ? "05 · 다음 단계" : "05 · What to do next"}</div>
               <h2 className="mt-3 text-[22px] font-semibold tracking-[-0.025em]">{ko ? "계산 후에는 기록을 정리하세요." : "After the estimate, document the claim."}</h2>
               <div className="mt-7 border-t border-[#211E1B]/12">
                 {[
@@ -493,7 +494,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
         <section className="bg-[#F1EEE8] py-12 md:py-16">
           <div className="site-shell mx-auto grid max-w-[1080px] gap-10 lg:grid-cols-[0.65fr_1.35fr] lg:gap-14">
             <div>
-              <div className="text-[10px] text-[#211E1B]/42">FAQ</div>
+              <div className="text-[10px] text-[#211E1B]/70">FAQ</div>
               <h2 className="mt-3 text-[21px] font-semibold tracking-[-0.02em]">{ko ? "계산기 질문" : "Common calculator questions"}</h2>
             </div>
             <div className="divide-y divide-[#211E1B]/10 border-t border-[#211E1B]/10">
@@ -511,7 +512,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
 
         <section className="bg-white py-10 md:py-12">
           <div className="site-shell mx-auto grid max-w-[1080px] gap-6 md:grid-cols-[0.65fr_1.35fr] md:gap-12">
-            <div className="text-[10px] text-[#211E1B]/42">{ko ? "방법론 및 출처" : "Methodology & sources"}</div>
+            <div className="text-[10px] text-[#211E1B]/70">{ko ? "방법론 및 출처" : "Methodology & sources"}</div>
             <div className="text-[10px] leading-5 text-[#211E1B]/48">
               <p>{ko ? "이 도구는 캘리포니아 민사 배심 지침에서 다루는 일반적인 손해 항목과 비교 과실 개념을 교육 목적으로 모델링합니다." : "This tool models common personal-injury damage categories and comparative fault concepts reflected in California civil jury instructions. It is educational, not a court formula."}</p>
               <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2">

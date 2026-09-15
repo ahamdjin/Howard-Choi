@@ -5,9 +5,7 @@ import Locations from "@/components/Locations";
 import Experience from "@/components/Experience";
 import SelectedResult from "@/components/SelectedResult";
 import DirectAccess from "@/components/DirectAccess";
-import Testimonial from "@/components/Testimonial";
 import ReviewsSection from "@/components/ReviewsSection";
-import ClientSuccessFeature from "@/components/ClientSuccessFeature";
 import FAQ from "@/components/FAQ";
 import Booking from "@/components/Booking";
 import Footer from "@/components/Footer";
@@ -26,9 +24,7 @@ const Index = () => (
       <Experience />
       <SelectedResult />
       <DirectAccess />
-      <Testimonial />
       <ReviewsSection />
-      <ClientSuccessFeature />
       <FAQ />
       <Booking />
       <Footer />

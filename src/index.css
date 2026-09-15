@@ -150,6 +150,22 @@
   }
 }
 
+/* Mobile sections fill a screen and grow when their content needs more room. */
+@media (max-width: 767px) {
+  .home-page section, .editorial-reading-section {
+    width: 100%;
+    min-height: calc(100svh - 60px);
+    scroll-margin-top: 76px;
+  }
+  .home-page .site-shell { padding-inline: 20px; }
+  .home-page > .relative > .sticky { position: relative; }
+  .home-page nav + .relative > .sticky { padding-bottom: 0; }
+  .home-page nav + .relative > .sticky > section { border-radius: 0; }
+  .editorial-reading-section { padding-block: 40px; }
+}
+.site-typography a[aria-current="page"] { text-decoration: underline; text-underline-offset: 6px; }
+.site-typography :where(a, button, input, select, summary):focus-visible { outline: 2px solid #8a6543; outline-offset: 4px; }
+
 /* Site-wide typography system.
    Display type stays restrained, body copy stays comfortably readable,
    and only labels / supporting metadata drop below the main reading size. */
@@ -158,22 +174,22 @@
   line-height: 1.65;
 }
 
-.site-typography h1 {
+.site-typography :where(main, section, article) h1 {
   font-size: clamp(2.5rem, 4.5vw, 3.75rem) !important;
   line-height: 1 !important;
   letter-spacing: -0.018em !important;
   word-spacing: 0.025em;
 }
 
-.site-typography h2 {
-  font-size: clamp(2rem, 3.4vw, 3.25rem) !important;
+.site-typography :where(main, section, article) h2 {
+  font-size: clamp(1.75rem, 2.8vw, 2.75rem) !important;
   line-height: 1.06 !important;
   letter-spacing: -0.015em !important;
   word-spacing: 0.02em;
 }
 
-.site-typography h3 {
-  font-size: clamp(1.35rem, 2vw, 1.875rem) !important;
+.site-typography :where(main, section, article) h3 {
+  font-size: clamp(1.2rem, 1.6vw, 1.5rem) !important;
   line-height: 1.15 !important;
   letter-spacing: -0.01em !important;
   word-spacing: 0.015em;
@@ -190,7 +206,7 @@
 }
 
 .site-typography :where(main, article, section) p:not([class*="text-["]) {
-  font-size: 18px !important;
+  font-size: 17px !important;
   line-height: 1.65 !important;
 }
 
@@ -200,14 +216,14 @@
 .site-typography :where(main, article, section) p[class*="text-[16px]"],
 .site-typography :where(main, article, section) p[class*="text-[17px]"],
 .site-typography :where(main, article, section) p[class*="text-[18px]"] {
-  font-size: 18px !important;
+  font-size: 17px !important;
   line-height: 1.65 !important;
 }
 
 .site-typography :where(main, article, section) p[class*="text-[10px]"],
 .site-typography :where(main, article, section) p[class*="text-[11px]"],
 .site-typography :where(main, article, section) p[class*="text-[12px]"] {
-  font-size: 16px !important;
+  font-size: 14px !important;
   line-height: 1.6 !important;
 }
 

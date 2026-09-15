@@ -80,7 +80,7 @@ function RootDocument({ children }: { children: ReactNode }) {
     <html lang={lang}>
       <head><HeadContent /></head>
       <body className={bodyClassName}>
-        <div className="min-h-screen bg-background px-[5px] pb-[5px] sm:px-[7px] sm:pb-[7px]">
+        <div className="min-h-screen bg-background md:px-[7px] md:pb-[7px]">
           {children}
         </div>
         <DeferredIntegrations externalFormPage={externalFormPage} />

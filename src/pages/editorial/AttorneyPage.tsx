@@ -35,7 +35,7 @@ const SectionHeading = ({ locale, eyebrow, title, body }: { locale: SiteLocale; 
 
 const ConsultationCta = ({ locale }: { locale: SiteLocale }) => (
   <section className="bg-[#1E1C1A] text-[#F3EEE5]">
-    <div className="site-shell grid min-h-[72svh] items-center gap-12 py-16 lg:grid-cols-[0.95fr_1.05fr] lg:py-20">
+    <div className="site-shell grid min-h-[420px] items-center gap-12 py-16 lg:grid-cols-[0.95fr_1.05fr] lg:py-20">
       <div>
         <Eyebrow light>{ko(locale) ? "상담" : "Start the conversation"}</Eyebrow>
         <h2 style={serif(locale)} className={`mt-6 max-w-[650px] ${ko(locale) ? "text-[clamp(2rem,4vw,4rem)] font-medium leading-[1.3] tracking-[-0.04em]" : "editorial-serif text-[clamp(2.5rem,5vw,5.7rem)] leading-[0.92] tracking-[-0.04em]"}`}>
@@ -55,10 +55,10 @@ const ConsultationCta = ({ locale }: { locale: SiteLocale }) => (
 const PracticeLinks = ({ locale, limit = 8 }: { locale: SiteLocale; limit?: number }) => (
   <div className="grid border-t border-[#1E1C1A]/12 sm:grid-cols-2 xl:grid-cols-4">
     {practiceAreas.slice(0, limit).map((practice, index) => (
-      <a key={practice.slug} href={`${prefix(locale)}/practice-areas/${practice.slug}`} className="group min-h-[190px] border-b border-[#1E1C1A]/12 py-6 sm:px-6 sm:first:pl-0 xl:border-l xl:first:border-l-0">
+      <a key={practice.slug} href={`${prefix(locale)}/practice-areas/${practice.slug}`} className="group min-h-[120px] border-b border-[#1E1C1A]/12 py-6 sm:px-6 sm:first:pl-0 xl:border-l xl:first:border-l-0">
         <div className="flex items-center justify-between text-[9px] tabular-nums text-[#1E1C1A]/28"><span>{String(index + 1).padStart(2, "0")}</span><ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" /></div>
-        <h3 style={serif(locale)} className="mt-12 text-[1.35rem] leading-tight">{ko(locale) ? practice.koTitle : practice.title}</h3>
-        <p className="mt-3 max-w-[270px] text-[10px] leading-5 text-[#1E1C1A]/45">{ko(locale) ? practice.koDescription : practice.description}</p>
+        <h3 style={serif(locale)} className="mt-5 text-[1.35rem] leading-tight">{ko(locale) ? practice.koTitle : practice.title}</h3>
+        <p className="mt-3 max-w-[270px] text-[10px] leading-5 text-[#1E1C1A]/70">{ko(locale) ? practice.koDescription : practice.description}</p>
       </a>
     ))}
   </div>
@@ -85,8 +85,8 @@ export const AttorneyPage = ({ locale }: { locale: SiteLocale }) => (
     <main>
       <section className="bg-[#211A16] pt-[60px] text-[#F3EEE5]">
         <div className="grid min-h-[calc(100svh-60px)] lg:grid-cols-[1.1fr_0.9fr]">
-          <AttorneyPortrait className="min-h-[55svh] lg:min-h-[calc(100svh-60px)]" />
-          <div className="flex min-h-[520px] flex-col justify-between px-6 py-10 sm:px-10 lg:px-12 lg:py-12 xl:px-16">
+          <AttorneyPortrait className="order-2 h-[360px] lg:order-none lg:h-auto lg:min-h-[calc(100svh-60px)]" />
+          <div className="flex min-h-[540px] flex-col justify-between gap-8 px-6 py-10 sm:px-10 lg:px-12 lg:py-12 xl:px-16">
             <div className="flex items-center justify-between border-t border-white/16 pt-4"><Eyebrow light>{ko(locale) ? "변호사" : "Attorneys"}</Eyebrow><span className="text-[9px] uppercase tracking-[0.14em] text-white/34">Buena Park · California</span></div>
             <motion.div initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
               <h1 style={serif(locale)} className={`max-w-[680px] ${ko(locale) ? "text-[clamp(2.8rem,5vw,5.7rem)] font-medium leading-[1.12] tracking-[-0.05em]" : "editorial-serif text-[clamp(4rem,7.2vw,8.6rem)] leading-[0.82] tracking-[-0.055em]"}`}>
@@ -94,8 +94,8 @@ export const AttorneyPage = ({ locale }: { locale: SiteLocale }) => (
               </h1>
               <p className="mt-7 max-w-[500px] text-[13px] leading-7 text-white/58">{ko(locale) ? "사고·상해 사건에서 의뢰인이 상황을 이해하고 다음 단계를 명확히 볼 수 있도록 돕는 법률팀입니다." : "Personal injury attorneys focused on accident claims, direct communication, careful evidence development, and a clear path from the first consultation through resolution."}</p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <a href={`${prefix(locale)}/contact`} className="rounded-full bg-[#F3EEE5] px-6 py-3 text-[11px] font-semibold text-[#1E1C1A]">{ko(locale) ? "상담 예약" : "Schedule a consultation"}</a>
-                <a href={brand.phoneHref} className="rounded-full border border-white/20 px-6 py-3 text-[11px] text-white/74">{brand.phoneDisplay}</a>
+                <a href={`${prefix(locale)}/contact`} className="rounded-full bg-[#F3EEE5] px-6 py-3 text-[14px] font-semibold text-[#1E1C1A]">{ko(locale) ? "상담 예약" : "Schedule a consultation"}</a>
+                <a href={brand.phoneHref} className="rounded-full border border-white/20 px-6 py-3 text-[14px] text-white/90">{brand.phoneDisplay}</a>
               </div>
               <ProfileLinks locale={locale} />
             </motion.div>
