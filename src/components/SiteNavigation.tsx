@@ -19,6 +19,14 @@ const SiteNavigation = ({ locale }: { locale: SiteLocale }) => {
   const [panel, setPanel] = useState<PanelKey>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileGroup, setMobileGroup] = useState<MobileGroup>(null);
+  const [utilityOffset, setUtilityOffset] = useState(0);
+
+  useEffect(() => {
+    const updateOffset = () => setUtilityOffset(Math.min(44, Math.max(0, window.scrollY)));
+    updateOffset();
+    window.addEventListener("scroll", updateOffset, { passive: true });
+    return () => window.removeEventListener("scroll", updateOffset);
+  }, []);
 
   useEffect(() => {
     if (!mobileOpen) return;
@@ -91,9 +99,9 @@ const SiteNavigation = ({ locale }: { locale: SiteLocale }) => {
   return (
     <>
       <div className="h-11" aria-hidden="true" />
-      <AnimatePresence initial={false}>{panel && <motion.div aria-hidden="true" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }} onClick={() => setPanel(null)} className="fixed inset-x-[5px] bottom-[5px] top-[104px] z-[115] hidden bg-black/[0.10] backdrop-blur-[8px] lg:block sm:inset-x-[7px] sm:bottom-[7px]" />}</AnimatePresence>
+      <AnimatePresence initial={false}>{panel && <motion.div aria-hidden="true" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }} onClick={() => setPanel(null)} style={{ top: 104 - utilityOffset }} className="fixed inset-x-[5px] bottom-[5px] top-[104px] z-[115] hidden bg-black/[0.10] backdrop-blur-[8px] lg:block sm:inset-x-[7px] sm:bottom-[7px]" />}</AnimatePresence>
 
-      <motion.nav initial={{ y: -10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }} onKeyDown={(event) => { if (event.key === "Escape") { const trigger = event.currentTarget.querySelector<HTMLButtonElement>('[aria-expanded="true"]'); closeAll(); trigger?.focus(); } }} onPointerLeave={(event) => { if (event.pointerType === "mouse") setPanel(null); }} onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setPanel(null); }} className="fixed left-0 right-0 top-0 z-[120] overflow-hidden bg-background text-foreground sm:left-[7px] sm:right-[7px]" style={{ fontFamily: ko ? '"Noto Sans KR", sans-serif' : '"Inter", Arial, sans-serif' }}>
+      <motion.nav initial={{ y: -10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }} onKeyDown={(event) => { if (event.key === "Escape") { const trigger = event.currentTarget.querySelector<HTMLButtonElement>('[aria-expanded="true"]'); closeAll(); trigger?.focus(); } }} onPointerLeave={(event) => { if (event.pointerType === "mouse") setPanel(null); }} onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setPanel(null); }} className="fixed left-0 right-0 top-0 z-[120] overflow-hidden bg-background text-foreground sm:left-[7px] sm:right-[7px]" style={{ top: -utilityOffset, fontFamily: ko ? '"Noto Sans KR", sans-serif' : '"Inter", Arial, sans-serif' }}>
         <UtilityBar locale={locale} />
         <div className="site-shell h-[60px]">
           <div className="hidden h-full grid-cols-[minmax(180px,0.84fr)_minmax(500px,2.12fr)_minmax(190px,1.04fr)] items-center lg:grid">
@@ -112,7 +120,7 @@ const SiteNavigation = ({ locale }: { locale: SiteLocale }) => {
 
         <AnimatePresence mode="wait" initial={false}>{panel && <motion.div id="desktop-navigation-panel" key={panel} initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ height: { duration: 0.38, ease: [0.22, 1, 0.36, 1] }, opacity: { duration: 0.18 } }} className="hidden overflow-hidden border-t border-foreground/[0.08] bg-background text-foreground lg:block">{renderPanel()}</motion.div>}</AnimatePresence>
 
-        <AnimatePresence initial={false}>{mobileOpen && <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "calc(100svh - 104px)", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }} className="overflow-hidden border-t border-foreground/[0.08] bg-background text-foreground lg:hidden"><div className="site-shell flex h-full flex-col overflow-y-auto pb-6 pt-3">
+        <AnimatePresence initial={false}>{mobileOpen && <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: `calc(100svh - ${104 - utilityOffset}px)`, opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }} className="overflow-hidden border-t border-foreground/[0.08] bg-background text-foreground lg:hidden"><div className="site-shell flex h-full flex-col overflow-y-auto pb-6 pt-3">
           <div>
             <button type="button" aria-expanded={mobileGroup === "practice"} aria-controls="mobile-practice-links" onClick={() => setMobileGroup((current) => current === "practice" ? null : "practice")} className="flex w-full items-center justify-between border-b border-foreground/10 py-4 text-left"><span className="text-[1.05rem] font-medium tracking-[-0.025em]">{labels.practice}</span><ChevronDown className={`h-4 w-4 stroke-[1.35] transition-transform ${mobileGroup === "practice" ? "rotate-180" : ""}`} /></button>
             <AnimatePresence initial={false}>{mobileGroup === "practice" && <motion.div id="mobile-practice-links" initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden border-b border-foreground/10"><div className="grid grid-cols-2 gap-x-5 gap-y-3 py-5 text-[14px] text-foreground/80">{practiceAreas.map((practice) => <a key={practice.slug} href={href(`/practice-areas/${practice.slug}`)} aria-current={isCurrent(href("/practice-areas/" + practice.slug)) ? "page" : undefined} onClick={closeAll} className="flex min-h-11 items-center leading-5">{ko ? practice.koTitle : practice.title}</a>)}</div></motion.div>}</AnimatePresence>
