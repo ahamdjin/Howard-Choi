@@ -161,7 +161,7 @@
   .home-page .mobile-practice-panels { margin-inline: -20px; gap: 0; }
   .home-page .mobile-practice-panels article > div { border-radius: 0; }
   .home-page > .relative > .sticky { position: relative; }
-  .home-page nav + .relative > .sticky { padding-bottom: 0; }
+  .home-page nav + .relative > .sticky { padding-bottom: 5px; }
   .home-page nav + .relative > .sticky > section { border-radius: 0; }
   .editorial-reading-section { padding-block: 40px; }
 }
@@ -270,6 +270,7 @@ html[lang="ko"] .site-typography :where(main, article, section) p {
    the sides and beneath the first viewport. Applies to both EN and KO homepages. */
 nav + .relative > .sticky.top-0.h-\[100svh\] {
   box-sizing: border-box;
+  height: calc(100svh - 44px);
   padding-top: 60px;
   padding-bottom: 7px;
   background: hsl(var(--background));
