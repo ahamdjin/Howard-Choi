@@ -10,10 +10,10 @@ import { brand, practiceAreas, type SiteLocale } from "@/data/injurySite";
 
 const ko = (locale: SiteLocale) => locale === "ko";
 const prefix = (locale: SiteLocale) => (ko(locale) ? "/ko" : "");
-const serif = (locale: SiteLocale) => ko(locale) ? { fontFamily: '\"Noto Serif KR\", serif' } : undefined;
+const serif = (locale: SiteLocale) => ko(locale) ? { fontFamily: '"Noto Serif KR", serif' } : undefined;
 
 const Frame = ({ locale, children }: { locale: SiteLocale; children: React.ReactNode }) => (
-  <div className="min-h-screen overflow-x-clip bg-[#F9F8F6] text-[#1E1C1A]" style={ko(locale) ? { fontFamily: '\"Noto Sans KR\", sans-serif' } : undefined}>
+  <div className="min-h-screen overflow-x-clip bg-[#F9F8F6] text-[#1E1C1A]" style={ko(locale) ? { fontFamily: '"Noto Sans KR", sans-serif' } : undefined}>
     {ko(locale) ? <KoreanNavigation /> : <Navigation />}
     {children}
     {ko(locale) ? <KoreanFooter /> : <Footer />}
@@ -83,7 +83,7 @@ const ProfileLinks = ({ locale }: { locale: SiteLocale }) => (
 
 export const AttorneyPage = ({ locale }: { locale: SiteLocale }) => (
   <Frame locale={locale}>
-    <main>
+    <main className="attorney-page">
       <section className="bg-[#211A16] pt-[60px] text-[#F3EEE5]">
         <div className="grid min-h-[calc(100svh-60px)] lg:grid-cols-[1.1fr_0.9fr]">
           <AttorneyPortrait className="order-2 h-[360px] lg:order-none lg:h-auto lg:min-h-[calc(100svh-60px)]" />
@@ -94,9 +94,10 @@ export const AttorneyPage = ({ locale }: { locale: SiteLocale }) => (
               <h1 style={serif(locale)} className={`max-w-[680px] ${ko(locale) ? "text-[clamp(2.8rem,5vw,5.7rem)] font-medium leading-[1.12] tracking-[-0.05em]" : "editorial-serif text-[clamp(4rem,7.2vw,8.6rem)] leading-[0.82] tracking-[-0.055em]"}`}>
                 {ko(locale) ? <>개인상해<br />변호사</> : <>Our<br />Attorneys</>}
               </h1>
-              <p className="mt-7 max-w-[500px] text-[13px] leading-7 text-white/58">{ko(locale) ? "사고·상해 사건에서 의뢰인이 상황을 이해하고 다음 단계를 명확히 볼 수 있도록 돕는 법률팀입니다." : "Personal injury attorneys focused on accident claims, direct communication, careful evidence development, and a clear path from the first consultation through resolution."}</p>
+              <p className="mt-7 max-w-[500px] text-base leading-7 text-white/80">{ko(locale) ? "부에나파크의 Howard Choi 변호사를 만나보세요. 사고와 관련된 질문을 상담할 수 있습니다." : "Meet Howard Choi, a personal injury attorney in Buena Park. Get answers to your questions about an accident claim."}</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a href={`${prefix(locale)}/contact`} className="rounded-full bg-[#F3EEE5] px-6 py-3 text-[14px] font-semibold text-[#1E1C1A]">{ko(locale) ? "상담 예약" : "Schedule a consultation"}</a>
+                <a href="#profile" className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/30 px-6 py-3 text-sm text-white">{ko(locale) ? "프로필 보기" : "View profile"}<ArrowRight className="h-4 w-4" /></a>
                 <a href={brand.phoneHref} className="rounded-full border border-white/20 px-6 py-3 text-[14px] text-white/90">{brand.phoneDisplay}</a>
               </div>
               <ProfileLinks locale={locale} />
@@ -108,11 +109,11 @@ export const AttorneyPage = ({ locale }: { locale: SiteLocale }) => (
 
       <section className="bg-[#F3EEE5]">
         <div className="site-shell py-16 md:py-20">
-          <SectionHeading locale={locale} eyebrow={ko(locale) ? "의뢰인 경험" : "What clients can expect"} title={ko(locale) ? "신뢰는 큰 약속보다 명확한 과정에서 시작됩니다." : "Trust is built by making the legal process understandable."} body={ko(locale) ? "상해 사건에서는 결과뿐 아니라 현재 단계, 필요한 기록, 보험 문제와 다음 결정이 무엇인지 이해하는 것이 중요합니다." : "An injury claim can involve treatment, insurance, fault, work loss, future care, and deadlines at the same time. The legal team should be able to explain what matters now, what is still being investigated, and what decision comes next."} />
+          <SectionHeading locale={locale} eyebrow={ko(locale) ? "의뢰인 경험" : "What clients can expect"} title={ko(locale) ? "신뢰는 큰 약속보다 명확한 과정에서 시작됩니다." : "What can we help you with?"} body={ko(locale) ? "상해 사건에서는 결과뿐 아니라 현재 단계, 필요한 기록, 보험 문제와 다음 결정이 무엇인지 이해하는 것이 중요합니다." : "Discuss your accident, your records, and the questions you need answered."} />
           <div className="mt-12 grid gap-0 border-y border-[#1E1C1A]/12 lg:grid-cols-[1.18fr_0.82fr]">
             <div className="py-8 lg:border-r lg:border-[#1E1C1A]/12 lg:pr-10">
               <Quote className="h-5 w-5 stroke-[1.2] text-[#381907]" />
-              <p style={serif(locale)} className="mt-8 max-w-[720px] text-[clamp(1.65rem,2.8vw,3rem)] leading-[1.15] tracking-[-0.025em]">{ko(locale) ? "좋은 법률 서비스는 의뢰인이 자신의 사건에서 무엇이 일어나고 있는지 이해할 수 있게 해야 합니다." : "Good representation should make the client more informed about the case—not more dependent on legal jargon."}</p>
+              <p style={serif(locale)} className="mt-8 max-w-[720px] text-[clamp(1.65rem,2.8vw,3rem)] leading-[1.15] tracking-[-0.025em]">{ko(locale) ? "좋은 법률 서비스는 의뢰인이 자신의 사건에서 무엇이 일어나고 있는지 이해할 수 있게 해야 합니다." : "Know what happens next."}</p>
               <div className="mt-8 text-[9px] uppercase tracking-[0.14em] text-[#1E1C1A]/38">{ko(locale) ? "업무 원칙" : "How the team works"}</div>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-1">
@@ -128,9 +129,9 @@ export const AttorneyPage = ({ locale }: { locale: SiteLocale }) => (
         </div>
       </section>
 
-      <section className="bg-[#F9F8F6]">
+      <section id="profile" className="scroll-mt-24 bg-[#F9F8F6]">
         <div className="site-shell py-20 md:py-28">
-          <SectionHeading locale={locale} eyebrow={ko(locale) ? "변호사 프로필" : "Attorney profile"} title={ko(locale) ? "Howard Choi 변호사" : "Howard Choi"} body={ko(locale) ? "공개된 캘리포니아 변호사 등록 정보를 바탕으로 확인할 수 있는 현재 프로필입니다." : "A verified California attorney profile gives prospective clients a clear way to confirm who is connected to the firm and the professional license behind the representation."} />
+          <SectionHeading locale={locale} eyebrow={ko(locale) ? "변호사 프로필" : "Attorney profile"} title={ko(locale) ? "Howard Choi 변호사" : "Howard Choi"} body={ko(locale) ? "공개된 캘리포니아 변호사 등록 정보를 바탕으로 확인할 수 있는 현재 프로필입니다." : "Personal injury attorney based in Buena Park, California."} />
           <div className="mt-14 grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
             <aside className="lg:sticky lg:top-24 lg:self-start">
               <div className="border-t border-[#1E1C1A]/12">
@@ -144,10 +145,10 @@ export const AttorneyPage = ({ locale }: { locale: SiteLocale }) => (
               <a href="https://apps.calbar.ca.gov/attorney/Licensee/Detail/284364" target="_blank" rel="noreferrer" className="group mt-6 flex items-center justify-between border-b border-[#1E1C1A]/12 pb-4 text-[11px]"><span>{ko(locale) ? "캘리포니아 주 변호사 등록 확인" : "Verify with the State Bar of California"}</span><ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" /></a>
             </aside>
             <div>
-              <p style={serif(locale)} className="max-w-[820px] text-[clamp(1.7rem,3vw,3.25rem)] leading-[1.12] tracking-[-0.026em]">{ko(locale) ? "상해 사건은 사고 사실만이 아니라 치료, 보험, 업무, 가족과 일상생활의 변화까지 함께 봐야 합니다." : "An injury case is rarely only about the collision. Medical care, insurance, work, family responsibilities, and the way daily life changes all become part of the record."}</p>
+              <p style={serif(locale)} className="max-w-[820px] text-[clamp(1.7rem,3vw,3.25rem)] leading-[1.12] tracking-[-0.026em]">{ko(locale) ? "상해 사건은 사고 사실만이 아니라 치료, 보험, 업무, 가족과 일상생활의 변화까지 함께 봐야 합니다." : "An accident affects more than your vehicle."}</p>
               <div className="mt-10 grid gap-8 text-[13px] leading-7 text-[#1E1C1A]/58 md:grid-cols-2">
-                <p>{ko(locale) ? "법률팀은 사고 경위와 현재 치료 상황부터 시작해 책임, 보험, 증거와 손실을 단계별로 정리합니다." : "The legal team starts with how the incident happened and where treatment stands now, then develops responsibility, insurance, evidence, financial loss, future care, and the practical effect of the injury as the record becomes clearer."}</p>
-                <p>{ko(locale) ? "사건 진행 중에는 어떤 기록이 필요한지, 무엇이 아직 확인되지 않았는지, 다음 단계가 무엇인지 의뢰인이 이해할 수 있어야 합니다." : "As the case develops, clients should know what records are still needed, which questions remain disputed, how the insurer is responding, and what options are available before the next major decision is made."}</p>
+                <p>{ko(locale) ? "법률팀은 사고 경위와 현재 치료 상황부터 시작해 책임, 보험, 증거와 손실을 단계별로 정리합니다." : "We review what happened, your treatment, available insurance, and how the injury has affected your work and daily life."}</p>
+                <p>{ko(locale) ? "사건 진행 중에는 어떤 기록이 필요한지, 무엇이 아직 확인되지 않았는지, 다음 단계가 무엇인지 의뢰인이 이해할 수 있어야 합니다." : "Bring your questions to the consultation. Ask what records are needed and what options may be available."}</p>
               </div>
               <div className="mt-12 grid border-t border-[#1E1C1A]/12 sm:grid-cols-3">
                 {[
@@ -163,7 +164,7 @@ export const AttorneyPage = ({ locale }: { locale: SiteLocale }) => (
 
       <section className="bg-[#F3EEE5]">
         <div className="site-shell py-20 md:py-24">
-          <SectionHeading locale={locale} eyebrow={ko(locale) ? "업무 분야" : "Practice focus"} title={ko(locale) ? "사고 유형에 맞는 안내를 확인하세요." : "Explore the injury matters the attorneys handle."} body={ko(locale) ? "각 업무 분야 페이지에서 사고 유형별 증거, 보험, 손실과 다음 단계를 확인할 수 있습니다." : "Each practice guide explains the evidence, insurance issues, damages, and next steps that are specific to that kind of accident or injury."} />
+          <SectionHeading locale={locale} eyebrow={ko(locale) ? "업무 분야" : "Practice focus"} title={ko(locale) ? "사고 유형에 맞는 안내를 확인하세요." : "Find help for your type of accident."} body={ko(locale) ? "각 업무 분야 페이지에서 사고 유형별 증거, 보험, 손실과 다음 단계를 확인할 수 있습니다." : "Each practice guide explains the evidence, insurance issues, damages, and next steps that are specific to that kind of accident or injury."} />
           <div className="mt-12"><PracticeLinks locale={locale} /></div>
         </div>
       </section>

@@ -2,6 +2,123 @@
    Desktop: sticky context rail + readable main column with active scrollspy.
    Mobile: compact horizontal contents navigation above the article. */
 
+/* Detail guides share a centered reading measure; other inner pages keep their layout. */
+.detail-guide, .attorney-page {
+  font-family: "Inter", "Noto Sans KR", Arial, sans-serif;
+}
+
+.detail-guide h2, .detail-guide h3,
+.attorney-page h2, .attorney-page h3 {
+  font-family: "Inter", "Noto Sans KR", Arial, sans-serif !important;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+}
+
+.detail-guide > section:first-child > .site-shell > .grid {
+  display: block;
+  max-width: 760px;
+}
+
+.detail-guide > section:first-child h1 {
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
+  line-height: 1;
+}
+
+.detail-guide > section:first-child img {
+  object-position: 50% 35%;
+  opacity: 0.8;
+}
+
+@media (min-width: 1024px) {
+  .detail-guide > section:first-child img {
+    left: auto;
+    width: 50%;
+    opacity: 1;
+  }
+  .detail-guide > section:first-child > .site-shell > .grid {
+    max-width: 620px;
+  }
+}
+
+.detail-guide > section:first-child .site-shell {
+  margin-left: max(20px, calc((100vw - 1120px) / 2));
+  width: calc(100% - 40px);
+}
+
+.inner-site-page .detail-guide .editorial-reading-section__intro {
+  font-size: 16px !important;
+  color: #57514b;
+}
+
+.inner-site-page .detail-guide .editorial-callout {
+  border: 0;
+  border-left: 3px solid #987652;
+}
+
+.inner-site-page .detail-guide .editorial-callout p {
+  font-family: "Inter", "Noto Sans KR", Arial, sans-serif;
+  font-size: 18px !important;
+  line-height: 1.65 !important;
+}
+
+.inner-site-page .detail-guide .editorial-reading-section__body {
+  margin-top: 1.75rem;
+}
+
+.inner-site-page .detail-guide .editorial-reading-section + .editorial-reading-section {
+  margin-top: 1rem;
+}
+
+.detail-guide summary {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.6;
+  padding-block: 1.25rem;
+}
+
+.detail-guide summary::marker { color: #987652; }
+
+.inner-site-page .detail-guide .editorial-reading-grid {
+  width: calc(100% - 40px);
+  max-width: 1120px;
+  margin-inline: auto;
+}
+
+.inner-site-page .detail-guide .editorial-reading-section {
+  min-height: 0;
+}
+
+.inner-site-page .detail-guide .editorial-reading-rail__link {
+  opacity: 1;
+  color: #57514b;
+}
+
+.inner-site-page .detail-guide .editorial-reading-section__title {
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.12;
+}
+
+.inner-site-page .detail-guide .editorial-reading-section__body p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+@media (min-width: 1024px) {
+  .inner-site-page .detail-guide .editorial-reading-grid {
+    grid-template-columns: minmax(0, 760px) minmax(200px, 240px);
+    gap: clamp(40px, 5vw, 80px);
+  }
+  .inner-site-page .detail-guide .editorial-reading-content {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .inner-site-page .detail-guide .editorial-reading-rail {
+    grid-column: 2;
+    grid-row: 1;
+  }
+}
+
 .inner-site-page {
   scroll-behavior: smooth;
 }

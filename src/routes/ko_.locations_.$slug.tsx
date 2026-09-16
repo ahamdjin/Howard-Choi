@@ -3,7 +3,7 @@ import { LocationDetailPage } from "@/pages/EditorialLocationPages";
 import { getServiceLocation } from "@/data/injurySite";
 import { breadcrumbJsonLd, buildSeo } from "@/lib/seo";
 
-export const Route = createFileRoute("/ko/locations/$slug")({
+export const Route = createFileRoute("/ko_/locations_/$slug")({
   loader: ({ params }) => {
     const location = getServiceLocation(params.slug);
     if (!location) throw notFound();

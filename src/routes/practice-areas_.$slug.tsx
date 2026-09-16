@@ -14,7 +14,7 @@ const practiceSearchNames: Record<string, string> = {
   "serious-injuries": "Serious Injury",
 };
 
-export const Route = createFileRoute("/practice-areas/$slug")({
+export const Route = createFileRoute("/practice-areas_/$slug")({
   loader: ({ params }) => {
     const practice = getPracticeArea(params.slug);
     if (!practice) throw notFound();

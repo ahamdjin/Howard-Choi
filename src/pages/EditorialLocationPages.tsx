@@ -2,6 +2,8 @@ import { ArrowRight, MapPin, Route, ShieldCheck } from "lucide-react";
 import { useParams } from "@tanstack/react-router";
 import heroBoardroom from "@/assets/law-firm/hero-city-boardroom.webp";
 import heroJustice from "@/assets/law-firm/hero-justice-library.webp";
+import ClaimJourney from "@/components/ClaimJourney";
+import { EvidenceVisuals, GuideAttorney } from "@/components/ClaimVisuals";
 import { getServiceLocation, serviceLocations, type SiteLocale } from "@/data/injurySite";
 import {
   ConsultationCta,
@@ -115,7 +117,7 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
 
   return (
     <EditorialFrame locale={locale}>
-      <main>
+      <main className="detail-guide">
         <EditorialHero
           locale={locale}
           eyebrow={isKo(locale) ? "서비스 지역" : `${location.county} · Service area`}
@@ -123,6 +125,8 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
           description={isBuenaPark && !isKo(locale) ? "A practical local guide to Buena Park collision data, accident records, evidence preservation, California deadlines, and the injury matters handled from the firm's Buena Park office." : description}
           image={heroJustice}
         />
+        <ClaimJourney locale={locale} subject={name} guideId="overview" />
+        <GuideAttorney locale={locale} />
         <ReadingLayout
           locale={locale}
           label={`${name} · ${isKo(locale) ? "지역 안내" : "Local injury guide"}`}
@@ -201,7 +205,7 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
             kicker={isKo(locale) ? "05 · 증거" : "05 · Evidence"}
             title={isKo(locale) ? "지역 기록과 사고 기록을 함께 보관하세요." : `Useful records after an accident in ${name}.`}
             intro={isKo(locale) ? "현장 사진, 영상, 신고 또는 사고 보고서, 목격자, 치료 기록과 보험사 연락 내용을 가능한 한 함께 정리해 두는 것이 좋습니다." : "Preserve scene photos and video, the exact location, responding-agency or incident-report information, witness details, vehicle or property information, medical records, bills, missed-work documentation, and insurance communications. If nearby cameras may have recorded the event, identifying them early can matter."}
-          />
+          ><EvidenceVisuals locale={locale} /></ReadingSectionBlock>
 
           <ReadingSectionBlock
             id="deadlines"

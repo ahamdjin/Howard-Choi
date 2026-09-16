@@ -3,7 +3,7 @@ import { PracticeAreaDetailPage } from "@/pages/EditorialInnerPages";
 import { getPracticeArea } from "@/data/injurySite";
 import { breadcrumbJsonLd, buildSeo } from "@/lib/seo";
 
-export const Route = createFileRoute("/ko/practice-areas/$slug")({
+export const Route = createFileRoute("/ko_/practice-areas_/$slug")({
   loader: ({ params }) => {
     const practice = getPracticeArea(params.slug);
     if (!practice) throw notFound();
