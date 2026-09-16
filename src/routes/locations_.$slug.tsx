@@ -3,7 +3,7 @@ import { LocationDetailPage } from "@/pages/EditorialLocationPages";
 import { getServiceLocation } from "@/data/injurySite";
 import { breadcrumbJsonLd, buildSeo } from "@/lib/seo";
 
-export const Route = createFileRoute("/locations/$slug")({
+export const Route = createFileRoute("/locations_/$slug")({
   loader: ({ params }) => {
     const location = getServiceLocation(params.slug);
     if (!location) throw notFound();
@@ -11,9 +11,14 @@ export const Route = createFileRoute("/locations/$slug")({
   },
   head: ({ loaderData }) => {
     const path = `/locations/${loaderData.slug}`;
+    const isBuenaPark = loaderData.slug === "buena-park";
     const seo = buildSeo({
-      title: `${loaderData.name} Injury Lawyer | Buena Park Injury Lawyer`,
-      description: loaderData.description,
+      title: isBuenaPark
+        ? "Buena Park Accident & Injury Guide | Local Records, Data & Deadlines"
+        : `${loaderData.name} Personal Injury Lawyers | Accident & Injury Guide`,
+      description: isBuenaPark
+        ? `A practical Buena Park accident and injury guide with ${loaderData.ots.year} California OTS collision data, local records resources, evidence to preserve, California deadlines, and injury-law guidance.`
+        : `${loaderData.description} See local ${loaderData.ots.year} California OTS collision data, official records resources, evidence to preserve, California deadlines, and practical next steps after an accident.`,
       path,
       alternatePath: `/ko/locations/${loaderData.slug}`,
       locale: "en-US",

@@ -2,10 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { AboutFirmPage } from "@/pages/EditorialInnerPages";
 import { buildSeo } from "@/lib/seo";
 
-export const Route = createFileRoute("/ko/about")({
+export const Route = createFileRoute("/ko_/about")({
   head: () => buildSeo({
-    title: "로펌 소개 | Buena Park Injury Lawyer",
-    description: "부에나파크와 인근 지역의 사고·개인 상해 사건에 집중하는 Buena Park Injury Lawyer의 접근 방식과 지역 중심 구조를 확인하세요.",
+    title: "부에나파크 개인상해 로펌 소개 | 사고·상해 사건",
+    description: "부에나파크를 중심으로 사고·개인상해 사건을 다루는 로펌의 증거 보존, 보험 분석, 치료·경제적 손실 기록, 의뢰인 소통과 지역 중심 접근 방식을 확인하세요.",
     path: "/ko/about",
     alternatePath: "/about",
     locale: "ko-US",

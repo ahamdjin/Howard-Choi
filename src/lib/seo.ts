@@ -1,5 +1,6 @@
 export const SITE_URL = (import.meta.env.VITE_SITE_URL || "https://www.buenaparkinjurylawyer.com").replace(/\/$/, "");
 export const SITE_NAME = "Buena Park Injury Lawyer";
+export const ATTORNEY_NAME = "Howard Choi";
 
 export const absoluteUrl = (value: string) => {
   if (/^https?:\/\//i.test(value)) return value;
@@ -34,6 +35,7 @@ export const buildSeo = ({ title, description, path, alternatePath, locale = "en
     { property: "og:type", content: type },
     { property: "og:url", content: canonical },
     { property: "og:locale", content: locale === "ko-US" ? "ko_KR" : "en_US" },
+    { property: "og:locale:alternate", content: locale === "ko-US" ? "en_US" : "ko_KR" },
     { name: "twitter:card", content: image ? "summary_large_image" : "summary" },
     { name: "twitter:title", content: title },
     { name: "twitter:description", content: description },
@@ -53,19 +55,40 @@ export const buildSeo = ({ title, description, path, alternatePath, locale = "en
       { rel: "alternate", hrefLang: "x-default", href: absoluteUrl(englishPath) },
     );
   }
+
   return { meta, links };
 };
 
 export const noIndexSeo = (title: string) => ({
-  meta: [{ title }, { name: "robots", content: "noindex, nofollow" }, { name: "googlebot", content: "noindex, nofollow" }],
+  meta: [
+    { title },
+    { name: "robots", content: "noindex, nofollow" },
+    { name: "googlebot", content: "noindex, nofollow" },
+  ],
 });
+
+export const attorneyJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": `${SITE_URL}/#howard-choi`,
+  name: ATTORNEY_NAME,
+  alternateName: "Howard Jong-yol Choi",
+  url: absoluteUrl("/attorney"),
+  jobTitle: "Attorney",
+  identifier: {
+    "@type": "PropertyValue",
+    propertyID: "State Bar of California",
+    value: "284364",
+  },
+  sameAs: ["https://apps.calbar.ca.gov/attorney/Licensee/Detail/284364"],
+  worksFor: { "@id": `${SITE_URL}/#legal-service` },
+};
 
 export const legalServiceJsonLd = {
   "@context": "https://schema.org",
   "@type": "LegalService",
   "@id": `${SITE_URL}/#legal-service`,
   name: SITE_NAME,
-  alternateName: "Howard Choi, Attorney",
   url: SITE_URL,
   telephone: "+1-714-690-0007",
   address: {
@@ -76,8 +99,9 @@ export const legalServiceJsonLd = {
     postalCode: "90621",
     addressCountry: "US",
   },
+  employee: [{ "@id": `${SITE_URL}/#howard-choi` }],
   areaServed: ["Buena Park", "Fullerton", "Anaheim", "Cerritos", "La Mirada", "La Habra"].map((name) => ({ "@type": "City", name })),
-  knowsAbout: ["Personal Injury", "Car Accidents", "Truck Accidents", "Motorcycle Accidents", "Pedestrian Accidents", "Wrongful Death", "Premises Liability"],
+  knowsAbout: ["Personal Injury", "Car Accidents", "Truck Accidents", "Motorcycle Accidents", "Pedestrian Accidents", "Rideshare Accidents", "Wrongful Death", "Premises Liability", "Serious Injuries"],
   knowsLanguage: ["English", "Korean"],
 };
 
@@ -86,7 +110,6 @@ export const webSiteJsonLd = {
   "@type": "WebSite",
   "@id": `${SITE_URL}/#website`,
   name: SITE_NAME,
-  alternateName: "Buena Park Injury Lawyer by Howard Choi",
   url: SITE_URL,
   inLanguage: ["en-US", "ko-US"],
   publisher: { "@id": `${SITE_URL}/#legal-service` },
@@ -95,7 +118,12 @@ export const webSiteJsonLd = {
 export const breadcrumbJsonLd = (items: Array<{ name: string; path: string }>) => ({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
-  itemListElement: items.map((item, index) => ({ "@type": "ListItem", position: index + 1, name: item.name, item: absoluteUrl(item.path) })),
+  itemListElement: items.map((item, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: item.name,
+    item: absoluteUrl(item.path),
+  })),
 });
 
 export const articleJsonLd = ({ title, description, path, image, publishedAt, locale }: { title: string; description: string; path: string; image: string; publishedAt: string; locale: "en-US" | "ko-US" }) => ({
@@ -109,6 +137,6 @@ export const articleJsonLd = ({ title, description, path, image, publishedAt, lo
   dateModified: publishedAt,
   inLanguage: locale,
   mainEntityOfPage: absoluteUrl(path),
-  author: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
+  author: { "@id": `${SITE_URL}/#legal-service` },
   publisher: { "@id": `${SITE_URL}/#legal-service` },
 });

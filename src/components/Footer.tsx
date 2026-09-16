@@ -12,7 +12,7 @@ const Footer = () => {
               <span className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-[2px]"><img src={brandLogo} alt="" width={28} height={28} loading="lazy" decoding="async" className="h-full w-full object-contain" /></span>
               <span className="text-[14px] font-medium tracking-[-0.02em]">{brand.name}</span>
             </div>
-            <p className="max-w-[270px] text-[13px] leading-6 text-muted-foreground">Accident and personal-injury counsel centered on Buena Park and nearby communities.</p>
+            <p className="max-w-[270px] text-[13px] leading-6 text-muted-foreground">Personal injury counsel for accident and serious-injury claims in Buena Park and nearby Orange and Los Angeles County communities.</p>
             <a href={brand.phoneHref} className="mt-5 block text-[13px] font-medium hover:opacity-60">{brand.phoneDisplay}</a>
           </div>
 
@@ -34,8 +34,9 @@ const Footer = () => {
           <div>
             <div className="mb-5 text-[12px] text-muted-foreground">Firm</div>
             <div className="space-y-3 text-[13px]">
-              <Link to="/attorney" className="block hover:opacity-60">Howard Choi</Link>
+              <Link to="/attorney" className="block hover:opacity-60">Attorneys</Link>
               <Link to="/results" className="block hover:opacity-60">Results</Link>
+              <Link to="/case-value-calculator" className="block hover:opacity-60">Case Value Calculator</Link>
               <Link to="/blogs" className="block hover:opacity-60">Blogs</Link>
               <Link to="/about" className="block hover:opacity-60">About</Link>
               <Link to="/contact" className="block hover:opacity-60">Contact</Link>

@@ -9,6 +9,7 @@ export const Route = createFileRoute("/disclaimer")({
     path: "/disclaimer",
     alternatePath: "/ko/disclaimer",
     locale: "en-US",
+    noindex: true,
   }),
   component: () => <LegalPage type="disclaimer" locale="en" />,
 });

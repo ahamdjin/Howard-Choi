@@ -28,10 +28,10 @@ const Booking = () => {
         >
           <span className="mb-5 block text-[12px] text-white/52">Start the conversation</span>
           <h2 className="editorial-serif text-[clamp(3rem,4.8vw,5.15rem)] leading-[0.96] tracking-[-0.025em]">
-            Legal advice begins with the right conversation.
+            Tell us what happened. We’ll help make the next step clearer.
           </h2>
           <p className="mx-auto mt-6 max-w-[570px] text-[16px] leading-7 text-white/60">
-            Choose a live consultation time online, or call the office directly.
+            Share the accident date and location, your current treatment, insurance information, and the questions you need answered. You do not need every document before starting a consultation.
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a

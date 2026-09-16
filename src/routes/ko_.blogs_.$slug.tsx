@@ -3,7 +3,7 @@ import KoBlogDetail from "@/pages/KoBlogDetail";
 import { getKoBlogBySlug } from "@/data/koBlogs";
 import { articleJsonLd, breadcrumbJsonLd, buildSeo } from "@/lib/seo";
 
-export const Route = createFileRoute("/ko/blogs/$slug")({
+export const Route = createFileRoute("/ko_/blogs_/$slug")({
   loader: ({ params }) => { const post = getKoBlogBySlug(params.slug); if (!post) throw notFound(); return post; },
   head: ({ loaderData }) => {
     const path = `/ko/blogs/${loaderData.slug}`;
