@@ -108,8 +108,9 @@ const HeroKo = () => {
 const ExperienceKo = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.18 });
+  const reducedMotion = useReducedMotion();
   const [active, setActive] = useState(0);
-  useEffect(() => { if (!isInView) return; const timer = window.setTimeout(() => setActive((current) => (current + 1) % processSteps.length), AUTO_ADVANCE_MS); return () => window.clearTimeout(timer); }, [active, isInView]);
+  useEffect(() => { if (!isInView || reducedMotion) return; const timer = window.setTimeout(() => setActive((current) => (current + 1) % processSteps.length), AUTO_ADVANCE_MS); return () => window.clearTimeout(timer); }, [active, isInView, reducedMotion]);
 
   return (
     <section id="approach" ref={ref} className="flex min-h-[100svh] items-center bg-background py-[clamp(3rem,6vh,5rem)]">

@@ -375,32 +375,76 @@
   color: rgba(30, 28, 26, 0.5);
 }
 
-/* The attorney page uses the full viewport as a single hero canvas on desktop.
-   Mobile keeps the same full-width treatment while allowing content to grow safely. */
+/* Preserve the split hero; count the 44px utility bar in the first viewport.
+   Short screens and stacked mobile content may grow rather than clip. */
 .attorney-page main > section:first-child {
   width: 100vw;
   margin-left: calc(50% - 50vw);
-  min-height: 100svh;
+  min-height: calc(100svh - 44px);
   box-sizing: border-box;
 }
 
 @media (min-width: 1024px) {
-  .attorney-page main > section:first-child {
-    height: 100svh;
-    min-height: 100svh;
-    overflow: hidden;
-  }
-
   .attorney-page main > section:first-child > .grid {
-    height: calc(100svh - 60px);
-    min-height: 0 !important;
+    min-height: calc(100svh - 104px);
   }
 
   .attorney-page main > section:first-child > .grid > * {
     min-height: 0 !important;
-    height: 100%;
+    height: auto;
+  }
+
+  .attorney-hero > .grid > :first-child img {
+    position: absolute;
+    inset: 0;
+  }
+
+  .attorney-hero > .grid > :last-child {
+    padding-block: clamp(1.5rem, 3vh, 3rem);
+    gap: 1.5rem;
   }
 }
+
+.attorney-content-shell {
+  width: calc(100% - 40px);
+  max-width: 1120px;
+  margin-inline: auto;
+}
+
+@media (min-width: 1024px) and (max-height: 800px) {
+  .attorney-hero > .grid > :last-child {
+    padding-block: 16px;
+    gap: 16px;
+  }
+  .attorney-hero > .grid > :last-child > div > .mt-8 {
+    margin-top: 24px;
+  }
+}
+
+.attorney-content .attorney-label {
+  font-size: 12px !important;
+  font-weight: 600;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase;
+  color: #675f55;
+}
+
+.attorney-content .attorney-button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: #211a16;
+  color: #f3eee5;
+  font-size: 14px;
+  font-weight: 500;
+  transition: opacity 160ms ease;
+}
+
+.attorney-content .attorney-button:hover { opacity: 0.82; }
 
 @media (min-width: 640px) {
   .inner-site-page .editorial-link-grid {
