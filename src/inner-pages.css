@@ -2,6 +2,39 @@
    Desktop: sticky context rail + readable main column with active scrollspy.
    Mobile: compact horizontal contents navigation above the article. */
 
+/* The calculator is a focused task surface, not an editorial article. */
+#calculator {
+  font-family: "Inter", "Noto Sans KR", Arial, sans-serif;
+}
+
+#calculator h2, #calculator h3 {
+  font-family: "Inter", "Noto Sans KR", Arial, sans-serif;
+}
+
+#calculator h2 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem) !important;
+  line-height: 1.2;
+}
+
+#calculator .calculator-wizard p {
+  font-size: 14px !important;
+  line-height: 1.6;
+}
+
+#calculator #calculator-hint {
+  font-size: 16px !important;
+}
+
+#calculator :is(button, input, textarea):focus-visible {
+  outline: 2px solid #6E635A;
+  outline-offset: 4px;
+}
+
+#calculator input:not([type="radio"]):not([type="range"]),
+#calculator textarea {
+  font-size: 16px;
+}
+
 /* Detail guides share a centered reading measure; other inner pages keep their layout. */
 .detail-guide, .attorney-page {
   font-family: "Inter", "Noto Sans KR", Arial, sans-serif;
