@@ -31,14 +31,14 @@ const Booking = () => {
             Tell us what happened. We’ll help make the next step clearer.
           </h2>
           <p className="mx-auto mt-6 max-w-[570px] text-[16px] leading-7 text-white/60">
-            Share the accident date and location, your current treatment, insurance information, and the questions you need answered. You do not need every document before starting a consultation.
+            Share the accident date and location, your current treatment, insurance information, and the questions you need answered. Consultations are free, and representation is available on a contingency-fee basis—no attorney fee unless there is a recovery.
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
               href="/contact#calendar"
               className="liquid-cta inline-flex items-center gap-3 rounded-full px-6 py-3 text-[13px] font-medium"
             >
-              <span className="relative z-10">Schedule a consultation</span>
+              <span className="relative z-10">Schedule a Free Consultation</span>
               <ArrowRight className="relative z-10 h-4 w-4" />
             </a>
             <a href="tel:+17146900007" className="text-[13px] text-white/68 hover:text-white">

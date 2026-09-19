@@ -6,24 +6,24 @@ import officeImage from "@/assets/law-firm/hero-law-office.webp";
 
 const results = [
   {
-    title: "Pedestrian Injury",
-    amount: "$3.2M",
-    detail: "Serious orthopedic and neurological injuries",
-    location: "Los Angeles County",
+    title: "Largest Single-Client Recovery",
+    amount: "$1M",
+    detail: "Highest single-client recovery reported by the firm.",
+    location: "Firm result",
     image: courthouseImage,
   },
   {
-    title: "Auto Collision",
-    amount: "$1.75M",
-    detail: "Disputed-liability injury claim",
-    location: "Orange County",
+    title: "Total Client Recoveries",
+    amount: "$100M",
+    detail: "Total recovery reported by the firm across client matters.",
+    location: "Firmwide",
     image: boardroomImage,
   },
   {
-    title: "Premises Liability",
-    amount: "$875K",
-    detail: "Unsafe-property injury claim",
-    location: "Southern California",
+    title: "Combined Experience",
+    amount: "40 Years",
+    detail: "Combined legal experience across the firm.",
+    location: "Buena Park",
     image: officeImage,
   },
 ];
@@ -37,15 +37,15 @@ const SelectedResult = () => {
       <div className="site-shell flex min-h-[100svh] w-full flex-col py-8 sm:py-10 lg:py-12">
         <div className="grid gap-8 border-t border-white/10 pt-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:gap-16">
           <div>
-            <div className="text-[10px] text-white/42">Selected Results</div>
+            <div className="text-[10px] text-white/42">Firm Results & Experience</div>
             <h2 className="editorial-serif mt-4 text-[clamp(2.1rem,3vw,3.5rem)] leading-[1.02] tracking-[-0.03em]">
-              Case value starts with the facts.
+              Verified firm numbers, in context.
             </h2>
           </div>
 
           <div className="max-w-[470px] lg:justify-self-end">
             <p className="text-[13px] leading-[1.55] text-white/62 sm:text-[14px]">
-              Results can turn on liability, available insurance, the severity and duration of the injury, medical treatment, income loss, future needs, and the quality of the evidence. No two personal injury claims are valued the same way.
+              The firm reports $100M in total client recoveries, a $1M largest single-client recovery, 40 years of combined experience, and 11 years as a firm. Individual outcomes still depend on the facts of each case.
             </p>
             <a
               href="/results"
