@@ -1,29 +1,29 @@
 import { ArrowUpRight } from "lucide-react";
 
 const metrics = [
+  { value: "Howard Choi", label: "California attorney" },
   { value: "284364", label: "California Bar No." },
   { value: "EN / KO", label: "English & Korean" },
   { value: "Free", label: "Consultation" },
-  { value: "Contingency", label: "Fee representation" },
 ];
 
 const FirmSnapshot = () => (
   <section className="flex min-h-[100svh] w-full bg-[#f7f6f3] text-foreground">
     <div className="site-shell flex min-h-[100svh] w-full flex-col py-8 sm:py-10 lg:py-12">
       <div className="border-t border-foreground/12 pt-6">
-        <div className="text-[10px] font-medium tracking-[-0.01em] text-foreground/46">Why Clients Choose Us</div>
+        <div className="text-[10px] font-medium tracking-[-0.01em] text-foreground/46">What you can expect</div>
       </div>
 
       <div className="grid flex-1 content-center py-10 lg:grid-cols-[0.25fr_0.75fr] lg:py-8">
         <div className="hidden lg:block" />
         <div className="max-w-[1180px]">
           <h2 className="editorial-serif max-w-[1120px] text-[clamp(2rem,3vw,3.45rem)] leading-[1.08] tracking-[-0.028em] text-foreground">
-            Injury representation built around evidence, clear communication, and a strategy that reflects what the accident actually changed.
+            Clear answers. Careful preparation. A case built around what actually happened.
           </h2>
 
           <div className="mt-10 max-w-[470px] sm:mt-12">
             <p className="text-[13px] leading-[1.55] text-foreground/68 sm:text-[14px]">
-              A personal injury claim can involve medical treatment, insurance coverage, disputed fault, lost income, future care, and deadlines at the same time. Our role is to organize those pieces, protect the record, and keep the next decision understandable.
+              We focus on the details that matter—how the accident happened, what the injuries changed, and what needs to happen next.
             </p>
 
             <a
