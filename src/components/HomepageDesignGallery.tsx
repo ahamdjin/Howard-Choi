@@ -1,4 +1,3 @@
-import logo from "@/assets/law-firm/howard-choi-logo.png";
 import howardImage from "@/assets/law-firm/lead-counsel.avif";
 
 const HomepageDesignGallery = () => (
@@ -12,11 +11,6 @@ const HomepageDesignGallery = () => (
       <div className="absolute inset-0 bg-black/55" />
 
       <div className="relative z-10 flex w-full max-w-[1180px] flex-col items-center px-6 text-center">
-        <img
-          src={logo}
-          alt="Buena Park Injury Lawyer"
-          className="h-auto w-[150px] brightness-0 invert md:w-[190px]"
-        />
         <p className="mt-7 text-[9px] uppercase tracking-[0.22em] text-white/55">
           California personal injury attorney
         </p>
