@@ -1,51 +1,5 @@
 import { motion, useInView } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
 import { useRef } from "react";
 import leadCounselImage from "@/assets/law-firm/lead-counsel.avif";
-
-const DirectAccess = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
-
-  return (
-    <section ref={ref} className="flex min-h-[100svh] items-center bg-[#171717] py-16 text-white md:py-20 lg:py-0">
-      <div className="site-shell grid w-full gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
-        <motion.div initial={{ opacity: 0, y: 22 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.75 }} className="lg:py-10">
-          <span className="mb-5 block text-[10px] uppercase tracking-[0.2em] text-white/42">Meet the attorney</span>
-          <h2 className="editorial-serif text-[clamp(3rem,4.6vw,5rem)] leading-[0.91] text-white">
-            Howard Choi.<br /><span className="text-white/50">California personal injury attorney.</span>
-          </h2>
-          <p className="mt-6 max-w-[500px] text-[15px] leading-6 text-white/58">
-            Howard Choi represents people and families in personal injury matters from the firm&apos;s Buena Park office. The firm focuses on clear communication, careful evidence review, and helping clients understand the decisions that can shape an injury claim.
-          </p>
-
-          <div className="mt-10 grid max-w-[500px] grid-cols-2 border-t border-white/12 pt-7">
-            <div className="border-r border-white/12 pr-6">
-              <div className="editorial-serif text-[2.2rem] leading-none">284364</div>
-              <div className="mt-2 text-[10px] uppercase tracking-[0.16em] text-white/38">California Bar No.</div>
-            </div>
-            <div className="pl-6">
-              <div className="editorial-serif text-[2.2rem] leading-none">EN / KO</div>
-              <div className="mt-2 text-[10px] uppercase tracking-[0.16em] text-white/38">English & Korean</div>
-            </div>
-          </div>
-
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a href="/attorney" className="inline-flex min-h-11 items-center gap-2 bg-[#f3eee5] px-5 py-3 text-[11px] font-medium text-[#17130f]">
-              View Attorney Profile <ArrowUpRight className="h-3.5 w-3.5" />
-            </a>
-            <a href="https://apps.calbar.ca.gov/attorney/Licensee/Detail/284364" target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center gap-2 border border-white/20 px-5 py-3 text-[11px] font-medium text-white/82">
-              Verify State Bar <ArrowUpRight className="h-3.5 w-3.5" />
-            </a>
-          </div>
-        </motion.div>
-
-        <motion.div initial={{ opacity: 0, scale: 0.985 }} animate={isInView ? { opacity: 1, scale: 1 } : {}} transition={{ duration: 0.9, delay: 0.08 }} className="ml-auto w-full overflow-hidden rounded-[2px] lg:h-[72svh] lg:max-h-[760px] lg:min-h-[560px]">
-          <img src={leadCounselImage} alt="Howard Choi, California personal injury attorney" className="aspect-[4/5] h-full w-full object-cover object-center grayscale-[15%] lg:aspect-auto" />
-        </motion.div>
-      </div>
-    </section>
-  );
-};
-
+const DirectAccess=()=>{const ref=useRef(null);const isInView=useInView(ref,{once:true,amount:.2});return <section ref={ref} className="flex min-h-[100svh] items-center bg-[#171717] py-16 text-white md:py-20 lg:py-0"><div className="site-shell grid w-full gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16"><motion.div initial={{opacity:0,y:22}} animate={isInView?{opacity:1,y:0}:{}} transition={{duration:.75}} className="lg:py-10"><span className="mb-5 block text-[10px] uppercase tracking-[0.2em] text-white/42">The difference</span><h2 className="editorial-serif text-[clamp(3rem,4.6vw,5rem)] leading-[0.91] text-white">Direct access.<br/>Clear responsibility.</h2><p className="mt-6 max-w-[430px] text-[15px] leading-6 text-white/58">Your case stays connected to the attorneys and legal team responsible for moving it forward. Fewer unnecessary layers, clearer answers, and a better understanding of what is happening next.</p><div className="mt-14 grid max-w-[420px] grid-cols-2 gap-10 border-t border-white/12 pt-7"><div><div className="editorial-serif text-[2.7rem] leading-none">1:1</div><div className="mt-2 text-[10px] uppercase tracking-[0.18em] text-white/38">Direct case-team access</div></div><div><div className="editorial-serif text-[2.7rem] leading-none">08</div><div className="mt-2 text-[10px] uppercase tracking-[0.18em] text-white/38">Injury practice areas</div></div></div></motion.div><motion.div initial={{opacity:0,scale:.985}} animate={isInView?{opacity:1,scale:1}:{}} transition={{duration:.9,delay:.08}} className="ml-auto w-full overflow-hidden rounded-[2px] lg:h-[72svh] lg:max-h-[760px] lg:min-h-[560px]"><img src={leadCounselImage} alt="Personal injury attorney in the office" className="aspect-[4/5] h-full w-full object-cover object-center grayscale-[15%] lg:aspect-auto"/></motion.div></div></section>};
 export default DirectAccess;
