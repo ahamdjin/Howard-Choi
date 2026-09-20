@@ -55,7 +55,7 @@ export const AttorneyPage = ({ locale }: { locale: SiteLocale }) => (
               <h1 style={serif(locale)} className={`max-w-[680px] ${ko(locale) ? "text-[clamp(2.8rem,5vw,5.7rem)] font-medium leading-[1.12] tracking-[-0.05em]" : "editorial-serif text-[clamp(4rem,7.2vw,8.6rem)] leading-[0.82] tracking-[-0.055em]"}`}>
                 {ko(locale) ? <>개인상해<br />변호사</> : <>Howard<br />Choi</>}
               </h1>
-              <p className="mt-7 max-w-[500px] text-base leading-7 text-white/80">{ko(locale) ? "부에나파크의 Howard Choi 변호사를 만나보세요. 사고와 관련된 질문을 상담할 수 있습니다." : "Howard Choi is a California attorney, Bar No. 284364, based in Buena Park. Review his licensing information and the firm’s personal injury practice before starting a conversation."}</p>
+              <p className="mt-7 max-w-[500px] text-base leading-7 text-white/80">{ko(locale) ? "부에나파크의 Howard Choi 변호사를 만나보세요. 사고와 관련된 질문을 상담할 수 있습니다." : "Howard Choi is a California personal injury attorney based in Buena Park. Learn about his background, practice, and how he works with clients after an accident."}</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a href={`${prefix(locale)}/contact`} className="rounded-full bg-[#F3EEE5] px-6 py-3 text-[14px] font-semibold text-[#1E1C1A]">{ko(locale) ? "상담 예약" : "Schedule a consultation"}</a>
                 <a href="#profile" className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/30 px-6 py-3 text-sm text-white">{ko(locale) ? "프로필 보기" : "View profile"}<ArrowRight className="h-4 w-4" /></a>
