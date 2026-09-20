@@ -36,9 +36,11 @@ export default function AttorneyContent({ locale }: { locale: SiteLocale }) {
           <dl className="divide-y divide-[#211c17]/10">{[
             [ko ? "이름" : "Full name", "Howard Jong-yol Choi"],
             [ko ? "캘리포니아 변호사 번호" : "California Bar number", "284364"],
-            [ko ? "등록 연도" : "Admitted in California", "2012"],
+            [ko ? "캘리포니아 등록일" : "Admitted in California", "October 2, 2012"],
+            [ko ? "로스쿨" : "Law school", "William Howard Taft University"],
+            [ko ? "언어" : "Languages", ko ? "영어 · 한국어" : "English · Korean"],
           ].map(([label, value]) => <div key={label} className="py-4"><dt className="text-xs text-[#675f55]">{label}</dt><dd className="mt-1 text-base font-medium">{value}</dd></div>)}</dl>
-          <a href="https://apps.calbar.ca.gov/attorney/Licensee/Detail/284364" target="_blank" rel="noreferrer" className="mt-4 inline-flex min-h-11 items-center gap-3 text-sm font-medium underline underline-offset-4">{ko ? "주 변호사 협회 프로필 보기" : "View State Bar profile"}<ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0" /></a>
+          <a href="https://apps.calbar.ca.gov/attorney/Licensee/Detail/284364" target="_blank" rel="noreferrer" className="mt-4 inline-flex min-h-11 items-center gap-3 text-sm font-medium underline underline-offset-4">{ko ? "주 변호사 협회에서 확인" : "Verify on the State Bar of California"}<ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0" /></a>
         </div>
       </div>
     </section>
