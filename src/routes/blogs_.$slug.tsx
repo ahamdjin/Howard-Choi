@@ -1,7 +1,7 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import BlogDetail from "@/pages/BlogDetail";
 import { getBlogBySlug } from "@/data/blogs";
-import { articleJsonLd, breadcrumbJsonLd, buildSeo } from "@/lib/seo";
+import { articleJsonLd, breadcrumbJsonLd, buildSeo, reviewedWebPageJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/blogs_/$slug")({
   loader: ({ params }) => { const post = getBlogBySlug(params.slug); if (!post) throw notFound(); return post; },
@@ -14,6 +14,7 @@ export const Route = createFileRoute("/blogs_/$slug")({
       scripts: [
         { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ title: loaderData.title, description: loaderData.excerpt, path, image: loaderData.image, publishedAt: loaderData.publishedAt, locale: "en-US" })) },
         { type: "application/ld+json", children: JSON.stringify(breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "Blogs", path: "/blogs" }, { name: loaderData.title, path }])) },
+        ...(reviewedWebPageJsonLd({ path, name: loaderData.title }) ? [{ type: "application/ld+json", children: JSON.stringify(reviewedWebPageJsonLd({ path, name: loaderData.title })) }] : []),
       ],
     };
   },
