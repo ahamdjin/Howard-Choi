@@ -1,5 +1,6 @@
 import leadCounselImage from "@/assets/law-firm/lead-counsel.avif";
 import brandLogo from "@/assets/law-firm/howard-choi-logo.png";
+import { trustProfile } from "@/data/trustProfile";
 export const SITE_URL = (import.meta.env.VITE_SITE_URL || "https://www.buenaparkinjurylawyer.com").replace(/\/$/, "");
 export const SITE_NAME = "Buena Park Injury Lawyer";
 export const ATTORNEY_NAME = "Howard Choi";
@@ -144,7 +145,7 @@ export const articleJsonLd = ({ title, description, path, image, publishedAt, lo
   description,
   image: absoluteUrl(image),
   datePublished: publishedAt,
-  dateModified: publishedAt,
+  dateModified: trustProfile.editorialReview.enabled && trustProfile.editorialReview.lastReviewed ? trustProfile.editorialReview.lastReviewed : publishedAt,
   inLanguage: locale,
   mainEntityOfPage: absoluteUrl(path),
   author: {
@@ -164,4 +165,26 @@ export const attorneyProfilePageJsonLd = {
   name: "Howard Choi | California Attorney Profile",
   mainEntity: { "@id": `${SITE_URL}/#howard-choi` },
   isPartOf: { "@id": `${SITE_URL}/#website` },
+};
+
+
+export const reviewedWebPageJsonLd = ({ path, name }: { path: string; name: string }) => {
+  const review = trustProfile.editorialReview;
+  if (!review.enabled || !review.lastReviewed) return null;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${absoluteUrl(path)}#webpage`,
+    url: absoluteUrl(path),
+    name,
+    lastReviewed: review.lastReviewed,
+    reviewedBy: {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#howard-choi`,
+      name: review.reviewer,
+      url: absoluteUrl("/attorney"),
+    },
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+  };
 };
