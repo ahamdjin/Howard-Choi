@@ -7,6 +7,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { blogPosts, getBlogBySlug } from "@/data/blogs";
 import brandLogo from "@/assets/law-firm/howard-choi-logo.png";
+import ContentReviewLine from "@/components/ContentReviewLine";
 
 type ArticleSupport = {
   relatedHref: string;
@@ -142,6 +143,7 @@ const BlogDetail = () => {
               <div className="min-w-0">
                 <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.68 }}>
                   <div className="mb-5 flex items-center gap-3 text-[11px] text-foreground/42 lg:hidden"><span>{post.category}</span><span>·</span><span>{post.readingTime}</span></div>
+                  <ContentReviewLine className="mb-6 border-y border-foreground/10 py-4" />
                   <p className="editorial-serif text-[clamp(1.62rem,2.2vw,2.18rem)] leading-[1.17] tracking-[-0.014em] text-foreground/94">{post.intro}</p>
                 </motion.div>
 
