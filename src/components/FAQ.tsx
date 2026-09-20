@@ -57,9 +57,6 @@ const FAQ = ({ locale = "en" }: FAQProps) => {
             <div className="mt-6 flex max-w-[390px] items-center gap-3 border-t border-foreground/12 pt-3 text-[9px] font-medium uppercase tracking-[0.14em] text-foreground/30">
               <span>05</span><span>{ko ? "질문" : "Questions"}</span>
             </div>
-            <a href={ko ? "/ko/attorney" : "/attorney"} className="mt-4 inline-block max-w-[390px] text-[10px] leading-5 text-foreground/42 underline underline-offset-4">
-              {ko ? "변호사 정보: Howard Choi · California Bar No. 284364" : "Attorney information: Howard Choi · California Bar No. 284364"}
-            </a>
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 18 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.72, delay: 0.06 }} className="border-t border-foreground/14">
