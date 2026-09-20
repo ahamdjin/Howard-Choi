@@ -46,13 +46,16 @@ const Booking = () => {
             </a>
           </div>
           <a
-            href="https://www.google.com/maps/search/?api=1&query=6301+Beach+Blvd%2C+Buena+Park%2C+CA+90621"
+            href="https://www.google.com/maps/search/?api=1&query=6301+Beach+Blvd%2C+Suite+216%2C+Buena+Park%2C+CA+90621"
             target="_blank"
             rel="noreferrer"
             className="mt-6 inline-block text-[12px] text-white/42 transition-colors hover:text-white/68"
           >
-            6301 Beach Blvd, Buena Park, CA 90621
+            6301 Beach Blvd, Suite 216, Buena Park, CA 90621
           </a>
+          <div className="mt-4 text-[10px] leading-5 text-white/34">
+            Howard Choi · California Attorney · Bar No. 284364
+          </div>
         </motion.div>
       </div>
     </section>
