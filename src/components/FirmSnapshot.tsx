@@ -23,14 +23,14 @@ const FirmSnapshot = () => (
 
           <div className="mt-10 max-w-[470px] sm:mt-12">
             <p className="text-[13px] leading-[1.55] text-foreground/68 sm:text-[14px]">
-              A personal injury claim can involve treatment, insurance coverage, disputed fault, lost income, future care, and deadlines at the same time. The firm focuses on personalized representation, clear communication, and an understandable next step. Consultations are free, and representation is available on a contingency-fee basis.
+              A personal injury claim can involve medical treatment, insurance coverage, disputed fault, lost income, future care, and deadlines at the same time. Our role is to organize those pieces, protect the record, and keep the next decision understandable.
             </p>
 
             <a
               href="/attorney"
               className="mt-7 inline-flex items-center gap-2 rounded-[3px] bg-[#171717] px-4 py-3 text-[11px] font-medium text-white transition-opacity hover:opacity-82"
             >
-              Meet Howard Choi <ArrowUpRight className="h-3.5 w-3.5" />
+              Meet the Attorneys <ArrowUpRight className="h-3.5 w-3.5" />
             </a>
           </div>
         </div>
