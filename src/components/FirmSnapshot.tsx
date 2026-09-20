@@ -1,29 +1,30 @@
 import { ArrowUpRight } from "lucide-react";
+import { trustProfile } from "@/data/trustProfile";
 
 const metrics = [
-  { value: "Howard Choi", label: "California attorney" },
-  { value: "284364", label: "California Bar No." },
+  { value: trustProfile.firmResults.totalRecovered, label: "Recovered for clients" },
+  { value: trustProfile.firmResults.largestRecovery, label: "Largest single-client recovery" },
+  { value: trustProfile.attorney.barNumber, label: "California Bar No." },
   { value: "EN / KO", label: "English & Korean" },
-  { value: "Free", label: "Consultation" },
 ];
 
 const FirmSnapshot = () => (
   <section className="flex min-h-[100svh] w-full bg-[#f7f6f3] text-foreground">
     <div className="site-shell flex min-h-[100svh] w-full flex-col py-8 sm:py-10 lg:py-12">
       <div className="border-t border-foreground/12 pt-6">
-        <div className="text-[10px] font-medium tracking-[-0.01em] text-foreground/46">What you can expect</div>
+        <div className="text-[10px] font-medium tracking-[-0.01em] text-foreground/46">Why clients choose the firm</div>
       </div>
 
       <div className="grid flex-1 content-center py-10 lg:grid-cols-[0.25fr_0.75fr] lg:py-8">
         <div className="hidden lg:block" />
         <div className="max-w-[1180px]">
           <h2 className="editorial-serif max-w-[1120px] text-[clamp(2rem,3vw,3.45rem)] leading-[1.08] tracking-[-0.028em] text-foreground">
-            Clear answers. Careful preparation. A case built around what actually happened.
+            Experience matters. So does the evidence behind the claim.
           </h2>
 
           <div className="mt-10 max-w-[470px] sm:mt-12">
             <p className="text-[13px] leading-[1.55] text-foreground/68 sm:text-[14px]">
-              We focus on the details that matter—how the accident happened, what the injuries changed, and what needs to happen next.
+              The firm combines substantial personal injury recoveries with a case-by-case approach focused on evidence, medical impact, insurance, and clear communication.
             </p>
 
             <a
