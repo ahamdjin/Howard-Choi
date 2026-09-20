@@ -183,12 +183,12 @@ const BlogDetail = () => {
                   <div className="flex items-start gap-4">
                     <img src={brandLogo} alt="" width={42} height={42} loading="lazy" decoding="async" className="h-10 w-10 shrink-0 object-contain" />
                     <div className="min-w-0">
-                      <div className="text-[12px] font-medium text-foreground">Publisher &amp; attorney information</div>
+                      <div className="text-[12px] font-medium text-foreground">About this guide</div>
                       <div className="mt-1 text-[12px] text-foreground/46">Buena Park Injury Lawyer · Howard Choi · California Bar No. 284364</div>
-                      <p className="mt-4 max-w-[620px] text-[13px] leading-6 text-foreground/58">This guide is published by the firm and uses primary legal or agency sources where available. Howard Choi&apos;s licensing information can be independently checked through the State Bar of California. This page does not represent that every reader&apos;s facts will produce the same legal outcome.</p>
+                      <p className="mt-4 max-w-[620px] text-[13px] leading-6 text-foreground/58">Published by Buena Park Injury Lawyer. Key legal information is supported with primary court or agency sources where available. Every case depends on its own facts.</p>
                       <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-[12px]">
                         <Link to="/attorney" className="underline underline-offset-3">Attorney profile</Link>
-                        <a href="https://apps.calbar.ca.gov/attorney/Licensee/Detail/284364" target="_blank" rel="noreferrer" className="underline underline-offset-3">Verify State Bar</a>
+                        <a href="https://apps.calbar.ca.gov/attorney/Licensee/Detail/284364" target="_blank" rel="noreferrer" className="underline underline-offset-3">State Bar Profile</a>
                       </div>
                     </div>
                   </div>
