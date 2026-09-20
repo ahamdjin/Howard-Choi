@@ -31,9 +31,21 @@ export function GuideAttorney({ locale }: { locale: SiteLocale }) {
   const prefix = ko ? "/ko" : "";
   return <section className="guide-attorney bg-[#eae4db] px-5 py-14 md:py-20">
     <div className="mx-auto grid max-w-[1120px] items-center gap-8 md:grid-cols-[0.7fr_1.3fr] md:gap-14">
-      <img src={leadCounsel} alt="Howard Choi" width={480} height={540} loading="lazy" decoding="async" className="aspect-[4/3] w-full rounded-[4px] object-cover object-top md:aspect-[4/5] md:max-h-[400px]" />
-      <div><p className="mb-4 text-xs font-semibold uppercase tracking-[0.12em] text-[#67584a]">{ko ? "변호사 소개" : "Meet your attorney"}</p><h2 className="text-[clamp(2rem,3.5vw,3.4rem)] font-semibold leading-tight tracking-[-0.04em]">Howard Choi</h2><p className="mt-3 text-sm font-medium text-[#57514b]">{ko ? "개인상해 · 부에나파크" : "Personal injury · Buena Park"}</p><p className="mt-5 max-w-[540px] text-base leading-7 text-[#57514b]">{ko ? "사고 경위와 궁금한 점을 알려주세요. 프로필을 살펴보거나 상담을 요청할 수 있습니다." : "Get to know the attorney behind the firm. Review his profile or request a conversation about your accident."}</p>
-        <div className="mt-7 flex flex-wrap gap-4"><a href={`${prefix}/attorney#profile`} className="inline-flex min-h-11 items-center gap-3 rounded-full bg-[#211c17] px-6 py-3 text-sm font-medium text-[#f3eee5]">{ko ? "프로필 보기" : "View attorney profile"}<ArrowRight aria-hidden="true" className="h-4 w-4" /></a><a href={`${prefix}/contact`} className="inline-flex min-h-11 items-center gap-3 rounded-full border border-[#211c17]/30 px-6 py-3 text-sm font-medium">{ko ? "상담 요청" : "Request a consultation"}</a></div>
+      <img src={leadCounsel} alt="Howard Choi, California attorney" width={480} height={540} loading="lazy" decoding="async" className="aspect-[4/3] w-full rounded-[4px] object-cover object-top md:aspect-[4/5] md:max-h-[400px]" />
+      <div>
+        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.12em] text-[#67584a]">{ko ? "변호사 정보" : "Attorney information"}</p>
+        <h2 className="text-[clamp(2rem,3.5vw,3.4rem)] font-semibold leading-tight tracking-[-0.04em]">Howard Choi</h2>
+        <p className="mt-3 text-sm font-medium text-[#57514b]">{ko ? "캘리포니아 변호사 · Bar No. 284364" : "California Attorney · Bar No. 284364"}</p>
+        <p className="mt-5 max-w-[560px] text-base leading-7 text-[#57514b]">{ko ? "부에나파크 사무실에서 개인상해 사건을 다룹니다. 변호사 등록 정보와 프로필을 직접 확인할 수 있습니다." : "Personal injury counsel based in Buena Park. His California license and professional details can be independently verified before you contact the firm."}</p>
+        <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-[11px] font-medium uppercase tracking-[0.12em] text-[#67584a]">
+          <span>{ko ? "영어 · 한국어" : "English · Korean"}</span>
+          <span>{ko ? "무료 상담" : "Free consultation"}</span>
+          <span>{ko ? "성공보수제" : "Contingency fee"}</span>
+        </div>
+        <div className="mt-7 flex flex-wrap gap-4">
+          <a href={`${prefix}/attorney#profile`} className="inline-flex min-h-11 items-center gap-3 rounded-full bg-[#211c17] px-6 py-3 text-sm font-medium text-[#f3eee5]">{ko ? "프로필 보기" : "View attorney profile"}<ArrowRight aria-hidden="true" className="h-4 w-4" /></a>
+          <a href="https://apps.calbar.ca.gov/attorney/Licensee/Detail/284364" target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center gap-3 rounded-full border border-[#211c17]/30 px-6 py-3 text-sm font-medium">{ko ? "State Bar에서 확인" : "Verify State Bar"}<ArrowRight aria-hidden="true" className="h-4 w-4" /></a>
+        </div>
       </div>
     </div>
   </section>;
