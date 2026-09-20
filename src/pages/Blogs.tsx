@@ -40,10 +40,10 @@ const Blogs = () => {
           <div className="site-shell">
             <div className="mb-10 grid gap-4 border-y border-foreground/12 py-5 text-[11px] leading-5 text-foreground/56 md:grid-cols-[1fr_auto] md:items-center">
               <div>
-                <span className="font-medium text-foreground/78">Published by Buena Park Injury Lawyer.</span>{" "}
-                Legal guides identify primary sources and link to Howard Choi&apos;s independently verifiable California attorney profile.
+                <span className="font-medium text-foreground/78">California personal injury guides.</span>{" "}
+                Each guide includes the legal or agency sources used to support key information.
               </div>
-              <a href="/attorney" className="underline underline-offset-4">Howard Choi · Bar No. 284364</a>
+              <a href="/attorney" className="underline underline-offset-4">Howard Choi · California Bar No. 284364</a>
             </div>
             <a href="#all-guides" className="mb-8 inline-flex min-h-11 items-center border-b border-current text-sm">Browse all articles ↓</a>
             <section className="mb-16 border-b border-foreground/12 pb-16 md:mb-20 md:pb-20">
