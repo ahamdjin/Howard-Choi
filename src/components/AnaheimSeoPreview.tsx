@@ -24,7 +24,7 @@ export const AnaheimQuickTrust = () => (
           <a href={attorneyProfile} className="inline-flex min-h-11 items-center gap-2 bg-[#171717] px-4 py-3 text-[11px] font-medium text-white">
             Attorney Profile <ArrowRight className="h-3.5 w-3.5" />
           </a>
-          <a href="#consultation" className="inline-flex min-h-11 items-center gap-2 border border-[#1E1C1A]/18 px-4 py-3 text-[11px] font-medium">
+          <a href="/contact" className="inline-flex min-h-11 items-center gap-2 border border-[#1E1C1A]/18 px-4 py-3 text-[11px] font-medium">
             Free Consultation <ArrowRight className="h-3.5 w-3.5" />
           </a>
         </div>
