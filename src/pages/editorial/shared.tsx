@@ -167,7 +167,15 @@ export const ReadingLayout = ({
           </div>
         </div>
       </aside>
-      <div className="editorial-reading-content">{children}</div>
+      <div className="editorial-reading-content">
+        <div className="mb-8 flex flex-wrap items-center justify-between gap-3 border-y border-[#1E1C1A]/12 py-4 text-[10px] leading-5 text-[#1E1C1A]/52">
+          <span>{isKo(locale) ? "변호사 정보 · Howard Choi · California Bar No. 284364" : "Attorney information · Howard Choi · California Bar No. 284364"}</span>
+          <a href="https://apps.calbar.ca.gov/attorney/Licensee/Detail/284364" target="_blank" rel="noreferrer" className="font-medium underline underline-offset-4">
+            {isKo(locale) ? "State Bar에서 확인" : "Verify State Bar"}
+          </a>
+        </div>
+        {children}
+      </div>
     </div>
   );
 };
