@@ -17,16 +17,16 @@ const DirectAccess = () => {
           className="lg:py-10"
         >
           <span className="mb-5 block text-[10px] uppercase tracking-[0.2em] text-white/42">
-            Meet the attorney
+            Howard Choi
           </span>
 
           <h2 className="editorial-serif text-[clamp(3rem,4.6vw,5rem)] leading-[0.91] text-white">
-            Howard Choi.<br />
-            <span className="text-white/48">California personal injury attorney.</span>
+            Personal injury attorney.<br />
+            <span className="text-white/48">Based in Buena Park.</span>
           </h2>
 
           <p className="mt-6 max-w-[500px] text-[15px] leading-6 text-white/58">
-            Howard Choi represents people and families in personal injury matters from the firm&apos;s Buena Park office. His work focuses on understanding what happened, preserving the evidence that matters, and keeping clients informed about the decisions that move a claim forward.
+            Howard Choi handles personal injury matters from the firm&apos;s Buena Park office, with a focus on clear communication, careful preparation, and keeping clients informed at each stage.
           </p>
 
           <div className="mt-10 grid max-w-[500px] grid-cols-2 border-y border-white/12">
@@ -53,7 +53,7 @@ const DirectAccess = () => {
               rel="noreferrer"
               className="inline-flex min-h-11 items-center gap-2 border border-white/18 px-5 py-3 text-[11px] font-medium text-white/82"
             >
-              Verify State Bar <ArrowUpRight className="h-3.5 w-3.5" />
+              State Bar Profile <ArrowUpRight className="h-3.5 w-3.5" />
             </a>
           </div>
 
