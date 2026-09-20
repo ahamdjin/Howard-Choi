@@ -1,6 +1,7 @@
 import { ArrowRight, FileCheck2, Scale, ShieldCheck } from "lucide-react";
 import heroCourthouse from "@/assets/law-firm/hero-courthouse.webp";
 import type { SiteLocale } from "@/data/injurySite";
+import { trustProfile } from "@/data/trustProfile";
 import {
   ConsultationCta,
   EditorialFrame,
@@ -13,9 +14,9 @@ import {
 } from "./shared";
 
 const resultExamples = [
-  { amount: "$1M", type: "Largest Single-Client Recovery", context: "Highest single-client recovery reported by the firm." },
-  { amount: "$100M", type: "Total Client Recoveries", context: "Total recovery reported by the firm across client matters." },
-  { amount: "40 Years", type: "Combined Experience", context: "Combined legal experience across the firm." },
+  { amount: trustProfile.firmResults.largestRecovery, type: "Largest Single-Client Recovery", context: "Largest single-client recovery reported by the firm." },
+  { amount: trustProfile.firmResults.totalRecovered, type: "Total Client Recoveries", context: "Total client recoveries reported by the firm across personal injury matters." },
+  { amount: "2012", type: "California Admission", context: "Howard Choi was admitted to the State Bar of California on October 2, 2012." },
 ];
 
 export const ResultsPage = ({ locale }: { locale: SiteLocale }) => (
@@ -85,6 +86,28 @@ export const ResultsPage = ({ locale }: { locale: SiteLocale }) => (
             ))}
           </div>
           <p className="mt-5 text-[10px] leading-5 text-[#1E1C1A]/42">Prior results do not guarantee a similar outcome. Every matter depends on its own facts and circumstances.</p>
+          {trustProfile.caseStudies.length > 0 && (
+            <div className="mt-10 border-t border-[#1E1C1A]/12 pt-8">
+              <div className="mb-6 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#1E1C1A]/38">Case studies</div>
+              <div className="space-y-4">
+                {trustProfile.caseStudies.map((item, index) => (
+                  <article key={item.title} className="grid gap-5 border-b border-[#1E1C1A]/12 pb-7 md:grid-cols-[120px_1fr]">
+                    <div>
+                      <div className="editorial-serif text-[2.2rem] leading-none">{item.result}</div>
+                      <div className="mt-2 text-[10px] uppercase tracking-[0.12em] text-[#1E1C1A]/42">{item.caseType}</div>
+                    </div>
+                    <div>
+                      <div className="text-[9px] text-[#1E1C1A]/28">{String(index + 1).padStart(2, "0")}</div>
+                      <h3 className="editorial-serif mt-2 text-[1.7rem] leading-[1.04]">{item.title}</h3>
+                      <p className="mt-3 max-w-[700px] text-[13px] leading-6 text-[#1E1C1A]/58">{item.summary}</p>
+                      {item.keyFacts?.length ? <ul className="mt-4 space-y-2 text-[11px] leading-5 text-[#1E1C1A]/50">{item.keyFacts.map((fact) => <li key={fact}>— {fact}</li>)}</ul> : null}
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          )}
+
         </ReadingSectionBlock>
 
         <ReadingSectionBlock
