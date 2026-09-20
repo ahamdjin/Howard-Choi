@@ -1,7 +1,7 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { LocationDetailPage } from "@/pages/EditorialLocationPages";
 import { getServiceLocation } from "@/data/injurySite";
-import { breadcrumbJsonLd, buildSeo } from "@/lib/seo";
+import { breadcrumbJsonLd, buildSeo, reviewedWebPageJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/locations_/$slug")({
   loader: ({ params }) => {
@@ -25,14 +25,17 @@ export const Route = createFileRoute("/locations_/$slug")({
     });
     return {
       ...seo,
-      scripts: [{
-        type: "application/ld+json",
-        children: JSON.stringify(breadcrumbJsonLd([
-          { name: "Home", path: "/" },
-          { name: "Locations", path: "/locations" },
-          { name: loaderData.name, path },
-        ])),
-      }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Locations", path: "/locations" },
+            { name: loaderData.name, path },
+          ])),
+        },
+        ...(reviewedWebPageJsonLd({ path, name: isBuenaPark ? "Buena Park Accident & Injury Guide" : `${loaderData.name} Personal Injury Lawyer` }) ? [{ type: "application/ld+json", children: JSON.stringify(reviewedWebPageJsonLd({ path, name: isBuenaPark ? "Buena Park Accident & Injury Guide" : `${loaderData.name} Personal Injury Lawyer` })) }] : []),
+      ],
     };
   },
   component: () => <LocationDetailPage locale="en" />,
