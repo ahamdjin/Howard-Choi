@@ -8,7 +8,6 @@ import DirectAccess from "@/components/DirectAccess";
 import ClientSuccessFeature from "@/components/ClientSuccessFeature";
 import FAQ from "@/components/FAQ";
 import Booking from "@/components/Booking";
-import HomeAttorneyTrustPreview from "@/components/HomeAttorneyTrustPreview";
 import Footer from "@/components/Footer";
 
 const Index = () => (
@@ -28,7 +27,6 @@ const Index = () => (
       <ClientSuccessFeature />
       <FAQ />
       <Booking />
-      <HomeAttorneyTrustPreview />
       <Footer />
     </div>
   </div>
