@@ -3,27 +3,28 @@ import { ArrowUpRight } from "lucide-react";
 import courthouseImage from "@/assets/law-firm/hero-courthouse.webp";
 import boardroomImage from "@/assets/law-firm/hero-city-boardroom.webp";
 import officeImage from "@/assets/law-firm/hero-law-office.webp";
+import { trustProfile } from "@/data/trustProfile";
 
 const results = [
   {
     title: "Largest Single-Client Recovery",
-    amount: "$1M",
-    detail: "Highest single-client recovery reported by the firm.",
-    location: "Firm result",
+    amount: trustProfile.firmResults.largestRecovery,
+    detail: "Largest single-client recovery reported by the firm. Add the verified case type and facts after attorney confirmation.",
+    location: "Selected result",
     image: courthouseImage,
   },
   {
     title: "Total Client Recoveries",
-    amount: "$100M",
-    detail: "Total recovery reported by the firm across client matters.",
+    amount: trustProfile.firmResults.totalRecovered,
+    detail: "Total client recoveries reported by the firm across personal injury matters.",
     location: "Firmwide",
     image: boardroomImage,
   },
   {
-    title: "Combined Experience",
-    amount: "40 Years",
-    detail: "Combined legal experience across the firm.",
-    location: "Buena Park",
+    title: "California Attorney",
+    amount: "2012",
+    detail: "Howard Choi was admitted to the State Bar of California on October 2, 2012.",
+    location: "Bar No. 284364",
     image: officeImage,
   },
 ];
@@ -39,13 +40,13 @@ const SelectedResult = () => {
           <div>
             <div className="text-[10px] text-white/42">Selected results</div>
             <h2 className="editorial-serif mt-4 text-[clamp(2.1rem,3vw,3.5rem)] leading-[1.02] tracking-[-0.03em]">
-              Results, with context.
+              Results backed by a real record.
             </h2>
           </div>
 
           <div className="max-w-[470px] lg:justify-self-end">
             <p className="text-[13px] leading-[1.55] text-white/62 sm:text-[14px]">
-              A result means more when you understand the facts behind it. Every case is different, and past outcomes do not predict what will happen in another matter.
+              The firm reports more than $100 million recovered for clients, including a $1 million largest single-client recovery. Detailed case stories should be added only when the underlying facts are confirmed.
             </p>
             <a
               href="/results"
