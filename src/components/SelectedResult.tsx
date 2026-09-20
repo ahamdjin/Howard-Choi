@@ -39,13 +39,13 @@ const SelectedResult = () => {
           <div>
             <div className="text-[10px] text-white/42">Firm Results & Experience</div>
             <h2 className="editorial-serif mt-4 text-[clamp(2.1rem,3vw,3.5rem)] leading-[1.02] tracking-[-0.03em]">
-              Verified firm numbers, in context.
+              Firm-reported results, in context.
             </h2>
           </div>
 
           <div className="max-w-[470px] lg:justify-self-end">
             <p className="text-[13px] leading-[1.55] text-white/62 sm:text-[14px]">
-              The firm reports $100M in total client recoveries, a $1M largest single-client recovery, 40 years of combined experience, and 11 years as a firm. Individual outcomes still depend on the facts of each case.
+              The figures below are reported by the firm. They are presented separately from independently verifiable attorney credentials, and every client outcome depends on the facts, evidence, insurance, injuries, and circumstances of that matter.
             </p>
             <a
               href="/results"
@@ -83,7 +83,7 @@ const SelectedResult = () => {
           <div className="relative min-h-[44svh] overflow-hidden bg-[#191919] sm:min-h-[50svh] lg:min-h-0">
             <img src={result.image} alt="Selected personal injury case" className="absolute inset-0 h-full w-full object-cover opacity-55" />
             <div className="absolute inset-0 bg-black/35" />
-            <div className="absolute left-5 top-5 text-[11px] font-medium text-white/86 sm:left-7 sm:top-7">Buena Park Injury Lawyer</div>
+            <div className="absolute left-5 top-5 text-[11px] font-medium text-white/86 sm:left-7 sm:top-7">Firm-reported figure</div>
             <div className="absolute bottom-5 left-5 right-5 sm:bottom-7 sm:left-7 sm:right-7">
               <div className="editorial-serif text-[clamp(3.2rem,6vw,6rem)] leading-none tracking-[-0.045em]">{result.amount}</div>
               <div className="mt-3 border-t border-white/18 pt-3 text-[10px] uppercase tracking-[0.12em] text-white/48">
