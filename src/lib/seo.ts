@@ -1,3 +1,5 @@
+import leadCounselImage from "@/assets/law-firm/lead-counsel.avif";
+import brandLogo from "@/assets/law-firm/howard-choi-logo.png";
 export const SITE_URL = (import.meta.env.VITE_SITE_URL || "https://www.buenaparkinjurylawyer.com").replace(/\/$/, "");
 export const SITE_NAME = "Buena Park Injury Lawyer";
 export const ATTORNEY_NAME = "Howard Choi";
@@ -75,6 +77,12 @@ export const attorneyJsonLd = {
   alternateName: "Howard Jong-yol Choi",
   url: absoluteUrl("/attorney"),
   jobTitle: "Attorney",
+  image: absoluteUrl(leadCounselImage),
+  knowsLanguage: ["English", "Korean"],
+  alumniOf: {
+    "@type": "CollegeOrUniversity",
+    name: "William Howard Taft University",
+  },
   identifier: {
     "@type": "PropertyValue",
     propertyID: "State Bar of California",
@@ -91,9 +99,11 @@ export const legalServiceJsonLd = {
   name: SITE_NAME,
   url: SITE_URL,
   telephone: "+1-714-690-0007",
+  logo: absoluteUrl(brandLogo),
+  image: absoluteUrl(leadCounselImage),
   address: {
     "@type": "PostalAddress",
-    streetAddress: "6301 Beach Blvd",
+    streetAddress: "6301 Beach Blvd, Suite 216",
     addressLocality: "Buena Park",
     addressRegion: "CA",
     postalCode: "90621",
@@ -137,6 +147,21 @@ export const articleJsonLd = ({ title, description, path, image, publishedAt, lo
   dateModified: publishedAt,
   inLanguage: locale,
   mainEntityOfPage: absoluteUrl(path),
-  author: { "@id": `${SITE_URL}/#legal-service` },
+  author: {
+    "@type": "Organization",
+    "@id": `${SITE_URL}/#legal-service`,
+    name: SITE_NAME,
+    url: SITE_URL,
+  },
   publisher: { "@id": `${SITE_URL}/#legal-service` },
 });
+
+export const attorneyProfilePageJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": `${absoluteUrl("/attorney")}#profile-page`,
+  url: absoluteUrl("/attorney"),
+  name: "Howard Choi | California Attorney Profile",
+  mainEntity: { "@id": `${SITE_URL}/#howard-choi` },
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+};
