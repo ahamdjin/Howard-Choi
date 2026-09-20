@@ -86,20 +86,19 @@ const Hero = () => {
         <div className="site-shell pb-24 md:pb-28">
           <div className="max-w-[700px] text-[#f3eee5]">
             <motion.p initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.18, duration: 0.7 }} className="mb-4 text-[13px] font-medium tracking-[-0.01em] text-[#f3eee5]/88 md:text-sm">
-              Howard Choi · California Attorney · Bar No. 284364
+              Personal Injury · Buena Park, California
             </motion.p>
             <motion.h1 initial={shouldReduceMotion ? false : { opacity: 0, y: 16, filter: "blur(9px)" }} animate={{ opacity: 1, y: 0, filter: "blur(0px)" }} transition={{ delay: 0.27, duration: 0.9, ease: [0.22, 1, 0.36, 1] }} className="editorial-serif text-[clamp(3rem,4.5vw,4.75rem)] leading-[0.93] tracking-[-0.024em] text-[#f3eee5]">
               Personal injury lawyer in Buena Park.
             </motion.h1>
             <motion.p initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.7 }} className="mt-5 max-w-[560px] text-[15px] leading-6 text-[#f3eee5]/74 md:text-base">
-              Personal injury guidance for people and families after serious accidents in Buena Park and nearby communities. Free consultations are available on a contingency-fee basis.
+              Clear legal guidance after a serious accident—from the first questions to the decisions that shape your claim.
             </motion.p>
             <motion.div initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.7 }} className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center">
               <button onClick={() => document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })} className="liquid-cta inline-flex w-fit items-center gap-3 rounded-full px-6 py-3 text-[13px] font-medium">
                 <span className="relative z-10">Free Consultation</span><ArrowRight className="relative z-10 h-4 w-4" />
               </button>
               <a href="tel:+17146900007" className="text-[13px] text-[#f3eee5]/82 transition-opacity hover:opacity-70 md:text-sm">Or call (+1) 714-690-0007</a>
-              <a href="/attorney" className="text-[12px] text-[#f3eee5]/60 underline underline-offset-4 transition-opacity hover:opacity-80">Verify attorney credentials</a>
             </motion.div>
           </div>
         </div>
