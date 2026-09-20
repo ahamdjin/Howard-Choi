@@ -215,7 +215,7 @@ const HomepageDesignGallery = () => (
         </div>
 
         <div className="grid w-full max-w-[1180px] grid-cols-2 gap-2 md:grid-cols-4">
-          <a href="/blogs/what-to-do-after-a-car-accident-in-california" className="group relative h-[250px] overflow-hidden rounded-[3px] md:h-[340px]">
+          <a href="/blogs" className="group relative h-[250px] overflow-hidden rounded-[3px] md:h-[340px]">
             <img src={carImage} alt="" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/82 via-transparent to-black/10" />
             <div className="absolute inset-x-4 bottom-4 md:inset-x-5 md:bottom-5">
@@ -224,7 +224,7 @@ const HomepageDesignGallery = () => (
             </div>
           </a>
 
-          <a href="/blogs/california-personal-injury-deadlines" className="group relative h-[250px] overflow-hidden rounded-[3px] md:h-[340px]">
+          <a href="/blogs" className="group relative h-[250px] overflow-hidden rounded-[3px] md:h-[340px]">
             <img src={courthouseImage} alt="" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/82 via-transparent to-black/10" />
             <div className="absolute inset-x-4 bottom-4 md:inset-x-5 md:bottom-5">
@@ -242,7 +242,7 @@ const HomepageDesignGallery = () => (
             </div>
           </a>
 
-          <a href="/case-value-calculator" className="group relative h-[250px] overflow-hidden rounded-[3px] md:h-[340px]">
+          <a href="/blogs" className="group relative h-[250px] overflow-hidden rounded-[3px] md:h-[340px]">
             <img src={familyImage} alt="" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/82 via-transparent to-black/10" />
             <div className="absolute inset-x-4 bottom-4 md:inset-x-5 md:bottom-5">
