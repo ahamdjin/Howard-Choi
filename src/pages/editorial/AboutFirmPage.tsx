@@ -112,8 +112,8 @@ export const AboutFirmPage = ({ locale }: { locale: SiteLocale }) => (
           kicker={isKo(locale) ? "05 · 지역" : "05 · Local focus"}
           title={isKo(locale) ? "Buena Park를 중심으로 인근 지역을 지원합니다." : "Based in Buena Park, with a practical focus on the surrounding communities."}
           intro={isKo(locale)
-            ? "Buena Park, Fullerton, Anaheim, Cerritos, La Mirada, La Habra와 인근 지역의 사고·상해 문제를 지원합니다."
-            : "The firm serves people in Buena Park, Fullerton, Anaheim, Cerritos, La Mirada, La Habra, and nearby communities. Local context can help identify the right police or incident records, nearby cameras, treatment logistics, county-specific venue questions, and the businesses or insurers connected to an accident."}
+            ? "Buena Park, Anaheim, Fullerton, Garden Grove, Cypress, La Habra, La Mirada, Cerritos, Norwalk, Whittier와 인근 지역의 사고·상해 문제를 지원합니다."
+            : "The firm serves people in Buena Park, Anaheim, Fullerton, Garden Grove, Cypress, La Habra, La Mirada, Cerritos, Norwalk, Whittier, and nearby communities. Local context can help identify the right police or incident records, nearby cameras, treatment logistics, county-specific venue questions, and the businesses or insurers connected to an accident."}
         >
           <a href={`${localePrefix(locale)}/locations`} className="editorial-inline-link"><span>{isKo(locale) ? "지역별 사고·상해 가이드 보기" : "Explore local accident and injury guides"}</span><ArrowRight className="h-4 w-4" /></a>
         </ReadingSectionBlock>

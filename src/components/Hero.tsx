@@ -96,7 +96,7 @@ const Hero = () => {
             </motion.p>
             <motion.div initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.7 }} className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center">
               <button onClick={() => document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })} className="liquid-cta inline-flex w-fit items-center gap-3 rounded-full px-6 py-3 text-[13px] font-medium">
-                <span className="relative z-10">Schedule a Consultation</span><ArrowRight className="relative z-10 h-4 w-4" />
+                <span className="relative z-10">Free Consultation</span><ArrowRight className="relative z-10 h-4 w-4" />
               </button>
               <a href="tel:+17146900007" className="text-[13px] text-[#f3eee5]/82 transition-opacity hover:opacity-70 md:text-sm">Or call (+1) 714-690-0007</a>
             </motion.div>

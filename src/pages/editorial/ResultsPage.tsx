@@ -13,9 +13,9 @@ import {
 } from "./shared";
 
 const resultExamples = [
-  { amount: "$3.2M", type: "Pedestrian Injury", context: "Serious orthopedic and neurological injuries · Los Angeles County" },
-  { amount: "$1.75M", type: "Auto Collision", context: "Disputed-liability injury claim · Orange County" },
-  { amount: "$875K", type: "Premises Liability", context: "Unsafe-property injury claim · Southern California" },
+  { amount: "$1M", type: "Largest Single-Client Recovery", context: "Highest single-client recovery reported by the firm." },
+  { amount: "$100M", type: "Total Client Recoveries", context: "Total recovery reported by the firm across client matters." },
+  { amount: "40 Years", type: "Combined Experience", context: "Combined legal experience across the firm." },
 ];
 
 export const ResultsPage = ({ locale }: { locale: SiteLocale }) => (
@@ -71,7 +71,7 @@ export const ResultsPage = ({ locale }: { locale: SiteLocale }) => (
           title={isKo(locale) ? "사건 결과를 핵심 맥락과 함께 확인하세요." : "Selected personal injury outcomes."}
           intro={isKo(locale)
             ? "각 결과는 사건 유형과 간단한 맥락을 함께 표시합니다."
-            : "Each result is shown with the claim type and a short description so the number is not presented in isolation."}
+            : "These firm-reported figures provide context on recoveries and experience without suggesting that any past outcome predicts a future case."}
         >
           <div className="space-y-3">
             {resultExamples.map((result, index) => (

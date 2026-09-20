@@ -1,10 +1,10 @@
 import { ArrowUpRight } from "lucide-react";
 
 const metrics = [
-  { value: "$100M+", label: "Recovered" },
-  { value: "1,500+", label: "Clients represented" },
-  { value: "4.9 / 5", label: "Client rating" },
-  { value: "24 / 7", label: "Case intake" },
+  { value: "$100M", label: "Total recovered" },
+  { value: "40 Years", label: "Combined experience" },
+  { value: "11 Years", label: "Firm history" },
+  { value: "$1M", label: "Largest single-client recovery" },
 ];
 
 const FirmSnapshot = () => (
