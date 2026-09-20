@@ -1,5 +1,4 @@
 import { ArrowUpRight } from "lucide-react";
-import logo from "@/assets/law-firm/howard-choi-logo.png";
 import carImage from "@/assets/law-firm/car-collision.jpg";
 import truckImage from "@/assets/law-firm/truck-highway.jpg";
 import motorcycleImage from "@/assets/law-firm/motorcycle-road.jpg";
@@ -15,7 +14,6 @@ const HomepageDesignGallery = () => (
     <section className="relative mx-auto h-[96svh] min-h-[740px] max-h-[1000px] w-full overflow-hidden bg-[#f4f0e8] text-[#191612]">
       <div className="site-shell flex h-full w-full flex-col items-center justify-center py-20">
         <div className="mb-7 text-center">
-          <img src={logo} alt="" className="mx-auto mb-5 h-auto w-[105px] opacity-65" />
           <p className="text-[8px] uppercase tracking-[0.2em] text-black/32">Personal injury practice areas</p>
           <h2 className="editorial-serif mt-3 text-[clamp(2.8rem,5.2vw,5.5rem)] leading-[0.9] tracking-[-0.045em]">
             See the claim.<br />
@@ -78,7 +76,6 @@ const HomepageDesignGallery = () => (
     <section className="relative mx-auto h-[96svh] min-h-[740px] max-h-[1000px] w-full overflow-hidden bg-[#181715] text-white">
       <div className="site-shell flex h-full w-full flex-col items-center justify-center py-20">
         <div className="mb-9 text-center">
-          <img src={logo} alt="" className="mx-auto mb-5 h-auto w-[108px] brightness-0 invert opacity-80" />
           <p className="text-[8px] uppercase tracking-[0.2em] text-white/36">Before your first call</p>
           <h2 className="editorial-serif mt-3 text-[clamp(2.8rem,5vw,5.2rem)] leading-[0.9] tracking-[-0.045em]">
             Four things worth<br />
