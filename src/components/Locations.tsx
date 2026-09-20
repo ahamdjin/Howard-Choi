@@ -1,13 +1,13 @@
 import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } from "framer-motion";
 import { useRef } from "react";
-import commercialLitigationImage from "@/assets/law-firm/practice-commercial-litigation.webp";
-import corporateLawImage from "@/assets/law-firm/practice-corporate-law.webp";
-import regulatoryComplianceImage from "@/assets/law-firm/practice-regulatory-compliance.webp";
+import seriousInjuryImage from "@/assets/law-firm/medical-care.jpg";
+import carAccidentImage from "@/assets/law-firm/car-collision.jpg";
+import wrongfulDeathImage from "@/assets/law-firm/family-support.jpg";
 
 const practices = [
-  { slug: "car-accidents", title: "Car Accidents", description: "Claims involving injury, disputed fault, hit-and-run drivers, and insurance coverage after a crash.", image: corporateLawImage, alt: "Legal counsel reviewing an accident claim", points: ["Rear-end & intersection crashes", "Hit-and-run & uninsured drivers", "Medical costs & lost income"] },
-  { slug: "serious-injuries", title: "Serious Injuries", description: "Claims where treatment, future care, mobility, work, or daily life may be affected for months or years.", image: commercialLitigationImage, alt: "Attorney reviewing a serious injury matter", points: ["Brain & head injuries", "Neck, spine & orthopedic trauma", "Future care & earning impact"] },
-  { slug: "wrongful-death", title: "Wrongful Death", description: "Careful representation for families after a fatal accident, with attention to responsibility, evidence, insurance, and the losses left behind.", image: regulatoryComplianceImage, alt: "Legal advisers reviewing a wrongful death matter", points: ["Fatal vehicle collisions", "Liability & insurance investigation", "Financial & family loss"] },
+  { slug: "car-accidents", title: "Car Accidents", description: "Claims involving injury, disputed fault, hit-and-run drivers, and insurance coverage after a crash.", image: carAccidentImage, alt: "Vehicle collision representing car accident injury claims", points: ["Rear-end & intersection crashes", "Hit-and-run & uninsured drivers", "Medical costs & lost income"] },
+  { slug: "serious-injuries", title: "Serious Injuries", description: "Claims where treatment, future care, mobility, work, or daily life may be affected for months or years.", image: seriousInjuryImage, alt: "Medical care representing serious injury claims", points: ["Brain & head injuries", "Neck, spine & orthopedic trauma", "Future care & earning impact"] },
+  { slug: "wrongful-death", title: "Wrongful Death", description: "Careful representation for families after a fatal accident, with attention to responsibility, evidence, insurance, and the losses left behind.", image: wrongfulDeathImage, alt: "Family support representing wrongful death claims", points: ["Fatal vehicle collisions", "Liability & insurance investigation", "Financial & family loss"] },
 ];
 
 type Practice = (typeof practices)[number];
