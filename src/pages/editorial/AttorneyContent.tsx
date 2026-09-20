@@ -2,6 +2,7 @@ import { ArrowRight, CalendarDays, Check, FileText, MapPin, MessageCircle, Phone
 import { brand, practiceAreas, type SiteLocale } from "@/data/injurySite";
 import { practiceMedia } from "@/data/practiceMedia";
 import officeImage from "@/assets/law-firm/hero-law-office.webp";
+import { trustProfile } from "@/data/trustProfile";
 
 export default function AttorneyContent({ locale }: { locale: SiteLocale }) {
   const ko = locale === "ko";
@@ -10,6 +11,7 @@ export default function AttorneyContent({ locale }: { locale: SiteLocale }) {
     ["profile", ko ? "프로필" : "Profile"],
     ["how-we-help", ko ? "진행 방식" : "How we help"],
     ["attorney-practice", ko ? "업무 분야" : "Practice areas"],
+    ...(trustProfile.recognitions.length ? [["recognition", ko ? "수상·소속" : "Recognition"]] : []),
     ["consultation", ko ? "상담 준비" : "Your consultation"],
   ];
   const steps = [
@@ -63,6 +65,32 @@ export default function AttorneyContent({ locale }: { locale: SiteLocale }) {
         </a>)}</div>
       </div>
     </section>
+
+    {trustProfile.recognitions.length > 0 && (
+      <section id="recognition" className="scroll-mt-24 bg-[#f3eee5] py-16 md:py-24">
+        <div className="attorney-content-shell">
+          <div className="mb-10 max-w-[680px]">
+            <p className="attorney-label">{ko ? "수상 및 전문 소속" : "Recognition & professional affiliations"}</p>
+            <h2 className="mt-4">{ko ? "외부에서 확인할 수 있는 전문 이력" : "Professional recognition, with a source behind every claim."}</h2>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {trustProfile.recognitions.map((item) => {
+              const content = (
+                <div className="flex min-h-[190px] flex-col justify-between border border-[#211c17]/12 bg-[#f9f8f6] p-6">
+                  <div>
+                    {item.logo ? <img src={item.logo} alt="" className="mb-6 h-10 max-w-[150px] object-contain object-left" /> : null}
+                    <div className="text-[15px] font-semibold">{item.name}</div>
+                    {item.year ? <div className="mt-2 text-[12px] text-[#675f55]">{item.year}</div> : null}
+                  </div>
+                  <div className="mt-6 text-[10px] uppercase tracking-[0.13em] text-[#675f55]">{item.url ? "View source" : "Verified by firm"}</div>
+                </div>
+              );
+              return item.url ? <a key={item.name} href={item.url} target="_blank" rel="noreferrer">{content}</a> : <div key={item.name}>{content}</div>;
+            })}
+          </div>
+        </div>
+      </section>
+    )}
 
     <section id="consultation" className="scroll-mt-24 bg-[#211a16] py-16 text-[#f3eee5] md:py-24">
       <div className="attorney-content-shell grid items-start gap-12 lg:grid-cols-2 lg:gap-20">
