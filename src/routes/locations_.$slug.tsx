@@ -15,7 +15,7 @@ export const Route = createFileRoute("/locations_/$slug")({
     const seo = buildSeo({
       title: isBuenaPark
         ? "Buena Park Accident & Injury Guide | Local Records, Data & Deadlines"
-        : `${loaderData.name} Personal Injury Lawyers | Accident & Injury Guide`,
+        : `${loaderData.name} Personal Injury Lawyer | Accident & Injury Guide`,
       description: isBuenaPark
         ? `A practical Buena Park accident and injury guide with ${loaderData.ots.year} California OTS collision data, local records resources, evidence to preserve, California deadlines, and injury-law guidance.`
         : `${loaderData.description} See local ${loaderData.ots.year} California OTS collision data, official records resources, evidence to preserve, California deadlines, and practical next steps after an accident.`,
