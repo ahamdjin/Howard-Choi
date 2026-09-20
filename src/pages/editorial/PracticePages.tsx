@@ -237,7 +237,7 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
   if (!practice) return null;
 
   const title = isKo(locale) ? practice.koTitle : practice.title;
-  const heroTitle = isKo(locale) ? `${practice.koTitle} · Buena Park` : `Buena Park ${practice.title} Lawyers`;
+  const heroTitle = isKo(locale) ? `${practice.koTitle} · Buena Park` : `Buena Park ${practice.title} Lawyer`;
   const description = isKo(locale) ? practice.koDescription : practice.description;
   const intro = isKo(locale) ? practice.koIntro : practice.intro;
   const issues = isKo(locale) ? practice.koIssues : practice.issues;
