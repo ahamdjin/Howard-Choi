@@ -14,6 +14,8 @@ const Footer = () => {
             </div>
             <p className="max-w-[270px] text-[13px] leading-6 text-muted-foreground">Personal injury counsel for accident and serious-injury claims in Buena Park and nearby Orange and Los Angeles County communities.</p>
             <a href={brand.phoneHref} className="mt-5 block text-[13px] font-medium hover:opacity-60">{brand.phoneDisplay}</a>
+            <div className="mt-4 text-[11px] leading-5 text-muted-foreground">Howard Choi · California Attorney · Bar No. 284364</div>
+            <a href="https://apps.calbar.ca.gov/attorney/Licensee/Detail/284364" target="_blank" rel="noreferrer" className="mt-2 inline-block text-[11px] underline underline-offset-4 hover:text-foreground">Verify State Bar profile</a>
           </div>
 
           <div>
