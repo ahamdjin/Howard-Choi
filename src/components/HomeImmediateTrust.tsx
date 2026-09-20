@@ -21,7 +21,7 @@ const HomeImmediateTrust = () => (
           <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-[11px] text-foreground/56">
             <span className="inline-flex items-center gap-1.5"><BadgeCheck className="h-3.5 w-3.5" /> California Attorney · Bar No. 284364</span>
             <span className="inline-flex items-center gap-1.5"><Languages className="h-3.5 w-3.5" /> English & Korean</span>
-            <span className="inline-flex items-center gap-1.5"><MapPin className="h-3.5 w-3.5" /> Buena Park, California</span>
+            <span className="inline-flex items-center gap-1.5"><MapPin className="h-3.5 w-3.5" /> Buena Park, California</span>\n            <span>Free consultation · Contingency-fee representation</span>
           </div>
         </div>
 
