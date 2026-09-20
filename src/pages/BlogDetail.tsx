@@ -129,6 +129,7 @@ const BlogDetail = () => {
                     <div><div className="text-foreground/38">Practice</div><div className="mt-1 text-foreground/76">{post.category}</div></div>
                     <div><div className="text-foreground/38">Published</div><div className="mt-1 text-foreground/76">{post.date}</div></div>
                     <div><div className="text-foreground/38">Publisher</div><div className="mt-1 text-foreground/76">Buena Park Injury Lawyer</div></div>
+                    <div><div className="text-foreground/38">Attorney information</div><div className="mt-1 text-foreground/76"><Link to="/attorney" className="underline underline-offset-2">Howard Choi · Bar No. 284364</Link></div></div>
                     <div><div className="text-foreground/38">Reading time</div><div className="mt-1 text-foreground/76">{post.readingTime}</div></div>
                   </div>
                   <div className="pt-6">
@@ -181,7 +182,15 @@ const BlogDetail = () => {
                 <div className="mt-10 rounded-[3px] bg-[#e9e6e1] p-7 md:p-8">
                   <div className="flex items-start gap-4">
                     <img src={brandLogo} alt="" width={42} height={42} loading="lazy" decoding="async" className="h-10 w-10 shrink-0 object-contain" />
-                    <div><div className="text-[12px] font-medium text-foreground">Buena Park Injury Lawyer</div><div className="mt-1 text-[12px] text-foreground/46">California accident &amp; injury legal information</div><p className="mt-4 max-w-[590px] text-[13px] leading-6 text-foreground/58">Practical legal guidance for people navigating accident claims, insurance, evidence, deadlines, medical documentation, and recovery in California. Attorney licensing information is available on the <Link to="/attorney" className="underline underline-offset-2">attorneys page</Link>.</p></div>
+                    <div className="min-w-0">
+                      <div className="text-[12px] font-medium text-foreground">Publisher &amp; attorney information</div>
+                      <div className="mt-1 text-[12px] text-foreground/46">Buena Park Injury Lawyer · Howard Choi · California Bar No. 284364</div>
+                      <p className="mt-4 max-w-[620px] text-[13px] leading-6 text-foreground/58">This guide is published by the firm and uses primary legal or agency sources where available. Howard Choi&apos;s licensing information can be independently checked through the State Bar of California. This page does not represent that every reader&apos;s facts will produce the same legal outcome.</p>
+                      <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-[12px]">
+                        <Link to="/attorney" className="underline underline-offset-3">Attorney profile</Link>
+                        <a href="https://apps.calbar.ca.gov/attorney/Licensee/Detail/284364" target="_blank" rel="noreferrer" className="underline underline-offset-3">Verify State Bar</a>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
