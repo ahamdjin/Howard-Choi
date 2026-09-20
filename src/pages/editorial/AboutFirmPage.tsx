@@ -35,7 +35,7 @@ export const AboutFirmPage = ({ locale }: { locale: SiteLocale }) => (
             ]
           : [
               { id: "focus", label: "What the firm focuses on" }, { id: "working", label: "How the relationship works" }, { id: "process", label: "How a case develops" },
-              { id: "team", label: "Attorneys & practice" }, { id: "local", label: "Local focus" },
+              { id: "team", label: "Attorney & practice" }, { id: "local", label: "Local focus" },
             ]}
       >
         <ReadingSectionBlock
@@ -97,11 +97,11 @@ export const AboutFirmPage = ({ locale }: { locale: SiteLocale }) => (
           id="team"
           locale={locale}
           kicker={isKo(locale) ? "04 · 법률팀" : "04 · Attorneys & practice"}
-          title={isKo(locale) ? "사람과 사건 유형을 함께 확인하세요." : "See the people behind the firm and the matters they handle."}
-          intro={isKo(locale) ? "변호사 등록 정보와 사고 유형별 업무 페이지를 통해 로펌의 실제 업무 범위를 확인할 수 있습니다." : "Prospective clients should be able to verify the attorneys connected to a firm and understand whether the team handles the kind of accident or injury they are dealing with."}
+          title={isKo(locale) ? "사람과 사건 유형을 함께 확인하세요." : "See the attorney behind the firm and the matters handled."}
+          intro={isKo(locale) ? "변호사 등록 정보와 사고 유형별 업무 페이지를 통해 로펌의 실제 업무 범위를 확인할 수 있습니다." : "Prospective clients should be able to verify the attorney connected to a firm and understand whether the practice handles the kind of accident or injury they are dealing with."}
         >
           <div className="grid gap-4 sm:grid-cols-2">
-            <a href={`${localePrefix(locale)}/attorney`} className="editorial-link-card"><div className="editorial-link-card__top"><span>01</span><ArrowRight className="h-3.5 w-3.5" /></div><h3 style={serifStyle(locale)}>{isKo(locale) ? "변호사" : "Meet the attorneys"}</h3><p>{isKo(locale) ? "Howard Choi 변호사의 캘리포니아 등록 정보와 법률팀의 업무 방식을 확인하세요." : "Review Howard Choi's verified California attorney information and how the legal team approaches injury matters."}</p></a>
+            <a href={`${localePrefix(locale)}/attorney`} className="editorial-link-card"><div className="editorial-link-card__top"><span>01</span><ArrowRight className="h-3.5 w-3.5" /></div><h3 style={serifStyle(locale)}>{isKo(locale) ? "변호사" : "Meet Howard Choi"}</h3><p>{isKo(locale) ? "Howard Choi 변호사의 캘리포니아 등록 정보와 법률팀의 업무 방식을 확인하세요." : "Review Howard Choi's verified California attorney information and how the legal team approaches injury matters."}</p></a>
             <a href={`${localePrefix(locale)}/practice-areas`} className="editorial-link-card"><div className="editorial-link-card__top"><span>02</span><ArrowRight className="h-3.5 w-3.5" /></div><h3 style={serifStyle(locale)}>{isKo(locale) ? "업무 분야" : "Explore practice areas"}</h3><p>{isKo(locale) ? "자동차, 트럭, 보행자, 승차공유, 낙상, 중대 상해 등 사건 유형별 안내를 확인하세요." : "Explore car, truck, motorcycle, pedestrian, rideshare, premises, wrongful-death, and serious-injury guides."}</p></a>
           </div>
         </ReadingSectionBlock>
