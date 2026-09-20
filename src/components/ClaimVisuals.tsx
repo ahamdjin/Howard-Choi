@@ -1,6 +1,7 @@
 import { ArrowRight, Camera, FileCheck2, HeartPulse, ShieldCheck, Wallet, CalendarDays } from "lucide-react";
 import leadCounsel from "@/assets/law-firm/lead-counsel.avif";
 import { type SiteLocale } from "@/data/injurySite";
+import ContentReviewLine from "@/components/ContentReviewLine";
 
 export function EvidenceVisuals({ locale }: { locale: SiteLocale }) {
   const ko = locale === "ko";
@@ -42,6 +43,7 @@ export function GuideAttorney({ locale }: { locale: SiteLocale }) {
           <span>{ko ? "무료 상담" : "Free consultation"}</span>
           <span>{ko ? "성공보수제" : "Contingency fee"}</span>
         </div>
+        <ContentReviewLine className="mt-6" />
         <div className="mt-7 flex flex-wrap gap-4">
           <a href={`${prefix}/attorney#profile`} className="inline-flex min-h-11 items-center gap-3 rounded-full bg-[#211c17] px-6 py-3 text-sm font-medium text-[#f3eee5]">{ko ? "프로필 보기" : "View attorney profile"}<ArrowRight aria-hidden="true" className="h-4 w-4" /></a>
           <a href="https://apps.calbar.ca.gov/attorney/Licensee/Detail/284364" target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center gap-3 rounded-full border border-[#211c17]/30 px-6 py-3 text-sm font-medium">{ko ? "State Bar에서 확인" : "State Bar Profile"}<ArrowRight aria-hidden="true" className="h-4 w-4" /></a>
