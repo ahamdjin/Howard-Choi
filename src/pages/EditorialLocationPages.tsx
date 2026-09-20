@@ -35,7 +35,7 @@ export const LocationsPage = ({ locale }: { locale: SiteLocale }) => (
       <EditorialHero
         locale={locale}
         eyebrow={isKo(locale) ? "서비스 지역" : "Personal injury service areas"}
-        title={isKo(locale) ? "Buena Park를 중심으로 인근 지역까지." : "Personal injury lawyers serving Buena Park and nearby communities."}
+        title={isKo(locale) ? "Buena Park를 중심으로 인근 지역까지." : "Personal injury lawyer serving Buena Park and nearby communities."}
         description={isKo(locale)
           ? "Buena Park와 인근 Orange County·Los Angeles County 경계 지역의 사고·개인상해 사건을 지원합니다."
           : "The firm is based in Buena Park and serves injured people across nearby North Orange County and Los Angeles County communities. Each local guide explains the accident context, evidence, official local resources, and practical information that can matter after an injury."}
@@ -117,7 +117,7 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
   const isBuenaPark = location.slug === "buena-park";
   const heroTitle = isKo(locale)
     ? (isBuenaPark ? "부에나파크 사고·상해 가이드" : `${name} 개인상해 변호사`)
-    : (isBuenaPark ? "Buena Park Accident & Injury Guide" : `${name} Personal Injury Lawyers`);
+    : (isBuenaPark ? "Buena Park Accident & Injury Guide" : `${name} Personal Injury Lawyer`);
 
   return (
     <EditorialFrame locale={locale}>
