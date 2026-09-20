@@ -3,6 +3,7 @@ import { useParams } from "@tanstack/react-router";
 import heroBoardroom from "@/assets/law-firm/hero-city-boardroom.webp";
 import heroJustice from "@/assets/law-firm/hero-justice-library.webp";
 import ClaimJourney from "@/components/ClaimJourney";
+import { AnaheimAttorneyPreview, AnaheimCasesPreview, AnaheimQuickTrust } from "@/components/AnaheimSeoPreview";
 import { EvidenceVisuals, GuideAttorney } from "@/components/ClaimVisuals";
 import { getServiceLocation, serviceLocations, type SiteLocale } from "@/data/injurySite";
 import {
@@ -115,9 +116,10 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
   const statLabel = isKo(locale) ? `${location.ots.year} 교통안전 통계` : `${location.ots.year} California OTS collision data`;
   const resource = locationResources[location.slug];
   const isBuenaPark = location.slug === "buena-park";
+  const isAnaheim = location.slug === "anaheim";
   const heroTitle = isKo(locale)
     ? (isBuenaPark ? "부에나파크 사고·상해 가이드" : `${name} 개인상해 변호사`)
-    : (isBuenaPark ? "Buena Park Accident & Injury Guide" : `${name} Personal Injury Lawyers`);
+    : (isBuenaPark ? "Buena Park Accident & Injury Guide" : isAnaheim ? "Anaheim Personal Injury Lawyer" : `${name} Personal Injury Lawyers`);
 
   return (
     <EditorialFrame locale={locale}>
@@ -126,9 +128,10 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
           locale={locale}
           eyebrow={isKo(locale) ? "서비스 지역" : `${location.county} · Service area`}
           title={heroTitle}
-          description={isBuenaPark && !isKo(locale) ? "A practical local guide to Buena Park collision data, accident records, evidence preservation, California deadlines, and the injury matters handled from the firm's Buena Park office." : description}
+          description={isBuenaPark && !isKo(locale) ? "A practical local guide to Buena Park collision data, accident records, evidence preservation, California deadlines, and the injury matters handled from the firm's Buena Park office." : isAnaheim && !isKo(locale) ? "Personal injury representation for people injured in Anaheim, served from the firm's nearby Buena Park office. Explore local accident data, official records resources, case types, and practical next steps after an injury." : description}
           image={heroJustice}
         />
+        {isAnaheim && !isKo(locale) ? <AnaheimQuickTrust /> : null}
         <ClaimJourney locale={locale} subject={name} guideId="overview" />
         <GuideAttorney locale={locale} />
         <ReadingLayout
@@ -255,6 +258,8 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
             </div>
           </ReadingSectionBlock>
         </ReadingLayout>
+        {isAnaheim && !isKo(locale) ? <AnaheimCasesPreview /> : null}
+        {isAnaheim && !isKo(locale) ? <AnaheimAttorneyPreview /> : null}
         <ConsultationCta locale={locale} />
       </main>
     </EditorialFrame>
