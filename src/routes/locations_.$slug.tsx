@@ -12,13 +12,18 @@ export const Route = createFileRoute("/locations_/$slug")({
   head: ({ loaderData }) => {
     const path = `/locations/${loaderData.slug}`;
     const isBuenaPark = loaderData.slug === "buena-park";
+    const isAnaheim = loaderData.slug === "anaheim";
     const seo = buildSeo({
       title: isBuenaPark
         ? "Buena Park Accident & Injury Guide | Local Records, Data & Deadlines"
-        : `${loaderData.name} Personal Injury Lawyers | Accident & Injury Guide`,
+        : isAnaheim
+          ? "Anaheim Personal Injury Lawyer | Howard Choi"
+          : `${loaderData.name} Personal Injury Lawyers | Accident & Injury Guide`,
       description: isBuenaPark
         ? `A practical Buena Park accident and injury guide with ${loaderData.ots.year} California OTS collision data, local records resources, evidence to preserve, California deadlines, and injury-law guidance.`
-        : `${loaderData.description} See local ${loaderData.ots.year} California OTS collision data, official records resources, evidence to preserve, California deadlines, and practical next steps after an accident.`,
+        : isAnaheim
+          ? `Anaheim personal injury lawyer Howard Choi serves injured clients from nearby Buena Park. See ${loaderData.ots.year} OTS collision data, local records resources, case types, deadlines, and next steps.`
+          : `${loaderData.description} See local ${loaderData.ots.year} California OTS collision data, official records resources, evidence to preserve, California deadlines, and practical next steps after an accident.`,
       path,
       alternatePath: `/ko/locations/${loaderData.slug}`,
       locale: "en-US",
