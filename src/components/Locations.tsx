@@ -5,16 +5,16 @@ import corporateLawImage from "@/assets/law-firm/practice-corporate-law.webp";
 import regulatoryComplianceImage from "@/assets/law-firm/practice-regulatory-compliance.webp";
 
 const practices = [
-  { title: "Car Accidents", description: "Claims involving injury, disputed fault, hit-and-run drivers, and insurance coverage after a crash.", image: corporateLawImage, alt: "Legal counsel reviewing an accident claim", points: ["Rear-end & intersection crashes", "Hit-and-run & uninsured drivers", "Medical costs & lost income"] },
-  { title: "Serious Injuries", description: "Claims where treatment, future care, mobility, work, or daily life may be affected for months or years.", image: commercialLitigationImage, alt: "Attorney reviewing a serious injury matter", points: ["Brain & head injuries", "Neck, spine & orthopedic trauma", "Future care & earning impact"] },
-  { title: "Wrongful Death", description: "Careful representation for families after a fatal accident, with attention to responsibility, evidence, insurance, and the losses left behind.", image: regulatoryComplianceImage, alt: "Legal advisers reviewing a wrongful death matter", points: ["Fatal vehicle collisions", "Liability & insurance investigation", "Financial & family loss"] },
+  { slug: "car-accidents", title: "Car Accidents", description: "Claims involving injury, disputed fault, hit-and-run drivers, and insurance coverage after a crash.", image: corporateLawImage, alt: "Legal counsel reviewing an accident claim", points: ["Rear-end & intersection crashes", "Hit-and-run & uninsured drivers", "Medical costs & lost income"] },
+  { slug: "serious-injuries", title: "Serious Injuries", description: "Claims where treatment, future care, mobility, work, or daily life may be affected for months or years.", image: commercialLitigationImage, alt: "Attorney reviewing a serious injury matter", points: ["Brain & head injuries", "Neck, spine & orthopedic trauma", "Future care & earning impact"] },
+  { slug: "wrongful-death", title: "Wrongful Death", description: "Careful representation for families after a fatal accident, with attention to responsibility, evidence, insurance, and the losses left behind.", image: regulatoryComplianceImage, alt: "Legal advisers reviewing a wrongful death matter", points: ["Fatal vehicle collisions", "Liability & insurance investigation", "Financial & family loss"] },
 ];
 
 type Practice = (typeof practices)[number];
 type MorphCardProps = { practice: Practice; index: number; columns?: MotionValue<string>; detailOpacity?: MotionValue<number>; overlayOpacity?: MotionValue<number> };
 
 const MorphCard = ({ practice, index, columns, detailOpacity, overlayOpacity }: MorphCardProps) => (
-  <motion.div className="relative grid h-full overflow-hidden rounded-[4px] bg-[#e8e4de] shadow-[0_24px_70px_rgba(29,24,19,0.14)]" style={columns ? { gridTemplateColumns: columns } : undefined}>
+  <motion.div className="relative grid h-full overflow-hidden rounded-[4px] bg-[#e8e4de] shadow-[0_24px_70px_rgba(29,24,19,0.14)]" style={columns ? { gridTemplateColumns: columns } : undefined}>\n    <a href={`/practice-areas/${practice.slug}`} aria-label={`Learn about ${practice.title} representation`} className="absolute inset-0 z-40"><span className="sr-only">Learn about {practice.title} representation</span></a>
     <div className="relative min-w-0 overflow-hidden">
       <img src={practice.image} alt={practice.alt} className="absolute inset-0 h-full w-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#15110d]/74 via-[#17130f]/7 to-transparent" />
@@ -34,7 +34,7 @@ const MorphCard = ({ practice, index, columns, detailOpacity, overlayOpacity }: 
 );
 
 const MobileCard = ({ practice, index }: { practice: Practice; index: number }) => (
-  <div className="relative min-h-[calc(100svh-60px)] h-full overflow-hidden rounded-[3px] bg-[#181511]"><img src={practice.image} alt={practice.alt} className="absolute inset-0 h-full w-full object-cover" /><div className="absolute inset-0 bg-gradient-to-t from-[#15110d]/95 via-[#15110d]/18 to-transparent" /><div className="absolute inset-x-0 bottom-0 p-6 text-[#f3eee5]"><div className="mb-2 text-[10px] tracking-[0.12em] text-[#f3eee5]/55">0{index + 1}</div><h3 className="editorial-serif text-[2rem] leading-none">{practice.title}</h3><p className="mt-2 max-w-[300px] text-[13px] leading-5 text-[#f3eee5]/72">{practice.description}</p></div></div>
+  <div className="relative min-h-[calc(100svh-60px)] h-full overflow-hidden rounded-[3px] bg-[#181511]"><a href={`/practice-areas/${practice.slug}`} aria-label={`Learn about ${practice.title} representation`} className="absolute inset-0 z-40"><span className="sr-only">Learn about {practice.title} representation</span></a><img src={practice.image} alt={practice.alt} className="absolute inset-0 h-full w-full object-cover" /><div className="absolute inset-0 bg-gradient-to-t from-[#15110d]/95 via-[#15110d]/18 to-transparent" /><div className="absolute inset-x-0 bottom-0 p-6 text-[#f3eee5]"><div className="mb-2 text-[10px] tracking-[0.12em] text-[#f3eee5]/55">0{index + 1}</div><h3 className="editorial-serif text-[2rem] leading-none">{practice.title}</h3><p className="mt-2 max-w-[300px] text-[13px] leading-5 text-[#f3eee5]/72">{practice.description}</p></div></div>
 );
 
 const Locations = () => {
