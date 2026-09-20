@@ -17,6 +17,7 @@ import { Route as BlogsRouteImport } from './routes/blogs'
 import { Route as CaseValueCalculatorRouteImport } from './routes/case-value-calculator'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DisclaimerRouteImport } from './routes/disclaimer'
+import { Route as EditorialStandardsRouteImport } from './routes/editorial-standards'
 import { Route as KoRouteImport } from './routes/ko'
 import { Route as LocationsRouteImport } from './routes/locations'
 import { Route as PracticeAreasRouteImport } from './routes/practice-areas'
@@ -84,6 +85,11 @@ const ContactRoute = ContactRouteImport.update({
 const DisclaimerRoute = DisclaimerRouteImport.update({
   id: '/disclaimer',
   path: '/disclaimer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EditorialStandardsRoute = EditorialStandardsRouteImport.update({
+  id: '/editorial-standards',
+  path: '/editorial-standards',
   getParentRoute: () => rootRouteImport,
 } as any)
 const KoRoute = KoRouteImport.update({
@@ -236,6 +242,7 @@ export interface FileRoutesByFullPath {
   '/case-value-calculator': typeof CaseValueCalculatorRoute
   '/contact': typeof ContactRoute
   '/disclaimer': typeof DisclaimerRoute
+  '/editorial-standards': typeof EditorialStandardsRoute
   '/ko': typeof KoRoute
   '/locations': typeof LocationsRoute
   '/practice-areas': typeof PracticeAreasRoute
@@ -274,6 +281,7 @@ export interface FileRoutesByTo {
   '/case-value-calculator': typeof CaseValueCalculatorRoute
   '/contact': typeof ContactRoute
   '/disclaimer': typeof DisclaimerRoute
+  '/editorial-standards': typeof EditorialStandardsRoute
   '/ko': typeof KoRoute
   '/locations': typeof LocationsRoute
   '/practice-areas': typeof PracticeAreasRoute
@@ -313,6 +321,7 @@ export interface FileRoutesById {
   '/case-value-calculator': typeof CaseValueCalculatorRoute
   '/contact': typeof ContactRoute
   '/disclaimer': typeof DisclaimerRoute
+  '/editorial-standards': typeof EditorialStandardsRoute
   '/ko': typeof KoRoute
   '/locations': typeof LocationsRoute
   '/practice-areas': typeof PracticeAreasRoute
@@ -353,6 +362,7 @@ export interface FileRouteTypes {
     | '/case-value-calculator'
     | '/contact'
     | '/disclaimer'
+    | '/editorial-standards'
     | '/ko'
     | '/locations'
     | '/practice-areas'
@@ -391,6 +401,7 @@ export interface FileRouteTypes {
     | '/case-value-calculator'
     | '/contact'
     | '/disclaimer'
+    | '/editorial-standards'
     | '/ko'
     | '/locations'
     | '/practice-areas'
@@ -429,6 +440,7 @@ export interface FileRouteTypes {
     | '/case-value-calculator'
     | '/contact'
     | '/disclaimer'
+    | '/editorial-standards'
     | '/ko'
     | '/locations'
     | '/practice-areas'
@@ -468,6 +480,7 @@ export interface RootRouteChildren {
   CaseValueCalculatorRoute: typeof CaseValueCalculatorRoute
   ContactRoute: typeof ContactRoute
   DisclaimerRoute: typeof DisclaimerRoute
+  EditorialStandardsRoute: typeof EditorialStandardsRoute
   KoRoute: typeof KoRoute
   LocationsRoute: typeof LocationsRoute
   PracticeAreasRoute: typeof PracticeAreasRoute
@@ -554,6 +567,13 @@ declare module '@tanstack/react-router' {
       path: '/disclaimer'
       fullPath: '/disclaimer'
       preLoaderRoute: typeof DisclaimerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/editorial-standards': {
+      id: '/editorial-standards'
+      path: '/editorial-standards'
+      fullPath: '/editorial-standards'
+      preLoaderRoute: typeof EditorialStandardsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/ko': {
@@ -764,6 +784,7 @@ const rootRouteChildren: RootRouteChildren = {
   CaseValueCalculatorRoute: CaseValueCalculatorRoute,
   ContactRoute: ContactRoute,
   DisclaimerRoute: DisclaimerRoute,
+  EditorialStandardsRoute: EditorialStandardsRoute,
   KoRoute: KoRoute,
   LocationsRoute: LocationsRoute,
   PracticeAreasRoute: PracticeAreasRoute,
