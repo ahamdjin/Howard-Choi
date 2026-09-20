@@ -11,7 +11,7 @@ const topics = [
   {
     number: "02",
     title: "California injury deadlines",
-    body: "Many personal injury lawsuits have a two-year filing deadline, but shorter deadlines can apply in some situations, including claims involving public entities.",
+    body: "California injury claims can involve strict filing and notice deadlines, and the correct deadline can change with the facts and the parties involved.",
     href: "/blogs/california-personal-injury-deadlines",
     link: "Understand the deadlines",
   },
