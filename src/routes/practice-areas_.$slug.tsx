@@ -1,7 +1,7 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { PracticeAreaDetailPage } from "@/pages/EditorialInnerPages";
 import { getPracticeArea } from "@/data/injurySite";
-import { breadcrumbJsonLd, buildSeo } from "@/lib/seo";
+import { breadcrumbJsonLd, buildSeo, reviewedWebPageJsonLd } from "@/lib/seo";
 
 const practiceSearchNames: Record<string, string> = {
   "car-accidents": "Car Accident",
@@ -32,14 +32,17 @@ export const Route = createFileRoute("/practice-areas_/$slug")({
     });
     return {
       ...seo,
-      scripts: [{
-        type: "application/ld+json",
-        children: JSON.stringify(breadcrumbJsonLd([
-          { name: "Home", path: "/" },
-          { name: "Practice Areas", path: "/practice-areas" },
-          { name: searchName, path },
-        ])),
-      }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify(breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Practice Areas", path: "/practice-areas" },
+            { name: searchName, path },
+          ])),
+        },
+        ...(reviewedWebPageJsonLd({ path, name: `Buena Park ${searchName} Lawyer` }) ? [{ type: "application/ld+json", children: JSON.stringify(reviewedWebPageJsonLd({ path, name: `Buena Park ${searchName} Lawyer` })) }] : []),
+      ],
     };
   },
   component: () => <PracticeAreaDetailPage locale="en" />,
