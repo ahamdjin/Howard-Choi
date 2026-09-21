@@ -14,7 +14,7 @@ const results = [
   },
   {
     title: "Total Client Recoveries",
-    amount: "$100M",
+    amount: "$100M+",
     detail: "Total recovery reported by the firm across client matters.",
     location: "Firmwide",
     image: boardroomImage,
@@ -45,7 +45,7 @@ const SelectedResult = () => {
 
           <div className="max-w-[470px] lg:justify-self-end">
             <p className="text-[13px] leading-[1.55] text-white/62 sm:text-[14px]">
-              The firm reports $100M in total client recoveries, a $1M largest single-client recovery, 40 years of combined experience, and 11 years as a firm. Individual outcomes still depend on the facts of each case.
+              The firm reports $100M+ in total client recoveries, a $1M largest single-client recovery, 40 years of combined experience, and 11 years as a firm. Individual outcomes still depend on the facts of each case.
             </p>
             <a
               href="/results"
