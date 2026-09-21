@@ -8,7 +8,8 @@ import DirectAccess from "@/components/DirectAccess";
 import ClientSuccessFeature from "@/components/ClientSuccessFeature";
 import FAQ from "@/components/FAQ";
 import Booking from "@/components/Booking";
-import HomepageDesignConcepts from "@/components/HomepageDesignConcepts";\nimport Footer from "@/components/Footer";
+import AccidentLawyerGuide from "@/components/AccidentLawyerGuide";
+import Footer from "@/components/Footer";
 
 const Index = () => (
   <div className="home-page min-h-[100svh] overflow-x-clip bg-background">
@@ -26,6 +27,7 @@ const Index = () => (
       <DirectAccess />
       <ClientSuccessFeature />
       <FAQ />
+      <AccidentLawyerGuide />
       <Booking />
       <Footer />
     </div>
