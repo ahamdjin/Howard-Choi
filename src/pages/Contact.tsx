@@ -56,7 +56,7 @@ const Contact = () => {
             <div className="text-[11px] text-muted-foreground">Email</div>
             <div className="mt-2 text-[15px] transition-opacity group-hover:opacity-60">hello@howardchoilaw.com</div>
           </a>
-          <a href="https://www.google.com/maps/search/?api=1&query=6301+Beach+Blvd%2C+Buena+Park%2C+CA+90621" target="_blank" rel="noreferrer" className="group border-t border-foreground/10 pt-5 md:border-t-0 md:pt-0">
+          <a href="https://share.google/LBJ1C8zWrZFjJBkVe" target="_blank" rel="noreferrer" className="group border-t border-foreground/10 pt-5 md:border-t-0 md:pt-0">
             <MapPin className="mb-4 h-4 w-4 text-muted-foreground" />
             <div className="text-[11px] text-muted-foreground">Office</div>
             <div className="mt-2 max-w-[260px] text-[15px] leading-6 transition-opacity group-hover:opacity-60">6301 Beach Blvd, Buena Park, CA 90621</div>

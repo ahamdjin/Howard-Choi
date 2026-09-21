@@ -64,7 +64,10 @@ function RootDocument({ children }: { children: ReactNode }) {
   const lang = pathname === "/ko" || pathname.startsWith("/ko/") ? "ko" : "en";
   const innerSitePage = /^\/(?:ko\/)?(?:practice-areas|locations|attorney|results|about)(?:\/|$)/.test(pathname);
   const attorneyPage = /^\/(?:ko\/)?attorney(?:\/|$)/.test(pathname);
+  // Pages carrying a HighLevel-tracked form. The homepage CTA form will not
+  // submit anywhere unless "/" stays in this list.
   const externalFormPage = [
+    "/",
     "/contact",
     "/ko/contact",
     "/case-value-calculator",

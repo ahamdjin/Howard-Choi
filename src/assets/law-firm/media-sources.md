@@ -17,3 +17,29 @@ License: https://www.pexels.com/license/
 
 Existing remote process photographs retain the source URLs in code. They are
 illustrative stock photos, not representations of actual firm employees or cases.
+
+# Award badges (`badges/`)
+
+Supplied by the firm on September 22, 2026 and rendered in `TrustBadges.tsx`.
+Unlike the photography above, these are claims about the firm and must only be
+shown where the firm actually holds the award, issued in this firm's name.
+
+| Local file | Award |
+| --- | --- |
+| aaoa-top-100.webp | American Academy of Attorneys — Top 100, 2025 |
+| naopia-top-ten-attorney-2025.webp | NAOPIA — Nation's Premier Top Ten Personal Injury Attorney, 2025 |
+| lawyers-of-distinction-2026.webp | Lawyers of Distinction, 2026 |
+| trucking-trial-lawyers-top-10.webp | Trucking Trial Lawyers — Top 10 |
+| bbb-accredited-business.webp | Better Business Bureau — Accredited Business |
+
+**Excluded on purpose — do not re-add either of these:**
+
+1. A TopVerdict.com "California Top 100 Jury Verdicts — Personal Injury 2024"
+   badge was supplied, but the artwork is issued to **Matt Taylor**, not Howard
+   Choi. Only add it if a version issued in this firm's name is provided.
+2. The **AAOA 500 Million Dollar Club** badge was displayed briefly and then
+   removed at the client's direction. AAOA's published criteria require having
+   recovered over $500 million, while the site states "$100M+ total recovered"
+   two sections away. The two claims cannot headline the same page. If the
+   firm's real recovery figure is restated, this badge can come back — the
+   artwork is recoverable from git history.

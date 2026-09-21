@@ -15,7 +15,7 @@ const PUBLIC_CALENDAR_BASE = "https://backend.leadconnectorhq.com/calendars";
 const BUSINESS_OPEN_MINUTES = 8 * 60;
 const BUSINESS_CLOSE_MINUTES = 17 * 60;
 const OFFICE_ADDRESS = "6301 Beach Blvd, Buena Park, CA 90621";
-const MAPS_URL = "https://www.google.com/maps/search/?api=1&query=6301+Beach+Blvd%2C+Buena+Park%2C+CA+90621";
+const MAPS_URL = "https://share.google/LBJ1C8zWrZFjJBkVe";
 
 const pad = (value: number) => String(value).padStart(2, "0");
 const dateKey = (date: Date) => `${date.getUTCFullYear()}-${pad(date.getUTCMonth() + 1)}-${pad(date.getUTCDate())}`;

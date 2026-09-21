@@ -5,6 +5,7 @@ import heroCityBoardroom from "@/assets/law-firm/hero-city-boardroom.webp";
 import heroCourthouse from "@/assets/law-firm/hero-courthouse.webp";
 import heroJusticeLibrary from "@/assets/law-firm/hero-justice-library.webp";
 import heroLawOffice from "@/assets/law-firm/hero-law-office.webp";
+import attorneyPortrait from "@/assets/law-firm/lead-counsel.avif";
 
 const slides = [
   { image: heroJusticeLibrary, alt: "Lady Justice in a private law library" },
@@ -86,13 +87,13 @@ const Hero = () => {
         <div className="site-shell pb-24 md:pb-28">
           <div className="max-w-[700px] text-[#f3eee5]">
             <motion.p initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.18, duration: 0.7 }} className="mb-4 text-[13px] font-medium tracking-[-0.01em] text-[#f3eee5]/88 md:text-sm">
-              Personal Injury Lawyers · Buena Park, California
+              Accident & Personal Injury Lawyer · Buena Park, California
             </motion.p>
             <motion.h1 initial={shouldReduceMotion ? false : { opacity: 0, y: 16, filter: "blur(9px)" }} animate={{ opacity: 1, y: 0, filter: "blur(0px)" }} transition={{ delay: 0.27, duration: 0.9, ease: [0.22, 1, 0.36, 1] }} className="editorial-serif text-[clamp(3rem,4.5vw,4.75rem)] leading-[0.93] tracking-[-0.024em] text-[#f3eee5]">
-              Personal injury lawyers in Buena Park.
+              Accident Lawyer in Buena Park, CA.
             </motion.h1>
             <motion.p initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.7 }} className="mt-5 max-w-[560px] text-[15px] leading-6 text-[#f3eee5]/74 md:text-base">
-              Understand your options after an accident. Get clear guidance on your injury claim and the next step toward recovery.
+              Clear guidance after a car crash or other serious accident, with personal injury representation focused on the evidence, insurance, and what comes next.
             </motion.p>
             <motion.div initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.7 }} className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center">
               <button onClick={() => document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })} className="liquid-cta inline-flex w-fit items-center gap-3 rounded-full px-6 py-3 text-[13px] font-medium">
@@ -100,6 +101,29 @@ const Hero = () => {
               </button>
               <a href="tel:+17146900007" className="text-[13px] text-[#f3eee5]/82 transition-opacity hover:opacity-70 md:text-sm">Or call (+1) 714-690-0007</a>
             </motion.div>
+            <motion.p initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.58, duration: 0.7 }} className="mt-5 text-[13px] text-[#f3eee5]/62">
+              Free consultation · No attorney fee unless there is a recovery.
+            </motion.p>
+
+            <motion.a
+              href="/attorney"
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.66, duration: 0.7 }}
+              className="mt-7 flex w-fit items-center gap-3.5 border-t border-[#f3eee5]/18 pt-5 transition-opacity hover:opacity-75"
+            >
+              <img
+                src={attorneyPortrait}
+                alt="Howard Choi, California accident and personal injury attorney"
+                loading="eager"
+                decoding="async"
+                className="h-11 w-11 shrink-0 rounded-full object-cover object-center"
+              />
+              <span className="text-[12px] leading-4 text-[#f3eee5]/82">
+                <span className="block font-medium text-[#f3eee5]">Howard Choi</span>
+                California Attorney · State Bar No. 284364 · English &amp; Korean
+              </span>
+            </motion.a>
           </div>
         </div>
       </motion.div>

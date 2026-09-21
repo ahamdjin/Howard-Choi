@@ -1,7 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 
 const metrics = [
-  { value: "$100M", label: "Total recovered" },
+  { value: "$100M+", label: "Total recovered" },
   { value: "40 Years", label: "Combined experience" },
   { value: "11 Years", label: "Firm history" },
   { value: "$1M", label: "Largest single-client recovery" },
@@ -30,7 +30,7 @@ const FirmSnapshot = () => (
               href="/attorney"
               className="mt-7 inline-flex items-center gap-2 rounded-[3px] bg-[#171717] px-4 py-3 text-[11px] font-medium text-white transition-opacity hover:opacity-82"
             >
-              Meet the Attorneys <ArrowUpRight className="h-3.5 w-3.5" />
+              Meet Howard Choi <ArrowUpRight className="h-3.5 w-3.5" />
             </a>
           </div>
         </div>
