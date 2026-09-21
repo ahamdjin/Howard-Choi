@@ -17,12 +17,12 @@ const DirectAccess = () => {
           className="lg:py-10"
         >
           <span className="mb-5 block text-[10px] uppercase tracking-[0.2em] text-white/42">
-            Howard Choi
+            Meet the Attorney
           </span>
 
           <h2 className="editorial-serif text-[clamp(3rem,4.6vw,5rem)] leading-[0.91] text-white">
-            Personal injury attorney.<br />
-            <span className="text-white/48">Based in Buena Park.</span>
+            Howard Choi.<br />
+            <span className="text-white/48">Personal injury attorney in Buena Park.</span>
           </h2>
 
           <p className="mt-6 max-w-[500px] text-[15px] leading-6 text-white/58">

@@ -1,105 +1,59 @@
-import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
-import courthouseImage from "@/assets/law-firm/hero-courthouse.webp";
 import boardroomImage from "@/assets/law-firm/hero-city-boardroom.webp";
-import officeImage from "@/assets/law-firm/hero-law-office.webp";
 import { trustProfile } from "@/data/trustProfile";
 
-const results = [
-  {
-    title: "Largest Single-Client Recovery",
-    amount: trustProfile.firmResults.largestRecovery,
-    detail: "Largest single-client recovery reported by the firm. Add the verified case type and facts after attorney confirmation.",
-    location: "Selected result",
-    image: courthouseImage,
-  },
-  {
-    title: "Total Client Recoveries",
-    amount: trustProfile.firmResults.totalRecovered,
-    detail: "Total client recoveries reported by the firm across personal injury matters.",
-    location: "Firmwide",
-    image: boardroomImage,
-  },
-  {
-    title: "California Attorney",
-    amount: "2012",
-    detail: "Howard Choi was admitted to the State Bar of California on October 2, 2012.",
-    location: "Bar No. 284364",
-    image: officeImage,
-  },
-];
+const SelectedResult = () => (
+  <section id="results" className="relative min-h-[100svh] overflow-hidden bg-[#11110f] text-[#f4f1ea]">
+    <div className="site-shell grid min-h-[100svh] w-full gap-10 py-14 lg:grid-cols-[0.82fr_1.18fr] lg:items-center lg:gap-16 lg:py-16">
+      <div className="max-w-[560px]">
+        <span className="text-[10px] uppercase tracking-[0.18em] text-white/38">Case Results</span>
+        <h2 className="editorial-serif mt-5 text-[clamp(3.2rem,5vw,5.8rem)] leading-[0.9] tracking-[-0.04em]">
+          The numbers matter.<br />
+          <span className="text-white/38">So does the work behind them.</span>
+        </h2>
+        <p className="mt-7 max-w-[500px] text-[14px] leading-6 text-white/58">
+          The firm reports more than {trustProfile.firmResults.totalRecovered} recovered for clients across personal injury matters. Its largest reported single-client recovery is {trustProfile.firmResults.largestRecovery}.
+        </p>
+        <a
+          href="/results"
+          className="mt-8 inline-flex min-h-11 items-center gap-2 bg-[#f3eee5] px-5 py-3 text-[11px] font-medium text-[#17130f]"
+        >
+          View Case Results <ArrowUpRight className="h-3.5 w-3.5" />
+        </a>
 
-const SelectedResult = () => {
-  const [active, setActive] = useState(0);
-  const result = results[active];
-
-  return (
-    <section className="flex min-h-[100svh] w-full bg-[#0f0f0f] text-[#f4f1ea]">
-      <div className="site-shell flex min-h-[100svh] w-full flex-col py-8 sm:py-10 lg:py-12">
-        <div className="grid gap-8 border-t border-white/10 pt-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:gap-16">
-          <div>
-            <div className="text-[10px] text-white/42">Selected results</div>
-            <h2 className="editorial-serif mt-4 text-[clamp(2.1rem,3vw,3.5rem)] leading-[1.02] tracking-[-0.03em]">
-              Results backed by a real record.
-            </h2>
-          </div>
-
-          <div className="max-w-[470px] lg:justify-self-end">
-            <p className="text-[13px] leading-[1.55] text-white/62 sm:text-[14px]">
-              The firm reports more than $100 million recovered for clients, including a $1 million largest single-client recovery. Detailed case stories should be added only when the underlying facts are confirmed.
-            </p>
-            <a
-              href="/results"
-              className="mt-5 inline-flex items-center gap-2 rounded-[3px] bg-[#f3eee5] px-4 py-3 text-[11px] font-medium text-[#17130f]"
-            >
-              View Case Results <ArrowUpRight className="h-3.5 w-3.5" />
-            </a>
-          </div>
-        </div>
-
-        <div className="mt-10 grid flex-1 gap-8 lg:grid-cols-[0.52fr_1.48fr] lg:items-stretch lg:gap-12">
-          <div className="flex flex-col justify-center border-t border-white/10">
-            {results.map((item, index) => {
-              const selected = active === index;
-              return (
-                <button
-                  key={item.title}
-                  type="button"
-                  onClick={() => setActive(index)}
-                  className="group border-b border-white/10 py-5 text-left sm:py-6"
-                >
-                  <div className={`text-[14px] transition-colors sm:text-[15px] ${selected ? "text-white" : "text-white/42 group-hover:text-white/72"}`}>
-                    {item.title}
-                  </div>
-                  {selected && (
-                    <div className="mt-2 max-w-[340px] text-[11px] leading-5 text-white/46">
-                      {item.detail}
-                    </div>
-                  )}
-                </button>
-              );
-            })}
-          </div>
-
-          <div className="relative min-h-[44svh] overflow-hidden bg-[#191919] sm:min-h-[50svh] lg:min-h-0">
-            <img src={result.image} alt="Selected personal injury case" className="absolute inset-0 h-full w-full object-cover opacity-55" />
-            <div className="absolute inset-0 bg-black/35" />
-            <div className="absolute left-5 top-5 text-[11px] font-medium text-white/86 sm:left-7 sm:top-7">Selected result</div>
-            <div className="absolute bottom-5 left-5 right-5 sm:bottom-7 sm:left-7 sm:right-7">
-              <div className="editorial-serif text-[clamp(3.2rem,6vw,6rem)] leading-none tracking-[-0.045em]">{result.amount}</div>
-              <div className="mt-3 border-t border-white/18 pt-3 text-[10px] uppercase tracking-[0.12em] text-white/48">
-                {result.title} · {result.location}
-              </div>
+        <div className="mt-12 grid grid-cols-2 border-y border-white/12">
+          <div className="py-6 pr-5 sm:py-7">
+            <div className="editorial-serif text-[clamp(2.8rem,5vw,5.2rem)] leading-none tracking-[-0.045em]">
+              {trustProfile.firmResults.totalRecovered}
             </div>
+            <div className="mt-3 text-[9px] uppercase tracking-[0.15em] text-white/34">Recovered for clients</div>
+          </div>
+          <div className="border-l border-white/12 py-6 pl-5 sm:py-7 sm:pl-7">
+            <div className="editorial-serif text-[clamp(2.8rem,5vw,5.2rem)] leading-none tracking-[-0.045em]">
+              {trustProfile.firmResults.largestRecovery}
+            </div>
+            <div className="mt-3 text-[9px] uppercase tracking-[0.15em] text-white/34">Largest single-client recovery</div>
           </div>
         </div>
 
-        <p className="mt-4 max-w-[760px] text-[9px] leading-4 text-white/28">
+        <p className="mt-5 max-w-[520px] text-[9px] leading-4 text-white/28">
           Prior results do not guarantee a similar outcome. Every matter depends on its own facts, damages, insurance, evidence, and circumstances.
         </p>
       </div>
-    </section>
-  );
-};
+
+      <div className="relative min-h-[58svh] overflow-hidden rounded-[3px] bg-[#1c1b18] lg:h-[78svh] lg:max-h-[820px]">
+        <img src={boardroomImage} alt="" className="absolute inset-0 h-full w-full object-cover opacity-72" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/68 via-black/5 to-black/12" />
+        <div className="absolute inset-x-6 bottom-6 sm:inset-x-8 sm:bottom-8">
+          <div className="max-w-[520px] border-t border-white/24 pt-5">
+            <p className="editorial-serif text-[clamp(1.8rem,3vw,3.4rem)] leading-[1.02]">
+              Real results belong in context—not as a promise about what happens next.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
 
 export default SelectedResult;

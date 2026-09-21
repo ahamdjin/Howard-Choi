@@ -9,7 +9,6 @@ import DirectAccess from "@/components/DirectAccess";
 import ClientSuccessFeature from "@/components/ClientSuccessFeature";
 import FAQ from "@/components/FAQ";
 import Booking from "@/components/Booking";
-import HomepageDesignGallery from "@/components/HomepageDesignGallery";
 import Footer from "@/components/Footer";
 
 const Index = () => (
@@ -23,14 +22,13 @@ const Index = () => (
       </div>
     </div>
     <div className="relative z-20 bg-background">
+      <DirectAccess />
       <HomepageLegalGuide />
       <Experience />
       <SelectedResult />
-      <DirectAccess />
       <ClientSuccessFeature />
       <FAQ />
       <Booking />
-      <HomepageDesignGallery />
       <Footer />
     </div>
   </div>
