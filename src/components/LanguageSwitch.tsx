@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
 
-const toKoreanPath = (pathname: string) => pathname === "/" ? "/ko" : `/ko${pathname}`;
+const toKoreanPath = (pathname: string) => pathname === "/" || pathname === "/editorial-standards" ? "/ko" : `/ko${pathname}`;
 const toEnglishPath = (pathname: string) => {
   if (pathname === "/ko" || pathname === "/ko/") return "/";
   return pathname.replace(/^\/ko/, "") || "/";
