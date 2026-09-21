@@ -1,9 +1,5 @@
 import { ArrowRight } from "lucide-react";
 import carImage from "@/assets/law-firm/car-collision.jpg";
-import truckImage from "@/assets/law-firm/truck-highway.jpg";
-import motorcycleImage from "@/assets/law-firm/motorcycle-road.jpg";
-import medicalImage from "@/assets/law-firm/medical-care.jpg";
-import familyImage from "@/assets/law-firm/family-support.jpg";
 import courthouseImage from "@/assets/law-firm/hero-courthouse.webp";
 
 const HomepageLegalGuide = () => (
@@ -33,70 +29,6 @@ const HomepageLegalGuide = () => (
         <p className="mt-5 text-black/88">
           This page is here to help you understand your options in plain words. No fancy talk. No pressure.
         </p>
-      </div>
-    </section>
-
-    <section className="border-y border-black/10 bg-[#ebe6dd]">
-      <div className="site-shell grid gap-12 py-20 md:py-24 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-20">
-        <div className="max-w-[720px]">
-          <span className="text-[9px] uppercase tracking-[0.18em] text-black/35">Personal injury, in plain English</span>
-          <h2 className="editorial-serif mt-4 text-[clamp(2.6rem,4vw,4.5rem)] leading-[0.94] tracking-[-0.035em]">
-            Personal Injury Lawyer Buena Park CA — What This Actually Means For You
-          </h2>
-          <div className="mt-8 space-y-5 text-[15px] leading-7 text-black/66 md:text-[16px]">
-            <p>
-              "Personal injury" is just a fancy term for "someone else hurt you, and now you're stuck paying for it." That's it. It could be a car wreck, a fall at a business, a dog bite, a bad product, or an injury at work.
-            </p>
-            <p>
-              Here's the part nobody explains well: in California, you usually have <strong className="font-semibold text-black/86">two years</strong> from the date you got hurt to file a lawsuit. That's called the statute of limitations. Two years sounds like a long time, but it goes fast, especially if you're dealing with doctors, physical therapy, missed paychecks, and insurance adjusters calling you every other day. If you wait too long, you can lose your right to get paid for what happened to you completely. Don't wait around on this one.
-            </p>
-            <p>
-              If your injury happened on city or county property — say a pothole on a Buena Park street, or a fall in a public park — there's an even shorter window, sometimes as little as six months, to file a claim. This is one of those local rules that catches people off guard, so if that's your situation, talk to someone fast.
-            </p>
-            <p>
-              A personal injury case usually comes down to one simple question: who was careless, and how much did that carelessness cost you? Cost isn't just your car repair bill. It's your medical bills, the work you missed, the pain that keeps you up at night, and sometimes the stuff that never fully goes back to normal.
-            </p>
-          </div>
-          <a href="/practice-areas/personal-injury" className="mt-7 inline-flex items-center gap-2 text-[11px] font-medium underline underline-offset-4">
-            Personal Injury Lawyer in Buena Park, CA <ArrowRight className="h-3.5 w-3.5" />
-          </a>
-        </div>
-
-        <div className="relative min-h-[520px] overflow-hidden rounded-[3px] bg-black">
-          <img src={medicalImage} alt="Medical care after a serious injury" className="absolute inset-0 h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-black/10" />
-        </div>
-      </div>
-    </section>
-
-    <section className="site-shell py-20 md:py-24">
-      <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:gap-16">
-        <div>
-          <span className="text-[9px] uppercase tracking-[0.18em] text-black/35">Vehicle accidents</span>
-          <h2 className="editorial-serif mt-4 max-w-[540px] text-[clamp(2.7rem,4.2vw,4.7rem)] leading-[0.93] tracking-[-0.035em]">
-            Car Accidents, Truck Wrecks, and Motorcycle Crashes
-          </h2>
-          <div className="mt-8 grid grid-cols-2 gap-2">
-            <div className="relative min-h-[240px] overflow-hidden rounded-[3px]">
-              <img src={truckImage} alt="Truck on highway" className="absolute inset-0 h-full w-full object-cover" />
-            </div>
-            <div className="relative min-h-[240px] overflow-hidden rounded-[3px]">
-              <img src={motorcycleImage} alt="Motorcycle on road" className="absolute inset-0 h-full w-full object-cover" />
-            </div>
-          </div>
-        </div>
-
-        <div className="max-w-[720px] self-center text-[15px] leading-7 text-black/68 md:text-[16px]">
-          <p>
-            Orange County traffic is no joke. The 91 freeway through Buena Park backs up almost every day, and that kind of stop-and-go traffic is where a lot of rear-end crashes happen. Add in drivers glued to their phones, and it's not surprising how many wrecks happen right here at intersections like Beach Blvd and Lincoln, or out toward the 5 freeway near Fullerton.
-          </p>
-          <p className="mt-5">
-            After a crash, the other driver's insurance company is not your friend. Their job is to pay you as little as possible, and they're good at it. They might call you within a day or two, sound real friendly, and ask you to describe what happened "just for the file." What you say in that call can be used to lower your payout later. Our honest opinion? Don't give a recorded statement to the other side's insurance company until you've talked to someone who's on your side.
-          </p>
-          <p className="mt-5">
-            Truck accidents and motorcycle crashes work a little different because the injuries tend to be worse, and sometimes there's more than one company that could be responsible — the driver, the trucking company, even the company that loaded the cargo. These cases take more digging, but that digging is what gets people a fair result instead of a lowball check.
-          </p>
-        </div>
       </div>
     </section>
 
