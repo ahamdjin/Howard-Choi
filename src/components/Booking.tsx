@@ -46,7 +46,7 @@ const Booking = () => {
             </a>
           </div>
           <a
-            href="https://www.google.com/maps/search/?api=1&query=6301+Beach+Blvd%2C+Suite+216%2C+Buena+Park%2C+CA+90621"
+            href="https://share.google/LBJ1C8zWrZFjJBkVe"
             target="_blank"
             rel="noreferrer"
             className="mt-6 inline-block text-[12px] text-white/42 transition-colors hover:text-white/68"
