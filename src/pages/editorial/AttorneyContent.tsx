@@ -60,7 +60,7 @@ export default function AttorneyContent({ locale }: { locale: SiteLocale }) {
       <div className="attorney-content-shell">
         <div className="mb-10 max-w-[640px]"><p className="attorney-label">{ko ? "업무 분야" : "Practice areas"}</p><h2 className="mt-4">{ko ? "사고 유형에 맞는 안내" : "Find the right starting point."}</h2><p className="mt-5 leading-7 text-[#57514b]">{ko ? "사고 유형을 선택하여 관련 기록, 보험과 다음 단계를 확인하세요." : "Choose an accident type for information about evidence, insurance, and next steps."}</p></div>
         <div className="grid gap-x-6 gap-y-9 sm:grid-cols-2 lg:grid-cols-4">{practiceAreas.map(practice => <a key={practice.slug} href={`${prefix}/practice-areas/${practice.slug}`} className="group block rounded-md focus-visible:outline-offset-4">
-          <div className="overflow-hidden rounded-md"><img src={practiceMedia[practice.slug].src} alt="" width={600} height={400} loading="lazy" decoding="async" className="aspect-[3/2] w-full object-cover transition-transform duration-300 motion-safe:group-hover:scale-[1.03]" /></div>
+          <div className="overflow-hidden rounded-md"><img src={practiceMedia[practice.slug]?.src ?? officeImage} alt="" width={600} height={400} loading="lazy" decoding="async" className="aspect-[3/2] w-full object-cover transition-transform duration-300 motion-safe:group-hover:scale-[1.03]" /></div>
           <div className="flex min-h-14 items-center justify-between gap-3 py-3"><h3>{ko ? practice.koTitle : practice.title}</h3><ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-1" /></div>
         </a>)}</div>
       </div>
