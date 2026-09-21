@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import FirmSnapshot from "@/components/FirmSnapshot";
 import Locations from "@/components/Locations";
+import HomepageLegalGuide from "@/components/HomepageLegalGuide";
 import Experience from "@/components/Experience";
 import SelectedResult from "@/components/SelectedResult";
 import DirectAccess from "@/components/DirectAccess";
@@ -22,6 +23,7 @@ const Index = () => (
       </div>
     </div>
     <div className="relative z-20 bg-background">
+      <HomepageLegalGuide />
       <Experience />
       <SelectedResult />
       <DirectAccess />

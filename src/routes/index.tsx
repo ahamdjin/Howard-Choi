@@ -4,8 +4,8 @@ import { buildSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
   head: () => buildSeo({
-    title: "Buena Park Personal Injury Lawyer | Howard Choi",
-    description: "Buena Park personal injury lawyer Howard Choi represents people hurt in car, truck, motorcycle, pedestrian, rideshare, premises-liability, wrongful-death, and serious-injury matters. California Bar No. 284364.",
+    title: "Accident Lawyer in Buena Park, CA | Buena Park Injury Lawyer",
+    description: "Buena Park accident lawyer Howard Choi helps people with personal injury claims involving car, truck, motorcycle, pedestrian, rideshare, slip-and-fall, wrongful-death, and serious-injury matters. California Bar No. 284364.",
     path: "/",
     alternatePath: "/ko",
     locale: "en-US",

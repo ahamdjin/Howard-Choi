@@ -26,12 +26,12 @@ const Booking = () => {
           transition={{ duration: 0.75 }}
           className="mx-auto max-w-[760px] text-center"
         >
-          <span className="mb-5 block text-[12px] text-white/52">Start the conversation</span>
+          <span className="mb-5 block text-[12px] text-white/52">Let's Talk</span>
           <h2 className="editorial-serif text-[clamp(3rem,4.8vw,5.15rem)] leading-[0.96] tracking-[-0.025em]">
-            Tell us what happened. We’ll help make the next step clearer.
+            You don't have to figure this out by yourself.
           </h2>
           <p className="mx-auto mt-6 max-w-[570px] text-[16px] leading-7 text-white/60">
-            Share the accident date and location, your current treatment, insurance information, and the questions you need answered. Consultations are free, and representation is available on a contingency-fee basis—no attorney fee unless there is a recovery.
+            Call Buena Park Injury Lawyer and tell us what happened. We'll listen, ask a few questions, and give you an honest read on where you stand.
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
