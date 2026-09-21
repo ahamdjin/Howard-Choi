@@ -33,10 +33,7 @@ const ClientSuccessFeature = ({ locale = "en" }: { locale?: SiteLocale }) => {
               <div className="mt-1 text-sm text-foreground/70">{review.location}</div>
             </div>
             <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-foreground/20 pt-5">
-              <a href="https://share.google/LBJ1C8zWrZFjJBkVe" target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center gap-2 text-xs underline underline-offset-4">
-                <svg viewBox="0 0 24 24" aria-hidden="true" className="h-5 w-5"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2.1H12v4h5.4a4.6 4.6 0 0 1-2 3v2.6h3.2c1.9-1.8 3-4.3 3-7.5Z"/><path fill="#34A853" d="M12 22c2.7 0 5-0.9 6.6-2.3l-3.2-2.6c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3v2.6A10 10 0 0 0 12 22Z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-4V7.4H3a10 10 0 0 0 0 9.2L6.4 14Z"/><path fill="#EA4335" d="M12 5.9c1.5 0 2.8.5 3.8 1.5l2.9-2.9A10 10 0 0 0 3 7.4L6.4 10C7.2 7.7 9.4 5.9 12 5.9Z"/></svg>
-                {ko ? "Google에서 보기" : "Find us on Google"}
-              </a>
+              <span className="inline-flex min-h-11 items-center text-xs text-foreground/48">{ko ? "실제 의뢰인 후기" : "Real client testimonial"}</span>
               <div className="flex items-center gap-3">
                 <button type="button" onClick={() => move(-1)} aria-label={ko ? "이전 후기" : "Previous review"} className="flex h-11 w-11 items-center justify-center rounded-full border border-foreground/35 hover:bg-white"><ArrowLeft className="h-4 w-4" /></button>
                 <span className="text-xs tabular-nums">{active + 1} / {items.length}</span>
