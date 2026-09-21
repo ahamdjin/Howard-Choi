@@ -17,3 +17,23 @@ License: https://www.pexels.com/license/
 
 Existing remote process photographs retain the source URLs in code. They are
 illustrative stock photos, not representations of actual firm employees or cases.
+
+# Award badges (`badges/`)
+
+Supplied by the firm on September 22, 2026 and rendered in `TrustBadges.tsx`.
+Unlike the photography above, these are claims about the firm and must only be
+shown where the firm actually holds the award, issued in this firm's name.
+
+| Local file | Award |
+| --- | --- |
+| aaoa-500-million-dollar-club-2025.webp | American Academy of Attorneys — 500 Million Dollar Club, 2025 |
+| aaoa-top-100.webp | American Academy of Attorneys — Top 100, 2025 |
+| naopia-top-ten-attorney-2025.webp | NAOPIA — Nation's Premier Top Ten Personal Injury Attorney, 2025 |
+| lawyers-of-distinction-2026.webp | Lawyers of Distinction, 2026 |
+| trucking-trial-lawyers-top-10.webp | Trucking Trial Lawyers — Top 10 |
+| bbb-accredited-business.webp | Better Business Bureau — Accredited Business |
+
+**Excluded on purpose:** a TopVerdict.com "California Top 100 Jury Verdicts —
+Personal Injury 2024" badge was also supplied, but the badge artwork is issued
+to **Matt Taylor**, not Howard Choi. Do not add it unless a version issued in
+this firm's name is provided.

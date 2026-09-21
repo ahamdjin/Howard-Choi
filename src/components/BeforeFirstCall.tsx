@@ -1,38 +1,73 @@
 import { ArrowUpRight } from "lucide-react";
-import logo from "@/assets/law-firm/howard-choi-logo.png";
-import carImage from "@/assets/law-firm/car-collision.jpg";
-import courtImage from "@/assets/law-firm/hero-courthouse.webp";
-import medicalImage from "@/assets/law-firm/medical-care.jpg";
-import familyImage from "@/assets/law-firm/family-support.jpg";
+
+const steps = [
+  {
+    number: "01",
+    title: "Get medical attention.",
+    body: "See a doctor even if you feel alright at the scene. Some injuries show up a day or two later, and a gap between the accident and your first visit is the first thing an insurer will point to.",
+  },
+  {
+    number: "02",
+    title: "Save photos, reports, and witness details.",
+    body: "Pictures of the scene and the damage, the police or incident report number, the other driver's insurance information, and the name of anyone who saw it. Nearby camera footage is often gone within days.",
+  },
+  {
+    number: "03",
+    title: "Be careful what you sign or say.",
+    body: "You are not required to give a recorded statement to the other side's insurer, and a quick settlement check often comes with a release that closes your claim for good. Read it before you sign it.",
+  },
+  {
+    number: "04",
+    title: "Know that deadlines apply.",
+    body: "California usually allows two years from the date of injury to file a personal injury lawsuit, and claims against a city or other public agency can require written notice in a matter of months.",
+  },
+];
 
 const BeforeFirstCall = () => (
-  <section className="relative mx-auto h-[98svh] min-h-[740px] max-h-[1000px] w-full overflow-hidden bg-[#181715] text-white">
-    <div className="site-shell flex h-full w-full flex-col justify-center py-20">
-      <div className="mx-auto mb-9 max-w-[760px] text-center">
-        <img src={logo} alt="" className="mx-auto mb-5 h-auto w-[105px] brightness-0 invert opacity-80" />
-        <p className="text-[8px] uppercase tracking-[0.2em] text-white/38">Before your first call</p>
-        <h2 className="editorial-serif mt-3 text-[clamp(2.8rem,5vw,5.2rem)] leading-[0.9] tracking-[-0.045em]">
-          Four things worth<br /><span className="text-white/38">knowing early.</span>
-        </h2>
-      </div>
+  <section id="before-your-call" aria-labelledby="home-info-heading" className="bg-[#f3efe8] py-20 text-foreground md:py-24 lg:py-28">
+    <div className="site-shell">
+      <div className="grid gap-14 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
+        <div>
+          <div className="text-[10px] uppercase tracking-[0.16em] text-foreground/36">Before your first call</div>
+          <h2 id="home-info-heading" className="editorial-serif mt-5 max-w-[520px] text-[clamp(2.5rem,4.4vw,4.8rem)] leading-[0.94] tracking-[-0.035em]">
+            What should I do after an accident?
+          </h2>
+          <p className="mt-6 max-w-[430px] text-[14px] leading-7 text-foreground/52">
+            Four practical steps that protect your health and your claim, whether or not you ever decide to hire a lawyer.
+          </p>
 
-      <div className="mx-auto grid w-full max-w-[1180px] grid-cols-2 gap-2 md:grid-cols-4">
-        {[
-          [carImage, "01", "What to do after an accident", "/blogs/what-to-do-after-a-car-accident-in-california"],
-          [courtImage, "02", "California injury deadlines", "/blogs/california-personal-injury-deadlines"],
-          [medicalImage, "03", "Insurance & medical evidence", "/practice-areas/car-accidents"],
-          [familyImage, "04", "What affects claim value", "/case-value-calculator"],
-        ].map(([image, number, title, href]) => (
-          <a key={number} href={href} className="group relative h-[250px] overflow-hidden rounded-[2px] md:h-[340px]">
-            <img src={image} alt="" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.035]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/82 via-black/5 to-black/8" />
-            <div className="absolute inset-x-4 bottom-4 md:inset-x-5 md:bottom-5">
-              <div className="text-[8px] text-white/42">{number}</div>
-              <h3 className="editorial-serif mt-2 text-[clamp(1.15rem,1.8vw,1.8rem)] leading-[1.02]">{title}</h3>
+          <div className="mt-8 flex flex-col gap-3">
+            <a
+              href="/blogs/what-to-do-after-a-car-accident-in-california"
+              className="inline-flex items-center gap-2 text-[11px] font-medium underline underline-offset-4"
+            >
+              Read the full guide <ArrowUpRight className="h-3.5 w-3.5" />
+            </a>
+            <a
+              href="/blogs/california-personal-injury-deadlines"
+              className="inline-flex items-center gap-2 text-[11px] text-foreground/62 underline underline-offset-4"
+            >
+              California injury deadlines <ArrowUpRight className="h-3.5 w-3.5" />
+            </a>
+          </div>
+        </div>
+
+        <div className="border-t border-foreground/14">
+          {steps.map((step) => (
+            <div
+              key={step.number}
+              className="grid gap-4 border-b border-foreground/12 py-7 sm:grid-cols-[42px_1fr] sm:items-start md:py-8"
+            >
+              <span className="pt-1 text-[9px] tabular-nums text-foreground/26">{step.number}</span>
+              <div>
+                <h3 className="editorial-serif text-[clamp(1.5rem,2.3vw,2.3rem)] leading-[1.06] tracking-[-0.02em]">
+                  {step.title}
+                </h3>
+                <p className="mt-3 max-w-[660px] text-[13px] leading-6 text-foreground/54">{step.body}</p>
+              </div>
             </div>
-            <ArrowUpRight className="absolute right-4 top-4 h-4 w-4 text-white/48 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-          </a>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   </section>

@@ -13,11 +13,12 @@ const faqCopy = {
     title: "Useful answers before your first call.",
     body: "The questions people usually need answered first after a serious accident in California.",
     questions: [
-      ["What should I do after an accident if I may have an injury claim?", "Start with safety and appropriate medical care. When it is possible, preserve scene photos or video, driver and insurance details, witness information, police or incident reports, damaged-property information, medical records, and a simple record of missed work and accident-related expenses. Time-sensitive evidence can disappear quickly."],
+      ["How much does an accident lawyer cost?", "Personal injury cases are generally handled on a contingency fee, which means there is no attorney fee unless there is a recovery. You are not paying an hourly rate while the case is open, and the first consultation is free. The specific percentage, and how case costs are handled, are set out in a written fee agreement before any work begins."],
+      ["Do you offer free consultations?", "Yes. The first conversation is free and there is no obligation to hire the firm afterward. Bring whatever you already have—the accident date and location, photos, a report number, insurance letters—and you can get your questions answered before deciding anything."],
+      ["What does a contingency fee mean?", "It means the attorney fee is a percentage of what is actually recovered, and it is only owed if the case recovers something. If the claim does not result in a recovery, you do not owe an attorney fee. Case costs, such as obtaining records or filing fees, are handled separately and explained in the written agreement."],
       ["How long do I have to file a personal injury lawsuit in California?", "California generally gives an injured person two years from the date of injury to file a personal injury lawsuit, but exceptions exist and claims involving a public entity can have much shorter notice deadlines. The correct deadline depends on the facts, so it is worth checking early rather than assuming the general rule applies."],
       ["What if I was partly at fault for the accident?", "California follows comparative fault. A person may still have a claim even when some responsibility is assigned to them, although the amount recoverable can be reduced by their share of fault. The evidence around how the accident happened becomes especially important when fault is disputed."],
-      ["What affects the value of a personal injury case?", "There is no single settlement formula. Important factors can include medical treatment, future care, lost wages or earning capacity, pain and functional limitations, responsibility for the accident, available insurance, liens, the strength of the evidence, and whether losses are temporary or long term. Our case-value calculator can provide an educational starting range, but an actual case requires review of the record."],
-      ["What should I bring to a consultation with a personal injury lawyer?", "You do not need a perfect case file. A short timeline, the accident location and date, photos, police or incident-report information, insurance details, medical information you already have, and any letters, emails, texts, or calls from insurers are enough to begin a useful conversation."],
+      ["How much is my case worth?", "There is no single settlement formula. Important factors can include medical treatment, future care, lost wages or earning capacity, pain and functional limitations, responsibility for the accident, available insurance, liens, the strength of the evidence, and whether losses are temporary or long term. Our case-value calculator can provide an educational starting range, but an actual case requires review of the record."],
     ],
   },
   ko: {
@@ -55,7 +56,7 @@ const FAQ = ({ locale = "en" }: FAQProps) => {
             </h2>
             <p className="mt-4 max-w-[390px] text-[13px] leading-5 text-foreground/52">{copy.body}</p>
             <div className="mt-6 flex max-w-[390px] items-center gap-3 border-t border-foreground/12 pt-3 text-[9px] font-medium uppercase tracking-[0.14em] text-foreground/30">
-              <span>05</span><span>{ko ? "질문" : "Questions"}</span>
+              <span>{String(copy.questions.length).padStart(2, "0")}</span><span>{ko ? "질문" : "Questions"}</span>
             </div>
           </motion.div>
 

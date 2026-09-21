@@ -1,13 +1,13 @@
 import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } from "framer-motion";
 import { useRef } from "react";
-import commercialLitigationImage from "@/assets/law-firm/practice-commercial-litigation.webp";
-import corporateLawImage from "@/assets/law-firm/practice-corporate-law.webp";
-import regulatoryComplianceImage from "@/assets/law-firm/practice-regulatory-compliance.webp";
+import collisionImage from "@/assets/law-firm/collision-damage.jpg";
+import medicalCareImage from "@/assets/law-firm/medical-care.jpg";
+import familySupportImage from "@/assets/law-firm/family-support.jpg";
 
 const practices = [
-  { title: "Car Accidents", description: "Claims involving injury, disputed fault, hit-and-run drivers, and insurance coverage after a crash.", image: corporateLawImage, alt: "Legal counsel reviewing an accident claim", points: ["Rear-end & intersection crashes", "Hit-and-run & uninsured drivers", "Medical costs & lost income"] },
-  { title: "Serious Injuries", description: "Claims where treatment, future care, mobility, work, or daily life may be affected for months or years.", image: commercialLitigationImage, alt: "Attorney reviewing a serious injury matter", points: ["Brain & head injuries", "Neck, spine & orthopedic trauma", "Future care & earning impact"] },
-  { title: "Wrongful Death", description: "Careful representation for families after a fatal accident, with attention to responsibility, evidence, insurance, and the losses left behind.", image: regulatoryComplianceImage, alt: "Legal advisers reviewing a wrongful death matter", points: ["Fatal vehicle collisions", "Liability & insurance investigation", "Financial & family loss"] },
+  { title: "Car Accidents", href: "/practice-areas/car-accidents", description: "Claims involving injury, disputed fault, hit-and-run drivers, and insurance coverage after a crash.", image: collisionImage, alt: "Damaged car with a broken windshield after a collision", points: ["Rear-end & intersection crashes", "Hit-and-run & uninsured drivers", "Medical costs & lost income"] },
+  { title: "Serious Injuries", href: "/practice-areas/serious-injuries", description: "Claims where treatment, future care, mobility, work, or daily life may be affected for months or years.", image: medicalCareImage, alt: "Hospital room prepared for medical care", points: ["Brain & head injuries", "Neck, spine & orthopedic trauma", "Future care & earning impact"] },
+  { title: "Wrongful Death", href: "/practice-areas/wrongful-death", description: "Careful representation for families after a fatal accident, with attention to responsibility, evidence, insurance, and the losses left behind.", image: familySupportImage, alt: "Hands held together in support", points: ["Fatal vehicle collisions", "Liability & insurance investigation", "Financial & family loss"] },
 ];
 
 type Practice = (typeof practices)[number];
@@ -30,11 +30,12 @@ const MorphCard = ({ practice, index, columns, detailOpacity, overlayOpacity }: 
         <div className="mt-8 border-t border-[#211c17]/14 pt-5">{practice.points.map((point) => <div key={point} className="flex items-center justify-between border-b border-[#211c17]/10 py-2.5 text-[13px] text-[#211c17]/68 last:border-b-0"><span>{point}</span><span className="text-[#211c17]/35">↗</span></div>)}</div>
       </div>
     </motion.div>
+    <a href={practice.href} aria-label={`${practice.title} — practice area`} className="absolute inset-0 z-40" />
   </motion.div>
 );
 
 const MobileCard = ({ practice, index }: { practice: Practice; index: number }) => (
-  <div className="relative min-h-[calc(100svh-60px)] h-full overflow-hidden rounded-[3px] bg-[#181511]"><img src={practice.image} alt={practice.alt} className="absolute inset-0 h-full w-full object-cover" /><div className="absolute inset-0 bg-gradient-to-t from-[#15110d]/95 via-[#15110d]/18 to-transparent" /><div className="absolute inset-x-0 bottom-0 p-6 text-[#f3eee5]"><div className="mb-2 text-[10px] tracking-[0.12em] text-[#f3eee5]/55">0{index + 1}</div><h3 className="editorial-serif text-[2rem] leading-none">{practice.title}</h3><p className="mt-2 max-w-[300px] text-[13px] leading-5 text-[#f3eee5]/72">{practice.description}</p></div></div>
+  <div className="relative min-h-[calc(100svh-60px)] h-full overflow-hidden rounded-[3px] bg-[#181511]"><img src={practice.image} alt={practice.alt} className="absolute inset-0 h-full w-full object-cover" /><div className="absolute inset-0 bg-gradient-to-t from-[#15110d]/95 via-[#15110d]/18 to-transparent" /><div className="absolute inset-x-0 bottom-0 p-6 text-[#f3eee5]"><div className="mb-2 text-[10px] tracking-[0.12em] text-[#f3eee5]/55">0{index + 1}</div><h3 className="editorial-serif text-[2rem] leading-none">{practice.title}</h3><p className="mt-2 max-w-[300px] text-[13px] leading-5 text-[#f3eee5]/72">{practice.description}</p></div><a href={practice.href} aria-label={`${practice.title} — practice area`} className="absolute inset-0 z-40" /></div>
 );
 
 const Locations = () => {
@@ -60,7 +61,7 @@ const Locations = () => {
   return (
     <section id="practice" ref={ref} className="relative bg-background lg:h-[340svh]">
       <div className="site-shell py-20 md:py-24 lg:hidden">
-        <div className="mb-12 grid gap-8"><div><span className="mb-5 block text-[13px] text-muted-foreground">Practice Areas</span><h2 className="editorial-serif max-w-[690px] text-[clamp(3rem,12vw,4.5rem)] leading-[0.93] tracking-[-0.02em]">Personal injury help for<br />what happened next.</h2></div><p className="max-w-[430px] text-[15px] leading-6 text-muted-foreground">From everyday collisions to life-changing injuries, the claim should reflect responsibility, available insurance, medical treatment, financial loss, and the evidence that connects them.</p></div>
+        <div className="mb-12 grid gap-8"><div><span className="mb-5 block text-[13px] text-muted-foreground">Practice Areas</span><h2 className="editorial-serif max-w-[690px] text-[clamp(3rem,12vw,4.5rem)] leading-[0.93] tracking-[-0.02em]">Personal injury help for<br />what happened next.</h2></div><p className="max-w-[430px] text-[15px] leading-6 text-muted-foreground">From everyday collisions to life-changing injuries, the claim should reflect responsibility, available insurance, medical treatment, financial loss, and the evidence that connects them. <a href="/practice-areas" className="whitespace-nowrap font-medium text-foreground underline underline-offset-4">Explore all practice areas ↗</a></p></div>
         <div className="mobile-practice-panels grid gap-3">{practices.map((practice, index) => <article key={practice.title} className="min-h-[calc(100svh-60px)]"><MobileCard practice={practice} index={index} /></article>)}</div>
       </div>
 
@@ -68,7 +69,7 @@ const Locations = () => {
         <div className="site-shell relative h-full">
           <motion.div className="absolute left-0 right-0 top-[11%] z-40 grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end" style={shouldReduceMotion ? { opacity: 1 } : { opacity: headerOpacity, y: headerY }}>
             <div><span className="mb-5 block text-[13px] text-muted-foreground">Practice Areas</span><h2 className="editorial-serif max-w-[690px] text-[clamp(3rem,4.7vw,5rem)] leading-[0.93] tracking-[-0.02em]">Personal injury help for<br />what happened next.</h2></div>
-            <p className="max-w-[430px] text-[15px] leading-6 text-muted-foreground lg:pb-1">From everyday collisions to life-changing injuries, the claim should reflect responsibility, available insurance, medical treatment, financial loss, and the evidence that connects them.</p>
+            <p className="max-w-[430px] text-[15px] leading-6 text-muted-foreground lg:pb-1">From everyday collisions to life-changing injuries, the claim should reflect responsibility, available insurance, medical treatment, financial loss, and the evidence that connects them. <a href="/practice-areas" className="whitespace-nowrap font-medium text-foreground underline underline-offset-4">Explore all practice areas ↗</a></p>
           </motion.div>
           {practices.map((practice, index) => {
             const style = cardStyles[index];
