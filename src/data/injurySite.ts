@@ -10,6 +10,22 @@ export const brand = {
 
 export const practiceAreas = [
   {
+    slug: "personal-injury",
+    title: "Personal Injury",
+    koTitle: "개인상해",
+    description: "Buena Park personal injury lawyer Howard Choi helps injured people understand fault, insurance, medical losses, evidence, deadlines, and the next steps after a serious accident.",
+    koDescription: "부에나파크에서 사고와 개인상해로 피해를 입은 분들이 책임, 보험, 치료, 손실, 증거와 다음 절차를 이해할 수 있도록 돕습니다.",
+    intro: "You got hurt. Now what? A personal injury claim can bring medical treatment, insurance calls, missed work, bills, and questions about fault all at once. The first job is to slow the situation down, preserve what happened, identify the people and insurance involved, and build a clear record of how the injury changed your life.",
+    koIntro: "사고로 다친 뒤에는 치료, 보험 연락, 결근, 비용과 과실 문제가 한꺼번에 생길 수 있습니다. 우선 사고 기록을 보존하고 책임 당사자와 보험을 확인하며 부상이 실제 생활에 미친 영향을 정리하는 것이 중요합니다.",
+    issues: ["Car, truck, motorcycle, pedestrian, and rideshare accidents", "Slip-and-fall and other unsafe-property claims", "Serious and catastrophic injuries", "Wrongful death, insurance disputes, and comparative fault"],
+    koIssues: ["자동차·트럭·오토바이·보행자·승차공유 사고", "낙상 및 위험한 시설 관련 청구", "중대·치명적 상해", "부당 사망·보험 분쟁·비교과실"],
+    evidenceTitle: "You do not need every answer on day one, but you should protect the record early.",
+    evidenceIntro: "Photos, video, police or incident reports, witness information, medical records, insurance communications, wage-loss documentation, and a simple timeline can help show both how the accident happened and what it cost you.",
+    evidenceItems: ["Scene photos, video, and incident or police records", "Witness and responsible-party information", "Medical treatment, bills, and future-care records", "Insurance communications, lost income, and a clear timeline"],
+    valueIntro: "A personal injury claim is not valued by one formula. Medical treatment, future care, lost income, long-term limitations, pain, comparative fault, insurance limits, liens, and the quality of the evidence can all affect the range of a claim.",
+    insuranceIntro: "The available insurance depends on how the injury happened. A claim may involve an at-fault driver, vehicle owner, employer, business, property owner, commercial policy, umbrella coverage, or the injured person's own uninsured or underinsured motorist coverage.",
+  },
+  {
     slug: "car-accidents",
     title: "Car Accident",
     koTitle: "자동차 사고",

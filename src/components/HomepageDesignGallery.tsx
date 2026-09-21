@@ -62,6 +62,7 @@ const HomepageDesignGallery = () => (
         </div>
 
         <div className="mt-5 flex flex-wrap justify-center gap-x-5 gap-y-2 text-[9px] text-black/46">
+          <a href="/practice-areas/personal-injury" className="underline-offset-4 hover:underline">Personal Injury</a>
           <a href="/practice-areas/rideshare-accidents" className="underline-offset-4 hover:underline">Uber & Lyft</a>
           <a href="/practice-areas/slip-and-fall" className="underline-offset-4 hover:underline">Slip & Fall</a>
           <a href="/practice-areas/wrongful-death" className="underline-offset-4 hover:underline">Wrongful Death</a>

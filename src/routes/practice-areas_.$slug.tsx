@@ -4,6 +4,7 @@ import { getPracticeArea } from "@/data/injurySite";
 import { breadcrumbJsonLd, buildSeo, reviewedWebPageJsonLd } from "@/lib/seo";
 
 const practiceSearchNames: Record<string, string> = {
+  "personal-injury": "Personal Injury",
   "car-accidents": "Car Accident",
   "truck-accidents": "Truck Accident",
   "motorcycle-accidents": "Motorcycle Accident",
@@ -25,7 +26,7 @@ export const Route = createFileRoute("/practice-areas_/$slug")({
     const searchName = practiceSearchNames[loaderData.slug] || loaderData.title;
     const seo = buildSeo({
       title: `${searchName} Lawyer in Buena Park, CA | Howard Choi`,
-      description: loaderData.description,
+      description: `${loaderData.description} Learn how personal injury attorney Howard Choi approaches evidence, insurance, damages, and next steps.`,
       path,
       alternatePath: `/ko/practice-areas/${loaderData.slug}`,
       locale: "en-US",

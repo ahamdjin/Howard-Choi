@@ -32,6 +32,21 @@ const californiaCourtSources = [
 ];
 
 const practiceEnhancements: Record<string, PracticeEnhancement> = {
+  "personal-injury": {
+    damages: ["Medical treatment and future care", "Lost wages and reduced earning capacity", "Pain, physical limitations, and disruption to daily life", "Other supported economic losses caused by the injury"],
+    deadlineNote: "For many California personal-injury lawsuits, the general filing deadline is two years from the injury. Claims involving a government entity can require a much earlier government claim, and other exceptions can change the deadline. Evidence such as video, witness memories, and business records can disappear long before the filing deadline.",
+    faqs: [
+      ["What does a personal injury attorney actually do?", "A personal injury attorney can help preserve evidence, identify responsible parties and insurance, organize the medical and financial record, communicate with insurers, evaluate disputed issues, and explain settlement or litigation options as the claim develops."],
+      ["Do I need to know exactly how much my case is worth before I call?", "No. Case value usually becomes clearer as treatment develops, responsibility is investigated, insurance is identified, and the long-term effect of the injury is documented."],
+      ["What if I may have been partly at fault?", "California follows comparative-fault principles. Partial responsibility does not automatically eliminate a claim, although it can affect the amount recoverable. The evidence around how the accident happened matters."],
+    ],
+    sources: californiaCourtSources,
+    guides: [
+      { title: "What to do after a car accident in California", koTitle: "캘리포니아 자동차 사고 후 해야 할 일", slug: "what-to-do-after-a-car-accident-in-california" },
+      { title: "California comparative fault explained", koTitle: "캘리포니아 비교과실 이해하기", slug: "california-comparative-fault-personal-injury" },
+      { title: "California personal injury deadlines", koTitle: "캘리포니아 개인상해 청구 기한", slug: "california-personal-injury-deadlines" },
+    ],
+  },
   "car-accidents": {
     damages: ["Medical treatment and future care", "Lost wages and reduced earning capacity", "Pain, physical limitations, and disruption to daily life", "Vehicle or other property loss when part of the claim"],
     deadlineNote: "For many California personal-injury lawsuits, the general filing deadline is two years from the injury. Claims involving a public entity can require a government claim much earlier, and other exceptions may change the deadline. The safest approach is to identify the applicable deadline from the actual facts rather than waiting for the two-year mark.",
@@ -270,7 +285,7 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
                 { id: "faq", label: "Common questions" }, { id: "resources", label: "Guides & sources" }, { id: "related", label: "Related practice areas" },
               ]}
         >
-          <ReadingSectionBlock id="understand" locale={locale} kicker={isKo(locale) ? "01 · 이해" : "01 · Understand"} title={isKo(locale) ? `${title} 사건에서 먼저 확인할 것` : "Start with the essentials."} intro={intro}>
+          <ReadingSectionBlock id="understand" locale={locale} kicker={isKo(locale) ? "01 · 이해" : "01 · Understand"} title={isKo(locale) ? `${title} 사건에서 먼저 확인할 것` : practice.slug === "personal-injury" ? "You Got Hurt. Now What?" : "Start with the essentials."} intro={intro}>
             <div className="editorial-callout">
               <span className="editorial-callout__label">{isKo(locale) ? "핵심" : "Key point"}</span>
               <p>{isKo(locale) ? "책임, 보험, 치료와 일상생활의 영향을 함께 살펴보세요." : "Look beyond the accident: responsibility, insurance, treatment, and the impact on your everyday life all matter."}</p>

@@ -57,6 +57,9 @@ const HomepageLegalGuide = () => (
               A personal injury case usually comes down to one simple question: who was careless, and how much did that carelessness cost you? Cost isn't just your car repair bill. It's your medical bills, the work you missed, the pain that keeps you up at night, and sometimes the stuff that never fully goes back to normal.
             </p>
           </div>
+          <a href="/practice-areas/personal-injury" className="mt-7 inline-flex items-center gap-2 text-[11px] font-medium underline underline-offset-4">
+            Personal Injury Lawyer in Buena Park, CA <ArrowRight className="h-3.5 w-3.5" />
+          </a>
         </div>
 
         <div className="relative min-h-[520px] overflow-hidden rounded-[3px] bg-black">
