@@ -24,7 +24,7 @@ export const Route = createFileRoute("/practice-areas_/$slug")({
     const path = `/practice-areas/${loaderData.slug}`;
     const searchName = practiceSearchNames[loaderData.slug] || loaderData.title;
     const seo = buildSeo({
-      title: `Buena Park ${searchName} Lawyer | Evidence, Damages & Deadlines`,
+      title: `${searchName} Lawyer in Buena Park, CA | Howard Choi`,
       description: loaderData.description,
       path,
       alternatePath: `/ko/practice-areas/${loaderData.slug}`,
@@ -41,7 +41,7 @@ export const Route = createFileRoute("/practice-areas_/$slug")({
             { name: searchName, path },
           ])),
         },
-        ...(reviewedWebPageJsonLd({ path, name: `Buena Park ${searchName} Lawyer` }) ? [{ type: "application/ld+json", children: JSON.stringify(reviewedWebPageJsonLd({ path, name: `Buena Park ${searchName} Lawyer` })) }] : []),
+        ...(reviewedWebPageJsonLd({ path, name: `${searchName} Lawyer in Buena Park, CA` }) ? [{ type: "application/ld+json", children: JSON.stringify(reviewedWebPageJsonLd({ path, name: `${searchName} Lawyer in Buena Park, CA` })) }] : []),
       ],
     };
   },
