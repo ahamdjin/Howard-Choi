@@ -26,14 +26,20 @@ shown where the firm actually holds the award, issued in this firm's name.
 
 | Local file | Award |
 | --- | --- |
-| aaoa-500-million-dollar-club-2025.webp | American Academy of Attorneys — 500 Million Dollar Club, 2025 |
 | aaoa-top-100.webp | American Academy of Attorneys — Top 100, 2025 |
 | naopia-top-ten-attorney-2025.webp | NAOPIA — Nation's Premier Top Ten Personal Injury Attorney, 2025 |
 | lawyers-of-distinction-2026.webp | Lawyers of Distinction, 2026 |
 | trucking-trial-lawyers-top-10.webp | Trucking Trial Lawyers — Top 10 |
 | bbb-accredited-business.webp | Better Business Bureau — Accredited Business |
 
-**Excluded on purpose:** a TopVerdict.com "California Top 100 Jury Verdicts —
-Personal Injury 2024" badge was also supplied, but the badge artwork is issued
-to **Matt Taylor**, not Howard Choi. Do not add it unless a version issued in
-this firm's name is provided.
+**Excluded on purpose — do not re-add either of these:**
+
+1. A TopVerdict.com "California Top 100 Jury Verdicts — Personal Injury 2024"
+   badge was supplied, but the artwork is issued to **Matt Taylor**, not Howard
+   Choi. Only add it if a version issued in this firm's name is provided.
+2. The **AAOA 500 Million Dollar Club** badge was displayed briefly and then
+   removed at the client's direction. AAOA's published criteria require having
+   recovered over $500 million, while the site states "$100M+ total recovered"
+   two sections away. The two claims cannot headline the same page. If the
+   firm's real recovery figure is restated, this badge can come back — the
+   artwork is recoverable from git history.

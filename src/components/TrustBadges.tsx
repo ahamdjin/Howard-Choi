@@ -1,5 +1,4 @@
 import { ArrowUpRight } from "lucide-react";
-import aaoaFiveHundredMillion from "@/assets/law-firm/badges/aaoa-500-million-dollar-club-2025.webp";
 import aaoaTopHundred from "@/assets/law-firm/badges/aaoa-top-100.webp";
 import bbbAccredited from "@/assets/law-firm/badges/bbb-accredited-business.webp";
 import lawyersOfDistinction from "@/assets/law-firm/badges/lawyers-of-distinction-2026.webp";
@@ -9,9 +8,10 @@ import truckingTopTen from "@/assets/law-firm/badges/trucking-trial-lawyers-top-
 // Slot 3: recognition + credentials. Every badge here must be one the firm
 // actually holds, issued in this firm's name. A TopVerdict.com "Top 100 Jury
 // Verdicts" badge was supplied but is issued to a different attorney (Matt
-// Taylor) and is deliberately not included — see badges/ in media-sources.md.
+// Taylor) and is deliberately not included. The AAOA 500 Million Dollar Club
+// badge was removed too: it asserts $500M+ recovered while the site states
+// $100M+, and the two cannot both headline the same page. See media-sources.md.
 const badges = [
-  { src: aaoaFiveHundredMillion, alt: "American Academy of Attorneys 500 Million Dollar Club, 2025", href: "https://aaoaus.com/" },
   { src: aaoaTopHundred, alt: "American Academy of Attorneys Top 100, 2025", href: "https://aaoaus.com/" },
   { src: naopiaTopTen, alt: "NAOPIA Nation's Premier Top Ten Personal Injury Attorney, 2025", href: "https://www.naopia.com/" },
   { src: lawyersOfDistinction, alt: "Lawyers of Distinction, 2026", href: "https://www.lawyersofdistinction.com/" },
@@ -47,7 +47,7 @@ const TrustBadges = () => (
         </a>
       </div>
 
-      <ul className="mt-6 grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:grid-cols-6">
+      <ul className="mt-6 grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:grid-cols-5">
         {badges.map((badge) => (
           <li key={badge.alt}>
             <a
