@@ -4,6 +4,7 @@ import { trustProfile } from "@/data/trustProfile";
 export const SITE_URL = (import.meta.env.VITE_SITE_URL || "https://www.buenaparkinjurylawyer.com").replace(/\/$/, "");
 export const SITE_NAME = "Buena Park Injury Lawyer";
 export const ATTORNEY_NAME = "Howard Choi";
+export const KOREAN_INDEXING_ENABLED = false;
 
 export const absoluteUrl = (value: string) => {
   if (/^https?:\/\//i.test(value)) return value;
@@ -25,7 +26,8 @@ export const buildSeo = ({ title, description, path, alternatePath, locale = "en
   const canonical = absoluteUrl(path);
   const englishPath = locale === "ko-US" ? alternatePath : path;
   const koreanPath = locale === "ko-US" ? path : alternatePath;
-  const robots = noindex ? "noindex, nofollow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
+  const effectiveNoindex = noindex || (locale === "ko-US" && !KOREAN_INDEXING_ENABLED);
+  const robots = effectiveNoindex ? "noindex, follow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
 
   const meta = [
     { title },
@@ -38,7 +40,6 @@ export const buildSeo = ({ title, description, path, alternatePath, locale = "en
     { property: "og:type", content: type },
     { property: "og:url", content: canonical },
     { property: "og:locale", content: locale === "ko-US" ? "ko_KR" : "en_US" },
-    { property: "og:locale:alternate", content: locale === "ko-US" ? "en_US" : "ko_KR" },
     { name: "twitter:card", content: image ? "summary_large_image" : "summary" },
     { name: "twitter:title", content: title },
     { name: "twitter:description", content: description },
@@ -50,8 +51,8 @@ export const buildSeo = ({ title, description, path, alternatePath, locale = "en
     meta.push({ name: "twitter:image", content: imageUrl });
   }
 
-  const links: Array<Record<string, string>> = noindex ? [] : [{ rel: "canonical", href: canonical }];
-  if (!noindex && englishPath && koreanPath) {
+  const links: Array<Record<string, string>> = effectiveNoindex ? [] : [{ rel: "canonical", href: canonical }];
+  if (!effectiveNoindex && KOREAN_INDEXING_ENABLED && englishPath && koreanPath) {
     links.push(
       { rel: "alternate", hrefLang: "en-US", href: absoluteUrl(englishPath) },
       { rel: "alternate", hrefLang: "ko-US", href: absoluteUrl(koreanPath) },
@@ -122,7 +123,7 @@ export const webSiteJsonLd = {
   "@id": `${SITE_URL}/#website`,
   name: SITE_NAME,
   url: SITE_URL,
-  inLanguage: ["en-US", "ko-US"],
+  inLanguage: KOREAN_INDEXING_ENABLED ? ["en-US", "ko-US"] : ["en-US"],
   publisher: { "@id": `${SITE_URL}/#legal-service` },
 };
 

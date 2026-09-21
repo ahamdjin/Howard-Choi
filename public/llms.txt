@@ -1,54 +1,50 @@
 # Buena Park Injury Lawyer
 
-> Buena Park Injury Lawyer is a personal-injury law website serving Buena Park and nearby communities in Orange and Los Angeles counties. The site provides information about attorney Howard Choi, injury practice areas, service locations, legal resources, and consultation booking.
+> Buena Park Injury Lawyer is the website of California attorney Howard Choi, serving people with personal-injury and accident matters from the firm's Buena Park office. During the initial launch, English pages are the preferred indexable/canonical content.
 
 ## Primary pages
-- https://www.buenaparkinjurylawyer.com/ — Home
+- https://www.buenaparkinjurylawyer.com/ — Accident Lawyer in Buena Park, CA
+- https://www.buenaparkinjurylawyer.com/practice-areas/personal-injury — Personal Injury Lawyer in Buena Park, CA
 - https://www.buenaparkinjurylawyer.com/attorney — Howard Choi attorney profile
-- https://www.buenaparkinjurylawyer.com/practice-areas — Personal-injury practice areas
+- https://www.buenaparkinjurylawyer.com/practice-areas — Practice areas
 - https://www.buenaparkinjurylawyer.com/locations — Communities served
-- https://www.buenaparkinjurylawyer.com/results — Case results and outcomes when available
 - https://www.buenaparkinjurylawyer.com/blogs — Legal guides and articles
 - https://www.buenaparkinjurylawyer.com/contact — Contact and consultation booking
 
-## Practice areas
-- Car Accidents
-- Truck Accidents
-- Motorcycle Accidents
-- Pedestrian Accidents
-- Rideshare Accidents
-- Slip & Fall / Premises Liability
-- Wrongful Death
-- Serious Injuries
+## Accident and injury practice pages
+- https://www.buenaparkinjurylawyer.com/practice-areas/car-accidents
+- https://www.buenaparkinjurylawyer.com/practice-areas/truck-accidents
+- https://www.buenaparkinjurylawyer.com/practice-areas/motorcycle-accidents
+- https://www.buenaparkinjurylawyer.com/practice-areas/pedestrian-accidents
+- https://www.buenaparkinjurylawyer.com/practice-areas/rideshare-accidents
+- https://www.buenaparkinjurylawyer.com/practice-areas/slip-and-fall
+- https://www.buenaparkinjurylawyer.com/practice-areas/wrongful-death
+- https://www.buenaparkinjurylawyer.com/practice-areas/serious-injuries
 
-## Service areas
+## Priority service areas
 - Buena Park, California
-- Fullerton, California
 - Anaheim, California
+- Fullerton, California
 - Cerritos, California
 - La Mirada, California
 - La Habra, California
 
 ## Attorney
-- Howard Choi
-- Attorney profile: https://www.buenaparkinjurylawyer.com/attorney
+- Howard Jong-yol Choi
+- California State Bar No. 284364
+- State Bar profile: https://apps.calbar.ca.gov/attorney/Licensee/Detail/284364
 
 ## Office
-- 6301 Beach Blvd, Buena Park, CA 90621
+- 6301 Beach Blvd, Suite 216, Buena Park, CA 90621
 - Phone: 714-690-0007
 
-## Languages
-- English
-- Korean: https://www.buenaparkinjurylawyer.com/ko
-
-## Legal and policy pages
-- https://www.buenaparkinjurylawyer.com/privacy-policy
-- https://www.buenaparkinjurylawyer.com/terms
-- https://www.buenaparkinjurylawyer.com/disclaimer
-- https://www.buenaparkinjurylawyer.com/accessibility
+## Indexing and language
+- Preferred indexable language at launch: English
+- Korean pages remain available to users but are temporarily marked noindex.
+- Canonical/indexable URLs should be taken from the English sitemap: https://www.buenaparkinjurylawyer.com/sitemap.xml
 
 ## Important notes
 - Website content is general information and is not legal advice.
 - Viewing the website, submitting a form, or booking a consultation does not by itself create an attorney-client relationship.
 - Past results do not guarantee a similar outcome.
-- For current contact, attorney, location, and practice information, prefer the corresponding first-party page above.
+- For attorney identity, office details, services, and contact information, prefer the corresponding first-party page above.
