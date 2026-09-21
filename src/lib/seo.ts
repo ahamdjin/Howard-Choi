@@ -93,7 +93,7 @@ export const legalServiceJsonLd = {
   telephone: "+1-714-690-0007",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "6301 Beach Blvd",
+    streetAddress: "6301 Beach Blvd, Suite 216",
     addressLocality: "Buena Park",
     addressRegion: "CA",
     postalCode: "90621",

@@ -86,10 +86,10 @@ const Hero = () => {
         <div className="site-shell pb-24 md:pb-28">
           <div className="max-w-[700px] text-[#f3eee5]">
             <motion.p initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.18, duration: 0.7 }} className="mb-4 text-[13px] font-medium tracking-[-0.01em] text-[#f3eee5]/88 md:text-sm">
-              Personal Injury Lawyers · Buena Park, California
+              Personal Injury Lawyer · Buena Park, California
             </motion.p>
             <motion.h1 initial={shouldReduceMotion ? false : { opacity: 0, y: 16, filter: "blur(9px)" }} animate={{ opacity: 1, y: 0, filter: "blur(0px)" }} transition={{ delay: 0.27, duration: 0.9, ease: [0.22, 1, 0.36, 1] }} className="editorial-serif text-[clamp(3rem,4.5vw,4.75rem)] leading-[0.93] tracking-[-0.024em] text-[#f3eee5]">
-              Personal injury lawyers in Buena Park.
+              Personal injury lawyer in Buena Park.
             </motion.h1>
             <motion.p initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.7 }} className="mt-5 max-w-[560px] text-[15px] leading-6 text-[#f3eee5]/74 md:text-base">
               Understand your options after an accident. Get clear guidance on your injury claim and the next step toward recovery.
