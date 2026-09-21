@@ -6,7 +6,7 @@ export default function UtilityBar({ locale }: { locale: SiteLocale }) {
   const { pathname, searchStr, hash } = useLocation();
   const ko = locale === "ko";
   const englishPath = pathname.replace(/^\/ko(?=\/|$)/, "") || "/";
-  const koreanPath = englishPath === "/" ? "/ko" : "/ko" + englishPath;
+  const koreanPath = englishPath === "/" || englishPath === "/editorial-standards" ? "/ko" : "/ko" + englishPath;
   const suffix = (searchStr || "") + (hash ? `#${hash.replace(/^#/, "")}` : "");
   return (
     <div aria-label={ko ? "빠른 메뉴" : "Utility navigation"} className="h-11 border-b border-[#b99a70]/30 bg-[#211c17] text-[#f3eee5]">
