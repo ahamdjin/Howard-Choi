@@ -27,15 +27,6 @@ const articleSupport: Record<string, ArticleSupport> = {
       { label: "California Courts · Personal injury lawsuits", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury" },
     ],
   },
-  "what-an-injury-claim-should-document-beyond-medical-bills": {
-    relatedHref: "/ko/practice-areas/serious-injuries",
-    relatedLabel: "중대 상해 사건",
-    relatedBody: "향후 치료, 업무 제한, 소득 능력과 일상생활의 변화를 어떻게 기록할 수 있는지 확인하세요.",
-    sources: [
-      { label: "California Courts · Personal injury lawsuits", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury" },
-      { label: "Judicial Council of California · Civil jury instructions", href: "https://courts.ca.gov/partners/california-jury-instructions/civil-jury-instructions-resource-center/civil-jury-instructions" },
-    ],
-  },
   "california-comparative-fault-personal-injury": {
     relatedHref: "/ko/practice-areas/car-accidents",
     relatedLabel: "자동차 사고와 과실 분쟁",

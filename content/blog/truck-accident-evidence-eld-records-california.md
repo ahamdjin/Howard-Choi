@@ -5,7 +5,7 @@
   "excerpt": "Learn which records may matter after a commercial-truck crash, including electronic logging devices, hours-of-service records, maintenance, inspections, onboard video, and company documents.",
   "category": "Truck Accidents",
   "publishedAt": "2026-09-11",
-  "readingTime": "8 min read",
+  "readingTime": "3 min read",
   "alt": "Law office used for commercial truck accident evidence review",
   "intro": "A commercial-truck crash can create evidence that does not exist in an ordinary two-car collision. Electronic logging devices, driver qualification files, maintenance records, dispatch information, onboard cameras, inspection materials, and company communications may help explain what happened before impact. Some of that evidence is retained for limited periods, which makes early preservation an important part of a serious truck-accident investigation.",
   "takeaway": "Truck cases can depend on records held by the carrier, not just evidence at the scene. Identifying those records early can prevent an important part of the crash history from disappearing."

@@ -75,7 +75,6 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
     guides: [
       { title: "Truck accident evidence: ELDs and company records", koTitle: "트럭 사고 증거: ELD와 회사 기록", slug: "truck-accident-evidence-eld-records-california" },
       { title: "California personal injury deadlines", koTitle: "캘리포니아 개인상해 청구 기한", slug: "california-personal-injury-deadlines" },
-      { title: "What an injury claim should document beyond medical bills", koTitle: "치료비 외에 기록해야 할 상해 손실", slug: "what-an-injury-claim-should-document-beyond-medical-bills" },
     ],
   },
   "motorcycle-accidents": {
@@ -109,7 +108,6 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
     guides: [
       { title: "California comparative fault explained", koTitle: "캘리포니아 비교과실 이해하기", slug: "california-comparative-fault-personal-injury" },
       { title: "California personal injury deadlines", koTitle: "캘리포니아 개인상해 청구 기한", slug: "california-personal-injury-deadlines" },
-      { title: "What an injury claim should document beyond medical bills", koTitle: "치료비 외에 기록해야 할 상해 손실", slug: "what-an-injury-claim-should-document-beyond-medical-bills" },
     ],
   },
   "rideshare-accidents": {
@@ -145,7 +143,6 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
     sources: californiaCourtSources,
     guides: [
       { title: "California comparative fault explained", koTitle: "캘리포니아 비교과실 이해하기", slug: "california-comparative-fault-personal-injury" },
-      { title: "What an injury claim should document beyond medical bills", koTitle: "치료비 외에 기록해야 할 상해 손실", slug: "what-an-injury-claim-should-document-beyond-medical-bills" },
       { title: "California personal injury deadlines", koTitle: "캘리포니아 개인상해 청구 기한", slug: "california-personal-injury-deadlines" },
     ],
   },
@@ -165,7 +162,6 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
     ],
     guides: [
       { title: "California personal injury deadlines", koTitle: "캘리포니아 개인상해 청구 기한", slug: "california-personal-injury-deadlines" },
-      { title: "What an injury claim should document beyond medical bills", koTitle: "치료비 외에 기록해야 할 상해 손실", slug: "what-an-injury-claim-should-document-beyond-medical-bills" },
     ],
   },
   "serious-injuries": {
@@ -184,7 +180,6 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
     ],
     guides: [
       { title: "How much is a California personal injury case worth?", koTitle: "캘리포니아 개인상해 사건 가치는 어떻게 정해지나요?", slug: "how-much-is-my-personal-injury-case-worth-california" },
-      { title: "What an injury claim should document beyond medical bills", koTitle: "치료비 외에 기록해야 할 상해 손실", slug: "what-an-injury-claim-should-document-beyond-medical-bills" },
       { title: "California personal injury deadlines", koTitle: "캘리포니아 개인상해 청구 기한", slug: "california-personal-injury-deadlines" },
     ],
   },
