@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import PageBreadcrumb from "@/components/PageBreadcrumb";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight, Phone, type LucideIcon } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import KoreanNavigation from "@/components/KoreanNavigation";
 import Footer from "@/components/Footer";
@@ -180,6 +180,7 @@ export const ReadingSectionBlock = ({
   intro,
   children,
   tone = "plain",
+  Icon,
 }: {
   id: string;
   locale: SiteLocale;
@@ -188,9 +189,13 @@ export const ReadingSectionBlock = ({
   intro?: string;
   children?: ReactNode;
   tone?: "plain" | "warm";
+  Icon?: LucideIcon;
 }) => (
   <section id={id} className={`editorial-reading-section ${tone === "warm" ? "editorial-reading-section--warm" : ""}`}>
-    <div className="editorial-reading-section__kicker">{kicker}</div>
+    <div className="editorial-reading-section__kicker flex items-center gap-2.5">
+      {Icon ? <Icon aria-hidden="true" className="h-3.5 w-3.5 shrink-0 stroke-[1.5] text-[#7b5b3e]" /> : null}
+      {kicker}
+    </div>
     <h2
       style={serifStyle(locale)}
       className={isKo(locale)

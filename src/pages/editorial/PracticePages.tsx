@@ -1,9 +1,11 @@
-import { ArrowRight, CheckCircle2, FileText, ShieldCheck } from "lucide-react";
+import { ArrowRight, CalendarClock, CheckCircle2, Compass, FileText, HelpCircle, Layers, Scale, ShieldCheck, Sparkles, Umbrella } from "lucide-react";
 import { useParams } from "@tanstack/react-router";
 import heroJustice from "@/assets/law-firm/hero-justice-library.webp";
 import heroCourthouse from "@/assets/law-firm/hero-courthouse.webp";
 import ClaimJourney from "@/components/ClaimJourney";
 import PageByline from "@/components/PageByline";
+import AttorneyNote from "@/components/AttorneyNote";
+import ClientProof from "@/components/ClientProof";
 import { EvidenceVisuals, ClaimValueVisual, GuideAttorney } from "@/components/ClaimVisuals";
 import { practiceMedia } from "@/data/practiceMedia";
 import { getPracticeArea, practiceAreas, type SiteLocale } from "@/data/injurySite";
@@ -20,6 +22,12 @@ import {
 } from "./shared";
 
 type PracticeEnhancement = {
+  // First-person observation published in Howard Choi's name. Must be approved
+  // by him before it changes.
+  fromAttorney: string;
+  // Per-practice section headings. Previously all eight pages shared one set,
+  // which is what made them read as a template.
+  headings: { understand: string; issues: string; value: string; insurance: string };
   damages: string[];
   deadlineNote: string;
   faqs: Array<[string, string]>;
@@ -34,6 +42,8 @@ const californiaCourtSources = [
 
 const practiceEnhancements: Record<string, PracticeEnhancement> = {
   "car-accidents": {
+    fromAttorney: "The thing that costs people the most is the first phone call from the other driver's insurer. They are friendly, they ask how you are feeling, and most people say they are fine because that is what you say. That sentence gets read back months later when your neck has not improved. You are allowed to say you are still being evaluated and will follow up in writing.",
+    headings: { understand: "What actually decides a car accident claim.", issues: "Where these crashes get argued.", value: "What a crash claim can cover.", insurance: "Which policy pays after a collision?" },
     damages: ["Medical treatment and future care", "Lost wages and reduced earning capacity", "Pain, physical limitations, and disruption to daily life", "Vehicle or other property loss when part of the claim"],
     deadlineNote: "For many California personal-injury lawsuits, the general filing deadline is two years from the injury. Claims involving a public entity can require a government claim much earlier, and other exceptions may change the deadline. The safest approach is to identify the applicable deadline from the actual facts rather than waiting for the two-year mark.",
     faqs: [
@@ -49,6 +59,8 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
     ],
   },
   "truck-accidents": {
+    fromAttorney: "Trucking companies do not wait for a lawyer to get involved. They have people looking at the crash the same day, sometimes before the vehicles are moved. By the time somebody calls me a few weeks later, the logs and the camera footage may already be past their retention window. This is the one category where the delay itself is the damage.",
+    headings: { understand: "Why a truck case is not a car case.", issues: "Who ends up responsible for a truck crash.", value: "What a commercial claim can cover.", insurance: "Layers of coverage behind a truck." },
     damages: ["Emergency, surgical, rehabilitation, and future medical care", "Lost income and diminished future earning capacity", "Long-term physical or cognitive limitations", "Wrongful-death losses when a collision is fatal"],
     deadlineNote: "California filing deadlines still apply in commercial-truck cases, but the practical evidence clock can be much shorter. Electronic logs, onboard video, dispatch information, inspection records, and company materials may be kept on different schedules, so preservation should not wait for the litigation deadline.",
     faqs: [
@@ -67,6 +79,8 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
     ],
   },
   "motorcycle-accidents": {
+    fromAttorney: "Adjusters start these files with an assumption: the rider was going too fast or riding recklessly. Sometimes that is true. Usually it is not, and it is being assumed instead of proven. The work in a motorcycle case is often proving a negative, which is why lane position, sight lines and where the vehicles ended up matter so much more here than in a car claim.",
+    headings: { understand: "What a rider is really up against.", issues: "The arguments riders always face.", value: "What a rider's claim can cover.", insurance: "Coverage when a rider is hit." },
     damages: ["Hospital, surgical, orthopedic, and rehabilitation costs", "Future treatment and permanent limitations", "Lost income and reduced ability to work", "Pain, scarring, mobility loss, and changes to daily life"],
     deadlineNote: "For many California injury lawsuits, the general deadline is two years from the injury, but shorter rules can apply in some matters. Motorcycle cases also benefit from early preservation of intersection video, road conditions, vehicle damage, witness information, and riding gear before those details are lost.",
     faqs: [
@@ -82,6 +96,8 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
     ],
   },
   "pedestrian-accidents": {
+    fromAttorney: "These cases are usually won or lost on where exactly the impact happened, and that is the detail nobody writes down properly at the scene. A few feet decides whether you were in the crosswalk. I would rather have one good photograph of the pavement than three witnesses describing it from memory a month later.",
+    headings: { understand: "What matters when a car hits a person.", issues: "Where pedestrian claims get disputed.", value: "What a pedestrian claim can cover.", insurance: "Who pays when a driver hits you." },
     damages: ["Emergency and long-term medical treatment", "Rehabilitation, mobility support, and future care", "Lost wages and reduced future earning ability", "Pain, loss of independence, and long-term daily limitations"],
     deadlineNote: "The general California deadline for many personal-injury lawsuits is two years, but some claims have shorter requirements. Pedestrian cases can also depend on evidence that disappears quickly, especially nearby surveillance, signal or intersection information, and witness memories.",
     faqs: [
@@ -97,6 +113,8 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
     ],
   },
   "rideshare-accidents": {
+    fromAttorney: "People spend weeks getting bounced between the driver's insurer and the rideshare company's, and the whole thing usually turns on one fact nobody captured: what the app said at the moment of impact. Screenshot your trip before anything else. That one screenshot decides which policy is even in the conversation.",
+    headings: { understand: "The question only rideshare cases have.", issues: "Where Uber and Lyft claims stall.", value: "What a rideshare claim can cover.", insurance: "App status decides the coverage." },
     damages: ["Medical treatment and future care", "Lost wages and diminished earning capacity", "Pain, limitations, and disruption to everyday life", "Other accident-related economic losses supported by the record"],
     deadlineNote: "California injury deadlines still apply, but a rideshare case has another time-sensitive issue: preserving the trip and app-status record. Screenshots, receipts, driver information, and the status of the ride at the time of impact can help identify which insurance layer needs to be evaluated.",
     faqs: [
@@ -115,6 +133,8 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
     ],
   },
   "slip-and-fall": {
+    fromAttorney: "The hazard that hurt you will be gone within the hour, and the incident report will describe it in whatever way suits the store. That is not usually malice, it is just how it goes. So the photograph you take on your phone before anyone cleans up is frequently the single most valuable piece of evidence in the entire claim.",
+    headings: { understand: "Why a fall claim is not about falling.", issues: "What property owners dispute.", value: "What a premises claim can cover.", insurance: "Who controlled the place you fell?" },
     damages: ["Medical treatment and rehabilitation", "Lost income and work limitations", "Future care or permanent mobility restrictions", "Pain, activity limitations, and other supported non-economic harm"],
     deadlineNote: "Many California personal-injury lawsuits have a two-year general deadline, but premises claims can involve much faster evidence loss. A spill can be cleaned, a defect repaired, surveillance overwritten, and inspection records changed long before a filing deadline arrives.",
     faqs: [
@@ -130,6 +150,8 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
     ],
   },
   "wrongful-death": {
+    fromAttorney: "Families almost always apologise for asking practical questions in the first conversation, as though wanting to understand the money is somehow disloyal. It is not. There are deadlines running, there are decisions about who can legally bring the claim, and asking early is how a family protects itself at the worst possible time.",
+    headings: { understand: "What a family is facing first.", issues: "What has to be established.", value: "What a wrongful death claim can cover.", insurance: "Finding the coverage behind a death." },
     damages: ["Loss of financial support and household contributions", "Funeral and burial-related losses where recoverable", "Loss of companionship, care, and guidance", "Other losses available under California wrongful-death law based on the relationship and facts"],
     deadlineNote: "Wrongful-death deadlines depend on the underlying facts, defendants, and applicable law. California's civil statutes identify who may bring a wrongful-death action, while separate timing rules can apply to the lawsuit or an earlier government claim. The deadline should be checked from the specific date and parties involved.",
     faqs: [
@@ -147,6 +169,8 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
     ],
   },
   "serious-injuries": {
+    fromAttorney: "The mistake in a serious injury case is settling while you are still getting better. It feels like the responsible thing to do. But the number has to account for the surgery you might need in six years and the work you will not be able to go back to, and nobody can price that while you are still mid-recovery. Slowing down is usually the whole strategy.",
+    headings: { understand: "Why these claims need a longer view.", issues: "What a long-term injury raises.", value: "What a serious injury claim can cover.", insurance: "When one policy is not enough." },
     damages: ["Past and future medical treatment", "Rehabilitation, assistive care, and long-term support", "Lost income and reduced future earning capacity", "Permanent impairment, pain, loss of independence, and changes to daily life"],
     deadlineNote: "Serious-injury cases can last longer medically, but the legal and evidence deadlines do not wait for recovery to finish. California limitation periods, public-entity claim rules, insurance notice requirements, and evidence preservation should be evaluated while the long-term medical picture is still developing.",
     faqs: [
@@ -272,27 +296,28 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
                 { id: "faq", label: "Common questions" }, { id: "resources", label: "Guides & sources" }, { id: "related", label: "Related practice areas" },
               ]}
         >
-          <ReadingSectionBlock id="understand" locale={locale} kicker={isKo(locale) ? "01 · 이해" : "01 · Understand"} title={isKo(locale) ? `${title} 사건에서 먼저 확인할 것` : "Start with the essentials."} intro={intro}>
+          <ReadingSectionBlock id="understand" locale={locale} Icon={Compass} kicker={isKo(locale) ? "01 · 이해" : "01 · Understand"} title={isKo(locale) ? `${title} 사건에서 먼저 확인할 것` : enhancement.headings.understand} intro={intro}>
             <div className="editorial-callout">
               <span className="editorial-callout__label">{isKo(locale) ? "핵심" : "Key point"}</span>
               <p>{isKo(locale) ? "책임, 보험, 치료와 일상생활의 영향을 함께 살펴보세요." : "Look beyond the accident: responsibility, insurance, treatment, and the impact on your everyday life all matter."}</p>
             </div>
+            <AttorneyNote note={enhancement.fromAttorney} locale={locale} />
           </ReadingSectionBlock>
 
-          <ReadingSectionBlock id="issues" locale={locale} kicker={isKo(locale) ? "02 · 주요 쟁점" : "02 · Key issues"} title={isKo(locale) ? "이 유형의 사건에서 자주 확인하는 항목" : "What needs a closer look?"}>
+          <ReadingSectionBlock id="issues" locale={locale} Icon={Layers} kicker={isKo(locale) ? "02 · 주요 쟁점" : "02 · Key issues"} title={isKo(locale) ? "이 유형의 사건에서 자주 확인하는 항목" : enhancement.headings.issues}>
             <div className="editorial-issue-list">
               {issues.map((issue, index) => <div key={issue} className="editorial-issue-row"><span>{String(index + 1).padStart(2, "0")}</span><strong>{issue}</strong></div>)}
             </div>
           </ReadingSectionBlock>
 
-          <ReadingSectionBlock id="evidence" locale={locale} kicker={isKo(locale) ? "03 · 증거" : "03 · Evidence"} title={isKo(locale) ? "초기 기록이 사건을 설명하는 데 도움이 됩니다." : practice.evidenceTitle} intro={isKo(locale) ? "사진, 영상, 목격자, 보고서, 진료기록과 보험 관련 자료를 가능한 한 일찍 보관해 두는 것이 좋습니다." : practice.evidenceIntro}>
+          <ReadingSectionBlock id="evidence" locale={locale} Icon={FileText} kicker={isKo(locale) ? "03 · 증거" : "03 · Evidence"} title={isKo(locale) ? "초기 기록이 사건을 설명하는 데 도움이 됩니다." : practice.evidenceTitle} intro={isKo(locale) ? "사진, 영상, 목격자, 보고서, 진료기록과 보험 관련 자료를 가능한 한 일찍 보관해 두는 것이 좋습니다." : practice.evidenceIntro}>
             <EvidenceVisuals locale={locale} />
             <div className="editorial-issue-list">
               {practice.evidenceItems.map((item, index) => <div key={item} className="editorial-issue-row"><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong></div>)}
             </div>
           </ReadingSectionBlock>
 
-          <ReadingSectionBlock id="value" locale={locale} kicker={isKo(locale) ? "04 · 손해" : "04 · Damages & value"} title={isKo(locale) ? "사건 가치는 하나의 공식으로 계산되지 않습니다." : "What could your claim cover?"} intro={isKo(locale) ? "치료, 향후 치료 필요, 임금 손실, 장기적인 기능 제한, 과실, 보험과 증거의 질이 함께 영향을 줄 수 있습니다." : practice.valueIntro}>
+          <ReadingSectionBlock id="value" locale={locale} Icon={Scale} kicker={isKo(locale) ? "04 · 손해" : "04 · Damages & value"} title={isKo(locale) ? "사건 가치는 하나의 공식으로 계산되지 않습니다." : enhancement.headings.value} intro={isKo(locale) ? "치료, 향후 치료 필요, 임금 손실, 장기적인 기능 제한, 과실, 보험과 증거의 질이 함께 영향을 줄 수 있습니다." : practice.valueIntro}>
             <ClaimValueVisual locale={locale} />
             <div className="editorial-issue-list">
               {(isKo(locale)
@@ -303,13 +328,13 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
             <a href={`${localePrefix(locale)}/case-value-calculator`} className="editorial-inline-link mt-6"><span>{isKo(locale) ? "캘리포니아 사건 가치 계산기 보기" : "Use the California case-value calculator"}</span><ArrowRight className="h-4 w-4" /></a>
           </ReadingSectionBlock>
 
-          <ReadingSectionBlock id="insurance" locale={locale} kicker={isKo(locale) ? "05 · 보험" : "05 · Insurance"} title={isKo(locale) ? "누가 책임이 있고 어떤 보험이 적용되는지 확인합니다." : "Who is responsible? Which insurance applies?"} intro={isKo(locale) ? "사고 유형에 따라 운전자, 차량 소유자, 사업체, 고용주 또는 여러 보험이 함께 관련될 수 있습니다." : practice.insuranceIntro} />
+          <ReadingSectionBlock id="insurance" locale={locale} Icon={Umbrella} kicker={isKo(locale) ? "05 · 보험" : "05 · Insurance"} title={isKo(locale) ? "누가 책임이 있고 어떤 보험이 적용되는지 확인합니다." : enhancement.headings.insurance} intro={isKo(locale) ? "사고 유형에 따라 운전자, 차량 소유자, 사업체, 고용주 또는 여러 보험이 함께 관련될 수 있습니다." : practice.insuranceIntro} />
 
-          <ReadingSectionBlock id="deadlines" locale={locale} kicker={isKo(locale) ? "06 · 기한" : "06 · California deadlines"} title={isKo(locale) ? "법적 기한과 증거 보존 기한은 같은 것이 아닙니다." : "How long do you have?"} intro={isKo(locale) ? "캘리포니아의 많은 개인상해 소송에는 일반적인 제소 기한이 있지만 공공기관 관련 청구 등은 더 짧은 절차가 적용될 수 있습니다. 또한 영상, 전자기록, 목격자 기억은 훨씬 빨리 사라질 수 있습니다." : enhancement.deadlineNote}>
+          <ReadingSectionBlock id="deadlines" locale={locale} Icon={CalendarClock} kicker={isKo(locale) ? "06 · 기한" : "06 · California deadlines"} title={isKo(locale) ? "법적 기한과 증거 보존 기한은 같은 것이 아닙니다." : "How long do you have?"} intro={isKo(locale) ? "캘리포니아의 많은 개인상해 소송에는 일반적인 제소 기한이 있지만 공공기관 관련 청구 등은 더 짧은 절차가 적용될 수 있습니다. 또한 영상, 전자기록, 목격자 기억은 훨씬 빨리 사라질 수 있습니다." : enhancement.deadlineNote}>
             <a href={`${localePrefix(locale)}/blogs/california-personal-injury-deadlines`} className="editorial-inline-link"><span>{isKo(locale) ? "캘리포니아 개인상해 기한 가이드" : "Read the California injury-deadlines guide"}</span><ArrowRight className="h-4 w-4" /></a>
           </ReadingSectionBlock>
 
-          <ReadingSectionBlock id="faq" locale={locale} kicker={isKo(locale) ? "07 · 질문" : "07 · Common questions"} title={isKo(locale) ? "사고 직후 자주 생기는 질문" : "Your questions, answered."}>
+          <ReadingSectionBlock id="faq" locale={locale} Icon={HelpCircle} kicker={isKo(locale) ? "07 · 질문" : "07 · Common questions"} title={isKo(locale) ? "사고 직후 자주 생기는 질문" : "Your questions, answered."}>
             <div className="border-t border-[#1E1C1A]/12">
               {(isKo(locale)
                 ? [
@@ -326,7 +351,7 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
             </div>
           </ReadingSectionBlock>
 
-          <ReadingSectionBlock id="resources" locale={locale} kicker={isKo(locale) ? "08 · 자료" : "08 · Guides & sources"} title={isKo(locale) ? "관련 가이드와 공식 자료" : "Helpful guides and official resources."} intro={isKo(locale) ? "사건 유형과 관련된 내부 가이드와 캘리포니아·연방 공식 자료를 함께 확인할 수 있습니다." : "Explore a topic in more detail. These guides provide general information, not advice about your specific case."}>
+          <ReadingSectionBlock id="resources" locale={locale} Icon={ShieldCheck} kicker={isKo(locale) ? "08 · 자료" : "08 · Guides & sources"} title={isKo(locale) ? "관련 가이드와 공식 자료" : "Helpful guides and official resources."} intro={isKo(locale) ? "사건 유형과 관련된 내부 가이드와 캘리포니아·연방 공식 자료를 함께 확인할 수 있습니다." : "Explore a topic in more detail. These guides provide general information, not advice about your specific case."}>
             <div className="grid gap-8 md:grid-cols-2">
               <div>
                 <div className="mb-3 text-[9px] font-semibold uppercase tracking-[0.16em] text-[#1E1C1A]/35">{isKo(locale) ? "관련 가이드" : "Related guides"}</div>
@@ -343,7 +368,7 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
             </div>
           </ReadingSectionBlock>
 
-          <ReadingSectionBlock id="related" locale={locale} kicker={isKo(locale) ? "09 · 더 보기" : "09 · Explore"} title={isKo(locale) ? "다른 개인상해 업무 분야" : "Related personal injury practice areas."}>
+          <ReadingSectionBlock id="related" locale={locale} Icon={Sparkles} kicker={isKo(locale) ? "09 · 더 보기" : "09 · Explore"} title={isKo(locale) ? "다른 개인상해 업무 분야" : "Related personal injury practice areas."}>
             <div className="editorial-link-grid">
               {practiceAreas.filter((item) => item.slug !== practice.slug).slice(0, 4).map((item) => (
                 <a key={item.slug} href={`${localePrefix(locale)}/practice-areas/${item.slug}`} className="editorial-link-card">
@@ -355,6 +380,7 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
             </div>
           </ReadingSectionBlock>
         </ReadingLayout>
+        <ClientProof locale={locale} />
         <ConsultationCta locale={locale} />
       </main>
     </EditorialFrame>

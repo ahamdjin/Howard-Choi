@@ -5,6 +5,7 @@ import heroJustice from "@/assets/law-firm/hero-justice-library.webp";
 import ClaimJourney from "@/components/ClaimJourney";
 import { EvidenceVisuals, GuideAttorney } from "@/components/ClaimVisuals";
 import PageByline from "@/components/PageByline";
+import ClientProof from "@/components/ClientProof";
 import cityCarCollision from "@/assets/law-firm/car-collision.jpg";
 import cityCollisionDamage from "@/assets/law-firm/collision-damage.jpg";
 import cityTruckHighway from "@/assets/law-firm/truck-highway.jpg";
@@ -277,6 +278,7 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
             </div>
           </ReadingSectionBlock>
         </ReadingLayout>
+        <ClientProof locale={locale} city={isKo(locale) ? location.koName : location.name} />
         <ConsultationCta locale={locale} />
       </main>
     </EditorialFrame>
