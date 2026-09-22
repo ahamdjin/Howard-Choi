@@ -1,6 +1,7 @@
 import { ArrowRight, MessageSquareText, Scale, ShieldCheck } from "lucide-react";
 import heroBoardroom from "@/assets/law-firm/hero-city-boardroom.webp";
 import reviewingDocuments from "@/assets/law-firm/reviewing-documents.jpg";
+import suburbanPalms from "@/assets/law-firm/suburban-palms.jpg";
 import type { SiteLocale } from "@/data/injurySite";
 import {
   ConsultationCta,
@@ -125,6 +126,11 @@ export const AboutFirmPage = ({ locale }: { locale: SiteLocale }) => (
             decoding="async"
             className="aspect-[16/9] w-full rounded-md object-cover"
           />
+          <p className="mt-8 text-[15px] leading-8 text-[#57514b]">
+            {isKo(locale)
+              ? "담당 변호사는 한 명이며, 사건을 직접 검토하고 진행합니다."
+              : "People ask who else works here, so to be plain about it: there is one attorney. Howard reads the file, talks to the doctors, and decides with you whether to settle or file. Nobody is going to hand you to a case manager you have never met, and you will not be re-explaining your accident to a new person every few weeks. The flip side is that a small firm can only carry so many cases well at once, which is why we would rather turn one down early than take it and do a thin job."}
+          </p>
         </ReadingSectionBlock>
 
         <ReadingSectionBlock
@@ -148,7 +154,16 @@ export const AboutFirmPage = ({ locale }: { locale: SiteLocale }) => (
             ? "Buena Park, Anaheim, Fullerton, Garden Grove, Cypress, La Habra, La Mirada, Cerritos, Norwalk, Whittier와 인근 지역의 사고·상해 문제를 지원합니다."
             : "We work with people in Buena Park, Anaheim, Fullerton, Garden Grove, Cypress, La Habra, La Mirada, Cerritos, Norwalk and Whittier. Knowing the area matters more than it sounds. Which agency wrote the report, which nearby business might still have camera footage, whether the case lands in Orange County or LA County, and which insurers keep turning up."}
         >
-          <a href={`${localePrefix(locale)}/locations`} className="editorial-inline-link"><span>{isKo(locale) ? "지역별 사고·상해 가이드 보기" : "See the local accident guides"}</span><ArrowRight className="h-4 w-4" /></a>
+          <img
+            src={suburbanPalms}
+            alt={isKo(locale) ? "북부 오렌지카운티 주택가" : "Residential rooftops and palms in north Orange County"}
+            width={1400}
+            height={1050}
+            loading="lazy"
+            decoding="async"
+            className="aspect-[16/9] w-full rounded-md object-cover"
+          />
+          <a href={`${localePrefix(locale)}/locations`} className="editorial-inline-link mt-8"><span>{isKo(locale) ? "지역별 사고·상해 가이드 보기" : "See the local accident guides"}</span><ArrowRight className="h-4 w-4" /></a>
         </ReadingSectionBlock>
       </ReadingLayout>
       <ConsultationCta locale={locale} />
