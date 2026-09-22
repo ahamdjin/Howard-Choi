@@ -1,3 +1,4 @@
+import { serviceLocations } from "@/data/injurySite";
 export const SITE_URL = (import.meta.env.VITE_SITE_URL || "https://www.buenaparkinjurylawyer.com").replace(/\/$/, "");
 export const SITE_NAME = "Buena Park Injury Lawyer";
 export const ATTORNEY_NAME = "Howard Choi";
@@ -80,7 +81,13 @@ export const attorneyJsonLd = {
     propertyID: "State Bar of California",
     value: "284364",
   },
-  sameAs: ["https://apps.calbar.ca.gov/attorney/Licensee/Detail/284364"],
+  sameAs: [
+    "https://apps.calbar.ca.gov/attorney/Licensee/Detail/284364",
+    "https://www.avvo.com/attorneys/90621-ca-howard-choi-4229558.html",
+  ],
+  alumniOf: { "@type": "CollegeOrUniversity", name: "William Howard Taft University" },
+  knowsLanguage: ["English", "Korean"],
+  areaServed: serviceLocations.map((location) => ({ "@type": "City", name: location.name })),
   worksFor: { "@id": `${SITE_URL}/#legal-service` },
 };
 
@@ -100,7 +107,7 @@ export const legalServiceJsonLd = {
     addressCountry: "US",
   },
   employee: [{ "@id": `${SITE_URL}/#howard-choi` }],
-  areaServed: ["Buena Park", "Fullerton", "Anaheim", "Cerritos", "La Mirada", "La Habra"].map((name) => ({ "@type": "City", name })),
+  areaServed: serviceLocations.map((location) => ({ "@type": "City", name: location.name })),
   knowsAbout: ["Personal Injury", "Car Accidents", "Truck Accidents", "Motorcycle Accidents", "Pedestrian Accidents", "Rideshare Accidents", "Wrongful Death", "Premises Liability", "Serious Injuries"],
   knowsLanguage: ["English", "Korean"],
 };

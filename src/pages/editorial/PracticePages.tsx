@@ -5,6 +5,7 @@ import heroCourthouse from "@/assets/law-firm/hero-courthouse.webp";
 import ClaimJourney from "@/components/ClaimJourney";
 import AttorneyNote from "@/components/AttorneyNote";
 import ClientProof from "@/components/ClientProof";
+import PageReviewed from "@/components/PageReviewed";
 import { EvidenceVisuals, ClaimValueVisual, GuideAttorney } from "@/components/ClaimVisuals";
 import { practiceMedia } from "@/data/practiceMedia";
 import { getPracticeArea, practiceAreas, serviceLocations, type SiteLocale } from "@/data/injurySite";
@@ -402,6 +403,7 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
             <a href={`${localePrefix(locale)}/locations`} className="editorial-inline-link mt-7"><span>{isKo(locale) ? "전체 지역 보기" : "See all service areas"}</span><ArrowRight className="h-4 w-4" /></a>
           </ReadingSectionBlock>
         </ReadingLayout>
+        <div className="site-shell pb-12"><PageReviewed locale={locale} /></div>
         <ClientProof locale={locale} />
         <ConsultationCta locale={locale} />
       </main>
