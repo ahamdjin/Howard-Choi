@@ -5,6 +5,11 @@ import KoreanNavigation from "@/components/KoreanNavigation";
 import KoreanFooter from "@/components/KoreanFooter";
 import KoreanLocations from "@/components/KoreanLocations";
 import ClientSuccessFeature from "@/components/ClientSuccessFeature";
+import HomeImmediateTrust from "@/components/HomeImmediateTrust";
+import TrustBadges from "@/components/TrustBadges";
+import FirmSnapshot from "@/components/FirmSnapshot";
+import SelectedResult from "@/components/SelectedResult";
+import HomeServiceAreas from "@/components/HomeServiceAreas";
 
 import FAQ from "@/components/FAQ";
 import ProcessAccordion from "@/components/ProcessAccordion";
@@ -158,8 +163,26 @@ const BookingKo = () => {
 const KoIndex = () => (
   <div className="min-h-[100svh] overflow-x-clip bg-background" style={{ fontFamily: '"Noto Sans KR", sans-serif' }}>
     <KoreanNavigation />
-    <div className="relative"><div className="sticky top-0 z-0 h-[100svh] w-full"><HeroKo /></div><div className="relative z-10 w-full bg-background"><KoreanLocations /></div></div>
-    <div className="relative z-20 bg-background"><ExperienceKo /><DirectAccessKo /><ClientSuccessFeature locale="ko" /><FAQ locale="ko" /><BookingKo /><KoreanFooter /></div>
+    <div className="relative">
+      {/* 1 : Hero */}
+      <div className="sticky top-0 z-0 h-[100svh] w-full"><HeroKo /></div>
+      <div className="relative z-10 w-full bg-background">
+        <HomeImmediateTrust locale="ko" />   {/* 2 : Trust strip */}
+        <TrustBadges locale="ko" />          {/* 3 : Awards & recognition */}
+        <FirmSnapshot locale="ko" />         {/* 4 : Firm metrics */}
+        <KoreanLocations />                  {/* 5 : Practice areas */}
+      </div>
+    </div>
+    <div className="relative z-20 bg-background">
+      <ExperienceKo />                       {/* 6 : What happens after you call */}
+      <SelectedResult locale="ko" />         {/* 7 : Results */}
+      <DirectAccessKo />                     {/* 8 : Meet Howard Choi */}
+      <ClientSuccessFeature locale="ko" />   {/* 9 : Testimonials */}
+      <HomeServiceAreas locale="ko" />       {/* 10 : Areas served */}
+      <FAQ locale="ko" />                    {/* 11 : FAQ */}
+      <BookingKo />                          {/* 12 : CTA */}
+      <KoreanFooter />
+    </div>
   </div>
 );
 

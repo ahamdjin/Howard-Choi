@@ -4,7 +4,7 @@ import { buildSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/ko_/thank-you")({
   head: () => buildSeo({
-    title: "문의 접수 완료 | Buena Park Injury Lawyer",
+    title: "문의 접수 완료 | 부에나파크 사고 변호사",
     description: "Buena Park Injury Lawyer에 문의가 정상적으로 접수되었습니다.",
     path: "/ko/thank-you",
     alternatePath: "/thank-you",

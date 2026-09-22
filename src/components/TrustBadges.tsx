@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import type { SiteLocale } from "@/data/injurySite";
 import avvo from "@/assets/law-firm/badges/avvo.png";
 import aaoaTopHundred from "@/assets/law-firm/badges/aaoa-top-100.webp";
 import bbbAccredited from "@/assets/law-firm/badges/bbb-accredited-business.webp";
@@ -28,16 +29,18 @@ const badges = [
 //  - The label below is a <div>, not an <h2>: `.home-page h2` carries a
 //    `font-size: clamp(2rem,3vw,3.25rem) !important` that would render a
 //    10px eyebrow at ~52px and dwarf the badges.
-const TrustBadges = () => (
-  <aside aria-label="Awards and recognition" className="bg-background text-foreground">
+const TrustBadges = ({ locale = "en" }: { locale?: SiteLocale }) => {
+  const ko = locale === "ko";
+  return (
+  <aside aria-label={ko ? "수상 및 인증" : "Awards and recognition"} className="bg-background text-foreground">
     <div className="site-shell py-10 md:py-12">
       <div className="flex flex-wrap items-baseline justify-between gap-4 border-b border-foreground/12 pb-5">
-        <div className="text-[10px] uppercase tracking-[0.16em] text-foreground/36">Recognition</div>
+        <div className="text-[10px] uppercase tracking-[0.16em] text-foreground/36">{ko ? "수상 및 인증" : "Recognition"}</div>
         <a
-          href="/attorney"
+          href={ko ? "/ko/attorney" : "/attorney"}
           className="inline-flex items-center gap-2 text-[11px] font-medium underline underline-offset-4 transition-opacity hover:opacity-60"
         >
-          About the attorney <ArrowUpRight className="h-3.5 w-3.5" />
+          {ko ? "변호사 소개" : "About the attorney"} <ArrowUpRight className="h-3.5 w-3.5" />
         </a>
       </div>
 
@@ -64,6 +67,7 @@ const TrustBadges = () => (
 
     </div>
   </aside>
-);
+  );
+};
 
 export default TrustBadges;

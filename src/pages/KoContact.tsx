@@ -29,7 +29,7 @@ const KoContact = () => {
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.72 }} className="max-w-[730px]">
             <span className="mb-4 block text-[11px] text-[#f3eee5]/62">문의 · Buena Park</span>
             <PageBreadcrumb locale="ko" title="문의" />
-            <h1 style={koSerif} className="text-[clamp(2.45rem,3.85vw,3.85rem)] font-medium leading-[1.18] tracking-[-0.045em]">사고 이후의 상황을 개인상해 법률팀과 이야기하세요.</h1>
+            <h1 style={koSerif} className="text-[clamp(2.45rem,3.85vw,3.85rem)] font-medium leading-[1.18] tracking-[-0.045em]">사고 이후의 상황을 변호사와 직접 이야기하세요.</h1>
             <div className="mt-6 flex flex-wrap gap-3"><a href="#calendar" className="inline-flex min-h-11 items-center rounded-full bg-[#f3eee5] px-5 py-3 text-sm font-semibold text-[#17130f]">상담 예약</a><a href="#message" className="inline-flex min-h-11 items-center rounded-full border border-white/50 px-5 py-3 text-sm">메시지 보내기</a></div>
             <p className="mt-5 max-w-[590px] text-[14px] leading-7 text-[#f3eee5]/68 md:text-[15px]">사고 날짜와 장소, 현재 치료 상황, 보험 정보와 가장 궁금한 문제부터 알려주시면 됩니다. 첫 상담을 위해 모든 서류가 준비되어 있을 필요는 없습니다.</p>
           </motion.div>
