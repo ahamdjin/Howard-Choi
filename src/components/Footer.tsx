@@ -35,7 +35,7 @@ const Footer = () => {
           <div>
             <div className="mb-5 text-[12px] text-muted-foreground">Firm</div>
             <div className="space-y-3 text-[13px]">
-              <Link to="/attorney" className="block hover:opacity-60">Attorneys</Link>
+              <Link to="/attorney" className="block hover:opacity-60">Attorney</Link>
               <Link to="/results" className="block hover:opacity-60">Results</Link>
               <Link to="/case-value-calculator" className="block hover:opacity-60">Case Value Calculator</Link>
               <Link to="/blogs" className="block hover:opacity-60">Blogs</Link>

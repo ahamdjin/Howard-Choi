@@ -396,9 +396,7 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
                   href={`${localePrefix(locale)}/locations/${location.slug}`}
                   className="group flex items-center justify-between gap-4 border-b border-[#1E1C1A]/12 py-4 sm:even:border-l sm:even:pl-6"
                 >
-                  <span className="text-[13px]">
-                    {isKo(locale) ? `${location.koName} ${title}` : `${title} lawyer in ${location.name}`}
-                  </span>
+                  <span className="text-[13px]">{isKo(locale) ? location.koName : location.name}</span>
                   <span className="shrink-0 text-[11px] text-[#1E1C1A]/38">{location.county}</span>
                 </a>
               ))}

@@ -148,7 +148,7 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
   const isBuenaPark = location.slug === "buena-park";
   const heroTitle = isKo(locale)
     ? (isBuenaPark ? "부에나파크 사고·상해 가이드" : `${name} 개인상해 변호사`)
-    : (isBuenaPark ? "Buena Park Accident & Injury Guide" : `${name} Personal Injury Lawyers`);
+    : (isBuenaPark ? "Buena Park Accident & Injury Guide" : `${name} Personal Injury Attorney`);
 
   return (
     <EditorialFrame locale={locale}>
@@ -239,12 +239,15 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
                 <a
                   key={practice.slug}
                   href={`${localePrefix(locale)}/practice-areas/${practice.slug}`}
-                  className="group flex items-center justify-between gap-4 border-b border-[#1E1C1A]/12 py-4 sm:even:border-l sm:even:pl-6"
+                  className="group flex items-start justify-between gap-4 border-b border-[#1E1C1A]/12 py-4 sm:even:border-l sm:even:pl-6"
                 >
-                  <span className="text-[13px]">
-                    {isKo(locale) ? `${name} ${practice.koTitle}` : `${practice.title} claims in ${name}`}
+                  <span className="min-w-0">
+                    <span className="block text-[13px]">{isKo(locale) ? practice.koTitle : practice.title}</span>
+                    <span className="mt-1 block text-[11px] leading-5 text-[#1E1C1A]/45">
+                      {isKo(locale) ? practice.koIssues[0] : practice.issues[0]}
+                    </span>
                   </span>
-                  <ArrowRight className="h-3.5 w-3.5 shrink-0 text-[#1E1C1A]/35 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="mt-1 h-3.5 w-3.5 shrink-0 text-[#1E1C1A]/35 transition-transform group-hover:translate-x-1" />
                 </a>
               ))}
             </div>

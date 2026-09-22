@@ -4,7 +4,7 @@ import { buildSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/contact")({
   head: () => buildSeo({
-    title: "Contact Buena Park Personal Injury Lawyers | Consultation",
+    title: "Contact Buena Park Personal Injury Attorney | Free Consultation",
     description: "Contact Buena Park personal injury attorney Howard Choi about an accident, current treatment, insurance questions, evidence, and deadlines. Call 714-690-0007 or book an available consultation online.",
     path: "/contact",
     alternatePath: "/ko/contact",
