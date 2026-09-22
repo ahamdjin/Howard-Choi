@@ -41,7 +41,7 @@ const ThankYou = ({ locale = "en" }: ThankYouProps) => {
               <p className="mt-6 max-w-[600px] text-[15px] leading-7 text-[#f3eee5]/62 md:text-[16px]">
                 {isKorean
                   ? "보내주신 내용을 확인한 뒤 담당자가 곧 연락드리겠습니다."
-                  : "Thank you for reaching out. Our team will review what you sent and contact you soon."}
+                  : "Thanks for reaching out. Howard will review what you sent and get back to you soon."}
               </p>
 
               <div className="mt-10 border-t border-[#f3eee5]/12 pt-6">

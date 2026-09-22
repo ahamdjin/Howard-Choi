@@ -2,7 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 
 const metrics = [
   { value: "$100M+", label: "Total recovered" },
-  { value: "40 Years", label: "Combined experience" },
+  { value: "Since 2012", label: "Licensed in California" },
   { value: "11 Years", label: "Firm history" },
   { value: "$1M", label: "Largest single-client recovery" },
 ];

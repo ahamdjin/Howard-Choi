@@ -5,6 +5,8 @@ export const brand = {
   attorney: "Howard Choi",
   phoneDisplay: "714-690-0007",
   phoneHref: "tel:+17146900007",
+  email: "case@buenaparkinjurylawyer.com",
+  emailHref: "mailto:case@buenaparkinjurylawyer.com",
   address: "6301 Beach Blvd, Suite 216, Buena Park, CA 90621",
 };
 

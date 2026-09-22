@@ -52,10 +52,10 @@ const Contact = () => {
             <div className="text-[11px] text-muted-foreground">Phone</div>
             <div className="mt-2 text-[15px] transition-opacity group-hover:opacity-60">{brand.phoneDisplay}</div>
           </a>
-          <a href="mailto:hello@howardchoilaw.com" className="group border-t border-foreground/10 pt-5 md:border-t-0 md:pt-0">
+          <a href={brand.emailHref} className="group border-t border-foreground/10 pt-5 md:border-t-0 md:pt-0">
             <Mail className="mb-4 h-4 w-4 text-muted-foreground" />
             <div className="text-[11px] text-muted-foreground">Email</div>
-            <div className="mt-2 text-[15px] transition-opacity group-hover:opacity-60">hello@howardchoilaw.com</div>
+            <div className="mt-2 text-[15px] transition-opacity group-hover:opacity-60">{brand.email}</div>
           </a>
           <a href="https://share.google/LBJ1C8zWrZFjJBkVe" target="_blank" rel="noreferrer" className="group border-t border-foreground/10 pt-5 md:border-t-0 md:pt-0">
             <MapPin className="mb-4 h-4 w-4 text-muted-foreground" />
@@ -114,7 +114,7 @@ const Contact = () => {
               </div>
               <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-[12px]">
                 <Link to="/practice-areas" className="inline-flex items-center gap-2 hover:opacity-60">Explore practice areas <ArrowRight className="h-3.5 w-3.5" /></Link>
-                <Link to="/attorney" className="inline-flex items-center gap-2 hover:opacity-60">Meet the attorneys <ArrowRight className="h-3.5 w-3.5" /></Link>
+                <Link to="/attorney" className="inline-flex items-center gap-2 hover:opacity-60">Meet Howard Choi <ArrowRight className="h-3.5 w-3.5" /></Link>
               </div>
             </div>
           </div>

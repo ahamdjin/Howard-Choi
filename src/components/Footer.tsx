@@ -14,6 +14,7 @@ const Footer = () => {
             </div>
             <p className="max-w-[270px] text-[13px] leading-6 text-muted-foreground">Personal injury counsel for accident and serious-injury claims in Buena Park and nearby Orange and Los Angeles County communities.</p>
             <a href={brand.phoneHref} className="mt-5 block text-[13px] font-medium hover:opacity-60">{brand.phoneDisplay}</a>
+            <a href={brand.emailHref} className="mt-2 block text-[12px] text-muted-foreground hover:opacity-60">{brand.email}</a>
           </div>
 
           <div>

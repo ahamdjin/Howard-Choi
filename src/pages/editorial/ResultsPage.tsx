@@ -15,7 +15,7 @@ import {
 const resultExamples = [
   { amount: "$1M", type: "Largest Single-Client Recovery", context: "Highest single-client recovery reported by the firm." },
   { amount: "$100M+", type: "Total Client Recoveries", context: "Total recovery reported by the firm across client matters." },
-  { amount: "40 Years", type: "Combined Experience", context: "Combined legal experience across the firm." },
+  { amount: "Since 2012", type: "Licensed in California", context: "Admitted to the State Bar of California in October 2012, No. 284364." },
 ];
 
 export const ResultsPage = ({ locale }: { locale: SiteLocale }) => (
