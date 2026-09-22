@@ -101,10 +101,10 @@ export const LocationsPage = ({ locale }: { locale: SiteLocale }) => (
       <EditorialHero
         locale={locale}
         eyebrow={isKo(locale) ? "서비스 지역" : "Personal injury service areas"}
-        title={isKo(locale) ? "Buena Park를 중심으로 인근 지역까지." : "Personal injury lawyers serving Buena Park and nearby communities."}
+        title={isKo(locale) ? "Buena Park를 중심으로 인근 지역까지." : "Where we work, and why the city matters."}
         description={isKo(locale)
           ? "Buena Park와 인근 Orange County·Los Angeles County 경계 지역의 사고·개인상해 사건을 지원합니다."
-          : "The firm is based in Buena Park and serves injured people across nearby North Orange County and Los Angeles County communities. Each local guide explains the accident context, evidence, official local resources, and practical information that can matter after an injury."}
+          : "We are on Beach Blvd in Buena Park and take cases across north Orange County and the Los Angeles County cities next to it. Each page below covers one city: its own collision numbers, the police department that writes its reports, and the courthouse a filed case would go to."}
         image={heroBoardroom}
       />
       <ReadingLayout
@@ -118,10 +118,10 @@ export const LocationsPage = ({ locale }: { locale: SiteLocale }) => (
           id="areas"
           locale={locale}
           kicker={isKo(locale) ? "01 · 지역" : "01 · Communities"}
-          title={isKo(locale) ? "가까운 지역 페이지에서 시작하세요." : "Choose the community closest to where the accident or recovery is happening."}
+          title={isKo(locale) ? "가까운 지역 페이지에서 시작하세요." : "Pick the city where it actually happened."}
           intro={isKo(locale)
             ? "각 지역 페이지는 해당 지역에서 사고 이후 확인해야 할 일반적인 문제와 상담 시작 방법을 정리합니다."
-            : "The city does not determine whether a claim is strong, but the exact location can affect the responding agency, available video, witnesses, venue, treatment logistics, and the local records worth preserving."}
+            : "The city you live in does not make a claim stronger or weaker. The spot where it happened can. It decides who wrote the report, which cameras were nearby, and which county a lawsuit would be filed in. That last one catches people out along the Orange and Los Angeles county line, where a few blocks changes the answer."}
         >
           <div className="editorial-link-grid">
             {serviceLocations.map((location, index) => (

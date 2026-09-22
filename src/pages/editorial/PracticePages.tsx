@@ -196,7 +196,7 @@ export const PracticeAreasPage = ({ locale }: { locale: SiteLocale }) => (
       <EditorialHero
         locale={locale}
         eyebrow={isKo(locale) ? "개인상해 업무 분야" : "Personal injury practice areas"}
-        title={isKo(locale) ? "사고 유형보다 중요한 것은 사건이 실제로 어떻게 영향을 미쳤는지입니다." : "Personal injury help for the accident, the evidence, and what comes next."}
+        title={isKo(locale) ? "사고 유형보다 중요한 것은 사건이 실제로 어떻게 영향을 미쳤는지입니다." : "Start with the kind of accident you had."}
         description={isKo(locale)
           ? "자동차 사고부터 중대 상해까지, 각 사건 분야에서 어떤 사실과 증거가 중요한지 명확하게 설명합니다."
           : "Explore the accident and injury matters the firm handles, including the evidence to preserve, insurance questions to ask, losses to document, and practical next steps after an injury."}
@@ -213,8 +213,8 @@ export const PracticeAreasPage = ({ locale }: { locale: SiteLocale }) => (
           id="overview"
           locale={locale}
           kicker={isKo(locale) ? "01 · 분야" : "01 · Areas"}
-          title={isKo(locale) ? "필요한 정보를 사건 유형별로 찾으세요." : "Start with the kind of accident or injury you are dealing with."}
-          intro={isKo(locale) ? "각 페이지는 일반적인 사건 구조를 설명하기 위한 것이며 실제 사건의 사실관계에 따라 접근은 달라집니다." : "Each guide explains the issues that are specific to that type of claim. The legal theory may be similar, but the evidence, insurance, responsible parties, and medical consequences can be very different."}
+          title={isKo(locale) ? "필요한 정보를 사건 유형별로 찾으세요." : "Eight kinds of claim, and they do not work the same way."}
+          intro={isKo(locale) ? "각 페이지는 일반적인 사건 구조를 설명하기 위한 것이며 실제 사건의 사실관계에 따라 접근은 달라집니다." : "People assume an injury claim is an injury claim. It is not. A truck case turns on company records that get deleted on a schedule. A fall case turns on whether anyone can prove the hazard was there long enough to be noticed. A rideshare case can turn on one screenshot. Pick the page that matches what happened to you and it will tell you what actually matters in that kind of case."}
         >
           <PracticeLinks locale={locale} />
         </ReadingSectionBlock>
@@ -223,8 +223,8 @@ export const PracticeAreasPage = ({ locale }: { locale: SiteLocale }) => (
           id="process"
           locale={locale}
           kicker={isKo(locale) ? "02 · 진행" : "02 · Process"}
-          title={isKo(locale) ? "좋은 사건 준비는 순서가 있습니다." : "A strong injury claim is built in the right order."}
-          intro={isKo(locale) ? "초기에는 치료와 증거 보존이 중요하고, 이후에는 보험과 손실을 정리하며 책임과 손해를 설명할 수 있는 기록을 만들어갑니다." : "The early priorities are usually medical care and preserving evidence. From there, the work becomes a clearer record of responsibility, insurance coverage, treatment, financial loss, future needs, and the way the injury changed daily life."}
+          title={isKo(locale) ? "좋은 사건 준비는 순서가 있습니다." : "Order matters more than speed."}
+          intro={isKo(locale) ? "초기에는 치료와 증거 보존이 중요하고, 이후에는 보험과 손실을 정리하며 책임과 손해를 설명할 수 있는 기록을 만들어갑니다." : "Get treatment, and get the evidence that will not survive a few weeks of waiting. Those two come first and almost everything else can be rebuilt later. After that it becomes a slower job of working out who is responsible, which policies apply, and what the injury has actually cost you. That part takes as long as your recovery does, which is usually the part nobody warns you about."}
         >
           <div className="grid gap-0 border-y border-[#1E1C1A]/12 md:grid-cols-3">
             {[FileText, ShieldCheck, CheckCircle2].map((Icon, index) => (

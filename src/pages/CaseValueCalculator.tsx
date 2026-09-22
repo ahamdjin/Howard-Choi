@@ -215,7 +215,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
       `Estimated fault: ${state.fault}%`,
       `Long-term effects: ${state.permanent ? "Yes" : "No"}`,
       "",
-      "I would like an expert opinion on this estimate.",
+      "I would like someone to look at this properly.",
     ]).join("\n");
   };
 
@@ -226,7 +226,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
       return;
     }
     if (financialTotal <= 0) {
-      setError(ko ? "최소 한 가지 금전적 손실을 입력하세요." : "Add at least one financial loss to calculate a range.");
+      setError(ko ? "최소 한 가지 금전적 손실을 입력하세요." : "Add at least one financial loss and we can show a range.");
       return;
     }
     setError("");
@@ -268,7 +268,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
                   {ko ? "내 사건의 가치는 얼마일까요?" : "What could your case be worth?"}
                 </h1>
                 <p className="mt-4 max-w-[480px] text-[13px] leading-6 text-[#f3eee5]/64 md:text-[14px]">
-                  {ko ? "핵심 정보를 입력해 캘리포니아 개인상해 사건의 교육용 예상 범위를 확인하세요." : "Enter a few core facts to see an educational range for a California personal injury claim."}
+                  {ko ? "핵심 정보를 입력해 캘리포니아 개인상해 사건의 교육용 예상 범위를 확인하세요." : "Answer a few questions and you will get a rough range. It is a starting point for the conversation, not a valuation of your case."}
                 </p>
                 <a href="#calculator" className="mt-6 inline-flex items-center gap-3 rounded-full bg-[#f3eee5] px-5 py-3 text-[11px] font-medium text-[#17130f]">
                   {ko ? "계산 시작" : "Start the calculator"}<ArrowRight className="h-3.5 w-3.5" />
@@ -294,7 +294,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
               <div>
                 <div className="text-[10px] text-[#211E1B]/44">{ko ? "01 · 계산하기" : "01 · Calculate"}</div>
                 <h2 className="mt-2 text-[21px] font-semibold tracking-[-0.02em]">{ko ? "핵심 정보만 입력하세요." : "Start with the facts that matter."}</h2>
-                <p className="mt-1 text-[13px] leading-5 text-[#211E1B]/70">{ko ? "빠른 계산은 핵심 정보만 사용합니다. 더 복잡한 사건은 추가 정보를 펼치세요." : "Use the core fields for a quick estimate. Open the extra details only when they apply."}</p>
+                <p className="mt-1 text-[13px] leading-5 text-[#211E1B]/70">{ko ? "빠른 계산은 핵심 정보만 사용합니다. 더 복잡한 사건은 추가 정보를 펼치세요." : "Fill in the main fields first. Open the extra details only if they apply to you."}</p>
               </div>
               <button type="button" onClick={reset} className="inline-flex h-9 shrink-0 items-center gap-2 text-[10px] font-medium text-[#211E1B]/45 hover:text-[#211E1B]"><RotateCcw className="h-3.5 w-3.5" />{ko ? "초기화" : "Reset"}</button>
             </div>
@@ -322,7 +322,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
                   <summary className="flex cursor-pointer list-none items-start justify-between gap-5 marker:hidden">
                     <span>
                       <span className="block text-[13px] font-semibold">{ko ? "더 정확한 범위를 원하시나요?" : "Want a more complete estimate?"}</span>
-                      <span className="mt-1 block max-w-[470px] text-[13px] leading-5 text-[#211E1B]/44">{ko ? "향후 치료, 향후 소득 손실, 재산 피해 또는 장기적 영향이 있다면 여기에 추가하세요." : "Use this if treatment will continue, work loss may continue, property was damaged, or the injury may have lasting effects."}</span>
+                      <span className="mt-1 block max-w-[470px] text-[13px] leading-5 text-[#211E1B]/44">{ko ? "향후 치료, 향후 소득 손실, 재산 피해 또는 장기적 영향이 있다면 여기에 추가하세요." : "Worth opening if treatment is still ongoing, you are still losing work, property was damaged, or the injury looks like it will leave something behind."}</span>
                     </span>
                     <span className="text-[18px] leading-none text-[#6E635A] transition-transform group-open:rotate-45">+</span>
                   </summary>
@@ -350,7 +350,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
                 {calculated && estimate ? (
                   <div id="case-estimate-result" tabIndex={-1} className="mt-4 scroll-mt-24">
                     <div style={serifStyle(locale)} className={ko ? "text-[1.9rem] font-medium leading-tight" : "editorial-serif text-[clamp(2rem,3.6vw,3rem)] leading-[0.98] tracking-[-0.035em]"}>{money(estimate.low)} to {money(estimate.high)}</div>
-                    <p className="mt-3 text-[10px] leading-5 text-[#211E1B]/46">{ko ? "입력한 정보만을 바탕으로 한 교육용 범위입니다." : "Educational range based only on the facts you entered."}</p>
+                    <p className="mt-3 text-[10px] leading-5 text-[#211E1B]/46">{ko ? "입력한 정보만을 바탕으로 한 교육용 범위입니다." : "A range built from what you entered, nothing more."}</p>
 
                     <div className="mt-5 border-y border-[#211E1B]/10 py-2">
                       <div className="flex items-center justify-between gap-4 py-2 text-[11px]"><span className="text-[#211E1B]/50">{ko ? "경제적 손실" : "Economic losses"}</span><strong>{money(estimate.economic)}</strong></div>
