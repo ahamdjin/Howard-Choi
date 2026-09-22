@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
 import brandLogo from "@/assets/law-firm/howard-choi-logo.png";
 import { brand, practiceAreas, serviceLocations } from "@/data/injurySite";
+import FooterContact from "@/components/FooterContact";
 
 const KoreanFooter = () => {
   return (
     <footer className="bg-background py-24 text-foreground md:py-28 lg:py-32" style={{ fontFamily: '\"Noto Sans KR\", sans-serif' }}>
       <div className="site-shell">
-        <div className="grid gap-12 border-b border-black/10 pb-16 md:grid-cols-4 lg:gap-14">
+        <div className="grid gap-12 border-b border-black/10 pb-16 md:grid-cols-2 lg:grid-cols-5 lg:gap-10">
           <div>
             <div className="mb-5 flex items-center gap-2.5"><span className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-[2px]"><img src={brandLogo} alt="" width={28} height={28} loading="lazy" decoding="async" className="h-full w-full object-contain" /></span><span className="text-[14px] font-medium tracking-[-0.02em]">{brand.name}</span></div>
             <p className="max-w-[280px] text-[13px] leading-6 text-muted-foreground">부에나파크와 인근 Orange·Los Angeles County 지역의 교통사고 및 개인상해 사건을 다룹니다.</p>
-            <a href={brand.phoneHref} className="mt-5 block text-[13px] font-medium hover:opacity-60">{brand.phoneDisplay}</a>
           </div>
 
           <div>
@@ -26,8 +26,9 @@ const KoreanFooter = () => {
           <div>
             <div className="mb-5 text-[12px] text-muted-foreground">로펌</div>
             <div className="space-y-3 text-[13px]"><Link to="/ko/attorney" className="block hover:opacity-60">변호사</Link><Link to="/ko/results" className="block hover:opacity-60">사건 결과</Link><Link to="/ko/case-value-calculator" className="block hover:opacity-60">사건 가치 계산기</Link><Link to="/ko/blogs" className="block hover:opacity-60">법률 가이드</Link><Link to="/ko/about" className="block hover:opacity-60">소개</Link><Link to="/ko/contact" className="block hover:opacity-60">문의</Link></div>
-            <div className="mt-7 text-[12px] leading-5 text-muted-foreground">{brand.address}</div>
           </div>
+
+          <FooterContact locale="ko" />
         </div>
 
         <div className="grid gap-5 pt-8 text-[11px] text-muted-foreground lg:grid-cols-[auto_1fr_auto] lg:items-center">

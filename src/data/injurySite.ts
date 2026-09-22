@@ -8,6 +8,12 @@ export const brand = {
   email: "case@buenaparkinjurylawyer.com",
   emailHref: "mailto:case@buenaparkinjurylawyer.com",
   address: "6301 Beach Blvd, Suite 216, Buena Park, CA 90621",
+  // Session params (hl, entry, g_ep) stripped so the link stays stable.
+  mapsHref:
+    "https://www.google.com/maps/place/Buena+Park+Injury+Lawyer/@33.868851,-118.0013508,17z/data=!3m1!4b1!4m6!3m5!1s0x80dd2ba112d784eb:0xddb1dce440eff6fb!8m2!3d33.868851!4d-117.9987705!16s%2Fg%2F11nvy6qqf7",
+  gbpHref: "https://share.google/LBJ1C8zWrZFjJBkVe",
+  // Set this when the Yelp listing is ready; the icon renders only when it is.
+  yelpHref: "",
 };
 
 export const practiceAreas = [
