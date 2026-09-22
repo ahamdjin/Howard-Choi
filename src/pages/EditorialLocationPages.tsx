@@ -11,20 +11,21 @@ import cityCollisionDamage from "@/assets/law-firm/collision-damage.jpg";
 import cityTruckHighway from "@/assets/law-firm/truck-highway.jpg";
 import cityMotorcycleRoad from "@/assets/law-firm/motorcycle-road.jpg";
 import cityPedestrianCrossing from "@/assets/law-firm/pedestrian-crossing.jpg";
+import citySuburbanPalms from "@/assets/law-firm/suburban-palms.jpg";
 
 // Each city gets its own image so ten pages do not share one photo. Chosen to
 // echo the collision mix described in that city's localIntro.
 const cityImages: Record<string, string> = {
-  "buena-park": cityCarCollision,
+  "buena-park": citySuburbanPalms,
   anaheim: cityPedestrianCrossing,
-  fullerton: cityPedestrianCrossing,
+  fullerton: cityCarCollision,
   "garden-grove": cityCollisionDamage,
-  cypress: cityMotorcycleRoad,
-  "la-habra": cityCarCollision,
+  cypress: citySuburbanPalms,
+  "la-habra": cityMotorcycleRoad,
   "la-mirada": cityCollisionDamage,
   cerritos: cityTruckHighway,
   norwalk: cityTruckHighway,
-  whittier: cityMotorcycleRoad,
+  whittier: citySuburbanPalms,
 };
 import { getServiceLocation, serviceLocations, type SiteLocale } from "@/data/injurySite";
 import {

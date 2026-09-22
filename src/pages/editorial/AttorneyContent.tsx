@@ -1,7 +1,7 @@
 import { ArrowRight, CalendarDays, Check, FileText, MapPin, MessageCircle, Phone, Scale } from "lucide-react";
 import { brand, practiceAreas, type SiteLocale } from "@/data/injurySite";
 import { practiceMedia } from "@/data/practiceMedia";
-import officeImage from "@/assets/law-firm/hero-law-office.webp";
+import reviewingDocuments from "@/assets/law-firm/reviewing-documents.jpg";
 
 export default function AttorneyContent({ locale }: { locale: SiteLocale }) {
   const ko = locale === "ko";
@@ -54,7 +54,7 @@ export default function AttorneyContent({ locale }: { locale: SiteLocale }) {
 
     <section id="how-we-help" className="scroll-mt-24 bg-[#eee8df] py-16 md:py-24">
       <div className="attorney-content-shell grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-        <img src={officeImage} alt={ko ? "부에나파크 법률 사무소" : "The firm's Buena Park law office"} width={900} height={1000} loading="lazy" decoding="async" className="aspect-[4/3] w-full rounded-md object-cover lg:aspect-[4/5] lg:max-h-[580px]" />
+        <img src={reviewingDocuments} alt={ko ? "서류와 기록을 함께 검토하는 모습" : "Reviewing accident documents and records together"} width={900} height={1000} loading="lazy" decoding="async" className="aspect-[4/3] w-full rounded-md object-cover lg:aspect-[4/5] lg:max-h-[580px]" />
         <div><p className="attorney-label">{ko ? "진행 방식" : "How we help"}</p><h2 className="mt-4">{ko ? "한 단계씩 알아보세요." : "Know what comes next."}</h2>
           <ol className="mt-8 space-y-7">{steps.map(({ Icon, title, text }, index) => <li key={title} className="flex gap-4"><span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#f9f8f6] text-[#7b5b3e]"><Icon aria-hidden="true" className="h-6 w-6" strokeWidth={1.5} /></span><div><span className="text-xs text-[#675f55]">0{index + 1}</span><h3 className="mt-1">{title}</h3><p className="mt-2 leading-7 text-[#57514b]">{text}</p></div></li>)}</ol>
         </div>
