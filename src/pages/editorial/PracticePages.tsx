@@ -1,4 +1,4 @@
-import { ArrowRight, CalendarClock, CheckCircle2, Compass, FileText, HelpCircle, Layers, Scale, ShieldCheck, Sparkles, Umbrella } from "lucide-react";
+import { ArrowRight, CalendarClock, CheckCircle2, Compass, FileText, HelpCircle, Layers, MapPin, Scale, ShieldCheck, Sparkles, Umbrella } from "lucide-react";
 import { useParams } from "@tanstack/react-router";
 import heroJustice from "@/assets/law-firm/hero-justice-library.webp";
 import heroCourthouse from "@/assets/law-firm/hero-courthouse.webp";
@@ -8,7 +8,7 @@ import AttorneyNote from "@/components/AttorneyNote";
 import ClientProof from "@/components/ClientProof";
 import { EvidenceVisuals, ClaimValueVisual, GuideAttorney } from "@/components/ClaimVisuals";
 import { practiceMedia } from "@/data/practiceMedia";
-import { getPracticeArea, practiceAreas, type SiteLocale } from "@/data/injurySite";
+import { getPracticeArea, practiceAreas, serviceLocations, type SiteLocale } from "@/data/injurySite";
 import {
   ConsultationCta,
   EditorialFrame,
@@ -288,12 +288,12 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
             ? [
                 { id: "understand", label: "사건 이해" }, { id: "issues", label: "주요 쟁점" }, { id: "evidence", label: "증거" },
                 { id: "value", label: "손해와 가치" }, { id: "insurance", label: "보험" }, { id: "deadlines", label: "기한" },
-                { id: "faq", label: "자주 묻는 질문" }, { id: "resources", label: "자료" }, { id: "related", label: "다른 업무 분야" },
+                { id: "faq", label: "자주 묻는 질문" }, { id: "resources", label: "자료" }, { id: "related", label: "다른 업무 분야" }, { id: "areas", label: "지역" },
               ]
             : [
                 { id: "understand", label: "Understanding the claim" }, { id: "issues", label: "Key issues" }, { id: "evidence", label: "Evidence to preserve" },
                 { id: "value", label: "Damages & case value" }, { id: "insurance", label: "Insurance & responsibility" }, { id: "deadlines", label: "California deadlines" },
-                { id: "faq", label: "Common questions" }, { id: "resources", label: "Guides & sources" }, { id: "related", label: "Related practice areas" },
+                { id: "faq", label: "Common questions" }, { id: "resources", label: "Guides & sources" }, { id: "related", label: "Related practice areas" }, { id: "areas", label: "Where we handle these" },
               ]}
         >
           <ReadingSectionBlock id="understand" locale={locale} Icon={Compass} kicker={isKo(locale) ? "01 · 이해" : "01 · Understand"} title={isKo(locale) ? `${title} 사건에서 먼저 확인할 것` : enhancement.headings.understand} intro={intro}>
@@ -378,6 +378,32 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
                 </a>
               ))}
             </div>
+          </ReadingSectionBlock>
+          <ReadingSectionBlock
+            id="areas"
+            locale={locale}
+            Icon={MapPin}
+            kicker={isKo(locale) ? "10 · 지역" : "10 · Where we handle these"}
+            title={isKo(locale) ? `${title} 사건 지원 지역` : `${title} claims across North Orange County.`}
+            intro={isKo(locale)
+              ? "부에나파크 사무실을 중심으로 인근 오렌지카운티와 로스앤젤레스카운티 지역의 사건을 지원합니다."
+              : `The office is in Buena Park, and ${title.toLowerCase()} claims come in from the cities around it. Each page below has that city's own collision data, its police department, and the courthouse a filed case would go to.`}
+          >
+            <div className="grid border-t border-[#1E1C1A]/12 sm:grid-cols-2">
+              {serviceLocations.map((location) => (
+                <a
+                  key={location.slug}
+                  href={`${localePrefix(locale)}/locations/${location.slug}`}
+                  className="group flex items-center justify-between gap-4 border-b border-[#1E1C1A]/12 py-4 sm:even:border-l sm:even:pl-6"
+                >
+                  <span className="text-[13px]">
+                    {isKo(locale) ? `${location.koName} ${title}` : `${title} lawyer in ${location.name}`}
+                  </span>
+                  <span className="shrink-0 text-[11px] text-[#1E1C1A]/38">{location.county}</span>
+                </a>
+              ))}
+            </div>
+            <a href={`${localePrefix(locale)}/locations`} className="editorial-inline-link mt-7"><span>{isKo(locale) ? "전체 지역 보기" : "See all service areas"}</span><ArrowRight className="h-4 w-4" /></a>
           </ReadingSectionBlock>
         </ReadingLayout>
         <ClientProof locale={locale} />

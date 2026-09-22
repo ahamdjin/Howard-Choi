@@ -27,7 +27,7 @@ const cityImages: Record<string, string> = {
   norwalk: cityTruckHighway,
   whittier: citySuburbanPalms,
 };
-import { getServiceLocation, serviceLocations, type SiteLocale } from "@/data/injurySite";
+import { getServiceLocation, practiceAreas, serviceLocations, type SiteLocale } from "@/data/injurySite";
 import {
   ConsultationCta,
   EditorialFrame,
@@ -234,7 +234,21 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
               ? "자동차·트럭·오토바이 사고, 보행자 사고, 승차공유 사고, 낙상과 중대 상해 등 다양한 개인상해 문제를 검토할 수 있습니다."
               : `Of the ${location.ots.total.toLocaleString()} collisions reported in ${name} in ${location.ots.year}, ${vulnerable[0].n} involved ${vulnerable[0].label} and ${vulnerable[1].n} involved ${vulnerable[1].label}. Around ${hitRunShare}% were hit-and-run. We handle all of those, plus truck, rideshare, slip and fall, wrongful death and serious injury claims. Which one you have matters far more than which city you live in.`}
           >
-            <a href={`${localePrefix(locale)}/practice-areas`} className="editorial-inline-link"><span>{isKo(locale) ? "업무 분야 보기" : "View personal injury practice areas"}</span><ArrowRight className="h-4 w-4" /></a>
+            <div className="grid border-t border-[#1E1C1A]/12 sm:grid-cols-2">
+              {practiceAreas.map((practice) => (
+                <a
+                  key={practice.slug}
+                  href={`${localePrefix(locale)}/practice-areas/${practice.slug}`}
+                  className="group flex items-center justify-between gap-4 border-b border-[#1E1C1A]/12 py-4 sm:even:border-l sm:even:pl-6"
+                >
+                  <span className="text-[13px]">
+                    {isKo(locale) ? `${name} ${practice.koTitle}` : `${practice.title} claims in ${name}`}
+                  </span>
+                  <ArrowRight className="h-3.5 w-3.5 shrink-0 text-[#1E1C1A]/35 transition-transform group-hover:translate-x-1" />
+                </a>
+              ))}
+            </div>
+            <a href={`${localePrefix(locale)}/practice-areas`} className="editorial-inline-link mt-7"><span>{isKo(locale) ? "업무 분야 보기" : "See all personal injury practice areas"}</span><ArrowRight className="h-4 w-4" /></a>
           </ReadingSectionBlock>
 
           <ReadingSectionBlock
