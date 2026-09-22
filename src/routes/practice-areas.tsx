@@ -4,7 +4,7 @@ import { buildSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/practice-areas")({
   head: () => buildSeo({
-    title: "Personal Injury Practice Areas | Buena Park Injury Attorney",
+    title: "Personal Injury Practice Areas | Buena Park Injury Lawyer",
     description: "Explore Buena Park personal injury practice areas including car, truck, motorcycle, pedestrian, rideshare, slip-and-fall, wrongful-death, and serious-injury claims, with practical guidance on evidence, insurance, damages, and next steps.",
     path: "/practice-areas",
     alternatePath: "/ko/practice-areas",
