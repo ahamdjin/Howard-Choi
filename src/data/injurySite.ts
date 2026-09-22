@@ -152,7 +152,7 @@ export const serviceLocations = [
     county: "Orange County",
     description: "Home base. Our office is on Beach Blvd, and Buena Park is where most of our cases start.",
     koDescription: "로펌의 중심 지역으로, 부에나파크와 북부 오렌지카운티 인근에서 사고로 부상을 입은 분들을 지원합니다.",
-    localIntro: "Buena Park sits at a busy crossroads in north Orange County. Beach Blvd, the 5 and the 91, plus everyone coming through for Knott's and the Source. For a claim the useful local questions are boring and practical: exactly where it happened, which agency wrote it up, what cameras or witnesses exist nearby, where you started treatment, and which policies apply. We are a few minutes from most of those intersections, which helps when evidence has a short shelf life.",
+    localIntro: "Beach Blvd, the 5 and the 91, plus everyone coming through for Knott's and the Source. Buena Park carries a lot of traffic that does not live here. Our office is on Beach Blvd, a few minutes from most of the intersections we end up asking about, which matters more than it sounds when a nearby business has footage that will be gone by Friday.",
     ots: { total: 227, motorcycles: 13, pedestrians: 11, bicyclists: 15, speed: 27, hitRun: 10, year: 2023, source: "https://www.ots.ca.gov/rankings/buena-park-2023/" },
   },
   {
@@ -162,7 +162,7 @@ export const serviceLocations = [
     county: "Orange County",
     description: "Accident and injury help for people living, working or visiting Anaheim, our biggest neighbor.",
     koDescription: "애너하임 및 인근 오렌지카운티 지역의 주민, 근로자, 방문객과 가족을 위한 사고·상해 법률지원을 제공합니다.",
-    localIntro: "Anaheim is the busiest city we work in, and it shows in the accident reports. Resort traffic, hotel shuttles, a lot of rideshare, big employers, and pedestrians crossing wide fast streets. Those are genuinely different kinds of cases. The basics do not change though: lock down the scene and any video, find who is responsible and what insurance exists, document the treatment, and keep a clear record of what this cost you.",
+    localIntro: "Anaheim is the busiest city we work in and the reports show it. Resort traffic, hotel shuttles, heavy rideshare, and pedestrians crossing very wide streets. The shuttle and rideshare cases are the ones that surprise people, because the driver often is not the one who pays. A commercial policy or a rideshare period can sit behind them, and that changes who you are actually dealing with.",
     ots: { total: 2135, motorcycles: 79, pedestrians: 96, bicyclists: 84, speed: 306, hitRun: 171, year: 2023, source: "https://www.ots.ca.gov/rankings/anaheim-2023/" },
   },
   {
@@ -192,7 +192,7 @@ export const serviceLocations = [
     county: "Orange County",
     description: "Help after traffic collisions and other preventable accidents in Cypress.",
     koDescription: "사이프러스와 인근 오렌지카운티 지역에서 교통사고나 예방 가능한 사고로 부상을 입은 분들을 지원합니다.",
-    localIntro: "Cypress is quieter than its neighbors and the collision numbers reflect that, but it sits right against the county line with Los Alamitos and the Long Beach side. Which means the exact location can decide which agency responded and, if it comes to it, which courthouse. Worth pinning down early rather than assuming.",
+    localIntro: "Cypress is quieter than its neighbors and the collision numbers show it. What it does have is a lot of edges. Los Alamitos, the Long Beach side, and a few streets where the responding agency depends on which end of the block you were on. Pin down the exact spot, not the nearest cross street.",
     ots: { total: 168, motorcycles: 9, pedestrians: 9, bicyclists: 8, speed: 30, hitRun: 5, year: 2022, source: "https://www.ots.ca.gov/rankings/cypress-2022/" },
   },
   {
@@ -212,7 +212,7 @@ export const serviceLocations = [
     county: "Los Angeles County",
     description: "Help after collisions and preventable accidents in La Mirada.",
     koDescription: "라미라다 및 인근 지역에서 교통사고나 예방 가능했던 사고로 부상을 입은 분들을 지원합니다.",
-    localIntro: "La Mirada is Los Angeles County, but it borders Orange County closely enough that people here often assume their case works like an Orange County one. It does not always. The city label matters less than the exact scene, who documented it, what video or witnesses exist, where you treated, and whose insurance is involved. That LA County venue is the part people get wrong.",
+    localIntro: "La Mirada is Los Angeles County. People here assume otherwise constantly, because Buena Park and La Habra are right there and everything else about daily life points toward Orange County. The county is what decides the courthouse, so it is worth being sure before anyone files anything.",
     ots: { total: 156, motorcycles: 5, pedestrians: 8, bicyclists: 6, speed: 22, hitRun: 7, year: 2023, source: "https://www.ots.ca.gov/rankings/la-mirada-2023/" },
   },
   {
@@ -222,7 +222,7 @@ export const serviceLocations = [
     county: "Los Angeles County",
     description: "Injury representation for Cerritos and the communities along the LA and Orange County line.",
     koDescription: "세리토스와 로스앤젤레스·오렌지카운티 경계 인근 지역에서 발생한 사고 상해 청구를 지원합니다.",
-    localIntro: "Cerritos is in Los Angeles County even though it sits right up against Orange County, and the 91 and 605 both run through it. Being on that line makes the exact accident location unusually important. It decides the responding agency and the venue, and a case here does not follow the same path as one a mile east. We work both counties, so this is a distinction we deal with constantly.",
+    localIntro: "The 91 and the 605 both run through Cerritos, which means a good share of what happens here happens at freeway speed. Those are CHP reports, not city ones, and they take longer to come back than people plan for. If you were hurt on either freeway, start the records request before you think you need it.",
     ots: { total: 166, motorcycles: 1, pedestrians: 6, bicyclists: 6, speed: 20, hitRun: 7, year: 2023, source: "https://www.ots.ca.gov/rankings/cerritos-2023/" },
   },
   {
@@ -232,7 +232,7 @@ export const serviceLocations = [
     county: "Los Angeles County",
     description: "Injury representation for Norwalk and southeast Los Angeles County.",
     koDescription: "노워크와 인근 로스앤젤레스카운티 지역에서 사고로 부상을 입은 분들을 위한 개인상해 법률지원을 제공합니다.",
-    localIntro: "Norwalk is busy, with the 5 and the 605 both cutting through and Firestone and Rosecrans carrying heavy local traffic on top of that. Norwalk also has one of the LA County courthouses, which occasionally surprises people who assume their case goes downtown. Either way the claim starts the same: the exact scene, the responding agency, photos or video, treatment records, and whose insurance is on the hook.",
+    localIntro: "The 5 and the 605 both cut through Norwalk, and Firestone and Rosecrans carry heavy local traffic on top of that. Freeway crashes here are CHP rather than the city, which is a slower records request than most people expect. Norwalk also has one of the LA County courthouses, so a filed case does not automatically head downtown.",
     ots: { total: 365, motorcycles: 24, pedestrians: 33, bicyclists: 21, speed: 36, hitRun: 29, year: 2023, source: "https://www.ots.ca.gov/rankings/norwalk-2023/" },
   },
   {
@@ -242,7 +242,7 @@ export const serviceLocations = [
     county: "Los Angeles County",
     description: "Accident and injury help for Whittier and nearby southeast LA County communities.",
     koDescription: "휘티어와 인근 로스앤젤레스카운티 지역의 사고·상해 청구를 지원합니다.",
-    localIntro: "Whittier mixes hillside residential streets with older commercial corridors and a steady commuter flow toward the 605. The hill streets are their own thing: limited sight lines, tight parking, and pedestrians stepping out between cars. After an injury the exact location, the police or incident record, photos, witnesses, your treatment history, and everything the insurer sends you all end up mattering.",
+    localIntro: "Whittier has two driving environments in one city. Older commercial corridors and commuter flow toward the 605, and then the hill streets, which are their own problem entirely. Limited sight lines, cars parked tight to the curb, people stepping out between them. A photograph showing what the driver could actually see from where they were is worth more here than almost anything else.",
     ots: { total: 315, motorcycles: 18, pedestrians: 15, bicyclists: 12, speed: 32, hitRun: 28, year: 2022, source: "https://www.ots.ca.gov/rankings/whittier-2022/" },
   },
 ] as const;

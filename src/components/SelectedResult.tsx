@@ -22,9 +22,9 @@ const results = [
     alt: "Courthouse interior",
   },
   {
-    amount: "Since 2012",
-    title: "Licensed in California",
-    detail: "State Bar No. 284364, admitted October 2012. The firm has operated for 11 years.",
+    amount: "11 Years",
+    title: "Operating as a firm",
+    detail: "Handling accident and injury claims out of the Buena Park office.",
     image: officeImage,
     alt: "Traditional law office and desk",
   },

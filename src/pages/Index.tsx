@@ -21,23 +21,23 @@ const Index = () => (
   <div className="home-page min-h-[100svh] overflow-x-clip bg-background">
     <Navigation />
     <div className="relative">
-      {/* 1 — Hero: attorney-forward */}
+      {/* 1 : Hero: attorney-forward */}
       <div className="sticky top-0 z-0 h-[100svh] w-full"><Hero /></div>
       <div className="relative z-10 w-full bg-background">
-        <HomeImmediateTrust />  {/* 2 — Trust strip */}
-        <TrustBadges />         {/* 3 — Credentials */}
-        <FirmSnapshot />        {/* 4 — Firm metrics */}
-        <Locations />           {/* 5 — Practice areas */}
+        <HomeImmediateTrust />  {/* 2 : Trust strip */}
+        <TrustBadges />         {/* 3 : Awards & recognition */}
+        <FirmSnapshot />        {/* 4 : Firm metrics */}
+        <Locations />           {/* 5 : Practice areas */}
       </div>
     </div>
     <div className="relative z-20 bg-background">
-      <Experience />            {/* 6 — What happens after you call */}
-      <SelectedResult />        {/* 7 — Results */}
-      <DirectAccess />          {/* 8 — Meet Howard Choi */}
-      <ClientSuccessFeature />  {/* 9 — Testimonials */}
-      <HomeServiceAreas />      {/* 10 — Areas served */}
-      <FAQ />                   {/* 11 — FAQ */}
-      <Booking />               {/* 12 — CTA */}
+      <Experience />            {/* 6 : What happens after you call */}
+      <SelectedResult />        {/* 7 : Results */}
+      <DirectAccess />          {/* 8 : Meet Howard Choi */}
+      <ClientSuccessFeature />  {/* 9 : Testimonials */}
+      <HomeServiceAreas />      {/* 10 : Areas served */}
+      <FAQ />                   {/* 11 : FAQ */}
+      <Booking />               {/* 12 : CTA */}
       <Footer />
     </div>
   </div>
