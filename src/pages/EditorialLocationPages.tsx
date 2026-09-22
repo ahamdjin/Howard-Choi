@@ -225,7 +225,7 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
             locale={locale}
             kicker={isKo(locale) ? "01 · 지역" : "01 · Local overview"}
             title={isKo(locale) ? `${name}에서 사고가 발생했다면` : `If an accident happened in or around ${name}.`}
-            intro={isKo(locale) ? description : location.localIntro}
+            intro={isKo(locale) ? location.koLocalIntro : location.localIntro}
           >
             <div className="editorial-callout">
               <span className="editorial-callout__label">{isKo(locale) ? "중요" : "Useful to know"}</span>
