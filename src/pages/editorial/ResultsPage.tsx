@@ -14,8 +14,8 @@ import {
 
 const resultExamples = [
   { amount: "$1M", type: "Largest Single-Client Recovery", context: "Highest single-client recovery reported by the firm." },
-  { amount: "$100M", type: "Total Client Recoveries", context: "Total recovery reported by the firm across client matters." },
-  { amount: "40 Years", type: "Combined Experience", context: "Combined legal experience across the firm." },
+  { amount: "$100M+", type: "Total Client Recoveries", context: "Total recovery reported by the firm across client matters." },
+  { amount: "Since 2012", type: "Licensed in California", context: "Admitted to the State Bar of California in October 2012, No. 284364." },
 ];
 
 export const ResultsPage = ({ locale }: { locale: SiteLocale }) => (
@@ -24,10 +24,10 @@ export const ResultsPage = ({ locale }: { locale: SiteLocale }) => (
       <EditorialHero
         locale={locale}
         eyebrow={isKo(locale) ? "사건 결과" : "Case results"}
-        title={isKo(locale) ? "결과는 숫자만으로 설명되지 않습니다." : "Case results make more sense with the facts around them."}
+        title={isKo(locale) ? "결과는 숫자만으로 설명되지 않습니다." : "A number on its own does not tell you much."}
         description={isKo(locale)
           ? "사건 결과는 금액만 보는 것이 아니라 사건 유형, 책임, 부상, 치료, 보험과 증거를 함께 봐야 의미가 있습니다."
-          : "A settlement or verdict amount is only one part of the story. Injury severity, treatment, fault, available insurance, evidence, future needs, and the way the loss affected the client all help explain why an outcome may look the way it does."}
+          : "How badly someone was hurt, what treatment they needed, who was at fault, how much insurance existed, how strong the evidence was, what care they will still need, and what the injury did to their life. Those are what produced the number. Strip them away and the figure is just a figure."}
         image={heroCourthouse}
       />
 
@@ -42,10 +42,10 @@ export const ResultsPage = ({ locale }: { locale: SiteLocale }) => (
           id="principle"
           locale={locale}
           kicker={isKo(locale) ? "01 · 원칙" : "01 · How to read a result"}
-          title={isKo(locale) ? "과거 결과는 비교 기준이 아니라 맥락을 보여주는 자료입니다." : "A prior result is context—not a promise about another case."}
+          title={isKo(locale) ? "과거 결과는 비교 기준이 아니라 맥락을 보여주는 자료입니다." : "Someone else's result is not a forecast of yours."}
           intro={isKo(locale)
             ? "두 사건은 부상 정도, 보험, 과실, 증거, 치료와 장래 손실이 모두 다를 수 있습니다. 따라서 과거 결과는 사건 유형과 핵심 사실을 함께 보는 것이 중요합니다."
-            : "Two cases can involve the same type of accident and still have very different outcomes. The medical record, future care, comparative fault, insurance limits, earning loss, liens, venue, evidence, and negotiation or litigation posture can all change the practical value of a claim."}
+            : "Two rear-end collisions can look identical on paper and land nowhere near each other. The medical record, future care, how fault gets split, the policy limits, lost earnings, liens, the county it is filed in, the evidence, and how hard the other side is willing to fight all move it."}
         >
           <div className="grid border-y border-[#1E1C1A]/12 md:grid-cols-3">
             {[FileCheck2, Scale, ShieldCheck].map((Icon, index) => (

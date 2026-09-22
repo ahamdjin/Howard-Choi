@@ -5,7 +5,7 @@ import type { SiteLocale } from "@/data/injurySite";
 // Answers the "Who is responsible for this content?" question that Google's
 // helpful-content guidance asks of every page. Legal content is YMYL, so a
 // named, verifiable reviewer matters more here than on an ordinary site.
-// The link goes to /attorney, which carries the State Bar verification link —
+// The link goes to /attorney, which carries the State Bar verification link,
 // deliberately not duplicating that external link onto all eighteen pages.
 const LAST_REVIEWED = { iso: "2026-09-22", en: "September 2026", ko: "2026년 9월" };
 

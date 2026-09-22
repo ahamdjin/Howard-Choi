@@ -14,6 +14,7 @@ const Footer = () => {
             </div>
             <p className="max-w-[270px] text-[13px] leading-6 text-muted-foreground">Personal injury counsel for accident and serious-injury claims in Buena Park and nearby Orange and Los Angeles County communities.</p>
             <a href={brand.phoneHref} className="mt-5 block text-[13px] font-medium hover:opacity-60">{brand.phoneDisplay}</a>
+            <a href={brand.emailHref} className="mt-2 block text-[12px] text-muted-foreground hover:opacity-60">{brand.email}</a>
           </div>
 
           <div>
@@ -34,7 +35,7 @@ const Footer = () => {
           <div>
             <div className="mb-5 text-[12px] text-muted-foreground">Firm</div>
             <div className="space-y-3 text-[13px]">
-              <Link to="/attorney" className="block hover:opacity-60">Attorneys</Link>
+              <Link to="/attorney" className="block hover:opacity-60">Attorney</Link>
               <Link to="/results" className="block hover:opacity-60">Results</Link>
               <Link to="/case-value-calculator" className="block hover:opacity-60">Case Value Calculator</Link>
               <Link to="/blogs" className="block hover:opacity-60">Blogs</Link>

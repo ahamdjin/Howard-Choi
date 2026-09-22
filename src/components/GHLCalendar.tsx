@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { brand } from "@/data/injurySite";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Clock, LoaderCircle, Mail, MapPin, Phone, UserRound } from "lucide-react";
 
 type GHLCalendarProps = {
@@ -14,7 +15,8 @@ const VIBE_API_URL = "https://backend.leadconnectorhq.com/vibe-ai";
 const PUBLIC_CALENDAR_BASE = "https://backend.leadconnectorhq.com/calendars";
 const BUSINESS_OPEN_MINUTES = 8 * 60;
 const BUSINESS_CLOSE_MINUTES = 17 * 60;
-const OFFICE_ADDRESS = "6301 Beach Blvd, Buena Park, CA 90621";
+// Canonical NAP lives in injurySite.ts; this card previously dropped "Suite 216".
+const OFFICE_ADDRESS = brand.address;
 const MAPS_URL = "https://share.google/LBJ1C8zWrZFjJBkVe";
 
 const pad = (value: number) => String(value).padStart(2, "0");
@@ -376,7 +378,7 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
           </div>
 
           <div className="mt-6 flex items-center justify-between border-t border-[#1e1c1a]/10 pt-4 text-[10px] text-[#1e1c1a]/38">
-            <span>{isKorean ? "오전 8시–오후 5시 예약 가능" : "Booking window · 8:00 AM–5:00 PM"}</span>
+            <span>{isKorean ? "오전 8시부터 오후 5시까지 예약 가능" : "Booking window · 8:00 AM to 5:00 PM"}</span>
             <span>Pacific Time</span>
           </div>
         </div>

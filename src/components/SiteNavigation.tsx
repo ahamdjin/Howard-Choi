@@ -46,7 +46,7 @@ const SiteNavigation = ({ locale }: { locale: SiteLocale }) => {
     menu: "메뉴", about: "소개", contact: "문의", allPractices: "전체 업무 분야", allLocations: "전체 지역",
     language: "언어", call: "전화",
   } : {
-    practice: "Practice Areas", locations: "Locations", attorneys: "Attorneys", results: "Results", blog: "Blogs",
+    practice: "Practice Areas", locations: "Locations", attorneys: "Attorney", results: "Results", blog: "Blogs",
     menu: "Menu", about: "About", contact: "Contact", allPractices: "All Practice Areas", allLocations: "All Locations",
     language: "Language", call: "Call",
   };

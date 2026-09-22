@@ -144,9 +144,9 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
   ];
 
   const severities: Array<{ value: Severity; en: string; ko: string }> = [
-    { value: "minor", en: "Minor — short recovery", ko: "경미 — 짧은 회복" },
-    { value: "moderate", en: "Moderate — ongoing treatment", ko: "중간 — 지속 치료" },
-    { value: "serious", en: "Serious — fracture or long recovery", ko: "중상 — 골절 또는 장기 회복" },
+    { value: "minor", en: "Minor, short recovery", ko: "경미, 짧은 회복" },
+    { value: "moderate", en: "Moderate, ongoing treatment", ko: "중간, 지속 치료" },
+    { value: "serious", en: "Serious, fracture or long recovery", ko: "중상, 골절 또는 장기 회복" },
     { value: "catastrophic", en: "Catastrophic / permanent", ko: "중대·영구 부상" },
   ];
 
@@ -189,7 +189,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
     const treatmentLabel = treatments.find((item) => item.value === state.treatment);
 
     return (ko ? [
-      `계산기 예상 범위: ${money(estimate.low)} – ${money(estimate.high)}`,
+      `계산기 예상 범위: ${money(estimate.low)} to ${money(estimate.high)}`,
       `사건: ${caseLabel?.ko || "미선택"}`,
       `부상: ${severityLabel?.ko || "미선택"}`,
       `치료: ${treatmentLabel?.ko || "미선택"}`,
@@ -203,7 +203,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
       "",
       "이 계산 결과에 대해 전문가의 의견을 받고 싶습니다.",
     ] : [
-      `Calculator estimate: ${money(estimate.low)} – ${money(estimate.high)}`,
+      `Calculator estimate: ${money(estimate.low)} to ${money(estimate.high)}`,
       `Incident: ${caseLabel?.en || "Not selected"}`,
       `Injury: ${severityLabel?.en || "Not selected"}`,
       `Treatment: ${treatmentLabel?.en || "Not selected"}`,
@@ -302,7 +302,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
             <div className="grid overflow-hidden rounded-[4px] border border-[#211E1B]/12 bg-white lg:grid-cols-[1.08fr_0.92fr]">
               <div className="p-5 md:p-7 lg:p-8">
                 <div className="grid gap-5 sm:grid-cols-2">
-                  <SelectInput label={ko ? "사건 유형" : "Incident type"} hint={ko ? "선택 사항" : "Optional — what happened"} value={state.caseType} placeholder={ko ? "선택" : "Choose"} options={caseTypes.map((item) => ({ value: item.value, label: ko ? item.ko : item.en }))} onChange={(value) => setState((current) => ({ ...current, caseType: value as CaseType | "" }))} />
+                  <SelectInput label={ko ? "사건 유형" : "Incident type"} hint={ko ? "선택 사항" : "Optional: what happened"} value={state.caseType} placeholder={ko ? "선택" : "Choose"} options={caseTypes.map((item) => ({ value: item.value, label: ko ? item.ko : item.en }))} onChange={(value) => setState((current) => ({ ...current, caseType: value as CaseType | "" }))} />
                   <SelectInput label={ko ? "부상 정도" : "Injury severity"} hint={ko ? "회복과 생활 영향" : "Recovery and daily impact"} value={state.severity} placeholder={ko ? "선택" : "Choose"} options={severities.map((item) => ({ value: item.value, label: ko ? item.ko : item.en }))} onChange={(value) => setState((current) => ({ ...current, severity: value as Severity | "" }))} />
                   <SelectInput label={ko ? "치료 수준" : "Treatment level"} hint={ko ? "가장 높은 치료 수준" : "Highest care received"} value={state.treatment} placeholder={ko ? "선택" : "Choose"} options={treatments.map((item) => ({ value: item.value, label: ko ? item.ko : item.en }))} onChange={(value) => setState((current) => ({ ...current, treatment: value as Treatment | "" }))} />
                   <CurrencyInput label={ko ? "현재 의료비" : "Medical bills"} hint={ko ? "현재까지 발생한 치료비" : "Treatment costs so far"} value={state.medical} onChange={(value) => setState((current) => ({ ...current, medical: value }))} />
@@ -349,12 +349,12 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
                 <div className="text-[10px] font-medium text-[#211E1B]/44">{ko ? "예상 범위" : "Estimated range"}</div>
                 {calculated && estimate ? (
                   <div id="case-estimate-result" tabIndex={-1} className="mt-4 scroll-mt-24">
-                    <div style={serifStyle(locale)} className={ko ? "text-[1.9rem] font-medium leading-tight" : "editorial-serif text-[clamp(2rem,3.6vw,3rem)] leading-[0.98] tracking-[-0.035em]"}>{money(estimate.low)} – {money(estimate.high)}</div>
+                    <div style={serifStyle(locale)} className={ko ? "text-[1.9rem] font-medium leading-tight" : "editorial-serif text-[clamp(2rem,3.6vw,3rem)] leading-[0.98] tracking-[-0.035em]"}>{money(estimate.low)} to {money(estimate.high)}</div>
                     <p className="mt-3 text-[10px] leading-5 text-[#211E1B]/46">{ko ? "입력한 정보만을 바탕으로 한 교육용 범위입니다." : "Educational range based only on the facts you entered."}</p>
 
                     <div className="mt-5 border-y border-[#211E1B]/10 py-2">
                       <div className="flex items-center justify-between gap-4 py-2 text-[11px]"><span className="text-[#211E1B]/50">{ko ? "경제적 손실" : "Economic losses"}</span><strong>{money(estimate.economic)}</strong></div>
-                      <div className="flex items-center justify-between gap-4 py-2 text-[11px]"><span className="text-[#211E1B]/50">{ko ? "비경제적 손해 모델" : "Non-economic model"}</span><strong className="text-right">{money(estimate.nonEconomicLow)} – {money(estimate.nonEconomicHigh)}</strong></div>
+                      <div className="flex items-center justify-between gap-4 py-2 text-[11px]"><span className="text-[#211E1B]/50">{ko ? "비경제적 손해 모델" : "Non-economic model"}</span><strong className="text-right">{money(estimate.nonEconomicLow)} to {money(estimate.nonEconomicHigh)}</strong></div>
                       <div className="flex items-center justify-between gap-4 py-2 text-[11px]"><span className="text-[#211E1B]/50">{ko ? "과실 조정" : "Fault adjustment"}</span><strong>× {estimate.faultFactor.toFixed(2)}</strong></div>
                     </div>
 
@@ -383,7 +383,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
                   </div>
                 ) : (
                   <div className="mt-5">
-                    <div className="editorial-serif text-[2.4rem] leading-none text-[#211E1B]/20">$— – $—</div>
+                    <div className="editorial-serif text-[2.4rem] leading-none text-[#211E1B]/20">$0 to $0</div>
                     <p className="mt-4 max-w-[300px] text-[10px] leading-5 text-[#211E1B]/44">{ko ? "왼쪽 정보를 입력하고 계산하세요." : "Enter or update your details, then select “Estimate my case value” to see your result."}</p>
                     <div className="mt-7 space-y-3 border-t border-[#211E1B]/10 pt-5 text-[10px] leading-5 text-[#211E1B]/46">
                       <div className="flex gap-2"><CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0" />{ko ? "경제적 손실" : "Economic losses"}</div>

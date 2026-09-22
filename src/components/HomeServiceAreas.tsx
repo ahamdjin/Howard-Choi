@@ -54,7 +54,7 @@ const HomeServiceAreas = () => (
               decoding="async"
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
             />
-            {/* Light wash only — the photo has to stay readable. Text legibility
+            {/* Light wash only. The photo has to stay readable. Text legibility
                 comes from the blurred panel below, not from darkening the image. */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#15110d]/55 via-transparent to-transparent" />
             <span className="absolute right-3 top-3 flex h-7 w-7 items-center justify-center rounded-full bg-[#15110d]/45 backdrop-blur-[2px]">

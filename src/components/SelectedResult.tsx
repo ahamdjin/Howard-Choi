@@ -22,9 +22,9 @@ const results = [
     alt: "Courthouse interior",
   },
   {
-    amount: "40 Yrs",
-    title: "Combined experience",
-    detail: "Across the firm, with 11 years operating as a firm.",
+    amount: "Since 2012",
+    title: "Licensed in California",
+    detail: "State Bar No. 284364, admitted October 2012. The firm has operated for 11 years.",
     image: officeImage,
     alt: "Traditional law office and desk",
   },
