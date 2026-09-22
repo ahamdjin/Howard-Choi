@@ -114,7 +114,7 @@ export const AboutFirmPage = ({ locale }: { locale: SiteLocale }) => (
           title={isKo(locale) ? "작은 로펌의 장점" : "A small law firm, on purpose."}
           intro={isKo(locale)
             ? "규모보다 사건 하나하나에 집중하는 방식을 선택했습니다."
-            : "This is a small law firm and that is deliberate. Eleven years in, the firm has stayed small enough that the person who reads your file is the person who argues it. Bigger is not automatically better in injury work. A lot of the volume firms you see advertising run on case managers, and the attorney whose face is on the billboard may never touch your file. Here there is one attorney, so there is nobody to hand you off to. The tradeoff is real and worth saying out loud: we cannot take every case that calls. What we can do is tell you honestly, in the first conversation, whether yours is one we can genuinely move forward."}
+            : "This is a small law firm and that is deliberate. Eleven years in, the firm has stayed small enough that the person who reads your file is the person who argues it. Bigger is not automatically better in injury work. Ask any firm you call who will actually be handling your file day to day, and whether you will be speaking with an attorney or a case manager. It is a fair question and the answer varies. Here there is one attorney, so there is nobody to hand you off to. The tradeoff is real and worth saying out loud: we cannot take every case that calls. What we can do is tell you honestly, in the first conversation, whether yours is one we can genuinely move forward."}
         >
           <img
             src={reviewingDocuments}

@@ -6,7 +6,8 @@ import lawyersOfDistinction from "@/assets/law-firm/badges/lawyers-of-distinctio
 import naopiaTopTen from "@/assets/law-firm/badges/naopia-top-ten-attorney-2025.webp";
 import truckingTopTen from "@/assets/law-firm/badges/trucking-trial-lawyers-top-10.webp";
 
-// Slot 3: recognition + credentials. Every badge here must be one the firm
+// Slot 3: award recognition only. Attorney licence details live on /attorney;
+// firm pages should not mix the two. Every badge here must be one the firm
 // actually holds, issued in this firm's name. A TopVerdict.com "Top 100 Jury
 // Verdicts" badge was supplied but is issued to a different attorney (Matt
 // Taylor) and is deliberately not included. The AAOA 500 Million Dollar Club
@@ -21,13 +22,6 @@ const badges = [
   { src: bbbAccredited, alt: "Better Business Bureau Accredited Business", href: "https://www.bbb.org/" },
 ];
 
-const credentials = [
-  { label: "State Bar of California", detail: "Active · No. 284364" },
-  { label: "Admitted to practice", detail: "California, 2012" },
-  { label: "Juris Doctor", detail: "William Howard Taft University" },
-  { label: "Courts served", detail: "Orange County & Los Angeles County" },
-];
-
 // Two constraints from src/index.css, both deliberate:
 //  - Root is <aside>, not <section>: `.home-page section` is forced to
 //    min-height:calc(100svh - 60px) under 768px.
@@ -35,17 +29,15 @@ const credentials = [
 //    `font-size: clamp(2rem,3vw,3.25rem) !important` that would render a
 //    10px eyebrow at ~52px and dwarf the badges.
 const TrustBadges = () => (
-  <aside aria-label="Recognition and credentials" className="bg-background text-foreground">
+  <aside aria-label="Awards and recognition" className="bg-background text-foreground">
     <div className="site-shell py-10 md:py-12">
       <div className="flex flex-wrap items-baseline justify-between gap-4 border-b border-foreground/12 pb-5">
-        <div className="text-[10px] uppercase tracking-[0.16em] text-foreground/36">Recognition &amp; credentials</div>
+        <div className="text-[10px] uppercase tracking-[0.16em] text-foreground/36">Recognition</div>
         <a
-          href="https://apps.calbar.ca.gov/attorney/Licensee/Detail/284364"
-          target="_blank"
-          rel="noreferrer"
+          href="/attorney"
           className="inline-flex items-center gap-2 text-[11px] font-medium underline underline-offset-4 transition-opacity hover:opacity-60"
         >
-          Verify this license with the State Bar <ArrowUpRight className="h-3.5 w-3.5" />
+          About the attorney <ArrowUpRight className="h-3.5 w-3.5" />
         </a>
       </div>
 
@@ -70,14 +62,6 @@ const TrustBadges = () => (
         ))}
       </ul>
 
-      <div className="mt-8 grid gap-x-10 gap-y-6 border-t border-foreground/12 pt-6 sm:grid-cols-2 lg:grid-cols-4">
-        {credentials.map((item) => (
-          <div key={item.label}>
-            <div className="text-[13px] font-medium leading-5 tracking-[-0.01em] text-foreground">{item.label}</div>
-            <div className="mt-1.5 text-[12px] leading-5 text-foreground/50">{item.detail}</div>
-          </div>
-        ))}
-      </div>
     </div>
   </aside>
 );

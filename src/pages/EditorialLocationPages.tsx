@@ -4,7 +4,6 @@ import heroBoardroom from "@/assets/law-firm/hero-city-boardroom.webp";
 import heroJustice from "@/assets/law-firm/hero-justice-library.webp";
 import ClaimJourney from "@/components/ClaimJourney";
 import { EvidenceVisuals, GuideAttorney } from "@/components/ClaimVisuals";
-import PageByline from "@/components/PageByline";
 import ClientProof from "@/components/ClientProof";
 import cityCarCollision from "@/assets/law-firm/car-collision.jpg";
 import cityCollisionDamage from "@/assets/law-firm/collision-damage.jpg";
@@ -38,6 +37,49 @@ import {
   ReadingSectionBlock,
   serifStyle,
 } from "./editorial/shared";
+
+const cityFaq: Record<string, { q: string; a: string }> = {
+  "buena-park": {
+    q: "The crash was on Beach Blvd. Does that change anything?",
+    a: "Beach Blvd is a city street, so Buena Park PD normally works it, and the speeds there tend to be higher than people expect for a surface road. That matters because injury severity drives the claim far more than vehicle damage does.",
+  },
+  anaheim: {
+    q: "I was hit by a hotel shuttle or a rideshare near the resort. Who pays?",
+    a: "Not necessarily the driver. A shuttle usually means a commercial policy, and a rideshare means the answer depends on what the app said at that moment. Both are worth sorting out before you talk to anyone's insurer. Our Uber and Lyft page walks through the app-status problem in detail.",
+  },
+  fullerton: {
+    q: "I am a student. Does missing class count for anything?",
+    a: "Yes, and people leave it out. A delayed graduation, a dropped semester, a lost internship, those are real losses even though no paycheck stopped. Write down what the injury cost you academically, not just what it cost you medically.",
+  },
+  "garden-grove": {
+    q: "Is anyone likely to have video of my crash?",
+    a: "Often, yes. Harbor and Brookhurst are lined with small businesses and most have a camera pointed somewhere near the street. The catch is those systems overwrite themselves in days. If you think a shop saw it, say so early.",
+  },
+  cypress: {
+    q: "It happened near the Los Alamitos line. Does that matter?",
+    a: "It can. Which side of the line you were on decides which agency responded and, if a lawsuit follows, which courthouse. Worth pinning down the exact spot rather than the nearest cross street.",
+  },
+  "la-habra": {
+    q: "The other driver was just passing through on Whittier Blvd. Does that complicate it?",
+    a: "Not really, though it is common here. Out-of-area drivers mean out-of-area insurers and sometimes slower responses. Where the driver lives does not change your deadline or where the case would be filed.",
+  },
+  "la-mirada": {
+    q: "I assumed my case works like an Orange County case. Does it?",
+    a: "La Mirada is Los Angeles County, so no, not always. It borders Orange County closely enough that people get this wrong regularly. The county decides the courthouse and some of the local procedure.",
+  },
+  cerritos: {
+    q: "I was hit on the 91 or the 605. Who has that report?",
+    a: "Freeway collisions are CHP, not the city. That is a different records request than a surface-street crash, and the report can take longer to come back. Start it early rather than waiting until you need it.",
+  },
+  norwalk: {
+    q: "Does my case go to the Norwalk courthouse?",
+    a: "Possibly. Norwalk has one of the LA County courthouses, which surprises people who assume everything goes downtown. Where a case actually gets filed depends on the facts, not the nearest building.",
+  },
+  whittier: {
+    q: "It happened on one of the hill streets. Is that different?",
+    a: "The hill streets have limited sight lines and cars parked tight to the curb, so pedestrian and backing collisions look different here than on a flat commercial road. Photographs of the sight line matter more than usual. Our pedestrian accident page covers how those get argued.",
+  },
+};
 
 const locationResources: Record<string, { agency: string; agencyHref: string; court: string; courtHref: string }> = {
   "buena-park": { agency: "Buena Park Police Department", agencyHref: "https://www.bppd.com/", court: "Orange County Superior Court", courtHref: "https://www.occourts.org/" },
@@ -160,7 +202,6 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
           description={isBuenaPark && !isKo(locale) ? "A practical local guide to Buena Park collision data, accident records, evidence preservation, California deadlines, and the injury matters handled from the firm's Buena Park office." : description}
           image={heroJustice}
         />
-        <div className="site-shell pt-8"><PageByline locale={locale} /></div>
         <ClaimJourney locale={locale} subject={name} guideId="overview" contextImage={cityImages[location.slug]} />
         <GuideAttorney locale={locale} />
         <ReadingLayout
@@ -280,7 +321,7 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
           >
             <div className="border-t border-[#1E1C1A]/12">
               {[
-                [isKo(locale) ? "사고가 이 도시에서 났지만 저는 다른 곳에 살아도 괜찮나요?" : `What if the accident happened in ${name}, but I live somewhere else?`, isKo(locale) ? "거주지가 다르다고 해서 사고 기록이나 청구가 사라지는 것은 아닙니다. 사고 장소, 책임 당사자, 보험, 관할과 적용 법률을 함께 확인해야 합니다." : "That is common. The useful questions are where the incident happened, where the defendants live or do business, which agency documented it, what insurance applies, and which court or venue rules may matter."],
+                [isKo(locale) ? "사고가 이 도시에서 났지만 저는 다른 곳에 살아도 괜찮나요?" : (cityFaq[location.slug]?.q ?? `What if the accident happened in ${name}, but I live somewhere else?`), isKo(locale) ? "거주지가 다르다고 해서 사고 기록이나 청구가 사라지는 것은 아닙니다. 사고 장소, 책임 당사자, 보험, 관할과 적용 법률을 함께 확인해야 합니다." : (cityFaq[location.slug]?.a ?? "That is common. The useful questions are where the incident happened, where the defendants live or do business, which agency documented it, what insurance applies, and which court or venue rules may matter.")],
                 [isKo(locale) ? "어느 경찰서나 기관에서 기록을 받아야 하나요?" : `Who has the report for a ${name} accident?`, isKo(locale) ? "정확한 사고 지점이 중요합니다. 도시 경찰, 보안관, CHP 또는 다른 기관이 관할할 수 있으므로 사고 당시 받은 사건번호나 담당기관 정보를 먼저 확인하세요." : `Usually ${resource?.agency ?? "the local police department"}, if it happened on a city street. On a freeway it is more likely CHP, and on private property there may only be an incident report the business wrote itself. Start with whatever report number you were given at the scene. That number is what everyone else will ask you for.`],
                 [isKo(locale) ? "지역 변호사를 꼭 선임해야 하나요?" : `Do I need a lawyer based in ${name}?`, isKo(locale) ? "도시 이름만으로 변호사를 선택할 필요는 없습니다. 캘리포니아 자격, 사건 유형 경험, 지역 절차 이해, 소통 방식과 실제 사건을 처리할 능력을 함께 보는 것이 더 중요합니다." : `No, and a city name is a poor way to choose one. What actually matters is California licensure, real experience with your type of claim, and knowing how ${location.county} handles these. Our office is in Buena Park, so ${name} is a short drive either way.`],
               ].map(([question, answer], index) => (

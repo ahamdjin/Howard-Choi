@@ -3,7 +3,6 @@ import { useParams } from "@tanstack/react-router";
 import heroJustice from "@/assets/law-firm/hero-justice-library.webp";
 import heroCourthouse from "@/assets/law-firm/hero-courthouse.webp";
 import ClaimJourney from "@/components/ClaimJourney";
-import PageByline from "@/components/PageByline";
 import AttorneyNote from "@/components/AttorneyNote";
 import ClientProof from "@/components/ClientProof";
 import { EvidenceVisuals, ClaimValueVisual, GuideAttorney } from "@/components/ClaimVisuals";
@@ -44,7 +43,7 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
   "car-accidents": {
     fromAttorney: "The thing that costs people the most is the first phone call from the other driver's insurer. They are friendly, they ask how you are feeling, and most people say they are fine because that is what you say. That sentence gets read back months later when your neck has not improved. You are allowed to say you are still being evaluated and will follow up in writing.",
     headings: { understand: "What actually decides a car accident claim.", issues: "Where these crashes get argued.", value: "What a crash claim can cover.", insurance: "Which policy pays after a collision?" },
-    damages: ["Medical treatment and future care", "Lost wages and reduced earning capacity", "Pain, physical limitations, and disruption to daily life", "Vehicle or other property loss when part of the claim"],
+    damages: ["Medical treatment, including care you still need", "Lost pay, and earning capacity if the injury sticks", "Pain and the parts of daily life you lost access to", "The vehicle, when it forms part of the claim"],
     deadlineNote: "For many California personal-injury lawsuits, the general filing deadline is two years from the injury. Claims involving a public entity can require a government claim much earlier, and other exceptions may change the deadline. The safest approach is to identify the applicable deadline from the actual facts rather than waiting for the two-year mark.",
     faqs: [
       ["What if the other driver says I caused part of the crash?", "California follows comparative-fault principles. A disagreement about fault does not automatically end a claim; the evidence can affect how responsibility is allocated and how any recovery is calculated."],
@@ -59,9 +58,9 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
     ],
   },
   "truck-accidents": {
-    fromAttorney: "Trucking companies do not wait for a lawyer to get involved. They have people looking at the crash the same day, sometimes before the vehicles are moved. By the time somebody calls me a few weeks later, the logs and the camera footage may already be past their retention window. This is the one category where the delay itself is the damage.",
+    fromAttorney: "Trucking companies do not wait. They have people looking at the crash the same day, sometimes before the vehicles have been moved. Somebody calls me three weeks later and the logs and camera footage are already past their retention window. Nothing I do at that point brings them back.",
     headings: { understand: "Why a truck case is not a car case.", issues: "Who ends up responsible for a truck crash.", value: "What a commercial claim can cover.", insurance: "Layers of coverage behind a truck." },
-    damages: ["Emergency, surgical, rehabilitation, and future medical care", "Lost income and diminished future earning capacity", "Long-term physical or cognitive limitations", "Wrongful-death losses when a collision is fatal"],
+    damages: ["Emergency and surgical care, then rehabilitation", "Long-term physical or cognitive limits", "Lost income now and earning capacity later", "Wrongful-death losses where a collision is fatal"],
     deadlineNote: "California filing deadlines still apply in commercial-truck cases, but the practical evidence clock can be much shorter. Electronic logs, onboard video, dispatch information, inspection records, and company materials may be kept on different schedules, so preservation should not wait for the litigation deadline.",
     faqs: [
       ["Is the truck driver the only person who can be responsible?", "Not always. Depending on the facts, the carrier, vehicle owner, employer, contractor, maintenance provider, shipper, or another business may become relevant to responsibility or insurance."],
@@ -79,9 +78,9 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
     ],
   },
   "motorcycle-accidents": {
-    fromAttorney: "Adjusters start these files with an assumption: the rider was going too fast or riding recklessly. Sometimes that is true. Usually it is not, and it is being assumed instead of proven. The work in a motorcycle case is often proving a negative, which is why lane position, sight lines and where the vehicles ended up matter so much more here than in a car claim.",
+    fromAttorney: "Adjusters open these files assuming the rider was going too fast. Sometimes they are right. More often it is an assumption nobody has bothered to test, and a rider spends months arguing against it. Lane position, sight lines, where the vehicles came to rest. That is usually the whole fight.",
     headings: { understand: "What a rider is really up against.", issues: "The arguments riders always face.", value: "What a rider's claim can cover.", insurance: "Coverage when a rider is hit." },
-    damages: ["Hospital, surgical, orthopedic, and rehabilitation costs", "Future treatment and permanent limitations", "Lost income and reduced ability to work", "Pain, scarring, mobility loss, and changes to daily life"],
+    damages: ["Orthopedic and surgical care, then rehab", "Scarring and permanent mobility loss", "Future treatment", "Lost income and reduced ability to ride or work"],
     deadlineNote: "For many California injury lawsuits, the general deadline is two years from the injury, but shorter rules can apply in some matters. Motorcycle cases also benefit from early preservation of intersection video, road conditions, vehicle damage, witness information, and riding gear before those details are lost.",
     faqs: [
       ["Does serious injury prove the other driver was at fault?", "No. Injury severity and liability are separate questions. The collision still needs to be reconstructed through roadway evidence, vehicle positions, turning or lane movements, witnesses, video, and other available facts."],
@@ -113,7 +112,7 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
     ],
   },
   "rideshare-accidents": {
-    fromAttorney: "People spend weeks getting bounced between the driver's insurer and the rideshare company's, and the whole thing usually turns on one fact nobody captured: what the app said at the moment of impact. Screenshot your trip before anything else. That one screenshot decides which policy is even in the conversation.",
+    fromAttorney: "Screenshot your trip before you do anything else. I know that sounds like a strange first instruction after a crash. But people spend weeks getting bounced between the driver's insurer and the rideshare company's, and it usually comes down to what the app said at the moment of impact, which nobody thought to capture.",
     headings: { understand: "The question only rideshare cases have.", issues: "Where Uber and Lyft claims stall.", value: "What a rideshare claim can cover.", insurance: "App status decides the coverage." },
     damages: ["Medical treatment and future care", "Lost wages and diminished earning capacity", "Pain, limitations, and disruption to everyday life", "Other accident-related economic losses supported by the record"],
     deadlineNote: "California injury deadlines still apply, but a rideshare case has another time-sensitive issue: preserving the trip and app-status record. Screenshots, receipts, driver information, and the status of the ride at the time of impact can help identify which insurance layer needs to be evaluated.",
@@ -133,7 +132,7 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
     ],
   },
   "slip-and-fall": {
-    fromAttorney: "The hazard that hurt you will be gone within the hour, and the incident report will describe it in whatever way suits the store. That is not usually malice, it is just how it goes. So the photograph you take on your phone before anyone cleans up is frequently the single most valuable piece of evidence in the entire claim.",
+    fromAttorney: "The hazard will be gone within the hour. The incident report will describe it however suits the store, which is not usually malice, it is just how these get written. So the photo you take on your phone before anyone cleans up often ends up carrying the case.",
     headings: { understand: "Why a fall claim is not about falling.", issues: "What property owners dispute.", value: "What a premises claim can cover.", insurance: "Who controlled the place you fell?" },
     damages: ["Medical treatment and rehabilitation", "Lost income and work limitations", "Future care or permanent mobility restrictions", "Pain, activity limitations, and other supported non-economic harm"],
     deadlineNote: "Many California personal-injury lawsuits have a two-year general deadline, but premises claims can involve much faster evidence loss. A spill can be cleaned, a defect repaired, surveillance overwritten, and inspection records changed long before a filing deadline arrives.",
@@ -150,7 +149,7 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
     ],
   },
   "wrongful-death": {
-    fromAttorney: "Families almost always apologise for asking practical questions in the first conversation, as though wanting to understand the money is somehow disloyal. It is not. There are deadlines running, there are decisions about who can legally bring the claim, and asking early is how a family protects itself at the worst possible time.",
+    fromAttorney: "Families apologize to me for asking about money. Every time. You do not have to. There are deadlines running whether anyone brings it up or not, and there are decisions about who in the family can legally bring the claim at all. Someone has to ask those questions early.",
     headings: { understand: "What a family is facing first.", issues: "What has to be established.", value: "What a wrongful death claim can cover.", insurance: "Finding the coverage behind a death." },
     damages: ["Loss of financial support and household contributions", "Funeral and burial-related losses where recoverable", "Loss of companionship, care, and guidance", "Other losses available under California wrongful-death law based on the relationship and facts"],
     deadlineNote: "Wrongful-death deadlines depend on the underlying facts, defendants, and applicable law. California's civil statutes identify who may bring a wrongful-death action, while separate timing rules can apply to the lawsuit or an earlier government claim. The deadline should be checked from the specific date and parties involved.",
@@ -169,7 +168,7 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
     ],
   },
   "serious-injuries": {
-    fromAttorney: "The mistake in a serious injury case is settling while you are still getting better. It feels like the responsible thing to do. But the number has to account for the surgery you might need in six years and the work you will not be able to go back to, and nobody can price that while you are still mid-recovery. Slowing down is usually the whole strategy.",
+    fromAttorney: "The mistake is settling while you are still getting better. It feels responsible. It feels like closing something. But the number has to cover the surgery you might need in six years, and nobody can price that while you are still mid-recovery.",
     headings: { understand: "Why these claims need a longer view.", issues: "What a long-term injury raises.", value: "What a serious injury claim can cover.", insurance: "When one policy is not enough." },
     damages: ["Past and future medical treatment", "Rehabilitation, assistive care, and long-term support", "Lost income and reduced future earning capacity", "Permanent impairment, pain, loss of independence, and changes to daily life"],
     deadlineNote: "Serious-injury cases can last longer medically, but the legal and evidence deadlines do not wait for recovery to finish. California limitation periods, public-entity claim rules, insurance notice requirements, and evidence preservation should be evaluated while the long-term medical picture is still developing.",
@@ -278,7 +277,6 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
           description={description}
           image={practiceMedia[practice.slug]?.src ?? heroCourthouse}
         />
-        <div className="site-shell pt-8"><PageByline locale={locale} /></div>
         <ClaimJourney locale={locale} subject={title} guideId="understand" contextImage={practiceMedia[practice.slug]?.src} />
         <GuideAttorney locale={locale} />
         <ReadingLayout

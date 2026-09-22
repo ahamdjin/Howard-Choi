@@ -2,7 +2,6 @@ import { ArrowUpRight } from "lucide-react";
 
 const metrics = [
   { value: "$100M+", label: "Total recovered" },
-  { value: "Since 2012", label: "Licensed in California" },
   { value: "11 Years", label: "Firm history" },
   { value: "$1M", label: "Largest single-client recovery" },
 ];
@@ -36,7 +35,7 @@ const FirmSnapshot = () => (
         </div>
       </div>
 
-      <div className="grid grid-cols-2 border-t border-foreground/14 sm:grid-cols-4">
+      <div className="grid grid-cols-2 border-t border-foreground/14 sm:grid-cols-3">
         {metrics.map((metric, index) => (
           <div
             key={metric.label}
