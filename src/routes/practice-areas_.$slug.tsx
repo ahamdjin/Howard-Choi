@@ -24,7 +24,7 @@ export const Route = createFileRoute("/practice-areas_/$slug")({
     const path = `/practice-areas/${loaderData.slug}`;
     const searchName = practiceSearchNames[loaderData.slug] || loaderData.title;
     const seo = buildSeo({
-      title: `Buena Park ${searchName} Lawyer | Evidence, Damages & Deadlines`,
+      title: `Buena Park ${searchName} Lawyer | Evidence & Deadlines`,
       description: loaderData.description,
       path,
       alternatePath: `/ko/practice-areas/${loaderData.slug}`,

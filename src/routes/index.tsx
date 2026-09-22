@@ -5,8 +5,8 @@ import { absoluteUrl, buildSeo } from "@/lib/seo";
 export const Route = createFileRoute("/")({
   head: () => {
     const seo = buildSeo({
-      title: "Buena Park Personal Injury Lawyer | Howard Choi",
-      description: "Buena Park personal injury lawyer Howard Choi represents people injured in car, truck, motorcycle, pedestrian, rideshare, slip-and-fall, wrongful-death, and serious-injury matters. Free consultations available.",
+      title: "Buena Park Accident Lawyer | Personal Injury Attorney",
+      description: "Buena Park accident lawyer handling car, truck, motorcycle, pedestrian, rideshare, slip-and-fall, wrongful-death and serious-injury claims across north Orange County. Free consultation, no fee unless there is a recovery.",
       path: "/",
       alternatePath: "/ko",
       locale: "en-US",
@@ -21,7 +21,7 @@ export const Route = createFileRoute("/")({
           "@type": "WebPage",
           "@id": `${absoluteUrl("/")}#webpage`,
           url: absoluteUrl("/"),
-          name: "Buena Park Personal Injury Lawyer | Howard Choi",
+          name: "Buena Park Accident Lawyer | Personal Injury Attorney",
           inLanguage: "en-US",
           isPartOf: { "@id": `${absoluteUrl("/")}#website` },
           about: { "@id": `${absoluteUrl("/")}#legal-service` },
