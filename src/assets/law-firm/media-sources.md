@@ -15,6 +15,34 @@ License: https://www.pexels.com/license/
 | medical-care.jpg | https://www.pexels.com/photo/empty-bed-in-hospital-12081340/ |
 | family-support.jpg | https://www.pexels.com/photo/people-holding-hands-8829175/ |
 
+# Additional photography
+
+Downloaded September 22, 2026. Same Pexels licence as above. Illustrative only;
+not the firm's staff, clients, office or cases.
+
+| Local file | Source |
+| --- | --- |
+| reviewing-documents.jpg | https://www.pexels.com/photo/lawyer-showing-documents-to-a-woman-and-using-a-laptop-8439654/ |
+| attorney-client-talking.jpg | https://www.pexels.com/photo/a-lawyer-and-client-talking-together-7841452/ |
+| signing-medical-form.jpg | https://www.pexels.com/photo/patient-signging-a-conset-form-at-the-doctors-8413176/ |
+| suburban-palms.jpg | https://www.pexels.com/photo/palm-trees-and-roofs-of-buildings-in-town-18687105/ |
+| hospital-corridor.jpg | https://www.pexels.com/photo/empty-long-corridor-of-modern-hospital-4094199/ |
+
+**Rejected after visual review — do not re-download these:**
+
+- Pexels 8112166 (lawyer with clients): a framed certificate on the wall is
+  legible and names a different attorney, Adam G. Zuwerink.
+- Pexels 20031376 and 2331073 (street scenes): unmistakably Manhattan — 530
+  Park Avenue, a yellow cab, the Holland Tunnel sign, an NYPD cruiser and a
+  named hardware store. Wrong region for a Buena Park firm.
+- Pexels 4007642 (crosswalk): Kuala Lumpur.
+- Pexels 4645137 (freeway sign): graffitied sign on an empty Mojave desert
+  road. Reads as desolate and looks nothing like Orange County.
+
+Every image added here should be opened and looked at before it ships. Five of
+the nine downloaded in this batch were unusable for reasons that are invisible
+in a filename.
+
 Existing remote process photographs retain the source URLs in code. They are
 illustrative stock photos, not representations of actual firm employees or cases.
 
@@ -26,6 +54,7 @@ shown where the firm actually holds the award, issued in this firm's name.
 
 | Local file | Award |
 | --- | --- |
+| avvo.png | Avvo — links to the firm's Avvo attorney profile |
 | aaoa-top-100.webp | American Academy of Attorneys — Top 100, 2025 |
 | naopia-top-ten-attorney-2025.webp | NAOPIA — Nation's Premier Top Ten Personal Injury Attorney, 2025 |
 | lawyers-of-distinction-2026.webp | Lawyers of Distinction, 2026 |

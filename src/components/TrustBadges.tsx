@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import avvo from "@/assets/law-firm/badges/avvo.png";
 import aaoaTopHundred from "@/assets/law-firm/badges/aaoa-top-100.webp";
 import bbbAccredited from "@/assets/law-firm/badges/bbb-accredited-business.webp";
 import lawyersOfDistinction from "@/assets/law-firm/badges/lawyers-of-distinction-2026.webp";
@@ -12,6 +13,7 @@ import truckingTopTen from "@/assets/law-firm/badges/trucking-trial-lawyers-top-
 // badge was removed too: it asserts $500M+ recovered while the site states
 // $100M+, and the two cannot both headline the same page. See media-sources.md.
 const badges = [
+  { src: avvo, alt: "Howard Choi on Avvo", href: "https://www.avvo.com/attorneys/90621-ca-howard-choi-4229558.html" },
   { src: aaoaTopHundred, alt: "American Academy of Attorneys Top 100, 2025", href: "https://aaoaus.com/" },
   { src: naopiaTopTen, alt: "NAOPIA Nation's Premier Top Ten Personal Injury Attorney, 2025", href: "https://www.naopia.com/" },
   { src: lawyersOfDistinction, alt: "Lawyers of Distinction, 2026", href: "https://www.lawyersofdistinction.com/" },
@@ -47,7 +49,7 @@ const TrustBadges = () => (
         </a>
       </div>
 
-      <ul className="mt-6 grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:grid-cols-5">
+      <ul className="mt-6 grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:grid-cols-6">
         {badges.map((badge) => (
           <li key={badge.alt}>
             <a

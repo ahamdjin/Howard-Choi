@@ -5,6 +5,7 @@ import motorcycle from "@/assets/law-firm/motorcycle-road.jpg";
 import crossing from "@/assets/law-firm/pedestrian-crossing.jpg";
 import premises from "@/assets/law-firm/wet-floor.jpg";
 import care from "@/assets/law-firm/medical-care.jpg";
+import corridor from "@/assets/law-firm/hospital-corridor.jpg";
 import support from "@/assets/law-firm/family-support.jpg";
 
 // Source and license records live in src/assets/law-firm/media-sources.md.
@@ -15,6 +16,6 @@ export const practiceMedia: Record<string, { src: string; alt: string }> = {
   "pedestrian-accidents": { src: crossing, alt: "Marked pedestrian crossing at a street corner" },
   "rideshare-accidents": { src: cars, alt: "Two cars involved in a rear-end collision" },
   "slip-and-fall": { src: premises, alt: "Wet-floor warning sign indoors" },
-  "serious-injuries": { src: care, alt: "Hospital room prepared for medical care" },
+  "serious-injuries": { src: corridor, alt: "Empty corridor of a modern hospital" },
   "wrongful-death": { src: support, alt: "Hands held together in support" },
 };
