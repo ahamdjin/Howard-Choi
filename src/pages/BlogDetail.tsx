@@ -25,15 +25,6 @@ const articleSupport: Record<string, ArticleSupport> = {
       { label: "California Courts · Personal injury lawsuits", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury" },
     ],
   },
-  "what-an-injury-claim-should-document-beyond-medical-bills": {
-    relatedHref: "/practice-areas/serious-injuries",
-    relatedLabel: "Serious injury claims",
-    relatedBody: "Explore how future treatment, work limitations, earning capacity, and day-to-day functional loss can become part of a serious-injury record.",
-    sources: [
-      { label: "California Courts · Personal injury lawsuits", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury" },
-      { label: "Judicial Council of California · Civil jury instructions", href: "https://courts.ca.gov/partners/california-jury-instructions/civil-jury-instructions-resource-center/civil-jury-instructions" },
-    ],
-  },
   "california-comparative-fault-personal-injury": {
     relatedHref: "/practice-areas/car-accidents",
     relatedLabel: "Car accident claims and disputed fault",

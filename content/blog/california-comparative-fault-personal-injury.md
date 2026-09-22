@@ -2,47 +2,48 @@
   "title": "California comparative fault: what happens if you were partly at fault?",
   "slug": "california-comparative-fault-personal-injury",
   "published": true,
-  "excerpt": "A practical guide to California comparative fault, how shared responsibility can reduce a personal injury recovery, and which evidence matters when fault is disputed.",
+  "excerpt": "Being partly at fault does not end a California injury claim. It reduces it. Here is how responsibility gets divided, and why the insurer's first assessment is not the last word.",
   "category": "Fault & Insurance",
   "publishedAt": "2026-09-14",
-  "readingTime": "7 min read",
+  "readingTime": "3 min read",
   "alt": "California courthouse interior",
   "intro": "A personal injury claim does not automatically disappear because the injured person may have contributed to an accident. California uses comparative fault, which allows responsibility to be divided among the people or entities involved. The practical question is therefore not only whether someone was partly at fault, but how responsibility is supported by the evidence and how the assigned percentage changes the damages that can be recovered.",
   "takeaway": "Shared fault can reduce a recovery without necessarily eliminating the claim. The percentage matters, and the evidence used to assign that percentage can matter just as much."
 }
 
-## What comparative fault means in California
 
-California follows a pure comparative-fault approach. In practical terms, damages can be reduced by the percentage of responsibility assigned to the injured person. A person who is found partly responsible may still recover the portion of damages attributed to other responsible parties.
+If someone has told you that you were partly to blame and therefore have no claim, that is wrong, and it is one of the more common things people are told by the other side's insurance company.
 
-That is different from states where crossing a particular fault threshold can bar recovery entirely. It also means that even a modest disagreement about fault can have a meaningful financial effect when the underlying damages are substantial.
+## California divides fault, it does not assign it
 
-## A simple example of shared fault
+California uses pure comparative fault. Responsibility is split between everyone involved as a percentage, and your recovery is reduced by your share.
 
-Suppose the total proven damages were $100,000 and the injured person was assigned 20% of the fault. A simplified comparative-fault calculation would reduce the recovery by that 20%, leaving $80,000 before considering other issues such as insurance limits, liens, collectability, or post-verdict adjustments.
+Found ten percent responsible on a claim worth 100,000 dollars? You recover 90,000. Found sixty percent responsible? You still recover forty percent. There is no cut-off at which being partly at fault wipes out the claim, which is not true in every state and is worth knowing if you have moved here or read advice written elsewhere.
 
-The arithmetic is simple. The difficult part is deciding what the fair fault percentage actually is. That depends on the facts, not on a calculator or an insurer's first opinion.
+## What that looks like in practice
 
-## Evidence that can affect the fault analysis
+Someone runs a red light and hits you. Clear enough. But you were driving a few miles an hour over the limit, and the other side argues that contributed.
 
-Scene photographs, vehicle damage, video, traffic controls, road markings, witness statements, police or incident reports, electronic vehicle data, phone records where relevant, and the parties' own statements can all influence how an accident is reconstructed.
+Whether that argument goes anywhere depends on evidence, not assertion. Did the speed actually affect the collision? Is there anything showing it? A percentage that gets floated in a phone call is not the same as a percentage anyone could defend.
 
-In a premises case, the analysis may instead focus on the condition of the property, warnings, lighting, inspections, maintenance, notice, surveillance, and what a reasonable person could have observed. Different types of injury claims create different fault questions.
+## The evidence that moves it
 
-## Why an insurer's fault decision is not necessarily the final answer
+Scene photographs showing final vehicle positions and lane markings. Camera footage. Independent witnesses. The physical damage pattern, which often tells you more about angle and speed than any statement does. The police report, though it is worth knowing that an officer's opinion about fault is not binding on anyone.
 
-An insurance adjuster may assign responsibility early using the information available at that time. That evaluation can change as additional photographs, witnesses, reports, video, medical information, or expert analysis becomes available.
+## The adjuster's number is an opening position
 
-It is useful to distinguish an insurer's claim decision from a court's legal determination. An early percentage is a position in the claim, not automatically a final adjudication of responsibility.
+This is the part worth internalising. When an insurer tells you that you were thirty percent at fault, that is one company's assessment, usually made early, often from a single phone call and a photograph.
 
-## Comparative fault also affects settlement strategy
+It is not a ruling. It is not final. Fault assessments shift regularly when better evidence appears, and the initial figure tends to be the one most favourable to the insurer.
 
-When fault is genuinely disputed, both sides may evaluate the risk that a jury could assign a different percentage than either side expects. That uncertainty can affect negotiation, especially when the medical damages or long-term losses are significant.
+## It shapes strategy, not just arithmetic
 
-A useful case evaluation therefore looks at both sides of the equation: the amount of damages that can be supported and the likelihood that some of those damages will be reduced because of comparative responsibility.
+Disputed fault changes how a claim should be handled. It raises the value of accident reconstruction, makes early evidence preservation more urgent, and affects whether a case realistically settles or needs to be filed.
 
-## What to preserve if fault may be disputed
+It also affects what a reasonable settlement looks like. A claim with a genuine fault dispute carries risk for both sides, and both sides know it.
 
-Do not wait for an insurer to tell you which evidence would have been useful. Keep the exact accident location, photographs, video, reports, witness contact information, insurance communications, and a clear account of what happened while the details are fresh.
+## If fault is being argued
 
-If important camera footage, commercial records, vehicle data, or other time-sensitive material may exist, identifying it early can be especially important. Comparative-fault disputes are easier to evaluate when the underlying record is still available.
+Preserve everything about how the crash happened, not just your injuries. Photographs of the scene while it is still intact, the identity of anyone who saw it, any camera that may have caught it, and your own written account written down early while you still remember it clearly.
+
+Be careful about agreeing to a version of events on a recorded call before you have thought it through. And do not accept a percentage simply because someone with an official-sounding job title asserted it.

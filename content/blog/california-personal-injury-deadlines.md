@@ -2,53 +2,52 @@
   "title": "California personal injury deadlines: how long do you have to file?",
   "slug": "california-personal-injury-deadlines",
   "published": true,
-  "excerpt": "A practical guide to California personal injury filing deadlines, the general two-year rule, shorter government-claim deadlines, property-damage timing, and why exceptions matter.",
+  "excerpt": "Two years is the general California rule, but the exceptions are where people get caught: government claims, minors, delayed discovery, and the evidence deadlines nobody writes down.",
   "category": "California Injury Law",
   "publishedAt": "2026-09-10",
-  "readingTime": "7 min read",
+  "readingTime": "3 min read",
   "alt": "California courthouse used to explain personal injury filing deadlines",
   "intro": "Deadlines are one of the few parts of an injury claim that can end the legal case regardless of how strong the evidence may otherwise be. California has general limitation periods for personal injury and property damage, but the correct deadline can change because of the defendant, the type of claim, the age or status of a party, delayed discovery, government involvement, and other exceptions.",
   "takeaway": "The general rule is useful for orientation, but the safe deadline is the one calculated from the actual facts. Government claims and other exceptions can require action much earlier than two years."
 }
 
-## The general California personal injury deadline is two years
 
-California Courts explains that a lawsuit for injury to a person generally must be filed within two years from the date of the injury. This is the rule people most often hear after a car accident, fall, or other negligence claim.
+Two years. That is the answer most people are looking for, and for a straightforward California injury claim it is usually right. The reason this needs a whole article is that the exceptions are not obscure edge cases, they are ordinary situations that come up constantly.
 
-It is a starting point, not a substitute for checking the specific case. The correct accrual date and any applicable exception can change the calculation.
+## The general rule
 
-## Claims involving government entities can move much faster
+California gives an injured person two years from the date of injury to file a personal injury lawsuit. Filing means starting a court case, not opening an insurance claim, and that distinction catches people out.
 
-When a state, county, city, public agency, or other government entity may be responsible, California generally requires an administrative claim before a lawsuit can proceed. The time to present that government claim can be much shorter than the ordinary personal injury limitation period.
+## Government claims run on months, not years
 
-That issue can arise in roadway, transit, public-property, public-vehicle, school, or other incidents involving a public entity. Waiting for the ordinary two-year date before identifying government involvement can therefore create a serious problem.
+If a city, county, transit agency, school district or state body may be responsible, a much shorter clock applies. That can mean a government claim has to be presented well before the two-year mark, and missing it can end an otherwise good case entirely.
 
-## Property damage can have a different deadline
+This comes up more than people expect: a city-owned vehicle, a public bus, a poorly maintained road or intersection, a county hospital. If any public entity is in the picture, treat the deadline as urgent from day one rather than something to check later.
 
-A collision may involve both bodily injury and property damage. California Courts lists a three-year limitation period for damage to property in many situations, while personal injury generally uses the two-year period.
+## Minors and delayed discovery
 
-Different deadlines within the same event are a good reminder that the legal claim should be separated into its actual components rather than treated as one generic accident deadline.
+Where the injured person is a child, the clock generally does not run in the usual way while they are a minor. Separately, some injuries are not discovered immediately, and California recognizes that in limited circumstances.
 
-## Some exceptions can change when the clock runs
+Both are genuinely fact-specific. They are worth raising early rather than assuming either does or does not apply to you.
 
-Limitations questions can become more complicated when the injured person is a minor, the defendant is outside California, the injury or cause was not reasonably discoverable immediately, or another tolling rule applies. Different legal theories can also have different limitation periods.
+## Property damage is its own timeline
 
-An exception should not be assumed simply because it might exist. The safer approach is to identify the ordinary deadline and then determine whether a recognized rule changes it.
+Damage to your car and injury to your body are not necessarily on the same clock. People sometimes resolve the vehicle quickly, assume the whole matter is closed, and are surprised later.
 
-## Evidence has its own practical deadline
+## Evidence has a deadline nobody writes down
 
-A lawsuit may still be timely even after important evidence has disappeared. Surveillance footage may be overwritten, vehicles repaired or sold, roadway conditions changed, witnesses become harder to locate, and business or electronic records may be deleted according to retention policies.
+This is the practical one. Long before any legal deadline, the things that prove your case start disappearing.
 
-That creates a second kind of deadline: not a statute of limitations, but the practical time in which useful evidence can still be preserved.
+Nearby camera footage often overwrites within days. Vehicle data can be lost when a car is repaired or salvaged. Witnesses move and become unreachable. A commercial vehicle's electronic records are kept only as long as the rules require, and then legitimately deleted.
 
-## Insurance negotiations do not automatically stop the filing deadline
+You can be comfortably inside the two-year window and have already lost the evidence that would have won the case.
 
-A claim can be actively discussed with an insurance company while the statute of limitations continues to run. Negotiation, document exchange, medical treatment, or a pending settlement discussion should not be assumed to extend the court filing deadline unless there is a legally effective basis to do so.
+## Talking to the insurer does not pause anything
 
-The closer a claim gets to the limitation date, the more important it becomes to know whether a lawsuit must be filed to preserve the claim.
+A common and costly misunderstanding. Negotiations with an insurance company do not extend the filing deadline. An adjuster who is being slow, friendly and apparently cooperative is not stopping your clock, and the deadline arriving mid-negotiation does not entitle you to more time.
 
-## What information helps calculate the deadline
+## What determines your actual date
 
-Keep the incident date, location, identity of the people or entities involved, police or incident reports, correspondence, and any information suggesting that a government agency or public property was involved. For medical or delayed-discovery issues, the timeline of symptoms, diagnosis, and what was known when can also matter.
+The date of injury, who the potential defendants are, whether any of them is a public entity, the age of the injured person, and the specific facts of how and when the harm was discovered.
 
-If there is any uncertainty, calculating the deadline early is usually easier than trying to repair a missed deadline later. General website information cannot determine the filing date for a specific case.
+Work it out from those rather than from the general rule, and do it early. Nothing in this area rewards waiting.

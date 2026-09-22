@@ -37,7 +37,6 @@ type BlogFrontmatter = {
 // with the rest of the firm website without adding a new design system.
 const legacyImages: Record<string, string> = {
   "what-to-do-after-a-car-accident-in-california": heroLawOffice,
-  "what-an-injury-claim-should-document-beyond-medical-bills": heroCityBoardroom,
   "california-comparative-fault-personal-injury": heroCourthouse,
   "how-much-is-my-personal-injury-case-worth-california": heroJusticeLibrary,
   "uber-lyft-accident-insurance-california": heroCityBoardroom,
