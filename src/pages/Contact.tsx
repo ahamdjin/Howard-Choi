@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import GHLCalendar from "@/components/GHLCalendar";
 import WebsiteInquiryForm from "@/components/WebsiteInquiryForm";
 import heroCityBoardroom from "@/assets/law-firm/hero-city-boardroom.webp";
+import { brand } from "@/data/injurySite";
 
 const Contact = () => {
   const { scrollY } = useScroll();
@@ -34,11 +35,11 @@ const Contact = () => {
             <span className="mb-4 block text-[11px] text-[#f3eee5]/62">Contact · Buena Park</span>
             <PageBreadcrumb locale="en" title="Contact" />
             <h1 className="editorial-serif text-[clamp(2.75rem,4.15vw,4.25rem)] leading-[0.95] tracking-[-0.024em]">
-              Talk with a personal injury legal team about what happened.
+              Tell us what happened. We will tell you where you stand.
             </h1>
             <div className="mt-6 flex flex-wrap gap-3"><a href="#calendar" className="inline-flex min-h-11 items-center rounded-full bg-[#f3eee5] px-5 py-3 text-sm font-semibold text-[#17130f]">Book a consultation</a><a href="#message" className="inline-flex min-h-11 items-center rounded-full border border-white/50 px-5 py-3 text-sm">Send a message</a></div>
             <p className="mt-5 max-w-[540px] text-[14px] leading-6 text-[#f3eee5]/68 md:text-[15px]">
-              Start with the accident date and location, your current treatment, insurance information, and the questions you need answered. A simple outline is enough for the first conversation.
+              The accident date and where it happened, how treatment is going, whatever the insurer has sent you, and the questions keeping you up. A rough outline is plenty for a first call — you do not need a file.
             </p>
           </motion.div>
         </div>
@@ -46,10 +47,10 @@ const Contact = () => {
 
       <main className="site-shell py-16 md:py-20 lg:py-24">
         <div className="mb-12 grid gap-8 border-b border-foreground/10 pb-9 md:grid-cols-3">
-          <a href="tel:+17146900007" className="group border-t border-foreground/10 pt-5 md:border-t-0 md:pt-0">
+          <a href={brand.phoneHref} className="group border-t border-foreground/10 pt-5 md:border-t-0 md:pt-0">
             <Phone className="mb-4 h-4 w-4 text-muted-foreground" />
             <div className="text-[11px] text-muted-foreground">Phone</div>
-            <div className="mt-2 text-[15px] transition-opacity group-hover:opacity-60">+1 714-690-0007</div>
+            <div className="mt-2 text-[15px] transition-opacity group-hover:opacity-60">{brand.phoneDisplay}</div>
           </a>
           <a href="mailto:hello@howardchoilaw.com" className="group border-t border-foreground/10 pt-5 md:border-t-0 md:pt-0">
             <Mail className="mb-4 h-4 w-4 text-muted-foreground" />
@@ -59,16 +60,16 @@ const Contact = () => {
           <a href="https://share.google/LBJ1C8zWrZFjJBkVe" target="_blank" rel="noreferrer" className="group border-t border-foreground/10 pt-5 md:border-t-0 md:pt-0">
             <MapPin className="mb-4 h-4 w-4 text-muted-foreground" />
             <div className="text-[11px] text-muted-foreground">Office</div>
-            <div className="mt-2 max-w-[260px] text-[15px] leading-6 transition-opacity group-hover:opacity-60">6301 Beach Blvd, Buena Park, CA 90621</div>
+            <div className="mt-2 max-w-[260px] text-[15px] leading-6 transition-opacity group-hover:opacity-60">{brand.address}</div>
           </a>
         </div>
 
         <div className="grid items-start gap-5 xl:grid-cols-[0.78fr_1.22fr]">
           <motion.section id="message" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.18 }} transition={{ duration: 0.68 }} className="scroll-mt-24 rounded-[4px] bg-[#e9e6e1] p-7 md:p-9 xl:sticky xl:top-24">
             <span className="text-[11px] text-foreground/48">Send a note</span>
-            <h2 className="editorial-serif mt-3 text-[clamp(2rem,2.55vw,3rem)] leading-[0.98] tracking-[-0.022em]">Tell us where the case stands now.</h2>
+            <h2 className="editorial-serif mt-3 text-[clamp(2rem,2.55vw,3rem)] leading-[0.98] tracking-[-0.022em]">Where does it stand right now?</h2>
             <p className="mt-4 max-w-[470px] text-[14px] leading-6 text-foreground/58">
-              Helpful starting details include where and when the accident happened, the type of injury, treatment so far, whether work has been affected, and any insurance or claim information you already have. You do not need every record before reaching out. Avoid sending confidential or time-sensitive information until an attorney-client relationship has been confirmed.
+              Useful to include: where and when it happened, what was injured, how treatment is going, whether you have missed work, and any claim or insurance details you have. Nobody expects a complete file. One thing though — hold back anything confidential or time-critical until we have actually confirmed an attorney-client relationship, because an email is not private until then.
             </p>
             <WebsiteInquiryForm locale="en" />
           </motion.section>
@@ -94,10 +95,10 @@ const Contact = () => {
               <span className="text-[9px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">Before the consultation</span>
             </div>
             <div>
-              <h2 className="editorial-serif max-w-[760px] text-[clamp(2rem,3vw,3.2rem)] leading-[1.02] tracking-[-0.025em]">Bring the facts you have. The first conversation helps identify what is missing.</h2>
+              <h2 className="editorial-serif max-w-[760px] text-[clamp(2rem,3vw,3.2rem)] leading-[1.02] tracking-[-0.025em]">Bring what you have. The first call is mostly about finding what is missing.</h2>
               <div className="mt-10 grid border-t border-foreground/12 md:grid-cols-3">
                 {[
-                  [MapPin, "Incident timeline", "Date, exact location, how the incident happened, and any report or claim number you already have."],
+                  [MapPin, "Incident timeline", "The date, the exact spot, how it happened, and any report or claim number you were given."],
                   [FileText, "Records you already have", "Photos, video, insurance information, treatment details, bills, work-loss information, and important correspondence."],
                   [ShieldCheck, "Deadlines and next steps", "If a deadline, government agency, evidence-preservation issue, or insurer request is worrying you, flag it during the first conversation."],
                 ].map(([Icon, title, body], index) => {

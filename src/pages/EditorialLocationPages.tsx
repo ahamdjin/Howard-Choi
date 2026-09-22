@@ -137,6 +137,14 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
   const description = isKo(locale) ? location.koDescription : location.description;
   const statLabel = isKo(locale) ? `${location.ots.year} 교통안전 통계` : `${location.ots.year} California OTS collision data`;
   const resource = locationResources[location.slug];
+  // Per-city collision profile, derived from that city's own OTS numbers, so
+  // the sections below say something only true of this city.
+  const vulnerable = [
+    { label: isKo(locale) ? "보행자" : "pedestrians", n: location.ots.pedestrians },
+    { label: isKo(locale) ? "자전거" : "people on bicycles", n: location.ots.bicyclists },
+    { label: isKo(locale) ? "오토바이" : "motorcycle riders", n: location.ots.motorcycles },
+  ].sort((a, b) => b.n - a.n);
+  const hitRunShare = Math.round((location.ots.hitRun / location.ots.total) * 100);
   const isBuenaPark = location.slug === "buena-park";
   const heroTitle = isKo(locale)
     ? (isBuenaPark ? "부에나파크 사고·상해 가이드" : `${name} 개인상해 변호사`)
@@ -221,8 +229,10 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
             id="cases"
             locale={locale}
             kicker={isKo(locale) ? "04 · 사건" : "04 · Matters"}
-            title={isKo(locale) ? "지역보다 사건 유형과 증거가 더 중요합니다." : `Personal injury matters we review for people in ${name}.`}
-            intro={isKo(locale) ? "자동차·트럭·오토바이 사고, 보행자 사고, 승차공유 사고, 낙상과 중대 상해 등 다양한 개인상해 문제를 검토할 수 있습니다." : "The firm reviews car, truck, motorcycle, pedestrian, rideshare, premises-liability, wrongful-death, and serious-injury matters. The right approach depends on the actual accident, available evidence, responsible parties, insurance, and medical consequences—not the city name alone."}
+            title={isKo(locale) ? "지역보다 사건 유형과 증거가 더 중요합니다." : `What we see most often in ${name}.`}
+            intro={isKo(locale)
+              ? "자동차·트럭·오토바이 사고, 보행자 사고, 승차공유 사고, 낙상과 중대 상해 등 다양한 개인상해 문제를 검토할 수 있습니다."
+              : `Of the ${location.ots.total.toLocaleString()} collisions reported in ${name} in ${location.ots.year}, ${vulnerable[0].n} involved ${vulnerable[0].label} and ${vulnerable[1].n} involved ${vulnerable[1].label}. Around ${hitRunShare}% were hit-and-run. We handle all of those, plus truck, rideshare, slip and fall, wrongful death and serious injury claims. Which one you have matters far more than which city you live in.`}
           >
             <a href={`${localePrefix(locale)}/practice-areas`} className="editorial-inline-link"><span>{isKo(locale) ? "업무 분야 보기" : "View personal injury practice areas"}</span><ArrowRight className="h-4 w-4" /></a>
           </ReadingSectionBlock>
@@ -239,8 +249,8 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
             id="deadlines"
             locale={locale}
             kicker={isKo(locale) ? "06 · 기한" : "06 · California deadlines"}
-            title={isKo(locale) ? "사고 장소와 상대방에 따라 기한이 달라질 수 있습니다." : "The calendar can matter as much as the county line."}
-            intro={isKo(locale) ? "캘리포니아의 많은 개인상해 소송에는 일반적으로 2년의 제소 기한이 적용되지만 공공기관 관련 청구는 더 짧은 사전 청구 절차가 적용될 수 있습니다. 사건별 기한을 실제 사실관계에서 확인하는 것이 중요합니다." : "California Courts explains that many personal-injury lawsuits generally have a two-year filing deadline, while claims involving a government agency can require a much earlier government claim. Other rules and exceptions can change the answer, so the deadline should be checked from the incident date, defendants, and facts—not assumed from the city alone."}
+            title={isKo(locale) ? "사고 장소와 상대방에 따라 기한이 달라질 수 있습니다." : `${name} sits in ${location.county}, and that decides more than you would think.`}
+            intro={isKo(locale) ? "캘리포니아의 많은 개인상해 소송에는 일반적으로 2년의 제소 기한이 적용되지만 공공기관 관련 청구는 더 짧은 사전 청구 절차가 적용될 수 있습니다. 사건별 기한을 실제 사실관계에서 확인하는 것이 중요합니다." : `California generally gives you two years from the injury to file. Claims against a city or other public agency are the trap — those can need written notice in a matter of months, not years. And if a lawsuit does get filed for a ${name} accident, it goes to ${resource?.court ?? "the county superior court"}, not wherever you happen to live. Check the real deadline against your own facts rather than assuming the two-year rule covers you.`}
           >
             <a href="https://selfhelp.courts.ca.gov/civil-lawsuit/statute-limitations" target="_blank" rel="noreferrer" className="editorial-inline-link"><span>{isKo(locale) ? "California Courts 기한 안내" : "California Courts · Statutes of limitations"}</span><ArrowRight className="h-4 w-4" /></a>
           </ReadingSectionBlock>
@@ -254,8 +264,8 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
             <div className="border-t border-[#1E1C1A]/12">
               {[
                 [isKo(locale) ? "사고가 이 도시에서 났지만 저는 다른 곳에 살아도 괜찮나요?" : `What if the accident happened in ${name}, but I live somewhere else?`, isKo(locale) ? "거주지가 다르다고 해서 사고 기록이나 청구가 사라지는 것은 아닙니다. 사고 장소, 책임 당사자, 보험, 관할과 적용 법률을 함께 확인해야 합니다." : "That is common. The useful questions are where the incident happened, where the defendants live or do business, which agency documented it, what insurance applies, and which court or venue rules may matter."],
-                [isKo(locale) ? "어느 경찰서나 기관에서 기록을 받아야 하나요?" : "How do I know which agency has the report?", isKo(locale) ? "정확한 사고 지점이 중요합니다. 도시 경찰, 보안관, CHP 또는 다른 기관이 관할할 수 있으므로 사고 당시 받은 사건번호나 담당기관 정보를 먼저 확인하세요." : "Start with the exact location and any incident or report number you were given. City police, the sheriff, CHP, a property owner, or another agency may have the relevant record depending on where and how the incident occurred."],
-                [isKo(locale) ? "지역 변호사를 꼭 선임해야 하나요?" : "Do I have to hire a lawyer located in the same city?", isKo(locale) ? "도시 이름만으로 변호사를 선택할 필요는 없습니다. 캘리포니아 자격, 사건 유형 경험, 지역 절차 이해, 소통 방식과 실제 사건을 처리할 능력을 함께 보는 것이 더 중요합니다." : "The city name alone should not decide who handles a case. California licensure, experience with the type of claim, ability to work with the relevant local records and courts, communication, and the facts of the matter are more important."],
+                [isKo(locale) ? "어느 경찰서나 기관에서 기록을 받아야 하나요?" : `Who has the report for a ${name} accident?`, isKo(locale) ? "정확한 사고 지점이 중요합니다. 도시 경찰, 보안관, CHP 또는 다른 기관이 관할할 수 있으므로 사고 당시 받은 사건번호나 담당기관 정보를 먼저 확인하세요." : `Usually ${resource?.agency ?? "the local police department"}, if it happened on a city street. On a freeway it is more likely CHP, and on private property there may only be an incident report the business wrote itself. Start with whatever report number you were given at the scene — that number is what everyone else will ask you for.`],
+                [isKo(locale) ? "지역 변호사를 꼭 선임해야 하나요?" : `Do I need a lawyer based in ${name}?`, isKo(locale) ? "도시 이름만으로 변호사를 선택할 필요는 없습니다. 캘리포니아 자격, 사건 유형 경험, 지역 절차 이해, 소통 방식과 실제 사건을 처리할 능력을 함께 보는 것이 더 중요합니다." : `No, and a city name is a poor way to choose one. What actually matters is California licensure, real experience with your type of claim, and knowing how ${location.county} handles these — our office is in Buena Park, so ${name} is a short drive either way.`],
               ].map(([question, answer], index) => (
                 <div key={question} className="border-b border-[#1E1C1A]/12 py-6"><div className="flex gap-4"><span className="text-[10px] text-[#1E1C1A]/30">0{index + 1}</span><div><h3 style={serifStyle(locale)} className="text-[1.25rem] leading-tight">{question}</h3><p className="mt-3 max-w-[720px] text-[12px] leading-6 text-[#1E1C1A]/54">{answer}</p></div></div></div>
               ))}
