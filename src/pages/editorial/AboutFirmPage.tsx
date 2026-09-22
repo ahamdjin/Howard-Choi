@@ -1,5 +1,6 @@
 import { ArrowRight, MessageSquareText, Scale, ShieldCheck } from "lucide-react";
 import heroBoardroom from "@/assets/law-firm/hero-city-boardroom.webp";
+import reviewingDocuments from "@/assets/law-firm/reviewing-documents.jpg";
 import type { SiteLocale } from "@/data/injurySite";
 import {
   ConsultationCta,
@@ -35,7 +36,7 @@ export const AboutFirmPage = ({ locale }: { locale: SiteLocale }) => (
             ]
           : [
               { id: "focus", label: "What the firm focuses on" }, { id: "working", label: "How the relationship works" }, { id: "process", label: "How a case develops" },
-              { id: "team", label: "Attorney & practice" }, { id: "local", label: "Local focus" },
+              { id: "team", label: "Attorney & practice" }, { id: "law-firm", label: "The firm itself" }, { id: "attorney", label: "Working with one attorney" }, { id: "local", label: "Local focus" },
             ]}
       >
         <ReadingSectionBlock
@@ -96,7 +97,7 @@ export const AboutFirmPage = ({ locale }: { locale: SiteLocale }) => (
         <ReadingSectionBlock
           id="team"
           locale={locale}
-          kicker={isKo(locale) ? "04 · 법률팀" : "04 · Attorney & practice"}
+          kicker={isKo(locale) ? "04 · 변호사" : "04 · Attorney & practice"}
           title={isKo(locale) ? "사람과 사건 유형을 함께 확인하세요." : "Check who you would actually be working with."}
           intro={isKo(locale) ? "변호사 등록 정보와 사고 유형별 업무 페이지를 통해 로펌의 실제 업무 범위를 확인할 수 있습니다." : "Before you hire anybody you should be able to look the lawyer up and confirm they handle your kind of accident. Howard is California Bar No. 284364 and that record is public, so we link straight to it."}
         >
@@ -107,9 +108,41 @@ export const AboutFirmPage = ({ locale }: { locale: SiteLocale }) => (
         </ReadingSectionBlock>
 
         <ReadingSectionBlock
+          id="law-firm"
+          locale={locale}
+          kicker={isKo(locale) ? "05 · 로펌" : "05 · The law firm"}
+          title={isKo(locale) ? "작은 로펌의 장점" : "A small law firm, on purpose."}
+          intro={isKo(locale)
+            ? "규모보다 사건 하나하나에 집중하는 방식을 선택했습니다."
+            : "This is a small law firm and that is deliberate. Eleven years in, the firm has stayed small enough that the person who reads your file is the person who argues it. Bigger is not automatically better in injury work. A lot of the volume firms you see advertising run on case managers, and the attorney whose face is on the billboard may never touch your file. Here there is one attorney, so there is nobody to hand you off to. The tradeoff is real and worth saying out loud: we cannot take every case that calls. What we can do is tell you honestly, in the first conversation, whether yours is one we can genuinely move forward."}
+        >
+          <img
+            src={reviewingDocuments}
+            alt={isKo(locale) ? "서류를 검토하는 모습" : "Reviewing accident records and insurance correspondence"}
+            width={1400}
+            height={935}
+            loading="lazy"
+            decoding="async"
+            className="aspect-[16/9] w-full rounded-md object-cover"
+          />
+        </ReadingSectionBlock>
+
+        <ReadingSectionBlock
+          id="attorney"
+          locale={locale}
+          kicker={isKo(locale) ? "06 · 변호사" : "06 · The attorney"}
+          title={isKo(locale) ? "담당 변호사는 한 명입니다." : "What it means that one attorney handles your case."}
+          intro={isKo(locale)
+            ? "Howard Choi 변호사가 사건을 직접 담당합니다. 캘리포니아 변호사 번호 284364."
+            : "Howard Choi is the attorney. California State Bar No. 284364, admitted in October 2012, out of William Howard Taft University in Santa Ana. He speaks English and Korean, which matters more than it sounds in this part of Orange County, because insurance adjusters do not slow down for a language barrier and neither do the deadlines. Practically, one attorney means you are not explaining your accident to a new person every month. It also means the person deciding whether to settle or file is the same person who saw your MRI and talked to your doctor. You can check all of that yourself, which is the point. His license, his admission date and his complete record are public."}
+        >
+          <a href="https://apps.calbar.ca.gov/attorney/Licensee/Detail/284364" target="_blank" rel="noreferrer" className="editorial-inline-link"><span>{isKo(locale) ? "주 변호사 협회 기록 확인" : "Check the State Bar record"}</span><ArrowRight className="h-4 w-4" /></a>
+        </ReadingSectionBlock>
+
+        <ReadingSectionBlock
           id="local"
           locale={locale}
-          kicker={isKo(locale) ? "05 · 지역" : "05 · Local focus"}
+          kicker={isKo(locale) ? "07 · 지역" : "07 · Local focus"}
           title={isKo(locale) ? "Buena Park를 중심으로 인근 지역을 지원합니다." : "Buena Park is home, and we know the area."}
           intro={isKo(locale)
             ? "Buena Park, Anaheim, Fullerton, Garden Grove, Cypress, La Habra, La Mirada, Cerritos, Norwalk, Whittier와 인근 지역의 사고·상해 문제를 지원합니다."

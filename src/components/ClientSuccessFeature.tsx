@@ -16,7 +16,7 @@ const ClientSuccessFeature = ({ locale = "en" }: { locale?: SiteLocale }) => {
         <div className="text-center">
           <div className="text-xs text-foreground/65">{ko ? "의뢰인 경험" : "Client Experience"}</div>
           <h2 className="editorial-serif mt-4">{ko ? "복잡한 순간에도 명확한 안내." : <>Clear guidance<br /><span className="text-foreground/42">when the case feels complicated.</span></>}</h2>
-          <p className="mx-auto mt-5 max-w-[430px] text-[14px] leading-6 text-foreground/64">{ko ? "의료 기록, 보험 문제와 다음 법적 단계까지 이해하기 쉽게 안내합니다." : "Good representation should make the process easier to understand—from medical records and insurance questions to settlement decisions and the next legal step."}</p>
+          <p className="mx-auto mt-5 max-w-[430px] text-[14px] leading-6 text-foreground/64">{ko ? "의료 기록, 보험 문제와 다음 법적 단계까지 이해하기 쉽게 안내합니다." : "Good representation should make the process easier to understand, from medical records and insurance questions to settlement decisions and the next legal step."}</p>
           <a href={ko ? "/ko/contact" : "/contact"} className="mt-6 inline-flex min-h-11 items-center gap-2 bg-[#171717] px-5 py-3 text-sm font-medium text-white">{ko ? "상담 시작" : "Start a Conversation"}<ArrowUpRight className="h-4 w-4" /></a>
         </div>
         <div className="mt-10 grid w-full bg-[#e8e6e1] lg:grid-cols-[0.34fr_0.66fr]">

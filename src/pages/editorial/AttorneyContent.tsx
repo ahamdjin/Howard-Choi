@@ -35,7 +35,7 @@ export default function AttorneyContent({ locale }: { locale: SiteLocale }) {
           <h3 className="mb-5">{ko ? "등록 정보" : "Professional details"}</h3>
           {/* Every field below is taken from the official State Bar of California
               licensee record for #284364. Do not add a detail here that the Bar
-              record does not show — the "View State Bar profile" link invites
+              record does not show. The "View State Bar profile" link invites
               readers to check it line by line. */}
           <dl className="divide-y divide-[#211c17]/10">{[
             [ko ? "이름" : "Full name", "Howard Jong-yol Choi"],

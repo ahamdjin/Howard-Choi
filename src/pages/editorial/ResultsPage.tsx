@@ -27,7 +27,7 @@ export const ResultsPage = ({ locale }: { locale: SiteLocale }) => (
         title={isKo(locale) ? "결과는 숫자만으로 설명되지 않습니다." : "A number on its own does not tell you much."}
         description={isKo(locale)
           ? "사건 결과는 금액만 보는 것이 아니라 사건 유형, 책임, 부상, 치료, 보험과 증거를 함께 봐야 의미가 있습니다."
-          : "How badly someone was hurt, what treatment they needed, who was at fault, how much insurance existed, how strong the evidence was, what care they will still need, and what the injury did to their life — those are what produced the number. Strip them away and the figure is just a figure."}
+          : "How badly someone was hurt, what treatment they needed, who was at fault, how much insurance existed, how strong the evidence was, what care they will still need, and what the injury did to their life. Those are what produced the number. Strip them away and the figure is just a figure."}
         image={heroCourthouse}
       />
 

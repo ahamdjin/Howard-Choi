@@ -378,7 +378,7 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
           </div>
 
           <div className="mt-6 flex items-center justify-between border-t border-[#1e1c1a]/10 pt-4 text-[10px] text-[#1e1c1a]/38">
-            <span>{isKorean ? "오전 8시–오후 5시 예약 가능" : "Booking window · 8:00 AM–5:00 PM"}</span>
+            <span>{isKorean ? "오전 8시부터 오후 5시까지 예약 가능" : "Booking window · 8:00 AM to 5:00 PM"}</span>
             <span>Pacific Time</span>
           </div>
         </div>

@@ -6,7 +6,7 @@ import { brand } from "@/data/injurySite";
 
 // The form is the shared WebsiteInquiryForm, which relies on HighLevel External
 // Tracking reading the DOM on submit. That script only loads on paths listed in
-// `externalFormPage` in src/routes/__root.tsx — "/" must stay in that list.
+// `externalFormPage` in src/routes/__root.tsx; "/" must stay in that list.
 const Booking = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.15 });
@@ -42,7 +42,7 @@ const Booking = () => {
             </h2>
             <p className="mt-6 max-w-[520px] text-[15px] leading-7 text-white/60">
               Share the accident date and location, your current treatment, and the questions you need answered.
-              Consultations are free, and representation is available on a contingency-fee basis—no attorney fee unless
+              Consultations are free, and representation is available on a contingency-fee basis, with no attorney fee unless
               there is a recovery.
             </p>
 

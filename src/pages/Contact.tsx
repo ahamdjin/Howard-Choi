@@ -39,7 +39,7 @@ const Contact = () => {
             </h1>
             <div className="mt-6 flex flex-wrap gap-3"><a href="#calendar" className="inline-flex min-h-11 items-center rounded-full bg-[#f3eee5] px-5 py-3 text-sm font-semibold text-[#17130f]">Book a consultation</a><a href="#message" className="inline-flex min-h-11 items-center rounded-full border border-white/50 px-5 py-3 text-sm">Send a message</a></div>
             <p className="mt-5 max-w-[540px] text-[14px] leading-6 text-[#f3eee5]/68 md:text-[15px]">
-              The accident date and where it happened, how treatment is going, whatever the insurer has sent you, and the questions keeping you up. A rough outline is plenty for a first call — you do not need a file.
+              The accident date and where it happened, how treatment is going, whatever the insurer has sent you, and the questions keeping you up. A rough outline is plenty for a first call. You do not need a file.
             </p>
           </motion.div>
         </div>
@@ -69,7 +69,7 @@ const Contact = () => {
             <span className="text-[11px] text-foreground/48">Send a note</span>
             <h2 className="editorial-serif mt-3 text-[clamp(2rem,2.55vw,3rem)] leading-[0.98] tracking-[-0.022em]">Where does it stand right now?</h2>
             <p className="mt-4 max-w-[470px] text-[14px] leading-6 text-foreground/58">
-              Useful to include: where and when it happened, what was injured, how treatment is going, whether you have missed work, and any claim or insurance details you have. Nobody expects a complete file. One thing though — hold back anything confidential or time-critical until we have actually confirmed an attorney-client relationship, because an email is not private until then.
+              Useful to include: where and when it happened, what was injured, how treatment is going, whether you have missed work, and any claim or insurance details you have. Nobody expects a complete file. One thing though. Hold back anything confidential or time-critical until we have actually confirmed an attorney-client relationship, because an email is not private until then.
             </p>
             <WebsiteInquiryForm locale="en" />
           </motion.section>
