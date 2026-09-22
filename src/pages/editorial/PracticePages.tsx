@@ -304,14 +304,14 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
             </div>
           </ReadingSectionBlock>
 
-          <ReadingSectionBlock id="evidence" locale={locale} Icon={FileText} kicker={isKo(locale) ? "03 · 증거" : "03 · Evidence"} title={isKo(locale) ? "초기 기록이 사건을 설명하는 데 도움이 됩니다." : practice.evidenceTitle} intro={isKo(locale) ? "사진, 영상, 목격자, 보고서, 진료기록과 보험 관련 자료를 가능한 한 일찍 보관해 두는 것이 좋습니다." : practice.evidenceIntro}>
+          <ReadingSectionBlock id="evidence" locale={locale} Icon={FileText} kicker={isKo(locale) ? "03 · 증거" : "03 · Evidence"} title={isKo(locale) ? practice.koEvidenceTitle : practice.evidenceTitle} intro={isKo(locale) ? practice.koEvidenceIntro : practice.evidenceIntro}>
             <EvidenceVisuals locale={locale} />
             <div className="editorial-issue-list">
               {practice.evidenceItems.map((item, index) => <div key={item} className="editorial-issue-row"><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong></div>)}
             </div>
           </ReadingSectionBlock>
 
-          <ReadingSectionBlock id="value" locale={locale} Icon={Scale} kicker={isKo(locale) ? "04 · 손해" : "04 · Damages & value"} title={isKo(locale) ? "사건 가치는 하나의 공식으로 계산되지 않습니다." : enhancement.headings.value} intro={isKo(locale) ? "치료, 향후 치료 필요, 임금 손실, 장기적인 기능 제한, 과실, 보험과 증거의 질이 함께 영향을 줄 수 있습니다." : practice.valueIntro}>
+          <ReadingSectionBlock id="value" locale={locale} Icon={Scale} kicker={isKo(locale) ? "04 · 손해" : "04 · Damages & value"} title={isKo(locale) ? "사건 가치는 하나의 공식으로 계산되지 않습니다." : enhancement.headings.value} intro={isKo(locale) ? practice.koValueIntro : practice.valueIntro}>
             <ClaimValueVisual locale={locale} />
             <div className="editorial-issue-list">
               {(isKo(locale)
@@ -322,7 +322,7 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
             <a href={`${localePrefix(locale)}/case-value-calculator`} className="editorial-inline-link mt-6"><span>{isKo(locale) ? "캘리포니아 사건 가치 계산기 보기" : "Use the California case-value calculator"}</span><ArrowRight className="h-4 w-4" /></a>
           </ReadingSectionBlock>
 
-          <ReadingSectionBlock id="insurance" locale={locale} Icon={Umbrella} kicker={isKo(locale) ? "05 · 보험" : "05 · Insurance"} title={isKo(locale) ? "누가 책임이 있고 어떤 보험이 적용되는지 확인합니다." : enhancement.headings.insurance} intro={isKo(locale) ? "사고 유형에 따라 운전자, 차량 소유자, 사업체, 고용주 또는 여러 보험이 함께 관련될 수 있습니다." : practice.insuranceIntro} />
+          <ReadingSectionBlock id="insurance" locale={locale} Icon={Umbrella} kicker={isKo(locale) ? "05 · 보험" : "05 · Insurance"} title={isKo(locale) ? "누가 책임이 있고 어떤 보험이 적용되는지 확인합니다." : enhancement.headings.insurance} intro={isKo(locale) ? practice.koInsuranceIntro : practice.insuranceIntro} />
 
           <ReadingSectionBlock id="deadlines" locale={locale} Icon={CalendarClock} kicker={isKo(locale) ? "06 · 기한" : "06 · California deadlines"} title={isKo(locale) ? "법적 기한과 증거 보존 기한은 같은 것이 아닙니다." : "How long do you have?"} intro={isKo(locale) ? "캘리포니아의 많은 개인상해 소송에는 일반적인 제소 기한이 있지만 공공기관 관련 청구 등은 더 짧은 절차가 적용될 수 있습니다. 또한 영상, 전자기록, 목격자 기억은 훨씬 빨리 사라질 수 있습니다." : enhancement.deadlineNote}>
             <a href={`${localePrefix(locale)}/blogs/california-personal-injury-deadlines`} className="editorial-inline-link"><span>{isKo(locale) ? "캘리포니아 개인상해 기한 가이드" : "Read the California injury-deadlines guide"}</span><ArrowRight className="h-4 w-4" /></a>
