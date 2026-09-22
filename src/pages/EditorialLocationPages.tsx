@@ -4,6 +4,27 @@ import heroBoardroom from "@/assets/law-firm/hero-city-boardroom.webp";
 import heroJustice from "@/assets/law-firm/hero-justice-library.webp";
 import ClaimJourney from "@/components/ClaimJourney";
 import { EvidenceVisuals, GuideAttorney } from "@/components/ClaimVisuals";
+import PageByline from "@/components/PageByline";
+import cityCarCollision from "@/assets/law-firm/car-collision.jpg";
+import cityCollisionDamage from "@/assets/law-firm/collision-damage.jpg";
+import cityTruckHighway from "@/assets/law-firm/truck-highway.jpg";
+import cityMotorcycleRoad from "@/assets/law-firm/motorcycle-road.jpg";
+import cityPedestrianCrossing from "@/assets/law-firm/pedestrian-crossing.jpg";
+
+// Each city gets its own image so ten pages do not share one photo. Chosen to
+// echo the collision mix described in that city's localIntro.
+const cityImages: Record<string, string> = {
+  "buena-park": cityCarCollision,
+  anaheim: cityPedestrianCrossing,
+  fullerton: cityPedestrianCrossing,
+  "garden-grove": cityCollisionDamage,
+  cypress: cityMotorcycleRoad,
+  "la-habra": cityCarCollision,
+  "la-mirada": cityCollisionDamage,
+  cerritos: cityTruckHighway,
+  norwalk: cityTruckHighway,
+  whittier: cityMotorcycleRoad,
+};
 import { getServiceLocation, serviceLocations, type SiteLocale } from "@/data/injurySite";
 import {
   ConsultationCta,
@@ -129,7 +150,8 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
           description={isBuenaPark && !isKo(locale) ? "A practical local guide to Buena Park collision data, accident records, evidence preservation, California deadlines, and the injury matters handled from the firm's Buena Park office." : description}
           image={heroJustice}
         />
-        <ClaimJourney locale={locale} subject={name} guideId="overview" />
+        <div className="site-shell pt-8"><PageByline locale={locale} /></div>
+        <ClaimJourney locale={locale} subject={name} guideId="overview" contextImage={cityImages[location.slug]} />
         <GuideAttorney locale={locale} />
         <ReadingLayout
           locale={locale}

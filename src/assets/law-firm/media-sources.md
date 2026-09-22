@@ -26,6 +26,7 @@ shown where the firm actually holds the award, issued in this firm's name.
 
 | Local file | Award |
 | --- | --- |
+| avvo.png | Avvo — links to the firm's Avvo attorney profile |
 | aaoa-top-100.webp | American Academy of Attorneys — Top 100, 2025 |
 | naopia-top-ten-attorney-2025.webp | NAOPIA — Nation's Premier Top Ten Personal Injury Attorney, 2025 |
 | lawyers-of-distinction-2026.webp | Lawyers of Distinction, 2026 |

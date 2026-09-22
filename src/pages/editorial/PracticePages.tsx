@@ -3,6 +3,7 @@ import { useParams } from "@tanstack/react-router";
 import heroJustice from "@/assets/law-firm/hero-justice-library.webp";
 import heroCourthouse from "@/assets/law-firm/hero-courthouse.webp";
 import ClaimJourney from "@/components/ClaimJourney";
+import PageByline from "@/components/PageByline";
 import { EvidenceVisuals, ClaimValueVisual, GuideAttorney } from "@/components/ClaimVisuals";
 import { practiceMedia } from "@/data/practiceMedia";
 import { getPracticeArea, practiceAreas, type SiteLocale } from "@/data/injurySite";
@@ -253,6 +254,7 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
           description={description}
           image={practiceMedia[practice.slug]?.src ?? heroCourthouse}
         />
+        <div className="site-shell pt-8"><PageByline locale={locale} /></div>
         <ClaimJourney locale={locale} subject={title} guideId="understand" contextImage={practiceMedia[practice.slug]?.src} />
         <GuideAttorney locale={locale} />
         <ReadingLayout
