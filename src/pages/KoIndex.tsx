@@ -161,7 +161,7 @@ const BookingKo = () => {
   const isInView = useInView(ref, { once: true, amount: 0.15 });
 
   return (
-    <section id="booking" ref={ref} className="relative isolate overflow-hidden bg-[#171717] py-20 text-white md:py-24">
+    <section id="booking" ref={ref} style={{ minHeight: "100svh" }} className="relative isolate flex w-full items-center overflow-hidden bg-[#171717] py-20 text-white md:py-24">
       <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1800&q=82" alt="" loading="lazy" decoding="async" className="absolute inset-0 -z-20 h-full w-full object-cover opacity-[0.18]" />
       <div className="absolute inset-0 -z-10 bg-black/65" />
 
