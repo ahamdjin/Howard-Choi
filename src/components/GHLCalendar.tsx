@@ -403,8 +403,8 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
               >
                 {isKorean ? "다시 시도" : "Try again"}
               </button>
-              <a href="tel:+17146900007" className="mt-4 inline-flex w-fit items-center gap-2 text-[10px] text-[#1e1c1a]/46">
-                <Phone className="h-3 w-3" /> 714-690-0007
+              <a href="tel:+17148448494" className="mt-4 inline-flex w-fit items-center gap-2 text-[10px] text-[#1e1c1a]/46">
+                <Phone className="h-3 w-3" /> 714-844-8494
               </a>
             </div>
           ) : selectedDate ? (
@@ -540,8 +540,8 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
               >
                 {isKorean ? "다음 달 보기" : "View next month"}<ArrowRight className="h-3.5 w-3.5" />
               </button>
-              <a href="tel:+17146900007" className="mt-4 inline-flex w-fit items-center gap-2 text-[10px] text-[#1e1c1a]/46">
-                <Phone className="h-3 w-3" /> 714-690-0007
+              <a href="tel:+17148448494" className="mt-4 inline-flex w-fit items-center gap-2 text-[10px] text-[#1e1c1a]/46">
+                <Phone className="h-3 w-3" /> 714-844-8494
               </a>
             </div>
           )}

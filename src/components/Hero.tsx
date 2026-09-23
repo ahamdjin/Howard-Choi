@@ -99,7 +99,7 @@ const Hero = () => {
               <button onClick={() => document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })} className="liquid-cta inline-flex w-fit items-center gap-3 rounded-full px-6 py-3 text-[13px] font-medium">
                 <span className="relative z-10">Free Consultation</span><ArrowRight className="relative z-10 h-4 w-4" />
               </button>
-              <a href="tel:+17146900007" className="text-[13px] text-[#f3eee5]/82 transition-opacity hover:opacity-70 md:text-sm">Or call (+1) 714-690-0007</a>
+              <a href="tel:+17148448494" className="text-[13px] text-[#f3eee5]/82 transition-opacity hover:opacity-70 md:text-sm">Or call (+1) 714-844-8494</a>
             </motion.div>
             <motion.p initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.58, duration: 0.7 }} className="mt-5 text-[13px] text-[#f3eee5]/62">
               Free consultation · No attorney fee unless there is a recovery.

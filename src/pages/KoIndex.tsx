@@ -100,7 +100,7 @@ const HeroKo = () => {
             <motion.p initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.7 }} className="mt-5 max-w-[590px] text-[15px] leading-7 text-[#f3eee5]/74">부에나파크와 인근 지역에서 사고로 부상을 입은 분들을 위해 명확하고 신속한 법률 대응을 제공합니다.</motion.p>
             <motion.div initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.7 }} className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center">
               <button onClick={() => document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })} className="liquid-cta inline-flex w-fit items-center gap-3 rounded-full px-6 py-3 text-[13px] font-medium"><span className="relative z-10">상담 요청</span><ArrowRight className="relative z-10 h-4 w-4" /></button>
-              <a href="tel:+17146900007" className="text-[13px] text-[#f3eee5]/82 transition-opacity hover:opacity-70">전화 +1 714-690-0007</a>
+              <a href="tel:+17148448494" className="text-[13px] text-[#f3eee5]/82 transition-opacity hover:opacity-70">전화 +1 714-844-8494</a>
             </motion.div>
           </div>
         </div>
@@ -161,7 +161,7 @@ const BookingKo = () => {
   const isInView = useInView(ref, { once: true, amount: 0.15 });
 
   return (
-    <section id="booking" ref={ref} className="relative isolate overflow-hidden bg-[#171717] py-20 text-white md:py-24">
+    <section id="booking" ref={ref} style={{ minHeight: "100svh" }} className="relative isolate flex w-full items-center overflow-hidden bg-[#171717] py-20 text-white md:py-24">
       <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1800&q=82" alt="" loading="lazy" decoding="async" className="absolute inset-0 -z-20 h-full w-full object-cover opacity-[0.18]" />
       <div className="absolute inset-0 -z-10 bg-black/65" />
 

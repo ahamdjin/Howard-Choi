@@ -20,7 +20,7 @@ const featured = [
 const HomeServiceAreas = ({ locale = "en" }: { locale?: SiteLocale }) => {
   const ko = locale === "ko";
   return (
-  <section id="areas" aria-labelledby="home-service-areas-heading" className="bg-background py-20 text-foreground md:py-24 lg:py-28">
+  <section id="areas" aria-labelledby="home-service-areas-heading" style={{ minHeight: "100svh" }} className="flex w-full items-center bg-background py-20 text-foreground md:py-24 lg:py-28">
     <div className="site-shell">
       <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-16">
         <div className="max-w-[860px]">
