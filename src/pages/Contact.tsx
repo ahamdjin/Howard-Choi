@@ -39,7 +39,7 @@ const Contact = () => {
             </h1>
             <div className="mt-6 flex flex-wrap gap-3"><a href="#calendar" className="inline-flex min-h-11 items-center rounded-full bg-[#f3eee5] px-5 py-3 text-sm font-semibold text-[#17130f]">Book a consultation</a><a href="#message" className="inline-flex min-h-11 items-center rounded-full border border-white/50 px-5 py-3 text-sm">Send a message</a></div>
             <p className="mt-5 max-w-[540px] text-[14px] leading-6 text-[#f3eee5]/68 md:text-[15px]">
-              The accident date and where it happened, how treatment is going, whatever the insurer has sent you, and the questions keeping you up. A rough outline is plenty for a first call. You do not need a file.
+              The accident date and where it happened, how treatment is going, whatever the insurer has sent you, and the questions keeping you up. A rough outline is plenty for a first call. You do not need a file. Our staff can assist in English, Korean, and Spanish.
             </p>
           </motion.div>
         </div>
