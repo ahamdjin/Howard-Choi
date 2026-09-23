@@ -60,11 +60,11 @@ const ThankYou = ({ locale = "en" }: ThankYouProps) => {
                     <span className="relative z-10">{isKorean ? "홈으로 돌아가기" : "Back to home"}</span>
                   </a>
                   <a
-                    href="tel:+17146900007"
+                    href="tel:+17148448494"
                     className="inline-flex w-fit items-center gap-2 px-2 py-3 text-[12px] text-[#f3eee5]/64 transition-colors hover:text-[#f3eee5]"
                   >
                     <Phone className="h-3.5 w-3.5" />
-                    <span>714-690-0007</span>
+                    <span>714-844-8494</span>
                   </a>
                 </div>
               </div>
