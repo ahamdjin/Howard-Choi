@@ -70,7 +70,11 @@ const Contact = () => {
             <p className="mt-4 max-w-[470px] text-[14px] leading-6 text-foreground/58">
               Helpful starting details include where and when the accident happened, the type of injury, treatment so far, whether work has been affected, and any insurance or claim information you already have. You do not need every record before reaching out. Avoid sending confidential or time-sensitive information until an attorney-client relationship has been confirmed.
             </p>
-            <WebsiteInquiryForm locale="en" />
+            <WebsiteInquiryForm
+              locale="en"
+              formId="contact-inquiry-form"
+              formName="Website Contact Inquiry"
+            />
           </motion.section>
 
           <motion.section id="calendar" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} transition={{ duration: 0.68, delay: 0.06 }} className="w-full scroll-mt-20 rounded-[4px] bg-[#1a1714] p-4 text-[#f3eee5] md:p-5">

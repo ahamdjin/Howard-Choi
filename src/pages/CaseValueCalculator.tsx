@@ -363,7 +363,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
                     <div className="mt-6 border-t border-[#211E1B]/10 pt-5">
                       <div className="flex items-start gap-3"><Mail className="mt-0.5 h-4 w-4 shrink-0 text-[#6E635A]" /><div><h3 className="text-[13px] font-semibold">{ko ? "전문가 의견 받기" : "Get an expert opinion"}</h3><p className="mt-1 text-[9px] leading-4 text-[#211E1B]/70">{ko ? "이름, 이메일과 계산 요약을 팀에 보내 검토를 요청합니다." : "Send your name, email, and calculator summary to the team for review."}</p></div></div>
 
-                      <form id="case-calculater" name="Case Calculater" data-form-name="Case Calculater" onSubmit={requestReview} className="mt-4 grid gap-3">
+                      <form id="case-value-calculator-form" name="Website Case Value Calculator" data-form-name="Website Case Value Calculator" data-external-form="highlevel" onSubmit={requestReview} className="mt-4 grid gap-3">
                         <label className="block">
                           <span className="mb-1.5 block text-[10px] font-medium text-[#211E1B]/58">{ko ? "성명" : "Full name"}</span>
                           <input name="full_name" value={review.full_name} onChange={(event) => setReview((current) => ({ ...current, full_name: event.target.value }))} required autoComplete="name" placeholder={ko ? "성명" : "Full name"} className="h-10 w-full rounded-[3px] border border-[#211E1B]/12 bg-white px-3 text-[12px] outline-none focus:border-[#6E635A]" />
