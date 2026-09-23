@@ -48,7 +48,11 @@ const KoContact = () => {
             <span className="text-[11px] text-foreground/48">메시지 보내기</span>
             <h2 style={koSerif} className="mt-3 text-[clamp(1.9rem,2.5vw,2.75rem)] font-medium leading-[1.22] tracking-[-0.04em]">현재 사건이 어느 단계인지 알려주세요.</h2>
             <p className="mt-4 max-w-[480px] text-[14px] leading-7 text-foreground/58">사고가 발생한 장소와 날짜, 부상과 치료 상황, 업무에 미친 영향, 현재 가지고 있는 보험·청구 정보가 좋은 시작점입니다. 모든 기록이 없어도 문의할 수 있습니다. 변호사-의뢰인 관계가 확인되기 전에는 기밀정보나 긴급한 민감정보를 보내지 마세요.</p>
-            <WebsiteInquiryForm locale="ko" />
+            <WebsiteInquiryForm
+              locale="ko"
+              formId="ko-contact-inquiry-form"
+              formName="Website Korean Contact Inquiry"
+            />
           </motion.section>
 
           <motion.section id="calendar" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} transition={{ duration: 0.68, delay: 0.06 }} className="w-full scroll-mt-20 rounded-[4px] bg-[#1a1714] p-4 text-[#f3eee5] md:p-5">

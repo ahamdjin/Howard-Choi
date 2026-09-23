@@ -4,9 +4,15 @@ import { Textarea } from "@/components/ui/textarea";
 
 type WebsiteInquiryFormProps = {
   locale?: "en" | "ko";
+  formId?: string;
+  formName?: string;
 };
 
-const WebsiteInquiryForm = ({ locale = "en" }: WebsiteInquiryFormProps) => {
+const WebsiteInquiryForm = ({
+  locale = "en",
+  formId = "website-form",
+  formName = "Website Inquiry",
+}: WebsiteInquiryFormProps) => {
   const [formData, setFormData] = useState({ full_name: "", email: "", subject: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const isKorean = locale === "ko";
@@ -28,14 +34,15 @@ const WebsiteInquiryForm = ({ locale = "en" }: WebsiteInquiryFormProps) => {
     // visible DOM fields. Keep the values in place briefly, then move to thank-you.
     window.setTimeout(() => {
       window.location.assign(isKorean ? "/ko/thank-you" : "/thank-you");
-    }, 900);
+    }, 1500);
   };
 
   return (
     <form
-      id="website-form"
-      name="website form"
-      data-form-name="website form"
+      id={formId}
+      name={formName}
+      data-form-name={formName}
+      data-external-form="highlevel"
       onSubmit={handleSubmit}
       className="mt-8 space-y-3"
     >
