@@ -39,6 +39,8 @@ const FooterContact = ({ locale = "en" }: { locale?: SiteLocale }) => {
         {brand.email}
       </a>
 
+      <div className="mt-4 text-[11px] leading-5 text-muted-foreground">{ko ? "직원 상담: 영어 · 한국어 · 스페인어" : "Staff support: English · Korean · Spanish"}</div>
+
       <div className="mt-5 flex items-center gap-3">
         <a
           href={brand.gbpHref}
