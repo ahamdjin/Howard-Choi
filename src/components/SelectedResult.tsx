@@ -41,7 +41,7 @@ const results = [
 const SelectedResult = ({ locale = "en" }: { locale?: SiteLocale }) => {
   const ko = locale === "ko";
   return (
-  <section id="results" aria-labelledby="home-results-heading" className="bg-[#0f0f0f] py-20 text-[#f4f1ea] md:py-24 lg:py-28">
+  <section id="results" aria-labelledby="home-results-heading" style={{ minHeight: "100svh" }} className="flex w-full items-center bg-[#0f0f0f] py-20 text-[#f4f1ea] md:py-24 lg:py-28">
     <div className="site-shell">
       <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-16">
         <div>
