@@ -97,7 +97,7 @@ export const legalServiceJsonLd = {
   "@id": `${SITE_URL}/#legal-service`,
   name: SITE_NAME,
   url: SITE_URL,
-  telephone: "+1-714-690-0007",
+  telephone: "+1-714-844-8494",
   address: {
     "@type": "PostalAddress",
     streetAddress: "6301 Beach Blvd, Suite 216",
