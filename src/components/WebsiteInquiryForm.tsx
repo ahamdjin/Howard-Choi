@@ -28,14 +28,15 @@ const WebsiteInquiryForm = ({ locale = "en" }: WebsiteInquiryFormProps) => {
     // visible DOM fields. Keep the values in place briefly, then move to thank-you.
     window.setTimeout(() => {
       window.location.assign(isKorean ? "/ko/thank-you" : "/thank-you");
-    }, 900);
+    }, 1500);
   };
 
   return (
     <form
-      id="website-form"
-      name="website form"
-      data-form-name="website form"
+      id="website-inquiry-form"
+      name="Website Inquiry"
+      data-form-name="Website Inquiry"
+      data-external-form="highlevel"
       onSubmit={handleSubmit}
       className="mt-8 space-y-3"
     >

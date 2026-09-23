@@ -4,6 +4,8 @@ import { ArrowRight, Minus, Plus } from "lucide-react";
 import KoreanNavigation from "@/components/KoreanNavigation";
 import KoreanFooter from "@/components/KoreanFooter";
 import KoreanLocations from "@/components/KoreanLocations";
+import WebsiteInquiryForm from "@/components/WebsiteInquiryForm";
+import { brand } from "@/data/injurySite";
 import ClientSuccessFeature from "@/components/ClientSuccessFeature";
 import HomeImmediateTrust from "@/components/HomeImmediateTrust";
 import TrustBadges from "@/components/TrustBadges";
@@ -156,8 +158,50 @@ const FAQKo = () => {
 
 const BookingKo = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.25 });
-  return <section id="booking" ref={ref} className="relative isolate flex min-h-[100svh] items-center overflow-hidden bg-[#171717] py-20 text-white md:py-24"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1800&q=82" alt="" loading="lazy" decoding="async" className="absolute inset-0 -z-20 h-full w-full object-cover opacity-[0.18]" /><div className="absolute inset-0 -z-10 bg-black/60" /><div className="site-shell w-full"><motion.div initial={{ opacity: 0, y: 22 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.75 }} className="mx-auto max-w-[790px] text-center"><span className="mb-5 block text-[12px] text-white/52">사고 이후 다음 단계</span><h2 style={koSerif} className="text-[clamp(2.45rem,3.8vw,3.9rem)] font-medium leading-[1.2] tracking-[-0.045em]">상황을 설명하는 것부터 시작하세요.</h2><p className="mx-auto mt-6 max-w-[600px] text-[15px] leading-7 text-white/60">사고 경위와 현재 상황을 알려주시면 상담 가능 여부와 다음 단계에 필요한 기본 정보를 확인할 수 있습니다.</p><div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row"><a href="/ko/contact" className="liquid-cta inline-flex items-center gap-3 rounded-full px-6 py-3 text-[13px] font-medium"><span className="relative z-10">상담 요청</span><ArrowRight className="relative z-10 h-4 w-4" /></a><a href="tel:+17146900007" className="text-[13px] text-white/68 hover:text-white">전화 +1 714-690-0007</a></div><a href="https://share.google/LBJ1C8zWrZFjJBkVe" target="_blank" rel="noreferrer" className="mt-6 inline-block text-[12px] text-white/42 transition-colors hover:text-white/68">6301 Beach Blvd, Buena Park, CA 90621</a></motion.div></div></section>;
+  const isInView = useInView(ref, { once: true, amount: 0.15 });
+
+  return (
+    <section id="booking" ref={ref} className="relative isolate overflow-hidden bg-[#171717] py-20 text-white md:py-24">
+      <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1800&q=82" alt="" loading="lazy" decoding="async" className="absolute inset-0 -z-20 h-full w-full object-cover opacity-[0.18]" />
+      <div className="absolute inset-0 -z-10 bg-black/65" />
+
+      <div className="site-shell">
+        <motion.div
+          initial={{ opacity: 0, y: 22 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.75 }}
+          className="grid gap-12 lg:grid-cols-[1fr_0.9fr] lg:items-start lg:gap-20"
+        >
+          <div>
+            <span className="mb-5 block text-[10px] tracking-[0.14em] text-white/48">상담 시작</span>
+            <h2 style={koSerif} className="text-[clamp(2.45rem,3.8vw,3.9rem)] font-medium leading-[1.2] tracking-[-0.045em]">
+              무슨 일이 있었는지 알려주세요.
+            </h2>
+            <p className="mt-6 max-w-[520px] text-[15px] leading-7 text-white/60">
+              사고 날짜와 장소, 현재 치료 상황, 그리고 궁금한 점을 알려주세요. 상담은 무료이며, 사건 회복이 없는 경우 변호사 비용이 없는 성공보수 방식으로 진행할 수 있습니다.
+            </p>
+
+            <div className="mt-10 space-y-5 border-t border-white/12 pt-8">
+              <a href={brand.phoneHref} className="text-[13px] text-white/82 hover:text-white">
+                전화 {brand.phoneDisplay}
+              </a>
+              <a href="https://share.google/LBJ1C8zWrZFjJBkVe" target="_blank" rel="noreferrer" className="block text-[12px] leading-5 text-white/52 hover:text-white/72">
+                {brand.address}
+              </a>
+            </div>
+          </div>
+
+          <div className="rounded-[3px] bg-[#f7f6f3] p-6 text-foreground shadow-[0_30px_80px_rgba(0,0,0,0.35)] sm:p-8">
+            <div className="text-[10px] tracking-[0.12em] text-foreground/38">무료 상담</div>
+            <h3 style={koSerif} className="mt-3 text-[clamp(1.45rem,2vw,1.85rem)] font-medium leading-[1.2] tracking-[-0.035em]">
+              연락 요청을 남겨주세요.
+            </h3>
+            <WebsiteInquiryForm locale="ko" />
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
 };
 
 const KoIndex = () => (

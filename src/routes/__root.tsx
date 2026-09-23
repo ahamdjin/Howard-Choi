@@ -68,6 +68,7 @@ function RootDocument({ children }: { children: ReactNode }) {
   // submit anywhere unless "/" stays in this list.
   const externalFormPage = [
     "/",
+    "/ko",
     "/contact",
     "/ko/contact",
     "/case-value-calculator",
