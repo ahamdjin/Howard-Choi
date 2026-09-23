@@ -130,7 +130,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
     setCalculated(false);
     setError("");
   };
-  const [review, setReview] = useState({ full_name: "", email: "", message: "" });
+  const [review, setReview] = useState({ full_name: "", email: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const caseTypes: Array<{ value: CaseType; en: string; ko: string }> = [
@@ -231,7 +231,6 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
     }
     setError("");
     setCalculated(true);
-    setReview((current) => ({ ...current, message: buildSummary() }));
     window.setTimeout(() => {
       document.getElementById("case-estimate-result")?.focus({ preventScroll: true });
       document.getElementById("case-estimate-result")?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
@@ -242,8 +241,16 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
     setState(initialState);
     setCalculated(false);
     setError("");
-    setReview({ full_name: "", email: "", message: "" });
+    setReview({ full_name: "", email: "" });
     setIsSubmitting(false);
+  };
+
+  const buildSubject = () => {
+    const caseLabel = caseTypes.find((item) => item.value === state.caseType);
+    const incident = ko ? caseLabel?.ko : caseLabel?.en;
+    return incident
+      ? `${ko ? "사건 가치 계산기 검토" : "Case Value Calculator Review"} - ${incident}`
+      : (ko ? "사건 가치 계산기 검토" : "Case Value Calculator Review");
   };
 
   const requestReview = (event: React.FormEvent<HTMLFormElement>) => {
@@ -364,7 +371,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
                       <div className="flex items-start gap-3"><Mail className="mt-0.5 h-4 w-4 shrink-0 text-[#6E635A]" /><div><h3 className="text-[13px] font-semibold">{ko ? "전문가 의견 받기" : "Get an expert opinion"}</h3><p className="mt-1 text-[9px] leading-4 text-[#211E1B]/70">{ko ? "이름, 이메일과 계산 요약을 팀에 보내 검토를 요청합니다." : "Send your name, email, and calculator summary to the team for review."}</p></div></div>
 
                       <form id="website-inquiry-form" name="Website Inquiry" data-form-name="Website Inquiry" data-external-form="highlevel" onSubmit={requestReview} className="mt-4 grid gap-3">
-                        <input type="hidden" name="subject" value={ko ? "Case Value Calculator Review - Korean" : "Case Value Calculator Review"} />
+                        <input type="hidden" name="subject" value={buildSubject()} />
                         <label className="block">
                           <span className="mb-1.5 block text-[10px] font-medium text-[#211E1B]/58">{ko ? "성명" : "Full name"}</span>
                           <input name="full_name" value={review.full_name} onChange={(event) => setReview((current) => ({ ...current, full_name: event.target.value }))} required autoComplete="name" placeholder={ko ? "성명" : "Full name"} className="h-10 w-full rounded-[3px] border border-[#211E1B]/12 bg-white px-3 text-[12px] outline-none focus:border-[#6E635A]" />
@@ -375,7 +382,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
                         </label>
                         <label className="block">
                           <span className="mb-1.5 block text-[10px] font-medium text-[#211E1B]/58">{ko ? "메시지 / 계산 요약" : "Message / calculator summary"}</span>
-                          <textarea name="message" value={review.message} onChange={(event) => setReview((current) => ({ ...current, message: event.target.value }))} required rows={6} className="w-full resize-y rounded-[3px] border border-[#211E1B]/10 bg-white p-3 text-[10px] leading-5 text-[#211E1B]/62 outline-none focus:border-[#6E635A]" />
+                          <textarea name="message" value={buildSummary()} readOnly required rows={6} className="w-full resize-y rounded-[3px] border border-[#211E1B]/10 bg-white p-3 text-[10px] leading-5 text-[#211E1B]/62 outline-none focus:border-[#6E635A]" />
                         </label>
                         <button type="submit" disabled={isSubmitting} className="inline-flex h-10 items-center justify-between rounded-[3px] bg-[#211E1B] px-4 text-[10px] font-semibold text-white disabled:opacity-60"><span>{isSubmitting ? (ko ? "전송 중..." : "Sending...") : (ko ? "결과 전송 + 검토 요청" : "Send result + request review")}</span><ArrowRight className="h-3.5 w-3.5" /></button>
                         <p className="text-[8px] leading-4 text-[#211E1B]/34">{ko ? "제출은 변호사-의뢰인 관계를 형성하지 않습니다. 기밀 또는 긴급한 정보를 보내지 마세요." : "Submitting does not create an attorney-client relationship. Do not send confidential or time-sensitive information."}</p>
