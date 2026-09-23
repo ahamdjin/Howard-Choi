@@ -71,11 +71,7 @@ const Contact = () => {
             <p className="mt-4 max-w-[470px] text-[14px] leading-6 text-foreground/58">
               Useful to include: where and when it happened, what was injured, how treatment is going, whether you have missed work, and any claim or insurance details you have. Nobody expects a complete file. One thing though. Hold back anything confidential or time-critical until we have actually confirmed an attorney-client relationship, because an email is not private until then.
             </p>
-            <WebsiteInquiryForm
-              locale="en"
-              formId="contact-inquiry-form"
-              formName="Website Contact Inquiry"
-            />
+            <WebsiteInquiryForm locale="en" />
           </motion.section>
 
           <motion.section id="calendar" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} transition={{ duration: 0.68, delay: 0.06 }} className="w-full scroll-mt-20 rounded-[4px] bg-[#1a1714] p-4 text-[#f3eee5] md:p-5">

@@ -82,11 +82,7 @@ const Booking = () => {
             <h3 className="editorial-serif mt-3 text-[clamp(1.5rem,2vw,1.95rem)] leading-[1.1] tracking-[-0.02em]">
               Request a callback.
             </h3>
-            <WebsiteInquiryForm
-              locale="en"
-              formId="home-consultation-form"
-              formName="Website Home Consultation"
-            />
+            <WebsiteInquiryForm locale="en" />
           </div>
         </motion.div>
       </div>
