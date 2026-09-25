@@ -109,7 +109,7 @@ export const legalServiceJsonLd = {
   employee: [{ "@id": `${SITE_URL}/#howard-choi` }],
   areaServed: serviceLocations.map((location) => ({ "@type": "City", name: location.name })),
   knowsAbout: ["Personal Injury", "Car Accidents", "Truck Accidents", "Motorcycle Accidents", "Pedestrian Accidents", "Rideshare Accidents", "Wrongful Death", "Premises Liability", "Serious Injuries"],
-  knowsLanguage: ["English", "Korean"],
+  knowsLanguage: ["English", "Korean", "Spanish"],
 };
 
 export const webSiteJsonLd = {
