@@ -7,7 +7,7 @@ export const Route = createFileRoute("/es_/terms")({
     title: "Términos de Uso | Buena Park Injury Lawyer",
     description: "Términos que regulan el uso del sitio de Buena Park Injury Lawyer.",
     path: "/es/terms",
-    locale: "es",
+    locale: "es-US",
     noindex: true,
     followWhenNoindex: true,
   }),
