@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import EsThankYou from "@/pages/es/EsThankYou";
+import ThankYou from "@/pages/ThankYou";
 import { buildSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/es_/thank-you")({
@@ -11,5 +11,5 @@ export const Route = createFileRoute("/es_/thank-you")({
     noindex: true,
     followWhenNoindex: true,
   }),
-  component: EsThankYou,
+  component: () => <ThankYou locale="es" />,
 });
