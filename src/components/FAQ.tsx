@@ -21,6 +21,19 @@ const faqCopy = {
       ["How much is my case worth?", "There is no single settlement formula. Important factors can include medical treatment, future care, lost wages or earning capacity, pain and functional limitations, responsibility for the accident, available insurance, liens, the strength of the evidence, and whether losses are temporary or long term. Our case-value calculator can provide an educational starting range, but an actual case requires review of the record."],
     ],
   },
+  es: {
+    eyebrow: "Después de un accidente",
+    title: "Respuestas útiles antes de su primera llamada.",
+    body: "Las preguntas que las personas suelen necesitar resolver primero después de un accidente grave en California.",
+    questions: [
+      ["¿Cuánto cuesta un abogado de accidentes?", "Los casos de lesiones personales generalmente se manejan con honorarios de contingencia, lo que significa que no hay honorarios de abogado a menos que haya una recuperación. La primera consulta es gratuita. El porcentaje específico y la forma de manejar los costos del caso se explican en un acuerdo escrito antes de comenzar la representación."],
+      ["¿Ofrecen consultas gratuitas?", "Sí. La primera conversación es gratuita y no existe obligación de contratar a la firma. Puede traer lo que ya tenga: fecha y lugar del accidente, fotos, número de reporte y cartas del seguro."],
+      ["¿Qué significa honorario de contingencia?", "Significa que los honorarios del abogado son un porcentaje de lo que realmente se recupera y solo se deben si el caso obtiene una recuperación. Los costos del caso se manejan por separado y se explican en el acuerdo escrito."],
+      ["¿Cuánto tiempo tengo para presentar una demanda por lesiones personales en California?", "California generalmente permite dos años desde la fecha de la lesión para presentar una demanda por lesiones personales, pero existen excepciones y los reclamos contra entidades públicas pueden tener plazos de aviso mucho más cortos. El plazo correcto depende de los hechos."],
+      ["¿Qué pasa si tuve parte de la culpa?", "California sigue principios de culpa comparativa. Una persona todavía puede tener un reclamo aunque se le atribuya parte de la responsabilidad, aunque la cantidad recuperable puede reducirse según su porcentaje de culpa."],
+      ["¿Cuánto vale mi caso?", "No existe una fórmula única. Pueden importar el tratamiento médico, la atención futura, salarios perdidos, capacidad de ingresos, dolor y limitaciones, responsabilidad, seguro disponible, gravámenes, la calidad de la evidencia y si las pérdidas son temporales o permanentes."],
+    ],
+  },
   ko: {
     eyebrow: "사고 이후",
     title: "첫 상담 전에 알아두면 좋은 답변.",
@@ -41,6 +54,7 @@ const FAQ = ({ locale = "en" }: FAQProps) => {
   const [open, setOpen] = useState<number | null>(null);
   const copy = faqCopy[locale];
   const ko = locale === "ko";
+  const es = locale === "es";
 
   return (
     <section id="faq" ref={ref} className="relative min-h-[100svh] bg-[#f3efe8] text-foreground">
@@ -56,7 +70,7 @@ const FAQ = ({ locale = "en" }: FAQProps) => {
             </h2>
             <p className="mt-4 max-w-[390px] text-[13px] leading-5 text-foreground/52">{copy.body}</p>
             <div className="mt-6 flex max-w-[390px] items-center gap-3 border-t border-foreground/12 pt-3 text-[9px] font-medium uppercase tracking-[0.14em] text-foreground/30">
-              <span>{String(copy.questions.length).padStart(2, "0")}</span><span>{ko ? "질문" : "Questions"}</span>
+              <span>{String(copy.questions.length).padStart(2, "0")}</span><span>{ko ? "질문" : es ? "Preguntas" : "Questions"}</span>
             </div>
           </motion.div>
 
