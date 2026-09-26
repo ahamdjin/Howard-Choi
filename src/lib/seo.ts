@@ -14,7 +14,7 @@ type SeoOptions = {
   description: string;
   path: string;
   alternatePath?: string;
-  locale?: "en-US" | "ko-US" | "es";
+  locale?: "en-US" | "ko-US" | "es-US";
   type?: "website" | "article";
   image?: string;
   noindex?: boolean;
@@ -38,7 +38,7 @@ export const buildSeo = ({
   const robots = noindex
     ? `noindex, ${followWhenNoindex ? "follow" : "nofollow"}`
     : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
-  const ogLocale = locale === "ko-US" ? "ko_KR" : locale === "es" ? "es_ES" : "en_US";
+  const ogLocale = locale === "ko-US" ? "ko_KR" : locale === "es-US" ? "es_US" : "en_US";
   const ogAlternate = locale === "ko-US" ? "en_US" : locale === "es" ? "en_US" : "ko_KR";
 
   const meta = [
@@ -65,7 +65,7 @@ export const buildSeo = ({
   }
 
   const links: Array<Record<string, string>> = noindex ? [] : [{ rel: "canonical", href: canonical }];
-  if (!noindex && englishPath && koreanPath && locale !== "es") {
+  if (!noindex && englishPath && koreanPath && locale !== "es-US") {
     links.push(
       { rel: "alternate", hrefLang: "en-US", href: absoluteUrl(englishPath) },
       { rel: "alternate", hrefLang: "ko-US", href: absoluteUrl(koreanPath) },
@@ -162,7 +162,7 @@ export const articleJsonLd = ({
   path: string;
   image: string;
   publishedAt: string;
-  locale: "en-US" | "ko-US" | "es";
+  locale: "en-US" | "ko-US" | "es-US";
 }) => ({
   "@context": "https://schema.org",
   "@type": "Article",
