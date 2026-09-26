@@ -8,7 +8,7 @@ export const Route = createFileRoute("/es_/attorney")({
       title: "Howard Choi | Abogado de Lesiones Personales en Buena Park",
       description: "Howard Jong-yol Choi es abogado de California en Buena Park, State Bar No. 284364, admitido en 2012. Consulte sus credenciales y enfoque en reclamos por accidentes.",
       path: "/es/attorney",
-      locale: "es",
+      locale: "es-US",
       noindex: true,
       followWhenNoindex: true,
     });
