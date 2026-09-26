@@ -1,95 +1,195 @@
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
-import { useParams } from "@tanstack/react-router";
+import { useRef } from "react";
+import { Link, useParams } from "react-router-dom";
+import PageBreadcrumb from "@/components/PageBreadcrumb";
 import SpanishNavigation from "@/components/SpanishNavigation";
 import SpanishFooter from "@/components/SpanishFooter";
-import brandLogo from "@/assets/law-firm/howard-choi-logo.png";
 import { esBlogPosts, getSpanishBlogBySlug } from "@/data/esBlogs";
+import brandLogo from "@/assets/law-firm/howard-choi-logo.png";
+
+type ArticleSupport = {
+  relatedHref: string;
+  relatedLabel: string;
+  relatedBody: string;
+  sources: Array<{ label: string; href: string }>;
+};
+
+const articleSupport: Record<string, ArticleSupport> = {
+  "what-to-do-after-a-car-accident-in-california": {
+    relatedHref: "/es/practice-areas/car-accidents",
+    relatedLabel: "Accidentes de auto en Buena Park",
+    relatedBody: "Revise la evidencia, seguro, daños, plazos y preguntas comunes que pueden importar en un reclamo por accidente de auto en California.",
+    sources: [
+      { label: "California DMV · Report of Traffic Accident (SR-1)", href: "https://www.dmv.ca.gov/portal/dmv-virtual-office/accident-reporting/" },
+      { label: "California Courts · Personal injury lawsuits", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury" },
+    ],
+  },
+  "california-comparative-fault-personal-injury": {
+    relatedHref: "/es/practice-areas/car-accidents",
+    relatedLabel: "Accidentes de auto y responsabilidad disputada",
+    relatedBody: "Vea cómo la evidencia de culpa, seguro, pérdidas médicas y culpa comparativa encajan dentro de un reclamo por accidente.",
+    sources: [
+      { label: "Judicial Council of California · Civil jury instructions", href: "https://courts.ca.gov/partners/california-jury-instructions/civil-jury-instructions-resource-center/civil-jury-instructions" },
+      { label: "California Courts · Personal injury lawsuits", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury" },
+    ],
+  },
+  "california-personal-injury-deadlines": {
+    relatedHref: "/es/practice-areas",
+    relatedLabel: "Áreas de lesiones personales",
+    relatedBody: "Los distintos accidentes plantean diferentes cuestiones de evidencia y seguro. Empiece con la guía que corresponda al tipo de reclamo.",
+    sources: [
+      { label: "California Courts · Statutes of limitations", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/statute-limitations" },
+      { label: "California Courts · Personal injury lawsuits", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury" },
+    ],
+  },
+  "how-much-is-my-personal-injury-case-worth-california": {
+    relatedHref: "/es/case-value-calculator",
+    relatedLabel: "Calculadora de valor del caso de California",
+    relatedBody: "Use el estimador educativo para ver cómo gastos médicos, pérdida salarial, tratamiento, pérdidas futuras, gravedad y culpa comparativa pueden cambiar un rango aproximado.",
+    sources: [
+      { label: "Judicial Council of California · Civil jury instructions", href: "https://courts.ca.gov/partners/california-jury-instructions/civil-jury-instructions-resource-center/civil-jury-instructions" },
+      { label: "California Courts · Personal injury lawsuits", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury" },
+    ],
+  },
+  "truck-accident-evidence-eld-records-california": {
+    relatedHref: "/es/practice-areas/truck-accidents",
+    relatedLabel: "Accidentes de camión en Buena Park",
+    relatedBody: "Vea cómo registros del conductor comercial, responsabilidad de la empresa, seguro, lesiones graves y preservación de evidencia encajan en un reclamo de camión.",
+    sources: [
+      { label: "FMCSA · Electronic logging device fact sheet", href: "https://www.fmcsa.dot.gov/hours-service/elds/eld-fact-sheet-english-version" },
+      { label: "California Courts · Personal injury lawsuits", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury" },
+    ],
+  },
+  "uber-lyft-accident-insurance-california": {
+    relatedHref: "/es/practice-areas/rideshare-accidents",
+    relatedLabel: "Accidentes de Uber y Lyft en Buena Park",
+    relatedBody: "Vea por qué el estado de la aplicación, registros del viaje, capas de seguro y evidencia ordinaria del choque importan en un reclamo de rideshare.",
+    sources: [
+      { label: "California Public Utilities Commission · TNC insurance requirements", href: "https://www.cpuc.ca.gov/regulatory-services/licensing/transportation-licensing-and-analysis-branch/transportation-network-companies/tnc-insurance-requirements" },
+      { label: "California Courts · Personal injury lawsuits", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury" },
+    ],
+  },
+};
 
 const EsBlogDetail = () => {
-  const params = useParams({ strict: false }) as { slug?: string };
-  const post = params.slug ? getSpanishBlogBySlug(params.slug) : undefined;
+  const { slug } = useParams();
+  const post = slug ? getSpanishBlogBySlug(slug) : undefined;
+  const articleRef = useRef<HTMLElement | null>(null);
+  const { scrollY } = useScroll();
+  const { scrollYProgress } = useScroll({ target: articleRef, offset: ["start start", "end end"] });
+  const imageY = useTransform(scrollY, [0, 1000], [0, 130]);
+  const imageScale = useTransform(scrollY, [0, 1000], [1, 1.025]);
+
   if (!post) {
-    return <div className="min-h-screen bg-background"><SpanishNavigation /><main className="site-shell flex min-h-[70svh] items-center justify-center"><div className="text-center"><div className="editorial-serif text-4xl">No encontramos esta guía.</div><Link to="/es/blogs" className="mt-6 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"><ArrowLeft className="h-4 w-4" /> Volver a las guías</Link></div></main><SpanishFooter /></div>;
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-background">
+        <div className="text-center"><div className="editorial-serif text-4xl">No encontramos esta guía.</div><Link to="/es/blogs" className="mt-6 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"><ArrowLeft className="h-4 w-4" /> Volver a las guías</Link></div>
+      </div>
+    );
   }
 
-  const index = esBlogPosts.findIndex((item) => item.slug === post.slug);
-  const related = esBlogPosts[(index + 1) % esBlogPosts.length];
+  const related = esBlogPosts.find((item) => item.slug !== post.slug);
+  const support = articleSupport[post.slug];
 
   return (
-    <div className="min-h-screen overflow-x-clip bg-background text-foreground">
+    <div className="min-h-screen overflow-x-clip bg-background">
       <SpanishNavigation />
-      <article>
-        <header className="relative min-h-[620px] overflow-hidden bg-[#17130f] pt-[60px] text-[#f3eee5]">
-          <img src={post.image} alt={post.alt} fetchPriority="high" decoding="async" className="absolute inset-0 h-full w-full object-cover opacity-48" />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(15,13,11,.9),rgba(15,13,11,.56)_58%,rgba(15,13,11,.3))]" />
-          <div className="site-shell relative z-10 flex min-h-[560px] items-end py-14 md:py-18">
-            <div className="max-w-[930px]">
-              <Link to="/es/blogs" className="mb-7 inline-flex items-center gap-2 text-[12px] text-[#f3eee5]/62 transition-colors hover:text-[#f3eee5]"><ArrowLeft className="h-3.5 w-3.5" /> Volver a las guías</Link>
-              <div className="text-[10px] uppercase tracking-[0.16em] text-white/46">{post.category} · {post.date} · {post.readingTime}</div>
-              <h1 className="editorial-serif mt-5 text-[clamp(2.8rem,5.4vw,5.8rem)] leading-[0.93] tracking-[-0.04em]">{post.title}</h1>
-              <p className="mt-7 max-w-[760px] text-[15px] leading-7 text-white/74">{post.intro}</p>
+      <motion.div aria-hidden="true" className="fixed inset-x-0 top-0 z-[120] h-[2px] origin-left bg-[#8b7864]" style={{ scaleX: scrollYProgress }} />
+
+      <article ref={articleRef} className="relative">
+        <header className="sticky top-0 flex h-[66svh] min-h-[540px] items-end overflow-hidden bg-[#17130f] text-[#f3eee5]">
+          <motion.img src={post.image} alt={post.alt} style={{ y: imageY, scale: imageScale }} fetchPriority="high" decoding="async" className="absolute inset-0 h-[118%] w-full object-cover" />
+          <div className="absolute inset-0 bg-[#17130f]/64" /><div className="absolute inset-0 bg-gradient-to-t from-[#17130f]/88 via-[#17130f]/10 to-[#17130f]/18" /><div className="hero-bottom-readability" />
+          <div className="site-shell relative z-10 pb-14 md:pb-16">
+            <Link to="/es/blogs" className="mb-7 inline-flex items-center gap-2 text-[12px] text-[#f3eee5]/62 transition-colors hover:text-[#f3eee5]"><ArrowLeft className="h-3.5 w-3.5" /> Volver al diario</Link>
+            <div className="max-w-[860px]">
+              <div className="mb-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-[12px] text-[#f3eee5]/60"><span>{post.category}</span><span>·</span><span>{post.date}</span><span>·</span><span>{post.readingTime}</span></div>
+              <PageBreadcrumb locale="es" title={post.title} /><h1 className="editorial-serif text-[clamp(2.85rem,4.8vw,5rem)] leading-[0.93] tracking-[-0.026em]">{post.title}</h1>
             </div>
           </div>
         </header>
 
-        <div className="site-shell py-12 md:py-16 lg:py-20">
-          <div className="grid gap-10 lg:grid-cols-[0.28fr_0.72fr] lg:gap-16">
-            <aside className="lg:sticky lg:top-28 lg:self-start">
-              <div className="border-t border-foreground/12 pt-5">
-                <div className="mb-4 text-[10px] uppercase tracking-[0.12em] text-foreground/38">En esta guía</div>
-                <nav className="space-y-3">{post.sections.map((section, sectionIndex) => <a key={section.heading} href={`#es-article-section-${sectionIndex + 1}`} className="group flex gap-3 text-[12px] leading-5 text-foreground/48 transition-colors hover:text-foreground"><span className="text-foreground/26">{String(sectionIndex + 1).padStart(2, "0")}</span><span>{section.heading}</span></a>)}</nav>
-              </div>
-            </aside>
-
-            <div>
-              <div className="rounded-[3px] bg-[#e9e6e1] p-7 md:p-8">
-                <div className="text-[10px] uppercase tracking-[0.12em] text-foreground/38">Idea principal</div>
-                <p className="editorial-serif mt-4 text-[1.55rem] leading-[1.3]">{post.takeaway}</p>
-              </div>
-
-              <div className="mt-10 space-y-12">
-                {post.sections.map((section, sectionIndex) => (
-                  <section id={`es-article-section-${sectionIndex + 1}`} key={section.heading} className="scroll-mt-28 border-t border-foreground/12 pt-7">
-                    <div className="text-[10px] text-foreground/32">{String(sectionIndex + 1).padStart(2, "0")}</div>
-                    <h2 className="editorial-serif mt-4 text-[clamp(1.9rem,3vw,2.8rem)] leading-[1.06] tracking-[-0.025em]">{section.heading}</h2>
-                    <div className="mt-6 max-w-[760px] space-y-6 text-[16px] leading-[1.85] text-foreground/84">{section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
-                  </section>
-                ))}
-              </div>
-
-              <div className="mt-12 grid gap-5 md:grid-cols-2">
-                <div className="rounded-[3px] bg-[#e9e6e1] p-7 md:p-8">
-                  <div className="text-[10px] uppercase tracking-[0.1em] text-foreground/38">Relacionado</div>
-                  <h2 className="editorial-serif mt-5 text-[1.7rem] leading-[1.2]">{post.relatedLabel}</h2>
-                  <Link to={post.relatedHref} className="mt-6 inline-flex items-center gap-2 text-[12px] font-medium">Ver recurso <ArrowRight className="h-4 w-4" /></Link>
-                </div>
-                <div className="rounded-[3px] border border-foreground/10 p-7 md:p-8">
-                  <div className="text-[10px] uppercase tracking-[0.1em] text-foreground/38">Fuentes oficiales</div>
-                  <div className="mt-5 space-y-3 text-[12px] leading-5">
-                    <a href="https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury" target="_blank" rel="noreferrer" className="flex items-center justify-between border-b border-foreground/10 py-3">California Courts · Personal injury <ArrowRight className="h-3.5 w-3.5" /></a>
-                    <a href="https://selfhelp.courts.ca.gov/civil-lawsuit/statute-limitations" target="_blank" rel="noreferrer" className="flex items-center justify-between border-b border-foreground/10 py-3">California Courts · Statutes of limitations <ArrowRight className="h-3.5 w-3.5" /></a>
+        <div className="relative z-10 bg-background">
+          <div className="site-shell py-14 md:py-18 lg:py-22">
+            <div className="mx-auto grid max-w-[1080px] gap-10 lg:grid-cols-[210px_minmax(0,790px)] lg:gap-16 xl:gap-20">
+              <aside className="hidden lg:block">
+                <div className="sticky top-28 border-t border-foreground/14 pt-5">
+                  <div className="text-[10px] uppercase tracking-[0.15em] text-foreground/38">Artículo</div>
+                  <div className="mt-5 space-y-4 border-b border-foreground/10 pb-6 text-[12px] leading-5">
+                    <div><div className="text-foreground/38">Tema</div><div className="mt-1 text-foreground/76">{post.category}</div></div>
+                    <div><div className="text-foreground/38">Publicado</div><div className="mt-1 text-foreground/76">{post.date}</div></div>
+                    <div><div className="text-foreground/38">Editor</div><div className="mt-1 text-foreground/76">Buena Park Injury Lawyer</div></div>
+                    <div><div className="text-foreground/38">Tiempo de lectura</div><div className="mt-1 text-foreground/76">{post.readingTime}</div></div>
+                  </div>
+                  <div className="pt-6">
+                    <div className="mb-4 text-[10px] uppercase tracking-[0.15em] text-foreground/38">En este artículo</div>
+                    <nav className="space-y-3">{post.sections.map((section, index) => <a key={section.heading} href={`#article-section-${index + 1}`} className="group flex gap-3 text-[12px] leading-5 text-foreground/48 transition-colors hover:text-foreground"><span className="text-foreground/26">0{index + 1}</span><span>{section.heading}</span></a>)}</nav>
                   </div>
                 </div>
-              </div>
+              </aside>
 
-              <div className="mt-10 rounded-[3px] bg-[#e9e6e1] p-7 md:p-8">
-                <div className="flex items-start gap-4"><img src={brandLogo} alt="" width={42} height={42} loading="lazy" decoding="async" className="h-10 w-10 shrink-0 object-contain" /><div><div className="text-[12px] font-medium">Buena Park Injury Lawyer</div><div className="mt-1 text-[12px] text-foreground/46">Información sobre accidentes y lesiones en California</div><p className="mt-4 max-w-[590px] text-[13px] leading-6 text-foreground/58">Estas páginas en español ofrecen información general. La firma indica atención en inglés y coreano; confirme la disponibilidad de asistencia lingüística al contactar. Las credenciales de Howard Choi están disponibles en la <Link to="/es/attorney" className="underline underline-offset-2">página del abogado</Link>.</p></div></div>
-              </div>
+              <div className="min-w-0">
+                <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.68 }}>
+                  <div className="mb-5 flex items-center gap-3 text-[11px] text-foreground/42 lg:hidden"><span>{post.category}</span><span>·</span><span>{post.readingTime}</span></div>
+                  <p className="editorial-serif text-[clamp(1.62rem,2.2vw,2.18rem)] leading-[1.17] tracking-[-0.014em] text-foreground/94">{post.intro}</p>
+                </motion.div>
 
-              <div className="mt-8 border-t border-foreground/12 pt-6 text-[12px] leading-6 text-foreground/46">Esta guía ofrece información general y no constituye asesoría legal. La aplicación de la ley depende de los hechos, plazos, partes, seguro y otras circunstancias.</div>
+                <motion.blockquote initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.62 }} className="my-10 rounded-[3px] bg-[#1a1714] px-7 py-8 text-[#f3eee5] md:my-12 md:px-9 md:py-10">
+                  <div className="mb-5 text-[10px] uppercase tracking-[0.16em] text-[#f3eee5]/38">Punto clave</div>
+                  <p className="editorial-serif max-w-[680px] text-[clamp(1.8rem,2.65vw,2.65rem)] leading-[1.04] tracking-[-0.018em]">“{post.takeaway}”</p>
+                </motion.blockquote>
+
+                <div className="border-t border-foreground/12">
+                  {post.sections.map((section, index) => (
+                    <motion.section id={`article-section-${index + 1}`} key={section.heading} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.16 }} transition={{ duration: 0.62 }} className="scroll-mt-28 border-b border-foreground/10 py-10 last:border-b-0 md:py-12">
+                      <div className="mb-4 flex items-center gap-3"><span className="text-[11px] tracking-[0.12em] text-foreground/34">0{index + 1}</span><span className="h-px w-8 bg-foreground/12" /></div>
+                      <h2 className="editorial-serif max-w-[700px] text-[clamp(2.05rem,3vw,3.15rem)] leading-[0.98] tracking-[-0.022em] text-foreground">{section.heading}</h2>
+                      <div className="mt-6 max-w-[730px] space-y-6 text-[17px] leading-[1.75] text-foreground/84 md:text-[18px]">
+                        {section.paragraphs.map((paragraph, paragraphIndex) => <p key={paragraph} className={index === 0 && paragraphIndex === 0 ? "first-letter:float-left first-letter:mr-2 first-letter:mt-1 first-letter:font-serif first-letter:text-[4.1rem] first-letter:leading-[0.72] first-letter:text-foreground" : undefined}>{paragraph}</p>)}
+                      </div>
+                    </motion.section>
+                  ))}
+                </div>
+
+                {support && (
+                  <div className="mt-10 grid gap-5 md:grid-cols-2">
+                    <div className="rounded-[3px] bg-[#e9e6e1] p-7 md:p-8">
+                      <div className="text-[10px] uppercase tracking-[0.15em] text-foreground/38">Ayuda legal relacionada</div>
+                      <h2 className="editorial-serif mt-5 text-[1.8rem] leading-[1.02]">{support.relatedLabel}</h2>
+                      <p className="mt-4 text-[13px] leading-6 text-foreground/58">{support.relatedBody}</p>
+                      <Link to={support.relatedHref} className="mt-6 inline-flex items-center gap-2 text-[12px] font-medium">Explorar esta guía <ArrowRight className="h-4 w-4" /></Link>
+                    </div>
+                    <div className="rounded-[3px] border border-foreground/10 p-7 md:p-8">
+                      <div className="text-[10px] uppercase tracking-[0.15em] text-foreground/38">Fuentes primarias</div>
+                      <div className="mt-5 border-t border-foreground/10">
+                        {support.sources.map((source) => <a key={source.href} href={source.href} target="_blank" rel="noreferrer" className="group flex items-center justify-between gap-4 border-b border-foreground/10 py-4 text-[12px] leading-5"><span>{source.label}</span><ArrowRight className="h-3.5 w-3.5 shrink-0 transition-transform group-hover:translate-x-1" /></a>)}
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                <div className="mt-10 rounded-[3px] bg-[#e9e6e1] p-7 md:p-8">
+                  <div className="flex items-start gap-4">
+                    <img src={brandLogo} alt="" width={42} height={42} loading="lazy" decoding="async" className="h-10 w-10 shrink-0 object-contain" />
+                    <div><div className="text-[12px] font-medium text-foreground">Buena Park Injury Lawyer</div><div className="mt-1 text-[12px] text-foreground/46">Información legal sobre accidentes y lesiones en California</div><p className="mt-4 max-w-[590px] text-[13px] leading-6 text-foreground/58">Orientación legal práctica para personas que navegan reclamos por accidentes, seguro, evidencia, plazos, documentación médica y recuperación en California. Howard Choi habla inglés y coreano; estas páginas ofrecen información del sitio en español. La información de licencia está disponible en la <Link to="/es/attorney" className="underline underline-offset-2">página del abogado</Link>.</p></div>
+                  </div>
+                </div>
+
+                <div className="mt-8 border-t border-foreground/12 pt-6 text-[12px] leading-5 text-foreground/46">Este artículo ofrece información general y no constituye asesoría legal. Los asuntos específicos dependen de sus propios hechos, plazos, demandados, seguro y ley aplicable.</div>
+              </div>
             </div>
           </div>
         </div>
       </article>
 
       {related && (
-        <section className="border-t border-foreground/10 bg-[#e9e6e1] py-14">
-          <div className="site-shell"><span className="text-[11px] text-foreground/44">Leer después</span><Link to={`/es/blogs/${related.slug}`} className="group mt-4 grid gap-7 lg:grid-cols-[1fr_0.7fr] lg:items-end"><h2 className="editorial-serif max-w-[780px] text-[clamp(2rem,3.2vw,3.35rem)] leading-[1.05] tracking-[-0.03em]">{related.title}</h2><div className="flex items-center justify-between border-t border-foreground/15 pt-4 text-[12px] text-foreground/64"><span>{related.category}</span><span className="inline-flex items-center gap-2 transition-transform duration-300 group-hover:translate-x-1">Leer guía <ArrowRight className="h-4 w-4" /></span></div></Link></div>
+        <section className="relative z-10 border-t border-foreground/10 bg-[#e9e6e1] py-14 md:py-18">
+          <div className="site-shell"><span className="text-[11px] text-foreground/44">Leer después</span><Link to={`/es/blogs/${related.slug}`} className="group mt-4 grid gap-7 lg:grid-cols-[1fr_0.7fr] lg:items-end"><h2 className="editorial-serif max-w-[760px] text-[clamp(2.25rem,3.5vw,3.8rem)] leading-[0.96] tracking-[-0.023em]">{related.title}</h2><div className="flex items-center justify-between border-t border-foreground/15 pt-4 text-[12px] text-foreground/64"><span>{related.category}</span><span className="inline-flex items-center gap-2 transition-transform duration-300 group-hover:translate-x-1">Leer artículo <ArrowRight className="h-4 w-4" /></span></div></Link></div>
         </section>
       )}
 
-      <SpanishFooter />
+      <div className="relative z-10"><SpanishFooter /></div>
     </div>
   );
 };
