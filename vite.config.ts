@@ -8,7 +8,7 @@ import { fileURLToPath } from "node:url";
 const rootDir = fileURLToPath(new URL(".", import.meta.url));
 
 const shouldPrerender = (routePath: string) => {
-  if (routePath === "/results" || routePath === "/ko/results") return false;
+  if (routePath === "/results" || routePath === "/ko/results" || routePath === "/es/results") return false;
   if (routePath.startsWith("/location/")) return false;
   if (routePath.startsWith("/admin") || routePath.startsWith("/auth")) return false;
   return true;

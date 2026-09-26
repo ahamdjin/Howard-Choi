@@ -1,0 +1,15 @@
+import { createFileRoute } from "@tanstack/react-router";
+import EsCaseValueCalculator from "@/pages/es/EsCaseValueCalculator";
+import { buildSeo } from "@/lib/seo";
+
+export const Route = createFileRoute("/es_/case-value-calculator")({
+  head: () => buildSeo({
+    title: "Calculadora de Lesiones Personales | Rango Educativo de California",
+    description: "Use una calculadora educativa para explorar cómo gastos médicos, salarios perdidos, tratamiento, pérdidas futuras y culpa comparativa pueden afectar un rango aproximado.",
+    path: "/es/case-value-calculator",
+    locale: "es",
+    noindex: true,
+    followWhenNoindex: true,
+  }),
+  component: EsCaseValueCalculator,
+});

@@ -1,0 +1,15 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { SpanishLocationsPage } from "@/pages/es/SpanishLocationPages";
+import { buildSeo } from "@/lib/seo";
+
+export const Route = createFileRoute("/es_/locations")({
+  head: () => buildSeo({
+    title: "Zonas de Servicio | Abogado de Accidentes en Buena Park",
+    description: "Guías locales sobre accidentes y lesiones para Buena Park, Anaheim, Fullerton, Garden Grove, Cypress, La Habra, La Mirada, Cerritos, Norwalk y Whittier.",
+    path: "/es/locations",
+    locale: "es",
+    noindex: true,
+    followWhenNoindex: true,
+  }),
+  component: SpanishLocationsPage,
+});

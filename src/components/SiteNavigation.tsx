@@ -5,16 +5,20 @@ import { useLocation } from "react-router-dom";
 import brandLogo from "@/assets/law-firm/howard-choi-logo.png";
 import UtilityBar from "@/components/UtilityBar";
 import { brand, practiceAreas, serviceLocations, type SiteLocale } from "@/data/injurySite";
+import { esPracticeContent } from "@/data/esPracticeContent";
 
 type PanelKey = "practice" | "locations" | null;
 type MobileGroup = "practice" | "locations" | null;
 
-const SiteNavigation = ({ locale }: { locale: SiteLocale }) => {
+type NavigationLocale = SiteLocale | "es";
+
+const SiteNavigation = ({ locale }: { locale: NavigationLocale }) => {
   const { pathname } = useLocation();
   const isCurrent = (path: string) => pathname === path || pathname.startsWith(path + "/");
   const ko = locale === "ko";
-  const prefix = ko ? "/ko" : "";
-  const homeHref = ko ? "/ko" : "/";
+  const es = locale === "es";
+  const prefix = ko ? "/ko" : es ? "/es" : "";
+  const homeHref = ko ? "/ko" : es ? "/es" : "/";
   const href = (path: string) => `${prefix}${path}`;
   const [panel, setPanel] = useState<PanelKey>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -45,6 +49,10 @@ const SiteNavigation = ({ locale }: { locale: SiteLocale }) => {
     practice: "업무 분야", locations: "지역", attorneys: "변호사", results: "사건 결과", blog: "법률 블로그",
     menu: "메뉴", about: "소개", contact: "문의", allPractices: "전체 업무 분야", allLocations: "전체 지역",
     language: "언어", call: "전화",
+  } : es ? {
+    practice: "Áreas de práctica", locations: "Zonas", attorneys: "Abogado", results: "Resultados", blog: "Guías",
+    menu: "Menú", about: "La firma", contact: "Contacto", allPractices: "Todas las áreas", allLocations: "Todas las zonas",
+    language: "Idioma", call: "Llamar",
   } : {
     practice: "Practice Areas", locations: "Locations", attorneys: "Attorney", results: "Results", blog: "Blogs",
     menu: "Menu", about: "About", contact: "Contact", allPractices: "All Practice Areas", allLocations: "All Locations",
@@ -81,14 +89,14 @@ const SiteNavigation = ({ locale }: { locale: SiteLocale }) => {
   const renderPanel = () => {
     if (panel === "practice") return (
       <div className="site-shell grid gap-8 py-8 lg:grid-cols-[0.42fr_1.58fr] lg:gap-10 lg:py-10 xl:gap-14">
-        <PanelIntro number="01" eyebrow={labels.practice} title={ko ? "사고 유형에서 바로 시작하세요." : "Start with the accident, not the legal jargon."} body={ko ? "사고 유형별 정보, 담당 변호사, 관련 지역과 자료를 서로 연결합니다." : "Choose the accident or injury you need help with."} link={href("/practice-areas")} linkLabel={labels.allPractices} />
-        <div className="grid border-t border-foreground/12 sm:grid-cols-2 xl:grid-cols-4">{practiceAreas.map((practice, index) => <PanelLink key={practice.slug} number={String(index + 1).padStart(2, "0")} title={ko ? practice.koTitle : practice.title} link={href(`/practice-areas/${practice.slug}`)} />)}</div>
+        <PanelIntro number="01" eyebrow={labels.practice} title={ko ? "사고 유형에서 바로 시작하세요." : es ? "Empiece por el tipo de accidente." : "Start with the accident, not the legal jargon."} body={ko ? "사고 유형별 정보, 담당 변호사, 관련 지역과 자료를 서로 연결합니다." : es ? "Elija el accidente o la lesión sobre la que necesita información." : "Choose the accident or injury you need help with."} link={href("/practice-areas")} linkLabel={labels.allPractices} />
+        <div className="grid border-t border-foreground/12 sm:grid-cols-2 xl:grid-cols-4">{practiceAreas.map((practice, index) => <PanelLink key={practice.slug} number={String(index + 1).padStart(2, "0")} title={ko ? practice.koTitle : es ? (esPracticeContent[practice.slug]?.shortTitle || practice.title) : practice.title} link={href(`/practice-areas/${practice.slug}`)} />)}</div>
       </div>
     );
 
     if (panel === "locations") return (
       <div className="site-shell grid gap-8 py-8 lg:grid-cols-[0.42fr_1.58fr] lg:gap-10 lg:py-10 xl:gap-14">
-        <PanelIntro number="02" eyebrow={labels.locations} title={ko ? "지역별로 필요한 정보를 연결합니다." : "A local hub for every community we serve."} body={ko ? "각 지역을 관련 업무 분야, 변호사, 결과와 법률 자료에 연결합니다." : "Find guidance and contact information for your community."} link={href("/locations")} linkLabel={labels.allLocations} />
+        <PanelIntro number="02" eyebrow={labels.locations} title={ko ? "지역별로 필요한 정보를 연결합니다." : es ? "Información local para cada comunidad." : "A local hub for every community we serve."} body={ko ? "각 지역을 관련 업무 분야, 변호사, 결과와 법률 자료에 연결합니다." : es ? "Encuentre orientación, recursos y datos de contacto para su zona." : "Find guidance and contact information for your community."} link={href("/locations")} linkLabel={labels.allLocations} />
         <div className="grid border-t border-foreground/12 sm:grid-cols-2 lg:grid-cols-3">{serviceLocations.map((item, index) => <PanelLink key={item.slug} number={String(index + 1).padStart(2, "0")} title={ko ? item.koName : item.name} link={href(`/locations/${item.slug}`)} />)}</div>
       </div>
     );
@@ -123,7 +131,7 @@ const SiteNavigation = ({ locale }: { locale: SiteLocale }) => {
         <AnimatePresence initial={false}>{mobileOpen && <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: `calc(100svh - ${104 - utilityOffset}px)`, opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }} className="overflow-hidden border-t border-foreground/[0.08] bg-background text-foreground lg:hidden"><div className="site-shell flex h-full flex-col overflow-y-auto pb-6 pt-3">
           <div>
             <button type="button" aria-expanded={mobileGroup === "practice"} aria-controls="mobile-practice-links" onClick={() => setMobileGroup((current) => current === "practice" ? null : "practice")} className="flex w-full items-center justify-between border-b border-foreground/10 py-4 text-left"><span className="text-[1.05rem] font-medium tracking-[-0.025em]">{labels.practice}</span><ChevronDown className={`h-4 w-4 stroke-[1.35] transition-transform ${mobileGroup === "practice" ? "rotate-180" : ""}`} /></button>
-            <AnimatePresence initial={false}>{mobileGroup === "practice" && <motion.div id="mobile-practice-links" initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden border-b border-foreground/10"><div className="grid grid-cols-2 gap-x-5 gap-y-3 py-5 text-[14px] text-foreground/80">{practiceAreas.map((practice) => <a key={practice.slug} href={href(`/practice-areas/${practice.slug}`)} aria-current={isCurrent(href("/practice-areas/" + practice.slug)) ? "page" : undefined} onClick={closeAll} className="flex min-h-11 items-center leading-5">{ko ? practice.koTitle : practice.title}</a>)}</div></motion.div>}</AnimatePresence>
+            <AnimatePresence initial={false}>{mobileGroup === "practice" && <motion.div id="mobile-practice-links" initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden border-b border-foreground/10"><div className="grid grid-cols-2 gap-x-5 gap-y-3 py-5 text-[14px] text-foreground/80">{practiceAreas.map((practice) => <a key={practice.slug} href={href(`/practice-areas/${practice.slug}`)} aria-current={isCurrent(href("/practice-areas/" + practice.slug)) ? "page" : undefined} onClick={closeAll} className="flex min-h-11 items-center leading-5">{ko ? practice.koTitle : es ? (esPracticeContent[practice.slug]?.shortTitle || practice.title) : practice.title}</a>)}</div></motion.div>}</AnimatePresence>
             <button type="button" aria-expanded={mobileGroup === "locations"} aria-controls="mobile-location-links" onClick={() => setMobileGroup((current) => current === "locations" ? null : "locations")} className="flex w-full items-center justify-between border-b border-foreground/10 py-4 text-left"><span className="text-[1.05rem] font-medium tracking-[-0.025em]">{labels.locations}</span><ChevronDown className={`h-4 w-4 stroke-[1.35] transition-transform ${mobileGroup === "locations" ? "rotate-180" : ""}`} /></button>
             <AnimatePresence initial={false}>{mobileGroup === "locations" && <motion.div id="mobile-location-links" initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden border-b border-foreground/10"><div className="grid grid-cols-2 gap-x-5 gap-y-3 py-5 text-[14px] text-foreground/80">{serviceLocations.map((item) => <a key={item.slug} href={href(`/locations/${item.slug}`)} aria-current={isCurrent(href("/locations/" + item.slug)) ? "page" : undefined} onClick={closeAll} className="flex min-h-11 items-center">{ko ? item.koName : item.name}</a>)}</div></motion.div>}</AnimatePresence>
             {[[labels.attorneys, href("/attorney")], [labels.results, href("/results")], [labels.blog, href("/blogs")], [labels.about, href("/about")], [labels.contact, href("/contact")]].map(([label, itemHref]) => <a key={itemHref} href={itemHref} aria-current={isCurrent(itemHref) ? "page" : undefined} onClick={closeAll} className="block border-b border-foreground/10 py-4 text-[1.05rem] font-medium tracking-[-0.025em]">{label}</a>)}
