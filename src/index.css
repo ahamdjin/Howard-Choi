@@ -307,3 +307,62 @@ nav + .relative > .sticky.top-0.h-\[100svh\] > section {
     border-radius: 20px;
   }
 }
+
+
+/* Mobile-only typography refinement: keep desktop unchanged. */
+@media (max-width: 767px) {
+  .site-typography {
+    font-size: 16px;
+    line-height: 1.58;
+  }
+
+  .site-typography :where(main, section, article) h1 {
+    font-size: clamp(2.05rem, 9vw, 2.3rem) !important;
+    line-height: 1.02 !important;
+    letter-spacing: -0.014em !important;
+  }
+
+  .site-typography :where(main, section, article) h2,
+  .home-page h2 {
+    font-size: clamp(1.65rem, 7vw, 1.95rem) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.012em !important;
+  }
+
+  .site-typography :where(main, section, article) h3 {
+    font-size: clamp(1.08rem, 5vw, 1.25rem) !important;
+    line-height: 1.18 !important;
+  }
+
+  .site-typography :where(main, article, section) p:not([class*="text-["]) {
+    font-size: 15.5px !important;
+    line-height: 1.62 !important;
+  }
+
+  .site-typography :where(main, article, section) p[class*="text-[13px]"],
+  .site-typography :where(main, article, section) p[class*="text-[14px]"],
+  .site-typography :where(main, article, section) p[class*="text-[15px]"],
+  .site-typography :where(main, article, section) p[class*="text-[16px]"],
+  .site-typography :where(main, article, section) p[class*="text-[17px]"],
+  .site-typography :where(main, article, section) p[class*="text-[18px]"] {
+    font-size: 15.5px !important;
+    line-height: 1.62 !important;
+  }
+
+  .site-typography :where(main, article, section) p[class*="text-[10px]"],
+  .site-typography :where(main, article, section) p[class*="text-[11px]"],
+  .site-typography :where(main, article, section) p[class*="text-[12px]"] {
+    font-size: 12.5px !important;
+    line-height: 1.5 !important;
+  }
+
+  .home-page .site-shell {
+    padding-inline: 16px;
+  }
+
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
+}
