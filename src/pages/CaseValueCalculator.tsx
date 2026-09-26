@@ -6,7 +6,7 @@ import heroCourthouse from "@/assets/law-firm/hero-courthouse.webp";
 import heroJusticeLibrary from "@/assets/law-firm/hero-justice-library.webp";
 import heroLawOffice from "@/assets/law-firm/hero-law-office.webp";
 import { brand, type SiteLocale } from "@/data/injurySite";
-import { EditorialFrame, isKo, localePrefix, serifStyle } from "@/pages/editorial/shared";
+import { EditorialFrame, isEs, isKo, localePrefix, serifStyle } from "@/pages/editorial/shared";
 
 type CaseType = "car" | "truck" | "motorcycle" | "pedestrian" | "rideshare" | "premises" | "other";
 type Severity = "minor" | "moderate" | "serious" | "catastrophic";
@@ -122,6 +122,7 @@ const SelectInput = ({ label, hint, value, placeholder, options, onChange }: {
 
 export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
   const ko = isKo(locale);
+  const es = isEs(locale);
   const [state, setInputs] = useState<CalculatorState>(initialState);
   const [calculated, setCalculated] = useState(false);
   const [error, setError] = useState("");
@@ -133,29 +134,29 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
   const [review, setReview] = useState({ full_name: "", email: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const caseTypes: Array<{ value: CaseType; en: string; ko: string }> = [
-    { value: "car", en: "Car accident", ko: "자동차 사고" },
-    { value: "truck", en: "Truck accident", ko: "트럭 사고" },
-    { value: "motorcycle", en: "Motorcycle accident", ko: "오토바이 사고" },
-    { value: "pedestrian", en: "Pedestrian accident", ko: "보행자 사고" },
-    { value: "rideshare", en: "Rideshare accident", ko: "라이드셰어 사고" },
-    { value: "premises", en: "Slip, fall or unsafe property", ko: "낙상·시설 사고" },
-    { value: "other", en: "Another injury claim", ko: "기타 상해 사건" },
+  const caseTypes: Array<{ value: CaseType; en: string; ko: string; es: string }> = [
+    { value: "car", en: "Car accident", ko: "자동차 사고", es: "Accidente de auto" },
+    { value: "truck", en: "Truck accident", ko: "트럭 사고", es: "Accidente de camión" },
+    { value: "motorcycle", en: "Motorcycle accident", ko: "오토바이 사고", es: "Accidente de motocicleta" },
+    { value: "pedestrian", en: "Pedestrian accident", ko: "보행자 사고", es: "Accidente de peatón" },
+    { value: "rideshare", en: "Rideshare accident", ko: "라이드셰어 사고", es: "Accidente de Uber o Lyft" },
+    { value: "premises", en: "Slip, fall or unsafe property", ko: "낙상·시설 사고", es: "Resbalón, caída o propiedad peligrosa" },
+    { value: "other", en: "Another injury claim", ko: "기타 상해 사건", es: "Otro reclamo por lesiones" },
   ];
 
-  const severities: Array<{ value: Severity; en: string; ko: string }> = [
-    { value: "minor", en: "Minor, short recovery", ko: "경미, 짧은 회복" },
-    { value: "moderate", en: "Moderate, ongoing treatment", ko: "중간, 지속 치료" },
-    { value: "serious", en: "Serious, fracture or long recovery", ko: "중상, 골절 또는 장기 회복" },
-    { value: "catastrophic", en: "Catastrophic / permanent", ko: "중대·영구 부상" },
+  const severities: Array<{ value: Severity; en: string; ko: string; es: string }> = [
+    { value: "minor", en: "Minor, short recovery", ko: "경미, 짧은 회복", es: "Leve, recuperación corta" },
+    { value: "moderate", en: "Moderate, ongoing treatment", ko: "중간, 지속 치료", es: "Moderada, tratamiento continuo" },
+    { value: "serious", en: "Serious, fracture or long recovery", ko: "중상, 골절 또는 장기 회복", es: "Grave, fractura o recuperación larga" },
+    { value: "catastrophic", en: "Catastrophic / permanent", ko: "중대·영구 부상", es: "Catastrófica / permanente" },
   ];
 
-  const treatments: Array<{ value: Treatment; en: string; ko: string }> = [
-    { value: "limited", en: "Limited / conservative care", ko: "제한적·보존적 치료" },
-    { value: "er", en: "ER / urgent care", ko: "응급실·긴급 진료" },
-    { value: "therapy", en: "Physical therapy / ongoing care", ko: "물리치료·지속 치료" },
-    { value: "injections", en: "Injections / specialist procedures", ko: "주사·전문의 시술" },
-    { value: "surgery", en: "Surgery / hospitalization", ko: "수술·입원" },
+  const treatments: Array<{ value: Treatment; en: string; ko: string; es: string }> = [
+    { value: "limited", en: "Limited / conservative care", ko: "제한적·보존적 치료", es: "Atención limitada / conservadora" },
+    { value: "er", en: "ER / urgent care", ko: "응급실·긴급 진료", es: "Urgencias / atención inmediata" },
+    { value: "therapy", en: "Physical therapy / ongoing care", ko: "물리치료·지속 치료", es: "Fisioterapia / atención continua" },
+    { value: "injections", en: "Injections / specialist procedures", ko: "주사·전문의 시술", es: "Inyecciones / procedimientos de especialista" },
+    { value: "surgery", en: "Surgery / hospitalization", ko: "수술·입원", es: "Cirugía / hospitalización" },
   ];
 
   const estimate = useMemo(() => {
@@ -202,6 +203,20 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
       `장기적 영향: ${state.permanent ? "예" : "아니오"}`,
       "",
       "이 계산 결과에 대해 전문가의 의견을 받고 싶습니다.",
+    ] : es ? [
+      `Rango estimado por la calculadora: ${money(estimate.low)} a ${money(estimate.high)}`,
+      `Incidente: ${caseLabel?.es || "No seleccionado"}`,
+      `Lesión: ${severityLabel?.es || "No seleccionada"}`,
+      `Tratamiento: ${treatmentLabel?.es || "No seleccionado"}`,
+      `Facturas médicas: ${money(state.medical)}`,
+      `Atención médica futura: ${money(state.futureMedical)}`,
+      `Salarios perdidos: ${money(state.lostWages)}`,
+      `Pérdida futura de ingresos: ${money(state.futureIncome)}`,
+      `Daños a la propiedad: ${money(state.property)}`,
+      `Culpa estimada: ${state.fault}%`,
+      `Efectos a largo plazo: ${state.permanent ? "Sí" : "No"}`,
+      "",
+      "Me gustaría que alguien revise esto correctamente.",
     ] : [
       `Calculator estimate: ${money(estimate.low)} to ${money(estimate.high)}`,
       `Incident: ${caseLabel?.en || "Not selected"}`,
@@ -222,11 +237,11 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
   const calculate = () => {
     const financialTotal = state.medical + state.futureMedical + state.lostWages + state.futureIncome + state.property;
     if (!state.severity || !state.treatment) {
-      setError(ko ? "부상 정도와 치료 수준을 선택하세요." : "Choose injury severity and treatment level.");
+      setError(ko ? "부상 정도와 치료 수준을 선택하세요." : es ? "Seleccione la gravedad de la lesión y el nivel de tratamiento." : "Choose injury severity and treatment level.");
       return;
     }
     if (financialTotal <= 0) {
-      setError(ko ? "최소 한 가지 금전적 손실을 입력하세요." : "Add at least one financial loss and we can show a range.");
+      setError(ko ? "최소 한 가지 금전적 손실을 입력하세요." : es ? "Agregue al menos una pérdida económica para mostrar un rango." : "Add at least one financial loss and we can show a range.");
       return;
     }
     setError("");
@@ -247,10 +262,10 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
 
   const buildSubject = () => {
     const caseLabel = caseTypes.find((item) => item.value === state.caseType);
-    const incident = ko ? caseLabel?.ko : caseLabel?.en;
+    const incident = ko ? caseLabel?.ko : es ? caseLabel?.es : caseLabel?.en;
     return incident
-      ? `${ko ? "사건 가치 계산기 검토" : "Case Value Calculator Review"} - ${incident}`
-      : (ko ? "사건 가치 계산기 검토" : "Case Value Calculator Review");
+      ? `${ko ? "사건 가치 계산기 검토" : es ? "Revisión de la calculadora de valor del caso" : "Case Value Calculator Review"} - ${incident}`
+      : (ko ? "사건 가치 계산기 검토" : es ? "Revisión de la calculadora de valor del caso" : "Case Value Calculator Review");
   };
 
   const requestReview = (event: React.FormEvent<HTMLFormElement>) => {
@@ -259,7 +274,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
     setIsSubmitting(true);
     // HighLevel External Tracking listens for this native form submission.
     // Keep the page alive briefly so its background request can complete.
-    window.setTimeout(() => window.location.assign(ko ? "/ko/thank-you" : "/thank-you"), 1600);
+    window.setTimeout(() => window.location.assign(ko ? "/ko/thank-you" : es ? "/es/thank-you" : "/thank-you"), 1600);
   };
 
   return (
@@ -269,27 +284,27 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
           <div className="site-shell grid min-h-[520px] gap-0 lg:grid-cols-[0.86fr_1.14fr] lg:min-h-[590px]">
             <div className="flex items-end py-10 pr-0 md:py-12 lg:pr-12 lg:py-14">
               <div className="max-w-[560px]">
-                <div className="text-[10px] font-medium text-[#f3eee5]/52">{ko ? "캘리포니아 개인상해 계산기" : "California personal injury calculator"}</div>
-                <PageBreadcrumb locale={locale} title={ko ? "예상 배상액 계산기" : "Case Value Calculator"} />
+                <div className="text-[10px] font-medium text-[#f3eee5]/52">{ko ? "캘리포니아 개인상해 계산기" : es ? "Calculadora de lesiones personales de California" : "California personal injury calculator"}</div>
+                <PageBreadcrumb locale={locale} title={ko ? "예상 배상액 계산기" : es ? "Calculadora de valor del caso" : "Case Value Calculator"} />
                 <h1 style={serifStyle(locale)} className={ko ? "mt-4 text-[clamp(2rem,3.6vw,3rem)] font-medium leading-[1.18] tracking-[-0.03em]" : "editorial-serif mt-4 text-[clamp(2.25rem,3.6vw,3.25rem)] leading-[0.98] tracking-[-0.026em]"}>
-                  {ko ? "내 사건의 가치는 얼마일까요?" : "What could your case be worth?"}
+                  {ko ? "내 사건의 가치는 얼마일까요?" : es ? "¿Cuánto podría valer su caso?" : "What could your case be worth?"}
                 </h1>
                 <p className="mt-4 max-w-[480px] text-[13px] leading-6 text-[#f3eee5]/64 md:text-[14px]">
-                  {ko ? "핵심 정보를 입력해 캘리포니아 개인상해 사건의 교육용 예상 범위를 확인하세요." : "Answer a few questions and you will get a rough range. It is a starting point for the conversation, not a valuation of your case."}
+                  {ko ? "핵심 정보를 입력해 캘리포니아 개인상해 사건의 교육용 예상 범위를 확인하세요." : es ? "Responda algunas preguntas y obtendrá un rango aproximado. Es un punto de partida para la conversación, no una valoración de su caso." : "Answer a few questions and you will get a rough range. It is a starting point for the conversation, not a valuation of your case."}
                 </p>
                 <a href="#calculator" className="mt-6 inline-flex items-center gap-3 rounded-full bg-[#f3eee5] px-5 py-3 text-[11px] font-medium text-[#17130f]">
-                  {ko ? "계산 시작" : "Start the calculator"}<ArrowRight className="h-3.5 w-3.5" />
+                  {ko ? "계산 시작" : es ? "Iniciar la calculadora" : "Start the calculator"}<ArrowRight className="h-3.5 w-3.5" />
                 </a>
               </div>
             </div>
 
             <div className="relative min-h-[300px] overflow-hidden lg:min-h-0">
-              <img src={heroBoardroom} alt={ko ? "법률 사무실 회의 공간" : "Law firm conference room"} className="absolute inset-0 h-full w-full object-cover" />
+              <img src={heroBoardroom} alt={ko ? "법률 사무실 회의 공간" : es ? "Sala de conferencias de un bufete" : "Law firm conference room"} className="absolute inset-0 h-full w-full object-cover" />
               <div className="absolute inset-0 bg-black/18" />
               <div className="absolute bottom-5 left-5 right-5 flex flex-wrap gap-2 text-[9px] font-medium text-white/74 md:bottom-7 md:left-7">
-                <span className="rounded-full border border-white/24 bg-black/15 px-3 py-1.5 backdrop-blur-sm">{ko ? "무료" : "Free"}</span>
-                <span className="rounded-full border border-white/24 bg-black/15 px-3 py-1.5 backdrop-blur-sm">{ko ? "가입 불필요" : "No signup"}</span>
-                <span className="rounded-full border border-white/24 bg-black/15 px-3 py-1.5 backdrop-blur-sm">{ko ? "즉시 결과" : "Instant result"}</span>
+                <span className="rounded-full border border-white/24 bg-black/15 px-3 py-1.5 backdrop-blur-sm">{ko ? "무료" : es ? "Gratis" : "Free"}</span>
+                <span className="rounded-full border border-white/24 bg-black/15 px-3 py-1.5 backdrop-blur-sm">{ko ? "가입 불필요" : es ? "Sin registro" : "No signup"}</span>
+                <span className="rounded-full border border-white/24 bg-black/15 px-3 py-1.5 backdrop-blur-sm">{ko ? "즉시 결과" : es ? "Resultado inmediato" : "Instant result"}</span>
               </div>
             </div>
           </div>
@@ -299,28 +314,28 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
           <div className="mx-auto max-w-[1080px]">
             <div className="mb-7 flex items-end justify-between gap-4 border-t border-[#211E1B]/12 pt-5">
               <div>
-                <div className="text-[10px] text-[#211E1B]/44">{ko ? "01 · 계산하기" : "01 · Calculate"}</div>
-                <h2 className="mt-2 text-[21px] font-semibold tracking-[-0.02em]">{ko ? "핵심 정보만 입력하세요." : "Start with the facts that matter."}</h2>
-                <p className="mt-1 text-[13px] leading-5 text-[#211E1B]/70">{ko ? "빠른 계산은 핵심 정보만 사용합니다. 더 복잡한 사건은 추가 정보를 펼치세요." : "Fill in the main fields first. Open the extra details only if they apply to you."}</p>
+                <div className="text-[10px] text-[#211E1B]/44">{ko ? "01 · 계산하기" : es ? "01 · Calcular" : "01 · Calculate"}</div>
+                <h2 className="mt-2 text-[21px] font-semibold tracking-[-0.02em]">{ko ? "핵심 정보만 입력하세요." : es ? "Empiece con los hechos que importan." : "Start with the facts that matter."}</h2>
+                <p className="mt-1 text-[13px] leading-5 text-[#211E1B]/70">{ko ? "빠른 계산은 핵심 정보만 사용합니다. 더 복잡한 사건은 추가 정보를 펼치세요." : es ? "Complete primero los campos principales. Abra los detalles adicionales solo si se aplican a su situación." : "Fill in the main fields first. Open the extra details only if they apply to you."}</p>
               </div>
-              <button type="button" onClick={reset} className="inline-flex h-9 shrink-0 items-center gap-2 text-[10px] font-medium text-[#211E1B]/45 hover:text-[#211E1B]"><RotateCcw className="h-3.5 w-3.5" />{ko ? "초기화" : "Reset"}</button>
+              <button type="button" onClick={reset} className="inline-flex h-9 shrink-0 items-center gap-2 text-[10px] font-medium text-[#211E1B]/45 hover:text-[#211E1B]"><RotateCcw className="h-3.5 w-3.5" />{ko ? "초기화" : es ? "Restablecer" : "Reset"}</button>
             </div>
 
             <div className="grid overflow-hidden rounded-[4px] border border-[#211E1B]/12 bg-white lg:grid-cols-[1.08fr_0.92fr]">
               <div className="p-5 md:p-7 lg:p-8">
                 <div className="grid gap-5 sm:grid-cols-2">
-                  <SelectInput label={ko ? "사건 유형" : "Incident type"} hint={ko ? "선택 사항" : "Optional: what happened"} value={state.caseType} placeholder={ko ? "선택" : "Choose"} options={caseTypes.map((item) => ({ value: item.value, label: ko ? item.ko : item.en }))} onChange={(value) => setState((current) => ({ ...current, caseType: value as CaseType | "" }))} />
-                  <SelectInput label={ko ? "부상 정도" : "Injury severity"} hint={ko ? "회복과 생활 영향" : "Recovery and daily impact"} value={state.severity} placeholder={ko ? "선택" : "Choose"} options={severities.map((item) => ({ value: item.value, label: ko ? item.ko : item.en }))} onChange={(value) => setState((current) => ({ ...current, severity: value as Severity | "" }))} />
-                  <SelectInput label={ko ? "치료 수준" : "Treatment level"} hint={ko ? "가장 높은 치료 수준" : "Highest care received"} value={state.treatment} placeholder={ko ? "선택" : "Choose"} options={treatments.map((item) => ({ value: item.value, label: ko ? item.ko : item.en }))} onChange={(value) => setState((current) => ({ ...current, treatment: value as Treatment | "" }))} />
-                  <CurrencyInput label={ko ? "현재 의료비" : "Medical bills"} hint={ko ? "현재까지 발생한 치료비" : "Treatment costs so far"} value={state.medical} onChange={(value) => setState((current) => ({ ...current, medical: value }))} />
-                  <CurrencyInput label={ko ? "임금 손실" : "Lost wages"} hint={ko ? "이미 잃은 소득" : "Income already lost"} value={state.lostWages} onChange={(value) => setState((current) => ({ ...current, lostWages: value }))} />
+                  <SelectInput label={ko ? "사건 유형" : es ? "Tipo de incidente" : "Incident type"} hint={ko ? "선택 사항" : es ? "Opcional: qué ocurrió" : "Optional: what happened"} value={state.caseType} placeholder={ko ? "선택" : es ? "Seleccione" : "Choose"} options={caseTypes.map((item) => ({ value: item.value, label: ko ? item.ko : es ? item.es : item.en }))} onChange={(value) => setState((current) => ({ ...current, caseType: value as CaseType | "" }))} />
+                  <SelectInput label={ko ? "부상 정도" : es ? "Gravedad de la lesión" : "Injury severity"} hint={ko ? "회복과 생활 영향" : es ? "Recuperación e impacto diario" : "Recovery and daily impact"} value={state.severity} placeholder={ko ? "선택" : es ? "Seleccione" : "Choose"} options={severities.map((item) => ({ value: item.value, label: ko ? item.ko : es ? item.es : item.en }))} onChange={(value) => setState((current) => ({ ...current, severity: value as Severity | "" }))} />
+                  <SelectInput label={ko ? "치료 수준" : es ? "Nivel de tratamiento" : "Treatment level"} hint={ko ? "가장 높은 치료 수준" : es ? "Nivel más alto de atención recibida" : "Highest care received"} value={state.treatment} placeholder={ko ? "선택" : es ? "Seleccione" : "Choose"} options={treatments.map((item) => ({ value: item.value, label: ko ? item.ko : es ? item.es : item.en }))} onChange={(value) => setState((current) => ({ ...current, treatment: value as Treatment | "" }))} />
+                  <CurrencyInput label={ko ? "현재 의료비" : es ? "Facturas médicas" : "Medical bills"} hint={ko ? "현재까지 발생한 치료비" : es ? "Costos de tratamiento hasta ahora" : "Treatment costs so far"} value={state.medical} onChange={(value) => setState((current) => ({ ...current, medical: value }))} />
+                  <CurrencyInput label={ko ? "임금 손실" : es ? "Salarios perdidos" : "Lost wages"} hint={ko ? "이미 잃은 소득" : es ? "Ingresos ya perdidos" : "Income already lost"} value={state.lostWages} onChange={(value) => setState((current) => ({ ...current, lostWages: value }))} />
 
                   <div className="sm:col-span-2 rounded-[3px] bg-[#F3F0EA] px-4 py-4">
                     <div className="flex items-end justify-between gap-4">
-                      <InputLabel hint={ko ? "확실하지 않다면 0%에서 시작하세요." : "If unsure, start at 0%."}>{ko ? "본인의 예상 과실" : "Your estimated share of fault"}</InputLabel>
+                      <InputLabel hint={ko ? "확실하지 않다면 0%에서 시작하세요." : es ? "Si no está seguro, empiece con 0%." : "If unsure, start at 0%."}>{ko ? "본인의 예상 과실" : es ? "Su porcentaje estimado de culpa" : "Your estimated share of fault"}</InputLabel>
                       <div className="text-[20px] font-semibold tabular-nums text-[#6E635A]">{state.fault}%</div>
                     </div>
-                    <input type="range" min="0" max="100" step="5" value={state.fault} onChange={(event) => setState((current) => ({ ...current, fault: Number(event.target.value) }))} className="mt-2 w-full accent-[#6E635A]" aria-label={ko ? "본인의 예상 과실" : "Your estimated share of fault"} />
+                    <input type="range" min="0" max="100" step="5" value={state.fault} onChange={(event) => setState((current) => ({ ...current, fault: Number(event.target.value) }))} className="mt-2 w-full accent-[#6E635A]" aria-label={ko ? "본인의 예상 과실" : es ? "Su porcentaje estimado de culpa" : "Your estimated share of fault"} />
                     <div className="mt-1 flex justify-between text-[9px] text-[#211E1B]/32"><span>0%</span><span>50%</span><span>100%</span></div>
                   </div>
                 </div>
@@ -328,18 +343,18 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
                 <details className="group mt-6 border-t border-[#211E1B]/10 pt-5">
                   <summary className="flex cursor-pointer list-none items-start justify-between gap-5 marker:hidden">
                     <span>
-                      <span className="block text-[13px] font-semibold">{ko ? "더 정확한 범위를 원하시나요?" : "Want a more complete estimate?"}</span>
-                      <span className="mt-1 block max-w-[470px] text-[13px] leading-5 text-[#211E1B]/44">{ko ? "향후 치료, 향후 소득 손실, 재산 피해 또는 장기적 영향이 있다면 여기에 추가하세요." : "Worth opening if treatment is still ongoing, you are still losing work, property was damaged, or the injury looks like it will leave something behind."}</span>
+                      <span className="block text-[13px] font-semibold">{ko ? "더 정확한 범위를 원하시나요?" : es ? "¿Quiere una estimación más completa?" : "Want a more complete estimate?"}</span>
+                      <span className="mt-1 block max-w-[470px] text-[13px] leading-5 text-[#211E1B]/44">{ko ? "향후 치료, 향후 소득 손실, 재산 피해 또는 장기적 영향이 있다면 여기에 추가하세요." : es ? "Abra esta sección si el tratamiento continúa, sigue perdiendo trabajo, hubo daños a la propiedad o la lesión parece dejar efectos duraderos." : "Worth opening if treatment is still ongoing, you are still losing work, property was damaged, or the injury looks like it will leave something behind."}</span>
                     </span>
                     <span className="text-[18px] leading-none text-[#6E635A] transition-transform group-open:rotate-45">+</span>
                   </summary>
                   <div className="mt-5 grid gap-5 rounded-[3px] bg-[#F8F7F4] p-4 sm:grid-cols-2">
-                    <CurrencyInput label={ko ? "향후 의료비" : "Future medical care"} hint={ko ? "예상 수술·재활·치료" : "Expected surgery, rehab, or ongoing care"} value={state.futureMedical} onChange={(value) => setState((current) => ({ ...current, futureMedical: value }))} />
-                    <CurrencyInput label={ko ? "향후 소득 손실" : "Future income loss"} hint={ko ? "향후 결근 또는 근로 능력 감소" : "Future time off or reduced earning capacity"} value={state.futureIncome} onChange={(value) => setState((current) => ({ ...current, futureIncome: value }))} />
-                    <CurrencyInput label={ko ? "재산 피해" : "Property damage"} hint={ko ? "차량 또는 기타 재산 피해" : "Vehicle or other property loss"} value={state.property} onChange={(value) => setState((current) => ({ ...current, property: value }))} />
+                    <CurrencyInput label={ko ? "향후 의료비" : es ? "Atención médica futura" : "Future medical care"} hint={ko ? "예상 수술·재활·치료" : es ? "Cirugía, rehabilitación o atención continua esperada" : "Expected surgery, rehab, or ongoing care"} value={state.futureMedical} onChange={(value) => setState((current) => ({ ...current, futureMedical: value }))} />
+                    <CurrencyInput label={ko ? "향후 소득 손실" : es ? "Pérdida futura de ingresos" : "Future income loss"} hint={ko ? "향후 결근 또는 근로 능력 감소" : es ? "Tiempo futuro sin trabajar o menor capacidad de ingresos" : "Future time off or reduced earning capacity"} value={state.futureIncome} onChange={(value) => setState((current) => ({ ...current, futureIncome: value }))} />
+                    <CurrencyInput label={ko ? "재산 피해" : es ? "Daños a la propiedad" : "Property damage"} hint={ko ? "차량 또는 기타 재산 피해" : es ? "Daños al vehículo u otra propiedad" : "Vehicle or other property loss"} value={state.property} onChange={(value) => setState((current) => ({ ...current, property: value }))} />
                     <label className="flex min-h-[70px] cursor-pointer items-start gap-3 rounded-[3px] border border-[#211E1B]/10 bg-white px-4 py-3">
                       <input type="checkbox" checked={state.permanent} onChange={(event) => setState((current) => ({ ...current, permanent: event.target.checked }))} className="mt-0.5 h-4 w-4 accent-[#6E635A]" />
-                      <span><span className="block text-[12px] font-semibold leading-5">{ko ? "장기적 또는 영구적 영향" : "Long-term or permanent effects"}</span><span className="mt-1 block text-[13px] leading-5 text-[#211E1B]/70">{ko ? "흉터, 장애, 기능 제한 등" : "Scarring, disability, lasting limitations"}</span></span>
+                      <span><span className="block text-[12px] font-semibold leading-5">{ko ? "장기적 또는 영구적 영향" : es ? "Efectos a largo plazo o permanentes" : "Long-term or permanent effects"}</span><span className="mt-1 block text-[13px] leading-5 text-[#211E1B]/70">{ko ? "흉터, 장애, 기능 제한 등" : es ? "Cicatrices, discapacidad o limitaciones duraderas" : "Scarring, disability, lasting limitations"}</span></span>
                     </label>
                   </div>
                 </details>
@@ -347,56 +362,56 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
                 {error ? <div role="alert" className="mt-5 rounded-[3px] bg-[#F4ECE7] px-4 py-3 text-[11px] font-medium text-[#7B4435]">{error}</div> : null}
 
                 <button type="button" onClick={calculate} className="mt-6 inline-flex h-11 w-full items-center justify-between rounded-[3px] bg-[#211E1B] px-5 text-[12px] font-semibold text-white hover:bg-[#342F2B]">
-                  <span>{ko ? "예상 범위 계산" : "Estimate my case value"}</span><ArrowRight className="h-4 w-4" />
+                  <span>{ko ? "예상 범위 계산" : es ? "Estimar el valor de mi caso" : "Estimate my case value"}</span><ArrowRight className="h-4 w-4" />
                 </button>
-                <p className="mt-3 text-center text-[9px] text-[#211E1B]/36">{ko ? "결과를 보기 위해 이메일이 필요하지 않습니다." : "No email is required to see your result."}</p>
+                <p className="mt-3 text-center text-[9px] text-[#211E1B]/36">{ko ? "결과를 보기 위해 이메일이 필요하지 않습니다." : es ? "No necesita correo electrónico para ver el resultado." : "No email is required to see your result."}</p>
               </div>
 
               <div className="border-t border-[#211E1B]/10 bg-[#F3F0EA] p-5 md:p-7 lg:border-l lg:border-t-0 lg:p-8" aria-live="polite">
-                <div className="text-[10px] font-medium text-[#211E1B]/44">{ko ? "예상 범위" : "Estimated range"}</div>
+                <div className="text-[10px] font-medium text-[#211E1B]/44">{ko ? "예상 범위" : es ? "Rango estimado" : "Estimated range"}</div>
                 {calculated && estimate ? (
                   <div id="case-estimate-result" tabIndex={-1} className="mt-4 scroll-mt-24">
                     <div style={serifStyle(locale)} className={ko ? "text-[1.9rem] font-medium leading-tight" : "editorial-serif text-[clamp(2rem,3.6vw,3rem)] leading-[0.98] tracking-[-0.035em]"}>{money(estimate.low)} to {money(estimate.high)}</div>
-                    <p className="mt-3 text-[10px] leading-5 text-[#211E1B]/46">{ko ? "입력한 정보만을 바탕으로 한 교육용 범위입니다." : "A range built from what you entered, nothing more."}</p>
+                    <p className="mt-3 text-[10px] leading-5 text-[#211E1B]/46">{ko ? "입력한 정보만을 바탕으로 한 교육용 범위입니다." : es ? "Un rango educativo basado únicamente en lo que ingresó." : "A range built from what you entered, nothing more."}</p>
 
                     <div className="mt-5 border-y border-[#211E1B]/10 py-2">
-                      <div className="flex items-center justify-between gap-4 py-2 text-[11px]"><span className="text-[#211E1B]/50">{ko ? "경제적 손실" : "Economic losses"}</span><strong>{money(estimate.economic)}</strong></div>
-                      <div className="flex items-center justify-between gap-4 py-2 text-[11px]"><span className="text-[#211E1B]/50">{ko ? "비경제적 손해 모델" : "Non-economic model"}</span><strong className="text-right">{money(estimate.nonEconomicLow)} to {money(estimate.nonEconomicHigh)}</strong></div>
-                      <div className="flex items-center justify-between gap-4 py-2 text-[11px]"><span className="text-[#211E1B]/50">{ko ? "과실 조정" : "Fault adjustment"}</span><strong>× {estimate.faultFactor.toFixed(2)}</strong></div>
+                      <div className="flex items-center justify-between gap-4 py-2 text-[11px]"><span className="text-[#211E1B]/50">{ko ? "경제적 손실" : es ? "Pérdidas económicas" : "Economic losses"}</span><strong>{money(estimate.economic)}</strong></div>
+                      <div className="flex items-center justify-between gap-4 py-2 text-[11px]"><span className="text-[#211E1B]/50">{ko ? "비경제적 손해 모델" : es ? "Modelo de daños no económicos" : "Non-economic model"}</span><strong className="text-right">{money(estimate.nonEconomicLow)} to {money(estimate.nonEconomicHigh)}</strong></div>
+                      <div className="flex items-center justify-between gap-4 py-2 text-[11px]"><span className="text-[#211E1B]/50">{ko ? "과실 조정" : es ? "Ajuste por culpa" : "Fault adjustment"}</span><strong>× {estimate.faultFactor.toFixed(2)}</strong></div>
                     </div>
 
-                    <div className="mt-4 flex gap-2 text-[9px] leading-4 text-[#211E1B]/70"><Info className="mt-0.5 h-3.5 w-3.5 shrink-0" /><p>{ko ? "법률 자문이나 실제 사건 가치에 대한 의견이 아닙니다. 보험 한도, 유치권, 인과관계, 증거 및 협상 상황은 반영하지 못합니다." : "Not legal advice or an opinion of actual case value. Policy limits, liens, causation, evidence, and negotiation posture are not fully captured."}</p></div>
+                    <div className="mt-4 flex gap-2 text-[9px] leading-4 text-[#211E1B]/70"><Info className="mt-0.5 h-3.5 w-3.5 shrink-0" /><p>{ko ? "법률 자문이나 실제 사건 가치에 대한 의견이 아닙니다. 보험 한도, 유치권, 인과관계, 증거 및 협상 상황은 반영하지 못합니다." : es ? "No es asesoría legal ni una opinión sobre el valor real del caso. Los límites de póliza, gravámenes, causalidad, evidencia y postura de negociación no se reflejan por completo." : "Not legal advice or an opinion of actual case value. Policy limits, liens, causation, evidence, and negotiation posture are not fully captured."}</p></div>
 
                     <div className="mt-6 border-t border-[#211E1B]/10 pt-5">
-                      <div className="flex items-start gap-3"><Mail className="mt-0.5 h-4 w-4 shrink-0 text-[#6E635A]" /><div><h3 className="text-[13px] font-semibold">{ko ? "전문가 의견 받기" : "Get an expert opinion"}</h3><p className="mt-1 text-[9px] leading-4 text-[#211E1B]/70">{ko ? "이름, 이메일과 계산 요약을 팀에 보내 검토를 요청합니다." : "Send your name, email, and calculator summary to the team for review."}</p></div></div>
+                      <div className="flex items-start gap-3"><Mail className="mt-0.5 h-4 w-4 shrink-0 text-[#6E635A]" /><div><h3 className="text-[13px] font-semibold">{ko ? "전문가 의견 받기" : es ? "Obtener una opinión profesional" : "Get an expert opinion"}</h3><p className="mt-1 text-[9px] leading-4 text-[#211E1B]/70">{ko ? "이름, 이메일과 계산 요약을 팀에 보내 검토를 요청합니다." : es ? "Envíe su nombre, correo y resumen de la calculadora al equipo para revisión." : "Send your name, email, and calculator summary to the team for review."}</p></div></div>
 
                       <form id="website-inquiry-form" name="Website Inquiry" data-form-name="Website Inquiry" data-external-form="highlevel" onSubmit={requestReview} className="mt-4 grid gap-3">
                         <input type="hidden" name="subject" value={buildSubject()} />
                         <label className="block">
-                          <span className="mb-1.5 block text-[10px] font-medium text-[#211E1B]/58">{ko ? "성명" : "Full name"}</span>
-                          <input name="full_name" value={review.full_name} onChange={(event) => setReview((current) => ({ ...current, full_name: event.target.value }))} required autoComplete="name" placeholder={ko ? "성명" : "Full name"} className="h-10 w-full rounded-[3px] border border-[#211E1B]/12 bg-white px-3 text-[12px] outline-none focus:border-[#6E635A]" />
+                          <span className="mb-1.5 block text-[10px] font-medium text-[#211E1B]/58">{ko ? "성명" : es ? "Nombre completo" : "Full name"}</span>
+                          <input name="full_name" value={review.full_name} onChange={(event) => setReview((current) => ({ ...current, full_name: event.target.value }))} required autoComplete="name" placeholder={ko ? "성명" : es ? "Nombre completo" : "Full name"} className="h-10 w-full rounded-[3px] border border-[#211E1B]/12 bg-white px-3 text-[12px] outline-none focus:border-[#6E635A]" />
                         </label>
                         <label className="block">
-                          <span className="mb-1.5 block text-[10px] font-medium text-[#211E1B]/58">{ko ? "이메일" : "Email"}</span>
+                          <span className="mb-1.5 block text-[10px] font-medium text-[#211E1B]/58">{ko ? "이메일" : es ? "Correo electrónico" : "Email"}</span>
                           <input name="email" type="email" value={review.email} onChange={(event) => setReview((current) => ({ ...current, email: event.target.value }))} required autoComplete="email" placeholder="name@example.com" className="h-10 w-full rounded-[3px] border border-[#211E1B]/12 bg-white px-3 text-[12px] outline-none focus:border-[#6E635A]" />
                         </label>
                         <label className="block">
-                          <span className="mb-1.5 block text-[10px] font-medium text-[#211E1B]/58">{ko ? "메시지 / 계산 요약" : "Message / calculator summary"}</span>
+                          <span className="mb-1.5 block text-[10px] font-medium text-[#211E1B]/58">{ko ? "메시지 / 계산 요약" : es ? "Mensaje / resumen de la calculadora" : "Message / calculator summary"}</span>
                           <textarea name="message" value={buildSummary()} readOnly required rows={6} className="w-full resize-y rounded-[3px] border border-[#211E1B]/10 bg-white p-3 text-[10px] leading-5 text-[#211E1B]/62 outline-none focus:border-[#6E635A]" />
                         </label>
-                        <button type="submit" disabled={isSubmitting} className="inline-flex h-10 items-center justify-between rounded-[3px] bg-[#211E1B] px-4 text-[10px] font-semibold text-white disabled:opacity-60"><span>{isSubmitting ? (ko ? "전송 중..." : "Sending...") : (ko ? "결과 전송 + 검토 요청" : "Send result + request review")}</span><ArrowRight className="h-3.5 w-3.5" /></button>
-                        <p className="text-[8px] leading-4 text-[#211E1B]/34">{ko ? "제출은 변호사-의뢰인 관계를 형성하지 않습니다. 기밀 또는 긴급한 정보를 보내지 마세요." : "Submitting does not create an attorney-client relationship. Do not send confidential or time-sensitive information."}</p>
+                        <button type="submit" disabled={isSubmitting} className="inline-flex h-10 items-center justify-between rounded-[3px] bg-[#211E1B] px-4 text-[10px] font-semibold text-white disabled:opacity-60"><span>{isSubmitting ? (ko ? "전송 중..." : es ? "Enviando..." : "Sending...") : (ko ? "결과 전송 + 검토 요청" : es ? "Enviar resultado + solicitar revisión" : "Send result + request review")}</span><ArrowRight className="h-3.5 w-3.5" /></button>
+                        <p className="text-[8px] leading-4 text-[#211E1B]/34">{ko ? "제출은 변호사-의뢰인 관계를 형성하지 않습니다. 기밀 또는 긴급한 정보를 보내지 마세요." : es ? "Enviar el formulario no crea una relación abogado-cliente. No envíe información confidencial o urgente." : "Submitting does not create an attorney-client relationship. Do not send confidential or time-sensitive information."}</p>
                       </form>
                     </div>
                   </div>
                 ) : (
                   <div className="mt-5">
                     <div className="editorial-serif text-[2.4rem] leading-none text-[#211E1B]/20">$0 to $0</div>
-                    <p className="mt-4 max-w-[300px] text-[10px] leading-5 text-[#211E1B]/44">{ko ? "왼쪽 정보를 입력하고 계산하세요." : "Enter or update your details, then select “Estimate my case value” to see your result."}</p>
+                    <p className="mt-4 max-w-[300px] text-[10px] leading-5 text-[#211E1B]/44">{ko ? "왼쪽 정보를 입력하고 계산하세요." : es ? "Ingrese o actualice sus datos y seleccione “Estimar el valor de mi caso” para ver el resultado." : "Enter or update your details, then select “Estimate my case value” to see your result."}</p>
                     <div className="mt-7 space-y-3 border-t border-[#211E1B]/10 pt-5 text-[10px] leading-5 text-[#211E1B]/46">
-                      <div className="flex gap-2"><CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0" />{ko ? "경제적 손실" : "Economic losses"}</div>
-                      <div className="flex gap-2"><CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0" />{ko ? "부상 및 치료" : "Injury and treatment"}</div>
-                      <div className="flex gap-2"><CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0" />{ko ? "비교 과실" : "Comparative fault"}</div>
+                      <div className="flex gap-2"><CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0" />{ko ? "경제적 손실" : es ? "Pérdidas económicas" : "Economic losses"}</div>
+                      <div className="flex gap-2"><CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0" />{ko ? "부상 및 치료" : es ? "Lesión y tratamiento" : "Injury and treatment"}</div>
+                      <div className="flex gap-2"><CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0" />{ko ? "비교 과실" : es ? "Culpa comparativa" : "Comparative fault"}</div>
                     </div>
                   </div>
                 )}
