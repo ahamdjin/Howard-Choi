@@ -7,7 +7,7 @@ export const Route = createFileRoute("/es_/case-value-calculator")({
     title: "Calculadora de Lesiones Personales | Rango Educativo de California",
     description: "Use una calculadora educativa para explorar cómo gastos médicos, salarios perdidos, tratamiento, pérdidas futuras y culpa comparativa pueden afectar un rango aproximado.",
     path: "/es/case-value-calculator",
-    locale: "es",
+    locale: "es-US",
     noindex: true,
     followWhenNoindex: true,
   }),
