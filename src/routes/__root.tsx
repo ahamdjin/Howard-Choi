@@ -75,6 +75,7 @@ function RootDocument({ children }: { children: ReactNode }) {
     "/ko/case-value-calculator",
     "/es",
     "/es/contact",
+    "/es/case-value-calculator",
   ].includes(pathname);
   const bodyClassName = [
     "site-typography",
