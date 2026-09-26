@@ -20,7 +20,7 @@ export const Route = createFileRoute("/es_/locations_/$slug")({
       title: `${title} | Buena Park Injury Lawyer`,
       description: loaderData.copy.description,
       path,
-      locale: "es",
+      locale: "es-US",
       noindex: true,
       followWhenNoindex: true,
     });
