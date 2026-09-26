@@ -15,7 +15,7 @@ export const Route = createFileRoute("/es_/blogs_/$slug")({
       title: `${loaderData.title} | Buena Park Injury Lawyer`,
       description: loaderData.excerpt,
       path,
-      locale: "es",
+      locale: "es-US",
       type: "article",
       image: loaderData.image,
       noindex: true,
@@ -30,7 +30,7 @@ export const Route = createFileRoute("/es_/blogs_/$slug")({
         { property: "article:section", content: loaderData.category },
       ],
       scripts: [
-        { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ title: loaderData.title, description: loaderData.excerpt, path, image: loaderData.image, publishedAt: loaderData.publishedAt, locale: "es" })) },
+        { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ title: loaderData.title, description: loaderData.excerpt, path, image: loaderData.image, publishedAt: loaderData.publishedAt, locale: "es-US" })) },
         { type: "application/ld+json", children: JSON.stringify(breadcrumbJsonLd([{ name: "Inicio", path: "/es" }, { name: "Guías legales", path: "/es/blogs" }, { name: loaderData.title, path }])) },
       ],
     };
