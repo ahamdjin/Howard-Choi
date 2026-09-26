@@ -61,7 +61,7 @@ function RootComponent() {
 
 function RootDocument({ children }: { children: ReactNode }) {
   const pathname = useRouterState({ select: (state) => state.location.pathname });
-  const lang = pathname === "/ko" || pathname.startsWith("/ko/") ? "ko" : pathname === "/es" || pathname.startsWith("/es/") ? "es" : "en";
+  const lang = pathname === "/ko" || pathname.startsWith("/ko/") ? "ko" : pathname === "/es" || pathname.startsWith("/es/") ? "es-US" : "en";
   const innerSitePage = /^\/(?:(?:ko|es)\/)?(?:practice-areas|locations|attorney|results|about)(?:\/|$)/.test(pathname);
   const attorneyPage = /^\/(?:(?:ko|es)\/)?attorney(?:\/|$)/.test(pathname);
   // Pages carrying a HighLevel-tracked form. The homepage CTA form will not
