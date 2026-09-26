@@ -17,7 +17,7 @@ export const Route = createFileRoute("/es_/practice-areas_/$slug")({
       title: `${loaderData.copy.title} | Evidencia, Seguro y Daños`,
       description: loaderData.copy.description,
       path,
-      locale: "es",
+      locale: "es-US",
       noindex: true,
       followWhenNoindex: true,
     });
