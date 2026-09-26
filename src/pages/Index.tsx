@@ -1,4 +1,5 @@
 import Navigation from "@/components/Navigation";
+import SpanishNavigation from "@/components/SpanishNavigation";
 import Hero from "@/components/Hero";
 import HomeImmediateTrust from "@/components/HomeImmediateTrust";
 import TrustBadges from "@/components/TrustBadges";
@@ -12,35 +13,38 @@ import HomeServiceAreas from "@/components/HomeServiceAreas";
 import FAQ from "@/components/FAQ";
 import Booking from "@/components/Booking";
 import Footer from "@/components/Footer";
+import SpanishFooter from "@/components/SpanishFooter";
+import type { SiteLocale } from "@/data/injurySite";
 
-// Section order is specified in notes/homepage-brief.md. Do not reorder without
-// updating that file. Nothing may be inserted between <Navigation /> and the
-// .relative hero wrapper: index.css keys the hero's height and frame off the
-// `nav + .relative` adjacency selector.
-const Index = () => (
-  <div className="home-page min-h-[100svh] overflow-x-clip bg-background">
-    <Navigation />
-    <div className="relative">
-      {/* 1 : Hero: attorney-forward */}
-      <div className="sticky top-0 z-0 h-[100svh] w-full"><Hero /></div>
-      <div className="relative z-10 w-full bg-background">
-        <HomeImmediateTrust />  {/* 2 : Trust strip */}
-        <TrustBadges />         {/* 3 : Awards & recognition */}
-        <FirmSnapshot />        {/* 4 : Firm metrics */}
-        <Locations />           {/* 5 : Practice areas */}
+const Index = ({ locale = "en" }: { locale?: SiteLocale }) => {
+  const Spanish = locale === "es";
+  const Nav = Spanish ? SpanishNavigation : Navigation;
+  const SiteFooter = Spanish ? SpanishFooter : Footer;
+
+  return (
+    <div className="home-page min-h-[100svh] overflow-x-clip bg-background">
+      <Nav />
+      <div className="relative">
+        <div className="sticky top-0 z-0 h-[100svh] w-full"><Hero locale={locale} /></div>
+        <div className="relative z-10 w-full bg-background">
+          <HomeImmediateTrust locale={locale} />
+          <TrustBadges locale={locale} />
+          <FirmSnapshot locale={locale} />
+          <Locations locale={locale} />
+        </div>
+      </div>
+      <div className="relative z-20 bg-background">
+        <Experience locale={locale} />
+        <SelectedResult locale={locale} />
+        <DirectAccess locale={locale} />
+        <ClientSuccessFeature locale={locale} />
+        <HomeServiceAreas locale={locale} />
+        <FAQ locale={locale} />
+        <Booking locale={locale} />
+        <SiteFooter />
       </div>
     </div>
-    <div className="relative z-20 bg-background">
-      <Experience />            {/* 6 : What happens after you call */}
-      <SelectedResult />        {/* 7 : Results */}
-      <DirectAccess />          {/* 8 : Meet Howard Choi */}
-      <ClientSuccessFeature />  {/* 9 : Testimonials */}
-      <HomeServiceAreas />      {/* 10 : Areas served */}
-      <FAQ />                   {/* 11 : FAQ */}
-      <Booking />               {/* 12 : CTA */}
-      <Footer />
-    </div>
-  </div>
-);
+  );
+};
 
 export default Index;
