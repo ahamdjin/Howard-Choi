@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import EsCaseValueCalculator from "@/pages/es/EsCaseValueCalculator";
+import { CaseValueCalculatorPage } from "@/pages/CaseValueCalculator";
 import { buildSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/es_/case-value-calculator")({
@@ -11,5 +11,5 @@ export const Route = createFileRoute("/es_/case-value-calculator")({
     noindex: true,
     followWhenNoindex: true,
   }),
-  component: EsCaseValueCalculator,
+  component: () => <CaseValueCalculatorPage locale="es" />,
 });
