@@ -7,7 +7,7 @@ export const Route = createFileRoute("/es_/practice-areas")({
     title: "Áreas de Lesiones Personales | Buena Park Injury Lawyer",
     description: "Explore accidentes de auto, camión, motocicleta, peatones, Uber y Lyft, resbalones y caídas, muerte por negligencia y lesiones graves.",
     path: "/es/practice-areas",
-    locale: "es",
+    locale: "es-US",
     noindex: true,
     followWhenNoindex: true,
   }),
