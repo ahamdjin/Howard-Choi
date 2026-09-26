@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SpanishPracticeAreasPage } from "@/pages/es/SpanishEditorialPages";
+import { PracticeAreasPage } from "@/pages/editorial/PracticePages";
 import { buildSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/es_/practice-areas")({
@@ -11,5 +11,5 @@ export const Route = createFileRoute("/es_/practice-areas")({
     noindex: true,
     followWhenNoindex: true,
   }),
-  component: SpanishPracticeAreasPage,
+  component: () => <PracticeAreasPage locale="es" />,
 });
