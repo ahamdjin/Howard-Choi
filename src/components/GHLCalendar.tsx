@@ -3,7 +3,7 @@ import { brand } from "@/data/injurySite";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Clock, LoaderCircle, Mail, MapPin, Phone, UserRound } from "lucide-react";
 
 type GHLCalendarProps = {
-  locale?: "en" | "ko";
+  locale?: "en" | "ko" | "es";
 };
 
 type AvailabilityDays = Record<string, { slots?: string[] } | string[]>;
@@ -99,6 +99,7 @@ const filterAvailability = (days: AvailabilityDays): AvailabilityDays =>
 
 const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
   const isKorean = locale === "ko";
+  const isSpanish = locale === "es";
   const todayKey = pacificTodayKey();
   const currentMonth = firstOfMonth(todayKey);
   const [month, setMonth] = useState(currentMonth);
@@ -114,7 +115,7 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
   const [consent, setConsent] = useState(false);
 
   const calendarDays = useMemo(() => buildMonthGrid(month), [month]);
-  const monthLabel = new Intl.DateTimeFormat(isKorean ? "ko-KR" : "en-US", {
+  const monthLabel = new Intl.DateTimeFormat(isKorean ? "ko-KR" : isSpanish ? "es-US" : "en-US", {
     month: "long",
     year: "numeric",
     timeZone: "UTC",
@@ -141,8 +142,8 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
     timeZone: PACIFIC_TIMEZONE,
   });
 
-  const weekdays = isKorean ? ["일", "월", "화", "수", "목", "금", "토"] : ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  const attorneyHref = isKorean ? "/ko/attorney" : "/attorney";
+  const weekdays = isKorean ? ["일", "월", "화", "수", "목", "금", "토"] : isSpanish ? ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"] : ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const attorneyHref = isKorean ? "/ko/attorney" : isSpanish ? "/es/attorney" : "/attorney";
 
   useEffect(() => {
     let active = true;
@@ -193,7 +194,7 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
             </div>
             <div>
               <span className="text-[9px] font-medium uppercase tracking-[0.16em] text-[#1e1c1a]/38">
-                {isKorean ? "예약 완료" : "Consultation confirmed"}
+                {isKorean ? "예약 완료" : isSpanish ? "Consulta confirmada" : "Consultation confirmed"}
               </span>
               <h3 className="editorial-serif mt-2 text-[clamp(1.9rem,2.7vw,2.8rem)] leading-[0.98] tracking-[-0.025em]">
                 {isKorean ? "상담 예약이 완료되었습니다." : "You're booked."}
@@ -207,14 +208,14 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
           <p className="text-[12px] leading-5 text-[#1e1c1a]/58">
             {isKorean
               ? `${details.email || "입력하신 이메일"}로 예약 확인 이메일이 곧 전송됩니다.`
-              : `A confirmation email will be sent to ${details.email || "the email you provided"} shortly.`}
+              : isSpanish ? `Pronto se enviará un correo de confirmación a ${details.email || "la dirección que proporcionó"}.` : `A confirmation email will be sent to ${details.email || "the email you provided"} shortly.`}
           </p>
         </div>
 
         <div className="mt-6 grid gap-3 md:grid-cols-3">
           <div className="border border-[#1e1c1a]/10 bg-white/40 p-4">
             <div className="flex items-center gap-2 text-[9px] font-medium uppercase tracking-[0.14em] text-[#1e1c1a]/36">
-              <Clock className="h-3.5 w-3.5" /> {isKorean ? "일시" : "Date & time"}
+              <Clock className="h-3.5 w-3.5" /> {isKorean ? "일시" : isSpanish ? "Fecha y hora" : "Date & time"}
             </div>
             <div className="mt-3 text-[13px] font-medium leading-5">
               {confirmationDateFormatter.format(bookedDate)}
@@ -231,11 +232,11 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
             className="group border border-[#1e1c1a]/10 bg-white/40 p-4 transition-colors hover:bg-white/70"
           >
             <div className="flex items-center justify-between gap-3 text-[9px] font-medium uppercase tracking-[0.14em] text-[#1e1c1a]/36">
-              <span className="flex items-center gap-2"><MapPin className="h-3.5 w-3.5" /> {isKorean ? "상담 장소" : "Meeting location"}</span>
+              <span className="flex items-center gap-2"><MapPin className="h-3.5 w-3.5" /> {isKorean ? "상담 장소" : isSpanish ? "Lugar de la consulta" : "Meeting location"}</span>
               <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </div>
             <div className="mt-3 text-[13px] font-medium leading-5">{OFFICE_ADDRESS}</div>
-            <div className="mt-2 text-[10px] text-[#1e1c1a]/45">{isKorean ? "Google 지도에서 보기" : "Open in Google Maps"}</div>
+            <div className="mt-2 text-[10px] text-[#1e1c1a]/45">{isKorean ? "Google 지도에서 보기" : isSpanish ? "Abrir en Google Maps" : "Open in Google Maps"}</div>
           </a>
 
           <a
@@ -243,18 +244,18 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
             className="group border border-[#1e1c1a]/10 bg-white/40 p-4 transition-colors hover:bg-white/70"
           >
             <div className="flex items-center justify-between gap-3 text-[9px] font-medium uppercase tracking-[0.14em] text-[#1e1c1a]/36">
-              <span className="flex items-center gap-2"><UserRound className="h-3.5 w-3.5" /> {isKorean ? "담당 변호사" : "Attending attorney"}</span>
+              <span className="flex items-center gap-2"><UserRound className="h-3.5 w-3.5" /> {isKorean ? "담당 변호사" : isSpanish ? "Abogado" : "Attending attorney"}</span>
               <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </div>
             <div className="mt-3 text-[13px] font-medium">Howard Choi</div>
-            <div className="mt-2 text-[10px] text-[#1e1c1a]/45">{isKorean ? "변호사 프로필 보기" : "View attorney profile"}</div>
+            <div className="mt-2 text-[10px] text-[#1e1c1a]/45">{isKorean ? "변호사 프로필 보기" : isSpanish ? "Ver perfil del abogado" : "View attorney profile"}</div>
           </a>
         </div>
 
         <p className="mt-5 text-[10px] leading-5 text-[#1e1c1a]/42">
           {isKorean
             ? "일정 변경이 필요한 경우 예약 확인 이메일의 안내를 확인하거나 사무실로 연락해 주세요."
-            : "If you need to make a change, use the instructions in your confirmation email or contact the office."}
+            : isSpanish ? "Si necesita hacer un cambio, use las instrucciones del correo de confirmación o comuníquese con la oficina." : "If you need to make a change, use the instructions in your confirmation email or contact the office."}
         </p>
       </div>
     );
@@ -313,7 +314,7 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
           <div className="flex items-center justify-between gap-4">
             <div>
               <span className="text-[9px] font-medium uppercase tracking-[0.15em] text-[#1e1c1a]/38">
-                {isKorean ? "01 · 날짜" : "01 · Date"}
+                {isKorean ? "01 · 날짜" : isSpanish ? "01 · Fecha" : "01 · Date"}
               </span>
               <div className="mt-1 text-[15px] font-medium">{monthLabel}</div>
             </div>
@@ -323,7 +324,7 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
                 onClick={() => canGoBack && setMonth((value) => shiftMonth(value, -1))}
                 disabled={!canGoBack || loading}
                 className="flex h-9 w-9 items-center justify-center border border-[#1e1c1a]/10 disabled:opacity-25"
-                aria-label={isKorean ? "이전 달" : "Previous month"}
+                aria-label={isKorean ? "이전 달" : isSpanish ? "Mes anterior" : "Previous month"}
               >
                 <ArrowLeft className="h-3.5 w-3.5" />
               </button>
@@ -332,7 +333,7 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
                 onClick={() => setMonth((value) => shiftMonth(value, 1))}
                 disabled={loading}
                 className="flex h-9 w-9 items-center justify-center border border-[#1e1c1a]/10"
-                aria-label={isKorean ? "다음 달" : "Next month"}
+                aria-label={isKorean ? "다음 달" : isSpanish ? "Mes siguiente" : "Next month"}
               >
                 <ArrowRight className="h-3.5 w-3.5" />
               </button>
@@ -378,7 +379,7 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
           </div>
 
           <div className="mt-6 flex items-center justify-between border-t border-[#1e1c1a]/10 pt-4 text-[10px] text-[#1e1c1a]/38">
-            <span>{isKorean ? "오전 8시부터 오후 5시까지 예약 가능" : "Booking window · 8:00 AM to 5:00 PM"}</span>
+            <span>{isKorean ? "오전 8시부터 오후 5시까지 예약 가능" : isSpanish ? "Horario de reservas · 8:00 AM a 5:00 PM" : "Booking window · 8:00 AM to 5:00 PM"}</span>
             <span>Pacific Time</span>
           </div>
         </div>
@@ -391,7 +392,7 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
           ) : loadError ? (
             <div className="flex min-h-[360px] flex-col justify-center">
               <span className="text-[9px] font-medium uppercase tracking-[0.15em] text-[#1e1c1a]/38">
-                {isKorean ? "예약 연결" : "Calendar connection"}
+                {isKorean ? "예약 연결" : isSpanish ? "Conexión del calendario" : "Calendar connection"}
               </span>
               <h3 className="editorial-serif mt-3 max-w-[340px] text-[1.9rem] leading-[1.02] tracking-[-0.02em]">
                 {isKorean ? "예약 가능 시간을 불러오지 못했습니다." : "We couldn't load the available times."}
@@ -401,7 +402,7 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
                 onClick={() => window.location.reload()}
                 className="mt-6 inline-flex w-fit items-center gap-2 border border-[#1e1c1a]/14 bg-[#f9f8f6] px-4 py-3 text-[11px] font-medium"
               >
-                {isKorean ? "다시 시도" : "Try again"}
+                {isKorean ? "다시 시도" : isSpanish ? "Intentar de nuevo" : "Try again"}
               </button>
               <a href="tel:+17148448494" className="mt-4 inline-flex w-fit items-center gap-2 text-[10px] text-[#1e1c1a]/46">
                 <Phone className="h-3 w-3" /> 714-844-8494
@@ -410,7 +411,7 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
           ) : selectedDate ? (
             <div>
               <span className="text-[9px] font-medium uppercase tracking-[0.15em] text-[#1e1c1a]/38">
-                {isKorean ? "02 · 시간" : "02 · Time"}
+                {isKorean ? "02 · 시간" : isSpanish ? "02 · Hora" : "02 · Time"}
               </span>
               <h3 className="editorial-serif mt-2 text-[1.65rem] leading-none tracking-[-0.02em]">
                 {dayFormatter.format(fromDateKey(selectedDate))}
@@ -440,7 +441,7 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
               {selectedSlot ? (
                 <form onSubmit={handleBook} className="mt-7 border-t border-[#1e1c1a]/10 pt-6">
                   <span className="text-[9px] font-medium uppercase tracking-[0.15em] text-[#1e1c1a]/38">
-                    {isKorean ? "03 · 연락처" : "03 · Your details"}
+                    {isKorean ? "03 · 연락처" : isSpanish ? "03 · Sus datos" : "03 · Your details"}
                   </span>
                   <div className="mt-4 space-y-2.5">
                     <div className="grid gap-2.5 sm:grid-cols-2 xl:grid-cols-1 2xl:grid-cols-2">
@@ -450,7 +451,7 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
                         autoComplete="given-name"
                         value={details.firstName}
                         onChange={(event) => setDetails((value) => ({ ...value, firstName: event.target.value }))}
-                        placeholder={isKorean ? "이름" : "First name"}
+                        placeholder={isKorean ? "이름" : isSpanish ? "Nombre" : "First name"}
                         className="h-11 w-full border border-[#1e1c1a]/10 bg-[#f9f8f6] px-3.5 text-[12px] outline-none transition-colors placeholder:text-[#1e1c1a]/30 focus:border-[#1e1c1a]/35"
                       />
                       <input
@@ -459,7 +460,7 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
                         autoComplete="family-name"
                         value={details.lastName}
                         onChange={(event) => setDetails((value) => ({ ...value, lastName: event.target.value }))}
-                        placeholder={isKorean ? "성" : "Last name"}
+                        placeholder={isKorean ? "성" : isSpanish ? "Apellido" : "Last name"}
                         className="h-11 w-full border border-[#1e1c1a]/10 bg-[#f9f8f6] px-3.5 text-[12px] outline-none transition-colors placeholder:text-[#1e1c1a]/30 focus:border-[#1e1c1a]/35"
                       />
                     </div>
@@ -471,7 +472,7 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
                         autoComplete="email"
                         value={details.email}
                         onChange={(event) => setDetails((value) => ({ ...value, email: event.target.value }))}
-                        placeholder={isKorean ? "이메일" : "Email"}
+                        placeholder={isKorean ? "이메일" : isSpanish ? "Correo electrónico" : "Email"}
                         className="h-11 w-full border border-[#1e1c1a]/10 bg-[#f9f8f6] px-3.5 text-[12px] outline-none transition-colors placeholder:text-[#1e1c1a]/30 focus:border-[#1e1c1a]/35"
                       />
                       <input
@@ -480,14 +481,14 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
                         autoComplete="tel"
                         value={details.phone}
                         onChange={(event) => setDetails((value) => ({ ...value, phone: event.target.value }))}
-                        placeholder={isKorean ? "전화번호" : "Phone"}
+                        placeholder={isKorean ? "전화번호" : isSpanish ? "Teléfono" : "Phone"}
                         className="h-11 w-full border border-[#1e1c1a]/10 bg-[#f9f8f6] px-3.5 text-[12px] outline-none transition-colors placeholder:text-[#1e1c1a]/30 focus:border-[#1e1c1a]/35"
                       />
                     </div>
                     <textarea
                       value={details.notes}
                       onChange={(event) => setDetails((value) => ({ ...value, notes: event.target.value }))}
-                      placeholder={isKorean ? "추가 메모 (선택 사항)" : "Additional notes (optional)"}
+                      placeholder={isKorean ? "추가 메모 (선택 사항)" : isSpanish ? "Notas adicionales (opcional)" : "Additional notes (optional)"}
                       className="min-h-[76px] w-full resize-none border border-[#1e1c1a]/10 bg-[#f9f8f6] px-3.5 py-3 text-[12px] outline-none transition-colors placeholder:text-[#1e1c1a]/30 focus:border-[#1e1c1a]/35"
                     />
                     <label className="flex cursor-pointer items-start gap-3 pt-1 text-[10px] leading-5 text-[#1e1c1a]/48">
@@ -501,7 +502,7 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
                       <span>
                         {isKorean
                           ? "이 상담과 관련된 전화, 문자 및 이메일 안내를 받는 데 동의합니다."
-                          : "I agree to receive appointment-related calls, texts, and emails about this consultation."}
+                          : isSpanish ? "Acepto recibir llamadas, mensajes de texto y correos relacionados con esta consulta." : "I agree to receive appointment-related calls, texts, and emails about this consultation."}
                       </span>
                     </label>
                   </div>
@@ -515,30 +516,30 @@ const GHLCalendar = ({ locale = "en" }: GHLCalendarProps) => {
                   >
                     {booking ? <LoaderCircle className="h-3.5 w-3.5 animate-spin" /> : null}
                     {booking
-                      ? isKorean ? "예약 중..." : "Booking..."
-                      : isKorean ? "상담 예약" : "Book consultation"}
+                      ? isKorean ? "예약 중..." : isSpanish ? "Reservando..." : "Booking..."
+                      : isKorean ? "상담 예약" : isSpanish ? "Reservar consulta" : "Book consultation"}
                   </button>
                 </form>
               ) : (
                 <p className="mt-6 max-w-[360px] text-[11px] leading-5 text-[#1e1c1a]/42">
-                  {isKorean ? "가능한 시간을 선택하면 연락처 입력 단계가 열립니다." : "Choose an available time to continue with your contact details."}
+                  {isKorean ? "가능한 시간을 선택하면 연락처 입력 단계가 열립니다." : isSpanish ? "Elija un horario disponible para continuar con sus datos de contacto." : "Choose an available time to continue with your contact details."}
                 </p>
               )}
             </div>
           ) : (
             <div className="flex min-h-[360px] flex-col justify-center">
               <span className="text-[9px] font-medium uppercase tracking-[0.15em] text-[#1e1c1a]/38">
-                {isKorean ? "이번 달" : "This month"}
+                {isKorean ? "이번 달" : isSpanish ? "Este mes" : "This month"}
               </span>
               <h3 className="editorial-serif mt-3 max-w-[330px] text-[1.9rem] leading-[1.02] tracking-[-0.02em]">
-                {isKorean ? "현재 표시할 수 있는 상담 시간이 없습니다." : "No consultation times are showing for this month."}
+                {isKorean ? "현재 표시할 수 있는 상담 시간이 없습니다." : isSpanish ? "No hay horarios de consulta disponibles este mes." : "No consultation times are showing for this month."}
               </h3>
               <button
                 type="button"
                 onClick={() => setMonth((value) => shiftMonth(value, 1))}
                 className="mt-6 inline-flex w-fit items-center gap-2 text-[11px] font-medium"
               >
-                {isKorean ? "다음 달 보기" : "View next month"}<ArrowRight className="h-3.5 w-3.5" />
+                {isKorean ? "다음 달 보기" : isSpanish ? "Ver el próximo mes" : "View next month"}<ArrowRight className="h-3.5 w-3.5" />
               </button>
               <a href="tel:+17148448494" className="mt-4 inline-flex w-fit items-center gap-2 text-[10px] text-[#1e1c1a]/46">
                 <Phone className="h-3 w-3" /> 714-844-8494
