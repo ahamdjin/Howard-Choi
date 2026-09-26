@@ -2,9 +2,7 @@ import { Calculator, UserRound } from "lucide-react";
 import { useLocation } from "react-router-dom";
 import { brand, type SiteLocale } from "@/data/injurySite";
 
-type UtilityLocale = SiteLocale | "es";
-
-export default function UtilityBar({ locale }: { locale: UtilityLocale }) {
+export default function UtilityBar({ locale }: { locale: SiteLocale }) {
   const { pathname, searchStr, hash } = useLocation();
   const ko = locale === "ko";
   const es = locale === "es";
@@ -29,7 +27,7 @@ export default function UtilityBar({ locale }: { locale: UtilityLocale }) {
             <span aria-hidden="true" className="h-4 w-px bg-white/25" />
             <a href={koreanPath + suffix} hrefLang="ko-US" lang="ko" aria-current={ko ? "true" : undefined} className={`inline-flex min-h-9 items-center rounded-sm px-2 transition-colors hover:bg-white/15 ${ko ? "bg-white/10 text-white" : "text-[#f3eee5]/70"}`}>한국어</a>
             <span aria-hidden="true" className="h-4 w-px bg-white/25" />
-            <a href={spanishPath + suffix} hrefLang="es" lang="es" aria-current={es ? "true" : undefined} className={`inline-flex min-h-9 items-center rounded-sm px-2 transition-colors hover:bg-white/15 ${es ? "bg-white/10 text-white" : "text-[#f3eee5]/70"}`}>Español</a>
+            <a href={spanishPath + suffix} hrefLang="es-US" lang="es" aria-current={es ? "true" : undefined} className={`inline-flex min-h-9 items-center rounded-sm px-2 transition-colors hover:bg-white/15 ${es ? "bg-white/10 text-white" : "text-[#f3eee5]/70"}`}>Español</a>
           </div>
         </div>
         <div className="flex items-center gap-3 sm:gap-6">
