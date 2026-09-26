@@ -1,5 +1,5 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
-import { SpanishLocationDetailPage } from "@/pages/es/SpanishLocationPages";
+import { LocationDetailPage } from "@/pages/EditorialLocationPages";
 import { getServiceLocation } from "@/data/injurySite";
 import { getSpanishLocation } from "@/data/esLocationContent";
 import { breadcrumbJsonLd, buildSeo } from "@/lib/seo";
@@ -36,5 +36,5 @@ export const Route = createFileRoute("/es_/locations_/$slug")({
       }],
     };
   },
-  component: SpanishLocationDetailPage,
+  component: () => <LocationDetailPage locale="es" />,
 });
