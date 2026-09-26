@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SpanishLegalPage } from "@/pages/es/EsLegalPages";
+import { LegalPage } from "@/pages/LegalPages";
 import { buildSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/es_/privacy-policy")({
@@ -11,5 +11,5 @@ export const Route = createFileRoute("/es_/privacy-policy")({
     noindex: true,
     followWhenNoindex: true,
   }),
-  component: () => <SpanishLegalPage type="privacy" />,
+  component: () => <LegalPage type="privacy" locale="es" />,
 });
