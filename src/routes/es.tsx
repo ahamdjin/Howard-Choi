@@ -7,7 +7,7 @@ export const Route = createFileRoute("/es")({
     title: "Abogado de Accidentes en Buena Park | Lesiones Personales",
     description: "Información en español sobre accidentes y lesiones personales en Buena Park y comunidades cercanas, incluidos reclamos de auto, camión, motocicleta, peatones, Uber y Lyft.",
     path: "/es",
-    locale: "es",
+    locale: "es-US",
     noindex: true,
     followWhenNoindex: true,
   }),
