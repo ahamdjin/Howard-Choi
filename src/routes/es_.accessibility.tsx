@@ -7,7 +7,7 @@ export const Route = createFileRoute("/es_/accessibility")({
     title: "Accesibilidad | Buena Park Injury Lawyer",
     description: "Declaración de accesibilidad del sitio web de Buena Park Injury Lawyer.",
     path: "/es/accessibility",
-    locale: "es",
+    locale: "es-US",
     noindex: true,
     followWhenNoindex: true,
   }),
