@@ -423,17 +423,17 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
         <section className="bg-white py-12 md:py-16 lg:py-20">
           <div className="site-shell grid gap-8 lg:grid-cols-2 lg:items-stretch lg:gap-10">
             <div className="relative min-h-[360px] overflow-hidden rounded-[4px] bg-neutral-200 lg:min-h-[520px]">
-              <img src={heroJusticeLibrary} alt={ko ? "법률 자료와 정의의 상징" : "Justice and legal reference library"} className="absolute inset-0 h-full w-full object-cover" />
+              <img src={heroJusticeLibrary} alt={ko ? "법률 자료와 정의의 상징" : es ? "Biblioteca jurídica y símbolo de la justicia" : "Justice and legal reference library"} className="absolute inset-0 h-full w-full object-cover" />
               <div className="absolute inset-0 bg-black/12" />
             </div>
             <div className="flex flex-col justify-center py-2 lg:pl-6">
-              <div className="text-[10px] text-[#211E1B]/70">{ko ? "02 · 계산 방식" : "02 · How it works"}</div>
-              <h2 className="mt-3 text-[22px] font-semibold tracking-[-0.025em]">{ko ? "세 가지가 범위를 만듭니다." : "Three things shape the range."}</h2>
+              <div className="text-[10px] text-[#211E1B]/70">{ko ? "02 · 계산 방식" : es ? "02 · Cómo funciona" : "02 · How it works"}</div>
+              <h2 className="mt-3 text-[22px] font-semibold tracking-[-0.025em]">{ko ? "세 가지가 범위를 만듭니다." : es ? "Tres elementos forman el rango." : "Three things shape the range."}</h2>
               <div className="mt-8 border-t border-[#211E1B]/12">
                 {[
-                  ko ? ["01", "경제적 손실", "의료비, 임금 손실, 향후 치료 및 향후 소득 손실을 더합니다."] : ["01", "Economic losses", "Medical costs, wage loss, future care, and future income loss."],
-                  ko ? ["02", "부상과 치료", "부상 정도와 치료 수준을 이용해 비경제적 손해의 넓은 교육용 범위를 모델링합니다."] : ["02", "Injury + treatment", "Severity and treatment are used to model a broad non-economic range."],
-                  ko ? ["03", "과실", "입력한 본인 과실 비율을 적용해 비교 과실의 영향을 보여줍니다."] : ["03", "Fault", "Your estimated share of fault is applied to illustrate comparative fault."],
+                  ko ? ["01", "경제적 손실", "의료비, 임금 손실, 향후 치료 및 향후 소득 손실을 더합니다."] : es ? ["01", "Pérdidas económicas", "Se suman gastos médicos, salarios perdidos, atención futura y pérdida futura de ingresos."] : ["01", "Economic losses", "Medical costs, wage loss, future care, and future income loss."],
+                  ko ? ["02", "부상과 치료", "부상 정도와 치료 수준을 이용해 비경제적 손해의 넓은 교육용 범위를 모델링합니다."] : es ? ["02", "Lesión + tratamiento", "La gravedad y el tratamiento se usan para modelar un rango educativo amplio de daños no económicos."] : ["02", "Injury + treatment", "Severity and treatment are used to model a broad non-economic range."],
+                  ko ? ["03", "과실", "입력한 본인 과실 비율을 적용해 비교 과실의 영향을 보여줍니다."] : es ? ["03", "Culpa", "Su porcentaje estimado de responsabilidad se aplica para ilustrar la culpa comparativa."] : ["03", "Fault", "Your estimated share of fault is applied to illustrate comparative fault."],
                 ].map(([number, title, body]) => (
                   <div key={number} className="grid gap-2 border-b border-[#211E1B]/10 py-5 sm:grid-cols-[40px_0.65fr_1.35fr] sm:gap-5">
                     <span className="text-[10px] font-medium text-[#6E635A]">{number}</span>
@@ -442,7 +442,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
                   </div>
                 ))}
               </div>
-              <p className="mt-5 text-[9px] leading-4 text-[#211E1B]/38">{ko ? "비경제적 손해에 사용하는 배수는 캘리포니아 법이 정한 공식이 아니라 교육용 모델입니다." : "The non-economic multiplier is an educational model, not a formula required by California law."}</p>
+              <p className="mt-5 text-[9px] leading-4 text-[#211E1B]/38">{ko ? "비경제적 손해에 사용하는 배수는 캘리포니아 법이 정한 공식이 아니라 교육용 모델입니다." : es ? "El multiplicador de daños no económicos es un modelo educativo, no una fórmula exigida por la ley de California." : "The non-economic multiplier is an educational model, not a formula required by California law."}</p>
             </div>
           </div>
         </section>
@@ -450,19 +450,19 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
         <section className="bg-[#101010] py-12 text-[#f3eee5] md:py-16 lg:py-20">
           <div className="site-shell grid gap-9 lg:grid-cols-[0.9fr_1.1fr] lg:items-stretch lg:gap-12">
             <div className="flex flex-col justify-center">
-              <div className="text-[10px] text-white/42">{ko ? "03 · 실제 사례" : "03 · Real California example"}</div>
+              <div className="text-[10px] text-white/42">{ko ? "03 · 실제 사례" : es ? "03 · Ejemplo real de California" : "03 · Real California example"}</div>
               <h2 className="mt-3 text-[22px] font-semibold tracking-[-0.025em]">Audish v. Macias (2024)</h2>
-              <p className="mt-5 max-w-[520px] text-[13px] leading-6 text-white/58">{ko ? "캘리포니아 항소법원에 공개된 자동차 사고 사건에서 배심은 총 손해액을 $65,699.50로 판단하고 양측에 각각 50%의 책임을 배정했습니다." : "In a published California auto-collision case, the jury found $65,699.50 in total damages and assigned 50% responsibility to each driver."}</p>
+              <p className="mt-5 max-w-[520px] text-[13px] leading-6 text-white/58">{ko ? "캘리포니아 항소법원에 공개된 자동차 사고 사건에서 배심은 총 손해액을 $65,699.50로 판단하고 양측에 각각 50%의 책임을 배정했습니다." : es ? "En un caso publicado de colisión de autos en California, el jurado determinó $65,699.50 en daños totales y asignó 50% de responsabilidad a cada conductor." : "In a published California auto-collision case, the jury found $65,699.50 in total damages and assigned 50% responsibility to each driver."}</p>
               <div className="mt-7 grid grid-cols-3 border-y border-white/12 py-5">
-                <div><div className="text-[18px] font-semibold">$65.7K</div><div className="mt-1 text-[9px] text-white/38">{ko ? "총 손해" : "Total damages"}</div></div>
-                <div className="border-l border-white/12 pl-4"><div className="text-[18px] font-semibold">$29.3K</div><div className="mt-1 text-[9px] text-white/38">{ko ? "과거 의료비" : "Past medical"}</div></div>
-                <div className="border-l border-white/12 pl-4"><div className="text-[18px] font-semibold">50%</div><div className="mt-1 text-[9px] text-white/38">{ko ? "원고 과실" : "Plaintiff fault"}</div></div>
+                <div><div className="text-[18px] font-semibold">$65.7K</div><div className="mt-1 text-[9px] text-white/38">{ko ? "총 손해" : es ? "Daños totales" : "Total damages"}</div></div>
+                <div className="border-l border-white/12 pl-4"><div className="text-[18px] font-semibold">$29.3K</div><div className="mt-1 text-[9px] text-white/38">{ko ? "과거 의료비" : es ? "Gastos médicos pasados" : "Past medical"}</div></div>
+                <div className="border-l border-white/12 pl-4"><div className="text-[18px] font-semibold">50%</div><div className="mt-1 text-[9px] text-white/38">{ko ? "원고 과실" : es ? "Culpa del demandante" : "Plaintiff fault"}</div></div>
               </div>
-              <p className="mt-5 text-[9px] leading-4 text-white/34">{ko ? "다른 사건의 결과를 예측하는 사례가 아닙니다. 실제 소송에서 손해액과 과실이 별도로 판단된다는 점을 보여주는 공개 예시입니다." : "Not a prediction for another case. It simply shows how damages and fault can be treated as separate questions in real litigation."}</p>
-              <a href="https://law.justia.com/cases/california/court-of-appeal/2024/d081689.html" target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center gap-2 text-[10px] font-semibold text-white/76 underline underline-offset-4">{ko ? "공개 판결 보기" : "Read the published decision"}<ArrowRight className="h-3 w-3" /></a>
+              <p className="mt-5 text-[9px] leading-4 text-white/34">{ko ? "다른 사건의 결과를 예측하는 사례가 아닙니다. 실제 소송에서 손해액과 과실이 별도로 판단된다는 점을 보여주는 공개 예시입니다." : es ? "No predice el resultado de otro caso. Solo muestra cómo los daños y la culpa pueden tratarse como preguntas separadas en litigios reales." : "Not a prediction for another case. It simply shows how damages and fault can be treated as separate questions in real litigation."}</p>
+              <a href="https://law.justia.com/cases/california/court-of-appeal/2024/d081689.html" target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center gap-2 text-[10px] font-semibold text-white/76 underline underline-offset-4">{ko ? "공개 판결 보기" : es ? "Leer la decisión publicada" : "Read the published decision"}<ArrowRight className="h-3 w-3" /></a>
             </div>
             <div className="relative min-h-[360px] overflow-hidden rounded-[4px] bg-[#1b1b1b] lg:min-h-[520px]">
-              <img src={heroCourthouse} alt={ko ? "캘리포니아 법원 내부" : "Courthouse interior"} className="absolute inset-0 h-full w-full object-cover opacity-72" />
+              <img src={heroCourthouse} alt={ko ? "캘리포니아 법원 내부" : es ? "Interior de un tribunal" : "Courthouse interior"} className="absolute inset-0 h-full w-full object-cover opacity-72" />
               <div className="absolute inset-0 bg-black/25" />
             </div>
           </div>
@@ -472,17 +472,17 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
           <div className="site-shell">
             <div className="grid gap-8 border-t border-[#211E1B]/12 pt-5 lg:grid-cols-[0.7fr_1.3fr] lg:gap-12">
               <div>
-                <div className="text-[10px] text-[#211E1B]/70">{ko ? "04 · 무엇이 가치를 바꾸나요" : "04 · What changes case value"}</div>
-                <h2 className="mt-3 max-w-[360px] text-[22px] font-semibold tracking-[-0.025em]">{ko ? "숫자 밖의 사실도 중요합니다." : "The facts around the numbers matter."}</h2>
+                <div className="text-[10px] text-[#211E1B]/70">{ko ? "04 · 무엇이 가치를 바꾸나요" : es ? "04 · Qué cambia el valor del caso" : "04 · What changes case value"}</div>
+                <h2 className="mt-3 max-w-[360px] text-[22px] font-semibold tracking-[-0.025em]">{ko ? "숫자 밖의 사실도 중요합니다." : es ? "Los hechos alrededor de los números importan." : "The facts around the numbers matter."}</h2>
               </div>
               <div className="grid gap-x-8 sm:grid-cols-2">
                 {[
-                  ko ? ["향후 치료", "의학적으로 뒷받침되는 수술, 재활 또는 장기 치료."] : ["Future medical care", "Supported future surgery, rehabilitation, or ongoing treatment."],
-                  ko ? ["소득 능력", "이미 잃은 임금과 장기적인 근로 능력 감소."] : ["Earning capacity", "Wages already lost and long-term reduction in earning ability."],
-                  ko ? ["생활 영향", "통증의 기간, 기능 제한, 흉터 및 장애."] : ["Daily-life impact", "Duration of pain, limitations, scarring, and disability."],
-                  ko ? ["과실", "사고 책임이 어떻게 나뉘는지에 따라 회수액이 달라질 수 있습니다."] : ["Liability", "How responsibility is divided can change the practical recovery."],
-                  ko ? ["증거", "의료기록, 사진, 영상, 목격자 및 사고 보고서."] : ["Evidence", "Medical records, photos, video, witnesses, and reports."],
-                  ko ? ["보험", "보험 한도, 복수 책임자, 유치권 및 실제 회수 가능성."] : ["Insurance", "Policy limits, multiple responsible parties, liens, and collectability."],
+                  ko ? ["향후 치료", "의학적으로 뒷받침되는 수술, 재활 또는 장기 치료."] : es ? ["Atención médica futura", "Cirugía, rehabilitación o tratamiento continuo respaldado médicamente."] : ["Future medical care", "Supported future surgery, rehabilitation, or ongoing treatment."],
+                  ko ? ["소득 능력", "이미 잃은 임금과 장기적인 근로 능력 감소."] : es ? ["Capacidad de ingresos", "Salarios ya perdidos y reducción a largo plazo de la capacidad de ganar."] : ["Earning capacity", "Wages already lost and long-term reduction in earning ability."],
+                  ko ? ["생활 영향", "통증의 기간, 기능 제한, 흉터 및 장애."] : es ? ["Impacto en la vida diaria", "Duración del dolor, limitaciones, cicatrices y discapacidad."] : ["Daily-life impact", "Duration of pain, limitations, scarring, and disability."],
+                  ko ? ["과실", "사고 책임이 어떻게 나뉘는지에 따라 회수액이 달라질 수 있습니다."] : es ? ["Responsabilidad", "La forma en que se divide la responsabilidad puede cambiar la recuperación práctica."] : ["Liability", "How responsibility is divided can change the practical recovery."],
+                  ko ? ["증거", "의료기록, 사진, 영상, 목격자 및 사고 보고서."] : es ? ["Evidencia", "Expedientes médicos, fotos, video, testigos y reportes."] : ["Evidence", "Medical records, photos, video, witnesses, and reports."],
+                  ko ? ["보험", "보험 한도, 복수 책임자, 유치권 및 실제 회수 가능성."] : es ? ["Seguro", "Límites de póliza, múltiples partes responsables, gravámenes y posibilidad real de cobro."] : ["Insurance", "Policy limits, multiple responsible parties, liens, and collectability."],
                 ].map(([title, body]) => (
                   <div key={title} className="border-t border-[#211E1B]/10 py-5">
                     <h3 className="text-[13px] font-semibold">{title}</h3>
@@ -497,18 +497,18 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
         <section className="bg-white py-12 md:py-16 lg:py-20">
           <div className="site-shell grid gap-8 lg:grid-cols-2 lg:items-stretch lg:gap-10">
             <div className="relative min-h-[340px] overflow-hidden rounded-[4px] bg-neutral-200 lg:min-h-[500px]">
-              <img src={heroLawOffice} alt={ko ? "법률 사무실과 사건 자료" : "Law office and case preparation"} className="absolute inset-0 h-full w-full object-cover" />
+              <img src={heroLawOffice} alt={ko ? "법률 사무실과 사건 자료" : es ? "Oficina jurídica y preparación del caso" : "Law office and case preparation"} className="absolute inset-0 h-full w-full object-cover" />
               <div className="absolute inset-0 bg-black/[0.08]" />
             </div>
             <div className="flex flex-col justify-center lg:pl-6">
-              <div className="text-[10px] text-[#211E1B]/70">{ko ? "05 · 다음 단계" : "05 · What to do next"}</div>
-              <h2 className="mt-3 text-[22px] font-semibold tracking-[-0.025em]">{ko ? "계산 후에는 기록을 정리하세요." : "After the estimate, document the claim."}</h2>
+              <div className="text-[10px] text-[#211E1B]/70">{ko ? "05 · 다음 단계" : es ? "05 · Qué hacer después" : "05 · What to do next"}</div>
+              <h2 className="mt-3 text-[22px] font-semibold tracking-[-0.025em]">{ko ? "계산 후에는 기록을 정리하세요." : es ? "Después de la estimación, documente el reclamo." : "After the estimate, document the claim."}</h2>
               <div className="mt-7 border-t border-[#211E1B]/12">
                 {[
-                  ko ? ["치료 기록", "진료기록, 청구서, 처방 및 향후 치료 계획을 보관하세요."] : ["Treatment records", "Keep medical records, bills, prescriptions, and future-care plans."],
-                  ko ? ["소득 손실", "결근일, 급여 명세 및 고용주 확인 자료를 모으세요."] : ["Income loss", "Keep missed-work dates, pay records, and employer confirmation."],
-                  ko ? ["사고 증거", "사진, 영상, 보고서, 목격자 및 보험 서신을 보존하세요."] : ["Accident evidence", "Preserve photos, video, reports, witnesses, and insurance correspondence."],
-                  ko ? ["기한", "캘리포니아의 개인상해 소송 기한은 일반적으로 2년이지만 예외가 있습니다."] : ["Deadlines", "California personal-injury lawsuits generally have a two-year deadline, but exceptions exist."],
+                  ko ? ["치료 기록", "진료기록, 청구서, 처방 및 향후 치료 계획을 보관하세요."] : es ? ["Registros de tratamiento", "Guarde expedientes médicos, facturas, recetas y planes de atención futura."] : ["Treatment records", "Keep medical records, bills, prescriptions, and future-care plans."],
+                  ko ? ["소득 손실", "결근일, 급여 명세 및 고용주 확인 자료를 모으세요."] : es ? ["Pérdida de ingresos", "Guarde fechas de trabajo perdido, comprobantes de pago y confirmación del empleador."] : ["Income loss", "Keep missed-work dates, pay records, and employer confirmation."],
+                  ko ? ["사고 증거", "사진, 영상, 보고서, 목격자 및 보험 서신을 보존하세요."] : es ? ["Evidencia del accidente", "Preserve fotos, video, reportes, testigos y correspondencia del seguro."] : ["Accident evidence", "Preserve photos, video, reports, witnesses, and insurance correspondence."],
+                  ko ? ["기한", "캘리포니아의 개인상해 소송 기한은 일반적으로 2년이지만 예외가 있습니다."] : es ? ["Plazos", "Las demandas por lesiones personales en California generalmente tienen un plazo de dos años, pero existen excepciones."] : ["Deadlines", "California personal-injury lawsuits generally have a two-year deadline, but exceptions exist."],
                 ].map(([title, body], index) => (
                   <div key={title} className="grid gap-2 border-b border-[#211E1B]/10 py-4 sm:grid-cols-[34px_0.7fr_1.3fr] sm:gap-5">
                     <span className="text-[10px] font-medium text-[#6E635A]">0{index + 1}</span>
@@ -525,14 +525,14 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
           <div className="site-shell mx-auto grid max-w-[1080px] gap-10 lg:grid-cols-[0.65fr_1.35fr] lg:gap-14">
             <div>
               <div className="text-[10px] text-[#211E1B]/70">FAQ</div>
-              <h2 className="mt-3 text-[21px] font-semibold tracking-[-0.02em]">{ko ? "계산기 질문" : "Common calculator questions"}</h2>
+              <h2 className="mt-3 text-[21px] font-semibold tracking-[-0.02em]">{ko ? "계산기 질문" : es ? "Preguntas comunes sobre la calculadora" : "Common calculator questions"}</h2>
             </div>
             <div className="divide-y divide-[#211E1B]/10 border-t border-[#211E1B]/10">
               {[
-                ko ? ["이 계산기가 실제 합의금을 알려주나요?", "아니요. 입력값을 바탕으로 한 교육용 범위이며 실제 합의나 평결을 예측하지 않습니다."] : ["Does this tell me my actual settlement?", "No. It is an educational range from your inputs, not a prediction of a settlement or verdict."],
-                ko ? ["왜 한 숫자가 아닌 범위인가요?", "책임, 보험, 의료 증거 및 향후 손실이 사건마다 달라 하나의 숫자는 실제 불확실성을 숨깁니다."] : ["Why a range instead of one number?", "Liability, insurance, medical proof, and future losses vary too much for one number to be honest."],
-                ko ? ["의료비의 몇 배가 사건 가치인가요?", "고정 법칙은 없습니다. 이 페이지의 배수는 교육용 모델일 뿐 캘리포니아 법정 공식이 아닙니다."] : ["Is a case worth a fixed multiple of medical bills?", "No. The multiplier here is an educational model, not a California legal formula."],
-                ko ? ["일부 과실이 있어도 회수할 수 있나요?", "캘리포니아 비교 과실 원칙에 따라 본인의 책임 비율이 손해액을 줄일 수 있습니다."] : ["What if I was partly at fault?", "California comparative fault can reduce damages based on the responsibility attributed to you."],
+                ko ? ["이 계산기가 실제 합의금을 알려주나요?", "아니요. 입력값을 바탕으로 한 교육용 범위이며 실제 합의나 평결을 예측하지 않습니다."] : es ? ["¿Esto me dice cuál será mi acuerdo real?", "No. Es un rango educativo basado en sus datos, no una predicción de un acuerdo o veredicto."] : ["Does this tell me my actual settlement?", "No. It is an educational range from your inputs, not a prediction of a settlement or verdict."],
+                ko ? ["왜 한 숫자가 아닌 범위인가요?", "책임, 보험, 의료 증거 및 향후 손실이 사건마다 달라 하나의 숫자는 실제 불확실성을 숨깁니다."] : es ? ["¿Por qué un rango en lugar de un solo número?", "Responsabilidad, seguro, prueba médica y pérdidas futuras varían demasiado como para que un solo número sea honesto."] : ["Why a range instead of one number?", "Liability, insurance, medical proof, and future losses vary too much for one number to be honest."],
+                ko ? ["의료비의 몇 배가 사건 가치인가요?", "고정 법칙은 없습니다. 이 페이지의 배수는 교육용 모델일 뿐 캘리포니아 법정 공식이 아닙니다."] : es ? ["¿Un caso vale un múltiplo fijo de las facturas médicas?", "No. El multiplicador aquí es un modelo educativo, no una fórmula legal de California."] : ["Is a case worth a fixed multiple of medical bills?", "No. The multiplier here is an educational model, not a California legal formula."],
+                ko ? ["일부 과실이 있어도 회수할 수 있나요?", "캘리포니아 비교 과실 원칙에 따라 본인의 책임 비율이 손해액을 줄일 수 있습니다."] : es ? ["¿Qué pasa si tuve parte de la culpa?", "La culpa comparativa de California puede reducir los daños según el porcentaje de responsabilidad que se le atribuya."] : ["What if I was partly at fault?", "California comparative fault can reduce damages based on the responsibility attributed to you."],
               ].map(([question, answer]) => (
                 <div key={question} className="py-5"><h3 className="text-[13px] font-semibold">{question}</h3><p className="mt-2 text-[10px] leading-5 text-[#211E1B]/50">{answer}</p></div>
               ))}
@@ -542,23 +542,23 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
 
         <section className="bg-white py-10 md:py-12">
           <div className="site-shell mx-auto grid max-w-[1080px] gap-6 md:grid-cols-[0.65fr_1.35fr] md:gap-12">
-            <div className="text-[10px] text-[#211E1B]/70">{ko ? "방법론 및 출처" : "Methodology & sources"}</div>
+            <div className="text-[10px] text-[#211E1B]/70">{ko ? "방법론 및 출처" : es ? "Metodología y fuentes" : "Methodology & sources"}</div>
             <div className="text-[10px] leading-5 text-[#211E1B]/48">
-              <p>{ko ? "이 도구는 캘리포니아 민사 배심 지침에서 다루는 일반적인 손해 항목과 비교 과실 개념을 교육 목적으로 모델링합니다." : "This tool models common personal-injury damage categories and comparative fault concepts reflected in California civil jury instructions. It is educational, not a court formula."}</p>
+              <p>{ko ? "이 도구는 캘리포니아 민사 배심 지침에서 다루는 일반적인 손해 항목과 비교 과실 개념을 교육 목적으로 모델링합니다." : es ? "Esta herramienta modela categorías comunes de daños por lesiones personales y conceptos de culpa comparativa reflejados en las instrucciones civiles al jurado de California. Es educativa, no una fórmula judicial." : "This tool models common personal-injury damage categories and comparative fault concepts reflected in California civil jury instructions. It is educational, not a court formula."}</p>
               <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2">
                 <a href="https://courts.ca.gov/partners/california-jury-instructions/civil-jury-instructions-resource-center" target="_blank" rel="noreferrer" className="font-semibold text-[#6E635A] underline underline-offset-3">California CACI</a>
                 <a href="https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury" target="_blank" rel="noreferrer" className="font-semibold text-[#6E635A] underline underline-offset-3">California Courts: Personal injury</a>
                 <a href="https://selfhelp.courts.ca.gov/civil-lawsuit/statute-limitations" target="_blank" rel="noreferrer" className="font-semibold text-[#6E635A] underline underline-offset-3">California Courts: Deadlines</a>
               </div>
-              <p className="mt-4 text-[9px] text-[#211E1B]/32">{ko ? "최종 업데이트: 2026년 9월 · 일반 정보이며 법률 자문이 아닙니다." : "Last updated September 2026 · General information only; not legal advice."}</p>
+              <p className="mt-4 text-[9px] text-[#211E1B]/32">{ko ? "최종 업데이트: 2026년 9월 · 일반 정보이며 법률 자문이 아닙니다." : es ? "Última actualización: septiembre de 2026 · Información general; no constituye asesoría legal." : "Last updated September 2026 · General information only; not legal advice."}</p>
             </div>
           </div>
         </section>
 
         <section className="bg-[#17130f] text-[#f3eee5]">
           <div className="site-shell grid gap-5 py-9 sm:grid-cols-[1fr_auto] sm:items-center">
-            <div><div className="text-[14px] font-semibold">{ko ? "계산기보다 더 자세한 검토가 필요하신가요?" : "Need more than a calculator?"}</div><p className="mt-1 text-[10px] leading-5 text-white/42">{ko ? "중상, 과실 분쟁 또는 큰 향후 손실이 있다면 실제 기록과 보험을 함께 검토해야 합니다." : "Serious injuries, disputed fault, or major future losses deserve a real review of the records and coverage."}</p></div>
-            <div className="flex flex-wrap gap-3"><a href={`${localePrefix(locale)}/contact`} className="inline-flex h-10 items-center gap-2 rounded-[3px] bg-[#f3eee5] px-4 text-[10px] font-semibold text-[#17130f]">{ko ? "상담 요청" : "Request a consultation"}<ArrowRight className="h-3.5 w-3.5" /></a><a href={brand.phoneHref} className="inline-flex h-10 items-center px-3 text-[12px] font-semibold">{brand.phoneDisplay}</a></div>
+            <div><div className="text-[14px] font-semibold">{ko ? "계산기보다 더 자세한 검토가 필요하신가요?" : es ? "¿Necesita más que una calculadora?" : "Need more than a calculator?"}</div><p className="mt-1 text-[10px] leading-5 text-white/42">{ko ? "중상, 과실 분쟁 또는 큰 향후 손실이 있다면 실제 기록과 보험을 함께 검토해야 합니다." : es ? "Las lesiones graves, la culpa disputada o pérdidas futuras importantes merecen una revisión real de los registros y la cobertura." : "Serious injuries, disputed fault, or major future losses deserve a real review of the records and coverage."}</p></div>
+            <div className="flex flex-wrap gap-3"><a href={`${localePrefix(locale)}/contact`} className="inline-flex h-10 items-center gap-2 rounded-[3px] bg-[#f3eee5] px-4 text-[10px] font-semibold text-[#17130f]">{ko ? "상담 요청" : es ? "Solicitar una consulta" : "Request a consultation"}<ArrowRight className="h-3.5 w-3.5" /></a><a href={brand.phoneHref} className="inline-flex h-10 items-center px-3 text-[12px] font-semibold">{brand.phoneDisplay}</a></div>
           </div>
         </section>
       </main>
