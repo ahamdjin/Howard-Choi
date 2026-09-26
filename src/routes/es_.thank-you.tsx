@@ -7,7 +7,7 @@ export const Route = createFileRoute("/es_/thank-you")({
     title: "Gracias | Buena Park Injury Lawyer",
     description: "Su mensaje fue recibido por Buena Park Injury Lawyer.",
     path: "/es/thank-you",
-    locale: "es",
+    locale: "es-US",
     noindex: true,
     followWhenNoindex: true,
   }),
