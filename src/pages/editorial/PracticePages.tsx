@@ -8,11 +8,14 @@ import ClientProof from "@/components/ClientProof";
 import PageReviewed from "@/components/PageReviewed";
 import { EvidenceVisuals, ClaimValueVisual, GuideAttorney } from "@/components/ClaimVisuals";
 import { practiceMedia } from "@/data/practiceMedia";
+import { esPracticeContent } from "@/data/esPracticeContent";
+import { esPracticeEnhancements } from "@/data/esPracticeEnhancements";
 import { getPracticeArea, practiceAreas, serviceLocations, type SiteLocale } from "@/data/injurySite";
 import {
   ConsultationCta,
   EditorialFrame,
   EditorialHero,
+  isEs,
   isKo,
   localePrefix,
   PracticeLinks,
@@ -186,30 +189,40 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
 };
 
 export const PracticeAreasPage = ({ locale }: { locale: SiteLocale }) => (
+
+export const PracticeAreasPage = ({ locale }: { locale: SiteLocale }) => (
   <EditorialFrame locale={locale}>
     <main>
       <EditorialHero
         locale={locale}
-        eyebrow={isKo(locale) ? "개인상해 업무 분야" : "Personal injury practice areas"}
-        title={isKo(locale) ? "사고 유형보다 중요한 것은 사건이 실제로 어떻게 영향을 미쳤는지입니다." : "Start with the kind of accident you had."}
+        eyebrow={isKo(locale) ? "개인상해 업무 분야" : isEs(locale) ? "Áreas de práctica de lesiones personales" : "Personal injury practice areas"}
+        title={isKo(locale) ? "사고 유형보다 중요한 것은 사건이 실제로 어떻게 영향을 미쳤는지입니다." : isEs(locale) ? "Empiece por el tipo de accidente que tuvo." : "Start with the kind of accident you had."}
         description={isKo(locale)
           ? "자동차 사고부터 중대 상해까지, 각 사건 분야에서 어떤 사실과 증거가 중요한지 명확하게 설명합니다."
-          : "Explore the accident and injury matters the firm handles, including the evidence to preserve, insurance questions to ask, losses to document, and practical next steps after an injury."}
+          : isEs(locale)
+            ? "Explore los tipos de accidentes y lesiones que maneja la firma, incluida la evidencia que conviene preservar, las preguntas de seguro, las pérdidas que deben documentarse y los próximos pasos prácticos."
+            : "Explore the accident and injury matters the firm handles, including the evidence to preserve, insurance questions to ask, losses to document, and practical next steps after an injury."}
         image={heroJustice}
       />
       <ReadingLayout
         locale={locale}
-        label={isKo(locale) ? "개인상해 · 업무 분야" : "Personal injury · Practice areas"}
+        label={isKo(locale) ? "개인상해 · 업무 분야" : isEs(locale) ? "Lesiones personales · Áreas de práctica" : "Personal injury · Practice areas"}
         sections={isKo(locale)
           ? [{ id: "overview", label: "전체 분야" }, { id: "process", label: "사건 진행" }, { id: "evidence", label: "증거와 기록" }]
-          : [{ id: "overview", label: "All practice areas" }, { id: "process", label: "How a claim develops" }, { id: "evidence", label: "Evidence & records" }]}
+          : isEs(locale)
+            ? [{ id: "overview", label: "Todas las áreas" }, { id: "process", label: "Cómo se desarrolla un reclamo" }, { id: "evidence", label: "Evidencia y registros" }]
+            : [{ id: "overview", label: "All practice areas" }, { id: "process", label: "How a claim develops" }, { id: "evidence", label: "Evidence & records" }]}
       >
         <ReadingSectionBlock
           id="overview"
           locale={locale}
-          kicker={isKo(locale) ? "01 · 분야" : "01 · Areas"}
-          title={isKo(locale) ? "필요한 정보를 사건 유형별로 찾으세요." : "Eight kinds of claim, and they do not work the same way."}
-          intro={isKo(locale) ? "각 페이지는 일반적인 사건 구조를 설명하기 위한 것이며 실제 사건의 사실관계에 따라 접근은 달라집니다." : "People assume an injury claim is an injury claim. It is not. A truck case turns on company records that get deleted on a schedule. A fall case turns on whether anyone can prove the hazard was there long enough to be noticed. A rideshare case can turn on one screenshot. Pick the page that matches what happened to you and it will tell you what actually matters in that kind of case."}
+          kicker={isKo(locale) ? "01 · 분야" : isEs(locale) ? "01 · Áreas" : "01 · Areas"}
+          title={isKo(locale) ? "필요한 정보를 사건 유형별로 찾으세요." : isEs(locale) ? "Ocho tipos de reclamo, y no funcionan de la misma manera." : "Eight kinds of claim, and they do not work the same way."}
+          intro={isKo(locale)
+            ? "각 페이지는 일반적인 사건 구조를 설명하기 위한 것이며 실제 사건의 사실관계에 따라 접근은 달라집니다."
+            : isEs(locale)
+              ? "Un reclamo por lesiones no funciona igual en todos los casos. Un choque de camión puede depender de registros empresariales que se eliminan según un calendario. Una caída puede depender de demostrar cuánto tiempo existió un peligro. Un caso de Uber o Lyft puede depender de una sola captura de pantalla. Elija la página que corresponda a lo que ocurrió."
+              : "People assume an injury claim is an injury claim. It is not. A truck case turns on company records that get deleted on a schedule. A fall case turns on whether anyone can prove the hazard was there long enough to be noticed. A rideshare case can turn on one screenshot. Pick the page that matches what happened to you and it will tell you what actually matters in that kind of case."}
         >
           <PracticeLinks locale={locale} />
         </ReadingSectionBlock>
@@ -217,21 +230,27 @@ export const PracticeAreasPage = ({ locale }: { locale: SiteLocale }) => (
         <ReadingSectionBlock
           id="process"
           locale={locale}
-          kicker={isKo(locale) ? "02 · 진행" : "02 · Process"}
-          title={isKo(locale) ? "좋은 사건 준비는 순서가 있습니다." : "Order matters more than speed."}
-          intro={isKo(locale) ? "초기에는 치료와 증거 보존이 중요하고, 이후에는 보험과 손실을 정리하며 책임과 손해를 설명할 수 있는 기록을 만들어갑니다." : "Get treatment, and get the evidence that will not survive a few weeks of waiting. Those two come first and almost everything else can be rebuilt later. After that it becomes a slower job of working out who is responsible, which policies apply, and what the injury has actually cost you. That part takes as long as your recovery does, which is usually the part nobody warns you about."}
+          kicker={isKo(locale) ? "02 · 진행" : isEs(locale) ? "02 · Proceso" : "02 · Process"}
+          title={isKo(locale) ? "좋은 사건 준비는 순서가 있습니다." : isEs(locale) ? "El orden importa más que la velocidad." : "Order matters more than speed."}
+          intro={isKo(locale)
+            ? "초기에는 치료와 증거 보존이 중요하고, 이후에는 보험과 손실을 정리하며 책임과 손해를 설명할 수 있는 기록을 만들어갑니다."
+            : isEs(locale)
+              ? "Obtenga tratamiento y preserve la evidencia que no sobrevivirá semanas de espera. Esas dos cosas vienen primero. Después sigue el trabajo más lento de determinar quién es responsable, qué pólizas aplican y cuánto ha costado realmente la lesión."
+              : "Get treatment, and get the evidence that will not survive a few weeks of waiting. Those two come first and almost everything else can be rebuilt later. After that it becomes a slower job of working out who is responsible, which policies apply, and what the injury has actually cost you. That part takes as long as your recovery does, which is usually the part nobody warns you about."}
         >
           <div className="grid gap-0 border-y border-[#1E1C1A]/12 md:grid-cols-3">
             {[FileText, ShieldCheck, CheckCircle2].map((Icon, index) => (
               <div key={index} className="border-b border-[#1E1C1A]/12 py-6 md:border-b-0 md:border-l md:px-6 md:first:border-l-0 md:first:pl-0">
                 <Icon className="h-4 w-4 stroke-[1.3] text-[#381907]" />
                 <h3 style={serifStyle(locale)} className="mt-9 text-[1.35rem]">
-                  {isKo(locale) ? ["기록 확보", "보험 확인", "손실 정리"][index] : ["Preserve the record", "Understand coverage", "Document the loss"][index]}
+                  {isKo(locale) ? ["기록 확보", "보험 확인", "손실 정리"][index] : isEs(locale) ? ["Preservar el expediente", "Entender la cobertura", "Documentar la pérdida"][index] : ["Preserve the record", "Understand coverage", "Document the loss"][index]}
                 </h3>
                 <p className="mt-3 text-[11px] leading-5 text-[#1E1C1A]/48">
                   {isKo(locale)
                     ? ["사진, 영상, 진료기록과 목격자 등 초기 증거를 확보합니다.", "적용 가능한 보험과 책임 당사자를 확인합니다.", "치료비뿐 아니라 업무와 일상생활에 미친 영향을 정리합니다."][index]
-                    : ["Secure scene evidence, reports, records, witnesses, video, and other information before it disappears.", "Identify the people, businesses, vehicles, policies, and coverage questions that may matter.", "Track treatment, medical costs, missed work, future needs, and the practical effect on everyday life."][index]}
+                    : isEs(locale)
+                      ? ["Preserve fotos, video, reportes, testigos y otros datos antes de que desaparezcan.", "Identifique personas, empresas, vehículos, pólizas y preguntas de cobertura que pueden importar.", "Registre tratamiento, gastos médicos, trabajo perdido, necesidades futuras y el efecto en la vida diaria."][index]
+                      : ["Secure scene evidence, reports, records, witnesses, video, and other information before it disappears.", "Identify the people, businesses, vehicles, policies, and coverage questions that may matter.", "Track treatment, medical costs, missed work, future needs, and the practical effect on everyday life."][index]}
                 </p>
               </div>
             ))}
@@ -241,9 +260,13 @@ export const PracticeAreasPage = ({ locale }: { locale: SiteLocale }) => (
         <ReadingSectionBlock
           id="evidence"
           locale={locale}
-          kicker={isKo(locale) ? "03 · 증거" : "03 · Evidence"}
-          title={isKo(locale) ? "사건은 기억보다 기록으로 설명하는 것이 좋습니다." : "The best time to preserve evidence is before anyone needs it."}
-          intro={isKo(locale) ? "사고 현장 자료, 차량 정보, 진료 기록, 보험 서신과 업무 손실 자료를 일관된 흐름으로 정리하면 사건을 설명하기 쉬워집니다." : "Photos, reports, witnesses, video, medical records, insurance communications, wage information, and a simple timeline are easier to use when they are collected early and kept together."}
+          kicker={isKo(locale) ? "03 · 증거" : isEs(locale) ? "03 · Evidencia" : "03 · Evidence"}
+          title={isKo(locale) ? "사건은 기억보다 기록으로 설명하는 것이 좋습니다." : isEs(locale) ? "El mejor momento para preservar evidencia es antes de necesitarla." : "The best time to preserve evidence is before anyone needs it."}
+          intro={isKo(locale)
+            ? "사고 현장 자료, 차량 정보, 진료 기록, 보험 서신과 업무 손실 자료를 일관된 흐름으로 정리하면 사건을 설명하기 쉬워집니다."
+            : isEs(locale)
+              ? "Fotos, reportes, testigos, video, expedientes médicos, comunicaciones de seguro, información salarial y una cronología simple son más útiles cuando se reúnen temprano y se mantienen juntos."
+              : "Photos, reports, witnesses, video, medical records, insurance communications, wage information, and a simple timeline are easier to use when they are collected early and kept together."}
         />
       </ReadingLayout>
       <ConsultationCta locale={locale} />
@@ -256,19 +279,48 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
   const practice = params.slug ? getPracticeArea(params.slug) : undefined;
   if (!practice) return null;
 
-  const title = isKo(locale) ? practice.koTitle : practice.title;
-  const heroTitle = isKo(locale) ? `${practice.koTitle} · Buena Park` : `Buena Park ${practice.title} Lawyer`;
-  const description = isKo(locale) ? practice.koDescription : practice.description;
-  const intro = isKo(locale) ? practice.koIntro : practice.intro;
-  const issues = isKo(locale) ? practice.koIssues : practice.issues;
+  const esCopy = esPracticeContent[practice.slug];
+  const esEnhancement = esPracticeEnhancements[practice.slug];
   const enhancement = practiceEnhancements[practice.slug];
+
+  const title = isKo(locale) ? practice.koTitle : isEs(locale) ? (esCopy?.shortTitle || practice.title) : practice.title;
+  const heroTitle = isKo(locale) ? `${practice.koTitle} · Buena Park` : isEs(locale) ? (esCopy?.title || `Abogado de ${practice.title} en Buena Park`) : `Buena Park ${practice.title} Lawyer`;
+  const description = isKo(locale) ? practice.koDescription : isEs(locale) ? (esCopy?.description || practice.description) : practice.description;
+  const intro = isKo(locale) ? practice.koIntro : isEs(locale) ? (esCopy?.intro || practice.intro) : practice.intro;
+  const issues = isKo(locale) ? practice.koIssues : isEs(locale) ? (esCopy?.issues || practice.issues) : practice.issues;
+  const evidenceTitle = isKo(locale) ? practice.koEvidenceTitle : isEs(locale) ? (esCopy?.evidenceTitle || practice.evidenceTitle) : practice.evidenceTitle;
+  const evidenceIntro = isKo(locale) ? practice.koEvidenceIntro : isEs(locale) ? (esCopy?.evidenceIntro || practice.evidenceIntro) : practice.evidenceIntro;
+  const evidenceItems = isEs(locale) ? (esEnhancement?.evidenceItems || practice.evidenceItems) : practice.evidenceItems;
+  const valueIntro = isKo(locale) ? practice.koValueIntro : isEs(locale) ? (esCopy?.valueIntro || practice.valueIntro) : practice.valueIntro;
+  const insuranceIntro = isKo(locale) ? practice.koInsuranceIntro : isEs(locale) ? (esCopy?.insuranceIntro || practice.insuranceIntro) : practice.insuranceIntro;
+  const headings = isEs(locale) ? (esEnhancement?.headings || enhancement.headings) : enhancement.headings;
+  const attorneyNote = isEs(locale) ? (esEnhancement?.fromAttorney || enhancement.fromAttorney) : enhancement.fromAttorney;
+  const damages = isKo(locale)
+    ? ["현재와 향후 치료비", "임금 손실과 향후 소득 영향", "통증·기능 제한·일상생활 변화", "사건 유형에 따라 적용되는 기타 경제적 손실"]
+    : isEs(locale)
+      ? (esEnhancement?.damages || enhancement.damages)
+      : enhancement.damages;
+  const deadlineNote = isKo(locale)
+    ? "캘리포니아의 많은 개인상해 소송에는 일반적인 제소 기한이 있지만 공공기관 관련 청구 등은 더 짧은 절차가 적용될 수 있습니다. 또한 영상, 전자기록, 목격자 기억은 훨씬 빨리 사라질 수 있습니다."
+    : isEs(locale)
+      ? (esEnhancement?.deadlineNote || enhancement.deadlineNote)
+      : enhancement.deadlineNote;
+  const faqs = isKo(locale)
+    ? [
+        ["변호사와 언제 상담하는 것이 좋나요?", "중요한 영상, 기록, 보험 정보가 사라지기 전에 사건을 정리하면 도움이 될 수 있습니다. 모든 서류를 갖춘 뒤까지 기다릴 필요는 없습니다."],
+        ["보험사가 먼저 연락하면 어떻게 해야 하나요?", "누가 어떤 목적으로 연락했는지 확인하고, 상세한 진술이나 광범위한 서류에 서명하기 전에 요청 내용을 이해하는 것이 중요합니다."],
+        ["제가 일부 잘못한 경우에도 청구할 수 있나요?", "캘리포니아에서는 비교과실 문제가 적용될 수 있습니다. 일부 과실 주장이 있다는 이유만으로 사건이 자동으로 끝나는 것은 아닙니다."],
+      ]
+    : isEs(locale)
+      ? (esCopy?.faqs || enhancement.faqs)
+      : enhancement.faqs;
 
   return (
     <EditorialFrame locale={locale}>
       <main className="detail-guide">
         <EditorialHero
           locale={locale}
-          eyebrow={isKo(locale) ? "개인상해 · 업무 분야" : "Personal injury · Practice area"}
+          eyebrow={isKo(locale) ? "개인상해 · 업무 분야" : isEs(locale) ? "Lesiones personales · Área de práctica" : "Personal injury · Practice area"}
           title={heroTitle}
           description={description}
           image={practiceMedia[practice.slug]?.src ?? heroCourthouse}
@@ -277,67 +329,70 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
         <GuideAttorney locale={locale} />
         <ReadingLayout
           locale={locale}
-          label={`${title} · ${isKo(locale) ? "안내" : "Guide"}`}
+          label={`${title} · ${isKo(locale) ? "안내" : isEs(locale) ? "Guía" : "Guide"}`}
           sections={isKo(locale)
             ? [
                 { id: "understand", label: "사건 이해" }, { id: "issues", label: "주요 쟁점" }, { id: "evidence", label: "증거" },
                 { id: "value", label: "손해와 가치" }, { id: "insurance", label: "보험" }, { id: "deadlines", label: "기한" },
                 { id: "faq", label: "자주 묻는 질문" }, { id: "resources", label: "자료" }, { id: "related", label: "다른 업무 분야" }, { id: "areas", label: "지역" },
               ]
-            : [
-                { id: "understand", label: "Understanding the claim" }, { id: "issues", label: "Key issues" }, { id: "evidence", label: "Evidence to preserve" },
-                { id: "value", label: "Damages & case value" }, { id: "insurance", label: "Insurance & responsibility" }, { id: "deadlines", label: "California deadlines" },
-                { id: "faq", label: "Common questions" }, { id: "resources", label: "Guides & sources" }, { id: "related", label: "Related practice areas" }, { id: "areas", label: "Where we handle these" },
-              ]}
+            : isEs(locale)
+              ? [
+                  { id: "understand", label: "Entender el reclamo" }, { id: "issues", label: "Puntos clave" }, { id: "evidence", label: "Evidencia a preservar" },
+                  { id: "value", label: "Daños y valor del caso" }, { id: "insurance", label: "Seguro y responsabilidad" }, { id: "deadlines", label: "Plazos de California" },
+                  { id: "faq", label: "Preguntas frecuentes" }, { id: "resources", label: "Guías y fuentes" }, { id: "related", label: "Áreas relacionadas" }, { id: "areas", label: "Dónde atendemos" },
+                ]
+              : [
+                  { id: "understand", label: "Understanding the claim" }, { id: "issues", label: "Key issues" }, { id: "evidence", label: "Evidence to preserve" },
+                  { id: "value", label: "Damages & case value" }, { id: "insurance", label: "Insurance & responsibility" }, { id: "deadlines", label: "California deadlines" },
+                  { id: "faq", label: "Common questions" }, { id: "resources", label: "Guides & sources" }, { id: "related", label: "Related practice areas" }, { id: "areas", label: "Where we handle these" },
+                ]}
         >
-          <ReadingSectionBlock id="understand" locale={locale} Icon={Compass} kicker={isKo(locale) ? "01 · 이해" : "01 · Understand"} title={isKo(locale) ? `${title} 사건에서 먼저 확인할 것` : enhancement.headings.understand} intro={intro}>
+          <ReadingSectionBlock
+            id="understand"
+            locale={locale}
+            Icon={Compass}
+            kicker={isKo(locale) ? "01 · 이해" : isEs(locale) ? "01 · Entender" : "01 · Understand"}
+            title={isKo(locale) ? `${title} 사건에서 먼저 확인할 것` : headings.understand}
+            intro={intro}
+          >
             <div className="editorial-callout">
-              <span className="editorial-callout__label">{isKo(locale) ? "핵심" : "Key point"}</span>
-              <p>{isKo(locale) ? "책임, 보험, 치료와 일상생활의 영향을 함께 살펴보세요." : "Look beyond the accident: responsibility, insurance, treatment, and the impact on your everyday life all matter."}</p>
+              <span className="editorial-callout__label">{isKo(locale) ? "핵심" : isEs(locale) ? "Punto clave" : "Key point"}</span>
+              <p>{isKo(locale) ? "책임, 보험, 치료와 일상생활의 영향을 함께 살펴보세요." : isEs(locale) ? "Mire más allá del accidente: responsabilidad, seguro, tratamiento y el impacto en la vida diaria también importan." : "Look beyond the accident: responsibility, insurance, treatment, and the impact on your everyday life all matter."}</p>
             </div>
-            <AttorneyNote note={enhancement.fromAttorney} locale={locale} />
+            <AttorneyNote note={attorneyNote} locale={locale} />
           </ReadingSectionBlock>
 
-          <ReadingSectionBlock id="issues" locale={locale} Icon={Layers} kicker={isKo(locale) ? "02 · 주요 쟁점" : "02 · Key issues"} title={isKo(locale) ? "이 유형의 사건에서 자주 확인하는 항목" : enhancement.headings.issues}>
+          <ReadingSectionBlock id="issues" locale={locale} Icon={Layers} kicker={isKo(locale) ? "02 · 주요 쟁점" : isEs(locale) ? "02 · Puntos clave" : "02 · Key issues"} title={isKo(locale) ? "이 유형의 사건에서 자주 확인하는 항목" : headings.issues}>
             <div className="editorial-issue-list">
               {issues.map((issue, index) => <div key={issue} className="editorial-issue-row"><span>{String(index + 1).padStart(2, "0")}</span><strong>{issue}</strong></div>)}
             </div>
           </ReadingSectionBlock>
 
-          <ReadingSectionBlock id="evidence" locale={locale} Icon={FileText} kicker={isKo(locale) ? "03 · 증거" : "03 · Evidence"} title={isKo(locale) ? practice.koEvidenceTitle : practice.evidenceTitle} intro={isKo(locale) ? practice.koEvidenceIntro : practice.evidenceIntro}>
+          <ReadingSectionBlock id="evidence" locale={locale} Icon={FileText} kicker={isKo(locale) ? "03 · 증거" : isEs(locale) ? "03 · Evidencia" : "03 · Evidence"} title={evidenceTitle} intro={evidenceIntro}>
             <EvidenceVisuals locale={locale} />
             <div className="editorial-issue-list">
-              {practice.evidenceItems.map((item, index) => <div key={item} className="editorial-issue-row"><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong></div>)}
+              {evidenceItems.map((item, index) => <div key={item} className="editorial-issue-row"><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong></div>)}
             </div>
           </ReadingSectionBlock>
 
-          <ReadingSectionBlock id="value" locale={locale} Icon={Scale} kicker={isKo(locale) ? "04 · 손해" : "04 · Damages & value"} title={isKo(locale) ? "사건 가치는 하나의 공식으로 계산되지 않습니다." : enhancement.headings.value} intro={isKo(locale) ? practice.koValueIntro : practice.valueIntro}>
+          <ReadingSectionBlock id="value" locale={locale} Icon={Scale} kicker={isKo(locale) ? "04 · 손해" : isEs(locale) ? "04 · Daños y valor" : "04 · Damages & value"} title={isKo(locale) ? "사건 가치는 하나의 공식으로 계산되지 않습니다." : headings.value} intro={valueIntro}>
             <ClaimValueVisual locale={locale} />
             <div className="editorial-issue-list">
-              {(isKo(locale)
-                ? ["현재와 향후 치료비", "임금 손실과 향후 소득 영향", "통증·기능 제한·일상생활 변화", "사건 유형에 따라 적용되는 기타 경제적 손실"]
-                : enhancement.damages
-              ).map((item, index) => <div key={item} className="editorial-issue-row"><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong></div>)}
+              {damages.map((item, index) => <div key={item} className="editorial-issue-row"><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong></div>)}
             </div>
-            <a href={`${localePrefix(locale)}/case-value-calculator`} className="editorial-inline-link mt-6"><span>{isKo(locale) ? "캘리포니아 사건 가치 계산기 보기" : "Use the California case-value calculator"}</span><ArrowRight className="h-4 w-4" /></a>
+            <a href={`${localePrefix(locale)}/case-value-calculator`} className="editorial-inline-link mt-6"><span>{isKo(locale) ? "캘리포니아 사건 가치 계산기 보기" : isEs(locale) ? "Usar la calculadora de valor del caso de California" : "Use the California case-value calculator"}</span><ArrowRight className="h-4 w-4" /></a>
           </ReadingSectionBlock>
 
-          <ReadingSectionBlock id="insurance" locale={locale} Icon={Umbrella} kicker={isKo(locale) ? "05 · 보험" : "05 · Insurance"} title={isKo(locale) ? "누가 책임이 있고 어떤 보험이 적용되는지 확인합니다." : enhancement.headings.insurance} intro={isKo(locale) ? practice.koInsuranceIntro : practice.insuranceIntro} />
+          <ReadingSectionBlock id="insurance" locale={locale} Icon={Umbrella} kicker={isKo(locale) ? "05 · 보험" : isEs(locale) ? "05 · Seguro" : "05 · Insurance"} title={isKo(locale) ? "누가 책임이 있고 어떤 보험이 적용되는지 확인합니다." : headings.insurance} intro={insuranceIntro} />
 
-          <ReadingSectionBlock id="deadlines" locale={locale} Icon={CalendarClock} kicker={isKo(locale) ? "06 · 기한" : "06 · California deadlines"} title={isKo(locale) ? "법적 기한과 증거 보존 기한은 같은 것이 아닙니다." : "How long do you have?"} intro={isKo(locale) ? "캘리포니아의 많은 개인상해 소송에는 일반적인 제소 기한이 있지만 공공기관 관련 청구 등은 더 짧은 절차가 적용될 수 있습니다. 또한 영상, 전자기록, 목격자 기억은 훨씬 빨리 사라질 수 있습니다." : enhancement.deadlineNote}>
-            <a href={`${localePrefix(locale)}/blogs/california-personal-injury-deadlines`} className="editorial-inline-link"><span>{isKo(locale) ? "캘리포니아 개인상해 기한 가이드" : "Read the California injury-deadlines guide"}</span><ArrowRight className="h-4 w-4" /></a>
+          <ReadingSectionBlock id="deadlines" locale={locale} Icon={CalendarClock} kicker={isKo(locale) ? "06 · 기한" : isEs(locale) ? "06 · Plazos de California" : "06 · California deadlines"} title={isKo(locale) ? "법적 기한과 증거 보존 기한은 같은 것이 아닙니다." : isEs(locale) ? "¿Cuánto tiempo tiene?" : "How long do you have?"} intro={deadlineNote}>
+            <a href={`${localePrefix(locale)}/blogs/california-personal-injury-deadlines`} className="editorial-inline-link"><span>{isKo(locale) ? "캘리포니아 개인상해 기한 가이드" : isEs(locale) ? "Leer la guía de plazos de lesiones en California" : "Read the California injury-deadlines guide"}</span><ArrowRight className="h-4 w-4" /></a>
           </ReadingSectionBlock>
 
-          <ReadingSectionBlock id="faq" locale={locale} Icon={HelpCircle} kicker={isKo(locale) ? "07 · 질문" : "07 · Common questions"} title={isKo(locale) ? "사고 직후 자주 생기는 질문" : "Your questions, answered."}>
+          <ReadingSectionBlock id="faq" locale={locale} Icon={HelpCircle} kicker={isKo(locale) ? "07 · 질문" : isEs(locale) ? "07 · Preguntas frecuentes" : "07 · Common questions"} title={isKo(locale) ? "사고 직후 자주 생기는 질문" : isEs(locale) ? "Sus preguntas, respondidas." : "Your questions, answered."}>
             <div className="border-t border-[#1E1C1A]/12">
-              {(isKo(locale)
-                ? [
-                    ["변호사와 언제 상담하는 것이 좋나요?", "중요한 영상, 기록, 보험 정보가 사라지기 전에 사건을 정리하면 도움이 될 수 있습니다. 모든 서류를 갖춘 뒤까지 기다릴 필요는 없습니다."],
-                    ["보험사가 먼저 연락하면 어떻게 해야 하나요?", "누가 어떤 목적으로 연락했는지 확인하고, 상세한 진술이나 광범위한 서류에 서명하기 전에 요청 내용을 이해하는 것이 중요합니다."],
-                    ["제가 일부 잘못한 경우에도 청구할 수 있나요?", "캘리포니아에서는 비교과실 문제가 적용될 수 있습니다. 일부 과실 주장이 있다는 이유만으로 사건이 자동으로 끝나는 것은 아닙니다."],
-                  ]
-                : enhancement.faqs
-              ).map(([question, answer]) => (
+              {faqs.map(([question, answer]) => (
                 <details key={question} className="border-b border-[#1E1C1A]/12">
                   <summary>{question}</summary><p className="max-w-[720px] pb-6 text-base leading-7 text-[#57514b]">{answer}</p>
                 </details>
@@ -345,16 +400,20 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
             </div>
           </ReadingSectionBlock>
 
-          <ReadingSectionBlock id="resources" locale={locale} Icon={ShieldCheck} kicker={isKo(locale) ? "08 · 자료" : "08 · Guides & sources"} title={isKo(locale) ? "관련 가이드와 공식 자료" : "Helpful guides and official resources."} intro={isKo(locale) ? "사건 유형과 관련된 내부 가이드와 캘리포니아·연방 공식 자료를 함께 확인할 수 있습니다." : "Explore a topic in more detail. These guides provide general information, not advice about your specific case."}>
+          <ReadingSectionBlock id="resources" locale={locale} Icon={ShieldCheck} kicker={isKo(locale) ? "08 · 자료" : isEs(locale) ? "08 · Guías y fuentes" : "08 · Guides & sources"} title={isKo(locale) ? "관련 가이드와 공식 자료" : isEs(locale) ? "Guías útiles y fuentes oficiales." : "Helpful guides and official resources."} intro={isKo(locale) ? "사건 유형과 관련된 내부 가이드와 캘리포니아·연방 공식 자료를 함께 확인할 수 있습니다." : isEs(locale) ? "Explore un tema con más detalle. Estas guías ofrecen información general, no asesoría sobre su caso específico." : "Explore a topic in more detail. These guides provide general information, not advice about your specific case."}>
             <div className="grid gap-8 md:grid-cols-2">
               <div>
-                <div className="mb-3 text-[9px] font-semibold uppercase tracking-[0.16em] text-[#1E1C1A]/35">{isKo(locale) ? "관련 가이드" : "Related guides"}</div>
+                <div className="mb-3 text-[9px] font-semibold uppercase tracking-[0.16em] text-[#1E1C1A]/35">{isKo(locale) ? "관련 가이드" : isEs(locale) ? "Guías relacionadas" : "Related guides"}</div>
                 <div className="border-t border-[#1E1C1A]/12">
-                  {enhancement.guides.map((guide) => <a key={guide.slug} href={`${localePrefix(locale)}/blogs/${guide.slug}`} className="group flex items-center justify-between gap-4 border-b border-[#1E1C1A]/12 py-4 text-[12px]"><span>{isKo(locale) ? guide.koTitle : guide.title}</span><ArrowRight className="h-3.5 w-3.5 shrink-0 transition-transform group-hover:translate-x-1" /></a>)}
+                  {enhancement.guides.map((guide) => (
+                    <a key={guide.slug} href={`${localePrefix(locale)}/blogs/${guide.slug}`} className="group flex items-center justify-between gap-4 border-b border-[#1E1C1A]/12 py-4 text-[12px]">
+                      <span>{isKo(locale) ? guide.koTitle : isEs(locale) ? (esEnhancement?.guideTitles[guide.slug] || guide.title) : guide.title}</span><ArrowRight className="h-3.5 w-3.5 shrink-0 transition-transform group-hover:translate-x-1" />
+                    </a>
+                  ))}
                 </div>
               </div>
               <div>
-                <div className="mb-3 text-[9px] font-semibold uppercase tracking-[0.16em] text-[#1E1C1A]/35">{isKo(locale) ? "공식 자료" : "Primary sources"}</div>
+                <div className="mb-3 text-[9px] font-semibold uppercase tracking-[0.16em] text-[#1E1C1A]/35">{isKo(locale) ? "공식 자료" : isEs(locale) ? "Fuentes primarias" : "Primary sources"}</div>
                 <div className="border-t border-[#1E1C1A]/12">
                   {enhancement.sources.map((source) => <a key={source.href} href={source.href} target="_blank" rel="noreferrer" className="group flex items-center justify-between gap-4 border-b border-[#1E1C1A]/12 py-4 text-[12px]"><span>{source.label}</span><ArrowRight className="h-3.5 w-3.5 shrink-0 transition-transform group-hover:translate-x-1" /></a>)}
                 </div>
@@ -362,40 +421,42 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
             </div>
           </ReadingSectionBlock>
 
-          <ReadingSectionBlock id="related" locale={locale} Icon={Sparkles} kicker={isKo(locale) ? "09 · 더 보기" : "09 · Explore"} title={isKo(locale) ? "다른 개인상해 업무 분야" : "Related personal injury practice areas."}>
+          <ReadingSectionBlock id="related" locale={locale} Icon={Sparkles} kicker={isKo(locale) ? "09 · 더 보기" : isEs(locale) ? "09 · Explorar" : "09 · Explore"} title={isKo(locale) ? "다른 개인상해 업무 분야" : isEs(locale) ? "Áreas de práctica relacionadas." : "Related personal injury practice areas."}>
             <div className="editorial-link-grid">
-              {practiceAreas.filter((item) => item.slug !== practice.slug).slice(0, 4).map((item) => (
-                <a key={item.slug} href={`${localePrefix(locale)}/practice-areas/${item.slug}`} className="editorial-link-card">
-                  <div className="editorial-link-card__top"><span>→</span><ArrowRight className="h-3.5 w-3.5" /></div>
-                  <h3 style={serifStyle(locale)}>{isKo(locale) ? item.koTitle : item.title}</h3>
-                  <p>{isKo(locale) ? item.koDescription : item.description}</p>
-                </a>
-              ))}
+              {practiceAreas.filter((item) => item.slug !== practice.slug).slice(0, 4).map((item) => {
+                const relatedEs = esPracticeContent[item.slug];
+                return (
+                  <a key={item.slug} href={`${localePrefix(locale)}/practice-areas/${item.slug}`} className="editorial-link-card">
+                    <div className="editorial-link-card__top"><span>→</span><ArrowRight className="h-3.5 w-3.5" /></div>
+                    <h3 style={serifStyle(locale)}>{isKo(locale) ? item.koTitle : isEs(locale) ? (relatedEs?.shortTitle || item.title) : item.title}</h3>
+                    <p>{isKo(locale) ? item.koDescription : isEs(locale) ? (relatedEs?.description || item.description) : item.description}</p>
+                  </a>
+                );
+              })}
             </div>
           </ReadingSectionBlock>
+
           <ReadingSectionBlock
             id="areas"
             locale={locale}
             Icon={MapPin}
-            kicker={isKo(locale) ? "10 · 지역" : "10 · Where we handle these"}
-            title={isKo(locale) ? `${title} 사건 지원 지역` : `${title} claims across North Orange County.`}
+            kicker={isKo(locale) ? "10 · 지역" : isEs(locale) ? "10 · Dónde atendemos" : "10 · Where we handle these"}
+            title={isKo(locale) ? `${title} 사건 지원 지역` : isEs(locale) ? `Reclamos de ${title.toLowerCase()} en el norte del Condado de Orange.` : `${title} claims across North Orange County.`}
             intro={isKo(locale)
               ? "부에나파크 사무실을 중심으로 인근 오렌지카운티와 로스앤젤레스카운티 지역의 사건을 지원합니다."
-              : `The office is in Buena Park, and ${title.toLowerCase()} claims come in from the cities around it. Each page below has that city's own collision data, its police department, and the courthouse a filed case would go to.`}
+              : isEs(locale)
+                ? `La oficina está en Buena Park y recibimos reclamos de ${title.toLowerCase()} de las ciudades cercanas. Cada página local incluye datos de colisiones, la agencia correspondiente y el tribunal que podría intervenir si se presenta un caso.`
+                : `The office is in Buena Park, and ${title.toLowerCase()} claims come in from the cities around it. Each page below has that city's own collision data, its police department, and the courthouse a filed case would go to.`}
           >
             <div className="grid border-t border-[#1E1C1A]/12 sm:grid-cols-2">
               {serviceLocations.map((location) => (
-                <a
-                  key={location.slug}
-                  href={`${localePrefix(locale)}/locations/${location.slug}`}
-                  className="group flex items-center justify-between gap-4 border-b border-[#1E1C1A]/12 py-4 sm:even:border-l sm:even:pl-6"
-                >
+                <a key={location.slug} href={`${localePrefix(locale)}/locations/${location.slug}`} className="group flex items-center justify-between gap-4 border-b border-[#1E1C1A]/12 py-4 sm:even:border-l sm:even:pl-6">
                   <span className="text-[13px]">{isKo(locale) ? location.koName : location.name}</span>
                   <span className="shrink-0 text-[11px] text-[#1E1C1A]/38">{location.county}</span>
                 </a>
               ))}
             </div>
-            <a href={`${localePrefix(locale)}/locations`} className="editorial-inline-link mt-7"><span>{isKo(locale) ? "전체 지역 보기" : "See all service areas"}</span><ArrowRight className="h-4 w-4" /></a>
+            <a href={`${localePrefix(locale)}/locations`} className="editorial-inline-link mt-7"><span>{isKo(locale) ? "전체 지역 보기" : isEs(locale) ? "Ver todas las zonas de servicio" : "See all service areas"}</span><ArrowRight className="h-4 w-4" /></a>
           </ReadingSectionBlock>
         </ReadingLayout>
         <div className="site-shell pb-12"><PageReviewed locale={locale} /></div>
