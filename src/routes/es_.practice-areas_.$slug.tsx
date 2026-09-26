@@ -1,5 +1,5 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
-import { SpanishPracticeAreaDetailPage } from "@/pages/es/SpanishEditorialPages";
+import { PracticeAreaDetailPage } from "@/pages/editorial/PracticePages";
 import { getPracticeArea } from "@/data/injurySite";
 import { getSpanishPractice } from "@/data/esPracticeContent";
 import { breadcrumbJsonLd, buildSeo } from "@/lib/seo";
@@ -33,5 +33,5 @@ export const Route = createFileRoute("/es_/practice-areas_/$slug")({
       }],
     };
   },
-  component: SpanishPracticeAreaDetailPage,
+  component: () => <PracticeAreaDetailPage locale="es" />,
 });
