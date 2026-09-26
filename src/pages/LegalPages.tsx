@@ -1,8 +1,10 @@
 import Navigation from "@/components/Navigation";
 import KoreanNavigation from "@/components/KoreanNavigation";
+import SpanishNavigation from "@/components/SpanishNavigation";
 import Footer from "@/components/Footer";
 import KoreanFooter from "@/components/KoreanFooter";
-import { brand } from "@/data/injurySite";
+import SpanishFooter from "@/components/SpanishFooter";
+import { brand, type SiteLocale } from "@/data/injurySite";
 
 export type LegalDocumentType = "privacy" | "terms" | "disclaimer" | "accessibility";
 
@@ -295,11 +297,189 @@ const koreanDocs: Record<LegalDocumentType, LegalDocument> = {
   },
 };
 
-export const LegalPage = ({ type, locale = "en" }: { type: LegalDocumentType; locale?: "en" | "ko" }) => {
+
+const spanishDocs: Record<LegalDocumentType, LegalDocument> = {
+  privacy: {
+    eyebrow: "Legal",
+    title: "Política de privacidad",
+    intro: "Esta política explica los tipos de información que Buena Park Injury Lawyer puede recopilar a través de este sitio, cómo puede utilizarse y qué opciones están disponibles para usted.",
+    updated: "Última actualización: 11 de septiembre de 2026",
+    sections: [
+      {
+        title: "Información que podemos recopilar",
+        bullets: [
+          "Información de contacto que usted decida proporcionar, como nombre, correo electrónico, número de teléfono y dirección postal.",
+          "Información que incluya en una consulta, solicitud de consulta, nota de cita u otra comunicación con la firma.",
+          "Información de programación, incluida la fecha y hora que solicite para una consulta.",
+          "Información técnica y de uso básica, como tipo de navegador, dispositivo, páginas visitadas, páginas de referencia y actividad similar cuando nuestros proveedores de alojamiento, seguridad o análisis la habiliten.",
+        ],
+      },
+      {
+        title: "Cómo podemos utilizar la información",
+        bullets: [
+          "Responder a su consulta, evaluar si la firma puede ayudar y comunicarnos con usted.",
+          "Programar, confirmar, cambiar o dar seguimiento a una consulta.",
+          "Operar, proteger, mantener y mejorar el sitio y los servicios relacionados.",
+          "Cumplir obligaciones legales, profesionales, de conservación de registros y de seguridad aplicables.",
+        ],
+      },
+      {
+        title: "Proveedores de servicios y terceros",
+        paragraphs: [
+          "Podemos utilizar proveedores para alojamiento web, programación, gestión de relaciones con clientes, comunicaciones, seguridad, análisis y funciones comerciales similares. Esos proveedores pueden procesar información en nuestro nombre en la medida razonablemente necesaria para prestar sus servicios.",
+          "No vendemos intencionalmente información personal a cambio de dinero. La información móvil y los datos de consentimiento para mensajes de texto no se comparten con terceros o afiliados para sus propios fines de marketing o promoción. Podemos divulgar información cuando lo exija la ley, para proteger derechos o seguridad, o en relación con servicios profesionales razonablemente necesarios para operar la firma.",
+        ],
+      },
+      {
+        title: "Cookies y tecnologías similares",
+        paragraphs: [
+          "El sitio y sus proveedores pueden utilizar cookies o tecnologías similares para funciones esenciales, seguridad, preferencias, medición de rendimiento o análisis. Si se introducen tecnologías adicionales de publicidad o seguimiento, esta política deberá actualizarse y se ofrecerán las opciones exigidas por la ley.",
+        ],
+      },
+      {
+        title: "Mensajes de texto y comunicaciones",
+        paragraphs: [
+          "Si proporciona voluntariamente un número móvil y acepta recibir mensajes relacionados con citas, la frecuencia puede variar y pueden aplicarse tarifas de mensajes y datos. Puede responder STOP para dejar de recibir mensajes y HELP para solicitar ayuda. El consentimiento para recibir mensajes no es condición para contratar a la firma.",
+        ],
+      },
+      {
+        title: "Conservación y seguridad",
+        paragraphs: [
+          "La información puede conservarse durante el tiempo razonablemente necesario para el propósito para el que fue recopilada, mantener registros comerciales y profesionales, resolver disputas, hacer cumplir acuerdos y cumplir obligaciones legales o profesionales. Utilizamos medidas administrativas y técnicas razonables, pero ningún sistema de transmisión o almacenamiento por internet puede garantizar seguridad absoluta.",
+        ],
+      },
+      {
+        title: "Derechos de privacidad en California",
+        paragraphs: [
+          "Dependiendo de las circunstancias y la ley aplicable, los residentes de California pueden tener derechos para solicitar acceso, corrección o eliminación de cierta información personal y obtener información sobre cómo se utiliza o divulga. Algunas categorías pueden estar exentas por obligaciones legales, profesionales, probatorias, de seguridad u otras.",
+          "Para realizar una solicitud de privacidad, comuníquese con la firma mediante la página de Contacto o por teléfono. Es posible que debamos verificar su identidad antes de completar la solicitud.",
+        ],
+      },
+      {
+        title: "Menores y servicios externos",
+        paragraphs: [
+          "Este sitio está dirigido a adultos que buscan información o servicios legales y no está dirigido a menores de 13 años. Cuando el sitio enlace con servicios externos, se aplicarán las políticas de privacidad de esos servicios.",
+        ],
+      },
+      {
+        title: "Contacto",
+        paragraphs: [
+          `Las preguntas sobre esta política pueden dirigirse a ${brand.name}, ${brand.address}, por teléfono al ${brand.phoneDisplay} o mediante la página de Contacto.`,
+        ],
+      },
+    ],
+  },
+  terms: {
+    eyebrow: "Legal",
+    title: "Términos de uso",
+    intro: "Estos Términos de uso se aplican al sitio web de Buena Park Injury Lawyer. Al utilizar el sitio, usted acepta estos términos.",
+    updated: "Última actualización: 11 de septiembre de 2026",
+    sections: [
+      {
+        title: "Solo información general",
+        paragraphs: ["Los materiales de este sitio son únicamente información general y no constituyen asesoría legal. No deben utilizarse como sustituto del consejo de un abogado que haya revisado los hechos y plazos específicos de su asunto."],
+      },
+      {
+        title: "No existe relación abogado-cliente",
+        paragraphs: [
+          "Visitar este sitio, enviar un formulario, programar una consulta, enviar un correo, llamar a la oficina o comunicarse de otra forma con la firma no crea por sí solo una relación abogado-cliente. Esa relación se forma únicamente después de que la firma acepte la representación y se complete cualquier acuerdo de contratación requerido.",
+          "No envíe información confidencial o altamente sensible hasta que la firma confirme que lo representa y le indique cómo proporcionar esa información.",
+        ],
+      },
+      {
+        title: "Sin garantía de resultados",
+        paragraphs: ["Cada asunto legal es diferente. Cualquier mención de casos anteriores, resultados, acuerdos, veredictos o ejemplos no constituye una promesa ni garantía de un resultado particular. Los resultados dependen de los hechos, la ley, la evidencia, las partes, el seguro, el lugar y otras circunstancias."],
+      },
+      {
+        title: "Citas, comunicaciones y mensajes de texto",
+        paragraphs: ["La disponibilidad de citas mostrada en el sitio puede cambiar. Una reserva está sujeta a la información enviada y a la capacidad de la firma para aceptar la consulta. Si acepta recibir llamadas, mensajes o correos relacionados con citas, la frecuencia puede variar y pueden aplicarse tarifas. Responda STOP para dejar de recibir textos y HELP para obtener ayuda. El consentimiento no es condición para contratar a la firma."],
+      },
+      {
+        title: "Plazos y emergencias",
+        paragraphs: ["No utilice este sitio como único medio para comunicar un plazo legal, emergencia, fecha judicial, cuestión de prescripción u otro asunto sensible al tiempo. Si necesita ayuda inmediata, comuníquese directamente con el servicio de emergencia, tribunal, agencia o abogado correspondiente."],
+      },
+      {
+        title: "Enlaces y servicios de terceros",
+        paragraphs: ["El sitio puede enlazar con o utilizar servicios de terceros, incluidos mapas, programación, comunicaciones, alojamiento y otras tecnologías. La firma no controla ni es responsable del contenido, disponibilidad, términos o prácticas de privacidad de terceros."],
+      },
+      {
+        title: "Propiedad intelectual y uso permitido",
+        paragraphs: ["Salvo indicación contraria, el diseño, texto, gráficos, marca y materiales originales del sitio son propiedad de la firma o se utilizan bajo licencia. Puede ver y utilizar el sitio para fines personales y no comerciales. No puede copiar, volver a publicar, extraer, vender o explotar partes sustanciales del sitio de forma engañosa o ilegal."],
+      },
+      {
+        title: "Disponibilidad y cambios del sitio",
+        paragraphs: ["Podemos actualizar, suspender, retirar o cambiar contenido o funciones del sitio sin previo aviso. Aunque intentamos mantener la información precisa y útil, el sitio se ofrece según disponibilidad y puede contener errores, omisiones o información desactualizada."],
+      },
+      {
+        title: "Cambios en estos términos",
+        paragraphs: ["Podemos revisar estos Términos de uso periódicamente. La fecha indicada arriba muestra la actualización más reciente. El uso continuado del sitio después de una actualización constituye aceptación de los términos revisados."],
+      },
+      {
+        title: "Contacto",
+        paragraphs: [`Las preguntas sobre estos términos pueden dirigirse a ${brand.name}, ${brand.address} o por teléfono al ${brand.phoneDisplay}.`],
+      },
+    ],
+  },
+  disclaimer: {
+    eyebrow: "Legal",
+    title: "Aviso legal",
+    intro: "Información importante sobre el contenido legal, publicidad de abogado, comunicaciones y resultados presentados en este sitio.",
+    updated: "Última actualización: 11 de septiembre de 2026",
+    sections: [
+      {
+        title: "Publicidad de abogado",
+        paragraphs: ["Este sitio puede constituir publicidad de abogado. Está diseñado para proporcionar información general sobre Buena Park Injury Lawyer, Howard Choi y los tipos de asuntos que la firma puede manejar."],
+      },
+      {
+        title: "No es asesoría legal",
+        paragraphs: ["El contenido del sitio es información general y no constituye asesoría legal. Las leyes, plazos, procedimientos y resultados varían según la jurisdicción y los hechos de cada asunto. Consulte a un abogado calificado sobre su situación específica."],
+      },
+      {
+        title: "No existe relación abogado-cliente",
+        paragraphs: ["Ver el sitio o comunicarse con la firma no crea una relación abogado-cliente. La firma primero debe confirmar que puede aceptar el asunto y completar cualquier acuerdo de contratación requerido."],
+      },
+      {
+        title: "Resultados anteriores y testimonios",
+        paragraphs: ["Los resultados anteriores no garantizan ni predicen un resultado similar en otro asunto. Cualquier testimonio, reseña, ejemplo o descripción de un asunto anterior refleja las circunstancias de ese caso individual y no debe entenderse como promesa de un resultado particular."],
+      },
+      {
+        title: "Jurisdicciones y responsabilidad profesional",
+        paragraphs: ["El sitio no pretende afirmar que la firma o cualquier abogado pueda ejercer en todas las jurisdicciones. La representación está sujeta a reglas de responsabilidad profesional, revisión de conflictos, requisitos de licencia aplicables y aceptación del asunto por parte de la firma."],
+      },
+      {
+        title: "Asuntos sensibles al tiempo",
+        paragraphs: ["No dependa de un formulario del sitio o una solicitud de consulta para preservar un reclamo, cumplir un plazo de presentación o responder a una emergencia. Los plazos legales pueden vencer incluso mientras una consulta está pendiente."],
+      },
+    ],
+  },
+  accessibility: {
+    eyebrow: "Información",
+    title: "Declaración de accesibilidad",
+    intro: "Buena Park Injury Lawyer procura que este sitio sea utilizable por la mayor cantidad razonable de personas, incluidas quienes utilizan tecnologías de asistencia.",
+    updated: "Última actualización: 11 de septiembre de 2026",
+    sections: [
+      {
+        title: "Nuestro enfoque",
+        paragraphs: ["Procuramos mantener texto legible, navegación por teclado, etiquetas significativas, estructura suficiente y diseños responsivos en dispositivos y navegadores comunes. La accesibilidad es un proceso continuo y el contenido del sitio y las integraciones de terceros pueden cambiar con el tiempo."],
+      },
+      {
+        title: "Contenido de terceros",
+        paragraphs: ["Algunas funciones pueden depender de servicios de terceros, como mapas, programación, comunicaciones o contenido integrado. Es posible que no controlemos todos los aspectos de accesibilidad de esos servicios, pero intentaremos proporcionar una alternativa práctica cuando se nos informe de un problema."],
+      },
+      {
+        title: "¿Necesita ayuda?",
+        paragraphs: [`Si tiene dificultades para utilizar este sitio o necesita información en otro formato, comuníquese con la firma mediante la página de Contacto o llame al ${brand.phoneDisplay}. Cuando sea posible, indique la página y el problema de accesibilidad para que podamos responder con mayor eficacia.`],
+      },
+    ],
+  },
+};
+
+export const LegalPage = ({ type, locale = "en" }: { type: LegalDocumentType; locale?: SiteLocale }) => {
   const ko = locale === "ko";
-  const doc = ko ? koreanDocs[type] : englishDocs[type];
-  const Nav = ko ? KoreanNavigation : Navigation;
-  const SiteFooter = ko ? KoreanFooter : Footer;
+  const es = locale === "es";
+  const doc = ko ? koreanDocs[type] : es ? spanishDocs[type] : englishDocs[type];
+  const Nav = ko ? KoreanNavigation : es ? SpanishNavigation : Navigation;
+  const SiteFooter = ko ? KoreanFooter : es ? SpanishFooter : Footer;
 
   return (
     <div className="min-h-screen bg-background text-foreground" style={ko ? { fontFamily: '"Noto Sans KR", sans-serif' } : undefined}>
