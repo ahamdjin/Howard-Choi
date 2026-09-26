@@ -556,3 +556,60 @@
     padding-bottom: calc(env(safe-area-inset-bottom) + 7.5rem) !important;
   }
 }
+
+
+/* Mobile-only inner-page type sizing; desktop layout remains untouched. */
+@media (max-width: 767px) {
+  .inner-site-page .editorial-reading-grid {
+    gap: 2rem;
+  }
+
+  .inner-site-page .editorial-reading-rail__label {
+    font-size: 1.05rem;
+    line-height: 1.2;
+  }
+
+  .inner-site-page .editorial-reading-rail__link {
+    padding: 0.58rem 0.72rem;
+    font-size: 11px;
+  }
+
+  .inner-site-page .editorial-reading-section {
+    padding: 2rem 0;
+  }
+
+  .inner-site-page .editorial-reading-section__title,
+  .inner-site-page .detail-guide .editorial-reading-section__title {
+    font-size: clamp(1.65rem, 7vw, 1.95rem) !important;
+    line-height: 1.12 !important;
+  }
+
+  .inner-site-page .editorial-reading-section__intro,
+  .inner-site-page .detail-guide .editorial-reading-section__intro {
+    font-size: 15.5px !important;
+    line-height: 1.62 !important;
+  }
+
+  .inner-site-page .editorial-reading-section__body p,
+  .inner-site-page .detail-guide .editorial-reading-section__body p {
+    font-size: 15.5px !important;
+    line-height: 1.68 !important;
+  }
+
+  .inner-site-page .editorial-callout p,
+  .inner-site-page .detail-guide .editorial-callout p {
+    font-size: 1.1rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .inner-site-page .editorial-link-card p,
+  .inner-site-page .editorial-result-placeholder p {
+    font-size: 14px !important;
+    line-height: 1.58 !important;
+  }
+
+  .detail-guide > section:first-child h1 {
+    font-size: clamp(2.05rem, 9vw, 2.3rem) !important;
+    line-height: 1.02 !important;
+  }
+}
