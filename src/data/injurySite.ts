@@ -1,4 +1,4 @@
-export type SiteLocale = "en" | "ko";
+export type SiteLocale = "en" | "ko" | "es";
 
 export const brand = {
   name: "Buena Park Injury Lawyer",
