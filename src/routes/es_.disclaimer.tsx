@@ -7,7 +7,7 @@ export const Route = createFileRoute("/es_/disclaimer")({
     title: "Aviso Legal | Buena Park Injury Lawyer",
     description: "Información sobre publicidad de abogado, asesoría legal, relación abogado-cliente y resultados.",
     path: "/es/disclaimer",
-    locale: "es",
+    locale: "es-US",
     noindex: true,
     followWhenNoindex: true,
   }),
