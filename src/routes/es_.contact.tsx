@@ -7,7 +7,7 @@ export const Route = createFileRoute("/es_/contact")({
     title: "Contacto | Buena Park Injury Lawyer",
     description: "Comuníquese con Buena Park Injury Lawyer sobre un accidente, tratamiento, seguro, evidencia o plazos. Consulta inicial gratuita.",
     path: "/es/contact",
-    locale: "es",
+    locale: "es-US",
     noindex: true,
     followWhenNoindex: true,
   }),
