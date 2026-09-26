@@ -7,7 +7,7 @@ export const Route = createFileRoute("/es_/results")({
     title: "Resultados de Lesiones Personales | Buena Park Injury Lawyer",
     description: "Cifras y resultados reportados por la firma con contexto sobre los factores que pueden influir en un reclamo. Los resultados anteriores no garantizan un resultado similar.",
     path: "/es/results",
-    locale: "es",
+    locale: "es-US",
     noindex: true,
     followWhenNoindex: true,
   }),
