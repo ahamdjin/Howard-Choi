@@ -1,4 +1,5 @@
 import { serviceLocations } from "@/data/injurySite";
+
 export const SITE_URL = (import.meta.env.VITE_SITE_URL || "https://www.buenaparkinjurylawyer.com").replace(/\/$/, "");
 export const SITE_NAME = "Buena Park Injury Lawyer";
 export const ATTORNEY_NAME = "Howard Choi";
@@ -13,17 +14,32 @@ type SeoOptions = {
   description: string;
   path: string;
   alternatePath?: string;
-  locale?: "en-US" | "ko-US";
+  locale?: "en-US" | "ko-US" | "es";
   type?: "website" | "article";
   image?: string;
   noindex?: boolean;
+  followWhenNoindex?: boolean;
 };
 
-export const buildSeo = ({ title, description, path, alternatePath, locale = "en-US", type = "website", image, noindex = false }: SeoOptions) => {
+export const buildSeo = ({
+  title,
+  description,
+  path,
+  alternatePath,
+  locale = "en-US",
+  type = "website",
+  image,
+  noindex = false,
+  followWhenNoindex = false,
+}: SeoOptions) => {
   const canonical = absoluteUrl(path);
   const englishPath = locale === "ko-US" ? alternatePath : path;
   const koreanPath = locale === "ko-US" ? path : alternatePath;
-  const robots = noindex ? "noindex, nofollow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
+  const robots = noindex
+    ? `noindex, ${followWhenNoindex ? "follow" : "nofollow"}`
+    : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
+  const ogLocale = locale === "ko-US" ? "ko_KR" : locale === "es" ? "es_ES" : "en_US";
+  const ogAlternate = locale === "ko-US" ? "en_US" : locale === "es" ? "en_US" : "ko_KR";
 
   const meta = [
     { title },
@@ -35,8 +51,8 @@ export const buildSeo = ({ title, description, path, alternatePath, locale = "en
     { property: "og:description", content: description },
     { property: "og:type", content: type },
     { property: "og:url", content: canonical },
-    { property: "og:locale", content: locale === "ko-US" ? "ko_KR" : "en_US" },
-    { property: "og:locale:alternate", content: locale === "ko-US" ? "en_US" : "ko_KR" },
+    { property: "og:locale", content: ogLocale },
+    { property: "og:locale:alternate", content: ogAlternate },
     { name: "twitter:card", content: image ? "summary_large_image" : "summary" },
     { name: "twitter:title", content: title },
     { name: "twitter:description", content: description },
@@ -49,7 +65,7 @@ export const buildSeo = ({ title, description, path, alternatePath, locale = "en
   }
 
   const links: Array<Record<string, string>> = noindex ? [] : [{ rel: "canonical", href: canonical }];
-  if (!noindex && englishPath && koreanPath) {
+  if (!noindex && englishPath && koreanPath && locale !== "es") {
     links.push(
       { rel: "alternate", hrefLang: "en-US", href: absoluteUrl(englishPath) },
       { rel: "alternate", hrefLang: "ko-US", href: absoluteUrl(koreanPath) },
@@ -133,7 +149,21 @@ export const breadcrumbJsonLd = (items: Array<{ name: string; path: string }>) =
   })),
 });
 
-export const articleJsonLd = ({ title, description, path, image, publishedAt, locale }: { title: string; description: string; path: string; image: string; publishedAt: string; locale: "en-US" | "ko-US" }) => ({
+export const articleJsonLd = ({
+  title,
+  description,
+  path,
+  image,
+  publishedAt,
+  locale,
+}: {
+  title: string;
+  description: string;
+  path: string;
+  image: string;
+  publishedAt: string;
+  locale: "en-US" | "ko-US" | "es";
+}) => ({
   "@context": "https://schema.org",
   "@type": "Article",
   "@id": `${absoluteUrl(path)}#article`,
