@@ -39,7 +39,7 @@ export const buildSeo = ({
     ? `noindex, ${followWhenNoindex ? "follow" : "nofollow"}`
     : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
   const ogLocale = locale === "ko-US" ? "ko_KR" : locale === "es-US" ? "es_US" : "en_US";
-  const ogAlternate = locale === "ko-US" ? "en_US" : locale === "es" ? "en_US" : "ko_KR";
+  const ogAlternate = locale === "ko-US" ? "en_US" : locale === "es-US" ? "en_US" : "ko_KR";
 
   const meta = [
     { title },
@@ -134,7 +134,7 @@ export const webSiteJsonLd = {
   "@id": `${SITE_URL}/#website`,
   name: SITE_NAME,
   url: SITE_URL,
-  inLanguage: ["en-US", "ko-US"],
+  inLanguage: ["en-US", "ko-US", "es-US"],
   publisher: { "@id": `${SITE_URL}/#legal-service` },
 };
 
