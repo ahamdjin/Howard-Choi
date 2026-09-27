@@ -130,7 +130,7 @@ const Hero = ({ locale = "en" }: { locale?: SiteLocale }) => {
               />
               <span className="text-[12px] leading-4 text-[#f3eee5]/82">
                 <span className="block font-medium text-[#f3eee5]">Howard Choi</span>
-                {ko ? "캘리포니아 변호사 · State Bar No. 284364 · 영어 및 한국어" : es ? "Abogado de California · State Bar No. 284364 · Inglés y coreano" : <>California Attorney · State Bar No. 284364 · English &amp; Korean</>}
+                {ko ? "캘리포니아 변호사 · State Bar No. 284364 · 영어 · 한국어 · 스페인어 지원" : es ? "Abogado de California · State Bar No. 284364 · Atención en inglés, coreano y español" : <>California Attorney · State Bar No. 284364 · English, Korean &amp; Spanish assistance</>}
               </span>
             </motion.a>
           </div>
