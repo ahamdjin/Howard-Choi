@@ -154,9 +154,10 @@ When Spanish is ready to be indexed:
 `src/lib/seo.ts` contains the global structured data.
 
 - `WebSite.inLanguage` describes languages the **website content exists in**: English, Korean, Spanish.
-- `Person.knowsLanguage` and `LegalService.knowsLanguage` describe languages the **attorney/firm actually serves clients in**.
+- `Person.knowsLanguage` describes languages Howard personally speaks.
+- `LegalService.knowsLanguage` describes languages available through the **firm/office**.
 
-Howard is currently represented as **English + Korean**. Do not add Spanish to attorney/service-language schema unless the firm genuinely provides Spanish-language service.
+Current setup: **Howard = English + Korean**; **office/firm = English + Korean + Spanish**.
 
 ---
 
