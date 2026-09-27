@@ -51,7 +51,7 @@ const EsContact = () => {
 
           <motion.section id="calendar" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.05 }} transition={{ duration: 0.68, delay: 0.06 }} className="w-full scroll-mt-20 rounded-[4px] bg-[#1a1714] p-4 text-[#f3eee5] md:p-5">
             <div className="flex items-start justify-between gap-6 px-3 pb-5 pt-3 md:px-4 md:pb-6 md:pt-4">
-              <div><span className="text-[11px] text-[#f3eee5]/42">Consulta</span><h2 className="editorial-serif mt-3 max-w-[620px] text-[clamp(2rem,2.8vw,3rem)] leading-[0.98] tracking-[-0.022em]">Reserve un horario de consulta disponible.</h2><p className="mt-4 max-w-[620px] text-[14px] leading-6 text-[#f3eee5]/52">Elija una fecha y hora disponible y complete la reserva aquí. Si ya tiene fotos, reportes, información de seguro, expedientes médicos o correspondencia, téngalos juntos para la conversación; no es necesario subirlos todos por adelantado.</p></div>
+              <div><span className="text-[11px] text-[#f3eee5]/42">Consulta</span><h2 className="editorial-serif mt-3 max-w-[620px] text-[clamp(2rem,2.8vw,3rem)] leading-[0.98] tracking-[-0.022em]">Reserve un horario de consulta disponible.</h2><p className="mt-4 max-w-[620px] text-[14px] leading-6 text-[#f3eee5]/52">Elija una fecha y hora disponible y complete la reserva aquí. Si ya tiene fotos, reportes, información de seguro, expedientes médicos o correspondencia, téngalos juntos para la conversación; no es necesario subirlos todos por adelantado. Howard Choi habla inglés y coreano; confirme la disponibilidad de asistencia lingüística al comunicarse con la firma.</p></div>
               <CalendarDays className="mt-1 h-5 w-5 shrink-0 text-[#f3eee5]/42" />
             </div>
             <GHLCalendar locale="es" />
@@ -77,7 +77,6 @@ const EsContact = () => {
                 <Link to="/es/practice-areas" className="inline-flex items-center gap-2 hover:opacity-60">Explorar áreas de práctica <ArrowRight className="h-3.5 w-3.5" /></Link>
                 <Link to="/es/attorney" className="inline-flex items-center gap-2 hover:opacity-60">Conozca a Howard Choi <ArrowRight className="h-3.5 w-3.5" /></Link>
               </div>
-              <p className="mt-7 max-w-[780px] text-[11px] leading-5 text-foreground/45">Howard Choi habla inglés y coreano. Esta página ofrece información del sitio en español; confirme la disponibilidad de asistencia lingüística al comunicarse con la firma.</p>
             </div>
           </div>
         </section>
