@@ -189,8 +189,6 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
 };
 
 export const PracticeAreasPage = ({ locale }: { locale: SiteLocale }) => (
-
-export const PracticeAreasPage = ({ locale }: { locale: SiteLocale }) => (
   <EditorialFrame locale={locale}>
     <main>
       <EditorialHero
