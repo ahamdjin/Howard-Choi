@@ -4,8 +4,8 @@ import { buildSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/about")({
   head: () => buildSeo({
-    title: "About Our Personal Injury Law Firm | Buena Park, CA",
-    description: "Learn how our Buena Park personal injury law firm approaches accident claims through evidence preservation, insurance analysis, medical and financial documentation, clear communication, and local service across nearby Orange and Los Angeles County communities.",
+    title: "About Howard Choi | Buena Park Personal Injury Lawyer",
+    description: "Learn why Howard Choi founded his personal injury firm in 2015, how his CPA background helps injury claims, and why clients get direct access in Buena Park.",
     path: "/about",
     alternatePath: "/ko/about",
     locale: "en-US",
