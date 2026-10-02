@@ -1,6 +1,8 @@
 import { ArrowRight, MessageSquareText, Scale, ShieldCheck } from "lucide-react";
 import heroBoardroom from "@/assets/law-firm/hero-city-boardroom.webp";
 import reviewingDocuments from "@/assets/law-firm/reviewing-documents.jpg";
+import attorneyClientTalking from "@/assets/law-firm/attorney-client-talking.jpg";
+import signingMedicalForm from "@/assets/law-firm/signing-medical-form.jpg";
 import suburbanPalms from "@/assets/law-firm/suburban-palms.jpg";
 import type { SiteLocale } from "@/data/injurySite";
 import {
@@ -72,6 +74,20 @@ export const AboutFirmPage = ({ locale }: { locale: SiteLocale }) => (
               </div>
             ))}
           </div>
+
+          <div className="mt-8 grid gap-px overflow-hidden border border-[#1E1C1A]/12 bg-[#1E1C1A]/10 sm:grid-cols-2 xl:grid-cols-4">
+            {[
+              [isKo(locale) ? "2015" : isEs(locale) ? "2015" : "2015", isKo(locale) ? "독립 개업" : isEs(locale) ? "Práctica independiente" : "Independent practice"],
+              [isKo(locale) ? "2012" : isEs(locale) ? "2012" : "2012", isKo(locale) ? "캘리포니아 변호사 등록" : isEs(locale) ? "Admisión en California" : "California admission"],
+              [isKo(locale) ? "CPA" : isEs(locale) ? "CPA" : "CPA", isKo(locale) ? "회계 배경" : isEs(locale) ? "Formación contable" : "Accounting background"],
+              [isKo(locale) ? "3" : isEs(locale) ? "3" : "3", isKo(locale) ? "사무실 지원 언어" : isEs(locale) ? "Idiomas disponibles en la oficina" : "Office languages"],
+            ].map(([value, label]) => (
+              <div key={label} className="bg-[#F8F7F4] px-5 py-5">
+                <div style={serifStyle(locale)} className="text-[2rem] leading-none tracking-[-0.04em] text-[#381907]">{value}</div>
+                <div className="mt-2 text-[10px] font-medium uppercase tracking-[0.12em] text-[#1E1C1A]/48">{label}</div>
+              </div>
+            ))}
+          </div>
         </ReadingSectionBlock>
 
         <ReadingSectionBlock
@@ -86,6 +102,12 @@ export const AboutFirmPage = ({ locale }: { locale: SiteLocale }) => (
               : "What drew Howard to personal injury law was how uneven the playing field can become after an accident. An injured person may suddenly be dealing with medical bills, missed work, pain, vehicle damage and insurance calls, while the insurance company handles claims every day. His role is to understand that system, protect the client's interests, and make the process less one-sided."}
         >
           <div className="editorial-callout"><span className="editorial-callout__label">{isKo(locale) ? "원칙" : isEs(locale) ? "Principio de trabajo" : "Working principle"}</span><p>{isKo(locale) ? "과장된 약속보다 확인된 사실과 현실적인 다음 단계가 더 중요합니다." : isEs(locale) ? "Preferimos explicar dónde tiene una debilidad el caso antes que prometer una cifra que no podemos respaldar. Sabrá qué está sólido y qué todavía necesita trabajo." : "The insurance company has a process it uses every day. An injured person should have someone who understands that process, the evidence, and the financial impact of the claim."}</p></div>
+          <figure className="mt-8 overflow-hidden rounded-md border border-[#1E1C1A]/10 bg-white">
+            <img src={attorneyClientTalking} alt={isKo(locale) ? "상해 사건에 대해 상담하는 변호사와 의뢰인" : isEs(locale) ? "Abogado y cliente conversando sobre un reclamo por lesiones" : "Attorney and client discussing an injury claim"} width={1400} height={933} loading="lazy" decoding="async" className="aspect-[16/8.5] w-full object-cover" />
+            <figcaption className="border-t border-[#1E1C1A]/10 px-4 py-3 text-[10px] leading-5 text-[#1E1C1A]/44">
+              {isKo(locale) ? "복잡한 절차를 이해하기 쉬운 대화로 바꾸는 것이 목표입니다." : isEs(locale) ? "La meta es convertir un proceso complicado en una conversación que el cliente pueda entender." : "The point is to turn a complicated claims process into a conversation the client can actually understand."}
+            </figcaption>
+          </figure>
         </ReadingSectionBlock>
 
         <ReadingSectionBlock
@@ -107,12 +129,27 @@ export const AboutFirmPage = ({ locale }: { locale: SiteLocale }) => (
               </div>
             ))}
           </div>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-[1.1fr_0.9fr]">
+            <figure className="overflow-hidden rounded-md border border-[#1E1C1A]/10 bg-white">
+              <img src={reviewingDocuments} alt={isKo(locale) ? "손실 자료와 사건 기록 검토" : isEs(locale) ? "Revisión de registros del caso y documentación financiera" : "Reviewing case records and financial documentation"} width={1400} height={935} loading="lazy" decoding="async" className="aspect-[4/3] h-full w-full object-cover" />
+            </figure>
+            <div className="flex flex-col justify-between border border-[#1E1C1A]/12 bg-[#F1EEE8] p-6 md:p-8">
+              <div className="text-[9px] font-semibold uppercase tracking-[0.16em] text-[#381907]/65">{isKo(locale) ? "회계 + 법률" : isEs(locale) ? "Contabilidad + derecho" : "Accounting + law"}</div>
+              <p style={serifStyle(locale)} className="mt-10 text-[clamp(1.55rem,2.4vw,2.35rem)] leading-[1.12] tracking-[-0.025em] text-[#1E1C1A]">
+                {isKo(locale) ? "소득 손실이 단순한 급여명세서 한 장으로 설명되지 않는 경우가 있습니다." : isEs(locale) ? "A veces, una pérdida de ingresos no se puede explicar con un solo talón de pago." : "Sometimes a lost-income claim cannot be explained by one pay stub."}
+              </p>
+              <p className="mt-6 text-[11px] leading-5 text-[#1E1C1A]/52">
+                {isKo(locale) ? "자영업자와 사업주의 경우 세금 신고서, 송장, 사업 기록과 수입 흐름을 함께 봐야 할 수 있습니다." : isEs(locale) ? "Para trabajadores por cuenta propia y dueños de negocios, puede ser necesario revisar declaraciones de impuestos, facturas, registros comerciales y el flujo real de ingresos." : "For self-employed clients and business owners, tax returns, invoices, business records and the actual flow of income can matter."}
+              </p>
+            </div>
+          </div>
         </ReadingSectionBlock>
 
         <ReadingSectionBlock
           id="team"
           locale={locale}
-          kicker={isKo(locale) ? "04 · 변호사" : isEs(locale) ? "04 · Abogado y práctica" : "04 · Attorney & practice"}
+          kicker={isKo(locale) ? "04 · 변호사" : isEs(locale) ? "04 · Abogado y práctica" : "04 · Languages & access"}
           title={isKo(locale) ? "사람과 사건 유형을 함께 확인하세요." : isEs(locale) ? "Compruebe con quién trabajaría realmente." : "Korean roots. English, Korean and Spanish at the office."}
           intro={isKo(locale) ? "변호사 등록 정보와 사고 유형별 업무 페이지를 통해 로펌의 실제 업무 범위를 확인할 수 있습니다." : isEs(locale) ? "Antes de contratar a alguien, debe poder verificar al abogado y confirmar que maneja su tipo de accidente. Howard es California Bar No. 284364 y el registro es público." : "Howard grew up in a Korean household and understands both the language and the culture. He knows how much harder an already stressful legal problem becomes when someone is not fully comfortable communicating in English. Korean-speaking clients can discuss the process with someone who understands that context, and Spanish assistance is also available at the office."}
         >
@@ -125,7 +162,7 @@ export const AboutFirmPage = ({ locale }: { locale: SiteLocale }) => (
         <ReadingSectionBlock
           id="law-firm"
           locale={locale}
-          kicker={isKo(locale) ? "05 · 로펌" : isEs(locale) ? "05 · La firma" : "05 · The law firm"}
+          kicker={isKo(locale) ? "05 · 로펌" : isEs(locale) ? "05 · La firma" : "05 · Common mistakes"}
           title={isKo(locale) ? "작은 로펌의 장점" : isEs(locale) ? "Una firma pequeña, a propósito." : "What accident victims often get wrong."}
           intro={isKo(locale)
             ? "규모보다 사건 하나하나에 집중하는 방식을 선택했습니다."
@@ -133,7 +170,7 @@ export const AboutFirmPage = ({ locale }: { locale: SiteLocale }) => (
               ? "Esta es una firma pequeña por decisión. Once años después, sigue siendo lo suficientemente pequeña para que la persona que lee el expediente sea la misma que lo argumenta. Más grande no significa automáticamente mejor en lesiones personales. Aquí hay un solo abogado, así que no existe una cadena de traspasos. La otra cara también es real: no podemos aceptar cada caso que llama. Preferimos decirlo temprano antes que aceptar un asunto y darle una atención superficial."
               : "One of the most common assumptions Howard hears is that the insurance company will automatically be fair because the accident was not the client's fault. Another is focusing only on vehicle damage while delaying attention to injuries. What someone does early after a car accident or other injury can affect the claim later."}
         >
-          <img src={reviewingDocuments} alt={isKo(locale) ? "서류를 검토하는 모습" : isEs(locale) ? "Revisión de expedientes del accidente y comunicaciones de seguro" : "Reviewing accident records and insurance correspondence"} width={1400} height={935} loading="lazy" decoding="async" className="aspect-[16/9] w-full rounded-md object-cover" />
+          <img src={signingMedicalForm} alt={isKo(locale) ? "사고 후 의료 및 보험 관련 서류 작성" : isEs(locale) ? "Documentación médica y del seguro después de un accidente" : "Medical and insurance documentation after an accident"} width={1400} height={935} loading="lazy" decoding="async" className="aspect-[16/9] w-full rounded-md object-cover" />
           <p className="mt-8 text-[15px] leading-8 text-[#57514b]">
             {isKo(locale)
               ? "담당 변호사는 한 명이며, 사건을 직접 검토하고 진행합니다."
@@ -146,7 +183,7 @@ export const AboutFirmPage = ({ locale }: { locale: SiteLocale }) => (
         <ReadingSectionBlock
           id="attorney"
           locale={locale}
-          kicker={isKo(locale) ? "06 · 변호사" : isEs(locale) ? "06 · El abogado" : "06 · The attorney"}
+          kicker={isKo(locale) ? "06 · 변호사" : isEs(locale) ? "06 · El abogado" : "06 · Choosing a firm"}
           title={isKo(locale) ? "담당 변호사는 한 명입니다." : isEs(locale) ? "Qué significa que un abogado maneje su caso." : "Before hiring a personal injury firm, ask one question."}
           intro={isKo(locale)
             ? "Howard Choi 변호사가 사건을 직접 담당합니다. 캘리포니아 변호사 번호 284364."
