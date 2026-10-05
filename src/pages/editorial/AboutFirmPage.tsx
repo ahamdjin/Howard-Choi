@@ -213,11 +213,18 @@ export const AboutFirmPage = ({ locale }: { locale: SiteLocale }) => (
       <div className="site-shell pb-5 pt-1">
         <div
           aria-label="Credits. Website, automation, AI systems, and backend: Ahmad Yar"
-          className="text-[6px] leading-none tracking-[0.04em] text-[#1E1C1A]/25"
+          className="text-[10px] leading-4 tracking-[0.02em] text-[#1E1C1A]/35"
         >
-          <span className="font-semibold uppercase">Credits</span>
-          <span className="mx-1">·</span>
-          <span>Website, automation, AI systems, and backend: Ahmad Yar</span>
+          <span className="font-semibold uppercase tracking-[0.08em]">Credits</span>
+          <span className="mx-1.5">·</span>
+          <span>Website, automation, AI systems, and backend: </span>
+          <a
+            href="https://www.ahmadyar.co/"
+            className="underline decoration-[#1E1C1A]/20 underline-offset-2 transition-colors hover:text-[#1E1C1A]/65"
+            aria-label="Ahmad Yar — website, automation, AI systems, and backend"
+          >
+            Ahmad Yar
+          </a>
         </div>
       </div>
 
