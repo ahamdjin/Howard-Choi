@@ -65,6 +65,7 @@ const SiteNavigation = ({ locale }: { locale: NavigationLocale }) => {
     { key: "attorneys" as const, label: labels.attorneys, href: href("/attorney") },
     { key: "results" as const, label: labels.results, href: href("/results") },
     { key: "blog" as const, label: labels.blog, href: href("/blogs") },
+    { key: "about" as const, label: labels.about, href: href("/about") },
 
   ];
 
@@ -114,7 +115,7 @@ const SiteNavigation = ({ locale }: { locale: NavigationLocale }) => {
         <div className="site-shell h-[60px]">
           <div className="hidden h-full grid-cols-[minmax(180px,0.84fr)_minmax(500px,2.12fr)_minmax(190px,1.04fr)] items-center lg:grid">
             <a href={homeHref} onClick={closeAll} className="flex min-w-0 items-center gap-2.5 pr-5"><span className="flex h-7 w-7 shrink-0 items-center justify-center overflow-hidden rounded-[2px]"><img src={brandLogo} alt="" width={28} height={28} decoding="async" className="h-full w-full object-contain" /></span><span className="truncate text-[13px] font-semibold tracking-[-0.025em]">{brand.name}</span></a>
-            <div className="grid h-full grid-cols-5">{topItems.map((item) => {
+            <div className="grid h-full grid-cols-6">{topItems.map((item) => {
               const expandable = item.key === "practice" || item.key === "locations";
               const active = panel === item.key;
               const className = (isCurrent(item.href) ? "border-b-2 border-current bg-foreground/[0.045] " : "border-b-2 border-transparent ") + "flex h-full items-center justify-center gap-1.5 px-2 text-center text-[13px] font-medium transition-colors hover:bg-foreground/[0.045]";
