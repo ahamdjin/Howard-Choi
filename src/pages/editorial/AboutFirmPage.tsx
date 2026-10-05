@@ -209,6 +209,18 @@ export const AboutFirmPage = ({ locale }: { locale: SiteLocale }) => (
           <a href={`${localePrefix(locale)}/locations`} className="editorial-inline-link mt-8"><span>{isKo(locale) ? "지역별 사고·상해 가이드 보기" : isEs(locale) ? "Ver guías locales de accidentes" : "See the local accident guides"}</span><ArrowRight className="h-4 w-4" /></a>
         </ReadingSectionBlock>
       </ReadingLayout>
+
+      <div className="site-shell pb-5 pt-1">
+        <div
+          aria-label="Credits. Website, automation, AI systems, and backend: Ahmad Yar"
+          className="text-[6px] leading-none tracking-[0.04em] text-[#1E1C1A]/25"
+        >
+          <span className="font-semibold uppercase">Credits</span>
+          <span className="mx-1">·</span>
+          <span>Website, automation, AI systems, and backend: Ahmad Yar</span>
+        </div>
+      </div>
+
       <ConsultationCta locale={locale} />
     </main>
   </EditorialFrame>
