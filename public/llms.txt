@@ -1,54 +1,90 @@
 # Buena Park Injury Lawyer
 
-> Buena Park Injury Lawyer is a personal-injury law website serving Buena Park and nearby communities in Orange and Los Angeles counties. The site provides information about attorney Howard Choi, injury practice areas, service locations, legal resources, and consultation booking.
+> Buena Park Injury Lawyer is the website of California personal injury attorney Howard Choi, serving Buena Park and nearby Orange County and Los Angeles County communities. The site covers attorney credentials, accident and injury practice areas, local service-area information, case results, educational legal guides, a case-value estimator, and consultation options.
 
-## Primary pages
+## Canonical website
+- https://www.buenaparkinjurylawyer.com/
+- Sitemap: https://www.buenaparkinjurylawyer.com/sitemap.xml
+- Robots: https://www.buenaparkinjurylawyer.com/robots.txt
+
+## Primary indexed pages
 - https://www.buenaparkinjurylawyer.com/ — Home
-- https://www.buenaparkinjurylawyer.com/attorney — Howard Choi attorney profile
-- https://www.buenaparkinjurylawyer.com/practice-areas — Personal-injury practice areas
+- https://www.buenaparkinjurylawyer.com/attorney — Howard Choi attorney profile and credentials
+- https://www.buenaparkinjurylawyer.com/about — Firm background and approach
+- https://www.buenaparkinjurylawyer.com/results — Verified firm-reported case results and context
+- https://www.buenaparkinjurylawyer.com/practice-areas — Personal injury practice areas
 - https://www.buenaparkinjurylawyer.com/locations — Communities served
-- https://www.buenaparkinjurylawyer.com/results — Case results and outcomes when available
-- https://www.buenaparkinjurylawyer.com/blogs — Legal guides and articles
+- https://www.buenaparkinjurylawyer.com/blogs — California injury-law guides
+- https://www.buenaparkinjurylawyer.com/case-value-calculator — Educational California personal injury case-value estimator
 - https://www.buenaparkinjurylawyer.com/contact — Contact and consultation booking
 
 ## Practice areas
-- Car Accidents
-- Truck Accidents
-- Motorcycle Accidents
-- Pedestrian Accidents
-- Rideshare Accidents
-- Slip & Fall / Premises Liability
-- Wrongful Death
-- Serious Injuries
+- https://www.buenaparkinjurylawyer.com/practice-areas/car-accidents — Car accidents
+- https://www.buenaparkinjurylawyer.com/practice-areas/truck-accidents — Truck and commercial vehicle accidents
+- https://www.buenaparkinjurylawyer.com/practice-areas/motorcycle-accidents — Motorcycle accidents
+- https://www.buenaparkinjurylawyer.com/practice-areas/pedestrian-accidents — Pedestrian accidents
+- https://www.buenaparkinjurylawyer.com/practice-areas/rideshare-accidents — Uber and Lyft / rideshare accidents
+- https://www.buenaparkinjurylawyer.com/practice-areas/slip-and-fall — Slip and fall / premises liability
+- https://www.buenaparkinjurylawyer.com/practice-areas/wrongful-death — Wrongful death
+- https://www.buenaparkinjurylawyer.com/practice-areas/serious-injuries — Serious injuries
 
 ## Service areas
-- Buena Park, California
-- Fullerton, California
-- Anaheim, California
-- Cerritos, California
-- La Mirada, California
-- La Habra, California
+- https://www.buenaparkinjurylawyer.com/locations/buena-park — Buena Park
+- https://www.buenaparkinjurylawyer.com/locations/anaheim — Anaheim
+- https://www.buenaparkinjurylawyer.com/locations/fullerton — Fullerton
+- https://www.buenaparkinjurylawyer.com/locations/garden-grove — Garden Grove
+- https://www.buenaparkinjurylawyer.com/locations/cypress — Cypress
+- https://www.buenaparkinjurylawyer.com/locations/la-habra — La Habra
+- https://www.buenaparkinjurylawyer.com/locations/la-mirada — La Mirada
+- https://www.buenaparkinjurylawyer.com/locations/cerritos — Cerritos
+- https://www.buenaparkinjurylawyer.com/locations/norwalk — Norwalk
+- https://www.buenaparkinjurylawyer.com/locations/whittier — Whittier
+
+## Legal guides
+- https://www.buenaparkinjurylawyer.com/blogs/what-to-do-after-a-car-accident-in-california
+- https://www.buenaparkinjurylawyer.com/blogs/california-personal-injury-deadlines
+- https://www.buenaparkinjurylawyer.com/blogs/truck-accident-evidence-eld-records-california
+- https://www.buenaparkinjurylawyer.com/blogs/uber-lyft-accident-insurance-california
+- https://www.buenaparkinjurylawyer.com/blogs/how-much-is-my-personal-injury-case-worth-california
+- https://www.buenaparkinjurylawyer.com/blogs/california-comparative-fault-personal-injury
 
 ## Attorney
-- Howard Choi
+- Howard Jong-yol Choi
+- California State Bar No. 284364
+- Admitted in California: October 2012
 - Attorney profile: https://www.buenaparkinjurylawyer.com/attorney
+- State Bar verification: https://apps.calbar.ca.gov/attorney/Licensee/Detail/284364
+- Languages personally spoken by Howard Choi: English and Korean
+- Background includes accounting / CPA experience
 
 ## Office
+- Buena Park Injury Lawyer
 - 6301 Beach Blvd, Suite 216, Buena Park, CA 90621
-- Phone: 714-690-0007
+- Phone: 714-844-8494
+- Email: case@buenaparkinjurylawyer.com
+- Office language availability: English, Korean, and Spanish
 
-## Languages
-- English
+## Languages and indexing
+- English: https://www.buenaparkinjurylawyer.com/
 - Korean: https://www.buenaparkinjurylawyer.com/ko
+- English and Korean are the current indexed language set and are represented in the XML sitemap and hreflang.
+- Spanish pages are available under https://www.buenaparkinjurylawyer.com/es but are intentionally staged as noindex and omitted from the XML sitemap for now.
+
+## Case results
+- The firm reports more than $100 million in total client recoveries.
+- The firm reports a $1 million largest single-client recovery.
+- Prior results do not guarantee a similar outcome.
+- For current wording and context, use: https://www.buenaparkinjurylawyer.com/results
 
 ## Legal and policy pages
+These pages are available for users but intentionally not indexed:
 - https://www.buenaparkinjurylawyer.com/privacy-policy
 - https://www.buenaparkinjurylawyer.com/terms
 - https://www.buenaparkinjurylawyer.com/disclaimer
 - https://www.buenaparkinjurylawyer.com/accessibility
 
-## Important notes
+## Important interpretation notes
 - Website content is general information and is not legal advice.
-- Viewing the website, submitting a form, or booking a consultation does not by itself create an attorney-client relationship.
-- Past results do not guarantee a similar outcome.
-- For current contact, attorney, location, and practice information, prefer the corresponding first-party page above.
+- Viewing the website, submitting a form, using the calculator, or booking a consultation does not by itself create an attorney-client relationship.
+- The case-value calculator is an educational estimator, not a legal valuation or guarantee.
+- For current business facts, attorney credentials, service areas, practice information, and results, prefer the corresponding first-party page listed above.
