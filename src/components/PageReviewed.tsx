@@ -1,6 +1,6 @@
 import type { SiteLocale } from "@/data/injurySite";
 
-const LAST_REVIEWED = { iso: "2026-09-22", en: "September 2026", ko: "2026년 9월", es: "septiembre de 2026" };
+const LAST_REVIEWED = { iso: "2026-10-07", en: "October 2026", ko: "2026년 10월", es: "octubre de 2026" };
 
 const PageReviewed = ({ locale = "en" }: { locale?: SiteLocale }) => {
   const ko = locale === "ko";
