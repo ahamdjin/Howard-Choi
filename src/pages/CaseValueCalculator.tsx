@@ -550,7 +550,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
                 <a href="https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury" target="_blank" rel="noreferrer" className="font-semibold text-[#6E635A] underline underline-offset-3">California Courts: Personal injury</a>
                 <a href="https://selfhelp.courts.ca.gov/civil-lawsuit/statute-limitations" target="_blank" rel="noreferrer" className="font-semibold text-[#6E635A] underline underline-offset-3">California Courts: Deadlines</a>
               </div>
-              <p className="mt-4 text-[9px] text-[#211E1B]/32">{ko ? "최종 업데이트: 2026년 9월 · 일반 정보이며 법률 자문이 아닙니다." : es ? "Última actualización: septiembre de 2026 · Información general; no constituye asesoría legal." : "Last updated September 2026 · General information only; not legal advice."}</p>
+              <p className="mt-4 text-[9px] text-[#211E1B]/32">{ko ? "최종 검토: 2026년 10월 · 일반 정보이며 법률 자문이 아닙니다." : es ? "Última revisión: octubre de 2026 · Información general; no constituye asesoría legal." : "Last reviewed October 2026 · General information only; not legal advice."}</p>
             </div>
           </div>
         </section>
