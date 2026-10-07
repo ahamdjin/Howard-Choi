@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { Mail, MapPin, Phone } from "lucide-react";
 import brandLogo from "@/assets/law-firm/howard-choi-logo.png";
 import { brand, practiceAreas, serviceLocations } from "@/data/injurySite";
 import { esPracticeContent } from "@/data/esPracticeContent";
+import FooterContact from "@/components/FooterContact";
 
 const SpanishFooter = () => (
   <footer className="bg-background py-24 text-foreground md:py-28 lg:py-32">
@@ -43,12 +43,7 @@ const SpanishFooter = () => (
           </div>
         </div>
 
-        <div>
-          <div className="mb-5 text-[12px] text-muted-foreground">Contacto</div>
-          <a href={brand.mapsHref} target="_blank" rel="noreferrer" className="group flex gap-2.5 text-[13px] leading-6 hover:opacity-60"><MapPin className="mt-1 h-3.5 w-3.5 shrink-0 text-muted-foreground" /><span>{brand.address}<span className="mt-1 block text-[11px] text-muted-foreground underline underline-offset-4">Ver en Google Maps</span></span></a>
-          <a href={brand.phoneHref} className="mt-4 flex items-center gap-2.5 text-[13px] font-medium hover:opacity-60"><Phone className="h-3.5 w-3.5 shrink-0 text-muted-foreground" />{brand.phoneDisplay}</a>
-          <a href={brand.emailHref} className="mt-2.5 flex items-center gap-2.5 text-[13px] hover:opacity-60"><Mail className="h-3.5 w-3.5 shrink-0 text-muted-foreground" />{brand.email}</a>
-        </div>
+        <FooterContact locale="es" />
       </div>
 
       <div className="grid gap-5 pt-8 text-[11px] text-muted-foreground lg:grid-cols-[auto_1fr_auto] lg:items-center">
