@@ -9,7 +9,6 @@ export const Route = createFileRoute("/ko_/results")({
     path: "/ko/results",
     alternatePath: "/results",
     locale: "ko-US",
-    noindex: true,
   }),
   component: () => <ResultsPage locale="ko" />,
 });
