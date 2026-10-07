@@ -10,9 +10,10 @@ const YelpIcon = ({ className }: { className?: string }) => (
 
 const FooterContact = ({ locale = "en" }: { locale?: SiteLocale }) => {
   const ko = locale === "ko";
+  const es = locale === "es";
   return (
     <div>
-      <div className="mb-5 text-[12px] text-muted-foreground">{ko ? "연락처" : "Contact"}</div>
+      <div className="mb-5 text-[12px] text-muted-foreground">{ko ? "연락처" : es ? "Contacto" : "Contact"}</div>
 
       <a
         href={brand.mapsHref}
@@ -24,7 +25,7 @@ const FooterContact = ({ locale = "en" }: { locale?: SiteLocale }) => {
         <span>
           {brand.address}
           <span className="mt-1 block text-[11px] text-muted-foreground underline underline-offset-4">
-            {ko ? "지도에서 보기" : "View on Google Maps"}
+            {ko ? "지도에서 보기" : es ? "Ver en Google Maps" : "View on Google Maps"}
           </span>
         </span>
       </a>
