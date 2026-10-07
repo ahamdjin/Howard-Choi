@@ -3,7 +3,7 @@ import type { SiteLocale } from "@/data/injurySite";
 
 const metrics = [
   { value: "$100M+", label: "Total recovered", koLabel: "총 배상액", esLabel: "Total recuperado" },
-  { value: "11 Years", value_ko: "11년", value_es: "11 años", label: "Firm history", koLabel: "로펌 운영 기간", esLabel: "Historia de la firma" },
+  { value: "Since 2015", value_ko: "2015년부터", value_es: "Desde 2015", label: "Independent practice", koLabel: "독립 개업", esLabel: "Práctica independiente" },
   { value: "$1M", label: "Largest single-client recovery", koLabel: "최대 단일 의뢰인 배상액", esLabel: "Mayor recuperación de un solo cliente" },
 ] as const;
 
