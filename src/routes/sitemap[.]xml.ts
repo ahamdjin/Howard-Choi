@@ -32,6 +32,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           ...pair("/practice-areas", "/ko/practice-areas"),
           ...pair("/attorney", "/ko/attorney"),
           ...pair("/about", "/ko/about"),
+          ...pair("/results", "/ko/results"),
           ...pair("/locations", "/ko/locations"),
           ...pair("/case-value-calculator", "/ko/case-value-calculator"),
           ...pair("/blogs", "/ko/blogs"),
