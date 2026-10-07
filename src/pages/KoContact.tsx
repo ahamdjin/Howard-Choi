@@ -40,7 +40,7 @@ const KoContact = () => {
         <div className="mb-12 grid gap-8 border-b border-foreground/10 pb-9 md:grid-cols-3">
           <a href="tel:+17148448494" className="group border-t border-foreground/10 pt-5 md:border-t-0 md:pt-0"><Phone className="mb-4 h-4 w-4 text-muted-foreground" /><div className="text-[11px] text-muted-foreground">전화</div><div className="mt-2 text-[15px] transition-opacity group-hover:opacity-60">+1 714-844-8494</div></a>
           <a href={brand.emailHref} className="group border-t border-foreground/10 pt-5 md:border-t-0 md:pt-0"><Mail className="mb-4 h-4 w-4 text-muted-foreground" /><div className="text-[11px] text-muted-foreground">이메일</div><div className="mt-2 text-[15px] transition-opacity group-hover:opacity-60">{brand.email}</div></a>
-          <a href="https://share.google/LBJ1C8zWrZFjJBkVe" target="_blank" rel="noreferrer" className="group border-t border-foreground/10 pt-5 md:border-t-0 md:pt-0"><MapPin className="mb-4 h-4 w-4 text-muted-foreground" /><div className="text-[11px] text-muted-foreground">사무실</div><div className="mt-2 max-w-[260px] text-[15px] leading-6 transition-opacity group-hover:opacity-60">6301 Beach Blvd, Buena Park, CA 90621</div></a>
+          <a href="https://share.google/LBJ1C8zWrZFjJBkVe" target="_blank" rel="noreferrer" className="group border-t border-foreground/10 pt-5 md:border-t-0 md:pt-0"><MapPin className="mb-4 h-4 w-4 text-muted-foreground" /><div className="text-[11px] text-muted-foreground">사무실</div><div className="mt-2 max-w-[260px] text-[15px] leading-6 transition-opacity group-hover:opacity-60">6301 Beach Blvd, Suite 216, Buena Park, CA 90621</div></a>
         </div>
 
         <div className="grid items-start gap-5 xl:grid-cols-[0.78fr_1.22fr]">
