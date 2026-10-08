@@ -1,4 +1,5 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { responsiveImageProps } from "@/lib/responsive-images";
+import { m as motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, CalendarDays, FileText, Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import PageBreadcrumb from "@/components/PageBreadcrumb";
@@ -20,7 +21,7 @@ const KoContact = () => {
       <KoreanNavigation />
 
       <section className="relative flex min-h-[100svh] items-end pt-24 md:min-h-[560px] overflow-hidden bg-[#17130f] text-[#f3eee5]">
-        <motion.img src={heroCityBoardroom} alt="프라이빗 로펌 회의실" style={{ y: heroY }} fetchPriority="high" decoding="async" className="absolute inset-0 h-[112%] w-full object-cover" />
+        <motion.img {...responsiveImageProps(heroCityBoardroom)} src={heroCityBoardroom} alt="프라이빗 로펌 회의실" style={{ y: heroY }} fetchPriority="high" decoding="async" className="absolute inset-0 h-[112%] w-full object-cover" />
         <div className="absolute inset-0 bg-[#17130f]/64" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#17130f]/78 via-transparent to-[#17130f]/12" />
         <div className="hero-bottom-readability" />

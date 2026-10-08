@@ -1,3 +1,4 @@
+import { responsiveImageProps } from "@/lib/responsive-images";
 import { Link } from "react-router-dom";
 import brandLogo from "@/assets/law-firm/howard-choi-logo.png";
 import { brand, practiceAreas, serviceLocations } from "@/data/injurySite";
@@ -5,11 +6,11 @@ import FooterContact from "@/components/FooterContact";
 
 const KoreanFooter = () => {
   return (
-    <footer className="bg-background py-24 text-foreground md:py-28 lg:py-32" style={{ fontFamily: '\"Noto Sans KR\", sans-serif' }}>
+    <footer className="bg-background py-24 text-foreground md:py-28 lg:py-32" style={{ fontFamily: '"Noto Sans KR", sans-serif' }}>
       <div className="site-shell">
         <div className="grid gap-12 border-b border-black/10 pb-16 md:grid-cols-2 lg:grid-cols-5 lg:gap-10">
           <div>
-            <div className="mb-5 flex items-center gap-2.5"><span className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-[2px]"><img src={brandLogo} alt="" width={28} height={28} loading="lazy" decoding="async" className="h-full w-full object-contain" /></span><span className="text-[14px] font-medium tracking-[-0.02em]">{brand.name}</span></div>
+            <div className="mb-5 flex items-center gap-2.5"><span className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-[2px]"><img {...responsiveImageProps(brandLogo, "28px")} src={brandLogo} alt="" width={28} height={28} loading="lazy" decoding="async" className="h-full w-full object-contain" /></span><span className="text-[14px] font-medium tracking-[-0.02em]">{brand.name}</span></div>
             <p className="max-w-[280px] text-[13px] leading-6 text-muted-foreground">부에나파크와 인근 Orange·Los Angeles County 지역의 교통사고 및 개인상해 사건을 다룹니다.</p>
           </div>
 

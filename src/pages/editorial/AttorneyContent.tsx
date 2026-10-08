@@ -1,3 +1,4 @@
+import { responsiveImageProps } from "@/lib/responsive-images";
 import { ArrowRight, CalendarDays, Check, FileText, MapPin, MessageCircle, Phone, Scale } from "lucide-react";
 import { brand, practiceAreas, type SiteLocale } from "@/data/injurySite";
 import { practiceMedia } from "@/data/practiceMedia";
@@ -52,7 +53,7 @@ export default function AttorneyContent({ locale }: { locale: SiteLocale }) {
 
     <section id="how-we-help" className="scroll-mt-24 bg-[#eee8df] py-16 md:py-24">
       <div className="attorney-content-shell grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-        <img src={reviewingDocuments} alt={ko ? "서류와 기록을 함께 검토하는 모습" : es ? "Revisión conjunta de documentos y registros del accidente" : "Reviewing accident documents and records together"} width={900} height={1000} loading="lazy" decoding="async" className="aspect-[4/3] w-full rounded-md object-cover lg:aspect-[4/5] lg:max-h-[580px]" />
+        <img {...responsiveImageProps(reviewingDocuments)} src={reviewingDocuments} alt={ko ? "서류와 기록을 함께 검토하는 모습" : es ? "Revisión conjunta de documentos y registros del accidente" : "Reviewing accident documents and records together"} width={900} height={1000} loading="lazy" decoding="async" className="aspect-[4/3] w-full rounded-md object-cover lg:aspect-[4/5] lg:max-h-[580px]" />
         <div><p className="attorney-label">{ko ? "진행 방식" : es ? "Cómo ayudamos" : "How we help"}</p><h2 className="mt-4">{ko ? "한 단계씩 알아보세요." : es ? "Sepa qué sigue." : "Know what comes next."}</h2>
           <ol className="mt-8 space-y-7">{steps.map(({ Icon, title, text }, index) => <li key={title} className="flex gap-4"><span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#f9f8f6] text-[#7b5b3e]"><Icon aria-hidden="true" className="h-6 w-6" strokeWidth={1.5} /></span><div><span className="text-xs text-[#675f55]">0{index + 1}</span><h3 className="mt-1">{title}</h3><p className="mt-2 leading-7 text-[#57514b]">{text}</p></div></li>)}</ol>
         </div>
@@ -65,7 +66,7 @@ export default function AttorneyContent({ locale }: { locale: SiteLocale }) {
         <div className="grid gap-x-6 gap-y-9 sm:grid-cols-2 lg:grid-cols-4">{practiceAreas.map(practice => {
           const esCopy = esPracticeContent[practice.slug];
           return <a key={practice.slug} href={`${prefix}/practice-areas/${practice.slug}`} className="group block rounded-md focus-visible:outline-offset-4">
-            <div className="overflow-hidden rounded-md"><img src={practiceMedia[practice.slug].src} alt={practiceMedia[practice.slug].alt} width={600} height={400} loading="lazy" decoding="async" className="aspect-[3/2] w-full object-cover transition-transform duration-300 motion-safe:group-hover:scale-[1.03]" /></div>
+            <div className="overflow-hidden rounded-md"><img {...responsiveImageProps(practiceMedia[practice.slug].src)} src={practiceMedia[practice.slug].src} alt={practiceMedia[practice.slug].alt} width={600} height={400} loading="lazy" decoding="async" className="aspect-[3/2] w-full object-cover transition-transform duration-300 motion-safe:group-hover:scale-[1.03]" /></div>
             <div className="flex min-h-14 items-center justify-between gap-3 py-3"><h3>{ko ? practice.koTitle : es ? (esCopy?.shortTitle || practice.title) : practice.title}</h3><ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-1" /></div>
           </a>;
         })}</div>

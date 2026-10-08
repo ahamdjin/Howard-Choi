@@ -1,6 +1,8 @@
-import { useCallback, useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion, useInView, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Minus, Plus } from "lucide-react";
+import { responsiveImageProps } from "@/lib/responsive-images";
+import Hero from "@/components/Hero";
+import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, m as motion, useInView, useReducedMotion } from "framer-motion";
+import { Minus, Plus } from "lucide-react";
 import KoreanNavigation from "@/components/KoreanNavigation";
 import KoreanFooter from "@/components/KoreanFooter";
 import KoreanLocations from "@/components/KoreanLocations";
@@ -15,22 +17,10 @@ import HomeServiceAreas from "@/components/HomeServiceAreas";
 
 import FAQ from "@/components/FAQ";
 import ProcessAccordion from "@/components/ProcessAccordion";
-import heroCityBoardroom from "@/assets/law-firm/hero-city-boardroom.webp";
-import heroCourthouse from "@/assets/law-firm/hero-courthouse.webp";
-import heroJusticeLibrary from "@/assets/law-firm/hero-justice-library.webp";
-import heroLawOffice from "@/assets/law-firm/hero-law-office.webp";
 import leadCounselImage from "@/assets/law-firm/lead-counsel.avif";
 
 const koSerif = { fontFamily: '"Noto Serif KR", serif' } as const;
-const SLIDE_DURATION = 5000;
 const AUTO_ADVANCE_MS = 4800;
-
-const slides = [
-  { image: heroJusticeLibrary, alt: "프라이빗 법률 서재의 정의의 여신상" },
-  { image: heroCityBoardroom, alt: "도시가 내려다보이는 로펌 회의실" },
-  { image: heroLawOffice, alt: "전통적인 로펌 사무실과 책상" },
-  { image: heroCourthouse, alt: "법원 내부" },
-];
 
 const processSteps = [
   { title: "상담", body: "사고 경위, 부상 상태, 현재 가지고 있는 정보와 지금 가장 먼저 확인해야 할 문제를 정리하는 직접적인 첫 상담입니다.", points: ["사고 경위와 현재 상황 파악", "당장 필요한 우선순위 확인"], image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1400&q=88" },
@@ -47,70 +37,7 @@ const faqs = [
   ["부에나파크 외 지역도 지원하나요?", "부에나파크를 중심으로 풀러턴, 애너하임, 세리토스, 라미라다, 라하브라 등 인근 지역을 안내하고 있으며 사건과 관할에 따라 지원 범위가 달라질 수 있습니다."],
 ];
 
-const HeroKo = () => {
-  const shouldReduceMotion = useReducedMotion();
-  const { scrollY } = useScroll();
-  const [viewportHeight, setViewportHeight] = useState(900);
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [progress, setProgress] = useState(0);
-  const nextSlide = useCallback(() => { setCurrentSlide((previous) => (previous + 1) % slides.length); setProgress(0); }, []);
-
-  useEffect(() => {
-    const updateViewportHeight = () => setViewportHeight(window.innerHeight || 900);
-    updateViewportHeight();
-    window.addEventListener("resize", updateViewportHeight);
-    return () => window.removeEventListener("resize", updateViewportHeight);
-  }, []);
-
-  useEffect(() => {
-    const interval = window.setInterval(() => {
-      setProgress((previous) => {
-        if (previous >= 100) { nextSlide(); return 0; }
-        return previous + 100 / (SLIDE_DURATION / 50);
-      });
-    }, 50);
-    return () => window.clearInterval(interval);
-  }, [nextSlide]);
-
-  const transitionEnd = viewportHeight * 0.95;
-  const imageScale = useTransform(scrollY, [0, transitionEnd], [1, 1.07]);
-  const imageFilter = useTransform(scrollY, [0, transitionEnd], ["blur(0px)", "blur(3.5px)"]);
-  const imageY = useTransform(scrollY, [0, transitionEnd], ["0%", "-1.25%"]);
-  const shadeOpacity = useTransform(scrollY, [0, transitionEnd], [0.42, 0.56]);
-  const contentOpacity = useTransform(scrollY, [0, transitionEnd * 0.72], [1, 0]);
-  const contentFilter = useTransform(scrollY, [0, transitionEnd * 0.72], ["blur(0px)", "blur(9px)"]);
-  const contentY = useTransform(scrollY, [0, transitionEnd * 0.72], [0, -22]);
-
-  return (
-    <section className="relative h-[100svh] min-h-[680px] w-full overflow-hidden bg-[#17130f]">
-      <motion.div initial={shouldReduceMotion ? false : { opacity: 0.72, scale: 1.04, filter: "blur(10px)" }} animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }} transition={{ duration: 1.35, ease: [0.22, 1, 0.36, 1] }} className="absolute inset-0">
-        <motion.div className="absolute inset-0 will-change-transform" style={shouldReduceMotion ? undefined : { scale: imageScale, filter: imageFilter, y: imageY }}>
-          <AnimatePresence mode="sync" initial={false}>
-            <motion.img key={currentSlide} src={slides[currentSlide].image} alt={slides[currentSlide].alt} loading="eager" decoding="async" fetchPriority={currentSlide === 0 ? "high" : "auto"} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.8, ease: "easeInOut" }} className="absolute inset-0 h-full w-full object-cover" />
-          </AnimatePresence>
-        </motion.div>
-      </motion.div>
-      <motion.div className="absolute inset-0 bg-[#17130f]" style={shouldReduceMotion ? { opacity: 0.42 } : { opacity: shadeOpacity }} />
-      <div className="hero-bottom-readability" />
-      <motion.div className="absolute inset-0 z-10 flex items-end" style={shouldReduceMotion ? undefined : { opacity: contentOpacity, filter: contentFilter, y: contentY }}>
-        <div className="site-shell pb-24 md:pb-28">
-          <div className="max-w-[760px] text-[#f3eee5]">
-            <motion.p initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.18, duration: 0.7 }} className="mb-4 text-[13px] font-medium text-[#f3eee5]/88">사고 · 상해 법률상담</motion.p>
-            <motion.h1 initial={shouldReduceMotion ? false : { opacity: 0, y: 16, filter: "blur(9px)" }} animate={{ opacity: 1, y: 0, filter: "blur(0px)" }} transition={{ delay: 0.27, duration: 0.9, ease: [0.22, 1, 0.36, 1] }} style={koSerif} className="text-[clamp(2.75rem,4.2vw,4.35rem)] font-medium leading-[1.12] tracking-[-0.05em] text-[#f3eee5]">부에나파크 사고 변호사.</motion.h1>
-            <motion.p initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.7 }} className="mt-5 max-w-[590px] text-[15px] leading-7 text-[#f3eee5]/74">부에나파크와 인근 지역에서 사고로 부상을 입은 분들을 위해 명확하고 신속한 법률 대응을 제공합니다.</motion.p>
-            <motion.div initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.7 }} className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <button onClick={() => document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })} className="liquid-cta inline-flex w-fit items-center gap-3 rounded-full px-6 py-3 text-[13px] font-medium"><span className="relative z-10">상담 요청</span><ArrowRight className="relative z-10 h-4 w-4" /></button>
-              <a href="tel:+17148448494" className="text-[13px] text-[#f3eee5]/82 transition-opacity hover:opacity-70">전화 +1 714-844-8494</a>
-            </motion.div>
-          </div>
-        </div>
-      </motion.div>
-      <motion.div className="absolute inset-x-0 bottom-6 z-20" style={shouldReduceMotion ? undefined : { opacity: contentOpacity }}>
-        <div className="site-shell flex gap-2">{slides.map((_, index) => <button key={index} type="button" onClick={() => { setCurrentSlide(index); setProgress(0); }} className="h-px flex-1 overflow-hidden bg-[#f3eee5]/28" aria-label={`슬라이드 ${index + 1}`}><div className="h-full bg-[#f3eee5] transition-all duration-100 ease-linear" style={{ width: index === currentSlide ? `${progress}%` : index < currentSlide ? "100%" : "0%" }} /></button>)}</div>
-      </motion.div>
-    </section>
-  );
-};
+const HeroKo = () => <Hero locale="ko" />;
 
 const ExperienceKo = () => {
   const ref = useRef(null);
@@ -128,7 +55,7 @@ const ExperienceKo = () => {
           <p className="mt-5 max-w-[540px] text-[clamp(1rem,1.35vw,1.2rem)] leading-[1.6] text-foreground/58">첫 상담부터 조사, 자료 정리, 해결까지 각 단계가 왜 필요한지 분명하게 설명합니다.</p>
         </motion.div>
         <div className="mt-[clamp(2.8rem,6vh,4.8rem)] grid gap-5 lg:grid-cols-2">
-          <motion.div initial={{ opacity: 0, x: -16 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.8, delay: 0.05 }} className="relative min-h-[390px] overflow-hidden rounded-[4px] bg-neutral-200 lg:h-full lg:min-h-0"><AnimatePresence mode="wait" initial={false}><motion.img key={processSteps[active].image} src={processSteps[active].image} alt={`${processSteps[active].title} 과정`} initial={{ opacity: 0, scale: 1.018, filter: "blur(3px)" }} animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }} exit={{ opacity: 0 }} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="absolute inset-0 h-full w-full object-cover" /></AnimatePresence><div className="absolute inset-0 bg-black/[0.06]" /></motion.div>
+          <motion.div initial={{ opacity: 0, x: -16 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.8, delay: 0.05 }} className="relative min-h-[390px] overflow-hidden rounded-[4px] bg-neutral-200 lg:h-full lg:min-h-0"><AnimatePresence mode="wait" initial={false}><motion.img {...responsiveImageProps(processSteps[active].image)} key={processSteps[active].image} src={processSteps[active].image} alt={`${processSteps[active].title} 과정`} initial={{ opacity: 0, scale: 1.018 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="absolute inset-0 h-full w-full object-cover" /></AnimatePresence><div className="absolute inset-0 bg-black/[0.06]" /></motion.div>
           <ProcessAccordion steps={processSteps} active={active} onSelect={setActive} inView={isInView} duration={AUTO_ADVANCE_MS} korean />
         </div>
       </div>
@@ -143,7 +70,7 @@ const DirectAccessKo = () => {
     <section ref={ref} className="flex min-h-[100svh] items-center bg-[#171717] py-16 text-white md:py-20 lg:py-0">
       <div className="site-shell grid w-full gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
         <motion.div initial={{ opacity: 0, y: 22 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.75 }} className="lg:py-10"><span className="mb-5 block text-[10px] tracking-[0.14em] text-white/42">직접적인 소통</span><h2 style={koSerif} className="text-[clamp(2.55rem,3.9vw,4rem)] font-medium leading-[1.18] tracking-[-0.045em] text-white">직접 소통.<br />중간 단계 없이.</h2><p className="mt-6 max-w-[460px] text-[15px] leading-7 text-white/58">상해 청구는 가능한 한 담당 변호사 가까이에서 진행됩니다. 불필요한 전달 단계를 줄이고 상황과 다음 결정을 더 직접적으로 이해할 수 있도록 합니다.</p><div className="mt-14 grid max-w-[420px] grid-cols-2 gap-10 border-t border-white/12 pt-7"><div><div style={koSerif} className="text-[2.4rem] leading-none">1:1</div><div className="mt-2 text-[10px] tracking-[0.1em] text-white/38">직접 변호사 소통</div></div><div><div style={koSerif} className="text-[2.4rem] leading-none">08</div><div className="mt-2 text-[10px] tracking-[0.1em] text-white/38">상해 업무 분야</div></div></div></motion.div>
-        <motion.div initial={{ opacity: 0, scale: 0.985 }} animate={isInView ? { opacity: 1, scale: 1 } : {}} transition={{ duration: 0.9, delay: 0.08 }} className="ml-auto w-full overflow-hidden rounded-[2px] lg:h-[72svh] lg:max-h-[760px] lg:min-h-[560px]"><img src={leadCounselImage} alt="사무실의 변호사" loading="lazy" decoding="async" className="aspect-[4/5] h-full w-full object-cover object-center grayscale-[15%] lg:aspect-auto" /></motion.div>
+        <motion.div initial={{ opacity: 0, scale: 0.985 }} animate={isInView ? { opacity: 1, scale: 1 } : {}} transition={{ duration: 0.9, delay: 0.08 }} className="ml-auto w-full overflow-hidden rounded-[2px] lg:h-[72svh] lg:max-h-[760px] lg:min-h-[560px]"><img {...responsiveImageProps(leadCounselImage)} src={leadCounselImage} alt="사무실의 변호사" loading="lazy" decoding="async" className="aspect-[4/5] h-full w-full object-cover object-center grayscale-[15%] lg:aspect-auto" /></motion.div>
       </div>
     </section>
   );
@@ -162,7 +89,7 @@ const BookingKo = () => {
 
   return (
     <section id="booking" ref={ref} style={{ minHeight: "100svh" }} className="relative isolate flex w-full items-center overflow-hidden bg-[#171717] py-20 text-white md:py-24">
-      <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1800&q=82" alt="" loading="lazy" decoding="async" className="absolute inset-0 -z-20 h-full w-full object-cover opacity-[0.18]" />
+      <img {...responsiveImageProps("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1800&q=82")} src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1800&q=82" alt="" loading="lazy" decoding="async" className="absolute inset-0 -z-20 h-full w-full object-cover opacity-[0.18]" />
       <div className="absolute inset-0 -z-10 bg-black/65" />
 
       <div className="site-shell">

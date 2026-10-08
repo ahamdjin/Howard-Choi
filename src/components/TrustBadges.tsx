@@ -1,3 +1,4 @@
+import { responsiveImageProps } from "@/lib/responsive-images";
 import { ArrowUpRight } from "lucide-react";
 import type { SiteLocale } from "@/data/injurySite";
 import avvo from "@/assets/law-firm/badges/avvo.png";
@@ -35,7 +36,7 @@ const TrustBadges = ({ locale = "en" }: { locale?: SiteLocale }) => {
           {badges.map((badge) => (
             <li key={badge.alt}>
               <a href={badge.href} target="_blank" rel="noreferrer nofollow" className="flex h-[80px] items-center justify-center rounded-[3px] border border-[#8a6a48] bg-white px-3 py-2.5 transition-opacity hover:opacity-75">
-                <img src={badge.src} alt={badge.alt} loading="lazy" decoding="async" className="max-h-[60px] w-auto max-w-full object-contain" />
+                <img {...responsiveImageProps(badge.src)} src={badge.src} alt={badge.alt} loading="lazy" decoding="async" className="max-h-[60px] w-auto max-w-full object-contain" />
               </a>
             </li>
           ))}

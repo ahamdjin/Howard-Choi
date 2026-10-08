@@ -1,4 +1,5 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { responsiveImageProps } from "@/lib/responsive-images";
+import { m as motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, CalendarDays, FileText, Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import PageBreadcrumb from "@/components/PageBreadcrumb";
@@ -18,7 +19,7 @@ const Contact = () => {
       <Navigation />
 
       <section className="relative flex min-h-[100svh] items-end pt-24 md:min-h-[560px] overflow-hidden bg-[#17130f] text-[#f3eee5]">
-        <motion.img
+        <motion.img {...responsiveImageProps(heroCityBoardroom)}
           src={heroCityBoardroom}
           alt="Private law firm conference room"
           style={{ y: heroY }}

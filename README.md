@@ -31,9 +31,22 @@ npm run dev
 npm run build
 npm run lint
 npm run preview
+npm run images:generate
 ```
 
 Vercel deploys the `main` branch automatically. Always confirm the production deployment is **READY** after structural changes.
+
+Image source files live in `src/assets/law-firm/`. After replacing a photo, run
+`npm run images:generate` and commit the generated WebP sizes and image manifest.
+The four hero photos also have 9:16 mobile crops, with their subjects framed on
+the right. `responsiveImageProps` supplies responsive sizes and lazy loading;
+the hero explicitly loads eagerly and uses mobile `<picture>` sources.
+
+Motion features load separately through `LazyMotion`. Keep first-screen content
+visible in server HTML, use transforms for scroll reveals, and avoid restoring
+the custom wheel handler. Korean fonts load on Korean routes. GTM starts after
+hydration and the initial page load; HighLevel tracking and chat retain their
+existing behavior.
 
 ---
 

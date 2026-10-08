@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { responsiveImageProps } from "@/lib/responsive-images";
+import { m as motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import PageBreadcrumb from "@/components/PageBreadcrumb";
 import Navigation from "@/components/Navigation";
@@ -30,7 +31,7 @@ const Eyebrow = ({ children, light = false }: { children: React.ReactNode; light
 
 const AttorneyPortrait = ({ className = "" }: { className?: string }) => (
   <div className={`relative overflow-hidden bg-[#D9D3CB] ${className}`}>
-    <img src={leadCounsel} alt="Howard Choi, California attorney in Buena Park" className="h-full w-full object-cover object-center" loading="eager" decoding="async" />
+    <img {...responsiveImageProps(leadCounsel)} src={leadCounsel} alt="Howard Choi, California attorney in Buena Park" className="h-full w-full object-cover object-center" loading="eager" decoding="async" />
     <div className="absolute inset-0 bg-gradient-to-t from-[#1E1C1A]/40 via-transparent to-transparent" />
   </div>
 );

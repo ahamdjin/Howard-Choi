@@ -1,4 +1,4 @@
-import { AnimatePresence, motion, useInView } from "framer-motion";
+import { AnimatePresence, m as motion, useInView } from "framer-motion";
 import { Minus, Plus } from "lucide-react";
 import { useRef, useState } from "react";
 import type { SiteLocale } from "@/data/injurySite";
@@ -63,7 +63,7 @@ const FAQ = ({ locale = "en" }: FAQProps) => {
           <motion.div initial={{ opacity: 0, y: 16 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.68 }}>
             <span className="mb-4 block text-[9px] font-medium uppercase tracking-[0.18em] text-muted-foreground">{copy.eyebrow}</span>
             <h2
-              style={ko ? { fontFamily: '\"Noto Serif KR\", serif' } : undefined}
+              style={ko ? { fontFamily: '"Noto Serif KR", serif' } : undefined}
               className={`${ko ? "text-[clamp(2rem,2.55vw,3rem)] font-medium leading-[1.3] tracking-[-0.045em]" : "editorial-serif text-[clamp(2rem,2.7vw,3.2rem)] leading-[1.04] tracking-[-0.026em]"} max-w-[520px]`}
             >
               {copy.title}

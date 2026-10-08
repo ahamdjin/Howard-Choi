@@ -1,3 +1,4 @@
+import { responsiveImageProps } from "@/lib/responsive-images";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import PageBreadcrumb from "@/components/PageBreadcrumb";
 import { ArrowRight, Phone, type LucideIcon } from "lucide-react";
@@ -26,7 +27,7 @@ export const EditorialFrame = ({ locale, children }: { locale: SiteLocale; child
 
 export const EditorialHero = ({ locale, eyebrow, title, description, image }: { locale: SiteLocale; eyebrow: string; title: string; description: string; image: string }) => (
   <section className="relative min-h-[560px] overflow-hidden bg-[#1E1A17] pt-[60px] text-[#F3EEE5] md:min-h-[620px]">
-    <img src={image} alt="" fetchPriority="high" decoding="async" className="absolute inset-0 h-full w-full object-cover opacity-60" />
+    <img {...responsiveImageProps(image)} src={image} alt="" fetchPriority="high" decoding="async" className="absolute inset-0 h-full w-full object-cover opacity-60" />
     <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(20,16,13,.86)_0%,rgba(20,16,13,.58)_48%,rgba(20,16,13,.30)_100%)]" />
     <div className="absolute inset-0 bg-gradient-to-t from-[#17130f]/80 via-transparent to-[#17130f]/25" />
     <div className="site-shell relative z-10 flex min-h-[500px] items-end py-12 md:min-h-[560px] md:py-16">

@@ -1,3 +1,4 @@
+import { responsiveImageProps } from "@/lib/responsive-images";
 import { useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { clientReviews } from "@/data/clientReviews";
@@ -30,7 +31,7 @@ const ClientSuccessFeature = ({ locale = "en" }: { locale?: SiteLocale }) => {
         </div>
         <div className="mt-10 grid w-full bg-[#e8e6e1] lg:grid-cols-[0.34fr_0.66fr]">
           <div className="relative aspect-[16/9] lg:aspect-auto">
-            <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1200&q=84" alt={ko ? "법률 상담" : es ? "Reunión de un cliente con un abogado de lesiones personales" : "Client meeting with personal injury legal counsel"} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+            <img {...responsiveImageProps("https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1200&q=84")} src="https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1200&q=84" alt={ko ? "법률 상담" : es ? "Reunión de un cliente con un abogado de lesiones personales" : "Client meeting with personal injury legal counsel"} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
           </div>
           <div className="flex min-w-0 flex-col justify-between p-6 sm:p-8 lg:min-h-[430px] lg:p-10"
             onTouchStart={(event) => { const touch = event.touches[0]; touchStart.current = { x: touch.clientX, y: touch.clientY }; }}

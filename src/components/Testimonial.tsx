@@ -1,4 +1,4 @@
-import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } from "framer-motion";
+import { m as motion, useReducedMotion, useScroll, useTransform, type MotionValue } from "framer-motion";
 import { useRef } from "react";
 import type { SiteLocale } from "@/data/injurySite";
 
@@ -48,7 +48,7 @@ const Testimonial = ({ locale = "en" }: TestimonialProps) => {
 
         <div className="flex flex-1 items-center py-8 md:py-10">
           <blockquote
-            style={ko ? { fontFamily: '\"Noto Serif KR\", serif' } : undefined}
+            style={ko ? { fontFamily: '"Noto Serif KR", serif' } : undefined}
             className={`${ko ? "text-[clamp(1.7rem,2.25vw,2.7rem)] font-medium leading-[1.5] tracking-[-0.045em]" : "editorial-serif text-[clamp(1.85rem,2.45vw,3.05rem)] leading-[1.08] tracking-[-0.026em]"} max-w-[1180px]`}
           >
             “{words.map((word, index) => (

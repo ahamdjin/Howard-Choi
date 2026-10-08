@@ -1,3 +1,4 @@
+import { responsiveImageProps } from "@/lib/responsive-images";
 import { ArrowUpRight } from "lucide-react";
 import { serviceLocations, type SiteLocale } from "@/data/injurySite";
 import carCollision from "@/assets/law-firm/car-collision.jpg";
@@ -49,7 +50,7 @@ const HomeServiceAreas = ({ locale = "en" }: { locale?: SiteLocale }) => {
             href={`${prefix}/locations/${slug}`}
             className="group relative flex min-h-[300px] flex-col justify-end overflow-hidden rounded-[3px] bg-[#181511] p-3 text-[#f3eee5]"
           >
-            <img
+            <img {...responsiveImageProps(image)}
               src={image}
               alt={alt}
               loading="lazy"

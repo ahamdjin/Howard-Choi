@@ -1,5 +1,6 @@
+import { responsiveImageProps, mobileHeroSource } from "@/lib/responsive-images";
 import { useCallback, useEffect, useState } from "react";
-import { AnimatePresence, motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { AnimatePresence, m as motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import type { SiteLocale } from "@/data/injurySite";
 import heroCityBoardroom from "@/assets/law-firm/hero-city-boardroom.webp";
@@ -39,16 +40,17 @@ const Hero = ({ locale = "en" }: { locale?: SiteLocale }) => {
 
   useEffect(() => {
     const nextImage = new Image();
-    nextImage.src = slides[(currentSlide + 1) % slides.length].image;
+    const src = slides[(currentSlide + 1) % slides.length].image;
+    nextImage.srcset = window.innerWidth <= 767 ? mobileHeroSource(src) : responsiveImageProps(src, '100vw').srcSet || '';
+    nextImage.sizes = '100vw';
+    nextImage.src = src;
   }, [currentSlide]);
 
   const transitionEnd = viewportHeight * 0.95;
   const imageScale = useTransform(scrollY, [0, transitionEnd], [1, 1.07]);
-  const imageFilter = useTransform(scrollY, [0, transitionEnd], ["blur(0px)", "blur(3.5px)"]);
   const imageY = useTransform(scrollY, [0, transitionEnd], ["0%", "-1.25%"]);
   const shadeOpacity = useTransform(scrollY, [0, transitionEnd], [0.42, 0.56]);
   const contentOpacity = useTransform(scrollY, [0, transitionEnd * 0.72], [1, 0]);
-  const contentFilter = useTransform(scrollY, [0, transitionEnd * 0.72], ["blur(0px)", "blur(9px)"]);
   const contentY = useTransform(scrollY, [0, transitionEnd * 0.72], [0, -22]);
 
   const eyebrow = ko ? "사고 · 개인상해 변호사 · 부에나파크, 캘리포니아" : es ? "Abogado de accidentes y lesiones personales · Buena Park, California" : "Accident & Personal Injury Lawyer · Buena Park, California";
@@ -65,26 +67,31 @@ const Hero = ({ locale = "en" }: { locale?: SiteLocale }) => {
   return (
     <section className="relative h-[100svh] min-h-[680px] w-full overflow-hidden bg-[#17130f]">
       <motion.div
-        initial={shouldReduceMotion ? false : { opacity: 0.72, scale: 1.04, filter: "blur(10px)" }}
-        animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+        initial={false}
+        animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.35, ease: [0.22, 1, 0.36, 1] }}
         className="absolute inset-0"
       >
-        <motion.div className="absolute inset-0 will-change-transform" style={shouldReduceMotion ? undefined : { scale: imageScale, filter: imageFilter, y: imageY }}>
+        <motion.div className="absolute inset-0 will-change-transform" style={shouldReduceMotion ? undefined : { scale: imageScale, y: imageY }}>
           <AnimatePresence mode="sync" initial={false}>
-            <motion.img
+            <motion.picture
               key={currentSlide}
+              initial={currentSlide === 0 ? false : { opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
+              className="absolute inset-0"
+            >
+              <source media="(max-width: 767px)" srcSet={mobileHeroSource(slides[currentSlide].image)} sizes="100vw" />
+              <img {...responsiveImageProps(slides[currentSlide].image, "100vw")}
               src={slides[currentSlide].image}
               alt={slides[currentSlide].alt[locale]}
               loading="eager"
               decoding="async"
-              fetchPriority={currentSlide === 0 ? "high" : "auto"}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.8, ease: "easeInOut" }}
+              {...{ fetchpriority: currentSlide === 0 ? "high" : "auto" }}
               className="absolute inset-0 h-full w-full object-cover"
-            />
+              />
+            </motion.picture>
           </AnimatePresence>
         </motion.div>
       </motion.div>
@@ -92,36 +99,36 @@ const Hero = ({ locale = "en" }: { locale?: SiteLocale }) => {
       <motion.div className="absolute inset-0 bg-[#17130f]" style={shouldReduceMotion ? { opacity: 0.42 } : { opacity: shadeOpacity }} />
       <div className="hero-bottom-readability" />
 
-      <motion.div className="absolute inset-0 z-10 flex items-end" style={shouldReduceMotion ? undefined : { opacity: contentOpacity, filter: contentFilter, y: contentY }}>
+      <motion.div className="absolute inset-0 z-10 flex items-end" style={shouldReduceMotion ? undefined : { opacity: contentOpacity, y: contentY }}>
         <div className="site-shell pb-24 md:pb-28">
           <div className="max-w-[700px] text-[#f3eee5]">
-            <motion.p initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.18, duration: 0.7 }} className="mb-4 text-[13px] font-medium tracking-[-0.01em] text-[#f3eee5]/88 md:text-sm">
+            <motion.p initial={false} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.18, duration: 0.7 }} className="mb-4 text-[13px] font-medium tracking-[-0.01em] text-[#f3eee5]/88 md:text-sm">
               {eyebrow}
             </motion.p>
-            <motion.h1 initial={shouldReduceMotion ? false : { opacity: 0, y: 16, filter: "blur(9px)" }} animate={{ opacity: 1, y: 0, filter: "blur(0px)" }} transition={{ delay: 0.27, duration: 0.9, ease: [0.22, 1, 0.36, 1] }} className="editorial-serif text-[clamp(3rem,4.5vw,4.75rem)] leading-[0.93] tracking-[-0.024em] text-[#f3eee5]">
+            <motion.h1 initial={false} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.27, duration: 0.9, ease: [0.22, 1, 0.36, 1] }} className="editorial-serif text-[clamp(3rem,4.5vw,4.75rem)] leading-[0.93] tracking-[-0.024em] text-[#f3eee5]">
               {title}
             </motion.h1>
-            <motion.p initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.7 }} className="mt-5 max-w-[560px] text-[15px] leading-6 text-[#f3eee5]/74 md:text-base">
+            <motion.p initial={false} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.7 }} className="mt-5 max-w-[560px] text-[15px] leading-6 text-[#f3eee5]/74 md:text-base">
               {body}
             </motion.p>
-            <motion.div initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.7 }} className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <motion.div initial={false} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.7 }} className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center">
               <button onClick={() => document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })} className="liquid-cta inline-flex w-fit items-center gap-3 rounded-full px-6 py-3 text-[13px] font-medium">
                 <span className="relative z-10">{consultation}</span><ArrowRight className="relative z-10 h-4 w-4" />
               </button>
               <a href="tel:+17148448494" className="text-[13px] text-[#f3eee5]/82 transition-opacity hover:opacity-70 md:text-sm">{call} (+1) 714-844-8494</a>
             </motion.div>
-            <motion.p initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.58, duration: 0.7 }} className="mt-5 text-[13px] text-[#f3eee5]/62">
+            <motion.p initial={false} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.58, duration: 0.7 }} className="mt-5 text-[13px] text-[#f3eee5]/62">
               {fee}
             </motion.p>
 
             <motion.a
               href={`${prefix}/attorney`}
-              initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.66, duration: 0.7 }}
               className="mt-7 flex w-fit items-center gap-3.5 border-t border-[#f3eee5]/18 pt-5 transition-opacity hover:opacity-75"
             >
-              <img
+              <img {...responsiveImageProps(attorneyPortrait, "44px")}
                 src={attorneyPortrait}
                 alt="Howard Choi, California accident and personal injury attorney"
                 loading="eager"
@@ -154,9 +161,9 @@ const Hero = ({ locale = "en" }: { locale?: SiteLocale }) => {
                 ) : (
                   <motion.div
                     key={`progress-${currentSlide}`}
-                    className="h-full bg-[#f3eee5]"
-                    initial={{ width: "0%" }}
-                    animate={{ width: "100%" }}
+                    className="h-full w-full origin-left bg-[#f3eee5]"
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
                     transition={{ duration: SLIDE_DURATION_SECONDS, ease: "linear" }}
                     onAnimationComplete={nextSlide}
                   />

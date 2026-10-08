@@ -1,4 +1,5 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { responsiveImageProps } from "@/lib/responsive-images";
+import { m as motion, useScroll, useTransform } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useRef } from "react";
 import { Link, useParams } from "react-router-dom";
@@ -99,7 +100,7 @@ const BlogDetail = () => {
 
       <article ref={articleRef} className="relative">
         <header className="sticky top-0 flex h-[66svh] min-h-[540px] items-end overflow-hidden bg-[#17130f] text-[#f3eee5]">
-          <motion.img src={post.image} alt={post.alt} style={{ y: imageY, scale: imageScale }} fetchPriority="high" decoding="async" className="absolute inset-0 h-[118%] w-full object-cover" />
+          <motion.img {...responsiveImageProps(post.image)} src={post.image} alt={post.alt} style={{ y: imageY, scale: imageScale }} fetchPriority="high" decoding="async" className="absolute inset-0 h-[118%] w-full object-cover" />
           <div className="absolute inset-0 bg-[#17130f]/64" /><div className="absolute inset-0 bg-gradient-to-t from-[#17130f]/88 via-[#17130f]/10 to-[#17130f]/18" /><div className="hero-bottom-readability" />
           <div className="site-shell relative z-10 pb-14 md:pb-16">
             <Link to="/blogs" className="mb-7 inline-flex items-center gap-2 text-[12px] text-[#f3eee5]/62 transition-colors hover:text-[#f3eee5]"><ArrowLeft className="h-3.5 w-3.5" /> Back to journal</Link>
@@ -171,7 +172,7 @@ const BlogDetail = () => {
 
                 <div className="mt-10 rounded-[3px] bg-[#e9e6e1] p-7 md:p-8">
                   <div className="flex items-start gap-4">
-                    <img src={brandLogo} alt="" width={42} height={42} loading="lazy" decoding="async" className="h-10 w-10 shrink-0 object-contain" />
+                    <img {...responsiveImageProps(brandLogo, "28px")} src={brandLogo} alt="" width={42} height={42} loading="lazy" decoding="async" className="h-10 w-10 shrink-0 object-contain" />
                     <div><div className="text-[12px] font-medium text-foreground">Buena Park Injury Lawyer</div><div className="mt-1 text-[12px] text-foreground/46">California accident &amp; injury legal information</div><p className="mt-4 max-w-[590px] text-[13px] leading-6 text-foreground/58">Practical legal guidance for people navigating accident claims, insurance, evidence, deadlines, medical documentation, and recovery in California. Attorney licensing information is available on the <Link to="/attorney" className="underline underline-offset-2">attorneys page</Link>.</p></div>
                   </div>
                 </div>

@@ -1,4 +1,4 @@
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, m as motion, useReducedMotion } from "framer-motion";
 import { Check, Plus, X } from "lucide-react";
 import { useEffect, useId, useRef, useState } from "react";
 

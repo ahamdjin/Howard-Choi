@@ -1,3 +1,4 @@
+import { responsiveImageProps } from "@/lib/responsive-images";
 import PageBreadcrumb from "@/components/PageBreadcrumb";
 import { useMemo, useState } from "react";
 import { ArrowRight, CheckCircle2, Info, Mail, RotateCcw } from "lucide-react";
@@ -299,7 +300,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
             </div>
 
             <div className="relative min-h-[300px] overflow-hidden lg:min-h-0">
-              <img src={heroBoardroom} alt={ko ? "법률 사무실 회의 공간" : es ? "Sala de conferencias de un bufete" : "Law firm conference room"} className="absolute inset-0 h-full w-full object-cover" />
+              <img {...responsiveImageProps(heroBoardroom)} src={heroBoardroom} alt={ko ? "법률 사무실 회의 공간" : es ? "Sala de conferencias de un bufete" : "Law firm conference room"} className="absolute inset-0 h-full w-full object-cover" />
               <div className="absolute inset-0 bg-black/18" />
               <div className="absolute bottom-5 left-5 right-5 flex flex-wrap gap-2 text-[9px] font-medium text-white/74 md:bottom-7 md:left-7">
                 <span className="rounded-full border border-white/24 bg-black/15 px-3 py-1.5 backdrop-blur-sm">{ko ? "무료" : es ? "Gratis" : "Free"}</span>
@@ -423,7 +424,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
         <section className="bg-white py-12 md:py-16 lg:py-20">
           <div className="site-shell grid gap-8 lg:grid-cols-2 lg:items-stretch lg:gap-10">
             <div className="relative min-h-[360px] overflow-hidden rounded-[4px] bg-neutral-200 lg:min-h-[520px]">
-              <img src={heroJusticeLibrary} alt={ko ? "법률 자료와 정의의 상징" : es ? "Biblioteca jurídica y símbolo de la justicia" : "Justice and legal reference library"} className="absolute inset-0 h-full w-full object-cover" />
+              <img {...responsiveImageProps(heroJusticeLibrary)} src={heroJusticeLibrary} alt={ko ? "법률 자료와 정의의 상징" : es ? "Biblioteca jurídica y símbolo de la justicia" : "Justice and legal reference library"} className="absolute inset-0 h-full w-full object-cover" />
               <div className="absolute inset-0 bg-black/12" />
             </div>
             <div className="flex flex-col justify-center py-2 lg:pl-6">
@@ -462,7 +463,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
               <a href="https://law.justia.com/cases/california/court-of-appeal/2024/d081689.html" target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center gap-2 text-[10px] font-semibold text-white/76 underline underline-offset-4">{ko ? "공개 판결 보기" : es ? "Leer la decisión publicada" : "Read the published decision"}<ArrowRight className="h-3 w-3" /></a>
             </div>
             <div className="relative min-h-[360px] overflow-hidden rounded-[4px] bg-[#1b1b1b] lg:min-h-[520px]">
-              <img src={heroCourthouse} alt={ko ? "캘리포니아 법원 내부" : es ? "Interior de un tribunal" : "Courthouse interior"} className="absolute inset-0 h-full w-full object-cover opacity-72" />
+              <img {...responsiveImageProps(heroCourthouse)} src={heroCourthouse} alt={ko ? "캘리포니아 법원 내부" : es ? "Interior de un tribunal" : "Courthouse interior"} className="absolute inset-0 h-full w-full object-cover opacity-72" />
               <div className="absolute inset-0 bg-black/25" />
             </div>
           </div>
@@ -497,7 +498,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
         <section className="bg-white py-12 md:py-16 lg:py-20">
           <div className="site-shell grid gap-8 lg:grid-cols-2 lg:items-stretch lg:gap-10">
             <div className="relative min-h-[340px] overflow-hidden rounded-[4px] bg-neutral-200 lg:min-h-[500px]">
-              <img src={heroLawOffice} alt={ko ? "법률 사무실과 사건 자료" : es ? "Oficina jurídica y preparación del caso" : "Law office and case preparation"} className="absolute inset-0 h-full w-full object-cover" />
+              <img {...responsiveImageProps(heroLawOffice)} src={heroLawOffice} alt={ko ? "법률 사무실과 사건 자료" : es ? "Oficina jurídica y preparación del caso" : "Law office and case preparation"} className="absolute inset-0 h-full w-full object-cover" />
               <div className="absolute inset-0 bg-black/[0.08]" />
             </div>
             <div className="flex flex-col justify-center lg:pl-6">

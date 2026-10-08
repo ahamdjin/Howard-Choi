@@ -1,4 +1,5 @@
-import { motion, useInView } from "framer-motion";
+import { responsiveImageProps } from "@/lib/responsive-images";
+import { m as motion, useInView } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { useRef } from "react";
 import type { SiteLocale } from "@/data/injurySite";
@@ -31,7 +32,7 @@ const DirectAccess = ({ locale = "en" }: { locale?: SiteLocale }) => {
           </div>
         </motion.div>
         <motion.div initial={{opacity:0,scale:.985}} animate={isInView?{opacity:1,scale:1}:{}} transition={{duration:.9,delay:.08}} className="ml-auto w-full overflow-hidden rounded-[2px] lg:h-[72svh] lg:max-h-[760px] lg:min-h-[560px]">
-          <img src={leadCounselImage} alt="Howard Choi, California accident and personal injury attorney" className="aspect-[4/5] h-full w-full object-cover object-center grayscale-[15%] lg:aspect-auto"/>
+          <img {...responsiveImageProps(leadCounselImage)} src={leadCounselImage} alt="Howard Choi, California accident and personal injury attorney" className="aspect-[4/5] h-full w-full object-cover object-center grayscale-[15%] lg:aspect-auto"/>
         </motion.div>
       </div>
     </section>

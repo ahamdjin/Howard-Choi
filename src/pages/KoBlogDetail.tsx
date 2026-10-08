@@ -1,4 +1,5 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { responsiveImageProps } from "@/lib/responsive-images";
+import { m as motion, useScroll, useTransform } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useRef } from "react";
 import { Link, useParams } from "react-router-dom";
@@ -101,7 +102,7 @@ const KoBlogDetail = () => {
 
       <article ref={articleRef} className="relative">
         <header className="sticky top-0 flex h-[66svh] min-h-[540px] items-end overflow-hidden bg-[#17130f] text-[#f3eee5]">
-          <motion.img src={post.image} alt={post.alt} style={{ y: imageY, scale: imageScale }} fetchPriority="high" decoding="async" className="absolute inset-0 h-[118%] w-full object-cover" />
+          <motion.img {...responsiveImageProps(post.image)} src={post.image} alt={post.alt} style={{ y: imageY, scale: imageScale }} fetchPriority="high" decoding="async" className="absolute inset-0 h-[118%] w-full object-cover" />
           <div className="absolute inset-0 bg-[#17130f]/64" /><div className="absolute inset-0 bg-gradient-to-t from-[#17130f]/88 via-[#17130f]/10 to-[#17130f]/18" /><div className="hero-bottom-readability" />
           <div className="site-shell relative z-10 pb-14 md:pb-16">
             <Link to="/ko/blogs" className="mb-7 inline-flex items-center gap-2 text-[12px] text-[#f3eee5]/62 transition-colors hover:text-[#f3eee5]"><ArrowLeft className="h-3.5 w-3.5" /> 인사이트로 돌아가기</Link>
@@ -147,7 +148,7 @@ const KoBlogDetail = () => {
                   </div>
                 )}
 
-                <div className="mt-10 rounded-[3px] bg-[#e9e6e1] p-7 md:p-8"><div className="flex items-start gap-4"><img src={brandLogo} alt="" width={42} height={42} loading="lazy" decoding="async" className="h-10 w-10 shrink-0 object-contain" /><div><div className="text-[12px] font-medium text-foreground">Buena Park Injury Lawyer</div><div className="mt-1 text-[12px] text-foreground/46">캘리포니아 사고 · 개인 상해 법률정보</div><p className="mt-4 max-w-[590px] text-[13px] leading-6 text-foreground/58">캘리포니아 사고 청구, 보험, 증거, 기한, 치료 기록과 회복 과정을 이해하기 위한 실용적인 정보를 제공합니다. 변호사 등록 정보는 <Link to="/ko/attorney" className="underline underline-offset-2">변호사 페이지</Link>에서 확인할 수 있습니다.</p></div></div></div>
+                <div className="mt-10 rounded-[3px] bg-[#e9e6e1] p-7 md:p-8"><div className="flex items-start gap-4"><img {...responsiveImageProps(brandLogo, "28px")} src={brandLogo} alt="" width={42} height={42} loading="lazy" decoding="async" className="h-10 w-10 shrink-0 object-contain" /><div><div className="text-[12px] font-medium text-foreground">Buena Park Injury Lawyer</div><div className="mt-1 text-[12px] text-foreground/46">캘리포니아 사고 · 개인 상해 법률정보</div><p className="mt-4 max-w-[590px] text-[13px] leading-6 text-foreground/58">캘리포니아 사고 청구, 보험, 증거, 기한, 치료 기록과 회복 과정을 이해하기 위한 실용적인 정보를 제공합니다. 변호사 등록 정보는 <Link to="/ko/attorney" className="underline underline-offset-2">변호사 페이지</Link>에서 확인할 수 있습니다.</p></div></div></div>
 
                 <div className="mt-8 border-t border-foreground/12 pt-6 text-[12px] leading-6 text-foreground/46">본 글은 일반적인 정보 제공을 위한 것이며 법률자문이 아닙니다. 구체적인 법률 판단은 사실관계, 기한, 상대방, 보험 및 적용 법률에 따라 달라질 수 있습니다.</div>
               </div>

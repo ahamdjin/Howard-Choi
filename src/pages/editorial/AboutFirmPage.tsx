@@ -1,3 +1,4 @@
+import { responsiveImageProps } from "@/lib/responsive-images";
 import { ArrowRight, MessageSquareText, Scale, ShieldCheck } from "lucide-react";
 import heroBoardroom from "@/assets/law-firm/hero-city-boardroom.webp";
 import reviewingDocuments from "@/assets/law-firm/reviewing-documents.jpg";
@@ -103,7 +104,7 @@ export const AboutFirmPage = ({ locale }: { locale: SiteLocale }) => (
         >
           <div className="editorial-callout"><span className="editorial-callout__label">{isKo(locale) ? "원칙" : isEs(locale) ? "Principio de trabajo" : "Working principle"}</span><p>{isKo(locale) ? "과장된 약속보다 확인된 사실과 현실적인 다음 단계가 더 중요합니다." : isEs(locale) ? "Preferimos explicar dónde tiene una debilidad el caso antes que prometer una cifra que no podemos respaldar. Sabrá qué está sólido y qué todavía necesita trabajo." : "The insurance company has a process it uses every day. An injured person should have someone who understands that process, the evidence, and the financial impact of the claim."}</p></div>
           <figure className="mt-8 overflow-hidden rounded-md border border-[#1E1C1A]/10 bg-white">
-            <img src={attorneyClientTalking} alt={isKo(locale) ? "상해 사건에 대해 상담하는 변호사와 의뢰인" : isEs(locale) ? "Abogado y cliente conversando sobre un reclamo por lesiones" : "Attorney and client discussing an injury claim"} width={1400} height={933} loading="lazy" decoding="async" className="aspect-[16/8.5] w-full object-cover" />
+            <img {...responsiveImageProps(attorneyClientTalking)} src={attorneyClientTalking} alt={isKo(locale) ? "상해 사건에 대해 상담하는 변호사와 의뢰인" : isEs(locale) ? "Abogado y cliente conversando sobre un reclamo por lesiones" : "Attorney and client discussing an injury claim"} width={1400} height={933} loading="lazy" decoding="async" className="aspect-[16/8.5] w-full object-cover" />
             <figcaption className="border-t border-[#1E1C1A]/10 px-4 py-3 text-[10px] leading-5 text-[#1E1C1A]/44">
               {isKo(locale) ? "복잡한 절차를 이해하기 쉬운 대화로 바꾸는 것이 목표입니다." : isEs(locale) ? "La meta es convertir un proceso complicado en una conversación que el cliente pueda entender." : "The point is to turn a complicated claims process into a conversation the client can actually understand."}
             </figcaption>
@@ -132,7 +133,7 @@ export const AboutFirmPage = ({ locale }: { locale: SiteLocale }) => (
 
           <div className="mt-8 grid gap-4 md:grid-cols-[1.1fr_0.9fr]">
             <figure className="overflow-hidden rounded-md border border-[#1E1C1A]/10 bg-white">
-              <img src={reviewingDocuments} alt={isKo(locale) ? "손실 자료와 사건 기록 검토" : isEs(locale) ? "Revisión de registros del caso y documentación financiera" : "Reviewing case records and financial documentation"} width={1400} height={935} loading="lazy" decoding="async" className="aspect-[4/3] h-full w-full object-cover" />
+              <img {...responsiveImageProps(reviewingDocuments)} src={reviewingDocuments} alt={isKo(locale) ? "손실 자료와 사건 기록 검토" : isEs(locale) ? "Revisión de registros del caso y documentación financiera" : "Reviewing case records and financial documentation"} width={1400} height={935} loading="lazy" decoding="async" className="aspect-[4/3] h-full w-full object-cover" />
             </figure>
             <div className="flex flex-col justify-between border border-[#1E1C1A]/12 bg-[#F1EEE8] p-6 md:p-8">
               <div className="text-[9px] font-semibold uppercase tracking-[0.16em] text-[#381907]/65">{isKo(locale) ? "회계 + 법률" : isEs(locale) ? "Contabilidad + derecho" : "Accounting + law"}</div>
@@ -170,7 +171,7 @@ export const AboutFirmPage = ({ locale }: { locale: SiteLocale }) => (
               ? "Esta es una firma pequeña por decisión. Once años después, sigue siendo lo suficientemente pequeña para que la persona que lee el expediente sea la misma que lo argumenta. Más grande no significa automáticamente mejor en lesiones personales. Aquí hay un solo abogado, así que no existe una cadena de traspasos. La otra cara también es real: no podemos aceptar cada caso que llama. Preferimos decirlo temprano antes que aceptar un asunto y darle una atención superficial."
               : "One of the most common assumptions Howard hears is that the insurance company will automatically be fair because the accident was not the client's fault. Another is focusing only on vehicle damage while delaying attention to injuries. What someone does early after a car accident or other injury can affect the claim later."}
         >
-          <img src={signingMedicalForm} alt={isKo(locale) ? "사고 후 의료 및 보험 관련 서류 작성" : isEs(locale) ? "Documentación médica y del seguro después de un accidente" : "Medical and insurance documentation after an accident"} width={1400} height={935} loading="lazy" decoding="async" className="aspect-[16/9] w-full rounded-md object-cover" />
+          <img {...responsiveImageProps(signingMedicalForm)} src={signingMedicalForm} alt={isKo(locale) ? "사고 후 의료 및 보험 관련 서류 작성" : isEs(locale) ? "Documentación médica y del seguro después de un accidente" : "Medical and insurance documentation after an accident"} width={1400} height={935} loading="lazy" decoding="async" className="aspect-[16/9] w-full rounded-md object-cover" />
           <p className="mt-8 text-[15px] leading-8 text-[#57514b]">
             {isKo(locale)
               ? "담당 변호사는 한 명이며, 사건을 직접 검토하고 진행합니다."
@@ -205,7 +206,7 @@ export const AboutFirmPage = ({ locale }: { locale: SiteLocale }) => (
               ? "Trabajamos con personas en Buena Park, Anaheim, Fullerton, Garden Grove, Cypress, La Habra, La Mirada, Cerritos, Norwalk y Whittier. Conocer el área ayuda a identificar qué agencia hizo el reporte, dónde puede existir video, qué condado corresponde y qué aseguradoras suelen aparecer."
               : "The office has been in Buena Park for several years, serving clients from Buena Park and nearby Orange County and Los Angeles County communities. Much of the practice has grown through referrals from former clients, friends, families and other people in the community. Howard also stays connected with the Southern California legal community through professional organizations and relationships with other attorneys."}
         >
-          <img src={suburbanPalms} alt={isKo(locale) ? "북부 오렌지카운티 주택가" : isEs(locale) ? "Techos residenciales y palmeras en el norte del Condado de Orange" : "Residential rooftops and palms in north Orange County"} width={1400} height={1050} loading="lazy" decoding="async" className="aspect-[16/9] w-full rounded-md object-cover" />
+          <img {...responsiveImageProps(suburbanPalms)} src={suburbanPalms} alt={isKo(locale) ? "북부 오렌지카운티 주택가" : isEs(locale) ? "Techos residenciales y palmeras en el norte del Condado de Orange" : "Residential rooftops and palms in north Orange County"} width={1400} height={1050} loading="lazy" decoding="async" className="aspect-[16/9] w-full rounded-md object-cover" />
           <a href={`${localePrefix(locale)}/locations`} className="editorial-inline-link mt-8"><span>{isKo(locale) ? "지역별 사고·상해 가이드 보기" : isEs(locale) ? "Ver guías locales de accidentes" : "See the local accident guides"}</span><ArrowRight className="h-4 w-4" /></a>
         </ReadingSectionBlock>
       </ReadingLayout>

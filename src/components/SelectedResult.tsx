@@ -1,3 +1,4 @@
+import { responsiveImageProps } from "@/lib/responsive-images";
 import { ArrowUpRight } from "lucide-react";
 import type { SiteLocale } from "@/data/injurySite";
 import courthouseImage from "@/assets/law-firm/hero-courthouse.webp";
@@ -64,7 +65,7 @@ const SelectedResult = ({ locale = "en" }: { locale?: SiteLocale }) => {
           {results.map((result) => (
             <div key={result.title} className="overflow-hidden rounded-[3px] bg-[#191919]">
               <div className="relative aspect-[16/10] overflow-hidden">
-                <img src={result.image} alt={result.alt} loading="lazy" decoding="async" className="h-full w-full object-cover opacity-45" />
+                <img {...responsiveImageProps(result.image)} src={result.image} alt={result.alt} loading="lazy" decoding="async" className="h-full w-full object-cover opacity-45" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] via-[#0f0f0f]/35 to-transparent" />
                 <div className="absolute inset-x-5 bottom-4">
                   <div className="editorial-serif text-[clamp(2.6rem,4.5vw,3.6rem)] leading-none tracking-[-0.04em]">

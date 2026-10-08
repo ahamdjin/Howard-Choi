@@ -1,4 +1,5 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { responsiveImageProps } from "@/lib/responsive-images";
+import { m as motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import PageBreadcrumb from "@/components/PageBreadcrumb";
 import { Link } from "react-router-dom";
@@ -24,7 +25,7 @@ const EsBlogs = () => {
       <SpanishNavigation />
       <div className="relative">
         <div className="relative min-h-[100svh] md:sticky md:top-0 md:h-[70svh] md:min-h-[620px] overflow-hidden bg-[#17130f] text-[#f3eee5]">
-          <motion.img src={heroJusticeLibrary} alt="Biblioteca jurídica y estatua de la Justicia" style={{ y: imageY, scale: heroScale }} fetchPriority="high" decoding="async" className="absolute inset-0 h-[112%] w-full object-cover object-center" />
+          <motion.img {...responsiveImageProps(heroJusticeLibrary)} src={heroJusticeLibrary} alt="Biblioteca jurídica y estatua de la Justicia" style={{ y: imageY, scale: heroScale }} fetchPriority="high" decoding="async" className="absolute inset-0 h-[112%] w-full object-cover object-center" />
           <div className="absolute inset-0 bg-[#17130f]/58" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#17130f]/90 via-[#17130f]/14 to-[#17130f]/22" />
           <div className="hero-bottom-readability" />
@@ -70,7 +71,7 @@ const EsBlogs = () => {
               {esBlogPosts.map((post, index) => (
                 <motion.article key={post.slug} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.16 }} transition={{ duration: 0.65, delay: Math.min(index * 0.05, 0.15) }} className="py-7 md:py-9 lg:py-10">
                   <Link to={`/es/blogs/${post.slug}`} className="group grid gap-7 lg:grid-cols-[0.72fr_1.28fr] lg:items-stretch lg:gap-10 xl:gap-14">
-                    <div className="relative min-h-[280px] overflow-hidden bg-[#17130f] md:min-h-[340px]"><img src={post.image} alt={post.alt} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.018]" /><div className="absolute inset-0 bg-[#17130f]/10 transition-colors duration-500 group-hover:bg-transparent" /></div>
+                    <div className="relative min-h-[280px] overflow-hidden bg-[#17130f] md:min-h-[340px]"><img {...responsiveImageProps(post.image)} src={post.image} alt={post.alt} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.018]" /><div className="absolute inset-0 bg-[#17130f]/10 transition-colors duration-500 group-hover:bg-transparent" /></div>
                     <div className="flex min-h-[280px] flex-col justify-between py-1 md:min-h-[340px] lg:py-2">
                       <div><div className="mb-5 flex items-center gap-4 text-[10px] text-muted-foreground"><span>{String(index + 1).padStart(2, "0")}</span><span>{post.category}</span><span>·</span><span>{post.readingTime}</span></div><h2 className="editorial-serif max-w-[760px] text-[clamp(1.8rem,2.65vw,2.85rem)] leading-[1.02] tracking-[-0.022em]">{post.title}</h2><p className="mt-4 max-w-[650px] text-[13px] leading-6 text-foreground/60">{post.excerpt}</p></div>
                       <div className="mt-8 flex items-center justify-between border-t border-foreground/12 pt-4 text-[11px]"><span className="text-muted-foreground">{post.date}</span><span className="inline-flex items-center gap-2 transition-transform duration-300 group-hover:translate-x-1">Leer guía <ArrowRight className="h-3.5 w-3.5" /></span></div>

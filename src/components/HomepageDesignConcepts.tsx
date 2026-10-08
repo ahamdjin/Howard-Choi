@@ -1,3 +1,4 @@
+import { responsiveImageProps } from "@/lib/responsive-images";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import leadCounselImage from "@/assets/law-firm/lead-counsel.avif";
 import logo from "@/assets/law-firm/howard-choi-logo.png";
@@ -40,13 +41,13 @@ const HomepageDesignConcepts = () => (
       <ConceptHeader number="A" title="Attorney / Trust" />
 
       <div className="absolute inset-0">
-        <img src={leadCounselImage} alt="Howard Choi, California personal injury attorney" className="h-full w-full object-cover object-center" />
+        <img {...responsiveImageProps(leadCounselImage)} src={leadCounselImage} alt="Howard Choi, California personal injury attorney" className="h-full w-full object-cover object-center" />
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,.14)_45%,rgba(0,0,0,.58)_100%)]" />
       </div>
 
       <div className="site-shell relative z-10 flex h-full w-full flex-col items-center justify-center text-center">
-        <img src={logo} alt="Buena Park Injury Lawyer" className="mb-7 h-auto w-[150px] object-contain brightness-0 invert md:w-[190px]" />
+        <img {...responsiveImageProps(logo)} src={logo} alt="Buena Park Injury Lawyer" className="mb-7 h-auto w-[150px] object-contain brightness-0 invert md:w-[190px]" />
 
         <p className="text-[10px] uppercase tracking-[0.22em] text-white/58">California personal injury attorney</p>
         <h2 className="editorial-serif mt-4 text-[clamp(3.7rem,8vw,8.2rem)] leading-[0.82] tracking-[-0.055em]">
@@ -93,7 +94,7 @@ const HomepageDesignConcepts = () => (
         </div>
 
         <div className="relative h-[48vh] min-h-[340px] max-h-[500px] w-full max-w-[1120px] overflow-hidden rounded-[3px] bg-black">
-          <img src={carImage} alt="Car collision representing personal injury claims" className="h-full w-full object-cover" />
+          <img {...responsiveImageProps(carImage)} src={carImage} alt="Car collision representing personal injury claims" className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/4 to-transparent" />
           <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-6 p-6 text-white md:p-8">
             <div>
@@ -114,7 +115,7 @@ const HomepageDesignConcepts = () => (
             [medicalImage, "Serious Injury", "serious-injuries"],
           ].map(([image, title, slug]) => (
             <a key={slug} href={`/practice-areas/${slug}`} className="group relative h-[86px] overflow-hidden rounded-[2px] bg-black md:h-[110px]">
-              <img src={image} alt="" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.035]" />
+              <img {...responsiveImageProps(image)} src={image} alt="" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.035]" />
               <div className="absolute inset-0 bg-black/36" />
               <span className="absolute inset-x-3 bottom-3 text-[9px] font-medium text-white md:text-[10px]">{title}</span>
             </a>
@@ -133,12 +134,12 @@ const HomepageDesignConcepts = () => (
     <section className="relative mx-auto h-[92svh] min-h-[700px] max-h-[920px] w-full overflow-hidden bg-[#221f1b] text-white">
       <ConceptHeader number="C" title="Recognition / Fees" />
 
-      <img src={courtImage} alt="Courthouse interior" className="absolute inset-0 h-full w-full object-cover opacity-45" />
+      <img {...responsiveImageProps(courtImage)} src={courtImage} alt="Courthouse interior" className="absolute inset-0 h-full w-full object-cover opacity-45" />
       <div className="absolute inset-0 bg-[#17130f]/58" />
 
       <div className="site-shell relative z-10 flex h-full w-full items-center justify-center py-16">
         <div className="w-full max-w-[1060px] text-center">
-          <img src={logo} alt="Buena Park Injury Lawyer" className="mx-auto h-auto w-[140px] brightness-0 invert md:w-[180px]" />
+          <img {...responsiveImageProps(logo)} src={logo} alt="Buena Park Injury Lawyer" className="mx-auto h-auto w-[140px] brightness-0 invert md:w-[180px]" />
           <div className="mx-auto mt-7 max-w-[840px]">
             <h2 className="editorial-serif text-[clamp(3.2rem,6vw,6.8rem)] leading-[0.86] tracking-[-0.05em]">
               No fee unless<br /><span className="text-white/42">there is a recovery.</span>
@@ -169,10 +170,10 @@ const HomepageDesignConcepts = () => (
 
       <div className="site-shell flex h-full w-full flex-col items-center justify-center py-20 text-center">
         <div className="relative h-[55vh] min-h-[390px] max-h-[560px] w-full max-w-[980px] overflow-hidden rounded-[3px]">
-          <img src={cityImage} alt="Southern California city view representing nearby service areas" className="h-full w-full object-cover" />
+          <img {...responsiveImageProps(cityImage)} src={cityImage} alt="Southern California city view representing nearby service areas" className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-black/24" />
           <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-white">
-            <img src={logo} alt="" className="mb-5 h-auto w-[110px] brightness-0 invert opacity-90 md:w-[140px]" />
+            <img {...responsiveImageProps(logo)} src={logo} alt="" className="mb-5 h-auto w-[110px] brightness-0 invert opacity-90 md:w-[140px]" />
             <div className="text-[9px] uppercase tracking-[0.2em] text-white/58">Based in Buena Park</div>
             <h2 className="editorial-serif mt-3 text-[clamp(3rem,6vw,6.4rem)] leading-[0.86] tracking-[-0.05em]">
               Nearby when<br />it matters.
@@ -200,7 +201,7 @@ const HomepageDesignConcepts = () => (
 
       <div className="site-shell flex h-full w-full flex-col justify-center py-20">
         <div className="mx-auto mb-9 max-w-[760px] text-center">
-          <img src={logo} alt="" className="mx-auto mb-5 h-auto w-[105px] brightness-0 invert opacity-80" />
+          <img {...responsiveImageProps(logo)} src={logo} alt="" className="mx-auto mb-5 h-auto w-[105px] brightness-0 invert opacity-80" />
           <p className="text-[8px] uppercase tracking-[0.2em] text-white/38">Before your first call</p>
           <h2 className="editorial-serif mt-3 text-[clamp(2.8rem,5vw,5.2rem)] leading-[0.9] tracking-[-0.045em]">
             Four things worth<br /><span className="text-white/38">knowing early.</span>
@@ -215,7 +216,7 @@ const HomepageDesignConcepts = () => (
             [familyImage, "04", "What affects claim value", "/case-value-calculator"],
           ].map(([image, number, title, href]) => (
             <a key={number} href={href} className="group relative h-[250px] overflow-hidden rounded-[2px] md:h-[340px]">
-              <img src={image} alt="" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.035]" />
+              <img {...responsiveImageProps(image)} src={image} alt="" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.035]" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/82 via-black/5 to-black/8" />
               <div className="absolute inset-x-4 bottom-4 md:inset-x-5 md:bottom-5">
                 <div className="text-[8px] text-white/42">{number}</div>

@@ -1,10 +1,6 @@
-import { useState, type ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
 import { createRootRoute, HeadContent, Outlet, Scripts, useRouterState } from "@tanstack/react-router";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import SmoothScroll from "@/components/SmoothScroll";
+import { LazyMotion } from "framer-motion";
 import ScrollToTop from "@/components/ScrollToTop";
 import DeferredIntegrations from "@/components/DeferredIntegrations";
 import NotFound from "@/pages/NotFound";
@@ -12,6 +8,8 @@ import { attorneyJsonLd, legalServiceJsonLd, webSiteJsonLd } from "@/lib/seo";
 import appCss from "@/index.css?url";
 import innerPagesCss from "@/inner-pages.css?url";
 import brandFavicon from "@/assets/law-firm/howard-choi-favicon.png";
+
+const loadMotionFeatures = () => import('@/lib/motion-features').then((module) => module.default);
 
 export const Route = createRootRoute({
   head: () => ({
@@ -28,7 +26,6 @@ export const Route = createRootRoute({
       { rel: "icon", type: "image/png", href: brandFavicon },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400..600&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@400;500;600&display=swap" },
     ],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(attorneyJsonLd) },
@@ -41,17 +38,11 @@ export const Route = createRootRoute({
 });
 
 function AppProviders({ children }: { children: ReactNode }) {
-  const [queryClient] = useState(() => new QueryClient());
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <SmoothScroll />
+    <>
         <ScrollToTop />
-        {children}
-      </TooltipProvider>
-    </QueryClientProvider>
+        <LazyMotion features={loadMotionFeatures}>{children}</LazyMotion>
+    </>
   );
 }
 
@@ -60,6 +51,24 @@ function RootComponent() {
 }
 
 function RootDocument({ children }: { children: ReactNode }) {
+  useEffect(() => {
+    const loadAnalytics = () => {
+      if (document.getElementById('site-gtm')) return;
+      const analyticsWindow = window as Window & { dataLayer?: unknown[] };
+      analyticsWindow.dataLayer = analyticsWindow.dataLayer || [];
+      analyticsWindow.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
+      const script = document.createElement('script');
+      script.id = 'site-gtm';
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-5V5GSC7B';
+      document.head.appendChild(script);
+    };
+    // Start after hydration and the initial load so GTM cannot mutate the
+    // server-rendered head before React hydrates it.
+    if (document.readyState === 'complete') loadAnalytics();
+    else window.addEventListener('load', loadAnalytics, { once: true });
+    return () => window.removeEventListener('load', loadAnalytics);
+  }, []);
   const pathname = useRouterState({ select: (state) => state.location.pathname });
   const lang = pathname === "/ko" || pathname.startsWith("/ko/") ? "ko" : pathname === "/es" || pathname.startsWith("/es/") ? "es-US" : "en";
   const innerSitePage = /^\/(?:(?:ko|es)\/)?(?:practice-areas|locations|attorney|results|about)(?:\/|$)/.test(pathname);
@@ -86,12 +95,8 @@ function RootDocument({ children }: { children: ReactNode }) {
   return (
     <html lang={lang}>
       <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5V5GSC7B');",
-          }}
-        />
         <HeadContent />
+        <link rel="stylesheet" href={`https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400..600${lang === 'ko' ? '&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@400;500;600' : ''}&display=swap`} />
       </head>
       <body className={bodyClassName}>
         <noscript>

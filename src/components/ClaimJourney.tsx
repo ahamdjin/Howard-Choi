@@ -1,3 +1,4 @@
+import { responsiveImageProps } from "@/lib/responsive-images";
 import { ArrowRight, FileText, MessageSquare, Route } from "lucide-react";
 import { brand, type SiteLocale } from "@/data/injurySite";
 
@@ -43,7 +44,7 @@ export default function ClaimJourney({ locale, subject, guideId, contextImage }:
           <ol className="grid gap-10 md:grid-cols-3 md:gap-7">
             {steps.map(({ title, body, icon: Icon }, index) => (
               <li key={title}>
-                <img src={index === 0 && contextImage ? contextImage : photographs[index]} alt={`${subject}: ${title}`} width={800} height={560} loading="lazy" decoding="async" className="aspect-[10/7] w-full rounded-[3px] object-cover" />
+                <img {...responsiveImageProps(index === 0 && contextImage ? contextImage : photographs[index])} src={index === 0 && contextImage ? contextImage : photographs[index]} alt={`${subject}: ${title}`} width={800} height={560} loading="lazy" decoding="async" className="aspect-[10/7] w-full rounded-[3px] object-cover" />
                 <div className="mt-5 flex items-center gap-3 border-b border-[#1E1C1A]/15 pb-4"><span className="text-xs text-[#1E1C1A]/60">0{index + 1}</span><Icon className="h-5 w-5" aria-hidden="true" /><h3 className="text-lg font-medium">{title}</h3></div>
                 <p className="mt-4 text-base leading-7 text-[#1E1C1A]/70">{body}</p>
               </li>

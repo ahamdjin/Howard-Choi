@@ -1,4 +1,5 @@
-import { AnimatePresence, motion, useInView, useReducedMotion } from "framer-motion";
+import { responsiveImageProps } from "@/lib/responsive-images";
+import { AnimatePresence, m as motion, useInView, useReducedMotion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import ProcessAccordion from "@/components/ProcessAccordion";
 import type { SiteLocale } from "@/data/injurySite";
@@ -60,7 +61,7 @@ const Experience = ({ locale = "en" }: { locale?: SiteLocale }) => {
         <div className="mt-[clamp(2.8rem,6vh,4.8rem)] grid gap-5 lg:grid-cols-2">
           <motion.div initial={{ opacity: 0, x: -16 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.8, delay: 0.05 }} className="relative min-h-[390px] overflow-hidden rounded-[4px] bg-neutral-200 lg:h-full lg:min-h-0">
             <AnimatePresence mode="wait" initial={false}>
-              <motion.img key={steps[active].image} src={steps[active].image} alt={locale === "es" ? `Etapa de ${steps[active].title} de un reclamo por lesiones` : locale === "ko" ? `상해 청구의 ${steps[active].title} 단계` : `${steps[active].title} stage of an injury claim`} initial={{ opacity: 0, scale: 1.018, filter: "blur(3px)" }} animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }} exit={{ opacity: 0 }} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="absolute inset-0 h-full w-full object-cover" />
+              <motion.img {...responsiveImageProps(steps[active].image)} key={steps[active].image} src={steps[active].image} alt={locale === "es" ? `Etapa de ${steps[active].title} de un reclamo por lesiones` : locale === "ko" ? `상해 청구의 ${steps[active].title} 단계` : `${steps[active].title} stage of an injury claim`} initial={{ opacity: 0, scale: 1.018 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="absolute inset-0 h-full w-full object-cover" />
             </AnimatePresence>
             <div className="absolute inset-0 bg-black/[0.06]" />
           </motion.div>

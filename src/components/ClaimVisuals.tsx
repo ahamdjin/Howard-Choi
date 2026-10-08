@@ -1,3 +1,4 @@
+import { responsiveImageProps } from "@/lib/responsive-images";
 import { ArrowRight, Camera, FileCheck2, HeartPulse, ShieldCheck, Wallet, CalendarDays } from "lucide-react";
 import leadCounsel from "@/assets/law-firm/lead-counsel.avif";
 import { type SiteLocale } from "@/data/injurySite";
@@ -30,7 +31,7 @@ export function GuideAttorney({ locale }: { locale: SiteLocale }) {
   const prefix = ko ? "/ko" : es ? "/es" : "";
   return <section className="guide-attorney bg-[#eae4db] px-5 py-14 md:py-20">
     <div className="mx-auto grid max-w-[1120px] items-center gap-8 md:grid-cols-[0.7fr_1.3fr] md:gap-14">
-      <img src={leadCounsel} alt="Howard Choi" width={480} height={540} loading="lazy" decoding="async" className="aspect-[4/3] w-full rounded-[4px] object-cover object-top md:aspect-[4/5] md:max-h-[400px]" />
+      <img {...responsiveImageProps(leadCounsel)} src={leadCounsel} alt="Howard Choi" width={480} height={540} loading="lazy" decoding="async" className="aspect-[4/3] w-full rounded-[4px] object-cover object-top md:aspect-[4/5] md:max-h-[400px]" />
       <div><p className="mb-4 text-xs font-semibold uppercase tracking-[0.12em] text-[#67584a]">{ko ? "변호사 소개" : es ? "Conozca a su abogado" : "Meet your attorney"}</p><h2 className="text-[clamp(2rem,3.5vw,3.4rem)] font-semibold leading-tight tracking-[-0.04em]">Howard Choi</h2><p className="mt-3 text-sm font-medium text-[#57514b]">{ko ? "개인상해 · 부에나파크" : es ? "Lesiones personales · Buena Park" : "Personal injury · Buena Park"}</p><p className="mt-5 max-w-[540px] text-base leading-7 text-[#57514b]">{ko ? "사고 경위와 궁금한 점을 알려주세요. 프로필을 살펴보거나 상담을 요청할 수 있습니다." : es ? "Conozca al abogado detrás de la firma. Revise su perfil o solicite una conversación sobre su accidente." : "Get to know the attorney behind the firm. Review his profile or request a conversation about your accident."}</p>
         <div className="mt-7 flex flex-wrap gap-4"><a href={`${prefix}/attorney#profile`} className="inline-flex min-h-11 items-center gap-3 rounded-full bg-[#211c17] px-6 py-3 text-sm font-medium text-[#f3eee5]">{ko ? "프로필 보기" : es ? "Ver perfil del abogado" : "View attorney profile"}<ArrowRight aria-hidden="true" className="h-4 w-4" /></a><a href={`${prefix}/contact`} className="inline-flex min-h-11 items-center gap-3 rounded-full border border-[#211c17]/30 px-6 py-3 text-sm font-medium">{ko ? "상담 요청" : es ? "Solicitar una consulta" : "Request a consultation"}</a></div>
       </div>
