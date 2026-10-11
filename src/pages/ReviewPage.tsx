@@ -39,10 +39,10 @@ export default function ReviewPage() {
         body: JSON.stringify({ rating, comment: comment.trim(), name: name.trim(), email: email.trim(), photo: encodedPhoto }),
       });
       const result = await response.json();
-      if (!response.ok) throw new Error(result.error || "Could not save feedback.");
+      if (!response.ok) throw new Error(result.error || "We couldn’t send your feedback right now. Please try again.");
       setStatus("saved");
     } catch (cause) {
-      setError(cause instanceof Error ? cause.message : "Could not save feedback.");
+      setError(cause instanceof Error ? cause.message : "We couldn’t send your feedback right now. Please try again.");
       setStatus("idle");
     }
   };
