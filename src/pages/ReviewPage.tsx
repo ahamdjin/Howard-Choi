@@ -66,6 +66,7 @@ export default function ReviewPage() {
               <div className="flex h-[38px] w-[38px] shrink-0 items-center justify-center rounded-full bg-[#deede6] text-[15px] font-semibold text-[#137333]">{(name.trim()[0] || "G").toUpperCase()}</div>
               <div><div className="text-[15px] font-medium">{name.trim() || "Guest reviewer"}</div><div className="flex items-center gap-1 text-[12px] text-[#5f6368]">Feedback shared with the firm <Info size={13}/></div></div>
             </div>
+            <input type="hidden" name="review_rating" value={rating || ""} readOnly />
             <fieldset className="mt-[27px]">
               <legend className="sr-only">Rate your experience</legend>
               <div className="flex justify-center gap-[15px] sm:gap-[17px]" onMouseLeave={() => setHover(0)}>
