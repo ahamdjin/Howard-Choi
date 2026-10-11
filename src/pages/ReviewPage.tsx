@@ -40,7 +40,7 @@ export default function ReviewPage() {
       <div className="review-panel relative mx-auto flex min-h-[100dvh] w-full flex-col bg-white md:min-h-[min(800px,90dvh)] md:max-w-[1100px] md:rounded-[36px] md:shadow-[0_24px_65px_rgba(0,0,0,.32)]">
         <header className="flex h-[72px] shrink-0 items-center gap-5 px-6 text-[18px] font-medium md:h-[110px] md:justify-center md:text-[28px]">
           <a href="/" aria-label="Go back" className="md:hidden"><ArrowLeft size={24}/></a>
-          <span>${brand.name}</span>
+          <span>{brand.name}</span>
         </header>
         {status === "saved" ? (
           <section className="flex flex-1 flex-col items-center justify-center px-7 py-14 text-center">
@@ -79,7 +79,7 @@ export default function ReviewPage() {
             {rating > 0 && <><div className="mt-6 grid grid-cols-2 gap-3"><label className="text-xs text-[#5f6368]">Name<input name="full_name" maxLength={120} value={name} onChange={(e)=>setName(e.target.value)} className="mt-1 w-full rounded border border-[#dadce0] p-2 text-sm text-[#202124]" autoComplete="name"/></label><label className="text-xs text-[#5f6368]">Email<input name="email" type="email" maxLength={254} value={email} onChange={(e)=>setEmail(e.target.value)} className="mt-1 w-full rounded border border-[#dadce0] p-2 text-sm text-[#202124]" autoComplete="email"/></label></div>
             <p className="mt-3 text-[11px] leading-5 text-[#5f6368]">Enter your name or email so we can follow up if needed.</p></>}
             {error && <p role="alert" className="mt-3 text-sm text-red-700">{error}</p>}
-            <footer className="review-postbar mt-auto flex items-center justify-end gap-4 border-t border-[#f1f3f4] bg-white py-6 md:py-8">
+            <footer className="review-postbar sticky bottom-0 mt-auto flex items-center justify-end gap-4 border-t border-[#f1f3f4] bg-white py-5 md:py-8">
 
               <a href="/" className="hidden rounded border border-[#dadce0] px-8 py-3 text-[18px] text-[#1a73e8] md:inline-flex">Cancel</a>
               <button type="submit" disabled={!rating || !comment.trim() || (!name.trim() && !email.trim()) || status === "saving"} className="w-full rounded-full bg-[#1a73e8] px-8 py-4 text-[17px] font-medium text-white disabled:cursor-not-allowed disabled:bg-[#e8eaed] disabled:text-[#9aa0a6] md:w-auto md:rounded-[8px] md:text-[20px]">{status === "saving" ? "Posting…" : "Post"}</button>
