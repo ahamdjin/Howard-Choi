@@ -59,21 +59,19 @@ export default function ReviewPage() {
             <fieldset className="mt-[44px] md:mt-[26px]">
               <legend className="sr-only">Rate your experience</legend>
               <div className="flex justify-center gap-[18px] md:gap-[15px]" onMouseLeave={() => setHover(0)}>
-                {[1,2,3,4,5].map((n) => <button key={n} type="button" aria-label={`Rate ${n} star${n > 1 ? "s" : ""}`} aria-pressed={rating === n} onMouseEnter={() => setHover(n)} onFocus={() => setHover(n)} onBlur={() => setHover(0)} onClick={() => { setRating(n); if (n >= 4) window.location.assign(GOOGLE_REVIEW_URL); }} className="rounded-sm p-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#1a73e8]"><Star className={n <= (hover || rating) ? "fill-[#fbbc04] text-[#fbbc04]" : "fill-none text-[#80868b]"} size={29} strokeWidth={1.8}/></button>)}
+                {[1,2,3,4,5].map((n) => <button key={n} type="button" aria-label={`Rate ${n} star${n > 1 ? "s" : ""}`} aria-pressed={rating === n} onMouseEnter={() => setHover(n)} onFocus={() => setHover(n)} onBlur={() => setHover(0)} onClick={() => { setRating(n); if (n === 5) window.location.assign(GOOGLE_REVIEW_URL); }} className="rounded-sm p-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#1a73e8]"><Star className={n <= (hover || rating) ? "fill-[#fbbc04] text-[#fbbc04]" : "fill-none text-[#80868b]"} size={29} strokeWidth={1.8}/></button>)}
               </div>
             </fieldset>
             {rating > 0 && (
-              <label className="review-muted mt-4 flex items-center justify-center gap-2 text-[12px] text-[#5f6368]">
-                Your rating
-                <input
-                  type="text"
-                  name="review_rating"
-                  aria-label="Review rating"
-                  value={`${rating} Star`}
-                  readOnly
-                  className="review-input w-[80px] rounded border border-[#dadce0] bg-[#f8f9fa] px-2 py-1 text-center text-[12px] text-[#202124]"
-                />
-              </label>
+              <input
+                type="text"
+                name="review_rating"
+                aria-label="Review rating"
+                value={`${rating} Star`}
+                readOnly
+                tabIndex={-1}
+                className="pointer-events-none absolute left-[-9999px] h-px w-px opacity-0"
+              />
             )}
             <label htmlFor="review-comment" className="sr-only">Your feedback</label>
             <textarea id="review-comment" name="review_feedback" required maxLength={5000} value={comment} onChange={(e) => setComment(e.target.value)} placeholder="Share details of your own experience at this place" className="review-input mt-[48px] h-[170px] w-full resize-y rounded-[9px] border border-[#80868b] bg-white px-[26px] py-[26px] text-[17px] leading-[1.5] outline-none placeholder:text-[#5f6368] focus:border-2 focus:border-[#1a73e8] md:mt-[28px] md:h-[95px] md:px-[13px] md:py-[12px] md:text-[14px]"/>
