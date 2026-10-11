@@ -85,6 +85,7 @@ function RootDocument({ children }: { children: ReactNode }) {
     "/es",
     "/es/contact",
     "/es/case-value-calculator",
+    "/review",
   ].includes(pathname);
   const bodyClassName = [
     "site-typography",
