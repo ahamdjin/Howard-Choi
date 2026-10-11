@@ -1,5 +1,5 @@
-import { useState, type FormEvent } from "react";
-import { ArrowLeft, CheckCircle2, Info, Star, X } from "lucide-react";
+import { useRef, useState, type FormEvent } from "react";
+import { ArrowLeft, Camera, CheckCircle2, Info, Star, X } from "lucide-react";
 import { brand } from "@/data/injurySite";
 
 const GOOGLE_REVIEW_URL = "https://g.page/r/Cfv270Dk3LHdEAI/review";
@@ -12,6 +12,8 @@ export default function ReviewPage() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "saving" | "saved">("idle");
   const [error, setError] = useState("");
+  const [photoName, setPhotoName] = useState("");
+  const photoRef = useRef<HTMLInputElement>(null);
 
   const submit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -75,7 +77,8 @@ export default function ReviewPage() {
             )}
             <label htmlFor="review-comment" className="sr-only">Your feedback</label>
             <textarea id="review-comment" name="review_feedback" required maxLength={5000} value={comment} onChange={(e) => setComment(e.target.value)} placeholder="Share details of your own experience at this place" className="review-input mt-[48px] h-[170px] w-full resize-y rounded-[9px] border border-[#80868b] bg-white px-[26px] py-[26px] text-[17px] leading-[1.5] outline-none placeholder:text-[#5f6368] focus:border-2 focus:border-[#1a73e8] md:h-[208px] md:text-[23px]"/>
-            <div className="mt-7 flex h-[60px] w-full items-center justify-center rounded-full bg-[#2e3342] text-[16px] font-semibold text-white md:h-[86px] md:text-[23px]">Add photos &amp; videos</div>
+            <input ref={photoRef} type="file" accept="image/*,video/*" className="hidden" name="review_attachment" onChange={(event) => setPhotoName(event.target.files?.[0]?.name || "")} />
+            <button type="button" onClick={() => photoRef.current?.click()} className="mt-7 flex h-[60px] w-full items-center justify-center gap-3 rounded-full bg-[#2e3342] text-[16px] font-semibold text-white md:h-[86px] md:text-[23px]"><Camera size={22} className="text-[#8ab4f8]"/>{photoName || "Add photos & videos"}</button>
             {rating > 0 && <><div className="mt-6 grid grid-cols-2 gap-3"><label className="text-xs text-[#5f6368]">Name<input name="full_name" maxLength={120} value={name} onChange={(e)=>setName(e.target.value)} className="mt-1 w-full rounded border border-[#dadce0] p-2 text-sm text-[#202124]" autoComplete="name"/></label><label className="text-xs text-[#5f6368]">Email<input name="email" type="email" maxLength={254} value={email} onChange={(e)=>setEmail(e.target.value)} className="mt-1 w-full rounded border border-[#dadce0] p-2 text-sm text-[#202124]" autoComplete="email"/></label></div>
             <p className="mt-3 text-[11px] leading-5 text-[#5f6368]">Enter your name or email so we can follow up if needed.</p></>}
             {error && <p role="alert" className="mt-3 text-sm text-red-700">{error}</p>}
