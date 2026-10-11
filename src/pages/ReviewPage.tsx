@@ -39,7 +39,7 @@ export default function ReviewPage() {
         <iframe tabIndex={-1} title="Buena Park map background" className="absolute inset-0 h-full w-full border-0" src="https://maps.google.com/maps?q=6301%20Beach%20Blvd%20Buena%20Park%20CA&t=m&z=16&ie=UTF8&iwloc=&output=embed" loading="lazy" />
         <div className="review-map-overlay pointer-events-none absolute inset-0 bg-[#202124]/35" />
       </div>
-      <div className="review-panel relative mx-auto flex min-h-[100dvh] w-full flex-col bg-white md:min-h-0 md:h-[500px] md:max-h-[94dvh] md:max-w-[526px] md:rounded-[18px] md:shadow-[0_20px_50px_rgba(0,0,0,.28)] md:overflow-y-auto">
+      <div className="review-panel relative mx-auto flex min-h-[100dvh] w-full flex-col bg-white md:min-h-[500px] md:h-auto md:max-h-[94dvh] md:max-w-[526px] md:rounded-[18px] md:shadow-[0_20px_50px_rgba(0,0,0,.28)] md:overflow-y-auto">
         <header className="flex h-[72px] shrink-0 items-center gap-5 px-6 text-[18px] font-medium md:h-[55px] md:justify-center md:text-[14px]">
           <a href="/" aria-label="Go back" className="md:hidden"><ArrowLeft size={24}/></a>
           <span>{brand.name}</span>
