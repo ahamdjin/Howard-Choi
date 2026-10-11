@@ -109,7 +109,7 @@ function RootDocument({ children }: { children: ReactNode }) {
             title="Google Tag Manager"
           />
         </noscript>
-        <div className="min-h-screen bg-background px-[7px] pb-[7px]">
+        <div className={pathname === "/review" ? "min-h-screen bg-background p-0" : "min-h-screen bg-background px-[7px] pb-[7px]"}>
           {children}
         </div>
         <DeferredIntegrations externalFormPage={externalFormPage} />
