@@ -8,7 +8,7 @@ export const Route = createFileRoute("/api/review")({
     handlers: {
       POST: async ({ request }) => {
         const webhook = process.env.GHL_REVIEW_WEBHOOK_URL;
-        if (!webhook) return Response.json({ error: "Feedback service is not configured yet." }, { status: 503 });
+        if (!webhook) return Response.json({ error: "Thanks for taking the time to share your experience. We couldn’t send your feedback right now. Please try again later." }, { status: 503 });
         let data: ReviewPayload;
         try { data = (await request.json()) as ReviewPayload; }
         catch { return Response.json({ error: "Invalid request." }, { status: 400 }); }
