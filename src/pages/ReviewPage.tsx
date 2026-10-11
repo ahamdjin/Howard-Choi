@@ -81,7 +81,7 @@ export default function ReviewPage() {
             {photo && <button type="button" className="mt-2 text-xs text-[#1a73e8]" onClick={() => {setPhoto(null); if (photoInput.current) photoInput.current.value = "";}}>Remove photo</button>}
             {photoError && <p role="alert" className="mt-2 text-xs text-red-700">{photoError}</p>}
             {rating > 0 && <><div className="mt-5 grid grid-cols-2 gap-3"><label className="text-xs text-[#5f6368]">Name<input name="full_name" maxLength={120} value={name} onChange={(e)=>setName(e.target.value)} className="mt-1 w-full rounded border border-[#dadce0] p-2 text-sm text-[#202124]" autoComplete="name"/></label><label className="text-xs text-[#5f6368]">Email<input name="email" type="email" maxLength={254} value={email} onChange={(e)=>setEmail(e.target.value)} className="mt-1 w-full rounded border border-[#dadce0] p-2 text-sm text-[#202124]" autoComplete="email"/></label></div>
-            <p className="mt-3 text-[11px] leading-5 text-[#5f6368]">Enter your name or email so we can follow up if needed.</p></>}}
+            <p className="mt-3 text-[11px] leading-5 text-[#5f6368]">Enter your name or email so we can follow up if needed.</p></>}
             {error && <p role="alert" className="mt-3 text-sm text-red-700">{error}</p>}
             <footer className="mt-5 flex flex-wrap items-center justify-end gap-3">
 
