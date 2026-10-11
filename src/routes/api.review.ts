@@ -16,7 +16,7 @@ export const Route = createFileRoute("/api/review")({
         const comment = typeof data.comment === "string" ? data.comment.trim() : "";
         const name = typeof data.name === "string" ? data.name.trim() : "";
         const email = typeof data.email === "string" ? data.email.trim() : "";
-        if (!Number.isInteger(rating) || rating < 1 || rating > 5 || comment.length > 5000 || name.length > 120 || email.length > 254 || !validEmail(email) || !comment) {
+        if (!Number.isInteger(rating) || rating < 1 || rating > 5 || comment.length > 5000 || name.length > 120 || email.length > 254 || !validEmail(email) || !comment || (!name && !email)) {
           return Response.json({ error: "Please provide a rating, feedback and valid contact details." }, { status: 400 });
         }
         const photo = data.photo;
@@ -32,6 +32,10 @@ export const Route = createFileRoute("/api/review")({
               business: "Buena Park Injury Lawyer",
               rating,
               feedback: comment,
+              review: comment,
+              review_rating: rating,
+              review_feedback: comment,
+              review_attachment: photo ?? null,
               name,
               email,
               photo: photo ?? null,
