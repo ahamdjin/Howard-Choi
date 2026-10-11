@@ -3,6 +3,7 @@ import { Camera, CheckCircle2, Info, Star, X } from "lucide-react";
 import { brand } from "@/data/injurySite";
 
 const MAX_PHOTO_BYTES = 2 * 1024 * 1024;
+const GOOGLE_REVIEW_URL = "https://g.page/r/Cfv270Dk3LHdEAI/review";
 
 export default function ReviewPage() {
   const [rating, setRating] = useState(0);
@@ -70,17 +71,17 @@ export default function ReviewPage() {
             <fieldset className="mt-[27px]">
               <legend className="sr-only">Rate your experience</legend>
               <div className="flex justify-center gap-[15px] sm:gap-[17px]" onMouseLeave={() => setHover(0)}>
-                {[1,2,3,4,5].map((n) => <button key={n} type="button" aria-label={`Rate ${n} star${n > 1 ? "s" : ""}`} aria-pressed={rating === n} onMouseEnter={() => setHover(n)} onFocus={() => setHover(n)} onBlur={() => setHover(0)} onClick={() => setRating(n)} className="rounded-sm p-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#1a73e8]"><Star className={n <= (hover || rating) ? "fill-[#fbbc04] text-[#fbbc04]" : "fill-none text-[#80868b]"} size={29} strokeWidth={1.8}/></button>)}
+                {[1,2,3,4,5].map((n) => <button key={n} type="button" aria-label={`Rate ${n} star${n > 1 ? "s" : ""}`} aria-pressed={rating === n} onMouseEnter={() => setHover(n)} onFocus={() => setHover(n)} onBlur={() => setHover(0)} onClick={() => { setRating(n); if (n >= 4) window.location.assign(GOOGLE_REVIEW_URL); }} className="rounded-sm p-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#1a73e8]"><Star className={n <= (hover || rating) ? "fill-[#fbbc04] text-[#fbbc04]" : "fill-none text-[#80868b]"} size={29} strokeWidth={1.8}/></button>)}
               </div>
             </fieldset>
-            {rating > 0 && <><label htmlFor="review-comment" className="sr-only">Your feedback</label>
+            <label htmlFor="review-comment" className="sr-only">Your feedback</label>
             <textarea id="review-comment" name="review_feedback" required maxLength={5000} value={comment} onChange={(e) => setComment(e.target.value)} placeholder="Share details of your own experience at this place" className="mt-[27px] h-[95px] w-full resize-y rounded-[4px] border border-[#80868b] bg-white px-[13px] py-[12px] text-[14px] leading-[21px] outline-none placeholder:text-[#5f6368] focus:border-2 focus:border-[#1a73e8]"/>
             <input name="review_attachment" ref={photoInput} type="file" className="hidden" accept="image/jpeg,image/png,image/webp" onChange={(e) => {const file = e.target.files?.[0]; setPhotoError(""); if (file && file.size > MAX_PHOTO_BYTES) {setPhoto(null); setPhotoError("Photo must be under 2 MB."); return;} setPhoto(file || null);}} />
             <button type="button" onClick={() => photoInput.current?.click()} className="mt-[13px] flex h-[41px] w-full items-center justify-center gap-2 rounded-full bg-[#303442] text-[13px] font-semibold text-white hover:bg-[#242733]"><Camera size={17} className="text-[#8ab4f8]"/>{photo ? photo.name : "Add a photo (optional)"}</button>
             {photo && <button type="button" className="mt-2 text-xs text-[#1a73e8]" onClick={() => {setPhoto(null); if (photoInput.current) photoInput.current.value = "";}}>Remove photo</button>}
             {photoError && <p role="alert" className="mt-2 text-xs text-red-700">{photoError}</p>}
-            <div className="mt-5 grid grid-cols-2 gap-3"><label className="text-xs text-[#5f6368]">Name<input name="full_name" maxLength={120} value={name} onChange={(e)=>setName(e.target.value)} className="mt-1 w-full rounded border border-[#dadce0] p-2 text-sm text-[#202124]" autoComplete="name"/></label><label className="text-xs text-[#5f6368]">Email<input name="email" type="email" maxLength={254} value={email} onChange={(e)=>setEmail(e.target.value)} className="mt-1 w-full rounded border border-[#dadce0] p-2 text-sm text-[#202124]" autoComplete="email"/></label></div>
-            <p className="mt-3 text-[11px] leading-5 text-[#5f6368]">Enter your name or email so we can follow up if needed.</p></>}
+            {rating > 0 && <div className="mt-5 grid grid-cols-2 gap-3"><label className="text-xs text-[#5f6368]">Name<input name="full_name" maxLength={120} value={name} onChange={(e)=>setName(e.target.value)} className="mt-1 w-full rounded border border-[#dadce0] p-2 text-sm text-[#202124]" autoComplete="name"/></label><label className="text-xs text-[#5f6368]">Email<input name="email" type="email" maxLength={254} value={email} onChange={(e)=>setEmail(e.target.value)} className="mt-1 w-full rounded border border-[#dadce0] p-2 text-sm text-[#202124]" autoComplete="email"/></label></div>
+            <p className="mt-3 text-[11px] leading-5 text-[#5f6368]">Enter your name or email so we can follow up if needed.</p>}
             {error && <p role="alert" className="mt-3 text-sm text-red-700">{error}</p>}
             <footer className="mt-5 flex flex-wrap items-center justify-end gap-3">
 
