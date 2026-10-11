@@ -43,13 +43,25 @@ export default function ReviewPage() {
               <div className="flex h-[38px] w-[38px] shrink-0 items-center justify-center rounded-full bg-[#deede6] text-[15px] font-semibold text-[#137333]">{(name.trim()[0] || "G").toUpperCase()}</div>
               <div><div className="text-[15px] font-medium">{name.trim() || "Guest reviewer"}</div><div className="flex items-center gap-1 text-[12px] text-[#5f6368]">Feedback shared with the firm <Info size={13}/></div></div>
             </div>
-            <input type="hidden" name="review_rating" value={rating || ""} readOnly />
             <fieldset className="mt-[27px]">
               <legend className="sr-only">Rate your experience</legend>
               <div className="flex justify-center gap-[15px] sm:gap-[17px]" onMouseLeave={() => setHover(0)}>
                 {[1,2,3,4,5].map((n) => <button key={n} type="button" aria-label={`Rate ${n} star${n > 1 ? "s" : ""}`} aria-pressed={rating === n} onMouseEnter={() => setHover(n)} onFocus={() => setHover(n)} onBlur={() => setHover(0)} onClick={() => { setRating(n); if (n >= 4) window.location.assign(GOOGLE_REVIEW_URL); }} className="rounded-sm p-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#1a73e8]"><Star className={n <= (hover || rating) ? "fill-[#fbbc04] text-[#fbbc04]" : "fill-none text-[#80868b]"} size={29} strokeWidth={1.8}/></button>)}
               </div>
             </fieldset>
+            {rating > 0 && (
+              <label className="mt-3 flex items-center justify-center gap-2 text-[12px] text-[#5f6368]">
+                Your rating
+                <input
+                  type="text"
+                  name="review_rating"
+                  aria-label="Review rating"
+                  value={`${rating} Star`}
+                  readOnly
+                  className="w-[75px] rounded border border-[#dadce0] bg-[#f8f9fa] px-2 py-1 text-center text-[12px] text-[#202124]"
+                />
+              </label>
+            )}
             <label htmlFor="review-comment" className="sr-only">Your feedback</label>
             <textarea id="review-comment" name="review_feedback" required maxLength={5000} value={comment} onChange={(e) => setComment(e.target.value)} placeholder="Share details of your own experience at this place" className="mt-[27px] h-[95px] w-full resize-y rounded-[4px] border border-[#80868b] bg-white px-[13px] py-[12px] text-[14px] leading-[21px] outline-none placeholder:text-[#5f6368] focus:border-2 focus:border-[#1a73e8]"/>
             {rating > 0 && <><div className="mt-5 grid grid-cols-2 gap-3"><label className="text-xs text-[#5f6368]">Name<input name="full_name" maxLength={120} value={name} onChange={(e)=>setName(e.target.value)} className="mt-1 w-full rounded border border-[#dadce0] p-2 text-sm text-[#202124]" autoComplete="name"/></label><label className="text-xs text-[#5f6368]">Email<input name="email" type="email" maxLength={254} value={email} onChange={(e)=>setEmail(e.target.value)} className="mt-1 w-full rounded border border-[#dadce0] p-2 text-sm text-[#202124]" autoComplete="email"/></label></div>
