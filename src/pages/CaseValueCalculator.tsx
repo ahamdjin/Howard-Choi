@@ -132,7 +132,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
     setCalculated(false);
     setError("");
   };
-  const [review, setReview] = useState({ full_name: "", email: "" });
+  const [review, setReview] = useState({ full_name: "", email: "", phone: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const caseTypes: Array<{ value: CaseType; en: string; ko: string; es: string }> = [
@@ -257,7 +257,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
     setState(initialState);
     setCalculated(false);
     setError("");
-    setReview({ full_name: "", email: "" });
+    setReview({ full_name: "", email: "", phone: "" });
     setIsSubmitting(false);
   };
 
@@ -395,6 +395,10 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
                         <label className="block">
                           <span className="mb-1.5 block text-[10px] font-medium text-[#211E1B]/58">{ko ? "이메일" : es ? "Correo electrónico" : "Email"}</span>
                           <input name="email" type="email" value={review.email} onChange={(event) => setReview((current) => ({ ...current, email: event.target.value }))} required autoComplete="email" placeholder="name@example.com" className="h-10 w-full rounded-[3px] border border-[#211E1B]/12 bg-white px-3 text-[12px] outline-none focus:border-[#6E635A]" />
+                        </label>
+                        <label className="block">
+                          <span className="mb-1.5 block text-[10px] font-medium text-[#211E1B]/58">{ko ? "전화번호 (선택 사항)" : es ? "Teléfono (opcional)" : "Phone (optional)"}</span>
+                          <input name="phone" type="tel" autoComplete="tel" value={review.phone} onChange={(event) => setReview((current) => ({ ...current, phone: event.target.value }))} placeholder={ko ? "전화번호" : es ? "Número de teléfono" : "Phone number"} className="h-10 w-full rounded-[3px] border border-[#211E1B]/12 bg-white px-3 text-[12px] outline-none focus:border-[#6E635A]" />
                         </label>
                         <label className="block">
                           <span className="mb-1.5 block text-[10px] font-medium text-[#211E1B]/58">{ko ? "메시지 / 계산 요약" : es ? "Mensaje / resumen de la calculadora" : "Message / calculator summary"}</span>
