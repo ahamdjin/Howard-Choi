@@ -8,7 +8,7 @@ type WebsiteInquiryFormProps = {
 };
 
 const WebsiteInquiryForm = ({ locale = "en" }: WebsiteInquiryFormProps) => {
-  const [formData, setFormData] = useState({ full_name: "", email: "", subject: "", message: "" });
+  const [formData, setFormData] = useState({ full_name: "", email: "", phone: "", subject: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const isKorean = locale === "ko";
   const isSpanish = locale === "es";
@@ -32,6 +32,7 @@ const WebsiteInquiryForm = ({ locale = "en" }: WebsiteInquiryFormProps) => {
 
   const fullName = isKorean ? "성명" : isSpanish ? "Nombre completo" : "Full name";
   const email = isKorean ? "이메일" : isSpanish ? "Correo electrónico" : "Email";
+  const phone = isKorean ? "전화번호 (선택 사항)" : isSpanish ? "Teléfono (opcional)" : "Phone (optional)";
   const subject = isKorean ? "문의 제목" : isSpanish ? "Asunto" : "Subject";
   const message = isKorean ? "사안의 간단한 개요" : isSpanish ? "Breve resumen del asunto" : "A brief outline of the matter";
   const sending = isKorean ? "전송 중..." : isSpanish ? "Enviando..." : "Sending...";
@@ -50,6 +51,7 @@ const WebsiteInquiryForm = ({ locale = "en" }: WebsiteInquiryFormProps) => {
         <Input name="full_name" value={formData.full_name} onChange={handleChange} required autoComplete="name" placeholder={fullName} aria-label={fullName} className="h-12 rounded-[2px] border-foreground/10 bg-background/70 px-4 text-[13px] shadow-none" />
         <Input name="email" type="email" value={formData.email} onChange={handleChange} required autoComplete="email" placeholder={email} aria-label={email} className="h-12 rounded-[2px] border-foreground/10 bg-background/70 px-4 text-[13px] shadow-none" />
       </div>
+      <Input name="phone" type="tel" autoComplete="tel" value={formData.phone} onChange={handleChange} placeholder={phone} aria-label={phone} className="h-12 rounded-[2px] border-foreground/10 bg-background/70 px-4 text-[13px] shadow-none" />
       <Input name="subject" value={formData.subject} onChange={handleChange} required placeholder={subject} aria-label={subject} className="h-12 rounded-[2px] border-foreground/10 bg-background/70 px-4 text-[13px] shadow-none" />
       <Textarea name="message" value={formData.message} onChange={handleChange} required placeholder={message} aria-label={message} rows={7} className="resize-none rounded-[2px] border-foreground/10 bg-background/70 p-4 text-[13px] leading-6 shadow-none" />
       <button type="submit" disabled={isSubmitting} className="liquid-cta mt-2 inline-flex rounded-full px-6 py-3 text-[12px] font-medium disabled:cursor-wait disabled:opacity-70">
