@@ -13,6 +13,7 @@ export const brand = {
     "https://www.google.com/maps/place/Buena+Park+Injury+Lawyer/@33.868851,-118.0013508,17z/data=!3m1!4b1!4m6!3m5!1s0x80dd2ba112d784eb:0xddb1dce440eff6fb!8m2!3d33.868851!4d-117.9987705!16s%2Fg%2F11nvy6qqf7",
   gbpHref: "https://share.google/LBJ1C8zWrZFjJBkVe",
   yelpHref: "https://www.yelp.com/biz/buena-park-injury-lawyer-buena-park",
+  facebookHref: "https://www.facebook.com/profile.php?id=61595406749023",
 };
 
 export const practiceAreas = [
