@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail } from "lucide-react";
+import { Facebook, MapPin, Phone, Mail } from "lucide-react";
 import { brand, type SiteLocale } from "@/data/injurySite";
 
 // Lucide has no Yelp mark, so this is the official burst as inline SVG.
@@ -67,6 +67,15 @@ const FooterContact = ({ locale = "en" }: { locale?: SiteLocale }) => {
             <YelpIcon className="h-4 w-4" />
           </a>
         ) : null}
+        <a
+          href={brand.facebookHref}
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Facebook"
+          className="flex h-8 w-8 items-center justify-center rounded-full border border-foreground/15 text-[#1877F2] transition-colors hover:border-foreground/40"
+        >
+          <Facebook aria-hidden="true" className="h-4 w-4" />
+        </a>
       </div>
     </div>
   );
