@@ -27,7 +27,9 @@ export default function ReviewPage() {
 
   return (
     <main className="review-screen relative min-h-[100dvh] bg-white text-[#202124] md:flex md:items-center md:justify-center md:p-0">
-      <style>{`@media (prefers-color-scheme: dark) {
+      <style>{`@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+        .review-screen, .review-screen input, .review-screen textarea, .review-screen button { font-family: Roboto, Arial, sans-serif !important; }
+        @media (prefers-color-scheme: dark) {
         .review-screen { background:#202124!important; color:#e8eaed!important }
         .review-panel { background:#202124!important; color:#e8eaed!important }
         .review-muted { color:#bdc1c6!important }
