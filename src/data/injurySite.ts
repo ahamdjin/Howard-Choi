@@ -15,6 +15,7 @@ export const brand = {
   yelpHref: "https://www.yelp.com/biz/buena-park-injury-lawyer-buena-park",
   facebookHref: "https://www.facebook.com/profile.php?id=61595406749023",
   instagramHref: "https://www.instagram.com/buenaparkinjurylawyer/",
+  linkedinHref: "https://www.linkedin.com/company/buenaparkinjurylawyer/",
 };
 
 export const practiceAreas = [
