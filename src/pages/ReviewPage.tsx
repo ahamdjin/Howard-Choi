@@ -35,6 +35,7 @@ export default function ReviewPage() {
         .review-muted { color:#bdc1c6!important }
         .review-input { background:#202124!important; color:#f1f3f4!important; border-color:#858a90!important }
         .review-postbar { background:#202124!important; border-color:#3c4043!important }
+        .review-post-button:disabled { background:#3c4043!important; color:#9aa0a6!important; }
         .review-map-overlay { background:rgba(0,0,0,.65)!important }
       }`}</style>
       <div className="absolute inset-0 hidden overflow-hidden md:block" aria-hidden="true">
@@ -85,7 +86,7 @@ export default function ReviewPage() {
             <footer className="review-postbar sticky bottom-0 mt-auto flex items-center justify-end gap-4 border-t border-[#f1f3f4] bg-white py-5 md:border-0 md:py-[16px]">
 
               <a href="/" className="hidden rounded border border-[#dadce0] px-5 py-2 text-[13px] text-[#1a73e8] md:inline-flex">Cancel</a>
-              <button type="submit" disabled={!rating || !comment.trim() || (!name.trim() && !email.trim()) || status === "saving"} className="w-full rounded-full bg-[#1a73e8] px-8 py-4 text-[17px] font-medium text-white disabled:cursor-not-allowed disabled:bg-[#e8eaed] disabled:text-[#9aa0a6] md:w-auto md:rounded-[4px] md:text-[13px]">{status === "saving" ? "Posting…" : "Post"}</button>
+              <button type="submit" disabled={!rating || !comment.trim() || (!name.trim() && !email.trim()) || status === "saving"} className="review-post-button w-full rounded-full bg-[#1a73e8] px-8 py-4 text-[17px] font-medium text-white disabled:cursor-not-allowed disabled:bg-[#e8eaed] disabled:text-[#9aa0a6] md:w-auto md:rounded-[4px] md:text-[13px]">{status === "saving" ? "Posting…" : "Post"}</button>
             </footer>
           </form>
         )}
