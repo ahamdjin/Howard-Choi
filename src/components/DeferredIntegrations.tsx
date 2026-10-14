@@ -12,7 +12,7 @@ const appendScript = (src: string, attributes: Record<string, string> = {}) => {
   return script;
 };
 
-const DeferredIntegrations = ({ externalFormPage }: { externalFormPage: boolean }) => {
+const DeferredIntegrations = ({ externalFormPage, disableChat = false }: { externalFormPage: boolean; disableChat?: boolean }) => {
   useEffect(() => {
     let cancelled = false;
     let timeoutId: number | undefined;
@@ -26,6 +26,8 @@ const DeferredIntegrations = ({ externalFormPage }: { externalFormPage: boolean 
       });
       appendScript("https://link.msgsndr.com/js/form_embed.js");
     }
+
+    if (disableChat) return;
 
     const loadDeferred = () => {
       if (cancelled) return;
@@ -49,7 +51,7 @@ const DeferredIntegrations = ({ externalFormPage }: { externalFormPage: boolean 
       cancelled = true;
       if (timeoutId) window.clearTimeout(timeoutId);
     };
-  }, [externalFormPage]);
+  }, [externalFormPage, disableChat]);
 
   return null;
 };
