@@ -1,4 +1,4 @@
-import { Facebook, Instagram, MapPin, Phone, Mail } from "lucide-react";
+import { Facebook, Instagram, Linkedin, MapPin, Phone, Mail } from "lucide-react";
 import { brand, type SiteLocale } from "@/data/injurySite";
 
 // Lucide has no Yelp mark, so this is the official burst as inline SVG.
@@ -84,6 +84,15 @@ const FooterContact = ({ locale = "en" }: { locale?: SiteLocale }) => {
           className="flex h-8 w-8 items-center justify-center rounded-full border border-foreground/15 text-[#E1306C] transition-colors hover:border-foreground/40"
         >
           <Instagram aria-hidden="true" className="h-4 w-4" />
+        </a>
+        <a
+          href={brand.linkedinHref}
+          target="_blank"
+          rel="noreferrer"
+          aria-label="LinkedIn"
+          className="flex h-8 w-8 items-center justify-center rounded-full border border-foreground/15 text-[#0A66C2] transition-colors hover:border-foreground/40"
+        >
+          <Linkedin aria-hidden="true" className="h-4 w-4" />
         </a>
       </div>
     </div>
