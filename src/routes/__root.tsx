@@ -112,7 +112,7 @@ function RootDocument({ children }: { children: ReactNode }) {
         <div className={pathname === "/review" ? "min-h-screen bg-background p-0" : "min-h-screen bg-background px-[7px] pb-[7px]"}>
           {children}
         </div>
-        <DeferredIntegrations externalFormPage={externalFormPage} />
+        <DeferredIntegrations externalFormPage={externalFormPage} disableChat={pathname === "/review"} />
         <Scripts />
       </body>
     </html>
