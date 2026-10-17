@@ -127,6 +127,11 @@ const KoBlogDetail = () => {
               </aside>
 
               <div className="min-w-0">
+                <div className="mb-8 flex flex-wrap items-center gap-x-5 gap-y-2 border-b border-foreground/12 pb-5 text-[12px] leading-6 text-foreground/65">
+                  <span>게시: Buena Park Injury Lawyer</span>
+                  <Link to="/ko/attorney" className="font-medium text-foreground underline underline-offset-4">Howard Choi 변호사 프로필</Link>
+                  <a href="https://apps.calbar.ca.gov/attorney/Licensee/Detail/284364" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">캘리포니아 변호사 등록번호 284364 확인</a>
+                </div>
                 <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.68 }}><div className="mb-5 flex items-center gap-3 text-[11px] text-foreground/42 lg:hidden"><span>{post.category}</span><span>·</span><span>{post.readingTime}</span></div><p style={koSerif} className="text-[clamp(1.5rem,2vw,2rem)] font-medium leading-[1.55] tracking-[-0.035em] text-foreground/94">{post.intro}</p></motion.div>
 
                 <motion.blockquote initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.62 }} className="my-10 rounded-[3px] bg-[#1a1714] px-7 py-8 text-[#f3eee5] md:my-12 md:px-9 md:py-10"><div className="mb-5 text-[10px] tracking-[0.1em] text-[#f3eee5]/38">핵심 포인트</div><p style={koSerif} className="max-w-[690px] text-[clamp(1.65rem,2.35vw,2.35rem)] font-medium leading-[1.45] tracking-[-0.04em]">“{post.takeaway}”</p></motion.blockquote>
