@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { blogPosts } from "@/data/blogs";
+import { getKoBlogBySlug } from "@/data/koBlogs";
 import { practiceAreas, serviceLocations } from "@/data/injurySite";
 import { absoluteUrl } from "@/lib/seo";
 
@@ -17,6 +18,8 @@ const renderUrl = (path: string, englishPath: string, koreanPath: string, lastmo
     <xhtml:link rel="alternate" hreflang="ko-US" href="${xmlEscape(absoluteUrl(koreanPath))}" />
     <xhtml:link rel="alternate" hreflang="x-default" href="${xmlEscape(absoluteUrl(englishPath))}" />
   </url>`;
+
+const englishOnly = (path: string, lastmod?: string) => `\n  <url>\n    <loc>${xmlEscape(absoluteUrl(path))}</loc>${lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : ""}\n  </url>`;
 
 const pair = (en: string, ko: string, lastmod?: string) => [
   renderUrl(en, en, ko, lastmod),
@@ -46,7 +49,9 @@ export const Route = createFileRoute("/sitemap.xml")({
           pair(`/locations/${location.slug}`, `/ko/locations/${location.slug}`),
         );
         const articleUrls = blogPosts.flatMap((post) =>
-          pair(`/blogs/${post.slug}`, `/ko/blogs/${post.slug}`, post.publishedAt),
+          getKoBlogBySlug(post.slug)
+            ? pair(`/blogs/${post.slug}`, `/ko/blogs/${post.slug}`, post.publishedAt)
+            : [englishOnly(`/blogs/${post.slug}`, post.publishedAt)],
         );
 
         const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
