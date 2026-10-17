@@ -5,6 +5,7 @@
   "excerpt": "What to do in the hours and days after a California car accident: treatment, the evidence that disappears fastest, what to say to the insurer, and the deadlines that actually apply.",
   "category": "Car Accidents",
   "publishedAt": "2026-09-03",
+  "updatedAt": "2026-10-17",
   "alt": "Private law office with a desk and legal books",
   "intro": "The hours after a California car accident can become disorganized quickly. Medical concerns, vehicle damage, insurance calls, work, transportation, and family responsibilities can all arrive at once. A useful sequence is simple: protect health first, preserve the facts while they still exist, keep insurance communications organized, and build a record of how the collision actually affected your life.",
   "takeaway": "You do not need to solve the entire claim on day one. Protect your health, preserve time-sensitive evidence, and keep the medical, insurance, and financial record consistent from the beginning."
