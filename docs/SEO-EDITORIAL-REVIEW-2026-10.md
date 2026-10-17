@@ -61,6 +61,14 @@ The page's visible credit reads **'Published by Buena Park Injury Lawyer'** and 
 5. Verify the title, byline/publisher information, crawlable source links, hero image, related practice link, canonical, and sitemap XML. For English-only articles, no Korean alternate should appear.
 6. No fabrication of case outcomes, testimonials, legal experience or medical claims. Keep accurate disclaimers and no guaranteed settlements.
 
+## Vercel Speed Insights integration
+
+- The root TanStack Start document now includes Vercel's officially documented script-tag setup (`window.si` queue plus deferred `/_vercel/speed-insights/script.js`), on every language and page. No extra npm dependency or lockfile change is needed.
+- **Owner action required:** In the **howardchoi** project on Vercel, open **Speed Insights → Enable**, then deploy the approved PR. Enabling creates the Vercel tracking routes; code alone does not start measuring.
+- Confirm via browser Network that the Vercel Speed Insights script returns 200 after deployment; confirm Web Vitals requests and data are visible in the Speed Insights project dashboard after real visits. An empty dashboard immediately after setup is normal.
+- Select **Mobile** and **Production** to inspect actual field performance, especially homepage and the eight practice pages. Initial sample sizes may be too low to draw conclusions.
+- This is not the same thing as Google Search Console, and it cannot itself repair mobile navigation or indexing.
+
 ## Developer/mobile QA checklist
 
 - [ ] 320px and 375px width: open menu, expand Practice Areas, scroll to the final service and phone CTA, close, reopen, and verify content remains reachable.
