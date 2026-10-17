@@ -40,6 +40,18 @@ const SiteNavigation = ({ locale }: { locale: NavigationLocale }) => {
     return () => { document.body.style.overflow = previous; };
   }, [mobileOpen]);
 
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const onEscape = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      setMobileOpen(false);
+      setMobileGroup(null);
+      document.querySelector<HTMLButtonElement>('[aria-controls="mobile-navigation-panel"]')?.focus();
+    };
+    window.addEventListener("keydown", onEscape);
+    return () => window.removeEventListener("keydown", onEscape);
+  }, [mobileOpen]);
+
   const closeAll = () => {
     setPanel(null);
     setMobileOpen(false);
@@ -125,12 +137,14 @@ const SiteNavigation = ({ locale }: { locale: NavigationLocale }) => {
             <div className="flex h-full items-center justify-end gap-3 pl-4"><a href={brand.phoneHref} onMouseEnter={() => setPanel(null)} className="hidden whitespace-nowrap text-[11px] font-medium transition-opacity hover:opacity-55 xl:block">{brand.phoneDisplay}</a><a href={href("/contact")} onMouseEnter={() => setPanel(null)} onFocus={() => setPanel(null)} onClick={closeAll} className="inline-flex h-9 items-center justify-center whitespace-nowrap border border-foreground/15 px-4 text-[10px] font-semibold uppercase tracking-[0.11em] transition-colors hover:bg-foreground hover:text-background">{labels.contact}</a></div>
           </div>
 
-          <div className="flex h-full items-center justify-between gap-3 lg:hidden"><a href={homeHref} onClick={closeAll} className="flex min-w-0 items-center gap-2.5"><span className="flex h-7 w-7 shrink-0 items-center justify-center overflow-hidden rounded-[2px]"><img {...responsiveImageProps(brandLogo, "28px")} src={brandLogo} alt="" width={28} height={28} decoding="async" className="h-full w-full object-contain" /></span><span className="max-w-[205px] truncate text-[12px] font-semibold tracking-[-0.025em] sm:max-w-[260px] sm:text-[13px]">{brand.name}</span></a><div className="flex shrink-0 items-center"><a href={brand.phoneHref} aria-label={`${labels.call} ${brand.phoneDisplay}`} className="flex h-[60px] w-11 items-center justify-center"><Phone className="h-4 w-4 stroke-[1.5]" /></a><button type="button" onClick={() => setMobileOpen((current) => !current)} className={`flex h-[60px] w-11 items-center justify-center ${mobileOpen ? "bg-foreground/[0.045]" : ""}`} aria-label={labels.menu} aria-expanded={mobileOpen}>{mobileOpen ? <X className="h-5 w-5 stroke-[1.4]" /> : <Menu className="h-5 w-5 stroke-[1.4]" />}</button></div></div>
+          <div className="flex h-full items-center justify-between gap-3 lg:hidden"><a href={homeHref} onClick={closeAll} className="flex min-w-0 items-center gap-2.5"><span className="flex h-7 w-7 shrink-0 items-center justify-center overflow-hidden rounded-[2px]"><img {...responsiveImageProps(brandLogo, "28px")} src={brandLogo} alt="" width={28} height={28} decoding="async" className="h-full w-full object-contain" /></span><span className="max-w-[205px] truncate text-[12px] font-semibold tracking-[-0.025em] sm:max-w-[260px] sm:text-[13px]">{brand.name}</span></a><div className="flex shrink-0 items-center"><a href={brand.phoneHref} aria-label={`${labels.call} ${brand.phoneDisplay}`} className="flex h-[60px] w-11 items-center justify-center"><Phone className="h-4 w-4 stroke-[1.5]" /></a><button type="button" onClick={() => setMobileOpen((current) => !current)} className={`flex h-[60px] w-11 items-center justify-center ${mobileOpen ? "bg-foreground/[0.045]" : ""}`} aria-label={mobileOpen ? (ko ? "메뉴 닫기" : es ? "Cerrar menú" : "Close menu") : labels.menu} aria-expanded={mobileOpen} aria-controls="mobile-navigation-panel">{mobileOpen ? <X className="h-5 w-5 stroke-[1.4]" /> : <Menu className="h-5 w-5 stroke-[1.4]" />}</button></div></div>
         </div>
 
         <AnimatePresence mode="wait" initial={false}>{panel && <motion.div id="desktop-navigation-panel" key={panel} initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ height: { duration: 0.38, ease: [0.22, 1, 0.36, 1] }, opacity: { duration: 0.18 } }} className="hidden overflow-hidden border-t border-foreground/[0.08] bg-background text-foreground lg:block">{renderPanel()}</motion.div>}</AnimatePresence>
 
-        <AnimatePresence initial={false}>{mobileOpen && <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: `calc(100svh - ${104 - utilityOffset}px)`, opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }} className="overflow-hidden border-t border-foreground/[0.08] bg-background text-foreground lg:hidden"><div className="site-shell flex h-full flex-col overflow-y-auto pb-6 pt-3">
+
+      </motion.nav>
+      <AnimatePresence initial={false}>{mobileOpen && <motion.div id="mobile-navigation-panel" role="navigation" aria-label={labels.menu} initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.22 }} style={{ top: 104 - utilityOffset, WebkitOverflowScrolling: "touch" }} className="fixed inset-x-0 bottom-0 z-[119] overflow-y-auto overscroll-contain border-t border-foreground/[0.08] bg-background text-foreground lg:hidden"><div className="site-shell flex min-h-full flex-col pb-8 pt-3">
           <div>
             <button type="button" aria-expanded={mobileGroup === "practice"} aria-controls="mobile-practice-links" onClick={() => setMobileGroup((current) => current === "practice" ? null : "practice")} className="flex w-full items-center justify-between border-b border-foreground/10 py-4 text-left"><span className="text-[1.05rem] font-medium tracking-[-0.025em]">{labels.practice}</span><ChevronDown className={`h-4 w-4 stroke-[1.35] transition-transform ${mobileGroup === "practice" ? "rotate-180" : ""}`} /></button>
             <AnimatePresence initial={false}>{mobileGroup === "practice" && <motion.div id="mobile-practice-links" initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden border-b border-foreground/10"><div className="grid grid-cols-2 gap-x-5 gap-y-3 py-5 text-[14px] text-foreground/80">{practiceAreas.map((practice) => <a key={practice.slug} href={href(`/practice-areas/${practice.slug}`)} aria-current={isCurrent(href("/practice-areas/" + practice.slug)) ? "page" : undefined} onClick={closeAll} className="flex min-h-11 items-center leading-5">{ko ? practice.koTitle : es ? (esPracticeContent[practice.slug]?.shortTitle || practice.title) : practice.title}</a>)}</div></motion.div>}</AnimatePresence>
@@ -140,7 +154,6 @@ const SiteNavigation = ({ locale }: { locale: NavigationLocale }) => {
           </div>
           <div className="mt-auto pt-8"><a href={brand.phoneHref} className="mt-5 flex w-full items-center justify-between border border-foreground/14 px-5 py-4"><span className="text-[9px] font-medium uppercase tracking-[0.12em] text-foreground/52">{labels.call}</span><span className="text-[13px] font-medium">{brand.phoneDisplay}</span></a></div>
         </div></motion.div>}</AnimatePresence>
-      </motion.nav>
     </>
   );
 };
