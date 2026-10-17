@@ -24,8 +24,12 @@ export const Route = createFileRoute("/practice-areas_/$slug")({
     const path = `/practice-areas/${loaderData.slug}`;
     const searchName = practiceSearchNames[loaderData.slug] || loaderData.title;
     const seo = buildSeo({
-      title: `Buena Park ${searchName} Lawyer | Evidence & Deadlines`,
-      description: loaderData.description,
+      title: loaderData.slug === "car-accidents"
+        ? "Buena Park Car Accident Lawyer | Free Consultation"
+        : `Buena Park ${searchName} Lawyer | Evidence & Deadlines`,
+      description: loaderData.slug === "car-accidents"
+        ? "Injured in a Buena Park car crash? Attorney Howard Choi reviews accident evidence, insurance coverage, medical expenses and lost wages. Free consultation."
+        : loaderData.description,
       path,
       alternatePath: `/ko/practice-areas/${loaderData.slug}`,
       locale: "en-US",
