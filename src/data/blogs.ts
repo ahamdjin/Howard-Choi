@@ -48,6 +48,7 @@ const legacyImages: Record<string, string> = {
   "traumatic-brain-injury-evidence-after-california-accident": heroJusticeLibrary,
   "california-bicycle-accident-evidence-and-insurance": heroCourthouse,
   "california-uninsured-driver-hit-and-run-injury-claims": heroLawOffice,
+  "how-long-car-accident-settlement-takes-california": heroCityBoardroom,
 };
 
 // Vite expands this at build time. Pages CMS never ships to the public website.
