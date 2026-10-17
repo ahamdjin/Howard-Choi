@@ -11,6 +11,7 @@ import { practiceMedia } from "@/data/practiceMedia";
 import { esPracticeContent } from "@/data/esPracticeContent";
 import { esPracticeEnhancements } from "@/data/esPracticeEnhancements";
 import { getPracticeArea, practiceAreas, serviceLocations, type SiteLocale } from "@/data/injurySite";
+import { englishPracticeGuides } from "@/data/englishPracticeGuides";
 import {
   ConsultationCta,
   EditorialFrame,
@@ -365,7 +366,7 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
                   { id: "faq", label: "Preguntas frecuentes" }, { id: "resources", label: "Guías y fuentes" }, { id: "related", label: "Áreas relacionadas" }, { id: "areas", label: "Dónde atendemos" },
                 ]
               : [
-                  { id: "understand", label: "Understanding the claim" }, { id: "issues", label: "Key issues" }, { id: "evidence", label: "Evidence to preserve" },
+                  { id: "understand", label: "Understanding the claim" }, { id: "issues", label: "Key issues" }, { id: "evidence", label: "Evidence to preserve" }, { id: "case-guide", label: "Case-specific guidance" },
                   { id: "value", label: "Damages & case value" }, { id: "insurance", label: "Insurance & responsibility" }, { id: "deadlines", label: "California deadlines" },
                   { id: "faq", label: "Common questions" }, { id: "resources", label: "Guides & sources" }, { id: "related", label: "Related practice areas" }, { id: "areas", label: "Where we handle these" },
                 ]}
@@ -398,6 +399,36 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
               {evidenceItems.map((item, index) => <div key={item} className="editorial-issue-row"><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong></div>)}
             </div>
           </ReadingSectionBlock>
+
+          {locale === "en" && englishPracticeGuides[practice.slug] && (
+            <ReadingSectionBlock
+              id="case-guide"
+              locale={locale}
+              Icon={FileText}
+              kicker="Case-specific guidance"
+              title={englishPracticeGuides[practice.slug].title}
+              intro={englishPracticeGuides[practice.slug].summary}
+            >
+              <div className="article-reading-width grid gap-8 border-t border-[#1E1C1A]/15 pt-8 md:gap-10">
+                {englishPracticeGuides[practice.slug].topics.map(([heading, explanation], index) => (
+                  <section key={heading} className="border-b border-[#1E1C1A]/12 pb-8 last:border-0">
+                    <div className="flex items-start gap-4">
+                      <span className="pt-1 text-[12px] tabular-nums text-[#1E1C1A]/45">{String(index + 1).padStart(2, "0")}</span>
+                      <div>
+                        <h3 className="editorial-serif text-[clamp(1.5rem,2.2vw,2rem)] leading-[1.16] text-[#1E1C1A]">{heading}</h3>
+                        <p className="mt-4 max-w-[710px] text-[16px] leading-[1.8] text-[#57514b]">{explanation}</p>
+                      </div>
+                    </div>
+                  </section>
+                ))}
+                <div className="rounded-[3px] border border-[#1E1C1A]/15 bg-[#efeae2] px-6 py-6 text-[15px] leading-7">
+                  <strong className="block font-semibold">Discuss your specific evidence and coverage.</strong>
+                  <p className="mt-2">An initial consultation can help identify the applicable deadlines, documents worth preserving and unanswered questions. No outcome or recovery is guaranteed.</p>
+                  <a href="/contact" className="mt-4 inline-flex min-h-11 items-center gap-2 font-semibold underline underline-offset-4">Request a free consultation <ArrowRight className="h-4 w-4" /></a>
+                </div>
+              </div>
+            </ReadingSectionBlock>
+          )}
 
           <ReadingSectionBlock id="value" locale={locale} Icon={Scale} kicker={isKo(locale) ? "04 · 손해" : isEs(locale) ? "04 · Daños y valor" : "04 · Damages & value"} title={isKo(locale) ? "사건 가치는 하나의 공식으로 계산되지 않습니다." : headings.value} intro={valueIntro}>
             <ClaimValueVisual locale={locale} />
