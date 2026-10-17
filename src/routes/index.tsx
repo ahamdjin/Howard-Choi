@@ -5,8 +5,8 @@ import { absoluteUrl, buildSeo } from "@/lib/seo";
 export const Route = createFileRoute("/")({
   head: () => {
     const seo = buildSeo({
-      title: "Buena Park Accident Lawyer | Personal Injury Attorney",
-      description: "Buena Park accident lawyer handling car, truck, motorcycle, pedestrian, rideshare, slip-and-fall, wrongful-death and serious-injury claims across north Orange County. Free consultation, no fee unless there is a recovery.",
+      title: "Buena Park Personal Injury Lawyer | Car Accident Attorney",
+      description: "Speak with a Buena Park personal injury and car accident lawyer about insurance, medical bills, lost wages and your legal options. Free consultation; no attorney fee unless there is a recovery.",
       path: "/",
       alternatePath: "/ko",
       locale: "en-US",
