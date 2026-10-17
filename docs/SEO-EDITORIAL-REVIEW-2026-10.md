@@ -35,6 +35,21 @@ The first PR iteration only made relatively small textual improvements. A second
 - Blog publishing infrastructure now supports English articles without falsely listing untranslated Korean counterparts in alternates and sitemaps.
 - Three detailed English-only draft articles, each around 2,000 words, have `published:false`, so they do not enter the blog index, navigation, or sitemap.
 
+## Focused fourth English article: California car-accident settlement timeline
+
+File: `content/blog/how-long-car-accident-settlement-takes-california.md`  
+Status: **`published:false`, legal review required.** ~4,200 words, 23 sections and nine official primary sources. A six-step visual process summary is rendered on this article only.
+
+**Search intent:** `how long does a car accident settlement take in California`, settlement process, insurer response timing, injury valuation, Medi-Cal liens, settlement release, payment after offer. This is a separate informational intent from the existing accident-day action guide and the existing insurance coverage guide; canonical article path stays `/blogs/how-long-car-accident-settlement-takes-california` after approval.
+
+**Authoritative evidence researched:** California Department of Insurance claim-handling guidance and Fair Claims Settlement Practices Regulations; California Courts on personal injury, discovery and claims against government entities; California DMV SR-1 reporting; DHCS Personal Injury Program and lien process. Linked in `src/pages/BlogDetail.tsx` article support.
+
+**Value beyond generic SEO copy:** six-stage settlement model; clarification of 15-day/40-day insurer requirements versus actual injury settlement; three **fictional, explicitly labeled** examples showing different evidence/coverage obstacles; insurer status questions; practical document worksheet; distinctions between signing a release, insurer payout, lien resolution and net client receipt; common FAQs.
+
+**Attorney review required:** confirm the exact regulatory nuance of 10 CCR §§ 2695.5/2695.7 in first- versus third-party claims, insurer payment provisions and exceptions; wording around claimant vs attorney obligations and timing; DHCS 30-day notice and settlement/reimbursement processes; California public entity rules and case deadlines. No numerical case duration or settlement amount is promised or implied. Check the 2026 law and firm policy before publication. Remove the pending-review sentence from the final section **only after actual approval**; update `publishedAt` to the actual publication date and flip `published:true` in a separate approved publication PR.
+
+**Site linking after approval:** related-service card points to `/practice-areas/car-accidents`; once live, add an editorially relevant text link from that practice page's insurance/damages material, and link the article selectively from the blog index. Never link to an unpublished URL.
+
 ## Editorial drafts — approval gates
 
 ### 1. Traumatic brain injury after a California accident
