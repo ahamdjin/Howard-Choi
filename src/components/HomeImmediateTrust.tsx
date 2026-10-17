@@ -25,6 +25,10 @@ const HomeImmediateTrust = ({ locale = "en" }: { locale?: SiteLocale }) => {
             </div>
           ))}
         </div>
+        <div className="mt-5 flex flex-wrap items-center justify-between gap-3 text-[12px] leading-5">
+          <p className="text-foreground/65">{ko ? "자동차 사고 후 보험, 증거 및 청구 절차가 궁금하신가요?" : es ? "¿Tuvo un accidente de auto y necesita orientación sobre el seguro y los siguientes pasos?" : "Injured in a car accident? Understand the evidence, insurance and next steps."}</p>
+          <a href={ko ? "/ko/practice-areas/car-accidents" : es ? "/es/practice-areas/car-accidents" : "/practice-areas/car-accidents"} className="font-medium underline underline-offset-4 hover:opacity-65">{ko ? "자동차 사고 법률 안내" : es ? "Abogado de accidentes de auto en Buena Park" : "Buena Park car accident lawyer"} →</a>
+        </div>
       </div>
     </aside>
   );
