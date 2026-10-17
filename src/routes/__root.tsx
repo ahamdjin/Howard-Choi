@@ -97,6 +97,14 @@ function RootDocument({ children }: { children: ReactNode }) {
     <html lang={lang}>
       <head>
         <HeadContent />
+        {/* Vercel Speed Insights (official script-tag integration).
+            Enable Speed Insights for this Vercel project in its dashboard. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };",
+          }}
+        />
+        <script defer src="/_vercel/speed-insights/script.js" />
         <link rel="stylesheet" href={`https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400..600${lang === 'ko' ? '&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@400;500;600' : ''}&display=swap`} />
       </head>
       <body className={bodyClassName}>
