@@ -136,6 +136,12 @@ const BlogDetail = () => {
                   <p className="editorial-serif text-[clamp(1.62rem,2.2vw,2.18rem)] leading-[1.17] tracking-[-0.014em] text-foreground/94">{post.intro}</p>
                 </motion.div>
 
+                {post.leadParagraphs.length > 0 && (
+                  <div className="mt-8 max-w-[730px] space-y-5 text-[17px] leading-[1.75] text-foreground/84 md:text-[18px]">
+                    {post.leadParagraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}
+                  </div>
+                )}
+
                 <motion.blockquote initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.62 }} className="my-10 rounded-[3px] bg-[#1a1714] px-7 py-8 text-[#f3eee5] md:my-12 md:px-9 md:py-10">
                   <div className="mb-5 text-[10px] uppercase tracking-[0.16em] text-[#f3eee5]/38">Key point</div>
                   <p className="editorial-serif max-w-[680px] text-[clamp(1.8rem,2.65vw,2.65rem)] leading-[1.04] tracking-[-0.018em]">“{post.takeaway}”</p>
