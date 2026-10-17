@@ -178,7 +178,7 @@ const BlogDetail = () => {
                   </div>
                   <div className="pt-6">
                     <div className="mb-4 text-[10px] uppercase tracking-[0.15em] text-foreground/38">In this article</div>
-                    <nav className="space-y-3">{post.sections.map((section, index) => <a key={section.heading} href={`#article-section-${index + 1}`} className="group flex gap-3 text-[12px] leading-5 text-foreground/48 transition-colors hover:text-foreground"><span className="text-foreground/26">0{index + 1}</span><span>{section.heading}</span></a>)}</nav>
+                    <nav className="max-h-[calc(100dvh-19rem)] space-y-3 overflow-y-auto pr-2">{post.sections.map((section, index) => <a key={section.heading} href={`#article-section-${index + 1}`} className="group flex gap-3 text-[12px] leading-5 text-foreground/48 transition-colors hover:text-foreground"><span className="text-foreground/26">0{index + 1}</span><span>{section.heading}</span></a>)}</nav>
                   </div>
                 </div>
               </aside>
@@ -204,6 +204,32 @@ const BlogDetail = () => {
                   <div className="mb-5 flex items-center gap-3 text-[11px] text-foreground/42 lg:hidden"><span>{post.category}</span><span>·</span><span>{post.readingTime}</span></div>
                   <p className="editorial-serif text-[clamp(1.62rem,2.2vw,2.18rem)] leading-[1.17] tracking-[-0.014em] text-foreground/94">{post.intro}</p>
                 </motion.div>
+
+                {post.slug === "how-long-car-accident-settlement-takes-california" && (
+                  <section aria-labelledby="settlement-stages" className="mt-10 border-y border-foreground/15 py-8 md:mt-12 md:py-10">
+                    <div className="mb-5 flex flex-wrap items-baseline justify-between gap-3">
+                      <h2 id="settlement-stages" className="editorial-serif text-[clamp(1.6rem,2.5vw,2.2rem)] leading-[1.14]">Six stages of a California settlement</h2>
+                      <span className="text-[12px] text-foreground/55">Sequence, not promised durations</span>
+                    </div>
+                    <ol className="grid gap-px overflow-hidden rounded-[3px] border border-foreground/12 bg-foreground/10 sm:grid-cols-2 xl:grid-cols-3">
+                      {([
+                        ["01", "Protect evidence", "Care, reports, photos and witness details"],
+                        ["02", "Confirm responsibility", "Fault, parties and insurance coverage"],
+                        ["03", "Develop injury record", "Treatment, work loss and future needs"],
+                        ["04", "Demand and negotiate", "Documented losses, offer and response"],
+                        ["05", "Resolve disputes", "Negotiation, mediation or litigation"],
+                        ["06", "Release and payment", "Written agreement, liens and net funds"],
+                      ] as const).map(([step, label, note]) => (
+                        <li key={step} className="min-h-[134px] bg-background p-5">
+                          <span className="text-[12px] font-medium tabular-nums text-foreground/45">{step}</span>
+                          <h3 className="mt-3 text-[16px] font-semibold leading-6 text-foreground">{label}</h3>
+                          <p className="mt-2 text-[14px] leading-[1.55] text-foreground/70">{note}</p>
+                        </li>
+                      ))}
+                    </ol>
+                    <p className="mt-4 max-w-[650px] text-[13px] leading-6 text-foreground/60">The stages can overlap or repeat, and many claims resolve without litigation. There is no statewide timetable promising when an individual injury claim will settle.</p>
+                  </section>
+                )}
 
                 {post.leadParagraphs.length > 0 && (
                   <div className="mt-8 max-w-[730px] space-y-5 text-[17px] leading-[1.75] text-foreground/84 md:text-[18px]">
