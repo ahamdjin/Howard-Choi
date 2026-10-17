@@ -11,6 +11,7 @@ export type BlogPost = {
   category: string;
   date: string;
   publishedAt: string;
+  updatedAt: string;
   readingTime: string;
   image: string;
   alt: string;
@@ -26,6 +27,7 @@ type BlogFrontmatter = {
   excerpt: string;
   category: string;
   publishedAt: string;
+  updatedAt?: string;
   readingTime?: string;
   image?: string;
   alt?: string;
@@ -167,6 +169,7 @@ const parseBlog = (raw: string): BlogPost | null => {
     category: data.category,
     date: formatPublishedDate(data.publishedAt),
     publishedAt: data.publishedAt,
+    updatedAt: data.updatedAt || data.publishedAt,
     readingTime: data.readingTime?.trim() || estimateReadingTime(data.intro, body),
     image,
     alt: data.alt?.trim() || data.title,
