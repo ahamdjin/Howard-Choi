@@ -52,6 +52,18 @@ const SiteNavigation = ({ locale }: { locale: NavigationLocale }) => {
     return () => window.removeEventListener("keydown", onEscape);
   }, [mobileOpen]);
 
+  // If a phone is rotated or the viewport expands to desktop, remove the
+  // mobile body lock rather than leaving the document unable to scroll.
+  useEffect(() => {
+    const closeOnDesktop = () => {
+      if (window.innerWidth < 1024) return;
+      setMobileOpen(false);
+      setMobileGroup(null);
+    };
+    window.addEventListener("resize", closeOnDesktop);
+    return () => window.removeEventListener("resize", closeOnDesktop);
+  }, []);
+
   const closeAll = () => {
     setPanel(null);
     setMobileOpen(false);
