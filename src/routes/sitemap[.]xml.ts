@@ -50,8 +50,8 @@ export const Route = createFileRoute("/sitemap.xml")({
         );
         const articleUrls = blogPosts.flatMap((post) =>
           getKoBlogBySlug(post.slug)
-            ? pair(`/blogs/${post.slug}`, `/ko/blogs/${post.slug}`, post.publishedAt)
-            : [englishOnly(`/blogs/${post.slug}`, post.publishedAt)],
+            ? pair(`/blogs/${post.slug}`, `/ko/blogs/${post.slug}`, post.updatedAt)
+            : [englishOnly(`/blogs/${post.slug}`, post.updatedAt)],
         );
 
         const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
