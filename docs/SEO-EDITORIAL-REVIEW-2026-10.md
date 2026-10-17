@@ -8,6 +8,22 @@ The Search Console ZIP dated October 17 recorded 2,904 chart impressions and 4 c
 
 The homepage and car-accident title/description changes were already made on main October 17. This PR intentionally **does not rework those tags again**, so a future before/after measurement is interpretable. This PR focuses on missing service-page specificity, conversion/navigation quality, one strong injury search-intent gap and author-reviewed editorial expansion.
 
+## Follow-up responsive and content work (owner feedback)
+
+The first PR iteration only made relatively small textual improvements. A second pass has now added **visible, matter-specific content and mobile design changes**:
+
+- **`src/data/englishPracticeGuides.ts`**: eight separate four-part evidence/liability/insurance/damages guides (no fictitious case studies).
+- **`src/pages/editorial/PracticePages.tsx`**: visibly renders those four-part guides within a dedicated, linked `Case-specific guidance` reading section; new consultation action.
+- **`src/index.css`**: increases body text on narrow screens from 15.5px to 17px, improves leading and title wrapping, and removes unnecessary screen-height minimums from individual practice sections to avoid large blank areas.
+- **`src/components/SiteNavigation.tsx`**: stacked, 16px service/location links on narrow phones; more comfortable tap targets.
+- **`src/pages/BlogDetail.tsx`** and **`src/pages/Blogs.tsx`**: tighter mobile hero height, improved article-list typography, expandable mobile table of contents, and visible substantive update dates.
+- **Existing six English blog Markdown files**: each receives four additional explanatory sections with practical evidence procedures, differentiated insurance issues, illustrative but clearly hypothetical scenarios, and legal deadline caveats. Original legal statements must still be reviewed by Howard. Reading time is computed dynamically.
+- **`src/data/blogs.ts`, `src/lib/seo.ts`, routes and sitemap**: preserve original `datePublished` while accurately supplying `dateModified` for substantive October 17 editorial updates.
+
+**Why this matters:** Google's people-first content guidance asks whether a page has original evidence, helpful depth and trust signals; there is no SEO-safe target word count. These drafts and expanded guides require a licensed attorney's accuracy review and, ideally, verified original matter-specific insights before release. Do not represent AI-assisted drafts as firsthand attorney experiences. See https://developers.google.com/search/docs/fundamentals/creating-helpful-content.
+
+**Direct branch file links for review:** https://github.com/ahamdjin/Howard-Choi/blob/seo/money-pages-mobile-and-editorial-drafts-2026-10/src/data/englishPracticeGuides.ts and https://github.com/ahamdjin/Howard-Choi/blob/seo/money-pages-mobile-and-editorial-drafts-2026-10/src/index.css.
+
 ## Code included in this PR
 
 - All eight English injury-service routes now have differentiated, intent-specific titles and descriptions; the car-accident route retains the recently improved title.
