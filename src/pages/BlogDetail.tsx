@@ -131,6 +131,11 @@ const BlogDetail = () => {
               </aside>
 
               <div className="min-w-0">
+                <div className="mb-8 flex flex-wrap items-center gap-x-5 gap-y-2 border-b border-foreground/12 pb-5 text-[12px] leading-5 text-foreground/65">
+                  <span>Published by Buena Park Injury Lawyer</span>
+                  <Link to="/attorney" className="font-medium text-foreground underline underline-offset-4">Meet attorney Howard Choi</Link>
+                  <a href="https://apps.calbar.ca.gov/attorney/Licensee/Detail/284364" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">Verify California State Bar No. 284364</a>
+                </div>
                 <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.68 }}>
                   <div className="mb-5 flex items-center gap-3 text-[11px] text-foreground/42 lg:hidden"><span>{post.category}</span><span>·</span><span>{post.readingTime}</span></div>
                   <p className="editorial-serif text-[clamp(1.62rem,2.2vw,2.18rem)] leading-[1.17] tracking-[-0.014em] text-foreground/94">{post.intro}</p>
