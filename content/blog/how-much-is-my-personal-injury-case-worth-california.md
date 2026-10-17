@@ -5,7 +5,6 @@
   "excerpt": "Why there is no settlement formula, what actually moves the number up or down in a California injury claim, and why the figure you are quoted early is rarely the figure you end up with.",
   "category": "Case Value",
   "publishedAt": "2026-09-13",
-  "readingTime": "4 min read",
   "alt": "Lady Justice and legal reference library",
   "intro": "There is no honest way to value every California personal injury case with one multiplier or one settlement table. Case value develops from the losses that can be supported, the responsibility for the accident, the available insurance or assets, and the strength of the evidence connecting those pieces. A calculator can organize the inputs, but the final range still depends on facts a simple formula cannot see.",
   "takeaway": "Case value is a combination of damages, liability, coverage, and proof. A larger medical bill by itself does not automatically mean a larger settlement."
@@ -59,3 +58,28 @@ The reverse is also true. Gaps in treatment, a vague medical chart, and a client
 An online estimate, including ours, works from the few facts you type into it. It cannot see your MRI, does not know what your doctor expects in five years, and has no idea what the other driver's policy limits are.
 
 It is useful for getting a rough sense of scale before a first conversation. It is not a valuation, and no honest lawyer will treat it as one.
+
+
+## Separate a claim's four distinct questions
+
+A useful case assessment asks: what losses can be supported; who caused them under applicable law; which insurance or other resources may be available; and what costs or reimbursement obligations might affect a person's net recovery. Combining these into a single settlement multiplier can obscure the actual decision. A serious injury may produce substantial supported damages but still involve disputed responsibility or inadequate coverage.
+
+Create separate tabs or lists for already-incurred medical bills, future medical recommendations, wages already missed, and any supported future work impact. Then maintain a different list for the insurers and relevant liability facts. A worksheet that separates categories prevents a preliminary estimate from being mistaken for a promised outcome.
+
+## What a loss-of-income record should look like
+
+For hourly employees, preserve schedules, pay stubs, wage rate, employer confirmation of missed shifts and written work restrictions. For salaried workers, record paid leave consumed, reduced duties and any loss of incentive pay. For self-employed people, contracts, invoices, calendar changes and past earnings trends may help distinguish accident-related losses from ordinary business fluctuations.
+
+Future earning capacity is more complicated than multiplying today's missed wages by a number of years. Age, employment history, realistic career path, medically supported limitations and potentially vocational expert evidence may matter. The claim should distinguish a documented restriction from a hypothetical permanent disability.
+
+## Why a future-care estimate requires evidence
+
+Future surgery, rehabilitation, medication, assistive devices or home modifications can be important where appropriately supported. Not every mentioned option is a medically recommended plan, however. Record who recommended it, when it may be necessary, the expected course and any uncertainty about the prognosis. Medical professionals must supply clinical judgment; legal counsel evaluates the evidentiary and legal requirements.
+
+Pain and other non-economic losses are not the same as reimbursing a medical invoice. The factual record may include sleep, mobility, family responsibilities and activities the person could perform before and after the injury. A clear example of an actual limitation is more useful than a generic score assigned by an online quiz.
+
+## An example of gross losses versus actual recovery
+
+Suppose two injured people both have $15,000 in past medical charges. The first returns to work without restriction after a short course of care; the second has medically documented rehabilitation needs and several months of lost work. Their financial and functional histories differ even though the initial bills match. Now add a dispute about accident fault or a low liability policy limit and their practical outcomes can diverge further.
+
+This example does not assign a case value or predict a settlement. It shows why the relevant records, defendant, insurer and timing are the inputs—and why any educational calculator must explain what it cannot know.
