@@ -5,6 +5,7 @@
   "excerpt": "Two years is the general California rule, but the exceptions are where people get caught: government claims, minors, delayed discovery, and the evidence deadlines nobody writes down.",
   "category": "California Injury Law",
   "publishedAt": "2026-09-10",
+  "updatedAt": "2026-10-17",
   "alt": "California courthouse used to explain personal injury filing deadlines",
   "intro": "Deadlines are one of the few parts of an injury claim that can end the legal case regardless of how strong the evidence may otherwise be. California has general limitation periods for personal injury and property damage, but the correct deadline can change because of the defendant, the type of claim, the age or status of a party, delayed discovery, government involvement, and other exceptions.",
   "takeaway": "The general rule is useful for orientation, but the safe deadline is the one calculated from the actual facts. Government claims and other exceptions can require action much earlier than two years."
