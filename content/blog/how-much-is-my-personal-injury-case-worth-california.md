@@ -5,6 +5,7 @@
   "excerpt": "Why there is no settlement formula, what actually moves the number up or down in a California injury claim, and why the figure you are quoted early is rarely the figure you end up with.",
   "category": "Case Value",
   "publishedAt": "2026-09-13",
+  "updatedAt": "2026-10-17",
   "alt": "Lady Justice and legal reference library",
   "intro": "There is no honest way to value every California personal injury case with one multiplier or one settlement table. Case value develops from the losses that can be supported, the responsibility for the accident, the available insurance or assets, and the strength of the evidence connecting those pieces. A calculator can organize the inputs, but the final range still depends on facts a simple formula cannot see.",
   "takeaway": "Case value is a combination of damages, liability, coverage, and proof. A larger medical bill by itself does not automatically mean a larger settlement."
