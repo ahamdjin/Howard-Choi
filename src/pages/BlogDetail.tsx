@@ -156,6 +156,7 @@ const BlogDetail = () => {
                   <div className="mt-5 space-y-4 border-b border-foreground/10 pb-6 text-[12px] leading-5">
                     <div><div className="text-foreground/38">Practice</div><div className="mt-1 text-foreground/76">{post.category}</div></div>
                     <div><div className="text-foreground/38">Published</div><div className="mt-1 text-foreground/76">{post.date}</div></div>
+                    {post.updatedAt !== post.publishedAt && <div><div className="text-foreground/38">Updated</div><div className="mt-1 text-foreground/76">{new Date(`${post.updatedAt}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" })}</div></div>}
                     <div><div className="text-foreground/38">Publisher</div><div className="mt-1 text-foreground/76">Buena Park Injury Lawyer</div></div>
                     <div><div className="text-foreground/38">Reading time</div><div className="mt-1 text-foreground/76">{post.readingTime}</div></div>
                   </div>
@@ -172,6 +173,17 @@ const BlogDetail = () => {
                   <Link to="/attorney" className="font-medium text-foreground underline underline-offset-4">Meet attorney Howard Choi</Link>
                   <a href="https://apps.calbar.ca.gov/attorney/Licensee/Detail/284364" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">Verify California State Bar No. 284364</a>
                 </div>
+                <details className="mb-8 border-y border-foreground/12 py-3 lg:hidden">
+                  <summary className="cursor-pointer py-2 text-[15px] font-semibold text-foreground">Browse sections in this guide</summary>
+                  <nav aria-label="Article sections" className="grid gap-2 pb-3 pt-4">
+                    {post.sections.map((section, index) => (
+                      <a key={section.heading} href={`#article-section-${index + 1}`} className="flex min-h-11 items-start gap-3 border-b border-foreground/10 px-1 py-2 text-[14px] leading-6 text-foreground/80">
+                        <span className="w-7 shrink-0 tabular-nums text-foreground/45">{String(index + 1).padStart(2, "0")}</span>
+                        <span>{section.heading}</span>
+                      </a>
+                    ))}
+                  </nav>
+                </details>
                 <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.68 }}>
                   <div className="mb-5 flex items-center gap-3 text-[11px] text-foreground/42 lg:hidden"><span>{post.category}</span><span>·</span><span>{post.readingTime}</span></div>
                   <p className="editorial-serif text-[clamp(1.62rem,2.2vw,2.18rem)] leading-[1.17] tracking-[-0.014em] text-foreground/94">{post.intro}</p>
