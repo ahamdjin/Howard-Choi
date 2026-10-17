@@ -17,6 +17,42 @@ type ArticleSupport = {
 };
 
 const articleSupport: Record<string, ArticleSupport> = {
+  "traumatic-brain-injury-evidence-after-california-accident": {
+    relatedHref: "/practice-areas/serious-injuries",
+    relatedLabel: "Brain and catastrophic injury claims in Buena Park",
+    relatedBody: "Understand how serious-injury claims address the underlying accident, medical evaluation, future care and long-term function.",
+    sources: [
+      { label: "CDC · Mild TBI: symptoms and emergency danger signs", href: "https://www.cdc.gov/traumatic-brain-injury/signs-symptoms/index.html" },
+      { label: "CDC · Diagnosis and evaluation of mild TBI", href: "https://www.cdc.gov/traumatic-brain-injury/about/index.html" },
+      { label: "CDC · Recovery from moderate or severe TBI", href: "https://www.cdc.gov/traumatic-brain-injury/response/moderate-severe-tbi.html" },
+      { label: "California Courts · Personal injury and evidence", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury" },
+      { label: "California Courts · Statutes of limitations", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/statute-limitations" },
+    ],
+  },
+  "california-bicycle-accident-evidence-and-insurance": {
+    relatedHref: "/practice-areas",
+    relatedLabel: "Explore Buena Park injury practice areas",
+    relatedBody: "Review the practice areas actually offered by the firm. Bicycle claims require separate confirmation before this draft can be published.",
+    sources: [
+      { label: "California Vehicle Code · Bicycle operating rules (sections 21200–21214.7)", href: "https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?article=4.&chapter=1.&division=11.&lawCode=VEH" },
+      { label: "Caltrans · Codes and bicycle road-use laws", href: "https://dot.ca.gov/programs/local-assistance/fed-and-state-programs/bike-program/codes-laws-and-regulations" },
+      { label: "CHP · Request a traffic crash report", href: "https://www.chp.ca.gov/traffic/request-a-crash-report/" },
+      { label: "California DMV · SR-1 reporting requirements", href: "https://www.dmv.ca.gov/portal/dmv-virtual-office/accident-reporting/" },
+      { label: "California Courts · Personal injury cases", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury" },
+    ],
+  },
+  "california-uninsured-driver-hit-and-run-injury-claims": {
+    relatedHref: "/practice-areas/car-accidents",
+    relatedLabel: "Buena Park car accident claims",
+    relatedBody: "Explore how collision evidence, disputed fault, uninsured drivers and possible injury compensation are considered.",
+    sources: [
+      { label: "California Department of Insurance · Automobile insurance and UM/UIM coverage", href: "https://www.insurance.ca.gov/01-consumers/105-type/95-guides/01-auto/auto101.cfm" },
+      { label: "California Department of Insurance · After an accident", href: "https://www.insurance.ca.gov/01-consumers/105-type/95-guides/01-auto/hadaccident.cfm" },
+      { label: "California DMV · SR-1 reporting requirements", href: "https://www.dmv.ca.gov/portal/dmv-virtual-office/accident-reporting/" },
+      { label: "California Courts · Personal injury lawsuits", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury" },
+      { label: "California Courts · Statutes of limitations", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/statute-limitations" },
+    ],
+  },
   "what-to-do-after-a-car-accident-in-california": {
     relatedHref: "/practice-areas/car-accidents",
     relatedLabel: "Buena Park car accident lawyers",
