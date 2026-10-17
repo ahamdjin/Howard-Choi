@@ -11,9 +11,9 @@ export const Route = createFileRoute("/blogs_/$slug")({
     const seo = buildSeo({ title: `${loaderData.title} | Buena Park Injury Lawyer`, description: loaderData.excerpt, path, alternatePath: getKoBlogBySlug(loaderData.slug) ? `/ko/blogs/${loaderData.slug}` : undefined, locale: "en-US", type: "article", image: loaderData.image });
     return {
       ...seo,
-      meta: [...seo.meta, { property: "article:published_time", content: loaderData.publishedAt }, { property: "article:modified_time", content: loaderData.publishedAt }, { property: "article:section", content: loaderData.category }],
+      meta: [...seo.meta, { property: "article:published_time", content: loaderData.publishedAt }, { property: "article:modified_time", content: loaderData.updatedAt }, { property: "article:section", content: loaderData.category }],
       scripts: [
-        { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ title: loaderData.title, description: loaderData.excerpt, path, image: loaderData.image, publishedAt: loaderData.publishedAt, locale: "en-US" })) },
+        { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ title: loaderData.title, description: loaderData.excerpt, path, image: loaderData.image, publishedAt: loaderData.publishedAt, updatedAt: loaderData.updatedAt, locale: "en-US" })) },
         { type: "application/ld+json", children: JSON.stringify(breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "Blogs", path: "/blogs" }, { name: loaderData.title, path }])) },
       ],
     };
