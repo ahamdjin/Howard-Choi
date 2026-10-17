@@ -155,6 +155,7 @@ export const articleJsonLd = ({
   path,
   image,
   publishedAt,
+  updatedAt,
   locale,
 }: {
   title: string;
@@ -162,6 +163,7 @@ export const articleJsonLd = ({
   path: string;
   image: string;
   publishedAt: string;
+  updatedAt?: string;
   locale: "en-US" | "ko-US" | "es-US";
 }) => ({
   "@context": "https://schema.org",
@@ -171,7 +173,7 @@ export const articleJsonLd = ({
   description,
   image: absoluteUrl(image),
   datePublished: publishedAt,
-  dateModified: publishedAt,
+  dateModified: updatedAt || publishedAt,
   inLanguage: locale,
   mainEntityOfPage: absoluteUrl(path),
   isPartOf: { "@id": `${SITE_URL}/#website` },
