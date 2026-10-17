@@ -163,7 +163,9 @@
   .home-page > .relative > .sticky { position: relative; }
   .home-page nav + .relative > .sticky { padding-bottom: 5px; }
   .home-page nav + .relative > .sticky > section { border-radius: 0; }
-  .editorial-reading-section { padding-block: 40px; }
+  /* Long legal guides should grow to their content, not leave full-screen
+     dead zones between short subsections on mobile. */
+  .editorial-reading-section { min-height: 0; padding-block: 40px; }
 }
 .site-typography a[aria-current="page"] { text-decoration: underline; text-underline-offset: 6px; }
 .site-typography :where(a, button, input, select, summary):focus-visible { outline: 2px solid #8a6543; outline-offset: 4px; }
@@ -391,6 +393,15 @@ nav + .relative > .sticky.top-0.h-\[100svh\] > section {
     letter-spacing: -0.018em !important;
     overflow-wrap: break-word;
     text-wrap: pretty;
+  }
+
+  /* Small section labels must remain readable without being confused with
+     the main text hierarchy. */
+  html[lang="en"] .site-typography .detail-guide :where(.editorial-reading-section__kicker),
+  html[lang="en"] .site-typography .legal-blog-article :where(.uppercase) {
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+    letter-spacing: 0.09em !important;
   }
 
   html[lang="en"] .site-typography .legal-blog-article h1 {
