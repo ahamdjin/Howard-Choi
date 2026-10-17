@@ -11,6 +11,7 @@ import { practiceMedia } from "@/data/practiceMedia";
 import { esPracticeContent } from "@/data/esPracticeContent";
 import { esPracticeEnhancements } from "@/data/esPracticeEnhancements";
 import { getPracticeArea, practiceAreas, serviceLocations, type SiteLocale } from "@/data/injurySite";
+import { englishPracticeGuides } from "@/data/englishPracticeGuides";
 import {
   ConsultationCta,
   EditorialFrame,
@@ -272,6 +273,30 @@ export const PracticeAreasPage = ({ locale }: { locale: SiteLocale }) => (
   </EditorialFrame>
 );
 
+// Provide a distinct explanation for every English practice area while avoiding
+// duplicated keyword paragraphs and keeping translations unaffected.
+const englishPracticeFocus: Record<string, string> = {
+  "car-accidents": "A car-accident claim may involve another driver's liability insurance, an owner or employer, and your own uninsured or underinsured motorist coverage. The collision sequence, early medical records, scene evidence and the timing of treatment all need to be evaluated together. A police report alone does not establish every legal issue.",
+  "truck-accidents": "Commercial crash investigations often turn on who employed or controlled the driver, whether the vehicle was inspected and maintained, and which carrier, dispatch, electronic log and onboard-video records still exist. Identifying every responsible party and preserving company records can matter as much as the initial crash report.",
+  "motorcycle-accidents": "The claim must separate the cause of the crash from assumptions about the rider. Turning movements, traffic signals, road geometry, lane position, lighting and sightlines help test each account. The medical record should address not only immediate treatment, but rehabilitation, scarring and lasting mobility limitations when supported.",
+  "pedestrian-accidents": "Crosswalk markings, walk signals, turning traffic, a driver's line of sight and the precise point of impact can change the liability analysis. If the driver left the scene, witnesses, footage and available insurance need prompt review. Injury documentation should address mobility, work and daily-life changes over time.",
+  "rideshare-accidents": "A rideshare claim cannot be evaluated accurately without the driver's app status at the time of collision. Whether a ride had been accepted or a passenger was on board may affect available coverage. Trip receipts, messages, screenshots and insurer communications should be preserved alongside ordinary crash evidence.",
+  "slip-and-fall": "Premises liability depends on more than proving that a fall happened. Identify the exact hazard, who possessed or controlled that area, whether the condition was reasonably discoverable, and what inspections, warnings or repairs occurred. Photos, shoes, incident reports and surveillance can establish details that disappear quickly.",
+  "wrongful-death": "A wrongful-death claim asks both how the fatal injury occurred and which family members may assert legally recoverable losses. Financial support, household services and relationship losses require different evidence. California's wrongful-death and survival-action rules should not be treated as interchangeable.",
+  "serious-injuries": "Traumatic brain injuries may cause memory, concentration, sleep, mood or balance problems even when early imaging is inconclusive. Severe brain, spinal and orthopedic injuries can also require rehabilitation, adaptive equipment or future care. A supported long-term prognosis, functional assessment and earnings history can be as important as the first hospital bill.",
+};
+
+const relatedServiceSlugs: Record<string, string[]> = {
+  "car-accidents": ["rideshare-accidents", "truck-accidents", "motorcycle-accidents", "serious-injuries"],
+  "truck-accidents": ["serious-injuries", "wrongful-death", "car-accidents", "pedestrian-accidents"],
+  "motorcycle-accidents": ["serious-injuries", "car-accidents", "wrongful-death", "pedestrian-accidents"],
+  "pedestrian-accidents": ["car-accidents", "serious-injuries", "wrongful-death", "rideshare-accidents"],
+  "rideshare-accidents": ["car-accidents", "serious-injuries", "truck-accidents", "pedestrian-accidents"],
+  "slip-and-fall": ["serious-injuries", "wrongful-death", "pedestrian-accidents", "car-accidents"],
+  "wrongful-death": ["truck-accidents", "pedestrian-accidents", "serious-injuries", "car-accidents"],
+  "serious-injuries": ["car-accidents", "truck-accidents", "motorcycle-accidents", "pedestrian-accidents"],
+};
+
 export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
   const params = useParams({ strict: false }) as { slug?: string };
   const practice = params.slug ? getPracticeArea(params.slug) : undefined;
@@ -282,7 +307,7 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
   const enhancement = practiceEnhancements[practice.slug];
 
   const title = isKo(locale) ? practice.koTitle : isEs(locale) ? (esCopy?.shortTitle || practice.title) : practice.title;
-  const heroTitle = isKo(locale) ? `${practice.koTitle} · Buena Park` : isEs(locale) ? (esCopy?.title || `Abogado de ${practice.title} en Buena Park`) : `Buena Park ${practice.title} Lawyer`;
+  const heroTitle = isKo(locale) ? `${practice.koTitle} · Buena Park` : isEs(locale) ? (esCopy?.title || `Abogado de ${practice.title} en Buena Park`) : practice.slug === "serious-injuries" ? "Buena Park Brain & Catastrophic Injury Lawyer" : `Buena Park ${practice.title} Lawyer`;
   const description = isKo(locale) ? practice.koDescription : isEs(locale) ? (esCopy?.description || practice.description) : practice.description;
   const intro = isKo(locale) ? practice.koIntro : isEs(locale) ? (esCopy?.intro || practice.intro) : practice.intro;
   const issues = isKo(locale) ? practice.koIssues : isEs(locale) ? (esCopy?.issues || practice.issues) : practice.issues;
@@ -341,7 +366,7 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
                   { id: "faq", label: "Preguntas frecuentes" }, { id: "resources", label: "Guías y fuentes" }, { id: "related", label: "Áreas relacionadas" }, { id: "areas", label: "Dónde atendemos" },
                 ]
               : [
-                  { id: "understand", label: "Understanding the claim" }, { id: "issues", label: "Key issues" }, { id: "evidence", label: "Evidence to preserve" },
+                  { id: "understand", label: "Understanding the claim" }, { id: "issues", label: "Key issues" }, { id: "evidence", label: "Evidence to preserve" }, { id: "case-guide", label: "Case-specific guidance" },
                   { id: "value", label: "Damages & case value" }, { id: "insurance", label: "Insurance & responsibility" }, { id: "deadlines", label: "California deadlines" },
                   { id: "faq", label: "Common questions" }, { id: "resources", label: "Guides & sources" }, { id: "related", label: "Related practice areas" }, { id: "areas", label: "Where we handle these" },
                 ]}
@@ -365,6 +390,7 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
             <div className="editorial-issue-list">
               {issues.map((issue, index) => <div key={issue} className="editorial-issue-row"><span>{String(index + 1).padStart(2, "0")}</span><strong>{issue}</strong></div>)}
             </div>
+            {locale === "en" && <p className="mt-7 max-w-[760px] text-[15px] leading-8 text-[#57514b]">{englishPracticeFocus[practice.slug]}</p>}
           </ReadingSectionBlock>
 
           <ReadingSectionBlock id="evidence" locale={locale} Icon={FileText} kicker={isKo(locale) ? "03 · 증거" : isEs(locale) ? "03 · Evidencia" : "03 · Evidence"} title={evidenceTitle} intro={evidenceIntro}>
@@ -373,6 +399,36 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
               {evidenceItems.map((item, index) => <div key={item} className="editorial-issue-row"><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong></div>)}
             </div>
           </ReadingSectionBlock>
+
+          {locale === "en" && englishPracticeGuides[practice.slug] && (
+            <ReadingSectionBlock
+              id="case-guide"
+              locale={locale}
+              Icon={FileText}
+              kicker="Case-specific guidance"
+              title={englishPracticeGuides[practice.slug].title}
+              intro={englishPracticeGuides[practice.slug].summary}
+            >
+              <div className="article-reading-width grid gap-8 border-t border-[#1E1C1A]/15 pt-8 md:gap-10">
+                {englishPracticeGuides[practice.slug].topics.map(([heading, explanation], index) => (
+                  <section key={heading} className="border-b border-[#1E1C1A]/12 pb-8 last:border-0">
+                    <div className="flex items-start gap-4">
+                      <span className="pt-1 text-[12px] tabular-nums text-[#1E1C1A]/45">{String(index + 1).padStart(2, "0")}</span>
+                      <div>
+                        <h3 className="editorial-serif text-[clamp(1.5rem,2.2vw,2rem)] leading-[1.16] text-[#1E1C1A]">{heading}</h3>
+                        <p className="mt-4 max-w-[710px] text-[16px] leading-[1.8] text-[#57514b]">{explanation}</p>
+                      </div>
+                    </div>
+                  </section>
+                ))}
+                <div className="rounded-[3px] border border-[#1E1C1A]/15 bg-[#efeae2] px-6 py-6 text-[15px] leading-7">
+                  <strong className="block font-semibold">Discuss your specific evidence and coverage.</strong>
+                  <p className="mt-2">An initial consultation can help identify the applicable deadlines, documents worth preserving and unanswered questions. No outcome or recovery is guaranteed.</p>
+                  <a href="/contact" className="mt-4 inline-flex min-h-11 items-center gap-2 font-semibold underline underline-offset-4">Request a free consultation <ArrowRight className="h-4 w-4" /></a>
+                </div>
+              </div>
+            </ReadingSectionBlock>
+          )}
 
           <ReadingSectionBlock id="value" locale={locale} Icon={Scale} kicker={isKo(locale) ? "04 · 손해" : isEs(locale) ? "04 · Daños y valor" : "04 · Damages & value"} title={isKo(locale) ? "사건 가치는 하나의 공식으로 계산되지 않습니다." : headings.value} intro={valueIntro}>
             <ClaimValueVisual locale={locale} />
@@ -421,7 +477,7 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
 
           <ReadingSectionBlock id="related" locale={locale} Icon={Sparkles} kicker={isKo(locale) ? "09 · 더 보기" : isEs(locale) ? "09 · Explorar" : "09 · Explore"} title={isKo(locale) ? "다른 개인상해 업무 분야" : isEs(locale) ? "Áreas de práctica relacionadas." : "Related personal injury practice areas."}>
             <div className="editorial-link-grid">
-              {practiceAreas.filter((item) => item.slug !== practice.slug).slice(0, 4).map((item) => {
+              {(relatedServiceSlugs[practice.slug] || []).map((slug) => practiceAreas.find((item) => item.slug === slug)).filter((item): item is (typeof practiceAreas)[number] => Boolean(item)).map((item) => {
                 const relatedEs = esPracticeContent[item.slug];
                 return (
                   <a key={item.slug} href={`${localePrefix(locale)}/practice-areas/${item.slug}`} className="editorial-link-card">

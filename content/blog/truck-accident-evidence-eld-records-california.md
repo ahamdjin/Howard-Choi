@@ -5,7 +5,7 @@
   "excerpt": "Learn which records may matter after a commercial-truck crash, including electronic logging devices, hours-of-service records, maintenance, inspections, onboard video, and company documents.",
   "category": "Truck Accidents",
   "publishedAt": "2026-09-11",
-  "readingTime": "3 min read",
+  "updatedAt": "2026-10-17",
   "alt": "Law office used for commercial truck accident evidence review",
   "intro": "A commercial-truck crash can create evidence that does not exist in an ordinary two-car collision. Electronic logging devices, driver qualification files, maintenance records, dispatch information, onboard cameras, inspection materials, and company communications may help explain what happened before impact. Some of that evidence is retained for limited periods, which makes early preservation an important part of a serious truck-accident investigation.",
   "takeaway": "Truck cases can depend on records held by the carrier, not just evidence at the scene. Identifying those records early can prevent an important part of the crash history from disappearing."
@@ -52,3 +52,28 @@ A strong investigation connects the company record to the crash record and then 
 The driver, motor carrier, vehicle owner, trailer owner, shipper, broker, maintenance provider, employer, contractor, or another business may have different roles in a commercial transportation operation. Not every company is legally responsible in every case, but identifying the relationships is necessary before responsibility and insurance can be evaluated accurately.
 
 That is why a commercial-truck claim should not automatically be treated as an ordinary auto claim with a larger vehicle. The evidence and insurance structure can be fundamentally different.
+
+
+## An ELD is a record of duty status, not a universal crash recorder
+
+Federal Motor Carrier Safety Administration resources explain that electronic logging devices are designed to record drivers' hours-of-service information. A log may be relevant to driving time and compliance, but it is not automatically a video, a detailed vehicle dynamics recorder or proof of exactly how the collision occurred. Depending on the equipment, other electronic systems or video may provide different information.
+
+A careful investigator should identify the actual devices and operators rather than assuming every truck has the same technology. Ask which records exist, which business controls them, the periods they cover and how they are normally retained. The existence or absence of a log does not by itself establish negligence.
+
+## Who has the documents?
+
+Commercial crashes may involve the driver, motor carrier, vehicle owner, trailer owner, dispatcher, employer or a maintenance contractor. Not all will possess the same evidence or owe the same legal duties. A delivery-van claim can differ materially from a tractor-trailer case subject to federal carrier rules.
+
+Record identifying marks on the tractor and trailer, available USDOT numbers, business names, license plates, trailer number and approximate route. Keep the responding-agency report and witness details. These identifiers can help narrow where electronic records and insurance documents might be held.
+
+## What a focused preservation request may concern
+
+Potential categories include the relevant time window of driver logs, dispatch communications, vehicle inspection reports, maintenance and repair history, relevant camera files, driver qualification records and load-related documentation. The appropriate scope depends on the event; a blanket request for every company document is not a substitute for identifying the factual theory.
+
+Records can have different retention periods under applicable law and company practice. Preserve your own copies of messages and images. For records held by another party, seek qualified advice promptly on appropriate preservation and access rather than attempting unauthorized retrieval.
+
+## Medical complexity and collision complexity are different
+
+A commercial truck's size can be relevant to forces involved, but injury causation still requires medical records and appropriate expert assessment where needed. Maintain a clear distinction between work restrictions, recommended future care, vehicle damage and legal fault.
+
+Coverage layers, liability among multiple defendants and supported lifetime costs may each be evaluated separately. Do not assume the carrier is legally responsible for every event involving its branding or that a high policy limit produces a guaranteed payout.
