@@ -16,6 +16,7 @@ export type BlogPost = {
   alt: string;
   intro: string;
   takeaway: string;
+  leadParagraphs: string[];
   sections: BlogSection[];
 };
 
@@ -96,14 +97,17 @@ const splitJsonFrontmatter = (raw: string): { data: BlogFrontmatter; body: strin
   return { data, body };
 };
 
-const parseSections = (body: string): BlogSection[] => {
+const parseSections = (body: string): { leadParagraphs: string[]; sections: BlogSection[] } => {
+  const leadParagraphs: string[] = [];
   const sections: BlogSection[] = [];
   let current: BlogSection | null = null;
   let paragraphLines: string[] = [];
 
   const flushParagraph = () => {
-    if (!current || paragraphLines.length === 0) return;
-    current.paragraphs.push(paragraphLines.join(" ").trim());
+    if (paragraphLines.length === 0) return;
+    const paragraph = paragraphLines.join(" ").trim();
+    if (current) current.paragraphs.push(paragraph);
+    else leadParagraphs.push(paragraph);
     paragraphLines = [];
   };
 
@@ -122,11 +126,11 @@ const parseSections = (body: string): BlogSection[] => {
       continue;
     }
 
-    if (current) paragraphLines.push(line);
+    paragraphLines.push(line);
   }
 
   flushParagraph();
-  return sections;
+  return { leadParagraphs, sections };
 };
 
 const formatPublishedDate = (publishedAt: string) =>
@@ -146,7 +150,7 @@ const parseBlog = (raw: string): BlogPost | null => {
   const { data, body } = splitJsonFrontmatter(raw);
   if (data.published === false) return null;
 
-  const sections = parseSections(body);
+  const { leadParagraphs, sections } = parseSections(body);
   const image = data.image?.trim() || legacyImages[data.slug];
 
   if (!image) {
@@ -165,6 +169,7 @@ const parseBlog = (raw: string): BlogPost | null => {
     alt: data.alt?.trim() || data.title,
     intro: data.intro,
     takeaway: data.takeaway,
+    leadParagraphs,
     sections,
   };
 };
