@@ -17,6 +17,22 @@ type ArticleSupport = {
 };
 
 const articleSupport: Record<string, ArticleSupport> = {
+  "how-long-car-accident-settlement-takes-california": {
+    relatedHref: "/practice-areas/car-accidents",
+    relatedLabel: "Buena Park car accident lawyer",
+    relatedBody: "Learn how responsibility, insurer coverage, medical documentation and evidence preservation fit into an accident claim.",
+    sources: [
+      { label: "California Department of Insurance · So You've Had an Accident, What's Next?", href: "https://www.insurance.ca.gov/01-consumers/105-type/95-guides/01-auto/hadaccident.cfm" },
+      { label: "California Department of Insurance · Fair Claims Settlement Practices Regulations", href: "https://www.insurance.ca.gov/01-consumers/130-laws-regs-hearings/05-CCR/fair-claims-regs.cfm" },
+      { label: "California Courts · Personal injury claims, evidence and damages", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury" },
+      { label: "California Courts · Steps to sue someone", href: "https://selfhelp.courts.ca.gov/fil/node/1531" },
+      { label: "California Courts · Discovery in civil cases", href: "https://www.selfhelp.courts.ca.gov/discovery-civil" },
+      { label: "California Courts · Government claim deadlines", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/government-claim" },
+      { label: "California DMV · Report of Traffic Accident (SR-1)", href: "https://www.dmv.ca.gov/portal/dmv-virtual-office/accident-reporting/" },
+      { label: "California DHCS · Personal Injury Program", href: "https://www.dhcs.ca.gov/services/personal-injury-program/" },
+      { label: "California DHCS · Medi-Cal injury lien process", href: "https://www.dhcs.ca.gov/services/the-personal-injury-lien-process/" },
+    ],
+  },
   "traumatic-brain-injury-evidence-after-california-accident": {
     relatedHref: "/practice-areas/serious-injuries",
     relatedLabel: "Brain and catastrophic injury claims in Buena Park",
