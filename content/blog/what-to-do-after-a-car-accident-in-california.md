@@ -5,14 +5,14 @@
   "excerpt": "What to do in the hours and days after a California car accident: treatment, the evidence that disappears fastest, what to say to the insurer, and the deadlines that actually apply.",
   "category": "Car Accidents",
   "publishedAt": "2026-09-03",
-  "readingTime": "5 min read",
+  "updatedAt": "2026-10-17",
   "alt": "Private law office with a desk and legal books",
   "intro": "The hours after a California car accident can become disorganized quickly. Medical concerns, vehicle damage, insurance calls, work, transportation, and family responsibilities can all arrive at once. A useful sequence is simple: protect health first, preserve the facts while they still exist, keep insurance communications organized, and build a record of how the collision actually affected your life.",
   "takeaway": "You do not need to solve the entire claim on day one. Protect your health, preserve time-sensitive evidence, and keep the medical, insurance, and financial record consistent from the beginning."
 }
 
 
-Most people call a lawyer about a week too late. Not because they did anything wrong, but because the first few days go to doctors, the car, and work, and by the time anyone thinks about the claim the useful evidence has already started disappearing. Here is what actually matters, roughly in the order it matters.
+Evidence can disappear earlier than the legal filing deadline, but there is no universal 'best day' to call a lawyer. The useful first steps are medical care, an accurate crash record, and attention to camera footage and other material that may not be kept for long.
 
 ## Get looked at, even if you feel fine
 
@@ -69,3 +69,28 @@ The trap is claims involving a government entity, which can include a city vehic
 Not every crash needs a lawyer. If you were not hurt and the property damage is straightforward, you can usually handle it yourself.
 
 It is worth a conversation when any of these are true: the injury needed more than one visit, you are losing income, fault is being disputed, more than two vehicles were involved, a commercial vehicle or rideshare was involved, or the insurer is pushing you toward a quick settlement. Most consultations cost nothing, and the early questions are cheap to ask and expensive to skip.
+
+
+## A practical 48-hour record without overwhelming yourself
+
+Start one folder with five things: the collision date and location, the incident or police report number if one exists, original photos, insurance contact information, and a dated description of your symptoms and the care you actually sought. Do not alter photo timestamps or 'improve' descriptions after discussing the event with someone else. An unpolished but accurate record is more useful than a polished narrative that changes over time.
+
+If you discover a nearby camera, note who controls it, which way it points, the collision time and how long the owner says footage may be retained. Asking for preservation is different from being legally entitled to a copy. A lawyer can advise about the appropriate process when the recording may disappear. Create a short list of witnesses with numbers and where they stood, not just a generic statement that other people were nearby.
+
+## Who needs a report, and what does the DMV actually require?
+
+California DMV guidance describes a separate SR-1 accident-reporting requirement for certain crashes causing injury, death or property damage above the applicable statutory threshold, typically due within ten days for a reportable accident. A police report and an insurance claim are not substitutes for the DMV report when the SR-1 requirement applies. Check the current DMV instructions for your circumstances and confirm whether you must file rather than assuming a responding officer handled it.
+
+The official California Courts personal-injury materials also distinguish the time to bring a lawsuit from the steps involved in handling an insurer's claim. A claim involving a public agency may follow a special, earlier government-claim process. These are three different clocks: evidence preservation, insurance or administrative notice, and court filing.
+
+## What to keep after the insurer starts calling
+
+Maintain a communication log with date, person's name, insurer, claim number, key questions asked and documents requested. Save the original emails and letters. Ask whether an authorization is limited to relevant treatment or covers unrelated medical history, and whether a recorded statement is required under the applicable policy. Duties to cooperate can differ between your own insurer and another driver's carrier; blanket advice that no statement is ever necessary can be wrong.
+
+Before accepting money for either property damage or injury, identify exactly which claims are being released. A release may be broader than the check's description suggests. If your symptoms or treatment plan remain uncertain, understanding the legal consequences of the specific release matters more than trying to pick a settlement number from an online average.
+
+## A concrete example of why records change the case
+
+Imagine a driver argues the other car suddenly changed lanes. The early file includes one close-up bumper photograph, while a week later a nearby business confirms it recorded the lane positions. That wide footage, if still retained, could be more useful to the liability dispute than the repair invoice alone. Conversely, if the recording has been overwritten, the parties may be left with incompatible recollections.
+
+Now consider the injury record. The emergency visit documents neck pain, the later records document improvement, and a temporary work restriction explains three missed shifts. Those facts are more informative than assuming the total claim must be large or small because the bumper looked damaged. The example illustrates evidence handling, not a prediction of legal outcome.

@@ -21,15 +21,15 @@ const Blogs = () => {
   const heroScale = useTransform(scrollY, [0, 900], [1, 1.018]);
 
   return (
-    <div className="min-h-screen overflow-x-clip bg-background">
+    <div className="legal-blog-index min-h-screen overflow-x-clip bg-background">
       <Navigation />
       <div className="relative">
-        <div className="relative min-h-[100svh] md:sticky md:top-0 md:h-[70svh] md:min-h-[620px] overflow-hidden bg-[#17130f] text-[#f3eee5]">
+        <div className="relative min-h-[560px] md:sticky md:top-0 md:h-[70svh] md:min-h-[620px] overflow-hidden bg-[#17130f] text-[#f3eee5]">
           <motion.img {...responsiveImageProps(heroJusticeLibrary)} src={heroJusticeLibrary} alt="Law library and Lady Justice" style={{ y: imageY, scale: heroScale }} fetchPriority="high" decoding="async" className="absolute inset-0 h-[112%] w-full object-cover object-center" />
           <div className="absolute inset-0 bg-[#17130f]/58" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#17130f]/90 via-[#17130f]/14 to-[#17130f]/22" />
           <div className="hero-bottom-readability" />
-          <div className="site-shell relative z-10 flex min-h-[100svh] items-end pb-10 pt-24 md:h-full md:min-h-0 md:pb-12 lg:pb-14">
+          <div className="site-shell relative z-10 flex min-h-[560px] items-end pb-10 pt-24 md:h-full md:min-h-0 md:pb-12 lg:pb-14">
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.72 }} className="grid w-full gap-8 border-t border-white/18 pt-5 lg:grid-cols-[0.38fr_1.62fr] lg:gap-12 xl:gap-16">
               <div><span className="text-[9px] font-medium uppercase tracking-[0.17em] text-[#f3eee5]/48">Legal resources</span><div className="mt-4 hidden text-[10px] leading-5 text-[#f3eee5]/34 lg:block">California injury-law guides<br />Buena Park, California</div></div>
               <div className="max-w-[980px]"><PageBreadcrumb locale="en" title="Blogs" /><h1 className="editorial-serif text-[clamp(2.35rem,3.45vw,3.9rem)] leading-[1] tracking-[-0.026em]">Clear answers for the questions that follow an accident.</h1><p className="mt-5 max-w-[700px] text-[14px] leading-6 text-[#f3eee5]/67 md:text-[15px] md:leading-7">Practical California information about accident claims, insurance, evidence, deadlines, injuries, and case value, supported by primary legal and agency sources inside each guide.</p></div>
@@ -73,7 +73,7 @@ const Blogs = () => {
                   <Link to={`/blogs/${post.slug}`} className="group grid gap-7 lg:grid-cols-[0.72fr_1.28fr] lg:items-stretch lg:gap-10 xl:gap-14">
                     <div className="relative min-h-[280px] overflow-hidden bg-[#17130f] md:min-h-[340px]"><img {...responsiveImageProps(post.image)} src={post.image} alt={post.alt} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.018]" /><div className="absolute inset-0 bg-[#17130f]/10 transition-colors duration-500 group-hover:bg-transparent" /></div>
                     <div className="flex min-h-[280px] flex-col justify-between py-1 md:min-h-[340px] lg:py-2">
-                      <div><div className="mb-5 flex items-center gap-4 text-[10px] text-muted-foreground"><span>{String(index + 1).padStart(2, "0")}</span><span>{post.category}</span><span>·</span><span>{post.readingTime}</span></div><h2 className="editorial-serif max-w-[760px] text-[clamp(1.8rem,2.65vw,2.85rem)] leading-[1.02] tracking-[-0.022em]">{post.title}</h2><p className="mt-4 max-w-[650px] text-[13px] leading-6 text-foreground/60">{post.excerpt}</p></div>
+                      <div><div className="mb-5 flex items-center gap-4 text-[10px] text-muted-foreground"><span>{String(index + 1).padStart(2, "0")}</span><span>{post.category}</span><span>·</span><span>{post.readingTime}</span></div><h2 className="editorial-serif max-w-[760px] text-[clamp(1.8rem,2.65vw,2.85rem)] leading-[1.15] tracking-[-0.018em]">{post.title}</h2><p className="mt-4 max-w-[650px] text-[16px] leading-[1.7] text-foreground/75">{post.excerpt}</p></div>
                       <div className="mt-8 flex items-center justify-between border-t border-foreground/12 pt-4 text-[11px]"><span className="text-muted-foreground">{post.date}</span><span className="inline-flex items-center gap-2 transition-transform duration-300 group-hover:translate-x-1">Read guide <ArrowRight className="h-3.5 w-3.5" /></span></div>
                     </div>
                   </Link>

@@ -11,6 +11,7 @@ export type BlogPost = {
   category: string;
   date: string;
   publishedAt: string;
+  updatedAt: string;
   readingTime: string;
   image: string;
   alt: string;
@@ -26,6 +27,7 @@ type BlogFrontmatter = {
   excerpt: string;
   category: string;
   publishedAt: string;
+  updatedAt?: string;
   readingTime?: string;
   image?: string;
   alt?: string;
@@ -43,6 +45,10 @@ const legacyImages: Record<string, string> = {
   "uber-lyft-accident-insurance-california": heroCityBoardroom,
   "truck-accident-evidence-eld-records-california": heroLawOffice,
   "california-personal-injury-deadlines": heroCourthouse,
+  "traumatic-brain-injury-evidence-after-california-accident": heroJusticeLibrary,
+  "california-bicycle-accident-evidence-and-insurance": heroCourthouse,
+  "california-uninsured-driver-hit-and-run-injury-claims": heroLawOffice,
+  "how-long-car-accident-settlement-takes-california": heroCityBoardroom,
 };
 
 // Vite expands this at build time. Pages CMS never ships to the public website.
@@ -164,6 +170,7 @@ const parseBlog = (raw: string): BlogPost | null => {
     category: data.category,
     date: formatPublishedDate(data.publishedAt),
     publishedAt: data.publishedAt,
+    updatedAt: data.updatedAt || data.publishedAt,
     readingTime: data.readingTime?.trim() || estimateReadingTime(data.intro, body),
     image,
     alt: data.alt?.trim() || data.title,

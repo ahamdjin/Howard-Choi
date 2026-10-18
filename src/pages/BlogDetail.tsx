@@ -17,6 +17,58 @@ type ArticleSupport = {
 };
 
 const articleSupport: Record<string, ArticleSupport> = {
+  "how-long-car-accident-settlement-takes-california": {
+    relatedHref: "/practice-areas/car-accidents",
+    relatedLabel: "Buena Park car accident lawyer",
+    relatedBody: "Learn how responsibility, insurer coverage, medical documentation and evidence preservation fit into an accident claim.",
+    sources: [
+      { label: "California Department of Insurance · So You've Had an Accident, What's Next?", href: "https://www.insurance.ca.gov/01-consumers/105-type/95-guides/01-auto/hadaccident.cfm" },
+      { label: "California Department of Insurance · Fair Claims Settlement Practices Regulations", href: "https://www.insurance.ca.gov/01-consumers/130-laws-regs-hearings/05-CCR/fair-claims-regs.cfm" },
+      { label: "California Courts · Personal injury claims, evidence and damages", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury" },
+      { label: "California Courts · Steps to sue someone", href: "https://selfhelp.courts.ca.gov/fil/node/1531" },
+      { label: "California Courts · Discovery in civil cases", href: "https://www.selfhelp.courts.ca.gov/discovery-civil" },
+      { label: "California Courts · Government claim deadlines", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/government-claim" },
+      { label: "California DMV · Report of Traffic Accident (SR-1)", href: "https://www.dmv.ca.gov/portal/dmv-virtual-office/accident-reporting/" },
+      { label: "California DHCS · Personal Injury Program", href: "https://www.dhcs.ca.gov/services/personal-injury-program/" },
+      { label: "California DHCS · Medi-Cal injury lien process", href: "https://www.dhcs.ca.gov/services/the-personal-injury-lien-process/" },
+    ],
+  },
+  "traumatic-brain-injury-evidence-after-california-accident": {
+    relatedHref: "/practice-areas/serious-injuries",
+    relatedLabel: "Brain and catastrophic injury claims in Buena Park",
+    relatedBody: "Understand how serious-injury claims address the underlying accident, medical evaluation, future care and long-term function.",
+    sources: [
+      { label: "CDC · Mild TBI: symptoms and emergency danger signs", href: "https://www.cdc.gov/traumatic-brain-injury/signs-symptoms/index.html" },
+      { label: "CDC · Diagnosis and evaluation of mild TBI", href: "https://www.cdc.gov/traumatic-brain-injury/about/index.html" },
+      { label: "CDC · Recovery from moderate or severe TBI", href: "https://www.cdc.gov/traumatic-brain-injury/response/moderate-severe-tbi.html" },
+      { label: "California Courts · Personal injury and evidence", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury" },
+      { label: "California Courts · Statutes of limitations", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/statute-limitations" },
+    ],
+  },
+  "california-bicycle-accident-evidence-and-insurance": {
+    relatedHref: "/practice-areas",
+    relatedLabel: "Explore Buena Park injury practice areas",
+    relatedBody: "Review the practice areas actually offered by the firm. Bicycle claims require separate confirmation before this draft can be published.",
+    sources: [
+      { label: "California Vehicle Code · Bicycle operating rules (sections 21200–21214.7)", href: "https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?article=4.&chapter=1.&division=11.&lawCode=VEH" },
+      { label: "Caltrans · Codes and bicycle road-use laws", href: "https://dot.ca.gov/programs/local-assistance/fed-and-state-programs/bike-program/codes-laws-and-regulations" },
+      { label: "CHP · Request a traffic crash report", href: "https://www.chp.ca.gov/traffic/request-a-crash-report/" },
+      { label: "California DMV · SR-1 reporting requirements", href: "https://www.dmv.ca.gov/portal/dmv-virtual-office/accident-reporting/" },
+      { label: "California Courts · Personal injury cases", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury" },
+    ],
+  },
+  "california-uninsured-driver-hit-and-run-injury-claims": {
+    relatedHref: "/practice-areas/car-accidents",
+    relatedLabel: "Buena Park car accident claims",
+    relatedBody: "Explore how collision evidence, disputed fault, uninsured drivers and possible injury compensation are considered.",
+    sources: [
+      { label: "California Department of Insurance · Automobile insurance and UM/UIM coverage", href: "https://www.insurance.ca.gov/01-consumers/105-type/95-guides/01-auto/auto101.cfm" },
+      { label: "California Department of Insurance · After an accident", href: "https://www.insurance.ca.gov/01-consumers/105-type/95-guides/01-auto/hadaccident.cfm" },
+      { label: "California DMV · SR-1 reporting requirements", href: "https://www.dmv.ca.gov/portal/dmv-virtual-office/accident-reporting/" },
+      { label: "California Courts · Personal injury lawsuits", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury" },
+      { label: "California Courts · Statutes of limitations", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/statute-limitations" },
+    ],
+  },
   "what-to-do-after-a-car-accident-in-california": {
     relatedHref: "/practice-areas/car-accidents",
     relatedLabel: "Buena Park car accident lawyers",
@@ -98,11 +150,11 @@ const BlogDetail = () => {
       <Navigation />
       <motion.div aria-hidden="true" className="fixed inset-x-0 top-0 z-[120] h-[2px] origin-left bg-[#8b7864]" style={{ scaleX: scrollYProgress }} />
 
-      <article ref={articleRef} className="relative">
-        <header className="sticky top-0 flex h-[66svh] min-h-[540px] items-end overflow-hidden bg-[#17130f] text-[#f3eee5]">
+      <article ref={articleRef} className="legal-blog-article relative">
+        <header className="relative flex min-h-[460px] items-end overflow-hidden bg-[#17130f] text-[#f3eee5] md:sticky md:top-0 md:h-[66svh] md:min-h-[540px]">
           <motion.img {...responsiveImageProps(post.image)} src={post.image} alt={post.alt} style={{ y: imageY, scale: imageScale }} fetchPriority="high" decoding="async" className="absolute inset-0 h-[118%] w-full object-cover" />
           <div className="absolute inset-0 bg-[#17130f]/64" /><div className="absolute inset-0 bg-gradient-to-t from-[#17130f]/88 via-[#17130f]/10 to-[#17130f]/18" /><div className="hero-bottom-readability" />
-          <div className="site-shell relative z-10 pb-14 md:pb-16">
+          <div className="site-shell relative z-10 pb-9 pt-28 md:pb-16 md:pt-0">
             <Link to="/blogs" className="mb-7 inline-flex items-center gap-2 text-[12px] text-[#f3eee5]/62 transition-colors hover:text-[#f3eee5]"><ArrowLeft className="h-3.5 w-3.5" /> Back to journal</Link>
             <div className="max-w-[860px]">
               <div className="mb-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-[12px] text-[#f3eee5]/60"><span>{post.category}</span><span>·</span><span>{post.date}</span><span>·</span><span>{post.readingTime}</span></div>
@@ -120,12 +172,13 @@ const BlogDetail = () => {
                   <div className="mt-5 space-y-4 border-b border-foreground/10 pb-6 text-[12px] leading-5">
                     <div><div className="text-foreground/38">Practice</div><div className="mt-1 text-foreground/76">{post.category}</div></div>
                     <div><div className="text-foreground/38">Published</div><div className="mt-1 text-foreground/76">{post.date}</div></div>
+                    {post.updatedAt !== post.publishedAt && <div><div className="text-foreground/38">Updated</div><div className="mt-1 text-foreground/76">{new Date(`${post.updatedAt}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" })}</div></div>}
                     <div><div className="text-foreground/38">Publisher</div><div className="mt-1 text-foreground/76">Buena Park Injury Lawyer</div></div>
                     <div><div className="text-foreground/38">Reading time</div><div className="mt-1 text-foreground/76">{post.readingTime}</div></div>
                   </div>
                   <div className="pt-6">
                     <div className="mb-4 text-[10px] uppercase tracking-[0.15em] text-foreground/38">In this article</div>
-                    <nav className="space-y-3">{post.sections.map((section, index) => <a key={section.heading} href={`#article-section-${index + 1}`} className="group flex gap-3 text-[12px] leading-5 text-foreground/48 transition-colors hover:text-foreground"><span className="text-foreground/26">0{index + 1}</span><span>{section.heading}</span></a>)}</nav>
+                    <nav className="max-h-[calc(100dvh-19rem)] space-y-3 overflow-y-auto pr-2">{post.sections.map((section, index) => <a key={section.heading} href={`#article-section-${index + 1}`} className="group flex gap-3 text-[12px] leading-5 text-foreground/48 transition-colors hover:text-foreground"><span className="text-foreground/26">0{index + 1}</span><span>{section.heading}</span></a>)}</nav>
                   </div>
                 </div>
               </aside>
@@ -136,10 +189,47 @@ const BlogDetail = () => {
                   <Link to="/attorney" className="font-medium text-foreground underline underline-offset-4">Meet attorney Howard Choi</Link>
                   <a href="https://apps.calbar.ca.gov/attorney/Licensee/Detail/284364" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">Verify California State Bar No. 284364</a>
                 </div>
+                <details className="mb-8 border-y border-foreground/12 py-3 lg:hidden">
+                  <summary className="cursor-pointer py-2 text-[15px] font-semibold text-foreground">Browse sections in this guide</summary>
+                  <nav aria-label="Article sections" className="grid gap-2 pb-3 pt-4">
+                    {post.sections.map((section, index) => (
+                      <a key={section.heading} href={`#article-section-${index + 1}`} className="flex min-h-11 items-start gap-3 border-b border-foreground/10 px-1 py-2 text-[14px] leading-6 text-foreground/80">
+                        <span className="w-7 shrink-0 tabular-nums text-foreground/45">{String(index + 1).padStart(2, "0")}</span>
+                        <span>{section.heading}</span>
+                      </a>
+                    ))}
+                  </nav>
+                </details>
                 <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.68 }}>
                   <div className="mb-5 flex items-center gap-3 text-[11px] text-foreground/42 lg:hidden"><span>{post.category}</span><span>·</span><span>{post.readingTime}</span></div>
                   <p className="editorial-serif text-[clamp(1.62rem,2.2vw,2.18rem)] leading-[1.17] tracking-[-0.014em] text-foreground/94">{post.intro}</p>
                 </motion.div>
+
+                {post.slug === "how-long-car-accident-settlement-takes-california" && (
+                  <section aria-labelledby="settlement-stages" className="mt-10 border-y border-foreground/15 py-8 md:mt-12 md:py-10">
+                    <div className="mb-5 flex flex-wrap items-baseline justify-between gap-3">
+                      <h2 id="settlement-stages" className="editorial-serif text-[clamp(1.6rem,2.5vw,2.2rem)] leading-[1.14]">Six stages of a California settlement</h2>
+                      <span className="text-[12px] text-foreground/55">Sequence, not promised durations</span>
+                    </div>
+                    <ol className="grid gap-px overflow-hidden rounded-[3px] border border-foreground/12 bg-foreground/10 sm:grid-cols-2 xl:grid-cols-3">
+                      {([
+                        ["01", "Protect evidence", "Care, reports, photos and witness details"],
+                        ["02", "Confirm responsibility", "Fault, parties and insurance coverage"],
+                        ["03", "Develop injury record", "Treatment, work loss and future needs"],
+                        ["04", "Demand and negotiate", "Documented losses, offer and response"],
+                        ["05", "Resolve disputes", "Negotiation, mediation or litigation"],
+                        ["06", "Release and payment", "Written agreement, liens and net funds"],
+                      ] as const).map(([step, label, note]) => (
+                        <li key={step} className="min-h-[134px] bg-background p-5">
+                          <span className="text-[12px] font-medium tabular-nums text-foreground/45">{step}</span>
+                          <h3 className="mt-3 text-[16px] font-semibold leading-6 text-foreground">{label}</h3>
+                          <p className="mt-2 text-[14px] leading-[1.55] text-foreground/70">{note}</p>
+                        </li>
+                      ))}
+                    </ol>
+                    <p className="mt-4 max-w-[650px] text-[13px] leading-6 text-foreground/60">The stages can overlap or repeat, and many claims resolve without litigation. There is no statewide timetable promising when an individual injury claim will settle.</p>
+                  </section>
+                )}
 
                 {post.leadParagraphs.length > 0 && (
                   <div className="mt-8 max-w-[730px] space-y-5 text-[17px] leading-[1.75] text-foreground/84 md:text-[18px]">
@@ -157,7 +247,7 @@ const BlogDetail = () => {
                     <motion.section id={`article-section-${index + 1}`} key={section.heading} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.16 }} transition={{ duration: 0.62 }} className="scroll-mt-28 border-b border-foreground/10 py-10 last:border-b-0 md:py-12">
                       <div className="mb-4 flex items-center gap-3"><span className="text-[11px] tracking-[0.12em] text-foreground/34">0{index + 1}</span><span className="h-px w-8 bg-foreground/12" /></div>
                       <h2 className="editorial-serif max-w-[700px] text-[clamp(2.05rem,3vw,3.15rem)] leading-[0.98] tracking-[-0.022em] text-foreground">{section.heading}</h2>
-                      <div className="mt-6 max-w-[730px] space-y-6 text-[17px] leading-[1.75] text-foreground/84 md:text-[18px]">
+                      <div className="article-reading-width mt-6 max-w-[730px] space-y-6 text-[17px] leading-[1.75] text-foreground/84 md:text-[18px]">
                         {section.paragraphs.map((paragraph, paragraphIndex) => <p key={paragraph} className={index === 0 && paragraphIndex === 0 ? "first-letter:float-left first-letter:mr-2 first-letter:mt-1 first-letter:font-serif first-letter:text-[4.1rem] first-letter:leading-[0.72] first-letter:text-foreground" : undefined}>{paragraph}</p>)}
                       </div>
                     </motion.section>
