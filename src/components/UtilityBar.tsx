@@ -20,7 +20,7 @@ export default function UtilityBar({ locale }: { locale: SiteLocale }) {
   const es = locale === "es";
   const basePath = pathname.replace(/^\/(?:ko|es)(?=\/|$)/, "") || "/";
   const englishPath = basePath;
-  const articleSlug = basePath.match(/^\\/blogs\\/([^/]+)\\/?$/)?.[1];
+  const articleSlug = basePath.startsWith("/blogs/") ? basePath.slice("/blogs/".length).replace(/\/$/, "") : undefined;
   // Do not generate locale-specific URLs for English-only articles: those
   // destinations are 404s and also break Vercel's prerender link crawler.
   const hasArticleTranslation = !articleSlug || translatedBlogSlugs.has(articleSlug);
