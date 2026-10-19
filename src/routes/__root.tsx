@@ -105,7 +105,10 @@ function RootDocument({ children }: { children: ReactNode }) {
           }}
         />
         <script defer src="/_vercel/speed-insights/script.js" />
-        <link rel="stylesheet" href={`https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400..600${lang === 'ko' ? '&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Serif+KR:wght@400;500;600' : ''}&display=swap`} />
+        {/* Request each variable family once across its needed weights. Korean
+            glyph families remain exclusive to Korean pages. Keep display=swap
+            and preconnect to preserve typefaces without blocking on new assets. */}
+        <link rel="stylesheet" href={`https://fonts.googleapis.com/css2?family=Inter:wght@400..600&family=Newsreader:opsz,wght@6..72,400..600${lang === 'ko' ? '&family=Noto+Sans+KR:wght@400..600&family=Noto+Serif+KR:wght@400..600' : ''}&display=swap`} />
       </head>
       <body className={bodyClassName}>
         <noscript>
