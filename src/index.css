@@ -1079,3 +1079,38 @@ nav + .relative > .sticky.top-0.h-\[100svh\] > section {
     line-height: 1.02 !important;
   }
 }
+
+
+/* Blog editorial hierarchy: the long synopsis is a lead paragraph, not a
+   second headline. Keep the same typeface and layout without giant lines. */
+.site-typography .legal-blog-article p.article-introduction {
+  max-width: 45rem;
+  font-family: "Newsreader", Georgia, serif !important;
+  font-size: clamp(1.28rem, 1.5vw, 1.55rem) !important;
+  line-height: 1.48 !important;
+  letter-spacing: -0.008em !important;
+  word-spacing: normal;
+  text-wrap: pretty;
+}
+
+.site-typography .legal-blog-article p.article-key-point {
+  max-width: 40rem;
+  font-family: "Newsreader", Georgia, serif !important;
+  font-size: clamp(1.35rem, 1.8vw, 1.8rem) !important;
+  line-height: 1.42 !important;
+  letter-spacing: -0.008em !important;
+  word-spacing: normal;
+  text-wrap: pretty;
+}
+
+@media (max-width: 767px) {
+  .site-typography .legal-blog-article p.article-introduction {
+    font-size: 1.18rem !important;
+    line-height: 1.53 !important;
+  }
+
+  .site-typography .legal-blog-article p.article-key-point {
+    font-size: 1.32rem !important;
+    line-height: 1.46 !important;
+  }
+}
