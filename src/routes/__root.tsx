@@ -8,6 +8,8 @@ import { attorneyJsonLd, legalServiceJsonLd, webSiteJsonLd } from "@/lib/seo";
 import appCss from "@/index.css?url";
 import innerPagesCss from "@/inner-pages.css?url";
 import brandFavicon from "@/assets/law-firm/howard-choi-favicon.png";
+import heroJusticeLibrary from "@/assets/law-firm/hero-justice-library.webp";
+import { mobileHeroSource } from "@/lib/responsive-images";
 
 const loadMotionFeatures = () => import('@/lib/motion-features').then((module) => module.default);
 
@@ -71,6 +73,7 @@ function RootDocument({ children }: { children: ReactNode }) {
   }, []);
   const pathname = useRouterState({ select: (state) => state.location.pathname });
   const lang = pathname === "/ko" || pathname.startsWith("/ko/") ? "ko" : pathname === "/es" || pathname.startsWith("/es/") ? "es-US" : "en";
+  const isHomepage = pathname === "/" || pathname === "/ko" || pathname === "/es";
   const innerSitePage = /^\/(?:(?:ko|es)\/)?(?:practice-areas|locations|attorney|results|about)(?:\/|$)/.test(pathname);
   const attorneyPage = /^\/(?:(?:ko|es)\/)?attorney(?:\/|$)/.test(pathname);
   // Pages carrying a HighLevel-tracked form. The homepage CTA form will not
@@ -97,6 +100,18 @@ function RootDocument({ children }: { children: ReactNode }) {
     <html lang={lang}>
       <head>
         <HeadContent />
+        {/* Only homepages preload a mobile-sized hero. Desktop will not fetch
+            this preload, and the same srcSet is used by the static mobile img. */}
+        {isHomepage && (
+          <link
+            rel="preload"
+            as="image"
+            media="(max-width: 767px)"
+            imageSrcSet={mobileHeroSource(heroJusticeLibrary)}
+            imageSizes="100vw"
+            fetchPriority="high"
+          />
+        )}
         {/* Vercel Speed Insights (official script-tag integration).
             Enable Speed Insights for this Vercel project in its dashboard. */}
         <script
