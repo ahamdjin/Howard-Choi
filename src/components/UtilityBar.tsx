@@ -2,15 +2,32 @@ import { Calculator, UserRound } from "lucide-react";
 import { useLocation } from "react-router-dom";
 import { brand, type SiteLocale } from "@/data/injurySite";
 
+// Only these six legacy articles have published Korean and Spanish versions.
+// Keep this light map in navigation rather than importing both large translated
+// article collections on every website route.
+const translatedBlogSlugs = new Set([
+  "california-comparative-fault-personal-injury",
+  "how-much-is-my-personal-injury-case-worth-california",
+  "uber-lyft-accident-insurance-california",
+  "truck-accident-evidence-eld-records-california",
+  "california-personal-injury-deadlines",
+  "what-to-do-after-a-car-accident-in-california"
+]);
+
 export default function UtilityBar({ locale }: { locale: SiteLocale }) {
   const { pathname, searchStr, hash } = useLocation();
   const ko = locale === "ko";
   const es = locale === "es";
   const basePath = pathname.replace(/^\/(?:ko|es)(?=\/|$)/, "") || "/";
   const englishPath = basePath;
-  const koreanPath = basePath === "/" ? "/ko" : "/ko" + basePath;
-  const spanishPath = basePath === "/" ? "/es" : "/es" + basePath;
+  const articleSlug = basePath.startsWith("/blogs/") ? basePath.slice("/blogs/".length).replace(/\/$/, "") : undefined;
+  // Do not generate locale-specific URLs for English-only articles: those
+  // destinations are 404s and also break Vercel's prerender link crawler.
+  const hasArticleTranslation = !articleSlug || translatedBlogSlugs.has(articleSlug);
+  const koreanPath = !hasArticleTranslation ? "/ko/blogs" : basePath === "/" ? "/ko" : "/ko" + basePath;
+  const spanishPath = !hasArticleTranslation ? "/es/blogs" : basePath === "/" ? "/es" : "/es" + basePath;
   const suffix = (searchStr || "") + (hash ? `#${hash.replace(/^#/, "")}` : "");
+  const translatedSuffix = hasArticleTranslation ? suffix : "";
 
   const calculatorLabel = ko ? "예상 배상액 계산기" : es ? "Calculadora de indemnización" : "Injury Settlement Calculator";
   const calculatorShort = ko ? "계산기" : es ? "Calculadora" : "Calculator";
@@ -25,9 +42,9 @@ export default function UtilityBar({ locale }: { locale: SiteLocale }) {
           <div className="flex items-center gap-1" aria-label={languageLabel}>
             <a href={englishPath + suffix} hrefLang="en-US" lang="en" aria-current={!ko && !es ? "true" : undefined} className={`inline-flex min-h-9 items-center rounded-sm px-2 transition-colors hover:bg-white/15 ${!ko && !es ? "bg-white/10 text-white" : "text-[#f3eee5]/70"}`}><span className="sm:hidden">EN</span><span className="hidden sm:inline">English</span></a>
             <span aria-hidden="true" className="h-4 w-px bg-white/25" />
-            <a href={koreanPath + suffix} hrefLang="ko-US" lang="ko" aria-current={ko ? "true" : undefined} className={`inline-flex min-h-9 items-center rounded-sm px-2 transition-colors hover:bg-white/15 ${ko ? "bg-white/10 text-white" : "text-[#f3eee5]/70"}`}>한국어</a>
+            <a href={koreanPath + translatedSuffix} hrefLang="ko-US" lang="ko" aria-current={ko ? "true" : undefined} className={`inline-flex min-h-9 items-center rounded-sm px-2 transition-colors hover:bg-white/15 ${ko ? "bg-white/10 text-white" : "text-[#f3eee5]/70"}`}>한국어</a>
             <span aria-hidden="true" className="h-4 w-px bg-white/25" />
-            <a href={spanishPath + suffix} hrefLang="es-US" lang="es" aria-current={es ? "true" : undefined} className={`inline-flex min-h-9 items-center rounded-sm px-2 transition-colors hover:bg-white/15 ${es ? "bg-white/10 text-white" : "text-[#f3eee5]/70"}`}>Español</a>
+            <a href={spanishPath + translatedSuffix} hrefLang="es-US" lang="es" aria-current={es ? "true" : undefined} className={`inline-flex min-h-9 items-center rounded-sm px-2 transition-colors hover:bg-white/15 ${es ? "bg-white/10 text-white" : "text-[#f3eee5]/70"}`}>Español</a>
           </div>
         </div>
         <div className="flex items-center gap-3 sm:gap-6">
