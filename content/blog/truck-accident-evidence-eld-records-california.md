@@ -5,10 +5,11 @@
   "excerpt": "Learn which records may matter after a commercial-truck crash, including electronic logging devices, hours-of-service records, maintenance, inspections, onboard video, and company documents.",
   "category": "Truck Accidents",
   "publishedAt": "2026-09-11",
-  "updatedAt": "2026-10-17",
+  "updatedAt": "2026-10-19",
   "alt": "Law office used for commercial truck accident evidence review",
   "intro": "A commercial-truck crash can create evidence that does not exist in an ordinary two-car collision. Electronic logging devices, driver qualification files, maintenance records, dispatch information, onboard cameras, inspection materials, and company communications may help explain what happened before impact. Some of that evidence is retained for limited periods, which makes early preservation an important part of a serious truck-accident investigation.",
-  "takeaway": "Truck cases can depend on records held by the carrier, not just evidence at the scene. Identifying those records early can prevent an important part of the crash history from disappearing."
+  "takeaway": "Truck cases can depend on records held by the carrier, not just evidence at the scene. Identifying those records early can prevent an important part of the crash history from disappearing.",
+  "reviewStatus": "pending-attorney-review"
 }
 
 ## Electronic logging devices can show driving-time information
@@ -77,3 +78,51 @@ Records can have different retention periods under applicable law and company pr
 A commercial truck's size can be relevant to forces involved, but injury causation still requires medical records and appropriate expert assessment where needed. Maintain a clear distinction between work restrictions, recommended future care, vehicle damage and legal fault.
 
 Coverage layers, liability among multiple defendants and supported lifetime costs may each be evaluated separately. Do not assume the carrier is legally responsible for every event involving its branding or that a high policy limit produces a guaranteed payout.
+
+## Which data is in an ELD—and which data usually is not?
+
+FMCSA's ELD guidance describes a device that automatically records selected dates, times, location points, engine hours, vehicle miles and driver/carrier identifiers at specified events and intervals. The system documents hours of service; it does not automatically reproduce a video of the crash or precisely track every foot of travel. FMCSA explains that location data may be captured at hourly intervals while moving and at certain events such as an engine start, engine shutdown or duty-status change.
+
+This distinction matters. Imagine an ELD shows the driver had been on duty for many hours, but the dispute concerns whether a truck changed lanes without checking a blind spot. The log may help reconstruct work history, while dashcam footage, nearby video, witness accounts, lane geometry and vehicle observations may speak more directly to the lane-change sequence. It would be unsound to claim the ELD itself proved the lane movement.
+
+Conversely, an absence of an obvious hours-of-service violation does not prove the driver was alert or that the vehicle was mechanically sound. It answers only a portion of the investigation. Ask what equipment was present and what each device actually records before requesting 'the black box' as if every truck uses identical systems.
+
+## Federal hours-of-service rules as context, not a verdict
+
+For many property-carrying interstate drivers, FMCSA describes an 11-hour driving limit after at least ten consecutive hours off duty and a 14-hour on-duty window, with a qualifying 30-minute break from driving after eight cumulative driving hours without an appropriate interruption. Exceptions and special operating rules exist; California intrastate operations or specific short-haul services may require different analysis.
+
+A useful timeline aligns the log with dispatch times, pickup and delivery documents, fuel receipts, toll events and relevant communication. If the electronic duty status says off duty while other records suggest the driver was working, the discrepancy deserves inquiry. It does not by itself tell you whether fatigue caused a collision.
+
+Request examination of the actual regulatory category and any documented exceptions rather than counting hours from a screenshot. A reasoned analysis should show both the governing rule and how the underlying records support or contradict compliance.
+
+## Different evidence has different retention periods
+
+FMCSA states that motor carriers generally retain ELD records of duty status and supporting documents for six months under the applicable federal provisions. That does not mean every other type of commercial document has a six-month retention period. FMCSA's maintenance guidance describes different retention requirements, including records maintained for at least one year for vehicles within the regulatory scope and an additional six months after certain vehicles leave a carrier's control.
+
+Private dashcams, telematics clips, accident-detection reports, company chat messages, cell-phone content and roadway surveillance can have entirely different storage practices. Even when a legal preservation duty may arise, the question of what existed, who held it and what reasonable steps were taken is fact-specific.
+
+For that reason, identify the carrier, truck, trailer, dispatch provider and any separate camera service early. Preserve your own photographs and incident documents. When another party holds records, a qualified attorney can evaluate appropriate preservation requests, discovery mechanisms and legal duties.
+
+## A collision-specific truck evidence inventory
+
+For the road scene, preserve the full truck and trailer plate information, USDOT or carrier identifying numbers if visible, trailer/container number, location, approximate time, approach direction, roadway geometry, weather, skid or debris evidence and witness contacts. Photograph the vehicles before repair when safe and lawful; a close-up of an emblem is not a substitute for images showing the truck's full configuration.
+
+For the commercial operation, possible evidence includes duty-status records, dispatch timeline, bills of lading, relevant communications, trip sequence, vehicle inspections, maintenance and repair histories, driver qualification materials, onboard video and trailer-loading documents. Not every category exists in every case. The request should target a plausible issue, such as load shift, improper maintenance, unsafe driving or disputed employer control.
+
+For injury and damages, preserve clinical records, treatment chronology, work restrictions, receipts and supported future-care recommendations. A detailed company-file investigation does not automatically establish the cause or extent of the injured person's medical condition.
+
+## Worked example: lane merge near a commercial corridor
+
+Suppose a tractor-trailer and sedan collide during a freeway lane merge. The sedan driver believes the truck encroached; the carrier says the sedan entered a blind spot. The key question is not simply who owns the larger vehicle. It is what movements occurred and whether either driver failed to use reasonable care.
+
+Time-stamped dashcam footage, a witness account, roadway markings, tire or damage patterns and available vehicle data may clarify the actual movement. The truck's ELD could independently help identify the driver, event timing and work period, but its ordinary duties-of-service data should not be presented as a camera substitute.
+
+If investigation identifies a specific loading, maintenance or dispatch issue, additional companies may need to be considered. Ask what those entities controlled, what actions are supported by records, and which insurer represents which alleged responsibility. Keep the example as a question framework, not a declaration that all carriers are liable for their drivers or trailers.
+
+## Answers to common truck-record questions
+
+Can you demand the ELD record directly from the driver at the scene? You may ask what information exists, but access and preservation obligations are governed by applicable law and procedure. Never access another party's electronic account or equipment without authorization.
+
+Does the truck's insurance policy establish the value of an injury? No. Coverage, legal responsibility, medical causation and supported damages are separate questions. Multiple policy layers may be relevant but should be confirmed, not guessed.
+
+What original sources support this discussion? FMCSA's ELD technical FAQs, its six-month ELD retention guidance, the summary of hours-of-service rules, and the federal motor-carrier maintenance records guidance. Those source links accompany this guide for independent review.

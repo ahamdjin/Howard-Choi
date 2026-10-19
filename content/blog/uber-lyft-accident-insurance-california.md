@@ -5,10 +5,11 @@
   "excerpt": "A practical explanation of California rideshare insurance periods, why driver app status matters, and what passengers and other injured people should preserve after an Uber or Lyft crash.",
   "category": "Rideshare Accidents",
   "publishedAt": "2026-09-12",
-  "updatedAt": "2026-10-17",
+  "updatedAt": "2026-10-19",
   "alt": "Law firm boardroom used for rideshare insurance review",
   "intro": "An Uber or Lyft collision can look like an ordinary car accident at the scene, but the insurance analysis may be different. California ties transportation-network-company coverage to what the driver was doing in the app when the crash occurred. The driver's status can determine which policy layer needs to be evaluated and which trip records should be preserved.",
-  "takeaway": "In a California rideshare crash, preserve the trip and app timeline as carefully as the accident timeline. Driver status can affect which insurance applies."
+  "takeaway": "In a California rideshare crash, preserve the trip and app timeline as carefully as the accident timeline. Driver status can affect which insurance applies.",
+  "reviewStatus": "pending-attorney-review"
 }
 
 ## Start by identifying the driver's app status
@@ -71,3 +72,47 @@ Keep original text messages, support tickets and claim emails. A helpful timelin
 Ask which insurer is handling which part of the incident, whether another liability policy is implicated, what medical and wage documentation is necessary, whether any release will affect other claims and what deadlines apply. The language of an actual policy matters more than a generic description of '$1 million coverage' online.
 
 Where a governmental road condition or public vehicle is allegedly involved, ask promptly whether a shorter administrative claim deadline may apply. Keep the legal deadline separate from an insurer's documentation requests and from app support response times.
+
+## Three California rideshare insurance periods, side by side
+
+The California Public Utilities Commission organizes transportation network company activity into three periods. Period 1 means a driver is logged into the app and waiting for a match. CPUC's stated primary coverage requirement for this period is at least $50,000 for injury or death of one person, $100,000 per incident for injury or death, and $30,000 for property damage, plus an applicable $200,000 excess liability requirement. These are regulatory coverage requirements, not a promise that any claimant receives those sums.
+
+Period 2 begins when the driver accepts a request and is traveling to pick up the passenger; Period 3 begins when a passenger enters and continues until the passenger exits. CPUC describes at least $1 million in primary commercial liability coverage for Periods 2 and 3. The agency separately specifies $1 million in uninsured/underinsured motorist protection during Period 3. Do not treat those coverages as identical: liability, UM and UIM serve different purposes.
+
+When the app is off, ordinary personal-auto coverage issues may dominate. Even then, the identity of drivers, vehicle owners, applicable exclusions, employers and other insurers must be evaluated from actual facts and policies. The existence of a rideshare decal or an open phone is insufficient by itself to prove the coverage period.
+
+## A passenger's timeline: documents worth saving
+
+Imagine you are traveling from Buena Park to a nearby city when another vehicle strikes the rideshare car. Save the booking confirmation, pickup location, driver/vehicle information, time the ride began, collision time, any cancellation notice and the final receipt or trip summary. Preserve in-app support correspondence and separate insurer claim correspondence. If possible, keep original screenshots showing the time and transaction identifier.
+
+Also record the same ordinary collision facts you would preserve outside a rideshare: roadway, traffic-control sequence, witnesses, photographs, police-report identifier and medical care. App status may identify a policy for review; it does not answer whether the rideshare driver, another motorist or multiple actors were responsible.
+
+If you are injured as a pedestrian or as the driver of another vehicle, you may have no access to the passenger's receipt. Document observable identifiers and the collision record instead. An attorney can advise whether and how more precise app-status records may be obtained through legitimate processes.
+
+## What changes when the driver is waiting versus already matched?
+
+Suppose a driver was waiting for a trip request when the collision happened. The question is not whether the driver once worked for a rideshare platform; it is whether the driver was active in Period 1 at the time. That can change the regulatory coverage being examined.
+
+Now suppose the platform shows the driver accepted a trip two minutes before the crash but had not reached the passenger. The same driver, vehicle and roadway may implicate Period 2 instead. Precise timestamps, platform records and conflicting accounts can therefore affect insurance analysis even when the physical collision evidence is identical.
+
+Finally, if the passenger was inside the car, Period 3 rules include the specific UM/UIM requirement in CPUC's description. Whether such protection responds to a particular collision still depends on coverage terms and the facts. Do not assume a policy applies without confirming the actual incident details.
+
+## What to ask each insurance adjuster
+
+Ask which company and policy the person represents, which coverage period the insurer has assumed, what evidence establishes that status, whether the insurer is accepting or contesting fault, and what documents or notices it needs. Save the exact wording of coverage acknowledgments, reservation-of-rights letters and denials. One insurer investigating a claim is not proof that all potentially applicable policies have been identified.
+
+Medical and wage information should be supplied accurately and in an appropriately limited scope. A broad medical authorization or early release can have implications beyond collecting routine records. Your own insurer may have contractual reporting and cooperation duties that are not identical to the obligations you have when dealing with another party's carrier.
+
+## Fault and damages remain separate from platform insurance
+
+A passenger may not have contributed to the collision, but competing motorists may dispute the cause. A police report, nearby camera or vehicle position can matter more to that question than which app screen was open. A claim still needs supported medical treatment, injury causation, wage documentation and any reasonably certain future losses.
+
+Insurance limits do not tell you the settlement amount. The legal claim may be larger or smaller than an available policy, and there may be multiple responsible actors and reimbursement obligations. Treat 'the million-dollar rideshare policy' as a reason to examine the coverage carefully, not as an advertisement for a million-dollar settlement.
+
+## Questions and official references for a California rideshare crash
+
+Is Uber or Lyft automatically at fault for every collision involving its driver? No. Responsibility depends on the conduct, legal relationships and applicable rules. A transportation-network-company policy is a coverage question, not an automatic finding of corporate negligence.
+
+Can you rely on one screenshot showing that a ride was accepted? It is a useful piece of the timeline, but it may not establish all critical events or whether the status changed. Preserve originals and seek corroborating information where available.
+
+Where do the stated limits come from? The California Public Utilities Commission's TNC Insurance Requirements page describes Periods 1 through 3 and the required liability and UM/UIM layers. California Courts explains the underlying personal-injury and deadline concepts. Use both as starting points; the actual policy documents still control many coverage disputes.

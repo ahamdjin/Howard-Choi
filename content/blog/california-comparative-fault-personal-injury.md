@@ -5,14 +5,15 @@
   "excerpt": "Being partly at fault does not end a California injury claim. It reduces it. Here is how responsibility gets divided, and why the insurer's first assessment is not the last word.",
   "category": "Fault & Insurance",
   "publishedAt": "2026-09-14",
-  "updatedAt": "2026-10-17",
+  "updatedAt": "2026-10-19",
   "alt": "California courthouse interior",
   "intro": "A personal injury claim does not automatically disappear because the injured person may have contributed to an accident. California uses comparative fault, which allows responsibility to be divided among the people or entities involved. The practical question is therefore not only whether someone was partly at fault, but how responsibility is supported by the evidence and how the assigned percentage changes the damages that can be recovered.",
-  "takeaway": "Shared fault can reduce a recovery without necessarily eliminating the claim. The percentage matters, and the evidence used to assign that percentage can matter just as much."
+  "takeaway": "Shared fault can reduce a recovery without necessarily eliminating the claim. The percentage matters, and the evidence used to assign that percentage can matter just as much.",
+  "reviewStatus": "pending-attorney-review"
 }
 
 
-If someone has told you that you were partly to blame and therefore have no claim, that is wrong, and it is one of the more common things people are told by the other side's insurance company.
+If someone says that being partly responsible always defeats a California negligence claim, that overlooks the state's comparative-fault rule. The correct analysis asks what conduct caused the injury, what each party could reasonably have done, and how fault can be supported by evidence.
 
 ## California divides fault, it does not assign it
 
@@ -34,7 +35,7 @@ Scene photographs showing final vehicle positions and lane markings. Camera foot
 
 This is the part worth internalising. When an insurer tells you that you were thirty percent at fault, that is one company's assessment, usually made early, often from a single phone call and a photograph.
 
-It is not a ruling. It is not final. Fault assessments shift regularly when better evidence appears, and the initial figure tends to be the one most favourable to the insurer.
+It is not a ruling. It is not final. Fault assessments may change when additional evidence is obtained. The best response to a proposed percentage is to ask what facts and legal duties support it, not to assume any one proposed figure is final.
 
 ## It shapes strategy, not just arithmetic
 
@@ -72,3 +73,43 @@ Insurance limits are also separate from legal fault. Two insurers may disagree a
 Ask what facts support the current fault percentage, what evidence could reasonably change it, whether all potential responsible parties are identified, and what deadlines govern evidence and filing. Bring the original scene photographs, report number, witness contacts and statements you have already provided to insurers. Be candid about uncertainty and any conduct on your own part.
 
 A sound review will not promise that partial fault always disappears after a lawyer's involvement or that a jury must accept a preferred percentage. It should explain the range of plausible factual findings and the evidence needed to test them.
+
+## The California jury-instruction test: conduct plus causation
+
+California's 2026 Civil Jury Instructions make an important distinction in CACI No. 405. When a defendant asserts that the injured plaintiff contributed to the harm, the issue is not merely whether the plaintiff broke a rule or made an imperfect decision. The defendant must show that the plaintiff was negligent and that the plaintiff's negligence was a substantial factor in causing the harm. The jury then assigns a percentage of responsibility if the issue is proved.
+
+Consider an intersection case in which one driver failed to yield and the other driver was allegedly speeding. A speeding allegation is relevant only after examining whether speed was established, what the actual duty was, and whether the speed contributed to the collision or the resulting harm. A stray remark in a police narrative is a lead to evaluate, not a substitute for that chain of proof.
+
+This is also why an admission such as 'I might have been a little fast' is not a precise numerical fault finding. Relevant evidence can include signal timing, sight distance, vehicle movements, electronic records and a supported reconstruction. The fact finder considers conduct and causation together.
+
+## Pure comparative fault with two realistic numerical examples
+
+In a simplified example, assume $80,000 in legally supported damages and an assigned 25% share of negligence for the injured person. The arithmetic reduction is $20,000, leaving $60,000 before coverage, collection, fees, liens or other issues. At a 70% share of negligence, the same starting damages would be reduced to $24,000. California's pure comparative-fault approach does not automatically prohibit a claim simply because the injured person's percentage exceeds fifty.
+
+Those examples do not describe a settlement offer and they assume the complete damages figure has already been legally established. Fault is disputed on one track; reasonable medical expenses, work loss and non-economic effects are evaluated on another. Do not use an insurer's preliminary fault percentage as a shortcut for calculating a promised check.
+
+## Several defendants: why the calculation can get more complicated
+
+CACI No. 406 addresses responsibility involving multiple alleged contributors. A multi-vehicle collision may require analyzing different drivers, vehicle owners, employers or other potentially responsible parties. The evidence supporting each person's percentage may be different. Legal rules for allocating economic and non-economic damages among multiple defendants can be more complicated than a single one-line percentage calculation.
+
+Create a list of each actor, the specific conduct attributed to them, the evidence for the conduct, and the connection to the injury. For example, distinguish a driver's unsafe maneuver from a possible vehicle-maintenance condition or roadway problem. Do not automatically assume that a company name on a door means the company committed a negligent act. Ownership, employment, agency and control may require additional facts.
+
+Where a public entity may be implicated, investigate the special government-claim deadlines immediately. A potential roadway-design dispute is not simply a reason to wait for an insurer's fault investigation.
+
+## What to do if you disagree with a 30% fault assessment
+
+Ask for a written explanation of the asserted facts: which lane, speed, turn, yield duty, signal phase or stopping distance is being relied on? Compare that explanation with the original photographs, police diagram, witness statements and any video. Record the disagreement in factual terms. 'The image shows the left lane was blocked' is more useful than 'the adjuster is being unfair.'
+
+Preserve conflicting evidence even if it complicates your own account. A fair analysis should distinguish what a witness actually saw from what they inferred after impact. If video is available, keep the original and the date obtained. A rough hand sketch of the road can help discussion, but it should never replace a clear description of what is verified and what remains uncertain.
+
+Request qualified analysis for technically complex questions rather than drawing conclusions from vehicle damage alone. If the other insurer uses a different interpretation of the evidence, document that difference for review before agreeing to a release.
+
+## Frequently asked questions about shared fault
+
+Does a traffic ticket automatically decide the civil claim? No. The ticket or collision report may be important evidence, but a civil negligence case has its own elements and proof requirements. The court evaluates applicable evidence and law.
+
+What if a pedestrian or bicyclist is involved? Duties can apply to multiple road users, and comparative responsibility depends on the actual statutory duties and conduct. A vehicle driver is not automatically free from responsibility because someone else may have acted carelessly, and the opposite generalization is also unsafe.
+
+Can an insurer reduce the offer even if the injuries are real? It may dispute liability as well as damages. Those are separate questions. An injury record does not itself establish who caused the event, just as a disputed lane movement does not by itself disprove a diagnosed injury.
+
+Where does the rule come from? The California Judicial Council publishes CACI No. 405 on comparative fault and CACI No. 406 on allocating responsibility. The California Courts' personal-injury guide explains the basic negligence litigation process. The sources listed with this article link to these original materials.

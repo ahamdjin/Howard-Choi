@@ -74,8 +74,12 @@ const articleSupport: Record<string, ArticleSupport> = {
     relatedLabel: "Buena Park car accident lawyers",
     relatedBody: "See the evidence, insurance, damages, deadlines, and common questions that can matter in a California car-accident claim.",
     sources: [
-      { label: "California DMV · Report of Traffic Accident (SR-1)", href: "https://www.dmv.ca.gov/portal/dmv-virtual-office/accident-reporting/" },
-      { label: "California Courts · Personal injury lawsuits", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury" },
+      { label: "California DMV · SR-1 collision reporting requirements", href: "https://www.dmv.ca.gov/portal/dmv-virtual-office/accident-reporting/" },
+      { label: "California DMV · Financial responsibility and collision reporting", href: "https://www.dmv.ca.gov/portal/handbook/california-driver-handbook/financial-responsibility-insurance-requirements-and-collisions/" },
+      { label: "California Department of Insurance · Automobile coverage and limits", href: "https://www.insurance.ca.gov/01-consumers/105-type/95-guides/01-auto/auto101.cfm" },
+      { label: "California Courts · Personal injury cases", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury" },
+      { label: "California Courts · Statutes of limitations", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/statute-limitations" },
+      { label: "California Courts · Government claims and deadlines", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/government-claim" },
     ],
   },
   "california-comparative-fault-personal-injury": {
@@ -83,8 +87,9 @@ const articleSupport: Record<string, ArticleSupport> = {
     relatedLabel: "Car accident claims and disputed fault",
     relatedBody: "See how fault evidence, insurance, medical losses, and comparative-responsibility questions fit into a broader accident claim.",
     sources: [
-      { label: "Judicial Council of California · Civil jury instructions", href: "https://courts.ca.gov/partners/california-jury-instructions/civil-jury-instructions-resource-center/civil-jury-instructions" },
+      { label: "Judicial Council · 2026 CACI No. 405 (comparative fault) and No. 406 (apportionment)", href: "https://courts.ca.gov/system/files/file/judicial_council_of_california_civil_jury_instructions_2026.pdf" },
       { label: "California Courts · Personal injury lawsuits", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury" },
+      { label: "California Courts · Public-entity claim deadlines", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/government-claim" },
     ],
   },
   "california-personal-injury-deadlines": {
@@ -92,8 +97,9 @@ const articleSupport: Record<string, ArticleSupport> = {
     relatedLabel: "Personal injury practice areas",
     relatedBody: "Different accidents raise different evidence and insurance issues. Start with the guide that matches the type of claim you are dealing with.",
     sources: [
-      { label: "California Courts · Statutes of limitations", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/statute-limitations" },
-      { label: "California Courts · Personal injury lawsuits", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury" },
+      { label: "California Courts · Statutes of limitations (injury and property)", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/statute-limitations" },
+      { label: "California Courts · Government claim presentation and rejection deadlines", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/government-claim" },
+      { label: "California Courts · Personal injury filing procedures", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury" },
     ],
   },
   "how-much-is-my-personal-injury-case-worth-california": {
@@ -101,8 +107,10 @@ const articleSupport: Record<string, ArticleSupport> = {
     relatedLabel: "California case-value calculator",
     relatedBody: "Use the educational estimator to see how medical costs, wage loss, treatment, future losses, severity, and comparative fault can change a rough range.",
     sources: [
-      { label: "Judicial Council of California · Civil jury instructions", href: "https://courts.ca.gov/partners/california-jury-instructions/civil-jury-instructions-resource-center/civil-jury-instructions" },
-      { label: "California Courts · Personal injury lawsuits", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury" },
+      { label: "Judicial Council · 2026 CACI 3903A medical expenses, 3903C lost earnings, 3903D earning capacity", href: "https://courts.ca.gov/system/files/file/judicial_council_of_california_civil_jury_instructions_2026.pdf" },
+      { label: "California Department of Insurance · Automobile insurance and coverage limits", href: "https://www.insurance.ca.gov/01-consumers/105-type/95-guides/01-auto/auto101.cfm" },
+      { label: "California Department of Insurance · 2025 standard auto minimums", href: "https://www.insurance.ca.gov/0400-news/0102-alerts/2025/New-Year-Means-New-Changes-for-Insurance.cfm" },
+      { label: "California Courts · Personal injury evidence and process", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury" },
     ],
   },
   "truck-accident-evidence-eld-records-california": {
@@ -110,8 +118,11 @@ const articleSupport: Record<string, ArticleSupport> = {
     relatedLabel: "Buena Park truck accident lawyers",
     relatedBody: "See how commercial-driver records, carrier responsibility, insurance, serious injuries, and evidence preservation fit together in a truck claim.",
     sources: [
-      { label: "FMCSA · Electronic logging device fact sheet", href: "https://www.fmcsa.dot.gov/hours-service/elds/eld-fact-sheet-english-version" },
-      { label: "California Courts · Personal injury lawsuits", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury" },
+      { label: "FMCSA · What an ELD records and when", href: "https://www.fmcsa.dot.gov/hours-service/elds/eld-functions-faqs" },
+      { label: "FMCSA · ELD records: six-month retention guidance", href: "https://www.fmcsa.dot.gov/hours-service/elds/how-long-must-motor-carrier-retain-electronic-logging-device-eld-record-duty" },
+      { label: "FMCSA · Hours-of-service regulatory overview", href: "https://www.fmcsa.dot.gov/regulations/hours-service/summary-hours-service-regulations" },
+      { label: "FMCSA · Inspection and maintenance record retention", href: "https://csa.fmcsa.dot.gov/SafetyPlanner/MyFiles/SubSections.aspx?ch=22&eta=118133&sec=65&sub=147" },
+      { label: "California Courts · Personal injury evidence and damages", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury" },
     ],
   },
   "uber-lyft-accident-insurance-california": {
@@ -119,8 +130,11 @@ const articleSupport: Record<string, ArticleSupport> = {
     relatedLabel: "Buena Park Uber & Lyft accident lawyers",
     relatedBody: "See why app status, trip records, overlapping insurance, and ordinary collision evidence all matter in a rideshare injury claim.",
     sources: [
-      { label: "California Public Utilities Commission · TNC insurance requirements", href: "https://www.cpuc.ca.gov/regulatory-services/licensing/transportation-licensing-and-analysis-branch/transportation-network-companies/tnc-insurance-requirements" },
+      { label: "CPUC · Rideshare insurance requirements for Periods 1, 2 and 3", href: "https://www.cpuc.ca.gov/regulatory-services/licensing/transportation-licensing-and-analysis-branch/transportation-network-companies/tnc-insurance-requirements" },
+      { label: "CPUC · Regulation and oversight of transportation network companies", href: "https://www.cpuc.ca.gov/tncinfo/" },
+      { label: "California Department of Insurance · General auto and UM/UIM insurance", href: "https://www.insurance.ca.gov/01-consumers/105-type/95-guides/01-auto/auto101.cfm" },
       { label: "California Courts · Personal injury lawsuits", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury" },
+      { label: "California Courts · Government-claim deadlines", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/government-claim" },
     ],
   },
 };
