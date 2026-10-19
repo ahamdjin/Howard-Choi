@@ -6,7 +6,6 @@ import DeferredIntegrations from "@/components/DeferredIntegrations";
 import NotFound from "@/pages/NotFound";
 import { attorneyJsonLd, legalServiceJsonLd, webSiteJsonLd } from "@/lib/seo";
 import appCss from "@/index.css?url";
-import innerPagesCss from "@/inner-pages.css?url";
 import brandFavicon from "@/assets/law-firm/howard-choi-favicon.png";
 import heroJusticeLibrary from "@/assets/law-firm/hero-justice-library.webp";
 import { mobileHeroSource } from "@/lib/responsive-images";
@@ -24,10 +23,7 @@ export const Route = createRootRoute({
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "stylesheet", href: innerPagesCss },
       { rel: "icon", type: "image/png", href: brandFavicon },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
     ],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(attorneyJsonLd) },
@@ -120,10 +116,19 @@ function RootDocument({ children }: { children: ReactNode }) {
           }}
         />
         <script defer src="/_vercel/speed-insights/script.js" />
-        {/* Request each variable family once across its needed weights. Korean
-            glyph families remain exclusive to Korean pages. Keep display=swap
-            and preconnect to preserve typefaces without blocking on new assets. */}
-        <link rel="stylesheet" href={`https://fonts.googleapis.com/css2?family=Inter:wght@400..600&family=Newsreader:opsz,wght@6..72,400..600${lang === 'ko' ? '&family=Noto+Sans+KR:wght@400..600&family=Noto+Serif+KR:wght@400..600' : ''}&display=swap`} />
+        {/* Inter and Newsreader are now locally bundled into appCss, with the
+            same font-family names. Only Korean-specific glyph families still
+            need Google's subset API, and only while visiting Korean pages. */}
+        {lang === "ko" && (
+          <>
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+            <link
+              rel="stylesheet"
+              href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400..600&family=Noto+Serif+KR:wght@400..600&display=swap"
+            />
+          </>
+        )}
       </head>
       <body className={bodyClassName}>
         <noscript>
