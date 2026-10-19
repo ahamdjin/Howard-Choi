@@ -311,6 +311,19 @@ nav + .relative > .sticky.top-0.h-\[100svh\] > section {
 }
 
 
+
+/* Phones use the same hero colors and gradient, without applying an expensive
+   full-width backdrop blur to the moving image. Desktop stays unchanged. */
+@media (max-width: 767px) {
+  .home-page .hero-bottom-readability {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    -webkit-mask-image: none;
+    mask-image: none;
+    background: linear-gradient(to top, rgb(15 13 11 / 27%), rgb(15 13 11 / 6%) 62%, transparent);
+  }
+}
+
 /* Mobile-only typography refinement: keep desktop unchanged. */
 @media (max-width: 767px) {
   .site-typography {

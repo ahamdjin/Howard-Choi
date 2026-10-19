@@ -17,18 +17,32 @@ const slides = [
 ];
 
 const SLIDE_DURATION_SECONDS = 5;
+// A tiny inline placeholder ensures desktop carousel imagery is never chosen
+// by a mobile browser's <picture> preload scanner (and vice versa).
+const TRANSPARENT_IMAGE = "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=";
 
 const Hero = ({ locale = "en" }: { locale?: SiteLocale }) => {
   const shouldReduceMotion = useReducedMotion();
   const { scrollY } = useScroll();
   const [viewportHeight, setViewportHeight] = useState(900);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const es = locale === "es";
   const ko = locale === "ko";
   const prefix = ko ? "/ko" : es ? "/es" : "";
 
   const nextSlide = useCallback(() => {
+    // The animated carousel is a desktop-only enhancement.
+    if (window.matchMedia("(max-width: 767px)").matches) return;
     setCurrentSlide((previous) => (previous + 1) % slides.length);
+  }, []);
+
+  useEffect(() => {
+    const query = window.matchMedia("(max-width: 767px)");
+    const update = () => setIsMobile(query.matches);
+    update();
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
   }, []);
 
   useEffect(() => {
@@ -39,10 +53,12 @@ const Hero = ({ locale = "en" }: { locale?: SiteLocale }) => {
   }, []);
 
   useEffect(() => {
+    // On phones, never preload slide 2, 3 or 4. The mobile hero stays static.
+    if (window.matchMedia("(max-width: 767px)").matches) return;
     const nextImage = new Image();
     const src = slides[(currentSlide + 1) % slides.length].image;
-    nextImage.srcset = window.innerWidth <= 767 ? mobileHeroSource(src) : responsiveImageProps(src, '100vw').srcSet || '';
-    nextImage.sizes = '100vw';
+    nextImage.srcset = responsiveImageProps(src, "100vw").srcSet || "";
+    nextImage.sizes = "100vw";
     nextImage.src = src;
   }, [currentSlide]);
 
@@ -66,40 +82,58 @@ const Hero = ({ locale = "en" }: { locale?: SiteLocale }) => {
 
   return (
     <section className="relative h-[100svh] min-h-[680px] w-full overflow-hidden bg-[#17130f]">
-      <motion.div
-        initial={false}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1.35, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute inset-0"
-      >
-        <motion.div className="absolute inset-0 will-change-transform" style={shouldReduceMotion ? undefined : { scale: imageScale, y: imageY }}>
-          <AnimatePresence mode="sync" initial={false}>
-            <motion.picture
-              key={currentSlide}
-              initial={currentSlide === 0 ? false : { opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.8, ease: "easeInOut" }}
-              className="absolute inset-0"
-            >
-              <source media="(max-width: 767px)" srcSet={mobileHeroSource(slides[currentSlide].image)} sizes="100vw" />
-              <img {...responsiveImageProps(slides[currentSlide].image, "100vw")}
-              src={slides[currentSlide].image}
-              alt={slides[currentSlide].alt[locale]}
-              loading="eager"
-              decoding="async"
-              {...{ fetchpriority: currentSlide === 0 ? "high" : "auto" }}
-              className="absolute inset-0 h-full w-full object-cover"
-              />
-            </motion.picture>
-          </AnimatePresence>
+      {/* The first photograph remains identical, but only this single image is
+          eligible for download at mobile widths. Desktop keeps the carousel. */}
+      <picture className="absolute inset-0 md:hidden">
+        <source media="(min-width: 768px)" srcSet={TRANSPARENT_IMAGE} />
+        <source media="(max-width: 767px)" srcSet={mobileHeroSource(slides[0].image)} sizes="100vw" />
+        <img
+          src={TRANSPARENT_IMAGE}
+          alt={slides[0].alt[locale]}
+          width={1448}
+          height={1086}
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      </picture>
+      {!isMobile && (
+        <motion.div
+          initial={false}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.35, ease: [0.22, 1, 0.36, 1] }}
+          className="absolute inset-0 hidden md:block"
+        >
+          <motion.div className="absolute inset-0 will-change-transform" style={shouldReduceMotion ? undefined : { scale: imageScale, y: imageY }}>
+            <AnimatePresence mode="sync" initial={false}>
+              <motion.picture
+                key={currentSlide}
+                initial={currentSlide === 0 ? false : { opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.8, ease: "easeInOut" }}
+                className="absolute inset-0"
+              >
+                <source media="(max-width: 767px)" srcSet={TRANSPARENT_IMAGE} />
+                <img {...responsiveImageProps(slides[currentSlide].image, "100vw")}
+                src={slides[currentSlide].image}
+                alt={slides[currentSlide].alt[locale]}
+                loading="eager"
+                decoding="async"
+                {...{ fetchpriority: currentSlide === 0 ? "high" : "auto" }}
+                className="absolute inset-0 h-full w-full object-cover"
+                />
+              </motion.picture>
+            </AnimatePresence>
+          </motion.div>
         </motion.div>
-      </motion.div>
-
-      <motion.div className="absolute inset-0 bg-[#17130f]" style={shouldReduceMotion ? { opacity: 0.42 } : { opacity: shadeOpacity }} />
+  
+      )}
+      <motion.div className="absolute inset-0 bg-[#17130f]" style={shouldReduceMotion || isMobile ? { opacity: 0.42 } : { opacity: shadeOpacity }} />
       <div className="hero-bottom-readability" />
 
-      <motion.div className="absolute inset-0 z-10 flex items-end" style={shouldReduceMotion ? undefined : { opacity: contentOpacity, y: contentY }}>
+      <motion.div className="absolute inset-0 z-10 flex items-end" style={shouldReduceMotion || isMobile ? undefined : { opacity: contentOpacity, y: contentY }}>
         <div className="site-shell pb-24 md:pb-28">
           <div className="max-w-[700px] text-[#f3eee5]">
             <motion.p initial={false} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.18, duration: 0.7 }} className="mb-4 text-[13px] font-medium tracking-[-0.01em] text-[#f3eee5]/88 md:text-sm">
@@ -144,7 +178,7 @@ const Hero = ({ locale = "en" }: { locale?: SiteLocale }) => {
         </div>
       </motion.div>
 
-      <motion.div className="absolute inset-x-0 bottom-6 z-20" style={shouldReduceMotion ? undefined : { opacity: contentOpacity }}>
+      <motion.div className="absolute inset-x-0 bottom-6 z-20 hidden md:block" style={shouldReduceMotion ? undefined : { opacity: contentOpacity }}>
         <div className="site-shell flex gap-2">
           {slides.map((_, index) => (
             <button
