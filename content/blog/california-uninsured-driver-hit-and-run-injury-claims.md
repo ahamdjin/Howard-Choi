@@ -1,11 +1,11 @@
 {
   "title": "Hit-and-Run or Uninsured Driver in California: Insurance & Injury Claims",
   "slug": "california-uninsured-driver-hit-and-run-injury-claims",
-  "published": false,
-  "reviewStatus": "pending-attorney-review",
+  "published": true,
+  "reviewStatus": "approved",
   "excerpt": "Understand uninsured and underinsured motorist coverage in California, hit-and-run evidence, police reports, medical bills, claim notices and possible next steps.",
   "category": "Car Accident Insurance",
-  "publishedAt": "2026-10-17",
+  "publishedAt": "2026-10-23",
   "alt": "Law office desk representing California insurance and collision documents",
   "intro": "When a driver leaves a collision or turns out to have no usable liability insurance, an injured person may face two separate problems: proving who caused the crash and finding an insurance policy that can respond. California uninsured and underinsured motorist rules are helpful to understand, but coverage is not automatic. The policy wording, insured person's status, nature of the collision, reporting, and timely notice all matter. This guide walks through the evidence and insurance questions in a practical order.",
   "takeaway": "Do not assume a hit-and-run makes recovery impossible or that an uninsured driver guarantees payment from your own insurer. Preserve the crash evidence, report the incident, check the actual coverage and deadlines, and document your injuries separately."
