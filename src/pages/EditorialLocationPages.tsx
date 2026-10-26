@@ -297,11 +297,6 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
   const statLabel = isKo(locale) ? `${location.ots.year} 교통안전 통계` : isEs(locale) ? `Datos de colisiones de California OTS · ${location.ots.year}` : `${location.ots.year} California OTS collision data`;
   const resource = locationResources[location.slug];
 
-  const vulnerable = [
-    { label: isKo(locale) ? "보행자" : isEs(locale) ? "peatones" : "pedestrians", n: location.ots.pedestrians },
-    { label: isKo(locale) ? "자전거" : isEs(locale) ? "personas en bicicleta" : "people on bicycles", n: location.ots.bicyclists },
-    { label: isKo(locale) ? "오토바이" : isEs(locale) ? "motociclistas" : "motorcycle riders", n: location.ots.motorcycles },
-  ].sort((a, b) => b.n - a.n);
   const isBuenaPark = location.slug === "buena-park";
   const heroTitle = isKo(locale)
     ? (isBuenaPark ? "부에나파크 사고·상해 가이드" : `${name} 개인상해 변호사`)
