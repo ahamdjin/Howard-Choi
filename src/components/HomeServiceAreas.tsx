@@ -83,21 +83,6 @@ const HomeServiceAreas = ({ locale = "en" }: { locale?: SiteLocale }) => {
             );
           })}
         </ScrollableCards>
-        <details className="mt-6 max-w-[940px] border-t border-foreground/10 pt-3 text-[11px] leading-6 text-foreground/65">
-          <summary className="cursor-pointer font-medium text-foreground/70">City photograph credits and licenses</summary>
-          <ul className="mt-3 grid gap-x-6 sm:grid-cols-2">
-            {serviceLocations.map((location) => {
-              const photo = locationMedia[location.slug];
-              return (
-                <li key={location.slug}>
-                  <a href={photo.source} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-foreground">
-                    {location.name}: {photo.credit} ({photo.license})
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-        </details>
       </div>
     </section>
   );
