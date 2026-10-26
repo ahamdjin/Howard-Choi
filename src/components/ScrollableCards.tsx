@@ -1,5 +1,36 @@
-import { Children, cloneElement, isValidElement, useEffect, useRef, useState, type CSSProperties, type ReactElement, type ReactNode, type TouchEvent } from "react";
+import { Children, cloneElement, createContext, isValidElement, useContext, useEffect, useRef, useState, type CSSProperties, type ReactElement, type ReactNode, type TouchEvent } from "react";
 import { ArrowLeft, ArrowRight, Pause, Play } from "lucide-react";
+
+type DeckContextState = { active: number; total: number; visible: boolean; mobile: boolean };
+const DeckContext = createContext<DeckContextState>({ active: 0, total: 0, visible: false, mobile: false });
+
+/** A real image node, with its URL withheld until the card is close to view.
+ * The image remains loaded afterward to make looping instant and cache-friendly.
+ * All card links, names and descriptions remain SSR content. */
+export function DeckImage({ index, src, srcSet, sizes, alt, className, referrerPolicy }: {
+  index: number; src: string; srcSet?: string; sizes?: string;
+  alt: string; className: string; referrerPolicy?: "no-referrer";
+}) {
+  const { active, total, visible, mobile } = useContext(DeckContext);
+  const [requested, setRequested] = useState(false);
+  const offset = total ? (index - active + total) % total : 0;
+  const near = mobile ? (offset <= 1 || offset === total - 1) : (offset <= 3 || offset === total - 1);
+  useEffect(() => {
+    if (visible && near) setRequested(true);
+  }, [visible, near]);
+  return (
+    <img
+      src={requested ? src : undefined}
+      srcSet={requested ? srcSet : undefined}
+      sizes={requested ? sizes : undefined}
+      alt={alt}
+      loading="lazy"
+      decoding="async"
+      referrerPolicy={referrerPolicy}
+      className={className}
+    />
+  );
+}
 
 type SlideProps = {
   className?: string;
@@ -75,7 +106,7 @@ export default function ScrollableCards({
     if (!visible || hovered || focused || manualPause || reducedMotion || total < 2) return;
     const timer = window.setInterval(() => {
       if (!document.hidden) setActive((current) => (current + 1) % total);
-    }, 5600);
+    }, 1500);
     return () => window.clearInterval(timer);
   }, [visible, hovered, focused, manualPause, reducedMotion, total]);
 
@@ -105,6 +136,7 @@ export default function ScrollableCards({
   const count = String(total).padStart(2, "0");
 
   return (
+    <DeckContext.Provider value={{ active, total, visible, mobile }}>
     <div
       ref={containerRef}
       role="region"
@@ -179,5 +211,6 @@ export default function ScrollableCards({
         ))}
       </div>
     </div>
+    </DeckContext.Provider>
   );
 }
