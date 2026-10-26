@@ -56,6 +56,8 @@ const Blogs = () => {
                   </div>
                   <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-[12px]">
                     <Link to="/practice-areas" className="inline-flex items-center gap-2 hover:opacity-60">Browse personal injury practice areas <ArrowRight className="h-3.5 w-3.5" /></Link>
+                    <Link to="/practice-areas/car-accidents" className="inline-flex items-center gap-2 hover:opacity-60">Buena Park car accident claims <ArrowRight className="h-3.5 w-3.5" /></Link>
+                    <Link to="/practice-areas/rideshare-accidents" className="inline-flex items-center gap-2 hover:opacity-60">Uber and Lyft accident claims <ArrowRight className="h-3.5 w-3.5" /></Link>
                     <Link to="/case-value-calculator" className="inline-flex items-center gap-2 hover:opacity-60">Use the case-value calculator <ArrowRight className="h-3.5 w-3.5" /></Link>
                   </div>
                 </div>
