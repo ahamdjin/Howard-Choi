@@ -1,34 +1,35 @@
-import { Children, cloneElement, createContext, isValidElement, useContext, useEffect, useRef, useState, type CSSProperties, type ReactElement, type ReactNode, type TouchEvent } from "react";
+import { Children, cloneElement, isValidElement, useEffect, useRef, useState, type CSSProperties, type ReactElement, type ReactNode, type TouchEvent } from "react";
 import { ArrowLeft, ArrowRight, Pause, Play } from "lucide-react";
 
-type DeckContextState = { active: number; total: number; visible: boolean; mobile: boolean };
-const DeckContext = createContext<DeckContextState>({ active: 0, total: 0, visible: false, mobile: false });
-
-/** A real image node, with its URL withheld until the card is close to view.
- * The image remains loaded afterward to make looping instant and cache-friendly.
- * All card links, names and descriptions remain SSR content. */
+/**
+ * Server-render a real image element without a network-requesting src.
+ * The carousel supplies URLs only to images on or near visible slides.
+ * Native anchors, card copy and image descriptions remain in initial HTML.
+ */
 export function DeckImage({ index, src, srcSet, sizes, alt, className, fallbackSrc, referrerPolicy }: {
   index: number; src: string; srcSet?: string; sizes?: string;
   alt: string; className: string; fallbackSrc?: string; referrerPolicy?: "no-referrer";
 }) {
-  const { active, total, visible, mobile } = useContext(DeckContext);
-  const [requested, setRequested] = useState(false);
-  const [failed, setFailed] = useState(false);
-  const offset = total ? (index - active + total) % total : 0;
-  const near = mobile ? (offset <= 1 || offset === total - 1) : (offset <= 3 || offset === total - 1);
-  useEffect(() => {
-    if (visible && near) setRequested(true);
-  }, [visible, near]);
   return (
     <img
-      src={requested ? (failed && fallbackSrc ? fallbackSrc : src) : undefined}
-      srcSet={requested && !failed ? srcSet : undefined}
-      sizes={requested ? sizes : undefined}
+      data-deck-src={src}
+      data-deck-srcset={srcSet}
+      data-deck-sizes={sizes}
+      data-deck-fallback={fallbackSrc}
+      data-deck-index={index}
       alt={alt}
       loading="lazy"
       decoding="async"
       referrerPolicy={referrerPolicy}
-      onError={() => { if (fallbackSrc && !failed) setFailed(true); }}
+      onError={(event) => {
+        const image = event.currentTarget;
+        const fallback = image.dataset.deckFallback;
+        if (fallback && !image.dataset.deckFailed) {
+          image.dataset.deckFailed = "true";
+          image.removeAttribute("srcset");
+          image.src = fallback;
+        }
+      }}
       className={className}
     />
   );
@@ -113,6 +114,23 @@ export default function ScrollableCards({
     return () => window.clearInterval(timer);
   }, [visible, hovered, focused, manualPause, reducedMotion, total]);
 
+  // Attach actual URL attributes progressively only to nearby cards after
+  // their carousel is in view. Hidden cards never generate initial requests.
+  useEffect(() => {
+    if (!visible || !total) return;
+    const root = containerRef.current;
+    if (!root) return;
+    for (const image of root.querySelectorAll<HTMLImageElement>("img[data-deck-src]")) {
+      const index = Number(image.dataset.deckIndex);
+      const forward = (index - active + total) % total;
+      const nearby = mobile ? (forward <= 1 || forward === total - 1) : (forward <= 3 || forward === total - 1);
+      if (!nearby || image.hasAttribute("src")) continue;
+      if (image.dataset.deckSrcset) image.setAttribute("srcset", image.dataset.deckSrcset);
+      if (image.dataset.deckSizes) image.setAttribute("sizes", image.dataset.deckSizes);
+      image.src = image.dataset.deckSrc || "";
+    }
+  }, [active, visible, mobile, total]);
+
   const move = (direction: number) => {
     if (!total) return;
     setActive((current) => (current + direction + total) % total);
@@ -139,7 +157,6 @@ export default function ScrollableCards({
   const count = String(total).padStart(2, "0");
 
   return (
-    <DeckContext.Provider value={{ active, total, visible, mobile }}>
     <div
       ref={containerRef}
       role="region"
@@ -214,6 +231,5 @@ export default function ScrollableCards({
         ))}
       </div>
     </div>
-    </DeckContext.Provider>
   );
 }
