@@ -1,6 +1,40 @@
 import { Children, cloneElement, isValidElement, useEffect, useRef, useState, type CSSProperties, type ReactElement, type ReactNode, type TouchEvent } from "react";
 import { ArrowLeft, ArrowRight, Pause, Play } from "lucide-react";
 
+/**
+ * Server-render a real image element without a network-requesting src.
+ * The carousel supplies URLs only to images on or near visible slides.
+ * Native anchors, card copy and image descriptions remain in initial HTML.
+ */
+export function DeckImage({ index, src, srcSet, sizes, alt, className, fallbackSrc, referrerPolicy }: {
+  index: number; src: string; srcSet?: string; sizes?: string;
+  alt: string; className: string; fallbackSrc?: string; referrerPolicy?: "no-referrer";
+}) {
+  return (
+    <img
+      data-deck-src={src}
+      data-deck-srcset={srcSet}
+      data-deck-sizes={sizes}
+      data-deck-fallback={fallbackSrc}
+      data-deck-index={index}
+      alt={alt}
+      loading="lazy"
+      decoding="async"
+      referrerPolicy={referrerPolicy}
+      onError={(event) => {
+        const image = event.currentTarget;
+        const fallback = image.dataset.deckFallback;
+        if (fallback && !image.dataset.deckFailed) {
+          image.dataset.deckFailed = "true";
+          image.removeAttribute("srcset");
+          image.src = fallback;
+        }
+      }}
+      className={className}
+    />
+  );
+}
+
 type SlideProps = {
   className?: string;
   style?: CSSProperties;
@@ -59,7 +93,8 @@ export default function ScrollableCards({
 
   useEffect(() => {
     const node = containerRef.current;
-    if (!node || !("IntersectionObserver" in window)) return;
+    if (!node) return;
+    if (!("IntersectionObserver" in window)) { setVisible(true); return; }
     const observer = new IntersectionObserver(
       ([entry]) => setVisible(entry.isIntersecting && entry.intersectionRatio >= 0.3),
       { threshold: [0, 0.3, 0.7] }
@@ -75,9 +110,26 @@ export default function ScrollableCards({
     if (!visible || hovered || focused || manualPause || reducedMotion || total < 2) return;
     const timer = window.setInterval(() => {
       if (!document.hidden) setActive((current) => (current + 1) % total);
-    }, 5600);
+    }, 1500);
     return () => window.clearInterval(timer);
   }, [visible, hovered, focused, manualPause, reducedMotion, total]);
+
+  // Attach actual URL attributes progressively only to nearby cards after
+  // their carousel is in view. Hidden cards never generate initial requests.
+  useEffect(() => {
+    if (!visible || !total) return;
+    const root = containerRef.current;
+    if (!root) return;
+    for (const image of root.querySelectorAll<HTMLImageElement>("img[data-deck-src]")) {
+      const index = Number(image.dataset.deckIndex);
+      const forward = (index - active + total) % total;
+      const nearby = mobile ? (forward <= 1 || forward === total - 1) : (forward <= 3 || forward === total - 1);
+      if (!nearby || image.hasAttribute("src")) continue;
+      if (image.dataset.deckSrcset) image.setAttribute("srcset", image.dataset.deckSrcset);
+      if (image.dataset.deckSizes) image.setAttribute("sizes", image.dataset.deckSizes);
+      image.src = image.dataset.deckSrc || "";
+    }
+  }, [active, visible, mobile, total]);
 
   const move = (direction: number) => {
     if (!total) return;

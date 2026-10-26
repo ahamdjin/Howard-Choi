@@ -70,12 +70,12 @@ const Locations = ({ locale = "en" }: { locale?: SiteLocale }) => {
               >
                 {media && (
                   <img
-                    {...responsiveImageProps(media.src, "(max-width: 640px) 86vw, (max-width: 1024px) 47vw, 24vw")}
-                    src={media.src}
+                    data-deck-index={index}
+                    data-deck-src={media.src}
+                    data-deck-srcset={responsiveImageProps(media.src, "(max-width: 640px) 86vw, (max-width: 1024px) 47vw, 24vw").srcSet}
+                    data-deck-sizes="(max-width: 640px) 86vw, (max-width: 1024px) 47vw, 24vw"
                     alt={media.alt}
-                    loading="lazy"
-                    decoding="async"
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.035]"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.035]"
                   />
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#15110d]/95 via-[#15110d]/25 to-[#15110d]/10" />
