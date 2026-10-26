@@ -1114,3 +1114,143 @@ nav + .relative > .sticky.top-0.h-\[100svh\] > section {
     line-height: 1.46 !important;
   }
 }
+
+
+/* Infinite practice/location card decks. Three primary cards, fourth peeking
+   ahead, last card receding to the back; no scroll trap or heavy 3D library. */
+.showcase-deck { width: 100%; }
+.showcase-deck__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+.showcase-deck__control {
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(30 28 26 / 25%);
+  border-radius: 999px;
+  background: transparent;
+  color: #1e1c1a;
+  transition: background 180ms ease, transform 180ms ease;
+}
+.showcase-deck__control:hover { background: rgb(30 28 26 / 6%); transform: translateY(-1px); }
+.showcase-deck__control:focus-visible {
+  outline: 2px solid #7b5b3e;
+  outline-offset: 3px;
+}
+.showcase-deck__stage {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  width: 100%;
+  height: clamp(390px, 39vw, 510px);
+  perspective: 1250px;
+  transform-style: preserve-3d;
+  touch-action: pan-y;
+  user-select: none;
+}
+.showcase-deck__card {
+  position: absolute !important;
+  inset: 4% auto 4% 0;
+  display: flex;
+  width: 31% !important;
+  min-height: 0 !important;
+  height: 92%;
+  backface-visibility: hidden;
+  transform-origin: center center;
+  transition:
+    transform 680ms cubic-bezier(0.2, 0.7, 0.18, 1),
+    opacity 560ms ease,
+    filter 560ms ease,
+    visibility 0ms linear 680ms;
+  will-change: transform, opacity;
+  filter: saturate(0.9);
+}
+.showcase-deck__card[data-slot="0"] {
+  z-index: 4; opacity: 1; visibility: visible;
+  transform: translate3d(0, 0, 0) rotateY(5deg) scale(.94);
+}
+.showcase-deck__card[data-slot="1"] {
+  z-index: 6; opacity: 1; visibility: visible;
+  transform: translate3d(103%, -2px, 35px) rotateY(0) scale(1);
+  filter: saturate(1.04);
+}
+.showcase-deck__card[data-slot="2"] {
+  z-index: 5; opacity: 1; visibility: visible;
+  transform: translate3d(206%, 0, 0) rotateY(-5deg) scale(.94);
+}
+.showcase-deck__card[data-slot="3"] {
+  z-index: 3; opacity: .88; visibility: visible;
+  transform: translate3d(283%, 18px, -95px) rotateY(-22deg) scale(.82);
+  filter: saturate(.75);
+  pointer-events: none;
+}
+.showcase-deck__card[data-slot="4"] {
+  z-index: 1; opacity: .25; visibility: visible;
+  transform: translate3d(285%, 45px, -170px) rotateY(-29deg) scale(.67);
+  filter: saturate(.58);
+  pointer-events: none;
+}
+.showcase-deck__card[data-slot="-1"] {
+  z-index: 2; opacity: .34; visibility: visible;
+  transform: translate3d(-44%, 37px, -155px) rotateY(24deg) scale(.73);
+  filter: saturate(.55);
+  pointer-events: none;
+}
+.showcase-deck__card[data-slot="-2"] {
+  z-index: 0; opacity: 0; visibility: hidden;
+  transform: translate3d(165%, 50px, -240px) rotateY(-14deg) scale(.6);
+  pointer-events: none;
+}
+.showcase-deck__progress { display: flex; justify-content: center; gap: 6px; margin-top: 14px; }
+.showcase-deck__progress-dot {
+  width: 6px; height: 6px; border-radius: 999px; background: rgb(30 28 26 / 19%);
+  transition: width 380ms ease, background 380ms ease;
+}
+.showcase-deck__progress-dot--active { width: 24px; background: #7b5b3e; }
+@media (max-width: 767px) {
+  .showcase-deck__stage { height: clamp(380px, 107vw, 490px); perspective: 950px; }
+  .showcase-deck__card {
+    inset: 3% auto 3% 1%;
+    width: 82% !important;
+    height: 94%;
+  }
+  .showcase-deck__card[data-slot="0"] {
+    z-index: 6; opacity: 1; visibility: visible;
+    transform: translate3d(0, 0, 0) rotateY(0) scale(1);
+    filter: none;
+  }
+  .showcase-deck__card[data-slot="1"] {
+    z-index: 4; opacity: .9; visibility: visible;
+    transform: translate3d(89%, 11px, -90px) rotateY(-22deg) scale(.88);
+    filter: saturate(.82);
+    pointer-events: none;
+  }
+  .showcase-deck__card[data-slot="2"] {
+    z-index: 3; opacity: .38; visibility: visible;
+    transform: translate3d(99%, 30px, -145px) rotateY(-24deg) scale(.76);
+    pointer-events: none;
+  }
+  .showcase-deck__card[data-slot="3"],
+  .showcase-deck__card[data-slot="4"] {
+    z-index: 2; opacity: .08; visibility: visible;
+    transform: translate3d(94%, 42px, -190px) rotateY(-25deg) scale(.62);
+    pointer-events: none;
+  }
+  .showcase-deck__card[data-slot="-1"] {
+    z-index: 1; opacity: .24; visibility: visible;
+    transform: translate3d(-67%, 30px, -130px) rotateY(22deg) scale(.73);
+    pointer-events: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .showcase-deck__card, .showcase-deck__control, .showcase-deck__progress-dot {
+    transition: none !important;
+    will-change: auto;
+  }
+}
