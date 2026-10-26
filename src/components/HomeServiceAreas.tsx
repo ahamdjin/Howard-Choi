@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { serviceLocations, type SiteLocale } from "@/data/injurySite";
-import ScrollableCards, { DeckImage } from "@/components/ScrollableCards";
+import ScrollableCards from "@/components/ScrollableCards";
 import { locationMedia } from "@/data/locationMedia";
 import carFallback from "@/assets/law-firm/responsive/car-collision-480.webp";
 import crossingFallback from "@/assets/law-firm/responsive/pedestrian-crossing-480.webp";
@@ -50,10 +50,11 @@ const HomeServiceAreas = ({ locale = "en" }: { locale?: SiteLocale }) => {
                 href={`${prefix}/locations/${location.slug}`}
                 className="group relative flex min-h-[345px] w-[86%] shrink-0 snap-start flex-col justify-end overflow-hidden rounded-[4px] bg-[#181511] text-[#f3eee5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:w-[47%] lg:w-[31%] xl:w-[24%]"
               >
-                <DeckImage
-                  index={index}
-                  src={photo.src}
-                  fallbackSrc={fallbackPhotos[index % fallbackPhotos.length]}
+                <img
+                  data-deck-index={index}
+                  data-deck-src={photo.src}
+                  data-deck-fallback={fallbackPhotos[index % fallbackPhotos.length]}
+                  onError={(event) => { const image = event.currentTarget; const fallback = image.dataset.deckFallback; if (fallback && !image.dataset.deckFailed) { image.dataset.deckFailed = "true"; image.removeAttribute("srcset"); image.src = fallback; } }}
                   alt={photo.alt}
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.035]"
                 />
