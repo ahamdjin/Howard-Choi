@@ -25,7 +25,7 @@ const Blogs = () => {
       <Navigation />
       <div className="relative">
         <div className="relative min-h-[560px] md:sticky md:top-0 md:h-[70svh] md:min-h-[620px] overflow-hidden bg-[#17130f] text-[#f3eee5]">
-          <motion.img {...responsiveImageProps(heroJusticeLibrary)} src={heroJusticeLibrary} alt="Law library and Lady Justice" style={{ y: imageY, scale: heroScale }} fetchPriority="high" decoding="async" className="absolute inset-0 h-[112%] w-full object-cover object-center" />
+          <motion.img {...responsiveImageProps(heroJusticeLibrary)} src={heroJusticeLibrary} alt="Law library and Lady Justice" style={{ y: imageY, scale: heroScale }} loading="eager" fetchPriority="high" decoding="async" className="absolute inset-0 h-[112%] w-full object-cover object-center" />
           <div className="absolute inset-0 bg-[#17130f]/58" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#17130f]/90 via-[#17130f]/14 to-[#17130f]/22" />
           <div className="hero-bottom-readability" />
