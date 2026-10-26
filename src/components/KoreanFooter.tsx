@@ -39,6 +39,7 @@ const KoreanFooter = () => {
             <Link to="/ko/terms" className="hover:text-foreground">이용약관</Link>
             <Link to="/ko/disclaimer" className="hover:text-foreground">법률 고지</Link>
             <Link to="/ko/accessibility" className="hover:text-foreground">접근성 안내</Link>
+            <Link to="/photo-credits" className="hover:text-foreground">사진 출처</Link>
           </div>
           <span className="max-w-[430px] lg:text-right">변호사 광고 · 일반 정보 제공 목적 · 과거 결과가 유사한 결과를 보장하지 않습니다</span>
         </div>
