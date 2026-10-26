@@ -54,7 +54,7 @@ const SpanishFooter = () => (
           <Link to="/es/terms" className="hover:text-foreground">Términos de uso</Link>
           <Link to="/es/disclaimer" className="hover:text-foreground">Aviso legal</Link>
           <Link to="/es/accessibility" className="hover:text-foreground">Accesibilidad</Link>
-            <Link to="/photo-credits" className="hover:text-foreground">Créditos de fotos</Link>
+            <Link to="/es/photo-credits" className="hover:text-foreground">Créditos de fotos</Link>
         </div>
         <span className="max-w-[430px] lg:text-right">Publicidad de abogado · Información general solamente · Los resultados anteriores no garantizan un resultado similar</span>
       </div>
