@@ -14,6 +14,7 @@ import cityPedestrianCrossing from "@/assets/law-firm/pedestrian-crossing.jpg";
 import citySuburbanPalms from "@/assets/law-firm/suburban-palms.jpg";
 import { locationMedia } from "@/data/locationMedia";
 import { LocationDetailHighlights } from "@/components/DetailPageHighlights";
+import { LocationHubDirectory } from "@/components/HubDirectories";
 
 // Each city gets its own image so ten pages do not share one photo. Chosen to
 // echo the collision mix described in that city's localIntro.
@@ -149,12 +150,12 @@ export const LocationsPage = ({ locale }: { locale: SiteLocale }) => (
       <EditorialHero
         locale={locale}
         eyebrow={isKo(locale) ? "서비스 지역" : isEs(locale) ? "Zonas de servicio de lesiones personales" : "Personal injury service areas"}
-        title={isKo(locale) ? "Buena Park를 중심으로 인근 지역까지." : isEs(locale) ? "Dónde trabajamos y por qué importa la ciudad." : "Where we work, and why the city matters."}
+        title={isKo(locale) ? "Buena Park를 중심으로 인근 지역까지." : isEs(locale) ? "Dónde trabajamos y por qué importa la ciudad." : "Injury Lawyer Serving Buena Park & Nearby Communities"}
         description={isKo(locale)
           ? "Buena Park와 인근 Orange County·Los Angeles County 경계 지역의 사고·개인상해 사건을 지원합니다."
           : isEs(locale)
             ? "Estamos en Beach Blvd en Buena Park y atendemos casos en el norte de Orange County y las ciudades vecinas de Los Angeles County. Cada página local incluye datos de colisiones, la agencia que prepara reportes y el sistema judicial del condado."
-            : "We are on Beach Blvd in Buena Park and take cases across north Orange County and the Los Angeles County cities next to it. Each page below covers one city: its own collision numbers, the police department that writes its reports, and the courthouse a filed case would go to."}
+            : "Our office is in Buena Park, California. Explore accident and injury guides for ten nearby cities across Orange and Los Angeles counties, with official traffic-safety figures, reporting resources and practical evidence questions for each community."}
         image={heroBoardroom}
       />
       <ReadingLayout
@@ -170,25 +171,26 @@ export const LocationsPage = ({ locale }: { locale: SiteLocale }) => (
           id="areas"
           locale={locale}
           kicker={isKo(locale) ? "01 · 지역" : isEs(locale) ? "01 · Comunidades" : "01 · Communities"}
-          title={isKo(locale) ? "가까운 지역 페이지에서 시작하세요." : isEs(locale) ? "Elija la ciudad donde realmente ocurrió." : "Pick the city where it actually happened."}
+          title={isKo(locale) ? "가까운 지역 페이지에서 시작하세요." : isEs(locale) ? "Elija la ciudad donde realmente ocurrió." : "Local accident and injury guides for ten communities."}
           intro={isKo(locale)
             ? "각 지역 페이지는 해당 지역에서 사고 이후 확인해야 할 일반적인 문제와 상담 시작 방법을 정리합니다."
             : isEs(locale)
               ? "La ciudad donde vive no hace que un reclamo sea más fuerte o más débil. El lugar exacto del accidente sí puede importar porque determina quién hizo el reporte, qué cámaras estaban cerca y qué condado podría intervenir si se presenta una demanda."
-              : "The city you live in does not make a claim stronger or weaker. The spot where it happened can. It decides who wrote the report, which cameras were nearby, and which county a lawsuit would be filed in. That last one catches people out along the Orange and Los Angeles county line, where a few blocks changes the answer."}
+              : "The exact location of a collision helps identify which agency may have handled the report, where witnesses or video might be found, and which legal rules or venues may be relevant. Our single office is in Buena Park; the surrounding cities below are communities we serve, not additional branch offices."}
         >
-          <div className="editorial-link-grid">
-            {serviceLocations.map((location, index) => {
-              const esCopy = esLocationContent[location.slug];
-              return (
-                <a key={location.slug} href={`${localePrefix(locale)}/locations/${location.slug}`} className="editorial-link-card">
-                  <div className="editorial-link-card__top"><span>{String(index + 1).padStart(2, "0")}</span><ArrowRight className="h-3.5 w-3.5" /></div>
-                  <h3 style={serifStyle(locale)}>{isKo(locale) ? location.koName : location.name}</h3>
-                  <p>{isKo(locale) ? location.koDescription : isEs(locale) ? (esCopy?.description || location.description) : location.description}</p>
-                </a>
-              );
-            })}
+          <div className="mb-7 flex flex-wrap items-center justify-between gap-4 border-y border-[#1E1C1A]/15 bg-[#EAE4DA] px-5 py-5">
+            <div>
+              <strong className="text-[13px] font-semibold">{isKo(locale) ? "실제 사무실 · 부에나파크" : isEs(locale) ? "Única oficina física · Buena Park" : "Our only office · Buena Park"}</strong>
+              <p className="mt-1 text-[12px] leading-6 text-[#5D5349]">6301 Beach Blvd, Suite 216, Buena Park, CA 90621</p>
+            </div>
+            <a href={`${localePrefix(locale)}/contact`} className="inline-flex min-h-11 items-center gap-2 text-[12px] font-semibold underline underline-offset-4">
+              {isKo(locale) ? "연락처 및 상담" : isEs(locale) ? "Contacto y consulta" : "Contact the Buena Park office"} <ArrowRight aria-hidden="true" className="h-4 w-4" />
+            </a>
           </div>
+          <LocationHubDirectory locale={locale} />
+          <p className="mt-6 max-w-[760px] text-[12px] leading-6 text-[#675D54]">
+            {isKo(locale) ? "교통안전 수치는 각 카드에 표시된 California OTS 연도별 통계이며 개별 사건의 예측치가 아닙니다." : isEs(locale) ? "Las cifras proceden de los reportes de California OTS para el año indicado en cada tarjeta; no predicen el resultado de un caso." : "Collision figures are city-level California Office of Traffic Safety data for the year shown on each card—not forecasts of individual cases. Locations may have different data years."}
+          </p>
         </ReadingSectionBlock>
 
         <ReadingSectionBlock
