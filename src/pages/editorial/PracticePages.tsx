@@ -8,6 +8,7 @@ import ClientProof from "@/components/ClientProof";
 import PageReviewed from "@/components/PageReviewed";
 import { EvidenceVisuals, ClaimValueVisual, GuideAttorney } from "@/components/ClaimVisuals";
 import { practiceMedia } from "@/data/practiceMedia";
+import { PracticeDetailHighlights } from "@/components/DetailPageHighlights";
 import { esPracticeContent } from "@/data/esPracticeContent";
 import { esPracticeEnhancements } from "@/data/esPracticeEnhancements";
 import { getPracticeArea, practiceAreas, serviceLocations, type SiteLocale } from "@/data/injurySite";
@@ -347,7 +348,10 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
           title={heroTitle}
           description={description}
           image={practiceMedia[practice.slug]?.src ?? heroCourthouse}
+          imageAlt={practiceMedia[practice.slug]?.alt || ""}
+          detail
         />
+        <PracticeDetailHighlights locale={locale} subject={title} issues={issues} />
         <ClaimJourney locale={locale} subject={title} guideId="understand" contextImage={practiceMedia[practice.slug]?.src} />
         <GuideAttorney locale={locale} />
         <ReadingLayout
