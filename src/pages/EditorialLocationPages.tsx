@@ -12,6 +12,8 @@ import cityTruckHighway from "@/assets/law-firm/truck-highway.jpg";
 import cityMotorcycleRoad from "@/assets/law-firm/motorcycle-road.jpg";
 import cityPedestrianCrossing from "@/assets/law-firm/pedestrian-crossing.jpg";
 import citySuburbanPalms from "@/assets/law-firm/suburban-palms.jpg";
+import { locationMedia } from "@/data/locationMedia";
+import { LocationDetailHighlights } from "@/components/DetailPageHighlights";
 
 // Each city gets its own image so ten pages do not share one photo. Chosen to
 // echo the collision mix described in that city's localIntro.
@@ -269,7 +271,22 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
             : isBuenaPark && isEs(locale)
               ? "Una guía práctica con datos de colisiones de Buena Park, registros de accidentes, preservación de evidencia, plazos de California y los asuntos de lesiones atendidos desde la oficina de Buena Park."
               : description}
-          image={heroJustice}
+          image={locationMedia[location.slug]?.src ?? cityImages[location.slug] ?? heroJustice}
+          imageAlt={locationMedia[location.slug]?.alt || `${name}, California`}
+          imageFallback={cityImages[location.slug] ?? heroJustice}
+          photoCredit={locationMedia[location.slug]
+            ? { label: `Photo: ${locationMedia[location.slug].credit} · ${locationMedia[location.slug].license}`, href: locationMedia[location.slug].source }
+            : undefined}
+          detail
+        />
+        <LocationDetailHighlights
+          locale={locale}
+          name={name}
+          county={location.county}
+          year={location.ots.year}
+          total={location.ots.total}
+          agency={resource.agency}
+          dataHref={location.ots.source}
         />
         <ClaimJourney locale={locale} subject={name} guideId="overview" contextImage={cityImages[location.slug]} />
         <GuideAttorney locale={locale} />
