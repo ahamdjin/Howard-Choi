@@ -54,6 +54,7 @@ const Footer = () => {
             <Link to="/terms" className="hover:text-foreground">Terms of Use</Link>
             <Link to="/disclaimer" className="hover:text-foreground">Legal Disclaimer</Link>
             <Link to="/accessibility" className="hover:text-foreground">Accessibility</Link>
+            <Link to="/photo-credits" className="hover:text-foreground">Photo credits</Link>
           </div>
           <span className="max-w-[430px] lg:text-right">Attorney advertising · General information only · Prior results do not guarantee a similar outcome</span>
         </div>
