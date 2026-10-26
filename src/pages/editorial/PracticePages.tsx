@@ -8,6 +8,7 @@ import ClientProof from "@/components/ClientProof";
 import PageReviewed from "@/components/PageReviewed";
 import { EvidenceVisuals, ClaimValueVisual, GuideAttorney } from "@/components/ClaimVisuals";
 import { practiceMedia } from "@/data/practiceMedia";
+import { localizedBlogHref } from "@/data/blogLocaleAvailability";
 import { PracticeDetailHighlights } from "@/components/DetailPageHighlights";
 import { PracticeHubDirectory } from "@/components/HubDirectories";
 import { esPracticeContent } from "@/data/esPracticeContent";
@@ -530,11 +531,15 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
               <div>
                 <div className="mb-3 text-[9px] font-semibold uppercase tracking-[0.16em] text-[#1E1C1A]/35">{isKo(locale) ? "관련 가이드" : isEs(locale) ? "Guías relacionadas" : "Related guides"}</div>
                 <div className="border-t border-[#1E1C1A]/12">
-                  {enhancement.guides.map((guide) => (
-                    <a key={guide.slug} href={`${localePrefix(locale)}/blogs/${guide.slug}`} className="group flex items-center justify-between gap-4 border-b border-[#1E1C1A]/12 py-4 text-[12px]">
-                      <span>{isKo(locale) ? guide.koTitle : isEs(locale) ? (esEnhancement?.guideTitles[guide.slug] || guide.title) : guide.title}</span><ArrowRight className="h-3.5 w-3.5 shrink-0 transition-transform group-hover:translate-x-1" />
-                    </a>
-                  ))}
+                  {enhancement.guides.map((guide) => {
+                    const guideHref = localizedBlogHref(locale, guide.slug);
+                    const englishOnly = locale !== "en" && guideHref.startsWith("/blogs/");
+                    return (
+                      <a key={guide.slug} href={guideHref} className="group flex items-center justify-between gap-4 border-b border-[#1E1C1A]/12 py-4 text-[12px]">
+                        <span>{englishOnly ? guide.title : isKo(locale) ? guide.koTitle : isEs(locale) ? (esEnhancement?.guideTitles[guide.slug] || guide.title) : guide.title}{englishOnly && <span lang="en" className="ml-2 text-[#1E1C1A]/55">(English)</span>}</span><ArrowRight className="h-3.5 w-3.5 shrink-0 transition-transform group-hover:translate-x-1" />
+                      </a>
+                    );
+                  })}
                 </div>
               </div>
               <div>
