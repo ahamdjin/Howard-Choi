@@ -44,7 +44,7 @@ export const EditorialHero = ({ locale, eyebrow, title, description, image, deta
 
   if (detail) {
     return (
-      <section className="relative overflow-hidden border-b border-[#1E1C1A]/12 bg-[#F4F0E9] pt-[74px] text-[#1E1C1A]">
+      <section className="detail-hero--split relative overflow-hidden border-b border-[#1E1C1A]/12 bg-[#F4F0E9] pt-[74px] text-[#1E1C1A]">
         <div className="grid min-h-[620px] lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)]">
           <div className="flex flex-col justify-center px-5 py-12 sm:px-10 md:py-16 lg:pl-[max(3rem,calc((100vw-1240px)/2))] lg:pr-12">
             <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#755D46]">{eyebrow}</span>
