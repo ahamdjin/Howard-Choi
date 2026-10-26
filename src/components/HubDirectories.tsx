@@ -56,11 +56,7 @@ function CityPhoto({ index, slug, name }: { index: number; slug: string; name: s
         onError={() => setFailed(true)}
         className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.035]"
       />
-      {photo && !failed && (
-        <span className="absolute bottom-2 right-2 rounded-sm bg-[#1C1916]/75 px-2 py-1 text-[10px] leading-4 text-white/90">
-          Photo: {photo.credit} · {photo.license}
-        </span>
-      )}
+
     </>
   );
 }
