@@ -274,7 +274,7 @@ const BlogDetail = () => {
                       <div className="text-[10px] uppercase tracking-[0.15em] text-foreground/38">Related legal help</div>
                       <h2 className="editorial-serif mt-5 text-[1.8rem] leading-[1.02]">{support.relatedLabel}</h2>
                       <p className="mt-4 text-[13px] leading-6 text-foreground/58">{support.relatedBody}</p>
-                      <Link to={support.relatedHref} className="mt-6 inline-flex items-center gap-2 text-[12px] font-medium">Explore this guide <ArrowRight className="h-4 w-4" /></Link>
+                      <Link to={support.relatedHref} className="mt-6 inline-flex items-center gap-2 text-[12px] font-medium">Explore {support.relatedLabel} <ArrowRight className="h-4 w-4" /></Link>
                     </div>
                     <div className="rounded-[3px] border border-foreground/10 p-7 md:p-8">
                       <div className="text-[10px] uppercase tracking-[0.15em] text-foreground/38">Primary sources</div>

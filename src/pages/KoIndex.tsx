@@ -5,7 +5,7 @@ import { AnimatePresence, m as motion, useInView, useReducedMotion } from "frame
 import { Minus, Plus } from "lucide-react";
 import KoreanNavigation from "@/components/KoreanNavigation";
 import KoreanFooter from "@/components/KoreanFooter";
-import KoreanLocations from "@/components/KoreanLocations";
+import Locations from "@/components/Locations";
 import WebsiteInquiryForm from "@/components/WebsiteInquiryForm";
 import { brand } from "@/data/injurySite";
 import ClientSuccessFeature from "@/components/ClientSuccessFeature";
@@ -141,7 +141,7 @@ const KoIndex = () => (
         <HomeImmediateTrust locale="ko" />   {/* 2 : Trust strip */}
         <TrustBadges locale="ko" />          {/* 3 : Awards & recognition */}
         <FirmSnapshot locale="ko" />         {/* 4 : Firm metrics */}
-        <KoreanLocations />                  {/* 5 : Practice areas */}
+        <Locations locale="ko" />            {/* 5 : Eight practice areas */}
       </div>
     </div>
     <div className="relative z-20 bg-background">

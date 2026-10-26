@@ -1,104 +1,97 @@
 import { responsiveImageProps } from "@/lib/responsive-images";
-import { m as motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
-import type { SiteLocale } from "@/data/injurySite";
-import collisionImage from "@/assets/law-firm/collision-damage.jpg";
-import medicalCareImage from "@/assets/law-firm/medical-care.jpg";
-import familySupportImage from "@/assets/law-firm/family-support.jpg";
+import { ArrowUpRight } from "lucide-react";
+import ScrollableCards from "@/components/ScrollableCards";
+import { practiceAreas, type SiteLocale } from "@/data/injurySite";
+import { practiceMedia } from "@/data/practiceMedia";
+import { esPracticeContent } from "@/data/esPracticeContent";
 
-const practiceCopy = {
-  en: [
-    { slug: "car-accidents", title: "Car Accidents", description: "Claims involving injury, disputed fault, hit-and-run drivers, and insurance coverage after a crash.", alt: "Damaged car with a broken windshield after a collision", points: ["Rear-end & intersection crashes", "Hit-and-run & uninsured drivers", "Medical costs & lost income"] },
-    { slug: "serious-injuries", title: "Serious Injuries", description: "Claims where treatment, future care, mobility, work, or daily life may be affected for months or years.", alt: "Hospital room prepared for medical care", points: ["Brain & head injuries", "Neck, spine & orthopedic trauma", "Future care & earning impact"] },
-    { slug: "wrongful-death", title: "Wrongful Death", description: "Careful representation for families after a fatal accident, with attention to responsibility, evidence, insurance, and the losses left behind.", alt: "Hands held together in support", points: ["Fatal vehicle collisions", "Liability & insurance investigation", "Financial & family loss"] },
-  ],
-  es: [
-    { slug: "car-accidents", title: "Accidentes de auto", description: "Reclamos por lesiones, responsabilidad disputada, atropello y fuga y cobertura de seguro después de un choque.", alt: "Auto dañado después de una colisión", points: ["Choques por alcance e intersecciones", "Atropello y fuga y conductores sin seguro", "Gastos médicos y pérdida de ingresos"] },
-    { slug: "serious-injuries", title: "Lesiones graves", description: "Reclamos donde el tratamiento, la atención futura, la movilidad, el trabajo o la vida diaria pueden verse afectados durante meses o años.", alt: "Habitación de hospital preparada para atención médica", points: ["Lesiones cerebrales y de cabeza", "Trauma de cuello, columna y ortopédico", "Atención futura e impacto en ingresos"] },
-    { slug: "wrongful-death", title: "Muerte injusta", description: "Representación cuidadosa para familias después de un accidente fatal, con atención a responsabilidad, evidencia, seguro y las pérdidas que quedan.", alt: "Manos unidas en señal de apoyo", points: ["Colisiones vehiculares fatales", "Investigación de responsabilidad y seguro", "Pérdidas económicas y familiares"] },
-  ],
-  ko: [
-    { slug: "car-accidents", title: "자동차 사고", description: "충돌 후 부상, 과실 분쟁, 뺑소니, 무보험 운전자 및 보험 적용 문제를 다룹니다.", alt: "충돌 후 손상된 자동차", points: ["후방 추돌 및 교차로 사고", "뺑소니 및 무보험 운전자", "의료비 및 소득 손실"] },
-    { slug: "serious-injuries", title: "중대한 상해", description: "치료, 향후 간병, 이동성, 업무 또는 일상생활에 장기간 영향을 주는 부상 사건을 다룹니다.", alt: "의료 치료를 위한 병실", points: ["뇌 및 두부 손상", "목·척추·정형외과 손상", "향후 치료 및 소득 영향"] },
-    { slug: "wrongful-death", title: "부당 사망", description: "사망 사고 후 가족을 위해 책임, 증거, 보험 및 남겨진 손실을 신중하게 검토합니다.", alt: "서로 잡은 손", points: ["사망 교통사고", "책임 및 보험 조사", "경제적·가족 손실"] },
-  ],
-} as const;
-
-const images = [collisionImage, medicalCareImage, familySupportImage];
-
-type Practice = {
-  slug: string;
-  title: string;
-  href: string;
-  description: string;
-  image: string;
-  alt: string;
-  points: readonly string[];
+// Every existing service page is represented exactly once. These short
+// summaries explain what differs between matters instead of repeating a
+// generic "personal injury lawyer" phrase across eight cards.
+const summaries: Record<string, string> = {
+  "car-accidents": "Crash reconstruction, medical documentation and the insurance policies that may apply.",
+  "truck-accidents": "Carrier records, driver responsibility, vehicle maintenance and commercial coverage.",
+  "motorcycle-accidents": "Left turns, visibility disputes, rider injuries and available insurance.",
+  "pedestrian-accidents": "Crosswalks, driver visibility, hit-and-runs and long-term injury needs.",
+  "rideshare-accidents": "Uber or Lyft trip status, driver responsibility and overlapping insurance.",
+  "slip-and-fall": "Unsafe conditions, property control, notice and evidence that may disappear.",
+  "wrongful-death": "Fatal-accident evidence, eligible family claims and financial support losses.",
+  "serious-injuries": "Brain, spinal and catastrophic injuries requiring carefully documented future care.",
 };
-type MorphCardProps = { practice: Practice; index: number;  };
-
-const MorphCard = ({ practice, index }: MorphCardProps) => (
-  <motion.div className="relative grid grid-cols-[1fr_0fr] h-full overflow-hidden rounded-[4px] bg-[#e8e4de] ">
-    <div className="relative min-w-0 overflow-hidden">
-      <img {...responsiveImageProps(practice.image)} src={practice.image} alt={practice.alt} className="absolute inset-0 h-full w-full object-cover" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#15110d]/74 via-[#17130f]/7 to-transparent" />
-      <motion.div className="absolute inset-x-0 bottom-0 z-10 p-6 text-[#f3eee5] md:p-7" style={{ opacity: 1 }}>
-        <div className="mb-2 text-[10px] tracking-[0.12em] text-[#f3eee5]/55">0{index + 1}</div>
-        <h3 className="editorial-serif text-[clamp(1.8rem,2.35vw,2.35rem)] leading-[0.96] tracking-[-0.018em]">{practice.title}</h3>
-        <p className="mt-2 max-w-[310px] text-[13px] leading-5 text-[#f3eee5]/72">{practice.description}</p>
-      </motion.div>
-    </div>
-    <motion.div className="min-w-0 overflow-hidden bg-[#e8e4de]">
-      <div className="flex h-full min-w-[290px] flex-col justify-between px-8 py-8 text-[#211c17] xl:px-10 xl:py-10">
-        <div><div className="mb-8 text-[12px] tracking-[0.1em] text-[#211c17]/45">0{index + 1}</div><h3 className="editorial-serif max-w-[300px] text-[clamp(2.7rem,4vw,4.5rem)] leading-[0.9] tracking-[-0.025em]">{practice.title}</h3><p className="mt-6 max-w-[310px] text-[15px] leading-6 text-[#211c17]/68">{practice.description}</p></div>
-        <div className="mt-8 border-t border-[#211c17]/14 pt-5">{practice.points.map((point) => <div key={point} className="flex items-center justify-between border-b border-[#211c17]/10 py-2.5 text-[13px] text-[#211c17]/68 last:border-b-0"><span>{point}</span><span className="text-[#211c17]/35">↗</span></div>)}</div>
-      </div>
-    </motion.div>
-    <a href={practice.href} aria-label={practice.title} className="absolute inset-0 z-40" />
-  </motion.div>
-);
-
-const MobileCard = ({ practice, index }: { practice: Practice; index: number }) => (
-  <div className="relative min-h-[calc(100svh-60px)] h-full overflow-hidden rounded-[3px] bg-[#181511]"><img {...responsiveImageProps(practice.image)} src={practice.image} alt={practice.alt} className="absolute inset-0 h-full w-full object-cover" /><div className="absolute inset-0 bg-gradient-to-t from-[#15110d]/95 via-[#15110d]/18 to-transparent" /><div className="absolute inset-x-0 bottom-0 p-6 text-[#f3eee5]"><div className="mb-2 text-[10px] tracking-[0.12em] text-[#f3eee5]/55">0{index + 1}</div><h3 className="editorial-serif text-[2rem] leading-none">{practice.title}</h3><p className="mt-2 max-w-[300px] text-[13px] leading-5 text-[#f3eee5]/72">{practice.description}</p></div><a href={practice.href} aria-label={practice.title} className="absolute inset-0 z-40" /></div>
-);
 
 const Locations = ({ locale = "en" }: { locale?: SiteLocale }) => {
-  const ref = useRef<HTMLElement | null>(null);
-  const shouldReduceMotion = useReducedMotion();
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
-  const firstY = useTransform(scrollYProgress, [0, 0.2], ["110%", "0%"]);
-  const secondY = useTransform(scrollYProgress, [0.15, 0.4], ["110%", "0%"]);
-  const thirdY = useTransform(scrollYProgress, [0.3, 0.6], ["110%", "0%"]);
-  const cardY = [firstY, secondY, thirdY];
-  const prefix = locale === "ko" ? "/ko" : locale === "es" ? "/es" : "";
-  const raw = practiceCopy[locale];
-  const practices: Practice[] = raw.map((item, index) => ({ ...item, href: `${prefix}/practice-areas/${item.slug}`, image: images[index] }));
-  const label = locale === "ko" ? "업무 분야" : locale === "es" ? "Áreas de práctica" : "Practice Areas";
-  const heading = locale === "ko" ? <>개인상해 사건에서<br />그 다음에 필요한 도움.</> : locale === "es" ? <>Ayuda por lesiones personales<br />para lo que viene después.</> : <>Personal injury help for<br />what happened next.</>;
-  const body = locale === "ko"
-    ? "일상적인 충돌부터 삶을 바꾸는 중상까지, 청구는 책임, 보험, 치료, 경제적 손실과 이를 연결하는 증거를 반영해야 합니다."
-    : locale === "es"
-      ? "Desde colisiones comunes hasta lesiones que cambian la vida, el reclamo debe reflejar la responsabilidad, el seguro disponible, el tratamiento médico, la pérdida económica y la evidencia que conecta todo."
-      : "From everyday collisions to life-changing injuries, the claim should reflect responsibility, available insurance, medical treatment, financial loss, and the evidence that connects them.";
-  const explore = locale === "ko" ? "모든 업무 분야 보기" : locale === "es" ? "Explorar todas las áreas de práctica" : "Explore all practice areas";
+  const ko = locale === "ko";
+  const es = locale === "es";
+  const prefix = ko ? "/ko" : es ? "/es" : "";
+  const label = ko ? "업무 분야" : es ? "Áreas de práctica" : "Practice Areas";
+  const heading = ko
+    ? "사고 유형에 맞는 법률 정보를 확인하세요."
+    : es
+      ? "Encuentre orientación para su tipo de accidente."
+      : "Find guidance for your kind of accident.";
+  const body = ko
+    ? "자동차 사고, 상업용 차량 충돌, 보행자 사고, 중대한 상해 등 여덟 가지 업무 분야를 살펴보세요. 각 페이지에서는 사고별 증거와 보험, 다음 단계를 설명합니다."
+    : es
+      ? "Explore las ocho áreas de práctica. Cada página explica la evidencia, las preguntas de seguro y los pasos que pueden importar según el tipo de accidente o lesión."
+      : "A car crash, a commercial-truck collision and a fall on unsafe property call for different evidence. Explore all eight injury practice areas to find the questions, records and next steps relevant to your situation.";
 
   return (
-    <section id="practice" ref={ref} className="relative bg-background lg:h-[340svh]">
-      <div className="site-shell py-20 md:py-24 lg:hidden">
-        <div className="mb-12 grid gap-8"><div><span className="mb-5 block text-[13px] text-muted-foreground">{label}</span><h2 className="editorial-serif max-w-[690px] text-[clamp(3rem,12vw,4.5rem)] leading-[0.93] tracking-[-0.02em]">{heading}</h2></div><p className="max-w-[430px] text-[15px] leading-6 text-muted-foreground">{body} <a href={`${prefix}/practice-areas`} className="whitespace-nowrap font-medium text-foreground underline underline-offset-4">{explore} ↗</a></p></div>
-        <div className="mobile-practice-panels grid gap-3">{practices.map((practice, index) => <article key={practice.title} className="min-h-[calc(100svh-60px)]"><MobileCard practice={practice} index={index} /></article>)}</div>
-      </div>
-
-      <div className="sticky top-0 hidden h-[100svh] overflow-hidden lg:block">
-        <div className="site-shell relative h-full">
-          <motion.div className="absolute left-0 right-0 top-[11%] z-40 grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end" >
-            <div><span className="mb-5 block text-[13px] text-muted-foreground">{label}</span><h2 className="editorial-serif max-w-[690px] text-[clamp(3rem,4.7vw,5rem)] leading-[0.93] tracking-[-0.02em]">{heading}</h2></div>
-            <p className="max-w-[430px] text-[15px] leading-6 text-muted-foreground lg:pb-1">{body} <a href={`${prefix}/practice-areas`} className="whitespace-nowrap font-medium text-foreground underline underline-offset-4">{explore} ↗</a></p>
-          </motion.div>
-          {practices.map((practice, index) => {
-            return <motion.article key={practice.title} className="absolute will-change-transform" style={{ top: "43%", left: `${index * 34}%`, width: "32%", height: "45%", zIndex: index + 10, y: shouldReduceMotion ? 0 : cardY[index] }}><MorphCard practice={practice} index={index}  /></motion.article>;
-          })}
+    <section id="practice" aria-labelledby="home-practice-heading" className="bg-background py-16 text-foreground md:py-20 lg:py-24">
+      <div className="site-shell">
+        <div className="mb-10 grid gap-6 lg:mb-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-end lg:gap-16">
+          <div>
+            <span className="mb-5 block text-[13px] text-muted-foreground">{label}</span>
+            <h2 id="home-practice-heading" className="editorial-serif max-w-[770px] text-[clamp(2.45rem,4.3vw,4.65rem)] leading-[1.02] tracking-[-0.025em]">{heading}</h2>
+          </div>
+          <div>
+            <p className="max-w-[550px] text-[15px] leading-7 text-muted-foreground">{body}</p>
+            <a href={`${prefix}/practice-areas`} className="mt-5 inline-flex min-h-11 items-center gap-2 text-[12px] font-medium underline underline-offset-4">
+              {ko ? "모든 업무 분야 보기" : es ? "Ver todas las áreas de práctica" : "View all eight practice areas"}
+              <ArrowUpRight className="h-4 w-4" />
+            </a>
+          </div>
         </div>
+
+        <ScrollableCards
+          label={ko ? "업무 분야 8개 · 옆으로 스와이프" : es ? "8 áreas · deslice para explorar" : "All 8 practice areas · swipe or use arrows"}
+          previousLabel={ko ? "이전 업무 분야" : es ? "Área anterior" : "Previous practice area"}
+          nextLabel={ko ? "다음 업무 분야" : es ? "Área siguiente" : "Next practice area"}
+        >
+          {practiceAreas.map((practice, index) => {
+            const media = practiceMedia[practice.slug];
+            const esCopy = esPracticeContent[practice.slug];
+            const name = ko ? practice.koTitle : es ? (esCopy?.shortTitle || practice.title) : practice.title;
+            const description = ko ? practice.koDescription : es ? (esCopy?.description || practice.description) : summaries[practice.slug] || practice.description;
+            return (
+              <a
+                key={practice.slug}
+                href={`${prefix}/practice-areas/${practice.slug}`}
+                className="group relative flex min-h-[375px] w-[86%] shrink-0 snap-start flex-col justify-end overflow-hidden rounded-[4px] bg-[#181511] text-[#f3eee5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:w-[47%] lg:w-[31%] xl:w-[24%]"
+              >
+                {media && (
+                  <img
+                    {...responsiveImageProps(media.src, "(max-width: 640px) 86vw, (max-width: 1024px) 47vw, 24vw")}
+                    src={media.src}
+                    alt={media.alt}
+                    loading="lazy"
+                    decoding="async"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.035]"
+                  />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#15110d]/95 via-[#15110d]/25 to-[#15110d]/10" />
+                <span className="absolute right-5 top-5 flex h-9 w-9 items-center justify-center rounded-full border border-white/35 bg-[#15110d]/35"><ArrowUpRight className="h-4 w-4" /></span>
+                <div className="relative px-6 pb-7 pt-16">
+                  <span className="text-[11px] tracking-[0.13em] text-white/70">{String(index + 1).padStart(2, "0")} / {practiceAreas.length}</span>
+                  <h3 className="editorial-serif mt-3 text-[clamp(1.9rem,2.5vw,2.5rem)] leading-[1.06] tracking-[-0.02em]">{name}</h3>
+                  <p className="mt-3 max-w-[340px] text-[13px] leading-[1.6] text-white/85">{description}</p>
+                  <span className="mt-5 inline-flex items-center gap-2 border-b border-white/55 pb-1 text-[12px] font-medium">
+                    {ko ? "사고별 법률 안내" : es ? "Explorar orientación legal" : "Explore this practice area"} <ArrowUpRight className="h-3.5 w-3.5" />
+                  </span>
+                </div>
+              </a>
+            );
+          })}
+        </ScrollableCards>
       </div>
     </section>
   );

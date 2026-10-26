@@ -221,7 +221,7 @@ export const PracticeAreasPage = ({ locale }: { locale: SiteLocale }) => (
             ? "각 페이지는 일반적인 사건 구조를 설명하기 위한 것이며 실제 사건의 사실관계에 따라 접근은 달라집니다."
             : isEs(locale)
               ? "Un reclamo por lesiones no funciona igual en todos los casos. Un choque de camión puede depender de registros empresariales que se eliminan según un calendario. Una caída puede depender de demostrar cuánto tiempo existió un peligro. Un caso de Uber o Lyft puede depender de una sola captura de pantalla. Elija la página que corresponda a lo que ocurrió."
-              : "People assume an injury claim is an injury claim. It is not. A truck case turns on company records that get deleted on a schedule. A fall case turns on whether anyone can prove the hazard was there long enough to be noticed. A rideshare case can turn on one screenshot. Pick the page that matches what happened to you and it will tell you what actually matters in that kind of case."}
+              : "Different accidents call for different investigations. Truck crashes may involve carrier and maintenance records; slip-and-fall cases require evidence about property conditions and reasonable care; and Uber or Lyft claims require close attention to trip status and applicable insurance. Choose the practice area that matches your situation to see which records to preserve, what coverage to review, and what questions matter next."}
         >
           <PracticeLinks locale={locale} />
         </ReadingSectionBlock>
@@ -235,7 +235,7 @@ export const PracticeAreasPage = ({ locale }: { locale: SiteLocale }) => (
             ? "초기에는 치료와 증거 보존이 중요하고, 이후에는 보험과 손실을 정리하며 책임과 손해를 설명할 수 있는 기록을 만들어갑니다."
             : isEs(locale)
               ? "Obtenga tratamiento y preserve la evidencia que no sobrevivirá semanas de espera. Esas dos cosas vienen primero. Después sigue el trabajo más lento de determinar quién es responsable, qué pólizas aplican y cuánto ha costado realmente la lesión."
-              : "Get treatment, and get the evidence that will not survive a few weeks of waiting. Those two come first and almost everything else can be rebuilt later. After that it becomes a slower job of working out who is responsible, which policies apply, and what the injury has actually cost you. That part takes as long as your recovery does, which is usually the part nobody warns you about."}
+              : "Prioritize appropriate medical care and time-sensitive evidence first. Then organize the collision or incident record, identify potentially responsible parties and insurance coverage, and document how the injury affects work and daily life. Recovery and claim timelines vary; the goal is a reliable record, not a rushed settlement."}
         >
           <div className="grid gap-0 border-y border-[#1E1C1A]/12 md:grid-cols-3">
             {[FileText, ShieldCheck, CheckCircle2].map((Icon, index) => (
