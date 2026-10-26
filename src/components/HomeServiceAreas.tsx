@@ -2,6 +2,12 @@ import { ArrowUpRight } from "lucide-react";
 import { serviceLocations, type SiteLocale } from "@/data/injurySite";
 import ScrollableCards, { DeckImage } from "@/components/ScrollableCards";
 import { locationMedia } from "@/data/locationMedia";
+import carFallback from "@/assets/law-firm/responsive/car-collision-480.webp";
+import crossingFallback from "@/assets/law-firm/responsive/pedestrian-crossing-480.webp";
+import truckFallback from "@/assets/law-firm/responsive/truck-highway-480.webp";
+import motorcycleFallback from "@/assets/law-firm/responsive/motorcycle-road-480.webp";
+
+const fallbackPhotos = [carFallback, crossingFallback, truckFallback, motorcycleFallback];
 
 const HomeServiceAreas = ({ locale = "en" }: { locale?: SiteLocale }) => {
   const ko = locale === "ko";
@@ -47,6 +53,7 @@ const HomeServiceAreas = ({ locale = "en" }: { locale?: SiteLocale }) => {
                 <DeckImage
                   index={index}
                   src={photo.src}
+                  fallbackSrc={fallbackPhotos[index % fallbackPhotos.length]}
                   alt={photo.alt}
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.035]"
                 />
