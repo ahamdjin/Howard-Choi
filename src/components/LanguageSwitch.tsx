@@ -9,7 +9,7 @@ const LanguageSwitch = ({ className = "" }: LanguageSwitchProps) => {
   const location = useLocation();
   const basePath = location.pathname.replace(/^\/(?:ko|es)(?=\/|$)/, "") || "/";
   const englishPath = basePath;
-  const blogSlug = /^\\/blogs\\/([^/]+)$/.exec(basePath)?.[1];
+  const blogSlug = /^\/blogs\/([^/]+)$/.exec(basePath)?.[1];
   const translatedPath = (locale: "ko" | "es") =>
     blogSlug && !hasLocalizedBlog(locale, blogSlug)
       ? `/${locale}/blogs`
