@@ -7,12 +7,13 @@ const DeckContext = createContext<DeckContextState>({ active: 0, total: 0, visib
 /** A real image node, with its URL withheld until the card is close to view.
  * The image remains loaded afterward to make looping instant and cache-friendly.
  * All card links, names and descriptions remain SSR content. */
-export function DeckImage({ index, src, srcSet, sizes, alt, className, referrerPolicy }: {
+export function DeckImage({ index, src, srcSet, sizes, alt, className, fallbackSrc, referrerPolicy }: {
   index: number; src: string; srcSet?: string; sizes?: string;
-  alt: string; className: string; referrerPolicy?: "no-referrer";
+  alt: string; className: string; fallbackSrc?: string; referrerPolicy?: "no-referrer";
 }) {
   const { active, total, visible, mobile } = useContext(DeckContext);
   const [requested, setRequested] = useState(false);
+  const [failed, setFailed] = useState(false);
   const offset = total ? (index - active + total) % total : 0;
   const near = mobile ? (offset <= 1 || offset === total - 1) : (offset <= 3 || offset === total - 1);
   useEffect(() => {
@@ -20,13 +21,14 @@ export function DeckImage({ index, src, srcSet, sizes, alt, className, referrerP
   }, [visible, near]);
   return (
     <img
-      src={requested ? src : undefined}
-      srcSet={requested ? srcSet : undefined}
+      src={requested ? (failed && fallbackSrc ? fallbackSrc : src) : undefined}
+      srcSet={requested && !failed ? srcSet : undefined}
       sizes={requested ? sizes : undefined}
       alt={alt}
       loading="lazy"
       decoding="async"
       referrerPolicy={referrerPolicy}
+      onError={() => { if (fallbackSrc && !failed) setFailed(true); }}
       className={className}
     />
   );
