@@ -35,7 +35,7 @@ type EditorialHeroProps = {
   detail?: boolean;
   imageAlt?: string;
   imageFallback?: string;
-  photoCredit?: { label: string; href: string };
+  photoCredit?: { label: string };
 };
 
 export const EditorialHero = ({ locale, eyebrow, title, description, image, detail = false, imageAlt = "", imageFallback, photoCredit }: EditorialHeroProps) => {
@@ -91,9 +91,7 @@ export const EditorialHero = ({ locale, eyebrow, title, description, image, deta
             <figcaption className="absolute bottom-4 left-5 right-5 flex flex-wrap items-center justify-between gap-3 text-[11px] leading-5 text-white/90 md:left-8 md:right-8">
               <span>{isKo(locale) ? "사고와 상해에 따른 법률 안내" : isEs(locale) ? "Guía sobre accidentes y lesiones" : "Accident and injury guidance"}</span>
               {photoCredit && !imageFailed && (
-                <a href={photoCredit.href} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-white">
-                  {photoCredit.label}
-                </a>
+                <span className="text-white/75">{photoCredit.label}</span>
               )}
             </figcaption>
           </figure>

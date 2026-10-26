@@ -320,7 +320,7 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
           imageAlt={locationMedia[location.slug]?.alt || `${name}, California`}
           imageFallback={cityImages[location.slug] ?? heroJustice}
           photoCredit={locationMedia[location.slug]
-            ? { label: `Photo: ${locationMedia[location.slug].credit} · ${locationMedia[location.slug].license}`, href: locationMedia[location.slug].source }
+            ? { label: `Photo: ${locationMedia[location.slug].credit} · ${locationMedia[location.slug].license}` }
             : undefined}
           detail
         />
