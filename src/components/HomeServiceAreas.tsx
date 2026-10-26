@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { serviceLocations, type SiteLocale } from "@/data/injurySite";
-import ScrollableCards from "@/components/ScrollableCards";
+import ScrollableCards, { DeckImage } from "@/components/ScrollableCards";
 import { locationMedia } from "@/data/locationMedia";
 
 const HomeServiceAreas = ({ locale = "en" }: { locale?: SiteLocale }) => {
@@ -44,13 +44,11 @@ const HomeServiceAreas = ({ locale = "en" }: { locale?: SiteLocale }) => {
                 href={`${prefix}/locations/${location.slug}`}
                 className="group relative flex min-h-[345px] w-[86%] shrink-0 snap-start flex-col justify-end overflow-hidden rounded-[4px] bg-[#181511] text-[#f3eee5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:w-[47%] lg:w-[31%] xl:w-[24%]"
               >
-                <img
+                <DeckImage
+                  index={index}
                   src={photo.src}
                   alt={photo.alt}
-                  loading="lazy"
-                  decoding="async"
-                  referrerPolicy="no-referrer"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.035]"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.035]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#15110d]/95 via-[#15110d]/35 to-[#15110d]/15" />
                 <span className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-white/45 bg-[#15110d]/40">
