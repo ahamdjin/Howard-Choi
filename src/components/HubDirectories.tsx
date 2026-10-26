@@ -56,7 +56,6 @@ function CityPhoto({ index, slug, name }: { index: number; slug: string; name: s
         onError={() => setFailed(true)}
         className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.035]"
       />
-
     </>
   );
 }
