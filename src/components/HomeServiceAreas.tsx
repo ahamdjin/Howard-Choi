@@ -1,21 +1,7 @@
-import { responsiveImageProps } from "@/lib/responsive-images";
 import { ArrowUpRight } from "lucide-react";
 import { serviceLocations, type SiteLocale } from "@/data/injurySite";
 import ScrollableCards from "@/components/ScrollableCards";
-import carCollision from "@/assets/law-firm/car-collision.jpg";
-import pedestrianCrossing from "@/assets/law-firm/pedestrian-crossing.jpg";
-import truckHighway from "@/assets/law-firm/truck-highway.jpg";
-import motorcycleRoad from "@/assets/law-firm/motorcycle-road.jpg";
-
-// Illustrative accident photographs, not city landmarks or photographs of
-// accidents in the labeled locations. Reuse four local, cached images for all
-// ten location cards; avoid ten extra image downloads.
-const illustrations = [
-  { image: carCollision, alt: "Two cars after a collision" },
-  { image: pedestrianCrossing, alt: "Marked pedestrian crossing" },
-  { image: truckHighway, alt: "Commercial truck on a highway" },
-  { image: motorcycleRoad, alt: "Motorcycle traveling on a roadway" },
-];
+import { locationMedia } from "@/data/locationMedia";
 
 const HomeServiceAreas = ({ locale = "en" }: { locale?: SiteLocale }) => {
   const ko = locale === "ko";
@@ -51,7 +37,7 @@ const HomeServiceAreas = ({ locale = "en" }: { locale?: SiteLocale }) => {
           nextLabel={ko ? "다음 도시" : es ? "Ciudad siguiente" : "Next service location"}
         >
           {serviceLocations.map((location, index) => {
-            const { image, alt } = illustrations[index % illustrations.length];
+            const photo = locationMedia[location.slug];
             return (
               <a
                 key={location.slug}
@@ -59,11 +45,11 @@ const HomeServiceAreas = ({ locale = "en" }: { locale?: SiteLocale }) => {
                 className="group relative flex min-h-[345px] w-[86%] shrink-0 snap-start flex-col justify-end overflow-hidden rounded-[4px] bg-[#181511] text-[#f3eee5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:w-[47%] lg:w-[31%] xl:w-[24%]"
               >
                 <img
-                  {...responsiveImageProps(image, "(max-width: 640px) 86vw, (max-width: 1024px) 47vw, 24vw")}
-                  src={image}
-                  alt={alt}
+                  src={photo.src}
+                  alt={photo.alt}
                   loading="lazy"
                   decoding="async"
+                  referrerPolicy="no-referrer"
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.035]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#15110d]/95 via-[#15110d]/35 to-[#15110d]/15" />
@@ -82,6 +68,9 @@ const HomeServiceAreas = ({ locale = "en" }: { locale?: SiteLocale }) => {
                   </div>
                   <span className="mt-4 inline-flex items-center gap-2 border-b border-white/50 pb-1 text-[12px] font-medium">
                     {ko ? "지역별 안내" : es ? "Explorar la ciudad" : "Explore local injury guidance"} <ArrowUpRight className="h-3.5 w-3.5" />
+                  </span>
+                  <span className="mt-3 block text-[10px] leading-4 text-white/65">
+                    Photo: {photo.credit} · {photo.license}
                   </span>
                 </div>
               </a>
