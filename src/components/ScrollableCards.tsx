@@ -92,7 +92,8 @@ export default function ScrollableCards({
 
   useEffect(() => {
     const node = containerRef.current;
-    if (!node || !("IntersectionObserver" in window)) return;
+    if (!node) return;
+    if (!("IntersectionObserver" in window)) { setVisible(true); return; }
     const observer = new IntersectionObserver(
       ([entry]) => setVisible(entry.isIntersecting && entry.intersectionRatio >= 0.3),
       { threshold: [0, 0.3, 0.7] }
