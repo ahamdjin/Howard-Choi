@@ -1,4 +1,17 @@
-export const clientReviews = {
+import type { SiteLocale } from "@/data/injurySite";
+
+export type ClientReview = {
+  initials: string;
+  name: string;
+  location: string;
+  text: string;
+  // Do not publish a testimonial until the firm has verified the original,
+  // consent and permitted wording, with a traceable internal approval reference.
+  approvedForPublication?: boolean;
+  approvalReference?: string;
+};
+
+export const clientReviews: Record<SiteLocale, ClientReview[]> = {
   en: [
     { initials: "MR", name: "Maria R.", location: "Buena Park", text: "I always knew what was happening next. Questions were answered clearly, and the process never felt like I was being passed from person to person." },
     { initials: "JL", name: "Jason L.", location: "Fullerton", text: "Professional, responsive, and patient about explaining what was happening at every step." },

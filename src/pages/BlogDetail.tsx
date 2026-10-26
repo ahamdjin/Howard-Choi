@@ -166,7 +166,7 @@ const BlogDetail = () => {
 
       <article ref={articleRef} className="legal-blog-article relative">
         <header className="relative flex min-h-[460px] items-end overflow-hidden bg-[#17130f] text-[#f3eee5] md:sticky md:top-0 md:h-[66svh] md:min-h-[540px]">
-          <motion.img {...responsiveImageProps(post.image)} src={post.image} alt={post.alt} style={{ y: imageY, scale: imageScale }} fetchPriority="high" decoding="async" className="absolute inset-0 h-[118%] w-full object-cover" />
+          <motion.img {...responsiveImageProps(post.image)} src={post.image} alt={post.alt} style={{ y: imageY, scale: imageScale }} loading="eager" fetchPriority="high" decoding="async" className="absolute inset-0 h-[118%] w-full object-cover" />
           <div className="absolute inset-0 bg-[#17130f]/64" /><div className="absolute inset-0 bg-gradient-to-t from-[#17130f]/88 via-[#17130f]/10 to-[#17130f]/18" /><div className="hero-bottom-readability" />
           <div className="site-shell relative z-10 pb-9 pt-28 md:pb-16 md:pt-0">
             <Link to="/blogs" className="mb-7 inline-flex items-center gap-2 text-[12px] text-[#f3eee5]/62 transition-colors hover:text-[#f3eee5]"><ArrowLeft className="h-3.5 w-3.5" /> Back to journal</Link>

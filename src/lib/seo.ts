@@ -1,4 +1,4 @@
-import { serviceLocations } from "@/data/injurySite";
+import { brand, serviceLocations } from "@/data/injurySite";
 
 export const SITE_URL = (import.meta.env.VITE_SITE_URL || "https://www.buenaparkinjurylawyer.com").replace(/\/$/, "");
 export const SITE_NAME = "Buena Park Injury Lawyer";
@@ -113,7 +113,7 @@ export const legalServiceJsonLd = {
   "@id": `${SITE_URL}/#legal-service`,
   name: SITE_NAME,
   url: SITE_URL,
-  telephone: "+1-714-844-8494",
+  telephone: brand.phoneHref.replace(/^tel:/, ""),
   address: {
     "@type": "PostalAddress",
     streetAddress: "6301 Beach Blvd, Suite 216",

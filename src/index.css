@@ -1254,3 +1254,19 @@ nav + .relative > .sticky.top-0.h-\[100svh\] > section {
     will-change: auto;
   }
 }
+
+
+/* The new detail-page split hero intentionally shows a full-width photograph.
+ * Override the legacy detail-guide rule that constrained every hero image
+ * to 50% width and left a large black rectangle at desktop breakpoints. */
+.detail-guide > section:first-child.detail-hero--split figure img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  opacity: 1;
+  object-fit: cover;
+  object-position: center;
+}

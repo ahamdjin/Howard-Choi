@@ -12,6 +12,9 @@ import cityTruckHighway from "@/assets/law-firm/truck-highway.jpg";
 import cityMotorcycleRoad from "@/assets/law-firm/motorcycle-road.jpg";
 import cityPedestrianCrossing from "@/assets/law-firm/pedestrian-crossing.jpg";
 import citySuburbanPalms from "@/assets/law-firm/suburban-palms.jpg";
+import { locationMedia } from "@/data/locationMedia";
+import { LocationDetailHighlights } from "@/components/DetailPageHighlights";
+import { LocationHubDirectory } from "@/components/HubDirectories";
 
 // Each city gets its own image so ten pages do not share one photo. Chosen to
 // echo the collision mix described in that city's localIntro.
@@ -141,18 +144,67 @@ const cityFaqEs: Record<string, { q: string; a: string }> = {
   },
 };
 
+
+/**
+ * Real-world *scenarios* and evidence questions, not claims that the firm
+ * handled a particular case in a given city. Keep any city references factual.
+ * Two contextually useful links rise to the top; all practice pages stay linked.
+ */
+const cityServiceFocus: Record<string, Record<string, string>> = {
+  "buena-park": {
+    "car-accidents": "For a collision on Beach Boulevard or near I-5/SR-91, record lane markings, signals and nearby cameras.",
+    "pedestrian-accidents": "For a crosswalk or parking-entrance injury, photographs of sightlines and turning traffic can matter.",
+  },
+  anaheim: {
+    "rideshare-accidents": "After an Uber or Lyft ride near the resort district, preserve the trip receipt and driver-app timeline.",
+    "pedestrian-accidents": "For a busy crossing near hotels or attractions, document signals, vehicle movements and potential video.",
+  },
+  fullerton: {
+    "pedestrian-accidents": "For an incident near a campus or commuter crossing, preserve signal timing, witnesses and any video.",
+    "car-accidents": "For an intersection collision, document the exact approach, lanes and impact location.",
+  },
+  "garden-grove": {
+    "car-accidents": "For a crash along Harbor or Brookhurst, identify the precise intersection and possible storefront video.",
+    "slip-and-fall": "For a fall at a business, document the condition, warning signs and who controlled the property.",
+  },
+  cypress: {
+    "car-accidents": "For a crash close to a city boundary, record the exact location and responding agency.",
+    "motorcycle-accidents": "For a rider injury, road markings and visibility from each driver's approach can be important.",
+  },
+  "la-habra": {
+    "car-accidents": "For a collision on Whittier Boulevard or Imperial Highway, preserve right-of-way and turning evidence.",
+    "motorcycle-accidents": "For a turning-vehicle crash, document lane position and sightlines before the scene changes.",
+  },
+  "la-mirada": {
+    "car-accidents": "For a collision near the county line, confirm the scene location and the agency holding the report.",
+    "pedestrian-accidents": "For a walking injury, record crossing conditions, sightlines and potential witnesses.",
+  },
+  cerritos: {
+    "truck-accidents": "For a commercial-vehicle crash on SR-91 or I-605, preserve carrier details and identify CHP records.",
+    "car-accidents": "For a freeway collision, note the exact highway segment and investigating agency.",
+  },
+  norwalk: {
+    "car-accidents": "For a collision on I-5, I-605, Firestone or Rosecrans, preserve the roadway and report details.",
+    "truck-accidents": "For a collision with a delivery or commercial vehicle, keep company identifiers and witness information.",
+  },
+  whittier: {
+    "pedestrian-accidents": "For a pedestrian injury on a hillside or commercial street, document parked cars and visibility.",
+    "motorcycle-accidents": "For a rider injury on a curved or sloping road, photographs from both approaches can matter.",
+  },
+};
+
 export const LocationsPage = ({ locale }: { locale: SiteLocale }) => (
   <EditorialFrame locale={locale}>
     <main>
       <EditorialHero
         locale={locale}
         eyebrow={isKo(locale) ? "서비스 지역" : isEs(locale) ? "Zonas de servicio de lesiones personales" : "Personal injury service areas"}
-        title={isKo(locale) ? "Buena Park를 중심으로 인근 지역까지." : isEs(locale) ? "Dónde trabajamos y por qué importa la ciudad." : "Where we work, and why the city matters."}
+        title={isKo(locale) ? "Buena Park를 중심으로 인근 지역까지." : isEs(locale) ? "Dónde trabajamos y por qué importa la ciudad." : "Injury Lawyer Serving Buena Park & Nearby Communities"}
         description={isKo(locale)
           ? "Buena Park와 인근 Orange County·Los Angeles County 경계 지역의 사고·개인상해 사건을 지원합니다."
           : isEs(locale)
             ? "Estamos en Beach Blvd en Buena Park y atendemos casos en el norte de Orange County y las ciudades vecinas de Los Angeles County. Cada página local incluye datos de colisiones, la agencia que prepara reportes y el sistema judicial del condado."
-            : "We are on Beach Blvd in Buena Park and take cases across north Orange County and the Los Angeles County cities next to it. Each page below covers one city: its own collision numbers, the police department that writes its reports, and the courthouse a filed case would go to."}
+            : "Our office is in Buena Park, California. Explore accident and injury guides for ten nearby cities across Orange and Los Angeles counties, with official traffic-safety figures, reporting resources and practical evidence questions for each community."}
         image={heroBoardroom}
       />
       <ReadingLayout
@@ -168,25 +220,26 @@ export const LocationsPage = ({ locale }: { locale: SiteLocale }) => (
           id="areas"
           locale={locale}
           kicker={isKo(locale) ? "01 · 지역" : isEs(locale) ? "01 · Comunidades" : "01 · Communities"}
-          title={isKo(locale) ? "가까운 지역 페이지에서 시작하세요." : isEs(locale) ? "Elija la ciudad donde realmente ocurrió." : "Pick the city where it actually happened."}
+          title={isKo(locale) ? "가까운 지역 페이지에서 시작하세요." : isEs(locale) ? "Elija la ciudad donde realmente ocurrió." : "Local accident and injury guides for ten communities."}
           intro={isKo(locale)
             ? "각 지역 페이지는 해당 지역에서 사고 이후 확인해야 할 일반적인 문제와 상담 시작 방법을 정리합니다."
             : isEs(locale)
               ? "La ciudad donde vive no hace que un reclamo sea más fuerte o más débil. El lugar exacto del accidente sí puede importar porque determina quién hizo el reporte, qué cámaras estaban cerca y qué condado podría intervenir si se presenta una demanda."
-              : "The city you live in does not make a claim stronger or weaker. The spot where it happened can. It decides who wrote the report, which cameras were nearby, and which county a lawsuit would be filed in. That last one catches people out along the Orange and Los Angeles county line, where a few blocks changes the answer."}
+              : "The exact location of a collision helps identify which agency may have handled the report, where witnesses or video might be found, and which legal rules or venues may be relevant. Our single office is in Buena Park; the surrounding cities below are communities we serve, not additional branch offices."}
         >
-          <div className="editorial-link-grid">
-            {serviceLocations.map((location, index) => {
-              const esCopy = esLocationContent[location.slug];
-              return (
-                <a key={location.slug} href={`${localePrefix(locale)}/locations/${location.slug}`} className="editorial-link-card">
-                  <div className="editorial-link-card__top"><span>{String(index + 1).padStart(2, "0")}</span><ArrowRight className="h-3.5 w-3.5" /></div>
-                  <h3 style={serifStyle(locale)}>{isKo(locale) ? location.koName : location.name}</h3>
-                  <p>{isKo(locale) ? location.koDescription : isEs(locale) ? (esCopy?.description || location.description) : location.description}</p>
-                </a>
-              );
-            })}
+          <div className="mb-7 flex flex-wrap items-center justify-between gap-4 border-y border-[#1E1C1A]/15 bg-[#EAE4DA] px-5 py-5">
+            <div>
+              <strong className="text-[13px] font-semibold">{isKo(locale) ? "실제 사무실 · 부에나파크" : isEs(locale) ? "Única oficina física · Buena Park" : "Our only office · Buena Park"}</strong>
+              <p className="mt-1 text-[12px] leading-6 text-[#5D5349]">6301 Beach Blvd, Suite 216, Buena Park, CA 90621</p>
+            </div>
+            <a href={`${localePrefix(locale)}/contact`} className="inline-flex min-h-11 items-center gap-2 text-[12px] font-semibold underline underline-offset-4">
+              {isKo(locale) ? "연락처 및 상담" : isEs(locale) ? "Contacto y consulta" : "Contact the Buena Park office"} <ArrowRight aria-hidden="true" className="h-4 w-4" />
+            </a>
           </div>
+          <LocationHubDirectory locale={locale} />
+          <p className="mt-6 max-w-[760px] text-[12px] leading-6 text-[#675D54]">
+            {isKo(locale) ? "교통안전 수치는 각 카드에 표시된 California OTS 연도별 통계이며 개별 사건의 예측치가 아닙니다." : isEs(locale) ? "Las cifras proceden de los reportes de California OTS para el año indicado en cada tarjeta; no predicen el resultado de un caso." : "Collision figures are city-level California Office of Traffic Safety data for the year shown on each card—not forecasts of individual cases. Locations may have different data years."}
+          </p>
         </ReadingSectionBlock>
 
         <ReadingSectionBlock
@@ -244,12 +297,6 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
   const statLabel = isKo(locale) ? `${location.ots.year} 교통안전 통계` : isEs(locale) ? `Datos de colisiones de California OTS · ${location.ots.year}` : `${location.ots.year} California OTS collision data`;
   const resource = locationResources[location.slug];
 
-  const vulnerable = [
-    { label: isKo(locale) ? "보행자" : isEs(locale) ? "peatones" : "pedestrians", n: location.ots.pedestrians },
-    { label: isKo(locale) ? "자전거" : isEs(locale) ? "personas en bicicleta" : "people on bicycles", n: location.ots.bicyclists },
-    { label: isKo(locale) ? "오토바이" : isEs(locale) ? "motociclistas" : "motorcycle riders", n: location.ots.motorcycles },
-  ].sort((a, b) => b.n - a.n);
-  const hitRunShare = Math.round((location.ots.hitRun / location.ots.total) * 100);
   const isBuenaPark = location.slug === "buena-park";
   const heroTitle = isKo(locale)
     ? (isBuenaPark ? "부에나파크 사고·상해 가이드" : `${name} 개인상해 변호사`)
@@ -269,7 +316,22 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
             : isBuenaPark && isEs(locale)
               ? "Una guía práctica con datos de colisiones de Buena Park, registros de accidentes, preservación de evidencia, plazos de California y los asuntos de lesiones atendidos desde la oficina de Buena Park."
               : description}
-          image={heroJustice}
+          image={locationMedia[location.slug]?.src ?? cityImages[location.slug] ?? heroJustice}
+          imageAlt={locationMedia[location.slug]?.alt || `${name}, California`}
+          imageFallback={cityImages[location.slug] ?? heroJustice}
+          photoCredit={locationMedia[location.slug]
+            ? { label: `Photo: ${locationMedia[location.slug].credit} · ${locationMedia[location.slug].license}`, href: locationMedia[location.slug].source }
+            : undefined}
+          detail
+        />
+        <LocationDetailHighlights
+          locale={locale}
+          name={name}
+          county={location.county}
+          year={location.ots.year}
+          total={location.ots.total}
+          agency={resource.agency}
+          dataHref={location.ots.source}
         />
         <ClaimJourney locale={locale} subject={name} guideId="overview" contextImage={cityImages[location.slug]} />
         <GuideAttorney locale={locale} />
@@ -357,21 +419,24 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
             id="cases"
             locale={locale}
             kicker={isKo(locale) ? "04 · 사건" : isEs(locale) ? "04 · Asuntos" : "04 · Matters"}
-            title={isKo(locale) ? "지역보다 사건 유형과 증거가 더 중요합니다." : isEs(locale) ? `Lo que vemos con más frecuencia en ${name}.` : `What we see most often in ${name}.`}
+            title={isKo(locale) ? "지역보다 사건 유형과 증거가 더 중요합니다." : isEs(locale) ? `Lo que vemos con más frecuencia en ${name}.` : `Injury and accident claims to explore in ${name}.`}
             intro={isKo(locale)
               ? "자동차·트럭·오토바이 사고, 보행자 사고, 승차공유 사고, 낙상과 중대 상해 등 다양한 개인상해 문제를 검토할 수 있습니다."
               : isEs(locale)
-                ? `De las ${location.ots.total.toLocaleString()} colisiones reportadas en ${name} en ${location.ots.year}, ${vulnerable[0].n} involucraron a ${vulnerable[0].label} y ${vulnerable[1].n} a ${vulnerable[1].label}. Cerca del ${hitRunShare}% fueron atropello y fuga. También manejamos reclamos de camiones, rideshare, caídas, muerte injusta y lesiones graves.`
-                : `Of the ${location.ots.total.toLocaleString()} collisions reported in ${name} in ${location.ots.year}, ${vulnerable[0].n} involved ${vulnerable[0].label} and ${vulnerable[1].n} involved ${vulnerable[1].label}. Around ${hitRunShare}% were hit-and-run. We handle all of those, plus truck, rideshare, slip and fall, wrongful death and serious injury claims. Which one you have matters far more than which city you live in.`}
+                ? `En ${location.ots.year}, California OTS registró ${location.ots.total.toLocaleString()} personas fallecidas o lesionadas en ${name}, además de ${location.ots.hitRun} colisiones con víctimas mortales o lesionadas y fuga. Son medidas diferentes, no un porcentaje del total. Elija la guía que corresponda al incidente y la evidencia.`
+                : `In ${location.ots.year}, California OTS recorded ${location.ots.total.toLocaleString()} people killed or injured in ${name}, and separately ${location.ots.hitRun} hit-and-run fatal/injury collisions. Those are different measures, not a percentage of all collisions. Choose the injury guide that fits the actual incident and evidence.`}
           >
             <div className="grid border-t border-[#1E1C1A]/12 sm:grid-cols-2">
-              {practiceAreas.map((practice) => {
+              {[...practiceAreas].sort((a, b) =>
+                Number(Boolean(cityServiceFocus[location.slug]?.[b.slug])) - Number(Boolean(cityServiceFocus[location.slug]?.[a.slug]))
+              ).map((practice) => {
                 const practiceEs = esPracticeContent[practice.slug];
+                const localServiceContext = locale === "en" ? cityServiceFocus[location.slug]?.[practice.slug] : undefined;
                 return (
                   <a key={practice.slug} href={`${localePrefix(locale)}/practice-areas/${practice.slug}`} className="group flex items-start justify-between gap-4 border-b border-[#1E1C1A]/12 py-4 sm:even:border-l sm:even:pl-6">
                     <span className="min-w-0">
                       <span className="block text-[13px]">{isKo(locale) ? practice.koTitle : isEs(locale) ? (practiceEs?.shortTitle || practice.title) : practice.title}</span>
-                      <span className="mt-1 block text-[11px] leading-5 text-[#1E1C1A]/45">{isKo(locale) ? practice.koIssues[0] : isEs(locale) ? (practiceEs?.issues[0] || practice.issues[0]) : practice.issues[0]}</span>
+                      <span className="mt-1 block text-[11px] leading-5 text-[#1E1C1A]/55">{localServiceContext || (isKo(locale) ? practice.koIssues[0] : isEs(locale) ? (practiceEs?.issues[0] || practice.issues[0]) : practice.issues[0])}</span>
                     </span>
                     <ArrowRight className="mt-1 h-3.5 w-3.5 shrink-0 text-[#1E1C1A]/35 transition-transform group-hover:translate-x-1" />
                   </a>

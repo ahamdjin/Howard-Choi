@@ -1,15 +1,29 @@
 import { ArrowUpRight } from "lucide-react";
 import { clientReviews } from "@/data/clientReviews";
-import type { SiteLocale } from "@/data/injurySite";
+import { brand, type SiteLocale } from "@/data/injurySite";
 
 const ClientProof = ({ locale = "en", city, limit = 2 }: { locale?: SiteLocale; city?: string; limit?: number }) => {
   const ko = locale === "ko";
   const es = locale === "es";
-  const all = clientReviews[locale];
+  const all = clientReviews[locale].filter((review) => review.approvedForPublication === true && Boolean(review.approvalReference));
   const local = city ? all.filter((review) => review.location === city) : [];
   const rest = all.filter((review) => !local.includes(review));
   const shown = [...local, ...rest].slice(0, Math.max(limit, local.length || 1));
-  if (!shown.length) return null;
+  // Show an independent review destination without inventing or repeating
+  // customer testimony while written approval is still being collected.
+  if (!shown.length) return (
+    <aside className="bg-[#eae4db] px-5 py-10 md:py-12">
+      <div className="mx-auto flex max-w-[1120px] flex-wrap items-center justify-between gap-4 border-t border-[#211c17]/14 pt-5">
+        <div>
+          <p className="text-[10px] uppercase tracking-[0.16em] text-[#211c17]/55">{ko ? "고객 피드백" : es ? "Comentarios de clientes" : "Client feedback"}</p>
+          <p className="mt-2 text-[14px] text-[#211c17]/80">{ko ? "공개 Google 비즈니스 프로필에서 직접 확인하세요." : es ? "Consulte el perfil público del despacho en Google." : "Visit the firm's public Google business profile for available feedback."}</p>
+        </div>
+        <a href={brand.gbpHref} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-2 text-[12px] font-medium underline underline-offset-4">
+          {ko ? "Google 프로필 보기" : es ? "Ver perfil de Google" : "View Google profile"} <ArrowUpRight className="h-4 w-4" />
+        </a>
+      </div>
+    </aside>
+  );
 
   return (
     <aside aria-label={ko ? "의뢰인 후기" : es ? "Experiencias de clientes" : "Client experiences"} className="bg-[#eae4db] px-5 py-14 md:py-16">
@@ -18,7 +32,7 @@ const ClientProof = ({ locale = "en", city, limit = 2 }: { locale?: SiteLocale; 
           <div className="text-[10px] uppercase tracking-[0.16em] text-[#211c17]/45">
             {local.length ? ko ? `${city} 의뢰인 후기` : es ? `De un cliente en ${city}` : `From a client in ${city}` : ko ? "의뢰인 후기" : es ? "Lo que dicen los clientes" : "What clients say"}
           </div>
-          <a href="https://share.google/LBJ1C8zWrZFjJBkVe" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-[11px] font-medium underline underline-offset-4 transition-opacity hover:opacity-60">
+          <a href={brand.gbpHref} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-[11px] font-medium underline underline-offset-4 transition-opacity hover:opacity-60">
             {ko ? "Google에서 보기" : es ? "Leer reseñas en Google" : "Read reviews on Google"} <ArrowUpRight className="h-3.5 w-3.5" />
           </a>
         </div>

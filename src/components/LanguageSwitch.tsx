@@ -1,4 +1,5 @@
 import { useLocation } from "react-router-dom";
+import { hasLocalizedBlog } from "@/data/blogLocaleAvailability";
 
 type LanguageSwitchProps = {
   className?: string;
@@ -8,8 +9,13 @@ const LanguageSwitch = ({ className = "" }: LanguageSwitchProps) => {
   const location = useLocation();
   const basePath = location.pathname.replace(/^\/(?:ko|es)(?=\/|$)/, "") || "/";
   const englishPath = basePath;
-  const koreanPath = basePath === "/" ? "/ko" : `/ko${basePath}`;
-  const spanishPath = basePath === "/" ? "/es" : `/es${basePath}`;
+  const blogSlug = /^\/blogs\/([^/]+)$/.exec(basePath)?.[1];
+  const translatedPath = (locale: "ko" | "es") =>
+    blogSlug && !hasLocalizedBlog(locale, blogSlug)
+      ? `/${locale}/blogs`
+      : basePath === "/" ? `/${locale}` : `/${locale}${basePath}`;
+  const koreanPath = translatedPath("ko");
+  const spanishPath = translatedPath("es");
   const current = location.pathname === "/ko" || location.pathname.startsWith("/ko/")
     ? "ko"
     : location.pathname === "/es" || location.pathname.startsWith("/es/")

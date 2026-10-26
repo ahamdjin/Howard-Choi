@@ -8,6 +8,9 @@ import ClientProof from "@/components/ClientProof";
 import PageReviewed from "@/components/PageReviewed";
 import { EvidenceVisuals, ClaimValueVisual, GuideAttorney } from "@/components/ClaimVisuals";
 import { practiceMedia } from "@/data/practiceMedia";
+import { localizedBlogHref } from "@/data/blogLocaleAvailability";
+import { PracticeDetailHighlights } from "@/components/DetailPageHighlights";
+import { PracticeHubDirectory } from "@/components/HubDirectories";
 import { esPracticeContent } from "@/data/esPracticeContent";
 import { esPracticeEnhancements } from "@/data/esPracticeEnhancements";
 import { getPracticeArea, practiceAreas, serviceLocations, type SiteLocale } from "@/data/injurySite";
@@ -19,7 +22,6 @@ import {
   isEs,
   isKo,
   localePrefix,
-  PracticeLinks,
   ReadingLayout,
   ReadingSectionBlock,
   serifStyle,
@@ -189,18 +191,65 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
   },
 };
 
+
+/** Korean questions must be specific to the underlying injury claim, not one
+ * generic set repeated across eight services. Attorney translation review is
+ * required before these new paragraphs go live. */
+const koPracticeFaqs: Record<string, Array<[string, string]>> = {
+  "car-accidents": [
+    ["상대 운전자가 제 과실도 있다고 주장하면 어떻게 하나요?", "캘리포니아에서는 비교과실이 문제 될 수 있습니다. 일부 과실 주장이 있다는 이유만으로 청구가 자동으로 사라지는 것은 아니며, 신호·차선·영상·목격자 등 실제 증거를 검토해야 합니다."],
+    ["상대 운전자가 무보험이거나 도주했다면요?", "경찰 보고서, 차량 식별 단서, 주변 영상과 목격자 정보를 보존하고 본인 보험의 무보험·저보험 운전자 보장 적용 가능성을 확인하는 것이 중요합니다."],
+    ["보험사의 녹음 진술 요청에 바로 응해야 하나요?", "먼저 어느 보험사가 무엇을 요구하는지 확인하세요. 본인 보험사와 상대 보험사의 요청은 다를 수 있으므로 광범위한 동의서나 상세 진술을 하기 전에 내용을 이해해야 합니다."],
+  ],
+  "truck-accidents": [
+    ["트럭 운전자만 책임을 질 수 있나요?", "사고 사실에 따라 운송회사, 차량 소유자, 고용주, 정비업체 등 다른 당사자의 역할도 검토할 수 있습니다. 실제 계약 관계와 기록이 중요합니다."],
+    ["트럭의 ELD 기록이 왜 중요한가요?", "전자운행기록장치 기록은 적용되는 차량에서 운전 및 근무 시간을 파악하는 자료가 될 수 있습니다. 충돌 시점의 운행 기록과 다른 증거를 함께 봐야 합니다."],
+    ["상업용 트럭 사고는 왜 빨리 기록을 확보해야 하나요?", "회사 보관 기록, 차량 전자 데이터, 영상과 점검 자료의 보존 기간이 서로 다를 수 있습니다. 어떤 자료가 존재하는지 조기에 확인하는 것이 좋습니다."],
+  ],
+  "motorcycle-accidents": [
+    ["부상이 심하면 상대방 과실이 자동으로 인정되나요?", "그렇지 않습니다. 부상의 정도와 사고 책임은 다른 문제입니다. 차량 위치, 차선 변경, 회전 동작, 목격자와 영상 등을 통해 경위를 확인해야 합니다."],
+    ["상대 운전자가 오토바이를 못 봤다고 주장하면요?", "시야와 조명, 차선 위치, 도로 표시, 차량 손상, 영상과 목격자 진술을 함께 검토할 수 있습니다. 한쪽 진술만으로 책임이 결정되지는 않습니다."],
+    ["제 오토바이 보험도 관련될 수 있나요?", "사고 경위와 실제 약관에 따라 본인의 무보험·저보험 운전자 보장 등이 중요해질 수 있습니다. 가입한 보장과 적용 조건을 확인하세요."],
+  ],
+  "pedestrian-accidents": [
+    ["횡단보도 안에서 사고가 나면 과실이 자동으로 결정되나요?", "횡단보도 위치는 중요한 사실이지만 신호, 회전 차량, 시야, 속도와 사고 직전 움직임 등 전체 상황을 확인해야 합니다."],
+    ["차량이 도주했다면 무엇을 보존해야 하나요?", "경찰 신고 정보, 주변 CCTV, 목격자, 차량 파편과 운전자 식별 단서를 가능하면 일찍 보존하세요. 이용 가능한 보험도 검토할 필요가 있습니다."],
+    ["보행자 사고에서 치료 기록이 왜 중요하나요?", "사고 후 치료와 재활, 이동 제한, 결근, 향후 돌봄 등의 변화는 실제 기록으로 설명하는 것이 중요합니다. 손해는 개인의 부상과 회복 과정에 따라 달라집니다."],
+  ],
+  "rideshare-accidents": [
+    ["우버·리프트 앱 상태가 보험에 왜 영향을 주나요?", "캘리포니아 승차공유 보험 기준은 운전자가 호출을 기다리는지, 수락했는지, 승객을 태우고 있는지에 따라 다를 수 있습니다. 사고 시점의 정확한 상태를 확인해야 합니다."],
+    ["승객으로 타고 있던 중 다쳤다면요?", "탑승 영수증, 앱 화면, 운전자·차량 정보, 사고 사진과 의료기록을 보존하세요. 승차 기록이 적용 보험을 확인하는 데 도움이 될 수 있습니다."],
+    ["다른 차량 운전자가 사고를 냈다면요?", "제3자의 책임과 별개로 승차공유 관련 보장을 확인해야 할 수 있습니다. 관련 보험은 앱 상태, 실제 약관과 사고 경위에 따라 달라집니다."],
+  ],
+  "slip-and-fall": [
+    ["넘어졌다는 사실만으로 건물주에게 책임이 있나요?", "반드시 그렇지는 않습니다. 위험 상태와 관리 주체, 경고 여부, 점검·유지관리 상황, 사고 경위 등을 함께 검토해야 합니다."],
+    ["매장 CCTV는 왜 중요하나요?", "영상에는 바닥 상태, 경고 표시, 청소 시점 또는 사고 순간이 담길 수 있습니다. 영상이 덮어쓰기되기 전에 보존 가능성을 확인하는 것이 좋습니다."],
+    ["사고 뒤 위험한 부분이 바로 수리되었다면요?", "사고 당시 사진, 목격자 연락처, 매장 사고 보고서와 영상 자료가 중요할 수 있습니다. 현재 모습이 사고 당시 상태를 그대로 보여주지 않을 수 있습니다."],
+  ],
+  "wrongful-death": [
+    ["캘리포니아에서는 누가 부당 사망 청구를 제기할 수 있나요?", "청구 자격은 관련 법률과 가족관계, 부양관계 등 구체적 사실에 따라 달라집니다. 자동으로 한 사람만 청구할 수 있다고 가정하지 말고 개별적으로 확인해야 합니다."],
+    ["부당 사망 청구와 생존자 청구는 같은가요?", "같지 않습니다. 적격 가족이 입은 손실과 고인이 생전에 가졌던 청구권은 서로 다른 법적 문제일 수 있습니다. 상황에 따라 두 절차를 별도로 검토해야 합니다."],
+    ["유가족은 어떤 기록을 준비해야 하나요?", "사고와 책임 관련 자료 외에도 가족관계, 재정적 지원, 가사 기여, 보험과 의료 관련 문서가 중요할 수 있습니다. 필요한 범위는 사건에 따라 달라집니다."],
+  ],
+  "serious-injuries": [
+    ["앞으로 받아야 할 치료비도 고려할 수 있나요?", "향후 치료 필요성은 의료기록, 담당 의료진 의견, 재활 계획과 실제 기능 제한 등 근거를 토대로 검토해야 합니다. 막연한 추측만으로 정해지는 것은 아닙니다."],
+    ["예전 직업으로 돌아가지 못한다면요?", "업무 제한, 재훈련 필요성, 소득과 향후 근로능력에 미치는 영향을 신뢰할 수 있는 자료로 확인해야 합니다. 이미 잃은 임금 외의 문제도 있을 수 있습니다."],
+    ["일상생활의 변화를 기록해야 하나요?", "진단명 외에도 이동, 수면, 독립생활, 가족 역할과 평소 활동의 변화를 구체적으로 기록하면 부상의 실제 영향을 설명하는 데 도움이 될 수 있습니다."],
+  ],
+};
+
 export const PracticeAreasPage = ({ locale }: { locale: SiteLocale }) => (
   <EditorialFrame locale={locale}>
     <main>
       <EditorialHero
         locale={locale}
         eyebrow={isKo(locale) ? "개인상해 업무 분야" : isEs(locale) ? "Áreas de práctica de lesiones personales" : "Personal injury practice areas"}
-        title={isKo(locale) ? "사고 유형보다 중요한 것은 사건이 실제로 어떻게 영향을 미쳤는지입니다." : isEs(locale) ? "Empiece por el tipo de accidente que tuvo." : "Start with the kind of accident you had."}
+        title={isKo(locale) ? "부에나파크 개인상해 업무 분야" : isEs(locale) ? "Áreas de práctica de lesiones personales en Buena Park." : "Personal Injury Practice Areas in Buena Park."}
         description={isKo(locale)
           ? "자동차 사고부터 중대 상해까지, 각 사건 분야에서 어떤 사실과 증거가 중요한지 명확하게 설명합니다."
           : isEs(locale)
             ? "Explore los tipos de accidentes y lesiones que maneja la firma, incluida la evidencia que conviene preservar, las preguntas de seguro, las pérdidas que deben documentarse y los próximos pasos prácticos."
-            : "Explore the accident and injury matters the firm handles, including the evidence to preserve, insurance questions to ask, losses to document, and practical next steps after an injury."}
+            : "Explore eight types of personal injury matters handled from our Buena Park office, from car and truck crashes to serious injuries and wrongful death. Each guide explains evidence, insurance questions and what to do next."}
         image={heroJustice}
       />
       <ReadingLayout
@@ -210,20 +259,20 @@ export const PracticeAreasPage = ({ locale }: { locale: SiteLocale }) => (
           ? [{ id: "overview", label: "전체 분야" }, { id: "process", label: "사건 진행" }, { id: "evidence", label: "증거와 기록" }]
           : isEs(locale)
             ? [{ id: "overview", label: "Todas las áreas" }, { id: "process", label: "Cómo se desarrolla un reclamo" }, { id: "evidence", label: "Evidencia y registros" }]
-            : [{ id: "overview", label: "All practice areas" }, { id: "process", label: "How a claim develops" }, { id: "evidence", label: "Evidence & records" }]}
+            : [{ id: "overview", label: "All practice areas" }, { id: "process", label: "How a claim develops" }, { id: "evidence", label: "Evidence & records" }, { id: "resources", label: "Research guides" }]}
       >
         <ReadingSectionBlock
           id="overview"
           locale={locale}
           kicker={isKo(locale) ? "01 · 분야" : isEs(locale) ? "01 · Áreas" : "01 · Areas"}
-          title={isKo(locale) ? "필요한 정보를 사건 유형별로 찾으세요." : isEs(locale) ? "Ocho tipos de reclamo, y no funcionan de la misma manera." : "Eight kinds of claim, and they do not work the same way."}
+          title={isKo(locale) ? "필요한 정보를 사건 유형별로 찾으세요." : isEs(locale) ? "Ocho tipos de reclamo, y no funcionan de la misma manera." : "Find the right guide for your injury or accident."}
           intro={isKo(locale)
             ? "각 페이지는 일반적인 사건 구조를 설명하기 위한 것이며 실제 사건의 사실관계에 따라 접근은 달라집니다."
             : isEs(locale)
               ? "Un reclamo por lesiones no funciona igual en todos los casos. Un choque de camión puede depender de registros empresariales que se eliminan según un calendario. Una caída puede depender de demostrar cuánto tiempo existió un peligro. Un caso de Uber o Lyft puede depender de una sola captura de pantalla. Elija la página que corresponda a lo que ocurrió."
-              : "Different accidents call for different investigations. Truck crashes may involve carrier and maintenance records; slip-and-fall cases require evidence about property conditions and reasonable care; and Uber or Lyft claims require close attention to trip status and applicable insurance. Choose the practice area that matches your situation to see which records to preserve, what coverage to review, and what questions matter next."}
+              : "A Buena Park car accident can raise different questions from a truck collision, an unsafe-property fall or a rideshare crash. These eight practice guides explain what evidence is most useful for each type of claim, how coverage may differ, and which steps deserve early attention. Choose the guide that best matches what happened; more than one category may apply."}
         >
-          <PracticeLinks locale={locale} />
+          <PracticeHubDirectory locale={locale} />
         </ReadingSectionBlock>
 
         <ReadingSectionBlock
@@ -267,6 +316,30 @@ export const PracticeAreasPage = ({ locale }: { locale: SiteLocale }) => (
               ? "Fotos, reportes, testigos, video, expedientes médicos, comunicaciones de seguro, información salarial y una cronología simple son más útiles cuando se reúnen temprano y se mantienen juntos."
               : "Photos, reports, witnesses, video, medical records, insurance communications, wage information, and a simple timeline are easier to use when they are collected early and kept together."}
         />
+        {locale === "en" && (
+          <ReadingSectionBlock
+            id="resources"
+            locale={locale}
+            kicker="04 · Research"
+            title="Explore researched California injury-law guides."
+            intro="These practical articles explain common evidence, deadline and insurance questions. The individual practice pages above explain how those issues relate to particular kinds of accidents."
+          >
+            <div className="grid gap-0 border-y border-[#1E1C1A]/12">
+              {[
+                { title: "What to do after a car accident in California", href: "/blogs/what-to-do-after-a-car-accident-in-california", focus: "Reports, treatment records and preserving collision evidence" },
+                { title: "California comparative fault in injury claims", href: "/blogs/california-comparative-fault-personal-injury", focus: "Fault allocation and what the evidence must establish" },
+                { title: "California personal injury filing deadlines", href: "/blogs/california-personal-injury-deadlines", focus: "Filing periods and potentially earlier public-entity deadlines" },
+                { title: "Truck accident electronic logs and evidence", href: "/blogs/truck-accident-evidence-eld-records-california", focus: "Motor-carrier records and time-sensitive preservation" },
+              ].map((guide) => (
+                <a key={guide.href} href={guide.href} className="group flex items-center justify-between gap-5 border-b border-[#1E1C1A]/12 py-5 last:border-b-0 hover:text-[#785039]">
+                  <span><strong className="block text-[15px] font-semibold">{guide.title}</strong><small className="mt-1 block text-[12px] leading-5 text-[#686057]">{guide.focus}</small></span>
+                  <ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0" />
+                </a>
+              ))}
+            </div>
+            <p className="mt-5 text-[12px] leading-6 text-[#5D5349]">Primary sources: <a href="https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">California Courts — Personal Injury</a> and <a href="https://selfhelp.courts.ca.gov/civil-lawsuit/statute-limitations" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">Statutes of Limitations</a>.</p>
+          </ReadingSectionBlock>
+        )}
       </ReadingLayout>
       <ConsultationCta locale={locale} />
     </main>
@@ -329,11 +402,7 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
       ? (esEnhancement?.deadlineNote || enhancement.deadlineNote)
       : enhancement.deadlineNote;
   const faqs = isKo(locale)
-    ? [
-        ["변호사와 언제 상담하는 것이 좋나요?", "중요한 영상, 기록, 보험 정보가 사라지기 전에 사건을 정리하면 도움이 될 수 있습니다. 모든 서류를 갖춘 뒤까지 기다릴 필요는 없습니다."],
-        ["보험사가 먼저 연락하면 어떻게 해야 하나요?", "누가 어떤 목적으로 연락했는지 확인하고, 상세한 진술이나 광범위한 서류에 서명하기 전에 요청 내용을 이해하는 것이 중요합니다."],
-        ["제가 일부 잘못한 경우에도 청구할 수 있나요?", "캘리포니아에서는 비교과실 문제가 적용될 수 있습니다. 일부 과실 주장이 있다는 이유만으로 사건이 자동으로 끝나는 것은 아닙니다."],
-      ]
+    ? koPracticeFaqs[practice.slug]
     : isEs(locale)
       ? (esCopy?.faqs || enhancement.faqs)
       : enhancement.faqs;
@@ -347,7 +416,10 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
           title={heroTitle}
           description={description}
           image={practiceMedia[practice.slug]?.src ?? heroCourthouse}
+          imageAlt={practiceMedia[practice.slug]?.alt || ""}
+          detail
         />
+        <PracticeDetailHighlights locale={locale} subject={title} issues={issues} />
         <ClaimJourney locale={locale} subject={title} guideId="understand" contextImage={practiceMedia[practice.slug]?.src} />
         <GuideAttorney locale={locale} />
         <ReadingLayout
@@ -459,11 +531,15 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
               <div>
                 <div className="mb-3 text-[9px] font-semibold uppercase tracking-[0.16em] text-[#1E1C1A]/35">{isKo(locale) ? "관련 가이드" : isEs(locale) ? "Guías relacionadas" : "Related guides"}</div>
                 <div className="border-t border-[#1E1C1A]/12">
-                  {enhancement.guides.map((guide) => (
-                    <a key={guide.slug} href={`${localePrefix(locale)}/blogs/${guide.slug}`} className="group flex items-center justify-between gap-4 border-b border-[#1E1C1A]/12 py-4 text-[12px]">
-                      <span>{isKo(locale) ? guide.koTitle : isEs(locale) ? (esEnhancement?.guideTitles[guide.slug] || guide.title) : guide.title}</span><ArrowRight className="h-3.5 w-3.5 shrink-0 transition-transform group-hover:translate-x-1" />
-                    </a>
-                  ))}
+                  {enhancement.guides.map((guide) => {
+                    const guideHref = localizedBlogHref(locale, guide.slug);
+                    const englishOnly = locale !== "en" && guideHref.startsWith("/blogs/");
+                    return (
+                      <a key={guide.slug} href={guideHref} className="group flex items-center justify-between gap-4 border-b border-[#1E1C1A]/12 py-4 text-[12px]">
+                        <span>{englishOnly ? guide.title : isKo(locale) ? guide.koTitle : isEs(locale) ? (esEnhancement?.guideTitles[guide.slug] || guide.title) : guide.title}{englishOnly && <span lang="en" className="ml-2 text-[#1E1C1A]/55">(English)</span>}</span><ArrowRight className="h-3.5 w-3.5 shrink-0 transition-transform group-hover:translate-x-1" />
+                      </a>
+                    );
+                  })}
                 </div>
               </div>
               <div>
