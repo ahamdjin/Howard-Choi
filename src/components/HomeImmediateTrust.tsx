@@ -29,6 +29,14 @@ const HomeImmediateTrust = ({ locale = "en" }: { locale?: SiteLocale }) => {
           <p className="text-foreground/65">{ko ? "자동차 사고 후 보험, 증거 및 청구 절차가 궁금하신가요?" : es ? "¿Tuvo un accidente de auto y necesita orientación sobre el seguro y los siguientes pasos?" : "Injured in a car accident? Understand the evidence, insurance and next steps."}</p>
           <a href={ko ? "/ko/practice-areas/car-accidents" : es ? "/es/practice-areas/car-accidents" : "/practice-areas/car-accidents"} className="font-medium underline underline-offset-4 hover:opacity-65">{ko ? "자동차 사고 법률 안내" : es ? "Abogado de accidentes de auto en Buena Park" : "Buena Park car accident lawyer"} →</a>
         </div>
+        {/* These are relevant follow-up options, not a keyword-stuffed link list.
+            The main car-accident link above remains the first recommendation. */}
+        <nav aria-label={ko ? "관련 사고 법률 안내" : es ? "Ayuda legal por tipo de accidente" : "Related injury legal help"} className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-[12px] leading-5 text-foreground/65">
+          <span className="text-foreground/45">{ko ? "관련 안내:" : es ? "También:" : "Other injury questions:"}</span>
+          <a href={ko ? "/ko/practice-areas/truck-accidents" : es ? "/es/practice-areas/truck-accidents" : "/practice-areas/truck-accidents"} className="underline underline-offset-4 hover:text-foreground">{ko ? "트럭 사고" : es ? "Accidentes de camión" : "Truck accident claims"}</a>
+          <a href={ko ? "/ko/practice-areas/rideshare-accidents" : es ? "/es/practice-areas/rideshare-accidents" : "/practice-areas/rideshare-accidents"} className="underline underline-offset-4 hover:text-foreground">{ko ? "우버·리프트 사고" : es ? "Accidentes de Uber y Lyft" : "Uber and Lyft accident claims"}</a>
+          <a href={ko ? "/ko/practice-areas/serious-injuries" : es ? "/es/practice-areas/serious-injuries" : "/practice-areas/serious-injuries"} className="underline underline-offset-4 hover:text-foreground">{ko ? "중대한 상해" : es ? "Lesiones graves" : "Brain and catastrophic injuries"}</a>
+        </nav>
       </div>
     </aside>
   );
