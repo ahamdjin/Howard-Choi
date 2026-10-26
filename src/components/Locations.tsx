@@ -1,5 +1,6 @@
+import { responsiveImageProps } from "@/lib/responsive-images";
 import { ArrowUpRight } from "lucide-react";
-import ScrollableCards, { DeckImage } from "@/components/ScrollableCards";
+import ScrollableCards from "@/components/ScrollableCards";
 import { practiceAreas, type SiteLocale } from "@/data/injurySite";
 import { practiceMedia } from "@/data/practiceMedia";
 import { esPracticeContent } from "@/data/esPracticeContent";
@@ -68,10 +69,11 @@ const Locations = ({ locale = "en" }: { locale?: SiteLocale }) => {
                 className="group relative flex min-h-[375px] w-[86%] shrink-0 snap-start flex-col justify-end overflow-hidden rounded-[4px] bg-[#181511] text-[#f3eee5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:w-[47%] lg:w-[31%] xl:w-[24%]"
               >
                 {media && (
-                  <DeckImage
-                    index={index}
-                    {...responsiveImageProps(media.src, "(max-width: 640px) 86vw, (max-width: 1024px) 47vw, 24vw")}
-                    src={media.src}
+                  <img
+                    data-deck-index={index}
+                    data-deck-src={media.src}
+                    data-deck-srcset={responsiveImageProps(media.src, "(max-width: 640px) 86vw, (max-width: 1024px) 47vw, 24vw").srcSet}
+                    data-deck-sizes="(max-width: 640px) 86vw, (max-width: 1024px) 47vw, 24vw"
                     alt={media.alt}
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.035]"
                   />
