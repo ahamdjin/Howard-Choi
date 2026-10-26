@@ -319,9 +319,6 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
           image={locationMedia[location.slug]?.src ?? cityImages[location.slug] ?? heroJustice}
           imageAlt={locationMedia[location.slug]?.alt || `${name}, California`}
           imageFallback={cityImages[location.slug] ?? heroJustice}
-          photoCredit={locationMedia[location.slug]
-            ? { label: `Photo: ${locationMedia[location.slug].credit} · ${locationMedia[location.slug].license}` }
-            : undefined}
           detail
         />
         <LocationDetailHighlights

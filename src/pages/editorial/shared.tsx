@@ -35,10 +35,9 @@ type EditorialHeroProps = {
   detail?: boolean;
   imageAlt?: string;
   imageFallback?: string;
-  photoCredit?: { label: string };
 };
 
-export const EditorialHero = ({ locale, eyebrow, title, description, image, detail = false, imageAlt = "", imageFallback, photoCredit }: EditorialHeroProps) => {
+export const EditorialHero = ({ locale, eyebrow, title, description, image, detail = false, imageAlt = "", imageFallback }: EditorialHeroProps) => {
   const [imageFailed, setImageFailed] = useState(false);
   const displayImage = imageFailed && imageFallback ? imageFallback : image;
 
@@ -87,13 +86,6 @@ export const EditorialHero = ({ locale, eyebrow, title, description, image, deta
               onError={() => { if (imageFallback && !imageFailed) setImageFailed(true); }}
               className="absolute inset-0 h-full w-full object-cover"
             />
-            <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#17130f]/70 to-transparent" />
-            <figcaption className="absolute bottom-4 left-5 right-5 flex flex-wrap items-center justify-between gap-3 text-[11px] leading-5 text-white/90 md:left-8 md:right-8">
-              <span>{isKo(locale) ? "사고와 상해에 따른 법률 안내" : isEs(locale) ? "Guía sobre accidentes y lesiones" : "Accident and injury guidance"}</span>
-              {photoCredit && !imageFailed && (
-                <span className="text-white/75">{photoCredit.label}</span>
-              )}
-            </figcaption>
           </figure>
         </div>
       </section>

@@ -75,9 +75,6 @@ const HomeServiceAreas = ({ locale = "en" }: { locale?: SiteLocale }) => {
                   <span className="mt-4 inline-flex items-center gap-2 border-b border-white/50 pb-1 text-[12px] font-medium">
                     {ko ? "지역별 안내" : es ? "Explorar la ciudad" : "Explore local injury guidance"} <ArrowUpRight className="h-3.5 w-3.5" />
                   </span>
-                  <span className="mt-3 block text-[10px] leading-4 text-white/65">
-                    Photo: {photo.credit} · {photo.license}
-                  </span>
                 </div>
               </a>
             );
