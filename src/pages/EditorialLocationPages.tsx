@@ -63,10 +63,9 @@ const locationResources: Record<string, { agency: string; agencyHref: string; co
 };
 
 /**
- * Real-world/**
- * Real-world *scenarios* and evidence questions, not claims that the firm
- * handled a particular case in a given city. Keep any city references factual.
- * Two contextually useful links rise to the top; all practice pages stay linked.
+ * Hypothetical incident scenarios, not claimed client cases or endorsements.
+ * Each city highlights two locally grounded situations and links to four
+ * relevant practices; the complete practice directory remains accessible.
  */
 const cityServiceFocus: Record<string, Record<string, string>> = {
   "buena-park": {
