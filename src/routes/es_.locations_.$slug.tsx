@@ -3,6 +3,7 @@ import { LocationDetailPage } from "@/pages/EditorialLocationPages";
 import { getServiceLocation } from "@/data/injurySite";
 import { getSpanishLocation } from "@/data/esLocationContent";
 import { breadcrumbJsonLd, buildSeo } from "@/lib/seo";
+import { locationGuidesEs } from "@/data/locationGuidesEs";
 
 export const Route = createFileRoute("/es_/locations_/$slug")({
   loader: ({ params }) => {
@@ -13,12 +14,10 @@ export const Route = createFileRoute("/es_/locations_/$slug")({
   },
   head: ({ loaderData }) => {
     const path = `/es/locations/${loaderData.location.slug}`;
-    const title = loaderData.location.slug === "buena-park"
-      ? "Guía de Accidentes y Lesiones en Buena Park"
-      : `Abogado de Lesiones Personales en ${loaderData.location.name}`;
+    const citySeo = locationGuidesEs[loaderData.location.slug];
     const seo = buildSeo({
-      title: `${title} | Buena Park Injury Lawyer`,
-      description: loaderData.copy.description,
+      title: citySeo.seoTitle,
+      description: citySeo.seoDescription,
       path,
       locale: "es-US",
       noindex: true,
