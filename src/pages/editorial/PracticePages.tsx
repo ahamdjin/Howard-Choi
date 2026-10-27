@@ -371,6 +371,17 @@ const relatedServiceSlugs: Record<string, string[]> = {
   "serious-injuries": ["car-accidents", "truck-accidents", "motorcycle-accidents", "pedestrian-accidents"],
 };
 
+const relatedLocationSlugs: Record<string, string[]> = {
+  "car-accidents": ["buena-park", "anaheim", "fullerton", "la-habra", "cypress", "garden-grove"],
+  "truck-accidents": ["buena-park", "cerritos", "norwalk", "anaheim", "fullerton", "cypress"],
+  "motorcycle-accidents": ["buena-park", "la-habra", "whittier", "fullerton", "cypress", "anaheim"],
+  "pedestrian-accidents": ["buena-park", "anaheim", "fullerton", "garden-grove", "whittier", "la-mirada"],
+  "rideshare-accidents": ["buena-park", "anaheim", "la-mirada", "norwalk", "fullerton", "garden-grove"],
+  "slip-and-fall": ["buena-park", "garden-grove", "cerritos", "anaheim", "cypress", "la-mirada"],
+  "wrongful-death": ["buena-park", "norwalk", "cerritos", "whittier", "la-mirada", "anaheim"],
+  "serious-injuries": ["buena-park", "fullerton", "whittier", "norwalk", "anaheim", "la-habra"],
+};
+
 export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
   const params = useParams({ strict: false }) as { slug?: string };
   const practice = params.slug ? getPracticeArea(params.slug) : undefined;
@@ -552,7 +563,7 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
                   <a key={item.slug} href={`${localePrefix(locale)}/practice-areas/${item.slug}`} className="editorial-link-card">
                     <div className="editorial-link-card__top"><span>→</span><ArrowRight className="h-3.5 w-3.5" /></div>
                     <h3 style={serifStyle(locale)}>{isKo(locale) ? item.koTitle : isEs(locale) ? (relatedEs?.shortTitle || item.title) : item.title}</h3>
-                    <p>{isKo(locale) ? "관련 상해 안내" : isEs(locale) ? "Consultar el área relacionada" : "Explore related legal guidance"}</p>
+                    
                   </a>
                 );
               })}
@@ -565,14 +576,10 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
             Icon={MapPin}
             kicker={isKo(locale) ? "10 · 지역" : isEs(locale) ? "10 · Dónde atendemos" : "10 · Where we handle these"}
             title={isKo(locale) ? `${title} 사건 지원 지역` : isEs(locale) ? `Reclamos de ${title.toLowerCase()} en el norte del Condado de Orange.` : `${title} claims across North Orange County.`}
-            intro={isKo(locale)
-              ? "부에나파크 사무실을 중심으로 인근 오렌지카운티와 로스앤젤레스카운티 지역의 사건을 지원합니다."
-              : isEs(locale)
-                ? `La oficina está en Buena Park y recibimos reclamos de ${title.toLowerCase()} de las ciudades cercanas. Cada guía local explica datos de tránsito, agencias que pueden conservar reportes y cómo la sede judicial depende de los hechos.`
-                : `The office is in Buena Park, and ${title.toLowerCase()} claims come in from the cities around it. Each city guide explains traffic data, reporting agencies and how legal venue can depend on the facts.`}
+
           >
             <div className="grid border-t border-[#1E1C1A]/12 sm:grid-cols-2">
-              {serviceLocations.map((location) => (
+              {serviceLocations.filter((location) => relatedLocationSlugs[practice.slug].includes(location.slug)).map((location) => (
                 <a key={location.slug} href={`${localePrefix(locale)}/locations/${location.slug}`} className="group flex items-center justify-between gap-4 border-b border-[#1E1C1A]/12 py-4 sm:even:border-l sm:even:pl-6">
                   <span className="text-[13px]">{isKo(locale) ? location.koName : location.name}</span>
                   <span className="shrink-0 text-[11px] text-[#1E1C1A]/38">{location.county}</span>
