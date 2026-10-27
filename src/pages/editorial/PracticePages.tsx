@@ -15,6 +15,7 @@ import { esPracticeContent } from "@/data/esPracticeContent";
 import { esPracticeEnhancements } from "@/data/esPracticeEnhancements";
 import { getPracticeArea, practiceAreas, serviceLocations, type SiteLocale } from "@/data/injurySite";
 import { englishPracticeGuides } from "@/data/englishPracticeGuides";
+import { koPracticeSpecific } from "@/data/koPracticeSpecific";
 import {
   ConsultationCta,
   EditorialFrame,
@@ -392,12 +393,12 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
   const headings = isEs(locale) ? (esEnhancement?.headings || enhancement.headings) : enhancement.headings;
   const attorneyNote = isEs(locale) ? (esEnhancement?.fromAttorney || enhancement.fromAttorney) : enhancement.fromAttorney;
   const damages = isKo(locale)
-    ? ["현재와 향후 치료비", "임금 손실과 향후 소득 영향", "통증·기능 제한·일상생활 변화", "사건 유형에 따라 적용되는 기타 경제적 손실"]
+    ? koPracticeSpecific[practice.slug].damages
     : isEs(locale)
       ? (esEnhancement?.damages || enhancement.damages)
       : enhancement.damages;
   const deadlineNote = isKo(locale)
-    ? "캘리포니아의 많은 개인상해 소송에는 일반적인 제소 기한이 있지만 공공기관 관련 청구 등은 더 짧은 절차가 적용될 수 있습니다. 또한 영상, 전자기록, 목격자 기억은 훨씬 빨리 사라질 수 있습니다."
+    ? koPracticeSpecific[practice.slug].deadlineNote
     : isEs(locale)
       ? (esEnhancement?.deadlineNote || enhancement.deadlineNote)
       : enhancement.deadlineNote;
