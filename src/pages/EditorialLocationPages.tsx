@@ -49,7 +49,7 @@ import {
   serifStyle,
 } from "./editorial/shared";
 
-const locationResources:const locationResources: Record<string, { agency: string; agencyHref: string; court: string; courtHref: string }> = {
+const locationResources: Record<string, { agency: string; agencyHref: string; court: string; courtHref: string }> = {
   "buena-park": { agency: "Buena Park Police Department", agencyHref: "https://www.bppd.com/", court: "Orange County Superior Court", courtHref: "https://www.occourts.org/" },
   anaheim: { agency: "Anaheim Police · Records Bureau", agencyHref: "https://pd.anaheim.net/173/Records", court: "Orange County Superior Court", courtHref: "https://www.occourts.org/" },
   fullerton: { agency: "Fullerton Police · Traffic Collision Reports", agencyHref: "https://www.cityoffullerton.com/government/departments/police/police-services/traffic-collision-report", court: "Orange County Superior Court", courtHref: "https://www.occourts.org/" },
