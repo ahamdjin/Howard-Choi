@@ -80,11 +80,11 @@ export const locationGuidesKo: Record<string, Pick<LocalGuide, "seoTitle" | "seo
   "la-mirada": {
     seoTitle: "라미라다 상해사고 안내 | 노워크 셰리프 기록 신청",
     seoDescription: "La Mirada 경찰 기록의 Norwalk Sheriff Station 신청 절차, LA 카운티 관할과 민사법원·정부청구 문제를 안내합니다.",
-    records: "라미라다는 Los Angeles County Sheriff's Department의 서비스를 받으며, 시의 공식 공공안전 FAQ는 사고 보고서 사본을 위해 Norwalk Sheriff's Station을 방문하고 사건번호를 준비하라고 안내합니다. LASD 중앙 Records and Identification Bureau에도 별도 요청 절차가 있습니다. 고속도로 사고 등에서는 실제로 보고서를 작성한 기관부터 확인하세요.",
+    records: "라미라다는 Los Angeles County Sheriff's Department의 서비스를 받으며, LASD의 공식 안내는 Norwalk Sheriff's Station이 라미라다를 담당한다고 설명하며, 시에도 La Mirada Community Sheriff's Station이 있습니다. 보고서 사본은 해당 기록을 관리하는 LASD 기관의 절차를 확인하고 사건번호를 준비하세요. LASD 중앙 Records and Identification Bureau에도 별도 요청 절차가 있습니다. 고속도로 사고 등에서는 실제로 보고서를 작성한 기관부터 확인하세요.",
     evidence: "라미라다는 부에나파크 및 라하브라와 가깝지만 로스앤젤레스 카운티입니다. 사업장 근처 교통사고라면 실제 주소와 사고 위치, 차량 진입 방향, 신호, 인근 영상의 보관 주체를 구분하세요. 보행자 사건에서는 횡단 방향, 시야와 출동 기관을, 사유지 부상이라면 부지 관리 주체를 기록해야 합니다.",
     deadlines: "로스앤젤레스 카운티 사고라고 해서 무조건 노워크 법원에 소송하는 것은 아닙니다. LA Superior Court의 민사 사건 접수법원 안내와 사건의 실제 관할 요건을 확인해야 합니다. 공공기관 상대 손해배상 청구가 필요한 경우에는 경찰 기록 요청과 별도의 조기 행정 청구 기한이 있을 수 있습니다.",
     faqs: [
-      ["라미라다 경찰 보고서는 어디에서 받을 수 있나요?", "시의 FAQ는 Norwalk Sheriff's Station을 안내하며 사건번호를 준비하도록 설명합니다. LASD Records and Identification Bureau의 별도 절차도 확인할 수 있습니다."],
+      ["라미라다 경찰 보고서는 어디에서 받을 수 있나요?", "LASD는 Norwalk Sheriff's Station의 라미라다 관할을 확인합니다. 시에는 La Mirada Community Sheriff's Station도 있으므로 어느 곳에서 기록을 발급하는지 확인하고 사건번호를 준비하세요."],
       ["라미라다는 오렌지카운티에 속하나요?", "아닙니다. 인근 부에나파크와 생활권이 겹쳐도 라미라다는 로스앤젤레스 카운티입니다. 기록 기관과 법원 절차에 영향을 줄 수 있습니다."],
       ["라미라다 사고는 반드시 노워크 법원에서 처리하나요?", "그렇지 않습니다. LA Superior Court의 접수법원 찾기와 사건별 관할·배당 규칙을 통해 확인해야 합니다."],
     ],
