@@ -2,11 +2,9 @@ import { ArrowRight, CalendarClock, CheckCircle2, Compass, FileText, HelpCircle,
 import { useParams } from "@tanstack/react-router";
 import heroJustice from "@/assets/law-firm/hero-justice-library.webp";
 import heroCourthouse from "@/assets/law-firm/hero-courthouse.webp";
-import ClaimJourney from "@/components/ClaimJourney";
 import AttorneyNote from "@/components/AttorneyNote";
-import ClientProof from "@/components/ClientProof";
 import PageReviewed from "@/components/PageReviewed";
-import { EvidenceVisuals, ClaimValueVisual, GuideAttorney } from "@/components/ClaimVisuals";
+import { ClaimValueVisual } from "@/components/ClaimVisuals";
 import { practiceMedia } from "@/data/practiceMedia";
 import { localizedBlogHref } from "@/data/blogLocaleAvailability";
 import { PracticeDetailHighlights } from "@/components/DetailPageHighlights";
@@ -421,8 +419,6 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
           detail
         />
         <PracticeDetailHighlights locale={locale} subject={title} issues={issues} />
-        <ClaimJourney locale={locale} subject={title} guideId="understand" contextImage={practiceMedia[practice.slug]?.src} />
-        <GuideAttorney locale={locale} />
         <ReadingLayout
           locale={locale}
           label={`${title} · ${isKo(locale) ? "안내" : isEs(locale) ? "Guía" : "Guide"}`}
@@ -467,7 +463,6 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
           </ReadingSectionBlock>
 
           <ReadingSectionBlock id="evidence" locale={locale} Icon={FileText} kicker={isKo(locale) ? "03 · 증거" : isEs(locale) ? "03 · Evidencia" : "03 · Evidence"} title={evidenceTitle} intro={evidenceIntro}>
-            <EvidenceVisuals locale={locale} />
             <div className="editorial-issue-list">
               {evidenceItems.map((item, index) => <div key={item} className="editorial-issue-row"><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong></div>)}
             </div>
@@ -560,7 +555,7 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
                   <a key={item.slug} href={`${localePrefix(locale)}/practice-areas/${item.slug}`} className="editorial-link-card">
                     <div className="editorial-link-card__top"><span>→</span><ArrowRight className="h-3.5 w-3.5" /></div>
                     <h3 style={serifStyle(locale)}>{isKo(locale) ? item.koTitle : isEs(locale) ? (relatedEs?.shortTitle || item.title) : item.title}</h3>
-                    <p>{isKo(locale) ? item.koDescription : isEs(locale) ? (relatedEs?.description || item.description) : item.description}</p>
+                    <p>{isKo(locale) ? "관련 상해 안내" : isEs(locale) ? "Consultar el área relacionada" : "Explore related legal guidance"}</p>
                   </a>
                 );
               })}
@@ -591,7 +586,6 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
           </ReadingSectionBlock>
         </ReadingLayout>
         <div className="site-shell pb-12"><PageReviewed locale={locale} /></div>
-        <ClientProof locale={locale} />
         <ConsultationCta locale={locale} />
       </main>
     </EditorialFrame>
