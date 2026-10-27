@@ -79,11 +79,11 @@ export const locationGuidesEs: Record<string, Pick<LocalGuide, "seoTitle" | "seo
   "la-mirada": {
     seoTitle: "Lesiones en La Mirada | Reportes del Sheriff de Norwalk",
     seoDescription: "Cómo solicitar documentos en Norwalk Sheriff's Station y revisar accidentes de La Mirada, jurisdicción del condado y tribunal.",
-    records: "La Mirada recibe servicios del Sheriff's Department del condado de Los Ángeles. La información municipal dirige la solicitud de una copia policial a Norwalk Sheriff's Station y recomienda llevar el número del expediente. LASD también dispone de su Records and Identification Bureau. Primero identifique qué autoridad documentó el accidente; no todos los reportes son de LASD.",
+    records: "La Mirada recibe servicios del Sheriff's Department del condado de Los Ángeles. LASD confirma que Norwalk Sheriff's Station presta servicio a La Mirada, donde también existe una estación comunitaria del Sheriff. Para pedir un reporte, verifique qué estación o procedimiento de la oficina central corresponde y conserve el número del expediente. LASD también dispone de su Records and Identification Bureau. Primero identifique qué autoridad documentó el accidente; no todos los reportes son de LASD.",
     evidence: "La Mirada pertenece a Los Angeles County pese a su cercanía con Buena Park y La Habra. Anote el lugar real, la vía y el propietario de cualquier inmueble relacionado. En una lesión de peatón, conserve la dirección del cruce, semáforos y visibilidad; en una entrada comercial, identifique cámaras y quién las controla.",
     deadlines: "No todas las demandas originadas en La Mirada se presentan automáticamente en Norwalk Courthouse. El Tribunal Superior de Los Ángeles ofrece reglas y un localizador para casos civiles. Si pudiera intervenir una entidad pública, un reclamo administrativo anticipado puede ser distinto de solicitar el reporte policial.",
     faqs: [
-      ["¿Dónde se obtiene un reporte de un incidente en La Mirada?", "La información pública municipal señala Norwalk Sheriff's Station y recomienda llevar el número del expediente. LASD tiene también instrucciones centrales de registros."],
+      ["¿Dónde se obtiene un reporte de un incidente en La Mirada?", "LASD confirma que Norwalk Sheriff's Station sirve La Mirada, que también dispone de una estación comunitaria del Sheriff. Confirme dónde se tramita la copia y conserve el número del expediente."],
       ["¿La Mirada pertenece a Orange County?", "No. La Mirada está en Los Angeles County aunque se encuentre junto a ciudades del condado de Orange."],
       ["¿Debo presentar siempre la demanda en Norwalk?", "No. Consulte el localizador civil del Tribunal Superior y las reglas de competencia aplicables."],
     ],
