@@ -2,9 +2,6 @@ import { ArrowRight, MapPin, Route, ShieldCheck } from "lucide-react";
 import { useParams } from "@tanstack/react-router";
 import heroBoardroom from "@/assets/law-firm/hero-city-boardroom.webp";
 import heroJustice from "@/assets/law-firm/hero-justice-library.webp";
-import ClaimJourney from "@/components/ClaimJourney";
-import { EvidenceVisuals, GuideAttorney } from "@/components/ClaimVisuals";
-import ClientProof from "@/components/ClientProof";
 import PageReviewed from "@/components/PageReviewed";
 import cityCarCollision from "@/assets/law-firm/car-collision.jpg";
 import cityCollisionDamage from "@/assets/law-firm/collision-damage.jpg";
@@ -249,8 +246,6 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
           agency={resource.agency}
           dataHref={location.ots.source}
         />
-        <ClaimJourney locale={locale} subject={name} guideId="overview" contextImage={cityImages[location.slug]} />
-        <GuideAttorney locale={locale} />
         <ReadingLayout
           locale={locale}
           label={`${name} · ${isKo(locale) ? "지역 안내" : isEs(locale) ? "Guía local de lesiones" : "Local injury guide"}`}
@@ -362,7 +357,7 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
             kicker={isKo(locale) ? "05 · 증거" : isEs(locale) ? "05 · Evidencia" : "05 · Evidence"}
             title={isKo(locale) ? "지역 기록과 사고 기록을 함께 보관하세요." : isEs(locale) ? `Registros útiles después de un accidente en ${name}.` : `Useful records after an accident in ${name}.`}
             intro={localGuide.evidence}
-          ><EvidenceVisuals locale={locale} /></ReadingSectionBlock>
+          />
 
           <ReadingSectionBlock
             id="deadlines"
@@ -395,14 +390,13 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
                 <a key={item.slug} href={`${localePrefix(locale)}/locations/${item.slug}`} className="editorial-link-card">
                   <div className="editorial-link-card__top"><span>→</span><ArrowRight className="h-3.5 w-3.5" /></div>
                   <h3 style={serifStyle(locale)}>{isKo(locale) ? item.koName : item.name}</h3>
-                  <p>{isKo(locale) ? item.koDescription : isEs(locale) ? (esLocationContent[item.slug]?.description || item.description) : item.description}</p>
+                  <p>{item.county}</p>
                 </a>
               ))}
             </div>
           </ReadingSectionBlock>
         </ReadingLayout>
         <div className="site-shell pb-12"><PageReviewed locale={locale} /></div>
-        <ClientProof locale={locale} city={isKo(locale) ? location.koName : location.name} />
         <ConsultationCta locale={locale} />
       </main>
     </EditorialFrame>
