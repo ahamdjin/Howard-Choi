@@ -16,6 +16,7 @@ import { koreanPracticeGuides } from "@/data/koreanPracticeGuides";
 import { spanishPracticeGuides } from "@/data/spanishPracticeGuides";
 import { koreanPracticeDetails } from "@/data/koreanPracticeDetails";
 import { koPracticeSpecific } from "@/data/koPracticeSpecific";
+import { advancedPracticeResearch } from "@/data/advancedPracticeResearch";
 import {
   ConsultationCta,
   EditorialFrame,
@@ -437,18 +438,18 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
           label={`${title} · ${isKo(locale) ? "안내" : isEs(locale) ? "Guía" : "Guide"}`}
           sections={isKo(locale)
             ? [
-                { id: "understand", label: "사건 이해" }, { id: "issues", label: "주요 쟁점" }, { id: "evidence", label: "증거" }, { id: "case-guide", label: "사건 유형별 상세 안내" },
+                { id: "understand", label: "사건 이해" }, { id: "issues", label: "주요 쟁점" }, { id: "evidence", label: "증거" }, { id: "case-guide", label: "사건 유형별 상세 안내" }, { id: "research", label: "법적 쟁점과 증거" },
                 { id: "value", label: "손해와 가치" }, { id: "insurance", label: "보험" }, { id: "deadlines", label: "기한" },
                 { id: "faq", label: "자주 묻는 질문" }, { id: "resources", label: "자료" }, { id: "related", label: "다른 업무 분야" }, { id: "areas", label: "지역" },
               ]
             : isEs(locale)
               ? [
-                  { id: "understand", label: "Entender el reclamo" }, { id: "issues", label: "Puntos clave" }, { id: "evidence", label: "Evidencia a preservar" }, { id: "case-guide", label: "Guía específica" },
+                  { id: "understand", label: "Entender el reclamo" }, { id: "issues", label: "Puntos clave" }, { id: "evidence", label: "Evidencia a preservar" }, { id: "case-guide", label: "Guía específica" }, { id: "research", label: "Análisis jurídico" },
                   { id: "value", label: "Daños y valor del caso" }, { id: "insurance", label: "Seguro y responsabilidad" }, { id: "deadlines", label: "Plazos de California" },
                   { id: "faq", label: "Preguntas frecuentes" }, { id: "resources", label: "Guías y fuentes" }, { id: "related", label: "Áreas relacionadas" }, { id: "areas", label: "Dónde atendemos" },
                 ]
               : [
-                  { id: "understand", label: "Understanding the claim" }, { id: "issues", label: "Key issues" }, { id: "evidence", label: "Evidence to preserve" }, { id: "case-guide", label: "Case-specific guidance" },
+                  { id: "understand", label: "Understanding the claim" }, { id: "issues", label: "Key issues" }, { id: "evidence", label: "Evidence to preserve" }, { id: "case-guide", label: "Case-specific guidance" }, { id: "research", label: "Legal & evidence analysis" },
                   { id: "value", label: "Damages & case value" }, { id: "insurance", label: "Insurance & responsibility" }, { id: "deadlines", label: "California deadlines" },
                   { id: "faq", label: "Common questions" }, { id: "resources", label: "Guides & sources" }, { id: "related", label: "Related practice areas" }, { id: "areas", label: "Where we handle these" },
                 ]}
@@ -505,6 +506,30 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
               </div>
             </ReadingSectionBlock>
           )}
+
+          <ReadingSectionBlock
+            id="research"
+            locale={locale}
+            Icon={ShieldCheck}
+            kicker={isKo(locale) ? "추가 검증 · 공식 자료" : isEs(locale) ? "Análisis · Fuentes oficiales" : "Deeper analysis · Primary sources"}
+            title={advancedPracticeResearch[practice.slug].heading[locale]}
+          >
+            <div className="article-reading-width border-t border-[#1E1C1A]/15">
+              {advancedPracticeResearch[practice.slug].questions.map((item, index) => (
+                <div key={item.label.en} className="grid gap-3 border-b border-[#1E1C1A]/12 py-7 md:grid-cols-[35px_1fr]">
+                  <span className="text-[11px] tabular-nums text-[#1E1C1A]/40">{String(index + 1).padStart(2, "0")}</span>
+                  <div>
+                    <h3 className="editorial-serif text-[clamp(1.45rem,2.1vw,1.9rem)] leading-[1.2]">{item.label[locale]}</h3>
+                    <p className="mt-3 max-w-[740px] text-[15px] leading-8 text-[#57514b]">{item.explanation[locale]}</p>
+                  </div>
+                </div>
+              ))}
+              <a href={advancedPracticeResearch[practice.slug].source.href} target="_blank" rel="noopener noreferrer" className="editorial-inline-link mt-6">
+                <span>{isKo(locale) ? "공식 근거 원문: " : isEs(locale) ? "Fuente primaria: " : "Read the primary source: "}{advancedPracticeResearch[practice.slug].source.label}</span>
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </a>
+            </div>
+          </ReadingSectionBlock>
 
           <ReadingSectionBlock id="value" locale={locale} Icon={Scale} kicker={isKo(locale) ? "04 · 손해" : isEs(locale) ? "04 · Daños y valor" : "04 · Damages & value"} title={headings.value} intro={valueIntro}>
             <ClaimValueVisual locale={locale} />
