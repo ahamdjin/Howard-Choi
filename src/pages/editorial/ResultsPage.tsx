@@ -1,3 +1,4 @@
+import SiteDepthSection from "@/components/SiteDepthSection";
 import { ArrowRight, FileCheck2, Scale, ShieldCheck } from "lucide-react";
 import heroCourthouse from "@/assets/law-firm/hero-courthouse.webp";
 import type { SiteLocale } from "@/data/injurySite";
@@ -109,6 +110,7 @@ export const ResultsPage = ({ locale }: { locale: SiteLocale }) => (
           intro={isKo(locale) ? "책임, 보험 한도, 부상 정도, 치료, 증거와 당사자의 상황에 따라 결과는 크게 달라질 수 있습니다." : isEs(locale) ? "Un resultado puede verse afectado por disputas de responsabilidad, límites de póliza, otras partes responsables, causalidad médica, duración y tipo de tratamiento, necesidades médicas futuras, pérdidas de salario e ingresos, gravámenes, culpa comparativa y calidad de la evidencia." : "A result may be affected by liability disputes, policy limits, additional responsible parties, medical causation, the length and type of treatment, future medical needs, wage and earning losses, liens, comparative fault, and the quality of the supporting evidence."}
         />
       </ReadingLayout>
+      <SiteDepthSection locale={locale} topic="results" />
       <ConsultationCta locale={locale} />
     </main>
   </EditorialFrame>
