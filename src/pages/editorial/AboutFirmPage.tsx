@@ -1,3 +1,4 @@
+import SiteDepthSection from "@/components/SiteDepthSection";
 import { responsiveImageProps } from "@/lib/responsive-images";
 import { ArrowRight, MessageSquareText, Scale, ShieldCheck } from "lucide-react";
 import heroBoardroom from "@/assets/law-firm/hero-city-boardroom.webp";
@@ -229,6 +230,7 @@ export const AboutFirmPage = ({ locale }: { locale: SiteLocale }) => (
         </div>
       </div>
 
+      <SiteDepthSection locale={locale} topic="about" />
       <ConsultationCta locale={locale} />
     </main>
   </EditorialFrame>
