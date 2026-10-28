@@ -17,6 +17,7 @@ import { locationGuidesKo } from "@/data/locationGuidesKo";
 import { locationGuidesEs } from "@/data/locationGuidesEs";
 import { locationFocus } from "@/data/locationFocus";
 import { locationPracticeContexts } from "@/data/locationPracticeContexts";
+import { cityEvidencePaths } from "@/data/cityEvidencePaths";
 
 // Each city gets its own image so ten pages do not share one photo. Chosen to
 // echo the collision mix described in that city's localIntro.
@@ -201,18 +202,18 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
           sections={isKo(locale)
             ? [
                 { id: "overview", label: "지역 안내" }, { id: "data", label: "교통사고 통계" }, { id: "records", label: "지역 기록" },
-                { id: "cases", label: "사건 유형" }, { id: "evidence", label: "증거" }, { id: "deadlines", label: "기한" },
+                { id: "cases", label: "사건 유형" }, { id: "evidence", label: "증거" }, { id: "situations", label: "현장별 증거 판단" }, { id: "deadlines", label: "기한" },
                 { id: "faq", label: "자주 묻는 질문" }, { id: "nearby", label: "인근 지역" },
               ]
             : isEs(locale)
               ? [
                   { id: "overview", label: "Panorama local" }, { id: "data", label: "Datos de colisiones" }, { id: "records", label: "Registros y agencias" },
-                  { id: "cases", label: "Asuntos atendidos" }, { id: "evidence", label: "Evidencia a preservar" }, { id: "deadlines", label: "Plazos de California" },
+                  { id: "cases", label: "Asuntos atendidos" }, { id: "evidence", label: "Evidencia a preservar" }, { id: "situations", label: "Situaciones locales" }, { id: "deadlines", label: "Plazos de California" },
                   { id: "faq", label: "Preguntas locales" }, { id: "nearby", label: "Comunidades cercanas" },
                 ]
               : [
                   { id: "overview", label: "Local overview" }, { id: "data", label: "Local collision data" }, { id: "records", label: "Local records & agencies" },
-                  { id: "cases", label: "Matters handled" }, { id: "evidence", label: "Evidence to preserve" }, { id: "deadlines", label: "California deadlines" },
+                  { id: "cases", label: "Matters handled" }, { id: "evidence", label: "Evidence to preserve" }, { id: "situations", label: "Local evidence scenarios" }, { id: "deadlines", label: "California deadlines" },
                   { id: "faq", label: "Local claim questions" }, { id: "nearby", label: "Nearby communities" },
                 ]}
         >
@@ -306,6 +307,25 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
             title={isKo(locale) ? "지역 기록과 사고 기록을 함께 보관하세요." : isEs(locale) ? `Registros útiles después de un accidente en ${name}.` : `Useful records after an accident in ${name}.`}
             intro={localGuide.evidence}
           />
+
+          <ReadingSectionBlock
+            id="situations"
+            locale={locale}
+            kicker={isKo(locale) ? "현장 분석" : isEs(locale) ? "Situaciones locales" : "Local investigation examples"}
+            title={cityEvidencePaths[location.slug].title[locale]}
+          >
+            <div className="article-reading-width border-t border-[#1E1C1A]/15">
+              {cityEvidencePaths[location.slug].paths.map((path, index) => (
+                <section key={path.question.en} className="grid gap-3 border-b border-[#1E1C1A]/12 py-7 md:grid-cols-[35px_1fr]">
+                  <span className="text-[11px] tabular-nums text-[#1E1C1A]/40">{String(index + 1).padStart(2, "0")}</span>
+                  <div>
+                    <h3 className="editorial-serif text-[clamp(1.45rem,2.1vw,1.9rem)] leading-[1.2]">{path.question[locale]}</h3>
+                    <p className="mt-3 max-w-[740px] text-[15px] leading-8 text-[#57514b]">{path.answer[locale]}</p>
+                  </div>
+                </section>
+              ))}
+            </div>
+          </ReadingSectionBlock>
 
           <ReadingSectionBlock
             id="deadlines"
