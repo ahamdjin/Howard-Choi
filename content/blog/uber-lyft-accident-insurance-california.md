@@ -5,7 +5,7 @@
   "excerpt": "A practical explanation of California rideshare insurance periods, why driver app status matters, and what passengers and other injured people should preserve after an Uber or Lyft crash.",
   "category": "Rideshare Accidents",
   "publishedAt": "2026-09-12",
-  "updatedAt": "2026-10-19",
+  "updatedAt": "2026-10-28",
   "alt": "Law firm boardroom used for rideshare insurance review",
   "intro": "An Uber or Lyft collision can look like an ordinary car accident at the scene, but the insurance analysis may be different. California ties transportation-network-company coverage to what the driver was doing in the app when the crash occurred. The driver's status can determine which policy layer needs to be evaluated and which trip records should be preserved.",
   "takeaway": "In a California rideshare crash, preserve the trip and app timeline as carefully as the accident timeline. Driver status can affect which insurance applies.",
@@ -116,3 +116,10 @@ Is Uber or Lyft automatically at fault for every collision involving its driver?
 Can you rely on one screenshot showing that a ride was accepted? It is a useful piece of the timeline, but it may not establish all critical events or whether the status changed. Preserve originals and seek corroborating information where available.
 
 Where do the stated limits come from? The California Public Utilities Commission's TNC Insurance Requirements page describes Periods 1 through 3 and the required liability and UM/UIM layers. California Courts explains the underlying personal-injury and deadline concepts. Use both as starting points; the actual policy documents still control many coverage disputes.
+
+
+## Create a trip-status evidence packet
+
+Keep the trip receipt, booking and cancellation messages, pickup and drop-off information, driver identity and the original time shown on your device. Explain whether you were a passenger, another driver, a pedestrian or a cyclist. If you did not see the driver's app, say so; a vehicle decal does not tell you whether the driver was logged in, had accepted a ride or was carrying a passenger at the relevant moment.
+
+Make a short list of unanswered questions for the insurance review: which platform was involved, whether more than one app may have been active, who owns the vehicle and which insurer has acknowledged which portion of the claim. Do not guess a coverage period merely to fit a policy limit. The goal is a reproducible timeline that can be compared against platform and insurer records, with uncertainty visible rather than filled in by assumption.

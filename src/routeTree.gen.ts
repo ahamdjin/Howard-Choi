@@ -17,16 +17,34 @@ import { Route as BlogsRouteImport } from './routes/blogs'
 import { Route as CaseValueCalculatorRouteImport } from './routes/case-value-calculator'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DisclaimerRouteImport } from './routes/disclaimer'
+import { Route as EsRouteImport } from './routes/es'
 import { Route as KoRouteImport } from './routes/ko'
 import { Route as LocationsRouteImport } from './routes/locations'
+import { Route as PhotoCreditsRouteImport } from './routes/photo-credits'
 import { Route as PracticeAreasRouteImport } from './routes/practice-areas'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as ResultsRouteImport } from './routes/results'
+import { Route as ReviewRouteImport } from './routes/review'
 import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as ThankYouRouteImport } from './routes/thank-you'
+import { Route as ApiReviewRouteImport } from './routes/api.review'
 import { Route as BlogsSlugRouteImport } from './routes/blogs_.$slug'
+import { Route as EsAboutRouteImport } from './routes/es_.about'
+import { Route as EsAccessibilityRouteImport } from './routes/es_.accessibility'
+import { Route as EsAttorneyRouteImport } from './routes/es_.attorney'
+import { Route as EsBlogsRouteImport } from './routes/es_.blogs'
+import { Route as EsCaseValueCalculatorRouteImport } from './routes/es_.case-value-calculator'
+import { Route as EsContactRouteImport } from './routes/es_.contact'
+import { Route as EsDisclaimerRouteImport } from './routes/es_.disclaimer'
+import { Route as EsLocationsRouteImport } from './routes/es_.locations'
+import { Route as EsPhotoCreditsRouteImport } from './routes/es_.photo-credits'
+import { Route as EsPracticeAreasRouteImport } from './routes/es_.practice-areas'
+import { Route as EsPrivacyPolicyRouteImport } from './routes/es_.privacy-policy'
+import { Route as EsResultsRouteImport } from './routes/es_.results'
+import { Route as EsTermsRouteImport } from './routes/es_.terms'
+import { Route as EsThankYouRouteImport } from './routes/es_.thank-you'
 import { Route as KoAboutRouteImport } from './routes/ko_.about'
 import { Route as KoAccessibilityRouteImport } from './routes/ko_.accessibility'
 import { Route as KoAttorneyRouteImport } from './routes/ko_.attorney'
@@ -35,6 +53,7 @@ import { Route as KoCaseValueCalculatorRouteImport } from './routes/ko_.case-val
 import { Route as KoContactRouteImport } from './routes/ko_.contact'
 import { Route as KoDisclaimerRouteImport } from './routes/ko_.disclaimer'
 import { Route as KoLocationsRouteImport } from './routes/ko_.locations'
+import { Route as KoPhotoCreditsRouteImport } from './routes/ko_.photo-credits'
 import { Route as KoPracticeAreasRouteImport } from './routes/ko_.practice-areas'
 import { Route as KoPrivacyPolicyRouteImport } from './routes/ko_.privacy-policy'
 import { Route as KoResultsRouteImport } from './routes/ko_.results'
@@ -42,6 +61,9 @@ import { Route as KoTermsRouteImport } from './routes/ko_.terms'
 import { Route as KoThankYouRouteImport } from './routes/ko_.thank-you'
 import { Route as LocationsSlugRouteImport } from './routes/locations_.$slug'
 import { Route as PracticeAreasSlugRouteImport } from './routes/practice-areas_.$slug'
+import { Route as EsBlogsSlugRouteImport } from './routes/es_.blogs_.$slug'
+import { Route as EsLocationsSlugRouteImport } from './routes/es_.locations_.$slug'
+import { Route as EsPracticeAreasSlugRouteImport } from './routes/es_.practice-areas_.$slug'
 import { Route as KoBlogsSlugRouteImport } from './routes/ko_.blogs_.$slug'
 import { Route as KoLocationsSlugRouteImport } from './routes/ko_.locations_.$slug'
 import { Route as KoPracticeAreasSlugRouteImport } from './routes/ko_.practice-areas_.$slug'
@@ -86,6 +108,11 @@ const DisclaimerRoute = DisclaimerRouteImport.update({
   path: '/disclaimer',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EsRoute = EsRouteImport.update({
+  id: '/es',
+  path: '/es',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const KoRoute = KoRouteImport.update({
   id: '/ko',
   path: '/ko',
@@ -94,6 +121,11 @@ const KoRoute = KoRouteImport.update({
 const LocationsRoute = LocationsRouteImport.update({
   id: '/locations',
   path: '/locations',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PhotoCreditsRoute = PhotoCreditsRouteImport.update({
+  id: '/photo-credits',
+  path: '/photo-credits',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PracticeAreasRoute = PracticeAreasRouteImport.update({
@@ -109,6 +141,11 @@ const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
 const ResultsRoute = ResultsRouteImport.update({
   id: '/results',
   path: '/results',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReviewRoute = ReviewRouteImport.update({
+  id: '/review',
+  path: '/review',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RobotsDottxtRoute = RobotsDottxtRouteImport.update({
@@ -131,9 +168,84 @@ const ThankYouRoute = ThankYouRouteImport.update({
   path: '/thank-you',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiReviewRoute = ApiReviewRouteImport.update({
+  id: '/api/review',
+  path: '/api/review',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogsSlugRoute = BlogsSlugRouteImport.update({
   id: '/blogs_/$slug',
   path: '/blogs/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsAboutRoute = EsAboutRouteImport.update({
+  id: '/es_/about',
+  path: '/es/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsAccessibilityRoute = EsAccessibilityRouteImport.update({
+  id: '/es_/accessibility',
+  path: '/es/accessibility',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsAttorneyRoute = EsAttorneyRouteImport.update({
+  id: '/es_/attorney',
+  path: '/es/attorney',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsBlogsRoute = EsBlogsRouteImport.update({
+  id: '/es_/blogs',
+  path: '/es/blogs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsCaseValueCalculatorRoute = EsCaseValueCalculatorRouteImport.update({
+  id: '/es_/case-value-calculator',
+  path: '/es/case-value-calculator',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsContactRoute = EsContactRouteImport.update({
+  id: '/es_/contact',
+  path: '/es/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsDisclaimerRoute = EsDisclaimerRouteImport.update({
+  id: '/es_/disclaimer',
+  path: '/es/disclaimer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsLocationsRoute = EsLocationsRouteImport.update({
+  id: '/es_/locations',
+  path: '/es/locations',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsPhotoCreditsRoute = EsPhotoCreditsRouteImport.update({
+  id: '/es_/photo-credits',
+  path: '/es/photo-credits',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsPracticeAreasRoute = EsPracticeAreasRouteImport.update({
+  id: '/es_/practice-areas',
+  path: '/es/practice-areas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsPrivacyPolicyRoute = EsPrivacyPolicyRouteImport.update({
+  id: '/es_/privacy-policy',
+  path: '/es/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsResultsRoute = EsResultsRouteImport.update({
+  id: '/es_/results',
+  path: '/es/results',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsTermsRoute = EsTermsRouteImport.update({
+  id: '/es_/terms',
+  path: '/es/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsThankYouRoute = EsThankYouRouteImport.update({
+  id: '/es_/thank-you',
+  path: '/es/thank-you',
   getParentRoute: () => rootRouteImport,
 } as any)
 const KoAboutRoute = KoAboutRouteImport.update({
@@ -176,6 +288,11 @@ const KoLocationsRoute = KoLocationsRouteImport.update({
   path: '/ko/locations',
   getParentRoute: () => rootRouteImport,
 } as any)
+const KoPhotoCreditsRoute = KoPhotoCreditsRouteImport.update({
+  id: '/ko_/photo-credits',
+  path: '/ko/photo-credits',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const KoPracticeAreasRoute = KoPracticeAreasRouteImport.update({
   id: '/ko_/practice-areas',
   path: '/ko/practice-areas',
@@ -211,6 +328,21 @@ const PracticeAreasSlugRoute = PracticeAreasSlugRouteImport.update({
   path: '/practice-areas/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EsBlogsSlugRoute = EsBlogsSlugRouteImport.update({
+  id: '/es_/blogs_/$slug',
+  path: '/es/blogs/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsLocationsSlugRoute = EsLocationsSlugRouteImport.update({
+  id: '/es_/locations_/$slug',
+  path: '/es/locations/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsPracticeAreasSlugRoute = EsPracticeAreasSlugRouteImport.update({
+  id: '/es_/practice-areas_/$slug',
+  path: '/es/practice-areas/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const KoBlogsSlugRoute = KoBlogsSlugRouteImport.update({
   id: '/ko_/blogs_/$slug',
   path: '/ko/blogs/$slug',
@@ -236,16 +368,34 @@ export interface FileRoutesByFullPath {
   '/case-value-calculator': typeof CaseValueCalculatorRoute
   '/contact': typeof ContactRoute
   '/disclaimer': typeof DisclaimerRoute
+  '/es': typeof EsRoute
   '/ko': typeof KoRoute
   '/locations': typeof LocationsRoute
+  '/photo-credits': typeof PhotoCreditsRoute
   '/practice-areas': typeof PracticeAreasRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/results': typeof ResultsRoute
+  '/review': typeof ReviewRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/thank-you': typeof ThankYouRoute
+  '/api/review': typeof ApiReviewRoute
   '/blogs/$slug': typeof BlogsSlugRoute
+  '/es/about': typeof EsAboutRoute
+  '/es/accessibility': typeof EsAccessibilityRoute
+  '/es/attorney': typeof EsAttorneyRoute
+  '/es/blogs': typeof EsBlogsRoute
+  '/es/case-value-calculator': typeof EsCaseValueCalculatorRoute
+  '/es/contact': typeof EsContactRoute
+  '/es/disclaimer': typeof EsDisclaimerRoute
+  '/es/locations': typeof EsLocationsRoute
+  '/es/photo-credits': typeof EsPhotoCreditsRoute
+  '/es/practice-areas': typeof EsPracticeAreasRoute
+  '/es/privacy-policy': typeof EsPrivacyPolicyRoute
+  '/es/results': typeof EsResultsRoute
+  '/es/terms': typeof EsTermsRoute
+  '/es/thank-you': typeof EsThankYouRoute
   '/ko/about': typeof KoAboutRoute
   '/ko/accessibility': typeof KoAccessibilityRoute
   '/ko/attorney': typeof KoAttorneyRoute
@@ -254,6 +404,7 @@ export interface FileRoutesByFullPath {
   '/ko/contact': typeof KoContactRoute
   '/ko/disclaimer': typeof KoDisclaimerRoute
   '/ko/locations': typeof KoLocationsRoute
+  '/ko/photo-credits': typeof KoPhotoCreditsRoute
   '/ko/practice-areas': typeof KoPracticeAreasRoute
   '/ko/privacy-policy': typeof KoPrivacyPolicyRoute
   '/ko/results': typeof KoResultsRoute
@@ -261,6 +412,9 @@ export interface FileRoutesByFullPath {
   '/ko/thank-you': typeof KoThankYouRoute
   '/locations/$slug': typeof LocationsSlugRoute
   '/practice-areas/$slug': typeof PracticeAreasSlugRoute
+  '/es/blogs/$slug': typeof EsBlogsSlugRoute
+  '/es/locations/$slug': typeof EsLocationsSlugRoute
+  '/es/practice-areas/$slug': typeof EsPracticeAreasSlugRoute
   '/ko/blogs/$slug': typeof KoBlogsSlugRoute
   '/ko/locations/$slug': typeof KoLocationsSlugRoute
   '/ko/practice-areas/$slug': typeof KoPracticeAreasSlugRoute
@@ -274,16 +428,34 @@ export interface FileRoutesByTo {
   '/case-value-calculator': typeof CaseValueCalculatorRoute
   '/contact': typeof ContactRoute
   '/disclaimer': typeof DisclaimerRoute
+  '/es': typeof EsRoute
   '/ko': typeof KoRoute
   '/locations': typeof LocationsRoute
+  '/photo-credits': typeof PhotoCreditsRoute
   '/practice-areas': typeof PracticeAreasRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/results': typeof ResultsRoute
+  '/review': typeof ReviewRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/thank-you': typeof ThankYouRoute
+  '/api/review': typeof ApiReviewRoute
   '/blogs/$slug': typeof BlogsSlugRoute
+  '/es/about': typeof EsAboutRoute
+  '/es/accessibility': typeof EsAccessibilityRoute
+  '/es/attorney': typeof EsAttorneyRoute
+  '/es/blogs': typeof EsBlogsRoute
+  '/es/case-value-calculator': typeof EsCaseValueCalculatorRoute
+  '/es/contact': typeof EsContactRoute
+  '/es/disclaimer': typeof EsDisclaimerRoute
+  '/es/locations': typeof EsLocationsRoute
+  '/es/photo-credits': typeof EsPhotoCreditsRoute
+  '/es/practice-areas': typeof EsPracticeAreasRoute
+  '/es/privacy-policy': typeof EsPrivacyPolicyRoute
+  '/es/results': typeof EsResultsRoute
+  '/es/terms': typeof EsTermsRoute
+  '/es/thank-you': typeof EsThankYouRoute
   '/ko/about': typeof KoAboutRoute
   '/ko/accessibility': typeof KoAccessibilityRoute
   '/ko/attorney': typeof KoAttorneyRoute
@@ -292,6 +464,7 @@ export interface FileRoutesByTo {
   '/ko/contact': typeof KoContactRoute
   '/ko/disclaimer': typeof KoDisclaimerRoute
   '/ko/locations': typeof KoLocationsRoute
+  '/ko/photo-credits': typeof KoPhotoCreditsRoute
   '/ko/practice-areas': typeof KoPracticeAreasRoute
   '/ko/privacy-policy': typeof KoPrivacyPolicyRoute
   '/ko/results': typeof KoResultsRoute
@@ -299,6 +472,9 @@ export interface FileRoutesByTo {
   '/ko/thank-you': typeof KoThankYouRoute
   '/locations/$slug': typeof LocationsSlugRoute
   '/practice-areas/$slug': typeof PracticeAreasSlugRoute
+  '/es/blogs/$slug': typeof EsBlogsSlugRoute
+  '/es/locations/$slug': typeof EsLocationsSlugRoute
+  '/es/practice-areas/$slug': typeof EsPracticeAreasSlugRoute
   '/ko/blogs/$slug': typeof KoBlogsSlugRoute
   '/ko/locations/$slug': typeof KoLocationsSlugRoute
   '/ko/practice-areas/$slug': typeof KoPracticeAreasSlugRoute
@@ -313,16 +489,34 @@ export interface FileRoutesById {
   '/case-value-calculator': typeof CaseValueCalculatorRoute
   '/contact': typeof ContactRoute
   '/disclaimer': typeof DisclaimerRoute
+  '/es': typeof EsRoute
   '/ko': typeof KoRoute
   '/locations': typeof LocationsRoute
+  '/photo-credits': typeof PhotoCreditsRoute
   '/practice-areas': typeof PracticeAreasRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/results': typeof ResultsRoute
+  '/review': typeof ReviewRoute
   '/robots.txt': typeof RobotsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/thank-you': typeof ThankYouRoute
+  '/api/review': typeof ApiReviewRoute
   '/blogs_/$slug': typeof BlogsSlugRoute
+  '/es_/about': typeof EsAboutRoute
+  '/es_/accessibility': typeof EsAccessibilityRoute
+  '/es_/attorney': typeof EsAttorneyRoute
+  '/es_/blogs': typeof EsBlogsRoute
+  '/es_/case-value-calculator': typeof EsCaseValueCalculatorRoute
+  '/es_/contact': typeof EsContactRoute
+  '/es_/disclaimer': typeof EsDisclaimerRoute
+  '/es_/locations': typeof EsLocationsRoute
+  '/es_/photo-credits': typeof EsPhotoCreditsRoute
+  '/es_/practice-areas': typeof EsPracticeAreasRoute
+  '/es_/privacy-policy': typeof EsPrivacyPolicyRoute
+  '/es_/results': typeof EsResultsRoute
+  '/es_/terms': typeof EsTermsRoute
+  '/es_/thank-you': typeof EsThankYouRoute
   '/ko_/about': typeof KoAboutRoute
   '/ko_/accessibility': typeof KoAccessibilityRoute
   '/ko_/attorney': typeof KoAttorneyRoute
@@ -331,6 +525,7 @@ export interface FileRoutesById {
   '/ko_/contact': typeof KoContactRoute
   '/ko_/disclaimer': typeof KoDisclaimerRoute
   '/ko_/locations': typeof KoLocationsRoute
+  '/ko_/photo-credits': typeof KoPhotoCreditsRoute
   '/ko_/practice-areas': typeof KoPracticeAreasRoute
   '/ko_/privacy-policy': typeof KoPrivacyPolicyRoute
   '/ko_/results': typeof KoResultsRoute
@@ -338,6 +533,9 @@ export interface FileRoutesById {
   '/ko_/thank-you': typeof KoThankYouRoute
   '/locations_/$slug': typeof LocationsSlugRoute
   '/practice-areas_/$slug': typeof PracticeAreasSlugRoute
+  '/es_/blogs_/$slug': typeof EsBlogsSlugRoute
+  '/es_/locations_/$slug': typeof EsLocationsSlugRoute
+  '/es_/practice-areas_/$slug': typeof EsPracticeAreasSlugRoute
   '/ko_/blogs_/$slug': typeof KoBlogsSlugRoute
   '/ko_/locations_/$slug': typeof KoLocationsSlugRoute
   '/ko_/practice-areas_/$slug': typeof KoPracticeAreasSlugRoute
@@ -353,16 +551,34 @@ export interface FileRouteTypes {
     | '/case-value-calculator'
     | '/contact'
     | '/disclaimer'
+    | '/es'
     | '/ko'
     | '/locations'
+    | '/photo-credits'
     | '/practice-areas'
     | '/privacy-policy'
     | '/results'
+    | '/review'
     | '/robots.txt'
     | '/sitemap.xml'
     | '/terms'
     | '/thank-you'
+    | '/api/review'
     | '/blogs/$slug'
+    | '/es/about'
+    | '/es/accessibility'
+    | '/es/attorney'
+    | '/es/blogs'
+    | '/es/case-value-calculator'
+    | '/es/contact'
+    | '/es/disclaimer'
+    | '/es/locations'
+    | '/es/photo-credits'
+    | '/es/practice-areas'
+    | '/es/privacy-policy'
+    | '/es/results'
+    | '/es/terms'
+    | '/es/thank-you'
     | '/ko/about'
     | '/ko/accessibility'
     | '/ko/attorney'
@@ -371,6 +587,7 @@ export interface FileRouteTypes {
     | '/ko/contact'
     | '/ko/disclaimer'
     | '/ko/locations'
+    | '/ko/photo-credits'
     | '/ko/practice-areas'
     | '/ko/privacy-policy'
     | '/ko/results'
@@ -378,6 +595,9 @@ export interface FileRouteTypes {
     | '/ko/thank-you'
     | '/locations/$slug'
     | '/practice-areas/$slug'
+    | '/es/blogs/$slug'
+    | '/es/locations/$slug'
+    | '/es/practice-areas/$slug'
     | '/ko/blogs/$slug'
     | '/ko/locations/$slug'
     | '/ko/practice-areas/$slug'
@@ -391,16 +611,34 @@ export interface FileRouteTypes {
     | '/case-value-calculator'
     | '/contact'
     | '/disclaimer'
+    | '/es'
     | '/ko'
     | '/locations'
+    | '/photo-credits'
     | '/practice-areas'
     | '/privacy-policy'
     | '/results'
+    | '/review'
     | '/robots.txt'
     | '/sitemap.xml'
     | '/terms'
     | '/thank-you'
+    | '/api/review'
     | '/blogs/$slug'
+    | '/es/about'
+    | '/es/accessibility'
+    | '/es/attorney'
+    | '/es/blogs'
+    | '/es/case-value-calculator'
+    | '/es/contact'
+    | '/es/disclaimer'
+    | '/es/locations'
+    | '/es/photo-credits'
+    | '/es/practice-areas'
+    | '/es/privacy-policy'
+    | '/es/results'
+    | '/es/terms'
+    | '/es/thank-you'
     | '/ko/about'
     | '/ko/accessibility'
     | '/ko/attorney'
@@ -409,6 +647,7 @@ export interface FileRouteTypes {
     | '/ko/contact'
     | '/ko/disclaimer'
     | '/ko/locations'
+    | '/ko/photo-credits'
     | '/ko/practice-areas'
     | '/ko/privacy-policy'
     | '/ko/results'
@@ -416,6 +655,9 @@ export interface FileRouteTypes {
     | '/ko/thank-you'
     | '/locations/$slug'
     | '/practice-areas/$slug'
+    | '/es/blogs/$slug'
+    | '/es/locations/$slug'
+    | '/es/practice-areas/$slug'
     | '/ko/blogs/$slug'
     | '/ko/locations/$slug'
     | '/ko/practice-areas/$slug'
@@ -429,16 +671,34 @@ export interface FileRouteTypes {
     | '/case-value-calculator'
     | '/contact'
     | '/disclaimer'
+    | '/es'
     | '/ko'
     | '/locations'
+    | '/photo-credits'
     | '/practice-areas'
     | '/privacy-policy'
     | '/results'
+    | '/review'
     | '/robots.txt'
     | '/sitemap.xml'
     | '/terms'
     | '/thank-you'
+    | '/api/review'
     | '/blogs_/$slug'
+    | '/es_/about'
+    | '/es_/accessibility'
+    | '/es_/attorney'
+    | '/es_/blogs'
+    | '/es_/case-value-calculator'
+    | '/es_/contact'
+    | '/es_/disclaimer'
+    | '/es_/locations'
+    | '/es_/photo-credits'
+    | '/es_/practice-areas'
+    | '/es_/privacy-policy'
+    | '/es_/results'
+    | '/es_/terms'
+    | '/es_/thank-you'
     | '/ko_/about'
     | '/ko_/accessibility'
     | '/ko_/attorney'
@@ -447,6 +707,7 @@ export interface FileRouteTypes {
     | '/ko_/contact'
     | '/ko_/disclaimer'
     | '/ko_/locations'
+    | '/ko_/photo-credits'
     | '/ko_/practice-areas'
     | '/ko_/privacy-policy'
     | '/ko_/results'
@@ -454,6 +715,9 @@ export interface FileRouteTypes {
     | '/ko_/thank-you'
     | '/locations_/$slug'
     | '/practice-areas_/$slug'
+    | '/es_/blogs_/$slug'
+    | '/es_/locations_/$slug'
+    | '/es_/practice-areas_/$slug'
     | '/ko_/blogs_/$slug'
     | '/ko_/locations_/$slug'
     | '/ko_/practice-areas_/$slug'
@@ -468,16 +732,34 @@ export interface RootRouteChildren {
   CaseValueCalculatorRoute: typeof CaseValueCalculatorRoute
   ContactRoute: typeof ContactRoute
   DisclaimerRoute: typeof DisclaimerRoute
+  EsRoute: typeof EsRoute
   KoRoute: typeof KoRoute
   LocationsRoute: typeof LocationsRoute
+  PhotoCreditsRoute: typeof PhotoCreditsRoute
   PracticeAreasRoute: typeof PracticeAreasRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ResultsRoute: typeof ResultsRoute
+  ReviewRoute: typeof ReviewRoute
   RobotsDottxtRoute: typeof RobotsDottxtRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
   ThankYouRoute: typeof ThankYouRoute
+  ApiReviewRoute: typeof ApiReviewRoute
   BlogsSlugRoute: typeof BlogsSlugRoute
+  EsAboutRoute: typeof EsAboutRoute
+  EsAccessibilityRoute: typeof EsAccessibilityRoute
+  EsAttorneyRoute: typeof EsAttorneyRoute
+  EsBlogsRoute: typeof EsBlogsRoute
+  EsCaseValueCalculatorRoute: typeof EsCaseValueCalculatorRoute
+  EsContactRoute: typeof EsContactRoute
+  EsDisclaimerRoute: typeof EsDisclaimerRoute
+  EsLocationsRoute: typeof EsLocationsRoute
+  EsPhotoCreditsRoute: typeof EsPhotoCreditsRoute
+  EsPracticeAreasRoute: typeof EsPracticeAreasRoute
+  EsPrivacyPolicyRoute: typeof EsPrivacyPolicyRoute
+  EsResultsRoute: typeof EsResultsRoute
+  EsTermsRoute: typeof EsTermsRoute
+  EsThankYouRoute: typeof EsThankYouRoute
   KoAboutRoute: typeof KoAboutRoute
   KoAccessibilityRoute: typeof KoAccessibilityRoute
   KoAttorneyRoute: typeof KoAttorneyRoute
@@ -486,6 +768,7 @@ export interface RootRouteChildren {
   KoContactRoute: typeof KoContactRoute
   KoDisclaimerRoute: typeof KoDisclaimerRoute
   KoLocationsRoute: typeof KoLocationsRoute
+  KoPhotoCreditsRoute: typeof KoPhotoCreditsRoute
   KoPracticeAreasRoute: typeof KoPracticeAreasRoute
   KoPrivacyPolicyRoute: typeof KoPrivacyPolicyRoute
   KoResultsRoute: typeof KoResultsRoute
@@ -493,6 +776,9 @@ export interface RootRouteChildren {
   KoThankYouRoute: typeof KoThankYouRoute
   LocationsSlugRoute: typeof LocationsSlugRoute
   PracticeAreasSlugRoute: typeof PracticeAreasSlugRoute
+  EsBlogsSlugRoute: typeof EsBlogsSlugRoute
+  EsLocationsSlugRoute: typeof EsLocationsSlugRoute
+  EsPracticeAreasSlugRoute: typeof EsPracticeAreasSlugRoute
   KoBlogsSlugRoute: typeof KoBlogsSlugRoute
   KoLocationsSlugRoute: typeof KoLocationsSlugRoute
   KoPracticeAreasSlugRoute: typeof KoPracticeAreasSlugRoute
@@ -556,6 +842,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DisclaimerRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/es': {
+      id: '/es'
+      path: '/es'
+      fullPath: '/es'
+      preLoaderRoute: typeof EsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/ko': {
       id: '/ko'
       path: '/ko'
@@ -568,6 +861,13 @@ declare module '@tanstack/react-router' {
       path: '/locations'
       fullPath: '/locations'
       preLoaderRoute: typeof LocationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/photo-credits': {
+      id: '/photo-credits'
+      path: '/photo-credits'
+      fullPath: '/photo-credits'
+      preLoaderRoute: typeof PhotoCreditsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/practice-areas': {
@@ -589,6 +889,13 @@ declare module '@tanstack/react-router' {
       path: '/results'
       fullPath: '/results'
       preLoaderRoute: typeof ResultsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/review': {
+      id: '/review'
+      path: '/review'
+      fullPath: '/review'
+      preLoaderRoute: typeof ReviewRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/robots.txt': {
@@ -619,11 +926,116 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ThankYouRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/review': {
+      id: '/api/review'
+      path: '/api/review'
+      fullPath: '/api/review'
+      preLoaderRoute: typeof ApiReviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blogs_/$slug': {
       id: '/blogs_/$slug'
       path: '/blogs/$slug'
       fullPath: '/blogs/$slug'
       preLoaderRoute: typeof BlogsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es_/about': {
+      id: '/es_/about'
+      path: '/es/about'
+      fullPath: '/es/about'
+      preLoaderRoute: typeof EsAboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es_/accessibility': {
+      id: '/es_/accessibility'
+      path: '/es/accessibility'
+      fullPath: '/es/accessibility'
+      preLoaderRoute: typeof EsAccessibilityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es_/attorney': {
+      id: '/es_/attorney'
+      path: '/es/attorney'
+      fullPath: '/es/attorney'
+      preLoaderRoute: typeof EsAttorneyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es_/blogs': {
+      id: '/es_/blogs'
+      path: '/es/blogs'
+      fullPath: '/es/blogs'
+      preLoaderRoute: typeof EsBlogsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es_/case-value-calculator': {
+      id: '/es_/case-value-calculator'
+      path: '/es/case-value-calculator'
+      fullPath: '/es/case-value-calculator'
+      preLoaderRoute: typeof EsCaseValueCalculatorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es_/contact': {
+      id: '/es_/contact'
+      path: '/es/contact'
+      fullPath: '/es/contact'
+      preLoaderRoute: typeof EsContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es_/disclaimer': {
+      id: '/es_/disclaimer'
+      path: '/es/disclaimer'
+      fullPath: '/es/disclaimer'
+      preLoaderRoute: typeof EsDisclaimerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es_/locations': {
+      id: '/es_/locations'
+      path: '/es/locations'
+      fullPath: '/es/locations'
+      preLoaderRoute: typeof EsLocationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es_/photo-credits': {
+      id: '/es_/photo-credits'
+      path: '/es/photo-credits'
+      fullPath: '/es/photo-credits'
+      preLoaderRoute: typeof EsPhotoCreditsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es_/practice-areas': {
+      id: '/es_/practice-areas'
+      path: '/es/practice-areas'
+      fullPath: '/es/practice-areas'
+      preLoaderRoute: typeof EsPracticeAreasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es_/privacy-policy': {
+      id: '/es_/privacy-policy'
+      path: '/es/privacy-policy'
+      fullPath: '/es/privacy-policy'
+      preLoaderRoute: typeof EsPrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es_/results': {
+      id: '/es_/results'
+      path: '/es/results'
+      fullPath: '/es/results'
+      preLoaderRoute: typeof EsResultsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es_/terms': {
+      id: '/es_/terms'
+      path: '/es/terms'
+      fullPath: '/es/terms'
+      preLoaderRoute: typeof EsTermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es_/thank-you': {
+      id: '/es_/thank-you'
+      path: '/es/thank-you'
+      fullPath: '/es/thank-you'
+      preLoaderRoute: typeof EsThankYouRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/ko_/about': {
@@ -682,6 +1094,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KoLocationsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ko_/photo-credits': {
+      id: '/ko_/photo-credits'
+      path: '/ko/photo-credits'
+      fullPath: '/ko/photo-credits'
+      preLoaderRoute: typeof KoPhotoCreditsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/ko_/practice-areas': {
       id: '/ko_/practice-areas'
       path: '/ko/practice-areas'
@@ -731,6 +1150,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PracticeAreasSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/es_/blogs_/$slug': {
+      id: '/es_/blogs_/$slug'
+      path: '/es/blogs/$slug'
+      fullPath: '/es/blogs/$slug'
+      preLoaderRoute: typeof EsBlogsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es_/locations_/$slug': {
+      id: '/es_/locations_/$slug'
+      path: '/es/locations/$slug'
+      fullPath: '/es/locations/$slug'
+      preLoaderRoute: typeof EsLocationsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/es_/practice-areas_/$slug': {
+      id: '/es_/practice-areas_/$slug'
+      path: '/es/practice-areas/$slug'
+      fullPath: '/es/practice-areas/$slug'
+      preLoaderRoute: typeof EsPracticeAreasSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/ko_/blogs_/$slug': {
       id: '/ko_/blogs_/$slug'
       path: '/ko/blogs/$slug'
@@ -764,16 +1204,34 @@ const rootRouteChildren: RootRouteChildren = {
   CaseValueCalculatorRoute: CaseValueCalculatorRoute,
   ContactRoute: ContactRoute,
   DisclaimerRoute: DisclaimerRoute,
+  EsRoute: EsRoute,
   KoRoute: KoRoute,
   LocationsRoute: LocationsRoute,
+  PhotoCreditsRoute: PhotoCreditsRoute,
   PracticeAreasRoute: PracticeAreasRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   ResultsRoute: ResultsRoute,
+  ReviewRoute: ReviewRoute,
   RobotsDottxtRoute: RobotsDottxtRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
   ThankYouRoute: ThankYouRoute,
+  ApiReviewRoute: ApiReviewRoute,
   BlogsSlugRoute: BlogsSlugRoute,
+  EsAboutRoute: EsAboutRoute,
+  EsAccessibilityRoute: EsAccessibilityRoute,
+  EsAttorneyRoute: EsAttorneyRoute,
+  EsBlogsRoute: EsBlogsRoute,
+  EsCaseValueCalculatorRoute: EsCaseValueCalculatorRoute,
+  EsContactRoute: EsContactRoute,
+  EsDisclaimerRoute: EsDisclaimerRoute,
+  EsLocationsRoute: EsLocationsRoute,
+  EsPhotoCreditsRoute: EsPhotoCreditsRoute,
+  EsPracticeAreasRoute: EsPracticeAreasRoute,
+  EsPrivacyPolicyRoute: EsPrivacyPolicyRoute,
+  EsResultsRoute: EsResultsRoute,
+  EsTermsRoute: EsTermsRoute,
+  EsThankYouRoute: EsThankYouRoute,
   KoAboutRoute: KoAboutRoute,
   KoAccessibilityRoute: KoAccessibilityRoute,
   KoAttorneyRoute: KoAttorneyRoute,
@@ -782,6 +1240,7 @@ const rootRouteChildren: RootRouteChildren = {
   KoContactRoute: KoContactRoute,
   KoDisclaimerRoute: KoDisclaimerRoute,
   KoLocationsRoute: KoLocationsRoute,
+  KoPhotoCreditsRoute: KoPhotoCreditsRoute,
   KoPracticeAreasRoute: KoPracticeAreasRoute,
   KoPrivacyPolicyRoute: KoPrivacyPolicyRoute,
   KoResultsRoute: KoResultsRoute,
@@ -789,6 +1248,9 @@ const rootRouteChildren: RootRouteChildren = {
   KoThankYouRoute: KoThankYouRoute,
   LocationsSlugRoute: LocationsSlugRoute,
   PracticeAreasSlugRoute: PracticeAreasSlugRoute,
+  EsBlogsSlugRoute: EsBlogsSlugRoute,
+  EsLocationsSlugRoute: EsLocationsSlugRoute,
+  EsPracticeAreasSlugRoute: EsPracticeAreasSlugRoute,
   KoBlogsSlugRoute: KoBlogsSlugRoute,
   KoLocationsSlugRoute: KoLocationsSlugRoute,
   KoPracticeAreasSlugRoute: KoPracticeAreasSlugRoute,

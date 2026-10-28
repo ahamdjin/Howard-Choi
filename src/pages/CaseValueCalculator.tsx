@@ -1,3 +1,4 @@
+import { trackExternalFormSubmission } from "@/lib/inquiry-client";
 import SiteDepthSection from "@/components/SiteDepthSection";
 import { responsiveImageProps } from "@/lib/responsive-images";
 import PageBreadcrumb from "@/components/PageBreadcrumb";
@@ -270,13 +271,14 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
       : (ko ? "사건 가치 계산기 검토" : es ? "Revisión de la calculadora de valor del caso" : "Case Value Calculator Review");
   };
 
-  const requestReview = (event: React.FormEvent<HTMLFormElement>) => {
+  const requestReview = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (!estimate || isSubmitting) return;
     setIsSubmitting(true);
     // HighLevel External Tracking listens for this native form submission.
     // Keep the page alive briefly so its background request can complete.
-    window.setTimeout(() => window.location.assign(ko ? "/ko/thank-you" : es ? "/es/thank-you" : "/thank-you"), 1600);
+    await trackExternalFormSubmission(locale, "case_value_review");
+    window.location.assign(ko ? "/ko/thank-you" : es ? "/es/thank-you" : "/thank-you");
   };
 
   return (

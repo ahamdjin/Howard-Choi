@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { blogPosts } from "@/data/blogs";
-import { getKoBlogBySlug } from "@/data/koBlogs";
+import { hasIndexableKoreanBlog } from "@/data/blogLocaleAvailability";
 import { practiceAreas, serviceLocations } from "@/data/injurySite";
 import { absoluteUrl } from "@/lib/seo";
 
@@ -8,7 +8,7 @@ const xmlEscape = (value: string) => value
   .replace(/&/g, "&amp;")
   .replace(/</g, "&lt;")
   .replace(/>/g, "&gt;")
-  .replace(/\"/g, "&quot;")
+  .replace(/"/g, "&quot;")
   .replace(/'/g, "&apos;");
 
 const renderUrl = (path: string, englishPath: string, koreanPath: string, lastmod?: string) => `
@@ -49,7 +49,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           pair(`/locations/${location.slug}`, `/ko/locations/${location.slug}`),
         );
         const articleUrls = blogPosts.flatMap((post) =>
-          getKoBlogBySlug(post.slug)
+          hasIndexableKoreanBlog(post.slug)
             ? pair(`/blogs/${post.slug}`, `/ko/blogs/${post.slug}`, post.updatedAt)
             : [englishOnly(`/blogs/${post.slug}`, post.updatedAt)],
         );

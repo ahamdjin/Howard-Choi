@@ -5,7 +5,7 @@
   "excerpt": "Two years is the general California rule, but the exceptions are where people get caught: government claims, minors, delayed discovery, and the evidence deadlines nobody writes down.",
   "category": "California Injury Law",
   "publishedAt": "2026-09-10",
-  "updatedAt": "2026-10-19",
+  "updatedAt": "2026-10-28",
   "alt": "California courthouse used to explain personal injury filing deadlines",
   "intro": "Deadlines are one of the few parts of an injury claim that can end the legal case regardless of how strong the evidence may otherwise be. California has general limitation periods for personal injury and property damage, but the correct deadline can change because of the defendant, the type of claim, the age or status of a party, delayed discovery, government involvement, and other exceptions.",
   "takeaway": "The general rule is useful for orientation, but the safe deadline is the one calculated from the actual facts. Government claims and other exceptions can require action much earlier than two years.",
@@ -115,3 +115,10 @@ Does a government agency's silence mean the claim is approved? No. California Co
 What if the collision happened outside Buena Park? The law governing the event and the relevant defendants matters more than which city houses your attorney. If the incident took place outside California, a different state's rules may apply; do not transplant these California examples.
 
 Which official guidance should I read? California Courts' pages on statutes of limitations and government claims are the primary starting points; the latter points readers to California Government Code sections 905 and 911.2. Use those materials to ask the right questions, then obtain a specific deadline determination.
+
+
+## Build a deadline register that explains its assumptions
+
+Use separate rows for the accident, each potentially responsible person or entity, insurance notices, preservation requests, administrative claims and court filings. Record the date, the source of that date, who is responsible for checking it, and whether the deadline is confirmed or still needs legal review. A calendar entry without those assumptions can conceal the fact that the wrong event or defendant was used.
+
+Keep proof of what was sent, to whom, by which permitted method and when. A draft on a computer, an unanswered voicemail or an insurer saying it opened a file is not the same evidence as a properly completed filing. Ask counsel to identify the next procedural step as well as the first date; meeting one requirement does not establish that every later requirement has been met. This register is an organizing tool, not a substitute for an individualized deadline assessment.

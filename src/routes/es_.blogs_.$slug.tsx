@@ -26,11 +26,11 @@ export const Route = createFileRoute("/es_/blogs_/$slug")({
       meta: [
         ...seo.meta,
         { property: "article:published_time", content: loaderData.publishedAt },
-        { property: "article:modified_time", content: loaderData.publishedAt },
+        { property: "article:modified_time", content: loaderData.updatedAt },
         { property: "article:section", content: loaderData.category },
       ],
       scripts: [
-        { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ title: loaderData.title, description: loaderData.excerpt, path, image: loaderData.image, publishedAt: loaderData.publishedAt, locale: "es-US" })) },
+        { type: "application/ld+json", children: JSON.stringify(articleJsonLd({ title: loaderData.title, description: loaderData.excerpt, path, image: loaderData.image, publishedAt: loaderData.publishedAt, updatedAt: loaderData.updatedAt, locale: "es-US" })) },
         { type: "application/ld+json", children: JSON.stringify(breadcrumbJsonLd([{ name: "Inicio", path: "/es" }, { name: "Guías legales", path: "/es/blogs" }, { name: loaderData.title, path }])) },
       ],
     };

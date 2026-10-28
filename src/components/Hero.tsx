@@ -70,7 +70,7 @@ const Hero = ({ locale = "en" }: { locale?: SiteLocale }) => {
   const contentY = useTransform(scrollY, [0, transitionEnd * 0.72], [0, -22]);
 
   const eyebrow = ko ? "사고 · 개인상해 변호사 · 부에나파크, 캘리포니아" : es ? "Abogado de accidentes y lesiones personales · Buena Park, California" : "Accident & Personal Injury Lawyer · Buena Park, California";
-  const title = ko ? "부에나파크 사고 변호사." : es ? "Abogado de accidentes en Buena Park, CA." : "Accident Lawyer in Buena Park, CA.";
+  const title = ko ? "부에나파크 개인상해 변호사." : es ? "Abogado de lesiones personales en Buena Park, CA." : "Personal Injury Lawyer in Buena Park, CA.";
   const body = ko
     ? "자동차 사고나 그 밖의 중대한 사고 이후, 증거와 보험 그리고 다음 단계에 초점을 둔 개인상해 법률 안내를 제공합니다."
     : es

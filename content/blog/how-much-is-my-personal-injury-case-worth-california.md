@@ -5,7 +5,7 @@
   "excerpt": "Why there is no settlement formula, what actually moves the number up or down in a California injury claim, and why the figure you are quoted early is rarely the figure you end up with.",
   "category": "Case Value",
   "publishedAt": "2026-09-13",
-  "updatedAt": "2026-10-19",
+  "updatedAt": "2026-10-28",
   "alt": "Lady Justice and legal reference library",
   "intro": "There is no honest way to value every California personal injury case with one multiplier or one settlement table. Case value develops from the losses that can be supported, the responsibility for the accident, the available insurance or assets, and the strength of the evidence connecting those pieces. A calculator can organize the inputs, but the final range still depends on facts a simple formula cannot see.",
   "takeaway": "Case value is a combination of damages, liability, coverage, and proof. A larger medical bill by itself does not automatically mean a larger settlement.",
@@ -125,3 +125,10 @@ No stage authorizes a universal payment promise. A case can become stronger when
 Ask what evidence supports the number, which kinds of damages were included, whether treatment and future-care assumptions are documented, how comparative fault was assessed, whether the number assumes more coverage than actually exists, and what would need to happen before you could reasonably receive money.
 
 For original authority, consult the California Judicial Council's CACI damages instructions and the California Department of Insurance's current automobile insurance guide. An educational calculator can help organize facts, but it cannot replace a legally and medically supported assessment of a particular case.
+
+
+## Compare settlement proposals on the same worksheet
+
+Before comparing two offers, write down what each figure includes. Separate gross compensation from projected fees, litigation expenses, healthcare reimbursement claims and any other proposed deductions. Mark disputed or unknown deductions instead of silently treating them as zero. If a proposal depends on future information, identify which medical opinion, benefit record or coverage document is still missing.
+
+Then compare the scope of the release, not only the number. Ask whose claims are being released, whether any claims remain, and how unresolved treatment or reimbursement issues will be handled. A calculator cannot evaluate release language or confirm what will be left after distribution. A useful case-value conversation should explain the assumptions behind the estimate and which changes in evidence would justify revisiting it.

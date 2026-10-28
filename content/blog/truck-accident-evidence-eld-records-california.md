@@ -5,7 +5,7 @@
   "excerpt": "Learn which records may matter after a commercial-truck crash, including electronic logging devices, hours-of-service records, maintenance, inspections, onboard video, and company documents.",
   "category": "Truck Accidents",
   "publishedAt": "2026-09-11",
-  "updatedAt": "2026-10-19",
+  "updatedAt": "2026-10-28",
   "alt": "Law office used for commercial truck accident evidence review",
   "intro": "A commercial-truck crash can create evidence that does not exist in an ordinary two-car collision. Electronic logging devices, driver qualification files, maintenance records, dispatch information, onboard cameras, inspection materials, and company communications may help explain what happened before impact. Some of that evidence is retained for limited periods, which makes early preservation an important part of a serious truck-accident investigation.",
   "takeaway": "Truck cases can depend on records held by the carrier, not just evidence at the scene. Identifying those records early can prevent an important part of the crash history from disappearing.",
@@ -126,3 +126,10 @@ Can you demand the ELD record directly from the driver at the scene? You may ask
 Does the truck's insurance policy establish the value of an injury? No. Coverage, legal responsibility, medical causation and supported damages are separate questions. Multiple policy layers may be relevant but should be confirmed, not guessed.
 
 What original sources support this discussion? FMCSA's ELD technical FAQs, its six-month ELD retention guidance, the summary of hours-of-service rules, and the federal motor-carrier maintenance records guidance. Those source links accompany this guide for independent review.
+
+
+## Match the requested record to the disputed question
+
+An hours-of-service dispute calls for different records from a brake-maintenance dispute. List the question first: fatigue, vehicle condition, driver supervision, cargo movement or the actual collision sequence. Next identify the potentially relevant record, the likely custodian and what is known about retention. Do not assume the truck driver personally controls dispatch records or that every vehicle stores the same electronic information.
+
+Keep a preservation request distinct from obtaining the material. Record what was requested, whether the recipient acknowledged it, and what still requires follow-up or formal process. If a truck or component may be inspected, ask about a coordinated protocol before repair, disposal or invasive testing. This prevents a long list of requested documents from being mistaken for a completed investigation and helps the attorney prioritize evidence that could actually affect responsibility.

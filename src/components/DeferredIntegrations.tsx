@@ -15,11 +15,8 @@ const appendScript = (src: string, attributes: Record<string, string> = {}) => {
 const DeferredIntegrations = ({ externalFormPage, disableChat = false }: { externalFormPage: boolean; disableChat?: boolean }) => {
   useEffect(() => {
     let cancelled = false;
-    let timeoutId: number | undefined;
 
-    // HighLevel External Tracking needs to be present before any DOM-based
-    // website form can be submitted. Load it immediately on form pages; keep
-    // the chat widget deferred so it does not block the page.
+    // HighLevel External Tracking is the sole CRM delivery path.
     if (externalFormPage) {
       appendScript("https://link.msgsndr.com/js/external-tracking.js", {
         "data-tracking-id": "tk_9bc9b1c38e8446d69a248bc862fae75a",
@@ -46,10 +43,10 @@ const DeferredIntegrations = ({ externalFormPage, disableChat = false }: { exter
       };
     }
 
-    timeoutId = window.setTimeout(loadDeferred, 1200);
+    const timeoutId = globalThis.setTimeout(loadDeferred, 1200);
     return () => {
       cancelled = true;
-      if (timeoutId) window.clearTimeout(timeoutId);
+      globalThis.clearTimeout(timeoutId);
     };
   }, [externalFormPage, disableChat]);
 

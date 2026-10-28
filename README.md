@@ -12,9 +12,15 @@ Production website for **Buena Park Injury Lawyer / Howard Choi**.
 
 ---
 
+## Enquiry tracking
+
+HighLevel External Tracking is the sole enquiry capture path. No inbound workflow webhook or new API credential is required. GTM's existing lead event measures a valid browser submission, not confirmed CRM delivery. No form submissions or external delivery tests until the user authorizes them.
+
+See `docs/maintainers/enquiry-and-content-review-2026-10-28.md` for the GTM event contract, content parity checks and review gates.
+
 ## 1. Local development
 
-Requires **Node.js 22.12+** and npm.
+Requires **Node.js 22.12+**, npm and **Python 3.9+** for the build-time content parity check.
 
 ```bash
 git clone https://github.com/ahamdjin/Howard-Choi.git

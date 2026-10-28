@@ -1,3 +1,4 @@
+import { trackExternalFormSubmission } from "@/lib/inquiry-client";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -21,13 +22,12 @@ const WebsiteInquiryForm = ({ locale = "en" }: WebsiteInquiryFormProps) => {
     setFormData((current) => ({ ...current, [name]: value }));
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (isSubmitting) return;
     setIsSubmitting(true);
-    window.setTimeout(() => {
-      window.location.assign(`${prefix}/thank-you`);
-    }, 1500);
+    await trackExternalFormSubmission(locale);
+    window.location.assign(`${prefix}/thank-you`);
   };
 
   const fullName = isKorean ? "성명" : isSpanish ? "Nombre completo" : "Full name";

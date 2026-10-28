@@ -10,8 +10,9 @@ const ClientSuccessFeature = ({ locale = "en" }: { locale?: SiteLocale }) => {
   const prefix = ko ? "/ko" : es ? "/es" : "";
   const [active, setActive] = useState(0);
   const touchStart = useRef<{ x: number; y: number } | null>(null);
-  const items = clientReviews[locale];
-  const review = items[active];
+  const items = clientReviews[locale].filter((item) => item.approvedForPublication === true && Boolean(item.approvalReference));
+  if (!items.length) return null;
+  const review = items[active % items.length];
   const move = (direction: number) => setActive((value) => (value + direction + items.length) % items.length);
 
   return (

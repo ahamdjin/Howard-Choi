@@ -72,8 +72,8 @@ function RootDocument({ children }: { children: ReactNode }) {
   const isHomepage = pathname === "/" || pathname === "/ko" || pathname === "/es";
   const innerSitePage = /^\/(?:(?:ko|es)\/)?(?:practice-areas|locations|attorney|results|about)(?:\/|$)/.test(pathname);
   const attorneyPage = /^\/(?:(?:ko|es)\/)?attorney(?:\/|$)/.test(pathname);
-  // Pages carrying a HighLevel-tracked form. The homepage CTA form will not
-  // submit anywhere unless "/" stays in this list.
+  // Pages that may need HighLevel embed support. Managed enquiry forms submit
+  // through HighLevel External Tracking; no duplicate webhook delivery is used.
   const externalFormPage = [
     "/",
     "/ko",

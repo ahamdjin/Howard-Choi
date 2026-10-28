@@ -1,3 +1,4 @@
+import { practiceConsultationFocus } from "@/data/practiceConsultationFocus";
 import SiteDepthSection from "@/components/SiteDepthSection";
 import { ArrowRight, CalendarClock, CheckCircle2, Compass, FileText, HelpCircle, Layers, MapPin, Scale, ShieldCheck, Sparkles, Umbrella } from "lucide-react";
 import { useParams } from "@tanstack/react-router";
@@ -434,7 +435,7 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
           imageAlt={practiceMedia[practice.slug]?.alt || ""}
           detail
         />
-        <PracticeDetailHighlights locale={locale} subject={title} issues={issues} />
+        <PracticeDetailHighlights locale={locale} subject={title} issues={[...issues]} />
         <ReadingLayout
           locale={locale}
           label={`${title} · ${isKo(locale) ? "안내" : isEs(locale) ? "Guía" : "Guide"}`}
@@ -581,6 +582,11 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
               </div>
             </div>
           </ReadingSectionBlock>
+
+          {practiceConsultationFocus[practice.slug] && <section className="border-t border-foreground/12 py-10" aria-label={isKo(locale) ? "상담 준비" : isEs(locale) ? "Preparar la consulta" : "Prepare for a consultation"}>
+            <h2 className="editorial-serif text-3xl">{practiceConsultationFocus[practice.slug][locale].question}</h2>
+            <p className="mt-5 text-[17px] leading-8 text-foreground/80">{practiceConsultationFocus[practice.slug][locale].explanation}</p>
+          </section>}
 
           <ReadingSectionBlock id="related" locale={locale} Icon={Sparkles} kicker={isKo(locale) ? "09 · 더 보기" : isEs(locale) ? "09 · Explorar" : "09 · Explore"} title={isKo(locale) ? "다른 개인상해 업무 분야" : isEs(locale) ? "Áreas de práctica relacionadas." : "Related personal injury practice areas."}>
             <div className="editorial-link-grid">

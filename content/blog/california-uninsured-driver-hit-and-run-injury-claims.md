@@ -2,13 +2,14 @@
   "title": "Hit-and-Run or Uninsured Driver in California: Insurance & Injury Claims",
   "slug": "california-uninsured-driver-hit-and-run-injury-claims",
   "published": true,
-  "reviewStatus": "approved",
+  "reviewStatus": "pending-attorney-review",
   "excerpt": "Understand uninsured and underinsured motorist coverage in California, hit-and-run evidence, police reports, medical bills, claim notices and possible next steps.",
   "category": "Car Accident Insurance",
   "publishedAt": "2026-10-23",
   "alt": "Law office desk representing California insurance and collision documents",
   "intro": "When a driver leaves a collision or turns out to have no usable liability insurance, an injured person may face two separate problems: proving who caused the crash and finding an insurance policy that can respond. California uninsured and underinsured motorist rules are helpful to understand, but coverage is not automatic. The policy wording, insured person's status, nature of the collision, reporting, and timely notice all matter. This guide walks through the evidence and insurance questions in a practical order.",
-  "takeaway": "Do not assume a hit-and-run makes recovery impossible or that an uninsured driver guarantees payment from your own insurer. Preserve the crash evidence, report the incident, check the actual coverage and deadlines, and document your injuries separately."
+  "takeaway": "Do not assume a hit-and-run makes recovery impossible or that an uninsured driver guarantees payment from your own insurer. Preserve the crash evidence, report the incident, check the actual coverage and deadlines, and document your injuries separately.",
+  "updatedAt": "2026-10-28"
 }
 
 ## Start at the scene: safety and identifying facts
@@ -106,3 +107,10 @@ Ask whether the other vehicle and any responsible owner or employer have been ad
 If an adjuster asks for a recorded statement or broad medical authorization, ask what it covers and whether it is required under the policy or needed for the specific claim. The answer may differ when speaking with your own insurer versus someone else's company. Avoid blanket rules: your contractual obligations can matter.
 
 The related Buena Park car accident practice page explains the firm's approach to collision evidence, disputed fault and insurance questions. This is educational material, not a coverage determination or advice for any individual claim.
+
+
+## Track each coverage question independently
+
+Keep separate entries for whether the other driver is identified, whether liability insurance has been confirmed, which of your own policy provisions may apply, and what notices or documents an insurer has requested. An unanswered insurance inquiry does not establish that the other driver had no coverage. Preserve the declarations page and policy wording rather than relying solely on an insurance card.
+
+When speaking with counsel, identify any settlement proposal, release, reimbursement demand or consent request already received. Ask which action could affect another available claim before signing. This is particularly important when several policies or responsible parties may be involved: resolving one claim is not automatically a complete resolution of every coverage issue.

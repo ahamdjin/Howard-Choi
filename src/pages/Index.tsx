@@ -1,3 +1,6 @@
+import KoreanNavigation from "@/components/KoreanNavigation";
+import KoreanFooter from "@/components/KoreanFooter";
+import HomeConsultationQuestions from "@/components/HomeConsultationQuestions";
 import SiteDepthSection from "@/components/SiteDepthSection";
 import Navigation from "@/components/Navigation";
 import SpanishNavigation from "@/components/SpanishNavigation";
@@ -19,11 +22,11 @@ import type { SiteLocale } from "@/data/injurySite";
 
 const Index = ({ locale = "en" }: { locale?: SiteLocale }) => {
   const Spanish = locale === "es";
-  const Nav = Spanish ? SpanishNavigation : Navigation;
-  const SiteFooter = Spanish ? SpanishFooter : Footer;
+  const Nav = locale === "ko" ? KoreanNavigation : Spanish ? SpanishNavigation : Navigation;
+  const SiteFooter = locale === "ko" ? KoreanFooter : Spanish ? SpanishFooter : Footer;
 
   return (
-    <div className="home-page min-h-[100svh] overflow-x-clip bg-background">
+    <div className="home-page min-h-[100svh] overflow-x-clip bg-background" style={locale === "ko" ? { fontFamily: '"Noto Sans KR", sans-serif' } : undefined}>
       <Nav />
       <div className="relative">
         <div className="sticky top-0 z-0 h-[100svh] w-full"><Hero locale={locale} /></div>
@@ -42,6 +45,7 @@ const Index = ({ locale = "en" }: { locale?: SiteLocale }) => {
         <HomeServiceAreas locale={locale} />
         <SiteDepthSection locale={locale} topic="home" />
         <FAQ locale={locale} />
+        <HomeConsultationQuestions locale={locale} />
         <Booking locale={locale} />
         <SiteFooter />
       </div>

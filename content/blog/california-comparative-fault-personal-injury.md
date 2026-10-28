@@ -5,7 +5,7 @@
   "excerpt": "Being partly at fault does not end a California injury claim. It reduces it. Here is how responsibility gets divided, and why the insurer's first assessment is not the last word.",
   "category": "Fault & Insurance",
   "publishedAt": "2026-09-14",
-  "updatedAt": "2026-10-19",
+  "updatedAt": "2026-10-28",
   "alt": "California courthouse interior",
   "intro": "A personal injury claim does not automatically disappear because the injured person may have contributed to an accident. California uses comparative fault, which allows responsibility to be divided among the people or entities involved. The practical question is therefore not only whether someone was partly at fault, but how responsibility is supported by the evidence and how the assigned percentage changes the damages that can be recovered.",
   "takeaway": "Shared fault can reduce a recovery without necessarily eliminating the claim. The percentage matters, and the evidence used to assign that percentage can matter just as much.",
@@ -113,3 +113,10 @@ What if a pedestrian or bicyclist is involved? Duties can apply to multiple road
 Can an insurer reduce the offer even if the injuries are real? It may dispute liability as well as damages. Those are separate questions. An injury record does not itself establish who caused the event, just as a disputed lane movement does not by itself disprove a diagnosed injury.
 
 Where does the rule come from? The California Judicial Council publishes CACI No. 405 on comparative fault and CACI No. 406 on allocating responsibility. The California Courts' personal-injury guide explains the basic negligence litigation process. The sources listed with this article link to these original materials.
+
+
+## Build two timelines instead of arguing over one percentage
+
+Prepare one chronology of the collision and a separate chronology of treatment and daily limitations. In the collision chronology, distinguish what you personally saw from what another person later told you. Label an estimate as an estimate: a remembered speed or distance is not a measurement. Keep the original photograph or video and record when and where it was obtained, rather than relying only on a cropped screenshot.
+
+In a consultation, ask which disputed fact could actually change the responsibility assessment. If the dispute concerns a signal, an independent witness or full-length camera clip may be more useful than another photograph of a bruise. If the dispute concerns whether a condition caused a particular injury, the relevant medical history may matter more. This keeps the investigation tied to the issue instead of treating every disagreement as a reason to collect the same documents again.
