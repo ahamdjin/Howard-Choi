@@ -1,3 +1,4 @@
+import SiteDepthSection from "@/components/SiteDepthSection";
 import { ArrowRight, MapPin, Route, ShieldCheck } from "lucide-react";
 import { useParams } from "@tanstack/react-router";
 import heroBoardroom from "@/assets/law-firm/hero-city-boardroom.webp";
@@ -148,6 +149,7 @@ export const LocationsPage = ({ locale }: { locale: SiteLocale }) => (
           intro={isKo(locale) ? "사고 장소, 날짜, 치료 상황과 현재 가지고 있는 보험 또는 사고 관련 문서를 알려주시면 됩니다." : isEs(locale) ? "El lugar y fecha del accidente, tratamiento actual, información de seguro, fotos, reportes y cualquier comunicación que ya tenga son suficientes para empezar." : "The accident location and date, current treatment, insurance information, photos, reports, and any communication you already have are enough to begin. The legal team can help identify what else may be worth preserving."}
         />
       </ReadingLayout>
+      <SiteDepthSection locale={locale} topic="location-hub" />
       <ConsultationCta locale={locale} />
     </main>
   </EditorialFrame>
