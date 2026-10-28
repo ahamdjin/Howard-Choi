@@ -1,3 +1,4 @@
+import SiteDepthSection from "@/components/SiteDepthSection";
 import { responsiveImageProps } from "@/lib/responsive-images";
 import PageBreadcrumb from "@/components/PageBreadcrumb";
 import { useMemo, useState } from "react";
@@ -566,7 +567,8 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
             <div className="flex flex-wrap gap-3"><a href={`${localePrefix(locale)}/contact`} className="inline-flex h-10 items-center gap-2 rounded-[3px] bg-[#f3eee5] px-4 text-[10px] font-semibold text-[#17130f]">{ko ? "상담 요청" : es ? "Solicitar una consulta" : "Request a consultation"}<ArrowRight className="h-3.5 w-3.5" /></a><a href={brand.phoneHref} className="inline-flex h-10 items-center px-3 text-[12px] font-semibold">{brand.phoneDisplay}</a></div>
           </div>
         </section>
-      </main>
+      <SiteDepthSection locale={locale} topic="calculator" />
+        </main>
     </EditorialFrame>
   );
 };

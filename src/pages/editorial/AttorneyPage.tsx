@@ -1,3 +1,4 @@
+import SiteDepthSection from "@/components/SiteDepthSection";
 import { responsiveImageProps } from "@/lib/responsive-images";
 import { m as motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
@@ -74,6 +75,7 @@ export const AttorneyPage = ({ locale }: { locale: SiteLocale }) => (
         </div>
       </section>
       <AttorneyContent locale={locale} />
+      <SiteDepthSection locale={locale} topic="attorney" />
     </main>
   </Frame>
 );

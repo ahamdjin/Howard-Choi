@@ -1,3 +1,4 @@
+import SiteDepthSection from "@/components/SiteDepthSection";
 import { responsiveImageProps } from "@/lib/responsive-images";
 import { m as motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
@@ -81,6 +82,7 @@ const EsBlogs = () => {
               ))}
             </div>
           </div>
+        <SiteDepthSection locale="es" topic="blogs" />
         </main>
       </div>
       <SpanishFooter />
