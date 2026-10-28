@@ -1,3 +1,4 @@
+import SiteDepthSection from "@/components/SiteDepthSection";
 import Navigation from "@/components/Navigation";
 import SpanishNavigation from "@/components/SpanishNavigation";
 import Hero from "@/components/Hero";
@@ -39,6 +40,7 @@ const Index = ({ locale = "en" }: { locale?: SiteLocale }) => {
         <DirectAccess locale={locale} />
         <ClientSuccessFeature locale={locale} />
         <HomeServiceAreas locale={locale} />
+        <SiteDepthSection locale={locale} topic="home" />
         <FAQ locale={locale} />
         <Booking locale={locale} />
         <SiteFooter />
