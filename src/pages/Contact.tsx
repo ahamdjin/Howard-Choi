@@ -1,3 +1,4 @@
+import SiteDepthSection from "@/components/SiteDepthSection";
 import { responsiveImageProps } from "@/lib/responsive-images";
 import { m as motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, CalendarDays, FileText, Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
@@ -120,7 +121,8 @@ const Contact = () => {
             </div>
           </div>
         </section>
-      </main>
+      <SiteDepthSection locale="en" topic="contact" />
+        </main>
 
       <Footer />
     </div>
