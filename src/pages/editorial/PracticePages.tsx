@@ -1,3 +1,4 @@
+import SiteDepthSection from "@/components/SiteDepthSection";
 import { ArrowRight, CalendarClock, CheckCircle2, Compass, FileText, HelpCircle, Layers, MapPin, Scale, ShieldCheck, Sparkles, Umbrella } from "lucide-react";
 import { useParams } from "@tanstack/react-router";
 import heroJustice from "@/assets/law-firm/hero-justice-library.webp";
@@ -343,6 +344,7 @@ export const PracticeAreasPage = ({ locale }: { locale: SiteLocale }) => (
           </ReadingSectionBlock>
         )}
       </ReadingLayout>
+      <SiteDepthSection locale={locale} topic="practice-hub" />
       <ConsultationCta locale={locale} />
     </main>
   </EditorialFrame>
