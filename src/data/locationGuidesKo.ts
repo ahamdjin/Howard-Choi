@@ -6,7 +6,7 @@ import type { LocalGuide } from "./locationGuidesEn";
  */
 export const locationGuidesKo: Record<string, Pick<LocalGuide, "seoTitle" | "seoDescription" | "records" | "evidence" | "deadlines" | "faqs">> = {
   "buena-park": {
-    seoTitle: "부에나파크 교통사고·상해 안내 | 경찰 기록과 증거",
+    seoTitle: "부에나파크 개인상해 변호사 | 사고·경찰 기록",
     seoDescription: "Beach Boulevard, 91번·5번 고속도로 사고 후 부에나파크 경찰과 CHP 기록을 구분하고, 증거 보존과 캘리포니아 상해 청구 기한을 확인하세요.",
     records: "부에나파크 시내 도로에서 사고가 났다면 실제 조사 기관과 사건번호부터 확인하세요. Buena Park Police의 기록 공개 규정은 캘리포니아 차량법 제20012조에 따라 충돌 보고서를 받을 수 있는 사람을 제한합니다. 반면 5번 또는 91번 고속도로 사고는 CHP가 조사했을 수 있습니다. CHP 보고서에는 공식 온라인 신청 절차와 CHP 190 양식이 있지만, 다른 경찰서가 작성한 보고서를 대신 발급하는 것은 아닙니다.",
     evidence: "Beach Boulevard 교차로나 상점 진출입로에서 사고가 났다면 충돌 방향, 차선과 신호, 정확한 접촉 위치가 드러나는 사진을 남기세요. Knott's 인근처럼 방문 차량이 오가는 곳에서는 상점이나 주차장 운영자가 보관할 수 있는 영상의 위치도 확인해 두는 것이 좋습니다. 건물 내부에서 다쳤다면 차량 충돌 자료 대신 바닥 상태, 경고 표시, 현장 관리 주체를 구분해 기록해야 합니다.",
@@ -18,7 +18,7 @@ export const locationGuidesKo: Record<string, Pick<LocalGuide, "seoTitle" | "seo
     ],
   },
   anaheim: {
-    seoTitle: "애너하임 개인상해 변호사 | 사고 보고서·승차공유 보험",
+    seoTitle: "애너하임 개인상해 변호사 | 사고 보고서·보험",
     seoDescription: "애너하임 관광지역·우버·리프트 사고의 앱 기록과 영상, 경찰 교통사고 보고서 검색 및 캘리포니아 청구 절차를 안내합니다.",
     records: "애너하임 경찰은 일부 비부상 교통사고와 뺑소니 사건을 검색할 수 있는 사고 보고서 시스템을 운영합니다. 검색에는 사건번호가 필요하며 온라인 신고 사건은 심사 때문에 바로 조회되지 않을 수 있습니다. 검색되지 않을 때에는 경찰의 별도 기록 요청 절차를 확인하세요. 고속도로에서 사고가 났다면 애너하임 경찰이 아닌 CHP가 조사했는지도 먼저 확인해야 합니다.",
     evidence: "호텔 셔틀, 관광지 주변 승차공유 차량, 도보 이동 중 충돌이라면 일반적인 차량 사진만으로 충분하지 않을 수 있습니다. 차량 운영자와 승객 여부, 우버·리프트 호출 및 운행 상태, 탑승 영수증, 승하차 위치와 시간을 보관하세요. 보행자 사건에서는 실제 신호와 횡단 위치를, 호텔·상점 주변에서는 관련 영상의 보관 주체를 확인하세요.",
@@ -30,7 +30,7 @@ export const locationGuidesKo: Record<string, Pick<LocalGuide, "seoTitle" | "seo
     ],
   },
   fullerton: {
-    seoTitle: "풀러턴 상해 사고 안내 | 부상 사고 신고와 학교 주변 증거",
+    seoTitle: "풀러턴 개인상해 변호사 | 사고 신고·증거",
     seoDescription: "풀러턴 경찰의 비부상 온라인 신고 제한, 부상 교통사고 기록, 통학생·보행자 증거 및 법원 배당 문제를 확인하세요.",
     records: "풀러턴 경찰의 온라인 교통사고 신고는 비부상 사고 등에 제한됩니다. 부상이 발생한 충돌은 해당 온라인 양식 대상이 아니므로 경찰이 안내하는 별도 신고 절차를 이용해야 합니다. 공식 사이트는 보고서 사본 신청 방법도 별도로 안내합니다. 주 고속도로에서 발생했다면 어느 기관이 조사했는지 먼저 확인하세요.",
     evidence: "학교 주변 보행자 사고나 통근 교차로 충돌에서는 정확한 횡단 위치, 신호와 회전 차량, 출입구와 시야를 기록하세요. 학생이 실제로 수업이나 실습에 참여하지 못했다면 출석 기록, 수업 일정, 담당 교원의 안내 및 의료진의 활동 제한 자료를 함께 정리할 수 있습니다. 학업 지연 자체가 자동으로 배상되는 손해는 아닙니다.",
@@ -42,7 +42,7 @@ export const locationGuidesKo: Record<string, Pick<LocalGuide, "seoTitle" | "seo
     ],
   },
   "garden-grove": {
-    seoTitle: "가든그로브 사고·상해 안내 | 경찰 보고서·사업장 증거",
+    seoTitle: "가든그로브 개인상해 변호사 | 사고·사업장",
     seoDescription: "Garden Grove 경찰의 충돌 보고서 심사 기간, 상업도로·매장 사고의 증거 보존, 캘리포니아 청구 기한을 확인하세요.",
     records: "Garden Grove 경찰은 교통사고로 신체 또는 재산 피해를 입은 사람 등 일정한 신청자에게 보고서를 공개할 수 있다고 안내합니다. 사고 보고서는 검토·승인 절차 때문에 신청 전 최소 21일을 기다려 달라고 설명하며, 진행 중인 수사나 법령에 따라 일부 자료가 제한 또는 가림 처리될 수 있습니다. 이 21일은 법적 청구를 미루라는 뜻이 아닙니다.",
     evidence: "Harbor Boulevard나 Brookhurst Street의 상업 구간에서는 충돌 지점이 도로인지 상점 진입로인지부터 구분하세요. 매장 안에서 미끄러졌다면 바닥 상태, 경고 표시, 관리 업체, 점검 기록과 사고 직후 사진을 확보하는 것이 중요할 수 있습니다. 도로 사고라면 차선, 진출입 방향, 목격자와 주변 영상의 존재 여부를 별도로 정리하세요.",
@@ -54,7 +54,7 @@ export const locationGuidesKo: Record<string, Pick<LocalGuide, "seoTitle" | "seo
     ],
   },
   cypress: {
-    seoTitle: "사이프러스 개인상해 안내 | 교통사고 기록 신청·경계 지역",
+    seoTitle: "사이프러스 개인상해 변호사 | 경찰 기록·증거",
     seoDescription: "Cypress 경찰 기록 공개 신청서, 신분 확인, 인접 도시 경계 사고의 관할기관 확인과 사고 증거 보존을 안내합니다.",
     records: "Cypress 경찰은 공식 기록 공개 신청서와 교통사고 보고서 발급 절차를 공개합니다. 신청자는 정당한 관련성과 신분 확인 자료를 제시해야 할 수 있으며, 각 요청은 개별 심사를 거칩니다. Cypress와 인접 도시의 경계에서 발생한 사고라면 가장 가까운 교차로가 아니라 실제 현장 주소와 출동 기관을 먼저 확인하세요.",
     evidence: "경계 도로에서는 주소, 도로 표지판, 위치 지도와 담당 경찰 기관을 함께 저장하세요. 오토바이 회전 사고라면 차량의 진입 방향, 시야, 차선 표시와 정지선을 양쪽 접근 방향에서 기록해야 합니다. 피해차량의 파손 사진만으로 신호나 우선통행 여부가 확정되지는 않습니다.",
@@ -66,7 +66,7 @@ export const locationGuidesKo: Record<string, Pick<LocalGuide, "seoTitle" | "seo
     ],
   },
   "la-habra": {
-    seoTitle: "라하브라 상해 변호사 | 경찰 기록·교차로 사고",
+    seoTitle: "라하브라 개인상해 변호사 | 교차로 사고",
     seoDescription: "La Habra 경찰 Records·Traffic 부서의 공식 연락처, Whittier Boulevard 교차로 증거와 카운티 경계 관련 소송 쟁점을 확인하세요.",
     records: "라하브라 경찰은 Records Bureau와 Traffic Bureau의 문의 창구를 별도로 운영합니다. 시내 도로 사고라면 La Habra Police가 실제 조사했는지와 사건번호를 확인한 뒤 기록을 요청하세요. LA 카운티 경계나 주 고속도로 부근에서는 출동 기관이 다를 수 있으므로 도로명만으로 관할을 추정해서는 안 됩니다.",
     evidence: "Whittier Boulevard나 Imperial Highway 인근의 회전·양보 의무 분쟁에서는 어느 차선에서 어떤 방향으로 진행했는지, 신호와 정지선이 어디 있었는지, 차량이 최종적으로 멈춘 위치를 기록하세요. 사업장 진출입로 사고라면 도로와 사유지의 경계, 주변 카메라와 관리 주체도 확인할 필요가 있습니다.",
@@ -78,7 +78,7 @@ export const locationGuidesKo: Record<string, Pick<LocalGuide, "seoTitle" | "seo
     ],
   },
   "la-mirada": {
-    seoTitle: "라미라다 상해사고 안내 | 노워크 셰리프 기록 신청",
+    seoTitle: "라미라다 개인상해 변호사 | 셰리프 기록",
     seoDescription: "La Mirada 경찰 기록의 Norwalk Sheriff Station 신청 절차, LA 카운티 관할과 민사법원·정부청구 문제를 안내합니다.",
     records: "라미라다는 Los Angeles County Sheriff's Department의 서비스를 받으며, LASD의 공식 안내는 Norwalk Sheriff's Station이 라미라다를 담당한다고 설명하며, 시에도 La Mirada Community Sheriff's Station이 있습니다. 보고서 사본은 해당 기록을 관리하는 LASD 기관의 절차를 확인하고 사건번호를 준비하세요. LASD 중앙 Records and Identification Bureau에도 별도 요청 절차가 있습니다. 고속도로 사고 등에서는 실제로 보고서를 작성한 기관부터 확인하세요.",
     evidence: "라미라다는 부에나파크 및 라하브라와 가깝지만 로스앤젤레스 카운티입니다. 사업장 근처 교통사고라면 실제 주소와 사고 위치, 차량 진입 방향, 신호, 인근 영상의 보관 주체를 구분하세요. 보행자 사건에서는 횡단 방향, 시야와 출동 기관을, 사유지 부상이라면 부지 관리 주체를 기록해야 합니다.",
@@ -90,7 +90,7 @@ export const locationGuidesKo: Record<string, Pick<LocalGuide, "seoTitle" | "seo
     ],
   },
   cerritos: {
-    seoTitle: "세리토스 상해 사고 안내 | 셰리프·CHP 기록",
+    seoTitle: "세리토스 개인상해 변호사 | 고속도로·기록",
     seoDescription: "Cerritos Sheriff's Station과 91번·605번 고속도로 CHP 보고서 구분, 쇼핑센터 증거 및 캘리포니아 청구 기한을 확인하세요.",
     records: "Cerritos Sheriff’s Station은 세리토스 시를 담당하는 LASD 관할 경찰서입니다. 기록 사본은 LASD의 자격 요건과 중앙 기록 절차를 확인해야 합니다. 91번 또는 605번 고속도로 충돌은 CHP가 조사했을 수 있으므로 경찰서 이름보다 실제 조사 기관과 사건번호를 우선 확인하세요.",
     evidence: "고속도로 사고에서는 도로 번호, 진행 방향, 차선, 가까운 진출입로, 사고 직후 차량 위치와 CHP 사건번호를 남기세요. 쇼핑센터 주차장이나 출입구 부상이라면 건물 관리 주체, 정확한 위험 지점, 관련 점포 영상과 매장 사고 보고서가 중요할 수 있습니다. 서로 다른 사건 유형에 같은 자료 목록을 그대로 적용해서는 안 됩니다.",
@@ -102,7 +102,7 @@ export const locationGuidesKo: Record<string, Pick<LocalGuide, "seoTitle" | "seo
     ],
   },
   norwalk: {
-    seoTitle: "노워크 개인상해 안내 | LASD 사고 보고서·법원",
+    seoTitle: "노워크 개인상해 변호사 | LASD 사고 기록",
     seoDescription: "노워크 셰리프 기록 신청, 5번·605번 고속도로 CHP 자료, Norwalk 법원 접수 조건 및 사고 후 보존할 증거를 안내합니다.",
     records: "Norwalk Sheriff's Station은 노워크와 라미라다의 관할 경찰서이며, LASD의 중앙 기록국은 사고 보고서 사본 요청을 위한 전화·우편 절차를 공개합니다. 사건 날짜, 정확한 장소, 신청자 신분과 사건번호를 정리하세요. 5번이나 605번 고속도로에서는 CHP가 조사했는지 확인해야 합니다.",
     evidence: "Firestone Boulevard 또는 Rosecrans Avenue 교차로 사고라면 차선과 회전 방향, 신호, 목격자 위치를 구체적으로 기록하세요. 고속도로에서는 진행 방향, 가장 가까운 출구와 사고 위치가 중요합니다. 법원이나 대중교통시설 인근의 사건이라면 관련 기관 및 시설 관리 주체를 따로 확인해야 할 수 있습니다.",
@@ -114,7 +114,7 @@ export const locationGuidesKo: Record<string, Pick<LocalGuide, "seoTitle" | "seo
     ],
   },
   whittier: {
-    seoTitle: "휘티어 상해 사고 안내 | 경찰 Traffic Bureau·기록",
+    seoTitle: "휘티어 개인상해 변호사 | 교통사고·기록",
     seoDescription: "Whittier 경찰 Traffic Bureau의 사고 조사 범위, 사고보고서 발급, 언덕길 시야 문제와 LA 카운티 소송 절차를 확인하세요.",
     records: "휘티어 경찰의 Traffic Bureau는 공식 안내에 따라 Whittier뿐 아니라 Santa Fe Springs 시내 교통사고와 뺑소니 사고를 조사합니다. Records Bureau는 사고 관련 문서를 관리합니다. 그러나 Whittier 우편 주소를 쓰는 일부 비편입 지역은 LASD가 담당할 수 있고, 고속도로 사건은 CHP 조사일 수 있습니다. 정확한 사건 지점과 조사 기관을 확인하세요.",
     evidence: "휘티어의 언덕길이나 곡선도로 사고라면 양쪽 차량의 접근 방향, 경사와 굴곡, 주차된 차량으로 인한 시야 차단, 조명과 도로 표시를 기록하세요. 상업거리의 보행자 사고라면 횡단보도와 연석, 회전 차량의 위치가 중요할 수 있습니다. 도로가 가파르다는 사실만으로 운전자 과실이 입증되지는 않습니다.",
