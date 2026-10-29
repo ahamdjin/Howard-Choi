@@ -8,6 +8,9 @@ import { fileURLToPath } from "node:url";
 const rootDir = fileURLToPath(new URL(".", import.meta.url));
 
 const shouldPrerender = (routePath: string) => {
+  // Homepage hydration currently diverges when built as static prerendered HTML.
+  // Request-time SSR keeps full crawable HTML without the stale prerender snapshot.
+  if (routePath === "/" || routePath === "/ko" || routePath === "/es") return false;
   if (routePath === "/results" || routePath === "/ko/results" || routePath === "/es/results") return false;
   if (routePath.startsWith("/location/")) return false;
   if (routePath.startsWith("/admin") || routePath.startsWith("/auth")) return false;
