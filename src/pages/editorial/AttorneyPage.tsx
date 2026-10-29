@@ -56,9 +56,9 @@ export const AttorneyPage = ({ locale }: { locale: SiteLocale }) => (
         <div className="grid min-h-[calc(100svh-60px)] lg:grid-cols-[1.1fr_0.9fr]">
           <AttorneyPortrait className="order-2 h-[360px] lg:order-none lg:h-auto lg:min-h-[calc(100svh-60px)]" />
           <div className="flex min-h-[540px] flex-col justify-between gap-8 px-6 py-10 sm:px-10 lg:px-12 lg:py-12 xl:px-16">
-            <div className="flex items-center justify-between border-t border-white/16 pt-4"><Eyebrow light>{ko(locale) ? "변호사" : es(locale) ? "Abogado" : "Lawyer"}</Eyebrow><span className="text-[9px] uppercase tracking-[0.14em] text-white/34">Buena Park · California</span></div>
+            <div className="flex items-center justify-between border-t border-white/16 pt-4"><Eyebrow light>{ko(locale) ? "개인상해 변호사" : es(locale) ? "Abogado de lesiones personales" : "Personal Injury Lawyer"}</Eyebrow><span className="text-[9px] uppercase tracking-[0.14em] text-white/34">Buena Park · California</span></div>
             <motion.div initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-              <PageBreadcrumb locale={locale} title={ko(locale) ? "변호사" : es(locale) ? "Abogado" : "Lawyer"} />
+              <PageBreadcrumb locale={locale} title={ko(locale) ? "개인상해 변호사" : es(locale) ? "Abogado de lesiones personales" : "Personal Injury Lawyer"} />
               <h1 style={serif(locale)} className={`max-w-[680px] ${ko(locale) ? "text-[clamp(2.8rem,5vw,5.7rem)] font-medium leading-[1.12] tracking-[-0.05em]" : "editorial-serif text-[clamp(4rem,7.2vw,8.6rem)] leading-[0.82] tracking-[-0.055em]"}`}>
                 {ko(locale) ? <>개인상해<br />변호사</> : <>Howard<br />Choi</>}
               </h1>
