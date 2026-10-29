@@ -32,6 +32,9 @@ for (const candidate of candidates) {
   const branch = /if\s*\(!hydrated\)\s*\{\s*if\s*\(attrs\?\.src\)\s*\{\s*return\s*([\s\S]{1,350}?);\s*\}/;
   const match = branch.exec(original);
   if (!match) {
+    const ix = original.indexOf("if (!hydrated)");
+    const ci = ix < 0 ? original.indexOf("hydrated") : ix;
+    console.error("VENDOR SNIPPET:", candidate, JSON.stringify(original.slice(Math.max(0, ci - 220), ci + 1100)));
     throw new Error(`TanStack Script hydration shape changed in ${candidate}; inspect before release`);
   }
 
