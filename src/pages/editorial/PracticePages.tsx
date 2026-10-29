@@ -248,7 +248,7 @@ export const PracticeAreasPage = ({ locale }: { locale: SiteLocale }) => (
       <EditorialHero
         locale={locale}
         eyebrow={isKo(locale) ? "개인상해 업무 분야" : isEs(locale) ? "Áreas de práctica de lesiones personales" : "Personal injury practice areas"}
-        title={isKo(locale) ? "부에나파크 개인상해 업무 분야" : isEs(locale) ? "Áreas de práctica de lesiones personales en Buena Park." : "Personal Injury Practice Areas in Buena Park."}
+        title={isKo(locale) ? "부에나파크 개인상해 업무 분야" : isEs(locale) ? "Áreas de práctica de lesiones personales en Buena Park." : "Buena Park Personal Injury Lawyer — Practice Areas."}
         description={isKo(locale)
           ? "자동차 사고부터 중대 상해까지, 각 사건 분야에서 어떤 사실과 증거가 중요한지 명확하게 설명합니다."
           : isEs(locale)

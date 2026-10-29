@@ -91,10 +91,10 @@ A patient does not need to reach 'maximum medical improvement' before seeking de
 
 Keep litigation deadlines and medical appointments as separate items on your timeline. Neither insurer negotiations nor ongoing rehabilitation automatically extend the limitations period.
 
-## Questions to ask at the first attorney consultation
+## Questions to ask at the first lawyer consultation
 
 Bring the collision or incident details, available photos and reports, insurance letters, the names of every treating facility, known work restrictions and a short timeline of symptoms. Ask which evidence may be lost, which insurers or other parties should be considered, what legal deadlines apply, and how later medical developments should be recorded. A candid explanation of any prior conditions helps counsel evaluate causation responsibly.
 
-Ask how the firm handles communication with healthcare providers, whether it has appropriate expert resources for the medical issues, how case costs and contingency fees are set out in the written agreement, and how settlement decisions are explained. No attorney can responsibly guarantee a brain-injury outcome or dollar figure from a short intake call.
+Ask how the firm handles communication with healthcare providers, whether it has appropriate expert resources for the medical issues, how case costs and contingency fees are set out in the written agreement, and how settlement decisions are explained. No lawyer can responsibly guarantee a brain-injury outcome or dollar figure from a short intake call.
 
 For individuals near Buena Park who want to understand the firm's scope, the related Serious Injuries practice page explains how long-term care and functional loss fit into an accident claim. This guide is general education, not medical diagnosis or individual legal advice.

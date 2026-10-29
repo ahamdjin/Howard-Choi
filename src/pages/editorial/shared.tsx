@@ -66,10 +66,10 @@ export const EditorialHero = ({ locale, eyebrow, title, description, image, deta
               </a>
             </div>
             <div className="mt-10 border-t border-[#1E1C1A]/15 pt-4 text-[11px] leading-5 text-[#655B52]">
-              {isKo(locale) ? "담당 변호사 Howard Choi · 캘리포니아 변호사 등록번호 284364" : isEs(locale) ? "Abogado Howard Choi · Colegio de Abogados de California n.º 284364" : "Attorney Howard Choi · California State Bar No. 284364"}
+              {isKo(locale) ? "담당 변호사 Howard Choi · 캘리포니아 변호사 등록번호 284364" : isEs(locale) ? "Abogado Howard Choi · Colegio de Abogados de California n.º 284364" : "Personal Injury Lawyer Howard Choi · California State Bar No. 284364"}
               <span className="mx-2" aria-hidden="true">·</span>
               <a href={`${localePrefix(locale)}/attorney`} className="font-semibold underline underline-offset-4">
-                {isKo(locale) ? "변호사 소개" : isEs(locale) ? "Conocer al abogado" : "Meet your attorney"}
+                {isKo(locale) ? "변호사 소개" : isEs(locale) ? "Conocer al abogado" : "Meet your lawyer"}
               </a>
             </div>
           </div>

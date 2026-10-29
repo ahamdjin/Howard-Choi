@@ -5,7 +5,7 @@ import { breadcrumbJsonLd, buildSeo } from "@/lib/seo";
 export const Route = createFileRoute("/locations")({
   head: () => {
     const seo = buildSeo({
-    title: "Injury Lawyer Service Areas Near Buena Park, CA | Howard Choi",
+    title: "Personal Injury Lawyer Service Areas | Buena Park, CA",
     description: "One Buena Park office serving ten Orange and Los Angeles County communities. Explore local accident guides, official traffic-safety data and records resources.",
     path: "/locations",
     alternatePath: "/ko/locations",

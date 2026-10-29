@@ -98,7 +98,7 @@ Keep a folder with the police or incident number; traffic-scene photos; witness 
 
 Maintain separate notes showing which facts you personally observed and which came from a report, insurance representative or witness. This distinction protects the accuracy of the account and may help resolve apparently conflicting information. Keep originals unaltered and back them up securely.
 
-A concise incident summary for an attorney should answer: who was involved, where did it occur, how did the vehicle leave or how was lack of insurance discovered, who investigated, which policies may exist, and what treatment and losses have followed.
+A concise incident summary for an lawyer should answer: who was involved, where did it occur, how did the vehicle leave or how was lack of insurance discovered, who investigated, which policies may exist, and what treatment and losses have followed.
 
 ## Questions worth asking before agreeing to a settlement
 

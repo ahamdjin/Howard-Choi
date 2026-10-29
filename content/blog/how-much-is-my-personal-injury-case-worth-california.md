@@ -110,7 +110,7 @@ Keep non-economic effects in a separate dated log. Specific examples—difficult
 
 ## Gross settlement versus net distribution: a worked example
 
-Suppose a hypothetical negotiated gross settlement is $100,000. That is not the injured person's guaranteed take-home sum. Depending on the fee contract and actual case, attorney fees, reimbursable litigation expenses and valid negotiated healthcare reimbursement obligations can be paid from the recovery. The final net amount depends on their real figures and terms; taxes may also raise case-specific questions.
+Suppose a hypothetical negotiated gross settlement is $100,000. That is not the injured person's guaranteed take-home sum. Depending on the fee contract and actual case, lawyer fees, reimbursable litigation expenses and valid negotiated healthcare reimbursement obligations can be paid from the recovery. The final net amount depends on their real figures and terms; taxes may also raise case-specific questions.
 
 Do not assume that every billed medical dollar becomes a recoverable lien or that the largest invoice is automatically the legally reasonable value of care. Ask for an itemized explanation of the gross amount, who is legally entitled to reimbursement, any reductions negotiated, the contractual fee calculation and the net distribution. When a government program is involved, appropriate notice and reimbursement procedures matter.
 

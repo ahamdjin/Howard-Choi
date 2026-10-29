@@ -21,14 +21,14 @@ export default function AttorneyContent({ locale }: { locale: SiteLocale }) {
     { Icon: Scale, title: ko ? "다음 단계 확인" : es ? "Hablar del siguiente paso" : "Discuss the next step", text: ko ? "어떤 정보가 더 필요한지와 가능한 진행 방향을 확인합니다." : es ? "Identifique qué necesita una revisión más cercana y las posibles formas de avanzar." : "Identify what needs a closer look and discuss possible ways forward." },
   ];
   return <div className="attorney-content">
-    <nav aria-label={ko ? "변호사 페이지 안내" : es ? "Secciones de la página del abogado" : "Attorney page sections"} className="border-b border-[#211c17]/10 bg-[#f3eee5]">
+    <nav aria-label={ko ? "변호사 페이지 안내" : es ? "Secciones de la página del abogado" : "Lawyer profile sections"} className="border-b border-[#211c17]/10 bg-[#f3eee5]">
       <div className="attorney-content-shell flex flex-wrap justify-center gap-x-8 gap-y-1 py-3">{links.map(([id, label]) => <a key={id} href={`#${id}`} className="inline-flex min-h-11 items-center text-sm font-medium underline-offset-4 hover:underline">{label}</a>)}</div>
     </nav>
 
     <section id="profile" className="scroll-mt-24 py-16 md:py-24">
       <div className="attorney-content-shell grid items-start gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
         <div>
-          <p className="attorney-label">{ko ? "변호사 프로필" : es ? "Perfil del abogado" : "Attorney profile"}</p>
+          <p className="attorney-label">{ko ? "변호사 프로필" : es ? "Perfil del abogado" : "Lawyer profile"}</p>
           <h2 className="mt-4">Howard Choi</h2>
           <p className="mt-5 max-w-[560px] leading-7 text-[#57514b]">{ko ? "부에나파크에서 사고와 개인상해 사건을 상담합니다. 사고 경위, 치료 상황과 궁금한 점을 알려주세요." : es ? "Asesoría de lesiones personales en Buena Park. Hable sobre su accidente, su tratamiento actual y las preguntas que necesita resolver." : "Personal injury counsel in Buena Park. Discuss your accident, where treatment stands, and the questions you need answered."}</p>
           <div className="mt-6 flex items-center gap-3 text-sm text-[#57514b]"><MapPin aria-hidden="true" className="h-5 w-5 text-[#7b5b3e]" />Buena Park, California</div>

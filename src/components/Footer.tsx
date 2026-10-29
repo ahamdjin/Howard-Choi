@@ -35,7 +35,7 @@ const Footer = () => {
           <div>
             <div className="mb-5 text-[12px] text-muted-foreground">Firm</div>
             <div className="space-y-3 text-[13px]">
-              <Link to="/attorney" className="block hover:opacity-60">Attorney</Link>
+              <Link to="/attorney" className="block hover:opacity-60">Lawyer</Link>
               <Link to="/results" className="block hover:opacity-60">Results</Link>
               <Link to="/case-value-calculator" className="block hover:opacity-60">Case Value Calculator</Link>
               <Link to="/blogs" className="block hover:opacity-60">Blogs</Link>
@@ -56,7 +56,7 @@ const Footer = () => {
             <Link to="/accessibility" className="hover:text-foreground">Accessibility</Link>
             <Link to="/photo-credits" className="hover:text-foreground">Photo credits</Link>
           </div>
-          <span className="max-w-[430px] lg:text-right">Attorney advertising · General information only · Prior results do not guarantee a similar outcome</span>
+          <span className="max-w-[430px] lg:text-right">Lawyer advertising · General information only · Prior results do not guarantee a similar outcome</span>
         </div>
       </div>
     </footer>

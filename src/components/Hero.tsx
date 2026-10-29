@@ -78,7 +78,7 @@ const Hero = ({ locale = "en" }: { locale?: SiteLocale }) => {
       : "Clear guidance after a car crash or other serious accident, with personal injury representation focused on the evidence, insurance, and what comes next.";
   const consultation = ko ? "무료 상담" : es ? "Consulta gratuita" : "Free Consultation";
   const call = ko ? "또는 전화" : es ? "O llame al" : "Or call";
-  const fee = ko ? "무료 상담 · 배상이 없으면 변호사 수임료도 없습니다." : es ? "Consulta gratuita · Sin honorarios de abogado si no hay recuperación." : "Free consultation · No attorney fee unless there is a recovery.";
+  const fee = ko ? "무료 상담 · 배상이 없으면 변호사 수임료도 없습니다." : es ? "Consulta gratuita · Sin honorarios de abogado si no hay recuperación." : "Free consultation · No lawyer fee unless there is a recovery.";
 
   return (
     <section className="relative h-[100svh] min-h-[680px] w-full overflow-hidden bg-[#17130f]">
@@ -164,14 +164,14 @@ const Hero = ({ locale = "en" }: { locale?: SiteLocale }) => {
             >
               <img {...responsiveImageProps(attorneyPortrait, "44px")}
                 src={attorneyPortrait}
-                alt="Howard Choi, California accident and personal injury attorney"
+                alt="Howard Choi, California accident and personal injury lawyer"
                 loading="eager"
                 decoding="async"
                 className="h-11 w-11 shrink-0 rounded-full object-cover object-center"
               />
               <span className="text-[12px] leading-4 text-[#f3eee5]/82">
                 <span className="block font-medium text-[#f3eee5]">Howard Choi</span>
-                {ko ? "캘리포니아 변호사 · State Bar No. 284364 · 영어 · 한국어 · 스페인어 지원" : es ? "Abogado de California · State Bar No. 284364 · Atención en inglés, coreano y español" : <>California Attorney · State Bar No. 284364 · English, Korean &amp; Spanish assistance</>}
+                {ko ? "캘리포니아 변호사 · State Bar No. 284364 · 영어 · 한국어 · 스페인어 지원" : es ? "Abogado de California · State Bar No. 284364 · Atención en inglés, coreano y español" : <>California Personal Injury Lawyer · State Bar No. 284364 · English, Korean &amp; Spanish assistance</>}
               </span>
             </motion.a>
           </div>

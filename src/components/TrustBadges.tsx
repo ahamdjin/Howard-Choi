@@ -22,7 +22,7 @@ const TrustBadges = ({ locale = "en" }: { locale?: SiteLocale }) => {
   const es = locale === "es";
   const prefix = ko ? "/ko" : es ? "/es" : "";
   const label = ko ? "수상 및 인증" : es ? "Reconocimientos" : "Recognition";
-  const attorneyLabel = ko ? "변호사 소개" : es ? "Acerca del abogado" : "About the attorney";
+  const attorneyLabel = ko ? "변호사 소개" : es ? "Acerca del abogado" : "About the lawyer";
   return (
     <aside aria-label={ko ? "수상 및 인증" : es ? "Premios y reconocimientos" : "Awards and recognition"} className="bg-background text-foreground">
       <div className="site-shell py-10 md:py-12">
