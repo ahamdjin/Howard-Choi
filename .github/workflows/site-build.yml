@@ -29,7 +29,7 @@ jobs:
       - name: Verify lawyer-first SEO wording
         run: node scripts/check-lawyer-seo.mjs
       - name: Build and prerender routes
-        run: npm run build
+        run: NODE_ENV=development npm run build
         env:
           NODE_OPTIONS: --max-old-space-size=4096
 
