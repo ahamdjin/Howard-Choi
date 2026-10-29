@@ -99,10 +99,10 @@ This is a major reason to avoid waiting for the bicycle to be repaired, the road
 
 Insurance notices and evidence-retention questions can run on different timelines from a lawsuit. Get case-specific advice promptly rather than relying on a deadline printed in a general article.
 
-## Practical checklist for an attorney review
+## Practical checklist for an lawyer review
 
 Bring the original scene photographs; rider and driver contact details; witnesses; report number; bicycle and helmet photographs; any ride tracking or camera files; insurance letters; treatment dates; work or school records; and a short description of the route, conditions and sequence. Be clear about what you did not see or cannot remember.
 
-Ask which traffic laws apply to the actual location, whether any public entity or commercial defendant is relevant, who controls possible camera footage, which policies require notice and what should be preserved before repairs. An effective consultation should also explain who will handle the claim and how attorney fees and case costs work.
+Ask which traffic laws apply to the actual location, whether any public entity or commercial defendant is relevant, who controls possible camera footage, which policies require notice and what should be preserved before repairs. An effective consultation should also explain who will handle the claim and how lawyer fees and case costs work.
 
 This research guide is intentionally unpublished pending Howard Choi's confirmation that bicycle-injury matters fall within the firm's accepted cases. It does not assert that the firm offers representation for a service that has not yet been verified.
