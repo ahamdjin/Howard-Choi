@@ -5,7 +5,7 @@ import type { LocalGuide } from "./locationGuidesEn";
  */
 export const locationGuidesEs: Record<string, Pick<LocalGuide, "seoTitle" | "seoDescription" | "records" | "evidence" | "deadlines" | "faqs">> = {
   "buena-park": {
-    seoTitle: "Accidentes en Buena Park | Reportes y evidencia",
+    seoTitle: "Abogado de lesiones en Buena Park | Accidentes",
     seoDescription: "Cómo identificar reportes de Buena Park Police o CHP, preservar pruebas en Beach Boulevard y revisar los plazos de reclamos por lesiones.",
     records: "Para un choque en una calle de Buena Park, conserve el número de incidente y confirme qué agencia lo investigó. La política de Buena Park Police limita la entrega de reportes de colisión a las personas autorizadas por el Código de Vehículos de California. Si ocurrió en las autopistas I-5 o SR-91, el informe podría ser de CHP. Su portal y formulario CHP 190 sirven para investigaciones de CHP, no para obtener reportes emitidos por la policía municipal.",
     evidence: "En Beach Boulevard o en una entrada comercial, documente carriles, señales, dirección de los vehículos y lugar exacto del impacto. Si había comercios o estacionamientos cerca, anote quién podría conservar cámaras de seguridad y solicite preservar el video sin asumir que existe. Para una caída en un negocio, registre la condición peligrosa, los avisos y quién controlaba esa área.",
@@ -17,7 +17,7 @@ export const locationGuidesEs: Record<string, Pick<LocalGuide, "seoTitle" | "seo
     ],
   },
   anaheim: {
-    seoTitle: "Lesiones en Anaheim | Reportes policiales y viajes compartidos",
+    seoTitle: "Abogado de lesiones en Anaheim | Viajes y seguros",
     seoDescription: "Guía de Anaheim para buscar reportes de tráfico, conservar viajes de Uber o Lyft y comprender lesiones en zonas de hoteles y atracciones.",
     records: "Anaheim Police ofrece una búsqueda de ciertos reportes de tránsito, incluidos choques sin lesiones y algunos casos de fuga. Se necesita el número de reporte y los casos presentados por internet pueden tardar en aparecer. Si la búsqueda no encuentra el documento, utilice el procedimiento separado para pedir un reporte policial. Compruebe antes si el incidente fue investigado por Anaheim Police, CHP u otra agencia.",
     evidence: "En incidentes cerca de hoteles, transporte de visitantes o viajes de Uber y Lyft, guarde comprobantes de viaje, estado de la aplicación, hora de recogida, identificación del conductor y operador. Para un peatón, documente señales y punto de cruce; para un vehículo comercial, distinga al conductor de la empresa. Solicite información sobre cámaras a quien realmente las gestione.",
@@ -29,7 +29,7 @@ export const locationGuidesEs: Record<string, Pick<LocalGuide, "seoTitle" | "seo
     ],
   },
   fullerton: {
-    seoTitle: "Accidentes en Fullerton | Reportes por lesiones y pruebas",
+    seoTitle: "Abogado de lesiones en Fullerton | Choques",
     seoDescription: "Restricciones de los reportes en línea de Fullerton Police, documentos de accidentes cerca de escuelas y cuestiones de tribunal.",
     records: "Fullerton Police limita su sistema de reporte en línea a categorías elegibles sin lesiones. Si hubo lesionados, las instrucciones policiales indican usar otro canal de contacto, no ese formulario. La página también enlaza el procedimiento para solicitar una copia. En una autopista estatal, verifique qué autoridad atendió el hecho antes de pedir un reporte municipal.",
     evidence: "En un cruce cerca de escuelas o zonas universitarias, registre el paso peatonal, los semáforos, el sentido de los giros y posibles cámaras. Si una lesión causó ausencias académicas o de prácticas, conserve horarios, avisos de asistencia, restricciones médicas y documentación del trabajo afectado. No todas esas consecuencias representan automáticamente pérdidas recuperables.",
@@ -41,7 +41,7 @@ export const locationGuidesEs: Record<string, Pick<LocalGuide, "seoTitle" | "seo
     ],
   },
   "garden-grove": {
-    seoTitle: "Lesiones en Garden Grove | Reportes y pruebas comerciales",
+    seoTitle: "Abogado de lesiones en Garden Grove | Caídas",
     seoDescription: "Procedimiento de Garden Grove Police, plazo de revisión de reportes, pruebas en Harbor y Brookhurst y reclamos por caídas.",
     records: "Garden Grove Police permite solicitar ciertos reportes a personas lesionadas, afectadas por daños o representantes autorizados. Sus instrucciones piden esperar al menos 21 días para solicitar una copia de un reporte de colisión, debido a la revisión y aprobación. Puede haber restricciones o datos censurados. Ese plazo administrativo no significa que deba esperar para recibir tratamiento o preservar pruebas.",
     evidence: "En Harbor Boulevard o Brookhurst Street, documente la entrada comercial, las maniobras y la ubicación exacta. Una caída en una tienda puede requerir fotografías del suelo, avisos de seguridad, registros de inspección y el nombre del operador. Un accidente vial puede necesitar testigos, semáforos y cámaras de comercios cercanos.",
@@ -53,7 +53,7 @@ export const locationGuidesEs: Record<string, Pick<LocalGuide, "seoTitle" | "seo
     ],
   },
   cypress: {
-    seoTitle: "Accidentes en Cypress | Solicitud de reportes policiales",
+    seoTitle: "Abogado de lesiones en Cypress | Reportes",
     seoDescription: "Cypress Police exige solicitud e identificación para ciertos reportes. Guía de límites municipales, evidencia de tráfico y plazos.",
     records: "Cypress Police publica un formulario oficial de solicitud de entrega de registros. Para obtener un reporte de colisión debe acreditarse la relación con el caso y presentar la identificación exigida; cada solicitud se evalúa individualmente. Cerca de los límites municipales, confirme la dirección real del incidente y la agencia que acudió antes de enviar la solicitud.",
     evidence: "En cruces próximos a otras ciudades, conserve un mapa preciso, las señales de calle, fotografías y el nombre de la agencia que atendió. Para una motocicleta o un giro conflictivo, documente ambos sentidos de circulación, carriles y visibilidad. Una imagen del daño del vehículo por sí sola no decide quién tenía prioridad.",
@@ -65,7 +65,7 @@ export const locationGuidesEs: Record<string, Pick<LocalGuide, "seoTitle" | "seo
     ],
   },
   "la-habra": {
-    seoTitle: "Lesiones en La Habra | Records Bureau y accidentes",
+    seoTitle: "Abogado de lesiones en La Habra | Accidentes",
     seoDescription: "Contactos oficiales de La Habra Police, evidencia en Whittier Boulevard e Imperial Highway y cuestiones de competencia.",
     records: "La Habra Police publica contactos separados para su Records Bureau y Traffic Bureau. Para un accidente en una calle municipal, confirme qué autoridad lo investigó y conserve el número de incidente. Cerca de la línea con Los Ángeles o de una autopista, no suponga la jurisdicción por el nombre de la avenida; utilice la ubicación exacta.",
     evidence: "En Whittier Boulevard o Imperial Highway, registre la dirección de ambos vehículos, el carril del giro, la señal y el punto del impacto. En una entrada de comercio, identifique si la maniobra ocurrió en la vía pública o en propiedad privada. Guarde testigos, fotografías y fechas de atención clínica.",
@@ -77,7 +77,7 @@ export const locationGuidesEs: Record<string, Pick<LocalGuide, "seoTitle" | "seo
     ],
   },
   "la-mirada": {
-    seoTitle: "Lesiones en La Mirada | Reportes del Sheriff de Norwalk",
+    seoTitle: "Abogado de lesiones en La Mirada | Sheriff",
     seoDescription: "Cómo solicitar documentos en Norwalk Sheriff's Station y revisar accidentes de La Mirada, jurisdicción del condado y tribunal.",
     records: "La Mirada recibe servicios del Sheriff's Department del condado de Los Ángeles. LASD confirma que Norwalk Sheriff's Station presta servicio a La Mirada, donde también existe una estación comunitaria del Sheriff. Para pedir un reporte, verifique qué estación o procedimiento de la oficina central corresponde y conserve el número del expediente. LASD también dispone de su Records and Identification Bureau. Primero identifique qué autoridad documentó el accidente; no todos los reportes son de LASD.",
     evidence: "La Mirada pertenece a Los Angeles County pese a su cercanía con Buena Park y La Habra. Anote el lugar real, la vía y el propietario de cualquier inmueble relacionado. En una lesión de peatón, conserve la dirección del cruce, semáforos y visibilidad; en una entrada comercial, identifique cámaras y quién las controla.",
@@ -89,7 +89,7 @@ export const locationGuidesEs: Record<string, Pick<LocalGuide, "seoTitle" | "seo
     ],
   },
   cerritos: {
-    seoTitle: "Accidentes en Cerritos | Sheriff, CHP y pruebas",
+    seoTitle: "Abogado de lesiones en Cerritos | Autopistas",
     seoDescription: "Diferencias entre reportes de Cerritos Sheriff's Station y CHP en SR-91/I-605, evidencia de centros comerciales y trámites civiles.",
     records: "Cerritos Sheriff's Station presta servicio a la ciudad de Cerritos y LASD tiene un procedimiento central de solicitud de reportes. Un choque en SR-91 o I-605 puede haber sido investigado por CHP, cuya solicitud es distinta. Antes de pedir un documento, verifique el número del incidente y quién elaboró el informe.",
     evidence: "Para un choque en autopista, documente ruta, dirección, carril, salida cercana y vehículos implicados. Para una lesión en un estacionamiento comercial, identifique entrada, empresa o administrador, cámaras, superficie y reporte interno. Son incidentes con preguntas probatorias diferentes y no conviene tratarlos como si fueran idénticos.",
@@ -101,7 +101,7 @@ export const locationGuidesEs: Record<string, Pick<LocalGuide, "seoTitle" | "seo
     ],
   },
   norwalk: {
-    seoTitle: "Accidentes en Norwalk | Reportes LASD y tribunal",
+    seoTitle: "Abogado de lesiones en Norwalk | Reclamos",
     seoDescription: "Solicitudes al Sheriff, reportes CHP en I-5/I-605, pruebas de accidentes en Norwalk y las reglas para presentar una demanda.",
     records: "Norwalk Sheriff's Station presta servicio a Norwalk y La Mirada. La oficina central de Records and Identification Bureau de LASD publica vías para solicitar copias y pide datos del solicitante, fecha y ubicación del hecho. Un accidente en las autopistas I-5 o I-605 podría estar documentado por CHP, así que confirme primero quién respondió.",
     evidence: "En Firestone Boulevard o Rosecrans Avenue, anote carriles, giro, señales y testigos. En autopista, registre dirección, salida próxima y punto exacto. Si el incidente involucró una instalación de transporte o entidad pública, identifique quién controlaba el lugar y conserve cualquier comunicación o documento pertinente.",
@@ -113,7 +113,7 @@ export const locationGuidesEs: Record<string, Pick<LocalGuide, "seoTitle" | "seo
     ],
   },
   whittier: {
-    seoTitle: "Lesiones en Whittier | Traffic Bureau y reportes",
+    seoTitle: "Abogado de lesiones en Whittier | Accidentes",
     seoDescription: "Cómo obtener registros de Whittier Police, identificar jurisdicción en zonas no incorporadas y conservar pruebas de visibilidad en calles inclinadas.",
     records: "La página oficial de Whittier Police indica que su Traffic Bureau investiga choques en Whittier y Santa Fe Springs, incluidos algunos casos de fuga y accidentes mortales. El Records Bureau administra documentos de tráfico. Determinadas zonas no incorporadas con dirección postal de Whittier pueden corresponder a LASD y los choques de autopista podrían ser de CHP. Compruebe el lugar preciso y la autoridad investigadora.",
     evidence: "En calles inclinadas o curvas, documente la visibilidad desde cada aproximación, pendientes, autos estacionados, iluminación y señalización. En un cruce comercial, registre paso peatonal, bordillo y dirección del giro. La pendiente por sí sola no demuestra negligencia; se necesita reconstruir lo ocurrido.",
