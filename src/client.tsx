@@ -1,23 +1,20 @@
 import { StartClient } from "@tanstack/react-start/client";
-import { hydrateRoot } from "react-dom/client";
+import { createRoot } from "react-dom/client";
 
-// Streaming HTML can still be arriving when an async production JS bundle
-// executes. Hydrating <html>/<head>/<body> during parsing can make React
-// mistake missing not-yet-parsed nodes for a permanent mismatch, then replace
-// the entire document with an error boundary. Defer hydration until parsing
-// and TanStack's streamed bootstrap scripts have finished.
-let hydrationStarted = false;
+// Production document-level hydration fails with a false host-tree mismatch
+// and React replaces <html> with an error boundary. Keep server-rendered HTML
+// for crawlers and first paint, then initialize a clean interactive client
+// tree after the parser has finished. See browser smoke test in CI.
+let started = false;
 
-function hydrateWhenDocumentIsReady() {
-  if (hydrationStarted) return;
-
-  if (document.readyState === "loading" || !document.documentElement || !document.head || !document.body) {
-    document.addEventListener("DOMContentLoaded", hydrateWhenDocumentIsReady, { once: true });
+function mountWhenDocumentIsReady() {
+  if (started) return;
+  if (document.readyState === "loading" || !document.documentElement || !document.body) {
+    document.addEventListener("DOMContentLoaded", mountWhenDocumentIsReady, { once: true });
     return;
   }
-
-  hydrationStarted = true;
-  hydrateRoot(document, <StartClient />);
+  started = true;
+  createRoot(document).render(<StartClient />);
 }
 
-hydrateWhenDocumentIsReady();
+mountWhenDocumentIsReady();
