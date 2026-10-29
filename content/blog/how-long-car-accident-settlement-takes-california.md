@@ -122,7 +122,7 @@ Insurance notice and possible arbitration obligations may also differ from the c
 
 Agreeing on a headline number is not always the last step. The parties may need to finalize written terms, decide which persons or entities are being released, sign appropriate documents, obtain or deposit funds, pay documented fees and case costs and resolve valid reimbursements or liens. Ask for a written explanation of what will happen between accepting an offer and receiving net proceeds.
 
-The California Department of Insurance consumer guide describes settlement-payment timing within the applicable claim-handling framework. But a claimant should not assume every settlement has an identical disbursement sequence. The insurer's duty to issue payment and the attorney's obligations to safeguard, account for and distribute funds are distinct from resolving third-party reimbursement rights.
+The California Department of Insurance consumer guide describes settlement-payment timing within the applicable claim-handling framework. But a claimant should not assume every settlement has an identical disbursement sequence. The insurer's duty to issue payment and the lawyer's obligations to safeguard, account for and distribute funds are distinct from resolving third-party reimbursement rights.
 
 Before signing, read whether the agreement releases only a vehicle-damage claim or bodily injuries as well; whether it covers other people or insurers; and whether future injuries or care are included. A final release can have consequences even when the amount seems reasonable for the bills currently in hand.
 
@@ -178,13 +178,13 @@ Ask which issue the lawsuit is intended to resolve and what the expected next li
 
 Sometimes, but not always immediately. Net proceeds depend on the actual contingency fee agreement, itemized case costs, any valid health or government reimbursement rights and other applicable obligations. An agreement on gross settlement value is a meaningful milestone, but it does not substitute for a final written disbursement accounting.
 
-Where Medi-Cal was involved, consult DHCS's Personal Injury Program procedures for notices and lien determinations. Ask your attorney to identify any unresolved reimbursement items and explain whether funds can be distributed in part or must be held pending resolution, based on the actual circumstances.
+Where Medi-Cal was involved, consult DHCS's Personal Injury Program procedures for notices and lien determinations. Ask your lawyer to identify any unresolved reimbursement items and explain whether funds can be distributed in part or must be held pending resolution, based on the actual circumstances.
 
 ## The right next step for a Buena Park accident claim
 
 If you were injured in or around Buena Park, organize what you know before trying to predict a payout date: where the collision happened, what medical care occurred, which parties and insurers have been identified, which original evidence still exists, and which written communications have already been received. Bring the actual policy pages and any proposed release if available.
 
-The firm's Buena Park Car Accident Lawyer page explains the collision-evidence and insurance questions it handles; the separate California personal-injury deadlines guide explains why a case cannot simply wait for a settlement offer. An attorney consultation should give you a clearer picture of the specific bottleneck, immediate preservation and filing priorities, and the risks of resolving a claim before all important losses are documented.
+The firm's Buena Park Car Accident Lawyer page explains the collision-evidence and insurance questions it handles; the separate California personal-injury deadlines guide explains why a case cannot simply wait for a settlement offer. An lawyer consultation should give you a clearer picture of the specific bottleneck, immediate preservation and filing priorities, and the risks of resolving a claim before all important losses are documented.
 
 This article is general legal education. It is not a forecast of any client's settlement duration, a medical recommendation, or a guarantee of recovery.
 
