@@ -21,7 +21,7 @@ export const Route = createFileRoute("/")({
           "@type": "WebPage",
           "@id": `${absoluteUrl("/")}#webpage`,
           url: absoluteUrl("/"),
-          name: "Buena Park Personal Injury Lawyer | Car Accident Attorney",
+          name: "Buena Park Personal Injury Lawyer | Howard Choi",
           inLanguage: "en-US",
           isPartOf: { "@id": `${absoluteUrl("/")}#website` },
           about: { "@id": `${absoluteUrl("/")}#legal-service` },
