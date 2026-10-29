@@ -20,11 +20,37 @@ import Footer from "@/components/Footer";
 import SpanishFooter from "@/components/SpanishFooter";
 import type { SiteLocale } from "@/data/injurySite";
 
-// Diagnostic only: minimal interactive tree to isolate the production hydration crash.
-const Index = ({ locale = "en" }: { locale?: SiteLocale }) => (
-  <main className="min-h-screen bg-background p-12">
-    <h1>{locale === "ko" ? "부에나파크 개인상해 변호사." : locale === "es" ? "Abogado de lesiones personales en Buena Park, CA." : "Personal Injury Lawyer in Buena Park, CA."}</h1>
-  </main>
-);
+const Index = ({ locale = "en" }: { locale?: SiteLocale }) => {
+  const Spanish = locale === "es";
+  const Nav = locale === "ko" ? KoreanNavigation : Spanish ? SpanishNavigation : Navigation;
+  const SiteFooter = locale === "ko" ? KoreanFooter : Spanish ? SpanishFooter : Footer;
+
+  return (
+    <div className="home-page min-h-[100svh] overflow-x-clip bg-background" style={locale === "ko" ? { fontFamily: '"Noto Sans KR", sans-serif' } : undefined}>
+      <Nav />
+      <div className="relative">
+        <div className="sticky top-0 z-0 h-[100svh] w-full"><Hero locale={locale} /></div>
+        <div className="relative z-10 w-full bg-background">
+          <HomeImmediateTrust locale={locale} />
+          <TrustBadges locale={locale} />
+          <FirmSnapshot locale={locale} />
+          <Locations locale={locale} />
+        </div>
+      </div>
+      <div className="relative z-20 bg-background">
+        <Experience locale={locale} />
+        <SelectedResult locale={locale} />
+        <DirectAccess locale={locale} />
+        <ClientSuccessFeature locale={locale} />
+        <HomeServiceAreas locale={locale} />
+        <SiteDepthSection locale={locale} topic="home" />
+        <FAQ locale={locale} />
+        <HomeConsultationQuestions locale={locale} />
+        <Booking locale={locale} />
+        <SiteFooter />
+      </div>
+    </div>
+  );
+};
 
 export default Index;
