@@ -99,11 +99,15 @@ try {
     activePath = check.path;
     const navigation = await send("Page.navigate", { url: origin + check.path });
     if (navigation.errorText) throw new Error(`Navigation ${check.path}: ${navigation.errorText}`);
+    console.log("Chrome navigate:", check.path, JSON.stringify(navigation));
     // Catch both initial hydration and deferred GoHighLevel/GTM/chat behavior.
     await pause(6500);
     const result = await send("Runtime.evaluate", {
       expression: `(() => ({
+        url: location.href,
         title: document.title,
+        htmlExists: Boolean(document.documentElement),
+        htmlStart: document.documentElement?.outerHTML?.slice(0, 350) || "",
         h1: document.querySelector("h1")?.textContent?.trim() || "",
         bodyExists: Boolean(document.body),
         headExists: Boolean(document.head),
@@ -114,7 +118,7 @@ try {
     });
     const state = result.result?.value;
     if (!state?.bodyExists || !state.headExists || !state.h1) {
-      throw new Error(`Homepage DOM missing on ${check.path}: ${JSON.stringify(state)}`);
+      throw new Error(`Homepage DOM missing on ${check.path}: ${JSON.stringify(state)}; exceptions=${JSON.stringify(exceptions.slice(-8)).slice(0, 4500)}; errors=${JSON.stringify(errors.slice(-8)).slice(0, 1800)}`);
     }
     if (!check.expected.test(state.h1)) {
       throw new Error(`Unexpected H1 on ${check.path}: ${state.h1}`);
