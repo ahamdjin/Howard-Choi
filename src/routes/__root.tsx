@@ -52,6 +52,10 @@ function RootDocument({ children }: { children: ReactNode }) {
   useEffect(() => {
     const loadAnalytics = () => {
       if (document.getElementById('site-gtm')) return;
+      const head = document.head;
+      // Never assume the host element exists during document replacement,
+      // streaming hydration or browser navigation.
+      if (!head || !document.documentElement?.contains(head)) return;
       const analyticsWindow = window as Window & { dataLayer?: unknown[] };
       analyticsWindow.dataLayer = analyticsWindow.dataLayer || [];
       analyticsWindow.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
@@ -59,7 +63,7 @@ function RootDocument({ children }: { children: ReactNode }) {
       script.id = 'site-gtm';
       script.async = true;
       script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-5V5GSC7B';
-      document.head.appendChild(script);
+      head.appendChild(script);
     };
     // Start after hydration and the initial load so GTM cannot mutate the
     // server-rendered head before React hydrates it.
