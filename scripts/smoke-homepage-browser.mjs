@@ -138,5 +138,9 @@ try {
   pending.clear();
   socket?.close();
   chrome.kill("SIGTERM");
-  rmSync(profile, { recursive: true, force: true });
+  // Chrome may still be flushing its profile files for a moment after SIGTERM.
+  // Cleanup must never mask a real browser error from the smoke test.
+  await pause(350);
+  try { rmSync(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 }); }
+  catch (error) { console.warn("Chrome profile cleanup warning:", error.message); }
 }
