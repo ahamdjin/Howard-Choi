@@ -29,7 +29,7 @@ for (const candidate of candidates) {
     throw new Error(`Unexpected TanStack Asset file: ${candidate} missing script-hoist identifiers`);
   }
 
-  const branch = /if\s*\(!hydrated\)\s*\{\s*if\s*\(attrs\?\.src\)\s*\{\s*return\s*([\s\S]{1,350}?);\s*\}/;
+  const branch = /if\s*\(!hydrated\)\s*\{\s*if\s*\(attrs\?\.src\)\s*(?:\{\s*)?return\s*([\s\S]{1,350}?);/;
   const match = branch.exec(original);
   if (!match) {
     const ix = original.indexOf("if (!hydrated)");
