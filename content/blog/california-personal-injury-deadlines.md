@@ -102,7 +102,7 @@ Record the birth date of a minor claimant, event date, first known injury sympto
 
 Make one row for each claim or defendant with these eight items: possible responsible person or entity; legal theory being considered; date of injury or relevant event; earliest potentially applicable notice or claim-presentment date; date a claim was sent; evidence of delivery; next agency or insurer response date; and the court filing deadline after legal review. If one field is unknown, mark it unknown instead of filling in a guessed date.
 
-For government claims, preserve a copy of the form submitted and confirmation of how and when the agency received it. For litigation, preserve any written tolling agreement or attorney communication separately from routine claim correspondence. A calendar reminder is useful, but a calendar does not decide whether a claim is timely.
+For government claims, preserve a copy of the form submitted and confirmation of how and when the agency received it. For litigation, preserve any written tolling agreement or lawyer communication separately from routine claim correspondence. A calendar reminder is useful, but a calendar does not decide whether a claim is timely.
 
 Keep two independent reminders as well: one for evidence that might disappear in days or weeks, and one for insurance conditions that can require prompt notice or cooperation. Neither reminder substitutes for getting a legal date calculation from someone who can apply the correct statute to your facts.
 
@@ -112,7 +112,7 @@ Does opening a claim with State Farm or another insurer count as filing a lawsui
 
 Does a government agency's silence mean the claim is approved? No. California Courts describes separate rules for agency response and the period to sue after different types of response. The exact consequence depends on the agency process and facts; silence should not be treated as a payment promise or waiver.
 
-What if the collision happened outside Buena Park? The law governing the event and the relevant defendants matters more than which city houses your attorney. If the incident took place outside California, a different state's rules may apply; do not transplant these California examples.
+What if the collision happened outside Buena Park? The law governing the event and the relevant defendants matters more than which city houses your lawyer. If the incident took place outside California, a different state's rules may apply; do not transplant these California examples.
 
 Which official guidance should I read? California Courts' pages on statutes of limitations and government claims are the primary starting points; the latter points readers to California Government Code sections 905 and 911.2. Use those materials to ask the right questions, then obtain a specific deadline determination.
 
