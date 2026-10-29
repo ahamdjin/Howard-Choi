@@ -79,7 +79,7 @@ const SiteNavigation = ({ locale }: { locale: NavigationLocale }) => {
     menu: "Menú", about: "La firma", contact: "Contacto", allPractices: "Todas las áreas", allLocations: "Todas las zonas",
     language: "Idioma", call: "Llamar",
   } : {
-    practice: "Practice Areas", locations: "Locations", attorneys: "Attorney", results: "Results", blog: "Blogs",
+    practice: "Practice Areas", locations: "Locations", attorneys: "Lawyer", results: "Results", blog: "Blogs",
     menu: "Menu", about: "About", contact: "Contact", allPractices: "All Practice Areas", allLocations: "All Locations",
     language: "Language", call: "Call",
   };
