@@ -26,6 +26,8 @@ jobs:
           cache: "npm"
       - name: Install locked dependencies
         run: npm ci --no-audit --no-fund
+      - name: Verify lawyer-first SEO wording
+        run: node scripts/check-lawyer-seo.mjs
       - name: Build and prerender routes
         run: npm run build
         env:
