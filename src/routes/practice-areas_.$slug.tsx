@@ -19,7 +19,7 @@ const practiceSearchNames: Record<string, string> = {
 const serviceSeo: Record<string, { title: string; description: string }> = {
   "car-accidents": {
     title: "Buena Park Car Accident Lawyer | Free Consultation",
-    description: "Injured in a Buena Park car crash? Attorney Howard Choi reviews accident evidence, insurance coverage, medical expenses and lost wages. Free consultation.",
+    description: "Injured in a Buena Park car crash? Lawyer Howard Choi reviews accident evidence, insurance coverage, medical expenses and lost wages. Free consultation.",
   },
   "truck-accidents": {
     title: "Buena Park Truck Accident Lawyer | Commercial Vehicle Claims",
