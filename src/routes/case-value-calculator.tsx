@@ -4,7 +4,7 @@ import { buildSeo } from "@/lib/seo";
 
 export const Route = createFileRoute("/case-value-calculator")({
   head: () => buildSeo({
-    title: "Personal Injury Settlement Calculator | Free CA Estimate",
+    title: "Personal Injury Calculator | Buena Park Injury Lawyer",
     description: "Use our free California personal injury settlement calculator to estimate an educational case-value range using medical bills, lost wages, treatment, future losses, injury severity, and comparative fault.",
     path: "/case-value-calculator",
     alternatePath: "/ko/case-value-calculator",
