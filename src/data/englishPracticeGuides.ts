@@ -149,7 +149,7 @@ export const englishPracticeGuides: Record<string, EnglishPracticeGuide> = {
       ],
       [
         "Separate wrongful-death and survival issues",
-        "Wrongful-death damages generally address losses experienced by eligible survivors; a survival action involves certain claims that belonged to the person before death. They are not interchangeable and may require separate pleading, proof and procedural consideration under California law. Attorney review of the family's exact circumstances is essential."
+        "Wrongful-death damages generally address losses experienced by eligible survivors; a survival action involves certain claims that belonged to the person before death. They are not interchangeable and may require separate pleading, proof and procedural consideration under California law. A lawyer should review the family's exact circumstances."
       ],
       [
         "Preserve responsibility and insurance evidence",
