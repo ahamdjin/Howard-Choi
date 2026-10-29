@@ -1,20 +1,19 @@
 import { StartClient } from "@tanstack/react-start/client";
-import { createRoot } from "react-dom/client";
+import { hydrateRoot } from "react-dom/client";
 
-// Production document-level hydration fails with a false host-tree mismatch
-// and React replaces <html> with an error boundary. Keep server-rendered HTML
-// for crawlers and first paint, then initialize a clean interactive client
-// tree after the parser has finished. See browser smoke test in CI.
-let started = false;
+// The framework's inline streaming bootstrap and module scripts must finish
+// before React traverses <html>, <head> and <body> to hydrate them.
+let hydrationStarted = false;
 
-function mountWhenDocumentIsReady() {
-  if (started) return;
-  if (document.readyState === "loading" || !document.documentElement || !document.body) {
-    document.addEventListener("DOMContentLoaded", mountWhenDocumentIsReady, { once: true });
-    return;
-  }
-  started = true;
-  createRoot(document).render(<StartClient />);
+function hydrateAfterFullLoad() {
+  if (hydrationStarted) return;
+  if (!document.head || !document.body || !document.documentElement) return;
+  hydrationStarted = true;
+  hydrateRoot(document, <StartClient />);
 }
 
-mountWhenDocumentIsReady();
+if (document.readyState === "complete") {
+  queueMicrotask(hydrateAfterFullLoad);
+} else {
+  window.addEventListener("load", hydrateAfterFullLoad, { once: true });
+}
