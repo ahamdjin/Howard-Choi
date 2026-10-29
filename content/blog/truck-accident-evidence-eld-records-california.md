@@ -101,7 +101,7 @@ FMCSA states that motor carriers generally retain ELD records of duty status and
 
 Private dashcams, telematics clips, accident-detection reports, company chat messages, cell-phone content and roadway surveillance can have entirely different storage practices. Even when a legal preservation duty may arise, the question of what existed, who held it and what reasonable steps were taken is fact-specific.
 
-For that reason, identify the carrier, truck, trailer, dispatch provider and any separate camera service early. Preserve your own photographs and incident documents. When another party holds records, a qualified attorney can evaluate appropriate preservation requests, discovery mechanisms and legal duties.
+For that reason, identify the carrier, truck, trailer, dispatch provider and any separate camera service early. Preserve your own photographs and incident documents. When another party holds records, a qualified lawyer can evaluate appropriate preservation requests, discovery mechanisms and legal duties.
 
 ## A collision-specific truck evidence inventory
 
@@ -132,4 +132,4 @@ What original sources support this discussion? FMCSA's ELD technical FAQs, its s
 
 An hours-of-service dispute calls for different records from a brake-maintenance dispute. List the question first: fatigue, vehicle condition, driver supervision, cargo movement or the actual collision sequence. Next identify the potentially relevant record, the likely custodian and what is known about retention. Do not assume the truck driver personally controls dispatch records or that every vehicle stores the same electronic information.
 
-Keep a preservation request distinct from obtaining the material. Record what was requested, whether the recipient acknowledged it, and what still requires follow-up or formal process. If a truck or component may be inspected, ask about a coordinated protocol before repair, disposal or invasive testing. This prevents a long list of requested documents from being mistaken for a completed investigation and helps the attorney prioritize evidence that could actually affect responsibility.
+Keep a preservation request distinct from obtaining the material. Record what was requested, whether the recipient acknowledged it, and what still requires follow-up or formal process. If a truck or component may be inspected, ask about a coordinated protocol before repair, disposal or invasive testing. This prevents a long list of requested documents from being mistaken for a completed investigation and helps the lawyer prioritize evidence that could actually affect responsibility.
