@@ -87,7 +87,7 @@ Imagine you are traveling from Buena Park to a nearby city when another vehicle 
 
 Also record the same ordinary collision facts you would preserve outside a rideshare: roadway, traffic-control sequence, witnesses, photographs, police-report identifier and medical care. App status may identify a policy for review; it does not answer whether the rideshare driver, another motorist or multiple actors were responsible.
 
-If you are injured as a pedestrian or as the driver of another vehicle, you may have no access to the passenger's receipt. Document observable identifiers and the collision record instead. An attorney can advise whether and how more precise app-status records may be obtained through legitimate processes.
+If you are injured as a pedestrian or as the driver of another vehicle, you may have no access to the passenger's receipt. Document observable identifiers and the collision record instead. An lawyer can advise whether and how more precise app-status records may be obtained through legitimate processes.
 
 ## What changes when the driver is waiting versus already matched?
 
