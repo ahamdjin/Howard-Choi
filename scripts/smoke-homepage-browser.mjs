@@ -36,6 +36,7 @@ const pending = new Map();
 let activePath = "";
 const exceptions = [];
 const errors = [];
+const consoleCalls = [];
 
 const send = (method, params = {}) => new Promise((resolve, reject) => {
   const id = ++nextId;
@@ -82,6 +83,8 @@ try {
     } else if (message.method === "Runtime.exceptionThrown") {
       const detail = message.params.exceptionDetails;
       exceptions.push({ path: activePath, text: detail.exception?.description || detail.text || "" });
+    } else if (message.method === "Runtime.consoleAPICalled" && ["error", "warning", "warn"].includes(message.params.type)) {
+      consoleCalls.push({ path: activePath, text: message.params.args.map((arg) => arg.value || arg.description || "").join(" ").slice(0, 2500) });
     } else if (message.method === "Log.entryAdded" && message.params.entry.level === "error") {
       errors.push({ path: activePath, text: message.params.entry.text });
     }
@@ -118,7 +121,7 @@ try {
     });
     const state = result.result?.value;
     if (!state?.bodyExists || !state.headExists || !state.h1) {
-      throw new Error(`Homepage DOM missing on ${check.path}: ${JSON.stringify(state)}; exceptions=${JSON.stringify(exceptions.slice(-8)).slice(0, 4500)}; errors=${JSON.stringify(errors.slice(-8)).slice(0, 1800)}`);
+      throw new Error(`Homepage DOM missing on ${check.path}: ${JSON.stringify(state)}; exceptions=${JSON.stringify(exceptions.slice(-8)).slice(0, 4500)}; errors=${JSON.stringify(errors.slice(-8)).slice(0, 1800)}; console=${JSON.stringify(consoleCalls.slice(-12)).slice(0, 6500)}`);
     }
     if (!check.expected.test(state.h1)) {
       throw new Error(`Unexpected H1 on ${check.path}: ${state.h1}`);
