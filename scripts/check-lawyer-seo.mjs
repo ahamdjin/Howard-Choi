@@ -28,14 +28,15 @@ check(/"Personal Injury Lawyer"/.test(headings), "Profile page should identify P
 check(/Personal Injury Lawyer \| Practice Areas/.test(directory), "Practice directory should target Lawyer");
 check(/\x60\$\{name\} Personal Injury Lawyer\x60/.test(cityPage), "City H1s must describe Personal Injury Lawyer");
 
+const serviceSeoTable = service.slice(service.indexOf("const serviceSeo:"));
 const slugs = [
   "car-accidents", "truck-accidents", "motorcycle-accidents", "pedestrian-accidents",
   "rideshare-accidents", "slip-and-fall", "wrongful-death", "serious-injuries"
 ];
 for (const slug of slugs) {
   const key = '\u0022' + slug + '\u0022';
-  const start = service.indexOf(key);
-  const title = start >= 0 ? service.slice(start, start + 190).match(/title: "([^"]+)"/)?.[1] : null;
+  const start = serviceSeoTable.indexOf(key);
+  const title = start >= 0 ? serviceSeoTable.slice(start, start + 230).match(/title: "([^"]+)"/)?.[1] : null;
   check(Boolean(title?.includes("Lawyer")), `Service ${slug} needs a Lawyer title`);
   check(!/Attorney/i.test(title || ""), `Service ${slug} title must not use Attorney`);
 }
