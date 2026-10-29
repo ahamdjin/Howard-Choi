@@ -171,10 +171,10 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
 
   const isBuenaPark = location.slug === "buena-park";
   const heroTitle = isKo(locale)
-    ? (isBuenaPark ? "부에나파크 사고·상해 가이드" : `${name} 개인상해 변호사`)
+    ? `${name} 개인상해 변호사`
     : isEs(locale)
-      ? (isBuenaPark ? "Guía de accidentes y lesiones en Buena Park" : `Abogado de lesiones personales en ${name}`)
-      : (isBuenaPark ? "Buena Park Accident & Injury Guide" : `${name} Personal Injury Lawyer`);
+      ? `Abogado de lesiones personales en ${name}`
+      : `${name} Personal Injury Lawyer`;
 
   return (
     <EditorialFrame locale={locale}>
