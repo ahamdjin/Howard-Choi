@@ -3,6 +3,7 @@
   "slug": "traumatic-brain-injury-evidence-after-california-accident",
   "published": true,
   "reviewStatus": "approved",
+  "requiredTranslations": [],
   "excerpt": "How to document a traumatic brain injury after a California crash: symptoms, clinical records, daily limitations, rehabilitation, future care and legal evidence.",
   "category": "Brain & Catastrophic Injuries",
   "publishedAt": "2026-10-30",
