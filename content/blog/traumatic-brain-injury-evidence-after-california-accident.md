@@ -1,11 +1,11 @@
 {
   "title": "Traumatic Brain Injury After a California Accident: Evidence, Recovery & Claims",
   "slug": "traumatic-brain-injury-evidence-after-california-accident",
-  "published": false,
-  "reviewStatus": "pending-attorney-review",
+  "published": true,
+  "reviewStatus": "approved",
   "excerpt": "How to document a traumatic brain injury after a California crash: symptoms, clinical records, daily limitations, rehabilitation, future care and legal evidence.",
   "category": "Brain & Catastrophic Injuries",
-  "publishedAt": "2026-10-17",
+  "publishedAt": "2026-10-30",
   "alt": "Law office and legal records accompanying a guide to brain injury evidence",
   "intro": "A traumatic brain injury (TBI) claim is often difficult for a reason that has little to do with the severity of the crash: a person may look physically well while struggling with memory, concentration, fatigue, balance or work. A careful California injury claim connects a medically supported diagnosis and course of care with evidence of how the event happened and how functioning changed afterward. This guide explains which records matter, what they can and cannot prove, and why the early and long-term timelines must be handled together.",
   "takeaway": "A strong brain-injury record joins medical evaluation, contemporaneous symptom history, daily functioning, independent accident evidence and a realistic treatment plan. Neither a normal early scan nor a dramatic accident description decides a case by itself."
