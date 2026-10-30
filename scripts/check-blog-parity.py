@@ -22,9 +22,16 @@ for p in sorted((root/'content/blog').glob('*.md')):
  sections=[]
  for part in parts[1:]:
   heading,_,text=part.partition('\n');sections.append({'heading':heading,'paragraphs':[v.strip().replace('\n',' ') for v in text.strip().split('\n\n') if v.strip()]})
+ # English-only articles may explicitly opt out of publishing unreviewed translations.
+ # All existing translations are still validated, even when not required yet.
+ required=meta.get('requiredTranslations',['ko','es'])
+ if not isinstance(required,list) or len(required)!=len(set(required)) or any(locale not in ('ko','es') for locale in required):
+  failures.append(meta['slug']+': invalid requiredTranslations');continue
  for locale in ['ko','es']:
   label=meta['slug']+'/'+locale;target=root/'src/data/blog-translations'/f"{meta['slug']}.{locale}.json"
-  if not target.exists():failures.append(label+': missing');continue
+  if not target.exists():
+   if locale in required:failures.append(label+': missing')
+   continue
   d=json.loads(target.read_text());checked+=1
   for field in ['intro','takeaway']:
    if not isinstance(d.get(field),str) or not d[field].strip():failures.append(label+': missing '+field)
