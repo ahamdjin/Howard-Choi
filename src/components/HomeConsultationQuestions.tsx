@@ -33,6 +33,7 @@ export default function HomeConsultationQuestions({ locale }: { locale: SiteLoca
   const copy = content[locale];
   return <section className="bg-background py-16 md:py-24">
     <div className="site-shell">
+      {locale === "en" && <a href="/practice-areas/personal-injury" className="mb-6 inline-block py-3 text-base underline underline-offset-4">Explore our personal injury lawyer service with Howard Choi</a>}
       <h2 className="editorial-serif max-w-3xl text-4xl leading-tight">{copy.title}</h2>
       <p className="mt-5 max-w-3xl text-base leading-8 text-foreground/70">{copy.intro}</p>
       <div className="mt-10 grid gap-8 md:grid-cols-3">{copy.items.map(([heading, body]) => <article key={heading} className="border-t border-foreground/15 pt-5">

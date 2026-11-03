@@ -13,6 +13,7 @@ export const Route = createFileRoute("/es_/locations_/$slug")({
     return { location, copy };
   },
   head: ({ loaderData }) => {
+    if (!loaderData) return {};
     const path = `/es/locations/${loaderData.location.slug}`;
     const citySeo = locationGuidesEs[loaderData.location.slug];
     const seo = buildSeo({

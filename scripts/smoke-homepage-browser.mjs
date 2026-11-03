@@ -6,6 +6,7 @@ import path from "node:path";
 const origin = process.env.SMOKE_ORIGIN || "http://127.0.0.1:3000";
 const browserBinary = [
   process.env.CHROME_PATH,
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
   "/usr/bin/google-chrome",
   "/usr/bin/chromium",
 ].find((candidate) => candidate && existsSync(candidate));
@@ -94,12 +95,29 @@ try {
   await send("Log.enable");
 
   const checks = [
-    { path: "/", expected: /Personal Injury Lawyer/i },
+    { path: "/", expected: /Buena Park Personal Injury Lawyer/i },
     { path: "/ko", expected: /변호사/ },
     { path: "/es", expected: /Abogado/i },
+    { path: "/practice-areas/personal-injury", expected: /Buena Park Personal Injury Lawyer/i },
+    { path: "/practice-areas/car-accidents", expected: /car accident/i },
+    { path: "/locations/buena-park", expected: /Buena Park/i },
+    { path: "/locations/anaheim", expected: /Anaheim injury.*accident lawyer/i },
+    { path: "/about/our-difference", expected: /Our Difference/i },
+    { path: "/about/what-to-expect", expected: /What to Expect From Your Injury Claim/i },
+    { path: "/blogs", expected: /./ },
+    { path: "/practice-areas/personal-injury", expected: /Buena Park Personal Injury Lawyer/i, mobile: true },
+    { path: "/", expected: /Buena Park Personal Injury Lawyer/i, mobile: true },
+    { path: "/ko", expected: /변호사/, mobile: true },
+    { path: "/es", expected: /Abogado/i, mobile: true },
   ];
   for (const check of checks) {
-    activePath = check.path;
+    activePath = check.path + (check.mobile ? " (mobile)" : "");
+    await send("Emulation.setDeviceMetricsOverride", {
+      width: check.mobile ? 390 : 1440,
+      height: check.mobile ? 844 : 1000,
+      deviceScaleFactor: 1,
+      mobile: Boolean(check.mobile),
+    });
     const navigation = await send("Page.navigate", { url: origin + check.path });
     if (navigation.errorText) throw new Error(`Navigation ${check.path}: ${navigation.errorText}`);
     console.log("Chrome navigate:", check.path, JSON.stringify(navigation));
@@ -132,11 +150,27 @@ try {
     console.log(`Browser OK ${check.path}: ${state.h1}`);
   }
 
+  // Exercise navigation after hydration without submitting any enquiry.
+  await send("Runtime.evaluate", {
+    expression: `document.querySelector('a[href="/es/about"]')?.click()`,
+  });
+  await pause(3000);
+  const navigationState = await send("Runtime.evaluate", {
+    expression: `({ path: location.pathname, heading: document.querySelector('h1')?.textContent, width: document.documentElement.scrollWidth, viewport: window.innerWidth })`,
+    returnByValue: true,
+  });
+  const finalPage = navigationState.result?.value;
+  if (finalPage?.path !== "/es/about" || !finalPage.heading) {
+    throw new Error("Client navigation failed: " + JSON.stringify(finalPage));
+  }
+  if (finalPage.width > finalPage.viewport + 1) throw new Error("Mobile horizontal overflow: " + JSON.stringify(finalPage));
+  const hydrationErrors = [...exceptions, ...consoleCalls].filter((event) => /hydration|hydrating|Minified React error #(418|423|425)/i.test(event.text));
+  if (hydrationErrors.length) throw new Error("Browser hydration errors: " + JSON.stringify(hydrationErrors));
   const appendErrors = [...exceptions, ...errors].filter((event) => /appendChild|Cannot read properties of null/i.test(event.text));
   if (appendErrors.length) {
     throw new Error("Browser appendChild exceptions: " + JSON.stringify(appendErrors).slice(0, 2800));
   }
-  console.log(`Browser hydration passed for EN/KO/ES homepages (${exceptions.length} uncaught exceptions, ${errors.length} browser error logs; no appendChild failures).`);
+  console.log(`Browser hydration passed for desktop/mobile homepages, inner pages and client navigation (${exceptions.length} uncaught exceptions, ${errors.length} browser error logs; no appendChild failures).`);
 } finally {
   for (const request of pending.values()) {
     clearTimeout(request.timeout);

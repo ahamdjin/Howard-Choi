@@ -1,5 +1,5 @@
 import { responsiveImageProps } from "@/lib/responsive-images";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/router-compat";
 import brandLogo from "@/assets/law-firm/howard-choi-logo.png";
 import { brand, practiceAreas, serviceLocations } from "@/data/injurySite";
 import FooterContact from "@/components/FooterContact";

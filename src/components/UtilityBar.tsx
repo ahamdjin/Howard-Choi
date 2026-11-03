@@ -1,5 +1,5 @@
 import { Calculator, UserRound } from "lucide-react";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "@/lib/router-compat";
 import { brand, type SiteLocale } from "@/data/injurySite";
 
 // Only these six legacy articles have published Korean and Spanish versions.
@@ -20,14 +20,15 @@ export default function UtilityBar({ locale }: { locale: SiteLocale }) {
   const es = locale === "es";
   const basePath = pathname.replace(/^\/(?:ko|es)(?=\/|$)/, "") || "/";
   const englishPath = basePath;
+  const translatedBasePath = basePath === "/practice-areas/personal-injury" ? "/practice-areas" : basePath;
   const articleSlug = basePath.startsWith("/blogs/") ? basePath.slice("/blogs/".length).replace(/\/$/, "") : undefined;
   // Do not generate locale-specific URLs for English-only articles: those
   // destinations are 404s and also break Vercel's prerender link crawler.
   const hasArticleTranslation = !articleSlug || translatedBlogSlugs.has(articleSlug);
-  const koreanPath = !hasArticleTranslation ? "/ko/blogs" : basePath === "/" ? "/ko" : "/ko" + basePath;
-  const spanishPath = !hasArticleTranslation ? "/es/blogs" : basePath === "/" ? "/es" : "/es" + basePath;
+  const koreanPath = !hasArticleTranslation ? "/ko/blogs" : translatedBasePath === "/" ? "/ko" : "/ko" + translatedBasePath;
+  const spanishPath = !hasArticleTranslation ? "/es/blogs" : translatedBasePath === "/" ? "/es" : "/es" + translatedBasePath;
   const suffix = (searchStr || "") + (hash ? `#${hash.replace(/^#/, "")}` : "");
-  const translatedSuffix = hasArticleTranslation ? suffix : "";
+  const translatedSuffix = hasArticleTranslation && translatedBasePath === basePath ? suffix : "";
 
   const calculatorLabel = ko ? "예상 배상액 계산기" : es ? "Calculadora de indemnización" : "Injury Settlement Calculator";
   const calculatorShort = ko ? "계산기" : es ? "Calculadora" : "Calculator";

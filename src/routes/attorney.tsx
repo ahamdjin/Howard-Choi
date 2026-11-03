@@ -7,7 +7,7 @@ export const Route = createFileRoute("/attorney")({
     const seo = buildSeo({
       title: "Howard Choi | Buena Park Personal Injury Lawyer",
       description:
-        "Howard Jong-yol Choi is a California-licensed personal injury lawyer in Buena Park, State Bar No. 284364, admitted in 2012. See his verified credentials and how accident claims, evidence, insurance, and medical losses are handled.",
+        "Meet Howard Choi, a personal injury lawyer in Buena Park. View California Bar No. 284364, his background and how to arrange a free consultation.",
       path: "/attorney",
       alternatePath: "/ko/attorney",
       locale: "en-US",

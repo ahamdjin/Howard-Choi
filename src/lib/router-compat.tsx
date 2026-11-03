@@ -1,13 +1,20 @@
-import { useCallback, useEffect, useMemo } from "react";
+import { forwardRef, useCallback, useEffect, useMemo } from "react";
 import {
-  Link,
+  Link as TanStackLink,
+  type AnyRouter,
+  type LinkComponentProps,
   useNavigate as useTanStackNavigate,
   useParams as useTanStackParams,
   useRouterState,
 } from "@tanstack/react-router";
 
-export { Link };
-export const NavLink = Link;
+// Content data stores resolved URL strings, including dynamic service/blog paths.
+// Keep that boundary explicit while TanStack owns navigation and active state.
+export type SiteLinkProps = LinkComponentProps<"a", AnyRouter, string, string>;
+export const Link = forwardRef<HTMLAnchorElement, SiteLinkProps>((props, ref) => (
+  <TanStackLink<AnyRouter, string, string, string, "."> {...props} ref={ref} />
+));
+Link.displayName = "SiteLink";
 
 type NavigateOptions = {
   replace?: boolean;

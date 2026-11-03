@@ -1,6 +1,7 @@
+import { practiceGroups } from "@/data/practiceGroups";
 import { useState } from "react";
 import { ArrowRight, ExternalLink, MapPin } from "lucide-react";
-import { practiceAreas, serviceLocations, type SiteLocale } from "@/data/injurySite";
+import { serviceLocations, type SiteLocale } from "@/data/injurySite";
 import { practiceMedia } from "@/data/practiceMedia";
 import { locationMedia } from "@/data/locationMedia";
 import { esPracticeContent } from "@/data/esPracticeContent";
@@ -66,48 +67,37 @@ export function PracticeHubDirectory({ locale }: { locale: SiteLocale }) {
   const es = locale === "es";
 
   return (
-    <div className="grid gap-6 md:grid-cols-2 md:gap-7" aria-label={ko ? "업무 분야 8개" : es ? "Ocho áreas de práctica" : "Eight personal injury practice areas"}>
-      {practiceAreas.map((practice, index) => {
-        const media = practiceMedia[practice.slug];
-        const esCopy = esPracticeContent[practice.slug];
-        const name = ko ? practice.koTitle : es ? esCopy?.shortTitle || practice.title : practice.title;
-        const description = ko
-          ? practice.koDescription
-          : es
-            ? esCopy?.description || practice.description
-            : practiceFocus[practice.slug] || practice.description;
-        const href = `${prefix}/practice-areas/${practice.slug}`;
+    <div className="space-y-12">
+      {practiceGroups.map((group, index) => {
+        const photo = practiceMedia[group.practices[0].slug];
         return (
-          <article key={practice.slug} className="group flex min-w-0 flex-col overflow-hidden rounded-[3px] border border-[#1E1C1A]/15 bg-[#F9F7F3]">
-            <a href={href} className="relative block aspect-[16/10] overflow-hidden bg-[#E6DFD4] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-3px]" aria-label={ko ? `${name} 안내 보기` : es ? `Ver orientación: ${name}` : `Explore ${name.toLowerCase()} injury claims`}>
-              {media && (
-                <img
-                  {...responsiveImageProps(media.src, "(max-width: 767px) 94vw, (max-width: 1200px) 46vw, 400px")}
-                  src={media.src}
-                  alt={media.alt}
-                  width={720}
-                  height={450}
-                  loading="lazy"
-                  decoding="async"
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.035]"
-                />
-              )}
-              <span className="absolute left-4 top-4 rounded-sm bg-[#1E1C1A]/85 px-2.5 py-1.5 text-[10px] font-medium tracking-[0.10em] text-[#F7F2E8]">
-                {String(index + 1).padStart(2, "0")} / {String(practiceAreas.length).padStart(2, "0")}
-              </span>
-            </a>
-            <div className="flex flex-1 flex-col px-5 pb-6 pt-5 sm:px-6">
-              <h3 className="editorial-serif text-[clamp(1.6rem,2.35vw,2rem)] leading-[1.13] text-[#211B16]">
-                <a className="underline-offset-4 hover:underline" href={href}>
-                  {name}{ko || es ? "" : " Claims"}
-                </a>
-              </h3>
-              <p className="mt-3 flex-1 text-[14px] leading-[1.7] text-[#5D5349]">{description}</p>
-              <a href={href} className="mt-6 inline-flex min-h-11 items-center gap-2 self-start border-b border-[#7E573B] text-[12px] font-semibold text-[#453322] hover:border-[#1E1C1A]">
-                {ko ? "이 사건 분야 자세히 보기" : es ? "Ver esta área de práctica" : `Read the ${name.toLowerCase()} guide`} <ArrowRight aria-hidden="true" className="h-4 w-4" />
-              </a>
+          <section key={group.id} id={group.id} aria-labelledby={`practice-group-${group.id}`} className="overflow-hidden border-y border-[#1E1C1A]/15 bg-[#F9F7F3] md:grid md:grid-cols-[0.85fr_1.15fr]">
+            <div className="relative isolate flex min-h-52 flex-col justify-end bg-[#292119] p-6 text-[#FFF9F1] md:min-h-72">
+              {photo && <img {...responsiveImageProps(photo.src, "(max-width: 767px) 94vw, 32vw")} src={photo.src} alt="" width={720} height={450} loading="lazy" className="absolute inset-0 -z-20 h-full w-full object-cover" />}
+              <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+              <span className="text-xs tracking-widest">0{index + 1}</span>
+              <h3 id={`practice-group-${group.id}`} className="editorial-serif mt-3 text-4xl leading-tight">{group.title[locale]}</h3>
             </div>
-          </article>
+            <ul className="divide-y divide-[#1E1C1A]/15 px-5 md:px-7">
+              {group.id === "personal-injury" && locale === "en" && (
+                <li><a href="/practice-areas/personal-injury" className="group flex items-center justify-between gap-4 py-5">
+                  <span><strong className="block text-[15px]">Personal Injury Lawyer</strong><span className="mt-1 block text-sm leading-6 text-[#5D5349]">Start here if you are unsure which kind of injury claim you have.</span></span>
+                  <ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-1" />
+                </a></li>
+              )}
+              {group.practices.map((practice) => {
+                const esCopy = esPracticeContent[practice.slug];
+                const name = ko ? practice.koTitle : es ? esCopy?.shortTitle || practice.title : practice.title;
+                const description = ko ? practice.koDescription : es ? esCopy?.description || practice.description : practiceFocus[practice.slug] || practice.description;
+                return (
+                  <li key={practice.slug}><a href={`${prefix}/practice-areas/${practice.slug}`} className="group flex items-center justify-between gap-4 py-5">
+                    <span><strong className="block text-[15px]">{name}</strong><span className="mt-1 block text-sm leading-6 text-[#5D5349]">{description}</span></span>
+                    <ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-1" />
+                  </a></li>
+                );
+              })}
+            </ul>
+          </section>
         );
       })}
     </div>

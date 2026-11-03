@@ -1,3 +1,4 @@
+import { practiceSearchNames } from "@/data/practiceSeo";
 import { responsiveImageProps } from "@/lib/responsive-images";
 import { ArrowUpRight } from "lucide-react";
 import ScrollableCards from "@/components/ScrollableCards";
@@ -60,7 +61,7 @@ const Locations = ({ locale = "en" }: { locale?: SiteLocale }) => {
           {practiceAreas.map((practice, index) => {
             const media = practiceMedia[practice.slug];
             const esCopy = esPracticeContent[practice.slug];
-            const name = ko ? practice.koTitle : es ? (esCopy?.shortTitle || practice.title) : practice.title;
+            const name = ko ? practice.koTitle : es ? (esCopy?.shortTitle || practice.title) : `${practiceSearchNames[practice.slug] || practice.title} Lawyer`;
             const description = ko ? practice.koDescription : es ? (esCopy?.description || practice.description) : summaries[practice.slug] || practice.description;
             return (
               <a

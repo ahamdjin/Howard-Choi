@@ -6,7 +6,7 @@ import type { LocalGuide } from "./locationGuidesEn";
  */
 export const locationGuidesKo: Record<string, Pick<LocalGuide, "seoTitle" | "seoDescription" | "records" | "evidence" | "deadlines" | "faqs">> = {
   "buena-park": {
-    seoTitle: "부에나파크 개인상해 변호사 | 사고·경찰 기록",
+    seoTitle: "부에나파크 사무실과 지역 상해 자료 | Howard Choi",
     seoDescription: "Beach Boulevard, 91번·5번 고속도로 사고 후 부에나파크 경찰과 CHP 기록을 구분하고, 증거 보존과 캘리포니아 상해 청구 기한을 확인하세요.",
     records: "부에나파크 시내 도로에서 사고가 났다면 실제 조사 기관과 사건번호부터 확인하세요. Buena Park Police의 기록 공개 규정은 캘리포니아 차량법 제20012조에 따라 충돌 보고서를 받을 수 있는 사람을 제한합니다. 반면 5번 또는 91번 고속도로 사고는 CHP가 조사했을 수 있습니다. CHP 보고서에는 공식 온라인 신청 절차와 CHP 190 양식이 있지만, 다른 경찰서가 작성한 보고서를 대신 발급하는 것은 아닙니다.",
     evidence: "Beach Boulevard 교차로나 상점 진출입로에서 사고가 났다면 충돌 방향, 차선과 신호, 정확한 접촉 위치가 드러나는 사진을 남기세요. Knott's 인근처럼 방문 차량이 오가는 곳에서는 상점이나 주차장 운영자가 보관할 수 있는 영상의 위치도 확인해 두는 것이 좋습니다. 건물 내부에서 다쳤다면 차량 충돌 자료 대신 바닥 상태, 경고 표시, 현장 관리 주체를 구분해 기록해야 합니다.",

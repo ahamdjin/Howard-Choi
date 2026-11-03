@@ -1,3 +1,7 @@
+import { citySearchFocus } from "@/data/citySearchFocus";
+import { practiceMedia } from "@/data/practiceMedia";
+import { cityLandingCopy } from "@/data/cityLandingCopy";
+import { getBlogBySlug } from "@/data/blogs";
 import SiteDepthSection from "@/components/SiteDepthSection";
 import { ArrowRight, MapPin, Route, ShieldCheck } from "lucide-react";
 import { useParams } from "@tanstack/react-router";
@@ -34,7 +38,7 @@ const cityImages: Record<string, string> = {
   norwalk: cityTruckHighway,
   whittier: citySuburbanPalms,
 };
-import { getServiceLocation, practiceAreas, serviceLocations, type SiteLocale } from "@/data/injurySite";
+import { brand, getServiceLocation, practiceAreas, serviceLocations, type SiteLocale } from "@/data/injurySite";
 import { esLocationContent } from "@/data/esLocationContent";
 import { esPracticeContent } from "@/data/esPracticeContent";
 import {
@@ -169,12 +173,49 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
   const localGuide = locale === "ko" ? locationGuidesKo[location.slug] : locale === "es" ? locationGuidesEs[location.slug] : locationGuidesEn[location.slug];
   const localFocus = locationFocus[location.slug];
 
+  const landing = cityLandingCopy[location.slug];
+  const search = citySearchFocus[location.slug];
+  const featuredCases = locale === "en" ? [...new Set([...search.cases, ...localFocus.practices])] : localFocus.practices;
   const isBuenaPark = location.slug === "buena-park";
-  const heroTitle = isKo(locale)
+  const heroTitle = isBuenaPark
+    ? (isKo(locale) ? "부에나파크 사무실과 지역 상해 자료" : isEs(locale) ? "Oficina de Buena Park y recursos locales para lesiones" : "Buena Park Office & Local Accident Resources")
+    : isKo(locale)
     ? `${name} 개인상해 변호사`
     : isEs(locale)
       ? `Abogado de lesiones personales en ${name}`
-      : `${name} Personal Injury Lawyer`;
+      : search.heading;
+
+  const caseSection = (
+    <ReadingSectionBlock
+      id="cases"
+      locale={locale}
+      kicker={isKo(locale) ? "04 · 사건" : isEs(locale) ? "04 · Asuntos" : "Cases we handle"}
+      title={isKo(locale) ? `${name} 사고 유형별 자료 안내` : isEs(locale) ? `Guías según el tipo de lesión en ${name}.` : `Injury and accident cases we handle in ${name}`}
+      intro={localFocus.intro[locale]}
+    >
+      <div className="grid border-t border-[#1E1C1A]/12 sm:grid-cols-2">
+        {practiceAreas.filter((practice) => featuredCases.includes(practice.slug))
+          .sort((a, b) => featuredCases.indexOf(a.slug) - featuredCases.indexOf(b.slug))
+          .map((practice) => {
+          const practiceEs = esPracticeContent[practice.slug];
+          const localServiceContext = locationPracticeContexts[location.slug]?.[practice.slug]?.[locale];
+          return (
+            <a key={practice.slug} href={`${localePrefix(locale)}/practice-areas/${practice.slug}`} className="group flex items-start gap-4 border-b border-[#1E1C1A]/12 py-5 sm:pr-5">
+              {locale === "en" && practiceMedia[practice.slug] && <img src={practiceMedia[practice.slug].src} alt="" width={88} height={68} loading="lazy" className="h-[68px] w-[88px] shrink-0 rounded-sm object-cover" />}
+              <span className="min-w-0 flex-1">
+                <span className="block font-semibold text-[15px]">{isKo(locale) ? practice.koTitle : isEs(locale) ? (practiceEs?.shortTitle || practice.title) : `${practice.title} in ${name}`}</span>
+                <span className="mt-1 block text-[13px] leading-6 text-[#1E1C1A]/75">{localServiceContext || (isKo(locale) ? practice.koIssues[0] : isEs(locale) ? (practiceEs?.issues[0] || practice.issues[0]) : practice.issues[0])}</span>
+              </span>
+              <ArrowRight className="mt-1 h-3.5 w-3.5 shrink-0 text-[#1E1C1A]/35 transition-transform group-hover:translate-x-1" />
+            </a>
+          );
+        })}
+      </div>
+      {locale === "en" && <p className="mt-6 text-sm leading-7">Unsure which type of case you have? Start with <a href="/practice-areas/personal-injury" className="underline underline-offset-4">Howard Choi’s personal injury service</a> for an overview of how an injury claim is evaluated.</p>}
+      <a href={`${localePrefix(locale)}/practice-areas`} className="editorial-inline-link mt-7"><span>{isKo(locale) ? "업무 분야 보기" : isEs(locale) ? "Ver todas las áreas de lesiones personales" : "See all personal injury practice areas"}</span><ArrowRight className="h-4 w-4" /></a>
+    </ReadingSectionBlock>
+
+  );
 
   return (
     <EditorialFrame locale={locale}>
@@ -183,12 +224,30 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
           locale={locale}
           eyebrow={isKo(locale) ? "서비스 지역" : isEs(locale) ? `${location.county} · Zona de servicio` : `${location.county} · Service area`}
           title={heroTitle}
-          description={description}
+          description={locale === "en" ? landing.lead : description}
           image={locationMedia[location.slug]?.src ?? cityImages[location.slug] ?? heroJustice}
           imageAlt={locationMedia[location.slug]?.alt || `${name}, California`}
           imageFallback={cityImages[location.slug] ?? heroJustice}
           detail
         />
+        {locale === "en" && (
+          <section aria-label="Office and consultation" className="border-b border-foreground/15 bg-white">
+            <div className="site-shell grid gap-6 py-7 text-sm leading-6 md:grid-cols-3">
+              <div>
+                <strong className="block">{isBuenaPark ? "Visit the Buena Park office" : `Serving ${name} from Buena Park`}</strong>
+                <a className="underline underline-offset-4" href={brand.mapsHref}>{brand.address}</a>
+              </div>
+              <div>
+                <strong className="block">Talk through the accident</strong>
+                <a className="underline underline-offset-4" href="/about/what-to-expect">See what happens from your first call</a>
+              </div>
+              <div>
+                <strong className="block">Get to know the firm</strong>
+                <a className="underline underline-offset-4" href="/about/our-difference">How Howard approaches injury cases</a>
+              </div>
+            </div>
+          </section>
+        )}
         <LocationDetailHighlights
           locale={locale}
           name={name}
@@ -214,23 +273,46 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
                   { id: "faq", label: "Preguntas locales" }, { id: "nearby", label: "Comunidades cercanas" },
                 ]
               : [
-                  { id: "overview", label: "Local overview" }, { id: "data", label: "Local collision data" }, { id: "records", label: "Local records & agencies" },
-                  { id: "cases", label: "Matters handled" }, { id: "evidence", label: "Evidence to preserve" }, { id: "situations", label: "Local evidence scenarios" }, { id: "deadlines", label: "California deadlines" },
-                  { id: "faq", label: "Local claim questions" }, { id: "nearby", label: "Nearby communities" },
+                  { id: "overview", label: "Local overview" }, { id: "first-steps", label: "What to do first" }, { id: "cases", label: "Cases we handle" }, { id: "data", label: "Local collision data" }, { id: "records", label: "Local records & agencies" },
+                  { id: "evidence", label: "Evidence to preserve" }, { id: "situations", label: "Local evidence scenarios" }, { id: "deadlines", label: "California deadlines" },
+                  { id: "claim-value", label: "What affects claim value" }, { id: "faq", label: "Local claim questions" }, { id: "guides", label: "Related guides" }, { id: "nearby", label: "Nearby communities" },
                 ]}
         >
           <ReadingSectionBlock
             id="overview"
             locale={locale}
-            kicker={isKo(locale) ? "01 · 지역" : isEs(locale) ? "01 · Panorama local" : "01 · Local overview"}
+            kicker={isKo(locale) ? "01 · 지역" : isEs(locale) ? "01 · Panorama local" : "Local overview"}
             title={isKo(locale) ? `${name}에서 사고가 발생했다면` : isEs(locale) ? `Si ocurrió un accidente en ${name} o cerca.` : `If an accident happened in or around ${name}.`}
             intro={localIntro}
           />
 
+          {locale === "en" && (
+            <ReadingSectionBlock id="first-steps" locale={locale} kicker="After an injury" title={`What to do after an accident in ${name}`}>
+              <ol className="divide-y divide-foreground/15 border-y border-foreground/15 text-[15px] leading-7">
+                <li className="py-4"><strong className="block">01. Put safety and treatment first</strong>Get appropriate medical care and keep copies of treatment instructions and work restrictions.</li>
+                <li className="py-4"><strong className="block">02. Save the details that are easy to lose</strong>{search.next}</li>
+                <li className="py-4"><strong className="block">03. Keep insurance requests together</strong>Save claim numbers, letters and offers. Bring them to a consultation if you have questions about coverage or what an offer includes.</li>
+              </ol>
+              <a className="editorial-inline-link mt-5" href="/blogs/what-to-do-after-a-car-accident-in-california">Read the California accident checklist</a>
+            </ReadingSectionBlock>
+          )}
+          {locale === "en" && caseSection}
+          {locale === "en" && (
+            <aside className="my-10 bg-[#27211C] px-6 py-8 text-[#FAF5ED] md:p-9">
+              <h2 className="editorial-serif text-3xl">What can an injury lawyer help you sort out?</h2>
+              <p className="mt-4 max-w-prose text-[15px] leading-7">Howard Choi can review which records are missing, which insurance policies may be relevant, and how treatment or time away from work has affected you. A case review is also a chance to ask about fees and what would happen if the firm takes your case.</p>
+              <div className="mt-5 flex flex-wrap gap-5 text-sm">
+                <a className="underline underline-offset-4" href="/contact">Request a free consultation</a>
+                <a className="underline underline-offset-4" href="/case-value-calculator">Explore the case value calculator</a>
+                <a className="underline underline-offset-4" href="/results">See selected past results</a>
+              </div>
+            </aside>
+          )}
+
           <ReadingSectionBlock
             id="data"
             locale={locale}
-            kicker={isKo(locale) ? "02 · 데이터" : isEs(locale) ? "02 · Datos locales" : "02 · Local data"}
+            kicker={isKo(locale) ? "02 · 데이터" : isEs(locale) ? "02 · Datos locales" : "Local collision data"}
             title={isKo(locale) ? statLabel : isEs(locale) ? `Lesiones por colisiones en ${name}, en contexto.` : `${name} collision injuries in context.`}
             intro={isKo(locale)
               ? `California Office of Traffic Safety(OTS)에 따르면 ${location.ots.year}년 ${name}에서는 교통사고로 ${location.ots.total.toLocaleString()}명이 사망하거나 다쳤습니다. 같은 자료에 오토바이 탑승 피해자 ${location.ots.motorcycles}명, 보행자 ${location.ots.pedestrians}명, 자전거 이용자 ${location.ots.bicyclists}명이 기록되어 있습니다. 이 수치는 지역 교통안전의 참고 자료이며 개별 사건의 결과를 예측하지는 않습니다.`
@@ -249,7 +331,7 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
           <ReadingSectionBlock
             id="records"
             locale={locale}
-            kicker={isKo(locale) ? "03 · 지역 기록" : isEs(locale) ? "03 · Registros locales" : "03 · Local records"}
+            kicker={isKo(locale) ? "03 · 지역 기록" : isEs(locale) ? "03 · Registros locales" : "Local records"}
             title={isKo(locale) ? "사고 기록은 정확한 관할기관에서 시작됩니다." : isEs(locale) ? `Recursos oficiales locales para un incidente en ${name}.` : `Official local resources for an incident in ${name}.`}
             intro={localGuide.records}
           >
@@ -275,37 +357,12 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
             </div>
           </ReadingSectionBlock>
 
-          <ReadingSectionBlock
-            id="cases"
-            locale={locale}
-            kicker={isKo(locale) ? "04 · 사건" : isEs(locale) ? "04 · Asuntos" : "04 · Matters"}
-            title={isKo(locale) ? `${name} 사고 유형별 자료 안내` : isEs(locale) ? `Guías según el tipo de lesión en ${name}.` : `Injury-claim guides relevant to ${name}.`}
-            intro={localFocus.intro[locale]}
-          >
-            <div className="grid border-t border-[#1E1C1A]/12 sm:grid-cols-2">
-              {practiceAreas.filter((practice) => localFocus.practices.includes(practice.slug))
-                .sort((a, b) => localFocus.practices.indexOf(a.slug) - localFocus.practices.indexOf(b.slug))
-                .map((practice) => {
-                const practiceEs = esPracticeContent[practice.slug];
-                const localServiceContext = locationPracticeContexts[location.slug]?.[practice.slug]?.[locale];
-                return (
-                  <a key={practice.slug} href={`${localePrefix(locale)}/practice-areas/${practice.slug}`} className="group flex items-start justify-between gap-4 border-b border-[#1E1C1A]/12 py-4 sm:even:border-l sm:even:pl-6">
-                    <span className="min-w-0">
-                      <span className="block text-[13px]">{isKo(locale) ? practice.koTitle : isEs(locale) ? (practiceEs?.shortTitle || practice.title) : practice.title}</span>
-                      <span className="mt-1 block text-[11px] leading-5 text-[#1E1C1A]/55">{localServiceContext || (isKo(locale) ? practice.koIssues[0] : isEs(locale) ? (practiceEs?.issues[0] || practice.issues[0]) : practice.issues[0])}</span>
-                    </span>
-                    <ArrowRight className="mt-1 h-3.5 w-3.5 shrink-0 text-[#1E1C1A]/35 transition-transform group-hover:translate-x-1" />
-                  </a>
-                );
-              })}
-            </div>
-            <a href={`${localePrefix(locale)}/practice-areas`} className="editorial-inline-link mt-7"><span>{isKo(locale) ? "업무 분야 보기" : isEs(locale) ? "Ver todas las áreas de lesiones personales" : "See all personal injury practice areas"}</span><ArrowRight className="h-4 w-4" /></a>
-          </ReadingSectionBlock>
+          {locale !== "en" && caseSection}
 
           <ReadingSectionBlock
             id="evidence"
             locale={locale}
-            kicker={isKo(locale) ? "05 · 증거" : isEs(locale) ? "05 · Evidencia" : "05 · Evidence"}
+            kicker={isKo(locale) ? "05 · 증거" : isEs(locale) ? "05 · Evidencia" : "Evidence"}
             title={isKo(locale) ? "지역 기록과 사고 기록을 함께 보관하세요." : isEs(locale) ? `Registros útiles después de un accidente en ${name}.` : `Useful records after an accident in ${name}.`}
             intro={localGuide.evidence}
           />
@@ -332,17 +389,28 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
           <ReadingSectionBlock
             id="deadlines"
             locale={locale}
-            kicker={isKo(locale) ? "06 · 기한" : isEs(locale) ? "06 · Plazos de California" : "06 · California deadlines"}
+            kicker={isKo(locale) ? "06 · 기한" : isEs(locale) ? "06 · Plazos de California" : "California deadlines"}
             title={isKo(locale) ? `${name} 사고에 적용되는 법적 기한` : isEs(locale) ? `¿Qué plazos podrían aplicarse en ${name}?` : `Which legal deadlines may apply in ${name}?`}
             intro={localGuide.deadlines}
           >
             <a href="https://selfhelp.courts.ca.gov/civil-lawsuit/statute-limitations" target="_blank" rel="noreferrer" className="editorial-inline-link"><span>{isKo(locale) ? "California Courts 기한 안내" : isEs(locale) ? "California Courts · Plazos legales" : "California Courts · Statutes of limitations"}</span><ArrowRight className="h-4 w-4" /></a>
           </ReadingSectionBlock>
 
+          {locale === "en" && (
+            <ReadingSectionBlock id="claim-value" locale={locale} kicker="Claim value" title={`What affects the value of an injury claim in ${name}?`} intro="Start with how the injury changed your life. Then look at what the records can support, what fault is disputed, and what insurance may be available. The city and type of crash alone do not determine a dollar amount.">
+              <dl className="grid gap-5 border-y border-foreground/15 py-6 sm:grid-cols-3">
+                <div><dt className="font-semibold">Treatment and recovery</dt><dd className="mt-2 text-sm leading-6">Save bills, treatment notes, and any documented need for continuing care.</dd></div>
+                <div><dt className="font-semibold">Work and daily life</dt><dd className="mt-2 text-sm leading-6">Keep wage records, missed shifts, work restrictions, and notes on changes to your usual activities.</dd></div>
+                <div><dt className="font-semibold">Fault and coverage</dt><dd className="mt-2 text-sm leading-6">Keep incident reports and insurance correspondence so the facts and available policies can be reviewed together.</dd></div>
+              </dl>
+              <a className="editorial-inline-link mt-5" href="/blogs/how-much-is-my-personal-injury-case-worth-california">Read how California injury claims are valued</a>
+            </ReadingSectionBlock>
+          )}
+
           <ReadingSectionBlock
             id="faq"
             locale={locale}
-            kicker={isKo(locale) ? "07 · 질문" : isEs(locale) ? "07 · Preguntas locales" : "07 · Local claim questions"}
+            kicker={isKo(locale) ? "07 · 질문" : isEs(locale) ? "07 · Preguntas locales" : "Local claim questions"}
             title={isKo(locale) ? `${name} 사고 이후 자주 묻는 질문` : isEs(locale) ? `Preguntas prácticas después de un accidente en ${name}.` : `Practical questions after an accident in ${name}.`}
           >
             <div className="border-t border-[#1E1C1A]/12">
@@ -352,7 +420,18 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
             </div>
           </ReadingSectionBlock>
 
-          <ReadingSectionBlock id="nearby" locale={locale} kicker={isKo(locale) ? "08 · 인근" : isEs(locale) ? "08 · Cerca" : "08 · Nearby"} title={isKo(locale) ? "인근 서비스 지역" : isEs(locale) ? "Comunidades cercanas atendidas." : "Nearby communities served."}>
+          {locale === "en" && (
+            <ReadingSectionBlock id="guides" locale={locale} kicker="Keep reading" title="Guides for your next decision">
+              <ul className="space-y-3">
+                {landing.guides.map(getBlogBySlug).filter((post) => post != null).map((post) => (
+                  <li key={post.slug}><a className="editorial-inline-link" href={`/blogs/${post.slug}`}>{post.title}<ArrowRight className="h-4 w-4" aria-hidden="true" /></a></li>
+                ))}
+                <li><a className="editorial-inline-link" href="/about/what-to-expect">What to expect when you contact Howard Choi</a></li>
+              </ul>
+            </ReadingSectionBlock>
+          )}
+
+          <ReadingSectionBlock id="nearby" locale={locale} kicker={isKo(locale) ? "08 · 인근" : isEs(locale) ? "08 · Cerca" : "Nearby communities"} title={isKo(locale) ? "인근 서비스 지역" : isEs(locale) ? "Comunidades cercanas atendidas." : "Nearby communities served."}>
             <div className="editorial-link-grid">
               {serviceLocations.filter((item) => localFocus.nearby.includes(item.slug))
                 .sort((a, b) => localFocus.nearby.indexOf(a.slug) - localFocus.nearby.indexOf(b.slug))

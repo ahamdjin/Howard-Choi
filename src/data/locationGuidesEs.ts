@@ -5,7 +5,7 @@ import type { LocalGuide } from "./locationGuidesEn";
  */
 export const locationGuidesEs: Record<string, Pick<LocalGuide, "seoTitle" | "seoDescription" | "records" | "evidence" | "deadlines" | "faqs">> = {
   "buena-park": {
-    seoTitle: "Abogado de lesiones en Buena Park | Accidentes",
+    seoTitle: "Oficina de Buena Park y recursos para lesiones | Howard Choi",
     seoDescription: "Cómo identificar reportes de Buena Park Police o CHP, preservar pruebas en Beach Boulevard y revisar los plazos de reclamos por lesiones.",
     records: "Para un choque en una calle de Buena Park, conserve el número de incidente y confirme qué agencia lo investigó. La política de Buena Park Police limita la entrega de reportes de colisión a las personas autorizadas por el Código de Vehículos de California. Si ocurrió en las autopistas I-5 o SR-91, el informe podría ser de CHP. Su portal y formulario CHP 190 sirven para investigaciones de CHP, no para obtener reportes emitidos por la policía municipal.",
     evidence: "En Beach Boulevard o en una entrada comercial, documente carriles, señales, dirección de los vehículos y lugar exacto del impacto. Si había comercios o estacionamientos cerca, anote quién podría conservar cámaras de seguridad y solicite preservar el video sin asumir que existe. Para una caída en un negocio, registre la condición peligrosa, los avisos y quién controlaba esa área.",

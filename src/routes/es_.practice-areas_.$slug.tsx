@@ -12,6 +12,7 @@ export const Route = createFileRoute("/es_/practice-areas_/$slug")({
     return { practice, copy };
   },
   head: ({ loaderData }) => {
+    if (!loaderData) return {};
     const path = `/es/practice-areas/${loaderData.practice.slug}`;
     const seo = buildSeo({
       title: `${loaderData.copy.title} | Evidencia, Seguro y Daños`,

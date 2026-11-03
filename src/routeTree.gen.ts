@@ -29,6 +29,10 @@ import { Route as RobotsDottxtRouteImport } from './routes/robots[.]txt'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as ThankYouRouteImport } from './routes/thank-you'
+import { Route as AboutFaqsRouteImport } from './routes/about_.faqs'
+import { Route as AboutOurDifferenceRouteImport } from './routes/about_.our-difference'
+import { Route as AboutWhatToExpectRouteImport } from './routes/about_.what-to-expect'
+import { Route as AboutZeroFeeGuaranteeRouteImport } from './routes/about_.zero-fee-guarantee'
 import { Route as ApiReviewRouteImport } from './routes/api.review'
 import { Route as BlogsSlugRouteImport } from './routes/blogs_.$slug'
 import { Route as EsAboutRouteImport } from './routes/es_.about'
@@ -61,6 +65,7 @@ import { Route as KoTermsRouteImport } from './routes/ko_.terms'
 import { Route as KoThankYouRouteImport } from './routes/ko_.thank-you'
 import { Route as LocationsSlugRouteImport } from './routes/locations_.$slug'
 import { Route as PracticeAreasSlugRouteImport } from './routes/practice-areas_.$slug'
+import { Route as PracticeAreasPersonalInjuryRouteImport } from './routes/practice-areas_.personal-injury'
 import { Route as EsBlogsSlugRouteImport } from './routes/es_.blogs_.$slug'
 import { Route as EsLocationsSlugRouteImport } from './routes/es_.locations_.$slug'
 import { Route as EsPracticeAreasSlugRouteImport } from './routes/es_.practice-areas_.$slug'
@@ -166,6 +171,26 @@ const TermsRoute = TermsRouteImport.update({
 const ThankYouRoute = ThankYouRouteImport.update({
   id: '/thank-you',
   path: '/thank-you',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutFaqsRoute = AboutFaqsRouteImport.update({
+  id: '/about_/faqs',
+  path: '/about/faqs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutOurDifferenceRoute = AboutOurDifferenceRouteImport.update({
+  id: '/about_/our-difference',
+  path: '/about/our-difference',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutWhatToExpectRoute = AboutWhatToExpectRouteImport.update({
+  id: '/about_/what-to-expect',
+  path: '/about/what-to-expect',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutZeroFeeGuaranteeRoute = AboutZeroFeeGuaranteeRouteImport.update({
+  id: '/about_/zero-fee-guarantee',
+  path: '/about/zero-fee-guarantee',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiReviewRoute = ApiReviewRouteImport.update({
@@ -328,6 +353,12 @@ const PracticeAreasSlugRoute = PracticeAreasSlugRouteImport.update({
   path: '/practice-areas/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PracticeAreasPersonalInjuryRoute =
+  PracticeAreasPersonalInjuryRouteImport.update({
+    id: '/practice-areas_/personal-injury',
+    path: '/practice-areas/personal-injury',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const EsBlogsSlugRoute = EsBlogsSlugRouteImport.update({
   id: '/es_/blogs_/$slug',
   path: '/es/blogs/$slug',
@@ -380,6 +411,10 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/thank-you': typeof ThankYouRoute
+  '/about/faqs': typeof AboutFaqsRoute
+  '/about/our-difference': typeof AboutOurDifferenceRoute
+  '/about/what-to-expect': typeof AboutWhatToExpectRoute
+  '/about/zero-fee-guarantee': typeof AboutZeroFeeGuaranteeRoute
   '/api/review': typeof ApiReviewRoute
   '/blogs/$slug': typeof BlogsSlugRoute
   '/es/about': typeof EsAboutRoute
@@ -412,6 +447,7 @@ export interface FileRoutesByFullPath {
   '/ko/thank-you': typeof KoThankYouRoute
   '/locations/$slug': typeof LocationsSlugRoute
   '/practice-areas/$slug': typeof PracticeAreasSlugRoute
+  '/practice-areas/personal-injury': typeof PracticeAreasPersonalInjuryRoute
   '/es/blogs/$slug': typeof EsBlogsSlugRoute
   '/es/locations/$slug': typeof EsLocationsSlugRoute
   '/es/practice-areas/$slug': typeof EsPracticeAreasSlugRoute
@@ -440,6 +476,10 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/thank-you': typeof ThankYouRoute
+  '/about/faqs': typeof AboutFaqsRoute
+  '/about/our-difference': typeof AboutOurDifferenceRoute
+  '/about/what-to-expect': typeof AboutWhatToExpectRoute
+  '/about/zero-fee-guarantee': typeof AboutZeroFeeGuaranteeRoute
   '/api/review': typeof ApiReviewRoute
   '/blogs/$slug': typeof BlogsSlugRoute
   '/es/about': typeof EsAboutRoute
@@ -472,6 +512,7 @@ export interface FileRoutesByTo {
   '/ko/thank-you': typeof KoThankYouRoute
   '/locations/$slug': typeof LocationsSlugRoute
   '/practice-areas/$slug': typeof PracticeAreasSlugRoute
+  '/practice-areas/personal-injury': typeof PracticeAreasPersonalInjuryRoute
   '/es/blogs/$slug': typeof EsBlogsSlugRoute
   '/es/locations/$slug': typeof EsLocationsSlugRoute
   '/es/practice-areas/$slug': typeof EsPracticeAreasSlugRoute
@@ -501,6 +542,10 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
   '/thank-you': typeof ThankYouRoute
+  '/about_/faqs': typeof AboutFaqsRoute
+  '/about_/our-difference': typeof AboutOurDifferenceRoute
+  '/about_/what-to-expect': typeof AboutWhatToExpectRoute
+  '/about_/zero-fee-guarantee': typeof AboutZeroFeeGuaranteeRoute
   '/api/review': typeof ApiReviewRoute
   '/blogs_/$slug': typeof BlogsSlugRoute
   '/es_/about': typeof EsAboutRoute
@@ -533,6 +578,7 @@ export interface FileRoutesById {
   '/ko_/thank-you': typeof KoThankYouRoute
   '/locations_/$slug': typeof LocationsSlugRoute
   '/practice-areas_/$slug': typeof PracticeAreasSlugRoute
+  '/practice-areas_/personal-injury': typeof PracticeAreasPersonalInjuryRoute
   '/es_/blogs_/$slug': typeof EsBlogsSlugRoute
   '/es_/locations_/$slug': typeof EsLocationsSlugRoute
   '/es_/practice-areas_/$slug': typeof EsPracticeAreasSlugRoute
@@ -563,6 +609,10 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/terms'
     | '/thank-you'
+    | '/about/faqs'
+    | '/about/our-difference'
+    | '/about/what-to-expect'
+    | '/about/zero-fee-guarantee'
     | '/api/review'
     | '/blogs/$slug'
     | '/es/about'
@@ -595,6 +645,7 @@ export interface FileRouteTypes {
     | '/ko/thank-you'
     | '/locations/$slug'
     | '/practice-areas/$slug'
+    | '/practice-areas/personal-injury'
     | '/es/blogs/$slug'
     | '/es/locations/$slug'
     | '/es/practice-areas/$slug'
@@ -623,6 +674,10 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/terms'
     | '/thank-you'
+    | '/about/faqs'
+    | '/about/our-difference'
+    | '/about/what-to-expect'
+    | '/about/zero-fee-guarantee'
     | '/api/review'
     | '/blogs/$slug'
     | '/es/about'
@@ -655,6 +710,7 @@ export interface FileRouteTypes {
     | '/ko/thank-you'
     | '/locations/$slug'
     | '/practice-areas/$slug'
+    | '/practice-areas/personal-injury'
     | '/es/blogs/$slug'
     | '/es/locations/$slug'
     | '/es/practice-areas/$slug'
@@ -683,6 +739,10 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/terms'
     | '/thank-you'
+    | '/about_/faqs'
+    | '/about_/our-difference'
+    | '/about_/what-to-expect'
+    | '/about_/zero-fee-guarantee'
     | '/api/review'
     | '/blogs_/$slug'
     | '/es_/about'
@@ -715,6 +775,7 @@ export interface FileRouteTypes {
     | '/ko_/thank-you'
     | '/locations_/$slug'
     | '/practice-areas_/$slug'
+    | '/practice-areas_/personal-injury'
     | '/es_/blogs_/$slug'
     | '/es_/locations_/$slug'
     | '/es_/practice-areas_/$slug'
@@ -744,6 +805,10 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
   ThankYouRoute: typeof ThankYouRoute
+  AboutFaqsRoute: typeof AboutFaqsRoute
+  AboutOurDifferenceRoute: typeof AboutOurDifferenceRoute
+  AboutWhatToExpectRoute: typeof AboutWhatToExpectRoute
+  AboutZeroFeeGuaranteeRoute: typeof AboutZeroFeeGuaranteeRoute
   ApiReviewRoute: typeof ApiReviewRoute
   BlogsSlugRoute: typeof BlogsSlugRoute
   EsAboutRoute: typeof EsAboutRoute
@@ -776,6 +841,7 @@ export interface RootRouteChildren {
   KoThankYouRoute: typeof KoThankYouRoute
   LocationsSlugRoute: typeof LocationsSlugRoute
   PracticeAreasSlugRoute: typeof PracticeAreasSlugRoute
+  PracticeAreasPersonalInjuryRoute: typeof PracticeAreasPersonalInjuryRoute
   EsBlogsSlugRoute: typeof EsBlogsSlugRoute
   EsLocationsSlugRoute: typeof EsLocationsSlugRoute
   EsPracticeAreasSlugRoute: typeof EsPracticeAreasSlugRoute
@@ -924,6 +990,34 @@ declare module '@tanstack/react-router' {
       path: '/thank-you'
       fullPath: '/thank-you'
       preLoaderRoute: typeof ThankYouRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about_/faqs': {
+      id: '/about_/faqs'
+      path: '/about/faqs'
+      fullPath: '/about/faqs'
+      preLoaderRoute: typeof AboutFaqsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about_/our-difference': {
+      id: '/about_/our-difference'
+      path: '/about/our-difference'
+      fullPath: '/about/our-difference'
+      preLoaderRoute: typeof AboutOurDifferenceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about_/what-to-expect': {
+      id: '/about_/what-to-expect'
+      path: '/about/what-to-expect'
+      fullPath: '/about/what-to-expect'
+      preLoaderRoute: typeof AboutWhatToExpectRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about_/zero-fee-guarantee': {
+      id: '/about_/zero-fee-guarantee'
+      path: '/about/zero-fee-guarantee'
+      fullPath: '/about/zero-fee-guarantee'
+      preLoaderRoute: typeof AboutZeroFeeGuaranteeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/review': {
@@ -1150,6 +1244,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PracticeAreasSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/practice-areas_/personal-injury': {
+      id: '/practice-areas_/personal-injury'
+      path: '/practice-areas/personal-injury'
+      fullPath: '/practice-areas/personal-injury'
+      preLoaderRoute: typeof PracticeAreasPersonalInjuryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/es_/blogs_/$slug': {
       id: '/es_/blogs_/$slug'
       path: '/es/blogs/$slug'
@@ -1216,6 +1317,10 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
   ThankYouRoute: ThankYouRoute,
+  AboutFaqsRoute: AboutFaqsRoute,
+  AboutOurDifferenceRoute: AboutOurDifferenceRoute,
+  AboutWhatToExpectRoute: AboutWhatToExpectRoute,
+  AboutZeroFeeGuaranteeRoute: AboutZeroFeeGuaranteeRoute,
   ApiReviewRoute: ApiReviewRoute,
   BlogsSlugRoute: BlogsSlugRoute,
   EsAboutRoute: EsAboutRoute,
@@ -1248,6 +1353,7 @@ const rootRouteChildren: RootRouteChildren = {
   KoThankYouRoute: KoThankYouRoute,
   LocationsSlugRoute: LocationsSlugRoute,
   PracticeAreasSlugRoute: PracticeAreasSlugRoute,
+  PracticeAreasPersonalInjuryRoute: PracticeAreasPersonalInjuryRoute,
   EsBlogsSlugRoute: EsBlogsSlugRoute,
   EsLocationsSlugRoute: EsLocationsSlugRoute,
   EsPracticeAreasSlugRoute: EsPracticeAreasSlugRoute,

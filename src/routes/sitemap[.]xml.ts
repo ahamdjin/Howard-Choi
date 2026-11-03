@@ -31,10 +31,15 @@ export const Route = createFileRoute("/sitemap.xml")({
     handlers: {
       GET: async () => {
         const staticUrls = [
+          englishOnly("/practice-areas/personal-injury"),
           ...pair("/", "/ko"),
           ...pair("/practice-areas", "/ko/practice-areas"),
           ...pair("/attorney", "/ko/attorney"),
           ...pair("/about", "/ko/about"),
+          englishOnly("/about/our-difference"),
+          englishOnly("/about/what-to-expect"),
+          englishOnly("/about/faqs"),
+          englishOnly("/about/zero-fee-guarantee"),
           ...pair("/results", "/ko/results"),
           ...pair("/locations", "/ko/locations"),
           ...pair("/case-value-calculator", "/ko/case-value-calculator"),

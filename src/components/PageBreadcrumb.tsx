@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation } from "@/lib/router-compat";
 import type { SiteLocale } from "@/data/injurySite";
 
 export default function PageBreadcrumb({ locale, title }: { locale: SiteLocale; title: string }) {
@@ -10,6 +10,7 @@ export default function PageBreadcrumb({ locale, title }: { locale: SiteLocale; 
   const parent = [
     { path: "/practice-areas", label: ko ? "업무 분야" : es ? "Áreas de práctica" : "Practice Areas" },
     { path: "/locations", label: ko ? "지역" : es ? "Zonas" : "Locations" },
+    { path: "/about", label: ko ? "소개" : es ? "La firma" : "About" },
     { path: "/blogs", label: ko ? "블로그" : es ? "Guías" : "Blogs" },
   ].find((item) => pathname.startsWith(prefix + item.path + "/"));
   return (

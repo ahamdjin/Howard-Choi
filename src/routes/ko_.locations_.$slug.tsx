@@ -11,6 +11,7 @@ export const Route = createFileRoute("/ko_/locations_/$slug")({
     return location;
   },
   head: ({ loaderData }) => {
+    if (!loaderData) return {};
     const path = `/ko/locations/${loaderData.slug}`;
     const citySeo = locationGuidesKo[loaderData.slug];
     const seo = buildSeo({

@@ -138,6 +138,28 @@ export const webSiteJsonLd = {
   publisher: { "@id": `${SITE_URL}/#legal-service` },
 };
 
+export const serviceJsonLd = ({ name, description, path, locale }: {
+  name: string;
+  description: string;
+  path: string;
+  locale: "en-US" | "ko-US" | "es-US";
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": `${absoluteUrl(path)}#service`,
+  name,
+  description,
+  url: absoluteUrl(path),
+  serviceType: name,
+  provider: { "@id": `${SITE_URL}/#legal-service` },
+  areaServed: { "@type": "City", name: "Buena Park" },
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": absoluteUrl(path),
+    inLanguage: locale,
+  },
+});
+
 export const breadcrumbJsonLd = (items: Array<{ name: string; path: string }>) => ({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",

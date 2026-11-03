@@ -58,6 +58,19 @@ existing behavior.
 
 ## 2. Project map
 
+Application infrastructure lives in `src/components/app/`.
+
+- `SiteDocument.tsx` owns the document, language, global styles and integration loading.
+- `AppProviders.tsx` owns shared React providers and motion loading.
+- `src/routes/__root.tsx` owns root metadata and connects the document shell to routes.
+- `src/lib/router-compat.tsx` is the explicit adapter for content URLs and legacy navigation hooks. Import it directly.
+- `src/lib/html-response.server.ts` escapes NUL separators in TanStack bootstrap strings. Preserve these separators when changing SSR responses.
+
+Run `npm run check` for lint, TypeScript, regression tests and the production build.
+Run `npm run start`, then `npm run test:browser` in another terminal for Chrome hydration checks. Set `SMOKE_ORIGIN` if the server uses another port. On macOS set `CHROME_PATH` to the installed Chrome executable.
+
+
+
 ### Routes
 
 `src/routes/` contains the TanStack file-based routes and page SEO metadata.
@@ -198,6 +211,10 @@ It controls:
 - WebSite JSON-LD
 - breadcrumb schema
 - article schema
+
+`/practice-areas/personal-injury` is the dedicated personal injury lawyer service page and intended GBP landing page. The homepage introduces the business. `/practice-areas` is the service directory, each service URL owns its injury type, `/attorney` owns Howard Choi’s profile, and `/locations/buena-park` owns the office and local-resource topic. Keep these page roles distinct when applying keyword research.
+
+English service keyword names, titles and descriptions live in `src/data/practiceSeo.ts`. The service H1s and homepage service links use the same names. Update that table when applying a reviewed keyword strategy.
 
 Other SEO files:
 

@@ -7,6 +7,7 @@ import { articleJsonLd, breadcrumbJsonLd, buildSeo } from "@/lib/seo";
 export const Route = createFileRoute("/blogs_/$slug")({
   loader: ({ params }) => { const post = getBlogBySlug(params.slug); if (!post) throw notFound(); return post; },
   head: ({ loaderData }) => {
+    if (!loaderData) return {};
     const path = `/blogs/${loaderData.slug}`;
     const seo = buildSeo({ title: `${loaderData.title} | Buena Park Injury Lawyer`, description: loaderData.excerpt, path, alternatePath: hasIndexableKoreanBlog(loaderData.slug) ? `/ko/blogs/${loaderData.slug}` : undefined, locale: "en-US", type: "article", image: loaderData.image });
     return {

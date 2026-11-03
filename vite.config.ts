@@ -31,7 +31,6 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(rootDir, "./src"),
-      "react-router-dom": path.resolve(rootDir, "./src/lib/router-compat.tsx"),
     },
   },
 });

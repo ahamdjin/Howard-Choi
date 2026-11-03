@@ -3,7 +3,7 @@ import { responsiveImageProps } from "@/lib/responsive-images";
 import { m as motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import PageBreadcrumb from "@/components/PageBreadcrumb";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/router-compat";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { blogPosts } from "@/data/blogs";

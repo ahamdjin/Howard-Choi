@@ -1,3 +1,4 @@
+import { practiceSearchNames } from "@/data/practiceSeo";
 import { practiceConsultationFocus } from "@/data/practiceConsultationFocus";
 import SiteDepthSection from "@/components/SiteDepthSection";
 import { ArrowRight, CalendarClock, CheckCircle2, Compass, FileText, HelpCircle, Layers, MapPin, Scale, ShieldCheck, Sparkles, Umbrella } from "lucide-react";
@@ -248,7 +249,7 @@ export const PracticeAreasPage = ({ locale }: { locale: SiteLocale }) => (
       <EditorialHero
         locale={locale}
         eyebrow={isKo(locale) ? "개인상해 업무 분야" : isEs(locale) ? "Áreas de práctica de lesiones personales" : "Personal injury practice areas"}
-        title={isKo(locale) ? "부에나파크 개인상해 업무 분야" : isEs(locale) ? "Áreas de práctica de lesiones personales en Buena Park." : "Buena Park Personal Injury Lawyer — Practice Areas."}
+        title={isKo(locale) ? "부에나파크 개인상해 업무 분야" : isEs(locale) ? "Áreas de práctica de lesiones personales en Buena Park." : "Personal Injury Services in Buena Park."}
         description={isKo(locale)
           ? "자동차 사고부터 중대 상해까지, 각 사건 분야에서 어떤 사실과 증거가 중요한지 명확하게 설명합니다."
           : isEs(locale)
@@ -276,6 +277,11 @@ export const PracticeAreasPage = ({ locale }: { locale: SiteLocale }) => (
               ? "Un reclamo por lesiones no funciona igual en todos los casos. Un choque de camión puede depender de registros empresariales que se eliminan según un calendario. Una caída puede depender de demostrar cuánto tiempo existió un peligro. Un caso de Uber o Lyft puede depender de una sola captura de pantalla. Elija la página que corresponda a lo que ocurrió."
               : "A Buena Park car accident can raise different questions from a truck collision, an unsafe-property fall or a rideshare crash. These eight practice guides explain what evidence is most useful for each type of claim, how coverage may differ, and which steps deserve early attention. Choose the guide that best matches what happened; more than one category may apply."}
         >
+          <p className="mb-7 text-sm leading-7">
+            <a href={localePrefix(locale) || "/"} className="underline underline-offset-4">{isKo(locale) ? "부에나파크 개인상해 변호사 안내" : isEs(locale) ? "Representación por lesiones personales en Buena Park" : "Personal injury representation in Buena Park"}</a>
+            {" · "}
+            <a href={`${localePrefix(locale)}/attorney`} className="underline underline-offset-4">{isKo(locale) ? "Howard Choi 변호사 소개" : isEs(locale) ? "Conozca a Howard Choi" : "Meet lawyer Howard Choi"}</a>
+          </p>
           <PracticeHubDirectory locale={locale} />
         </ReadingSectionBlock>
 
@@ -396,7 +402,7 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
   const enhancement = practiceEnhancements[practice.slug];
 
   const title = isKo(locale) ? practice.koTitle : isEs(locale) ? (esCopy?.shortTitle || practice.title) : practice.title;
-  const heroTitle = isKo(locale) ? `${practice.koTitle} · Buena Park` : isEs(locale) ? (esCopy?.title || `Abogado de ${practice.title} en Buena Park`) : practice.slug === "serious-injuries" ? "Buena Park Brain & Catastrophic Injury Lawyer" : `Buena Park ${practice.title} Lawyer`;
+  const heroTitle = isKo(locale) ? `부에나파크 ${practice.koTitle} 변호사` : isEs(locale) ? (esCopy?.title || `Abogado de ${practice.title} en Buena Park`) : `Buena Park ${practiceSearchNames[practice.slug] || practice.title} Lawyer`;
   const description = isKo(locale) ? practice.koDescription : isEs(locale) ? (esCopy?.description || practice.description) : practice.description;
   const intro = isKo(locale) ? practice.koIntro : isEs(locale) ? (esCopy?.intro || practice.intro) : practice.intro;
   const issues = isKo(locale) ? practice.koIssues : isEs(locale) ? (esCopy?.issues || practice.issues) : practice.issues;
@@ -436,6 +442,11 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
           detail
         />
         <PracticeDetailHighlights locale={locale} subject={title} issues={[...issues]} />
+        <nav aria-label={isKo(locale) ? "변호사와 상담 안내" : isEs(locale) ? "Abogado y consulta" : "Lawyer and consultation"} className="site-shell flex flex-wrap gap-x-7 gap-y-3 py-6 text-sm">
+          <a href={locale === "en" ? "/practice-areas/personal-injury" : localePrefix(locale)} className="underline underline-offset-4">{isKo(locale) ? "부에나파크 개인상해 변호사" : isEs(locale) ? "Abogado de lesiones personales en Buena Park" : "Buena Park personal injury lawyer"}</a>
+          <a href={`${localePrefix(locale)}/attorney`} className="underline underline-offset-4">{isKo(locale) ? "Howard Choi 변호사 프로필" : isEs(locale) ? "Perfil de Howard Choi" : "Howard Choi’s credentials"}</a>
+          <a href={`${localePrefix(locale)}/contact`} className="underline underline-offset-4">{isKo(locale) ? "사건 상담 문의" : isEs(locale) ? "Consultar su caso" : "Discuss your injury claim"}</a>
+        </nav>
         <ReadingLayout
           locale={locale}
           label={`${title} · ${isKo(locale) ? "안내" : isEs(locale) ? "Guía" : "Guide"}`}

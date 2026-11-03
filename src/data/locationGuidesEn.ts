@@ -15,7 +15,7 @@ export type LocalGuide = {
 
 export const locationGuidesEn: Record<string, LocalGuide> = {
   "buena-park": {
-    seoTitle: "Buena Park Personal Injury Lawyer | Accident Claims",
+    seoTitle: "Buena Park Office & Local Accident Resources | Howard Choi",
     seoDescription: "Injured near Beach Boulevard, SR-91 or I-5? Find Buena Park collision-report guidance, evidence questions, OTS safety data and California injury-claim deadlines.",
     records: "For a crash on a Buena Park city street, keep the incident number and identify whether Buena Park Police actually investigated. The department's records policy restricts release of collision reports to authorized parties under California Vehicle Code section 20012. A collision on I-5 or SR-91 may instead have a California Highway Patrol report. CHP provides a crash-report portal and form CHP 190; neither agency can provide the other's investigation merely because the mailing address says Buena Park.",
     evidence: "Beach Boulevard intersections, commercial driveways and visitor traffic near the entertainment area create different evidence questions. Mark the precise approach lane, direction of travel, signal phase and point of contact; keep original photos rather than edited screenshots. For a storefront or parking-lot collision, note the business that controls any camera and request preservation quickly. For an injury on private premises, identify the responsible property operator and photograph the hazard before it changes.",
@@ -31,8 +31,8 @@ export const locationGuidesEn: Record<string, LocalGuide> = {
     ],
   },
   "anaheim": {
-    seoTitle: "Anaheim Personal Injury Lawyer | Accident Claims",
-    seoDescription: "Anaheim injury guidance for resort-area crashes, Uber or Lyft trip records, Anaheim Police collision reports and California filing questions. Buena Park office.",
+    seoTitle: "Anaheim Personal Injury & Accident Lawyer | Howard Choi",
+    seoDescription: "Injured in Anaheim? Howard Choi helps with car, truck, Uber and Lyft, pedestrian and slip-and-fall claims. See what records to save and request a free consultation.",
     records: "Anaheim Police operates a traffic-accident report search for certain reports, including non-injury collisions and hit-and-runs. Its instructions require the report number and warn that online-submitted cases may need review before becoming searchable. If the report is missing, the department directs requesters to its police-report request process. First determine whether Anaheim Police, CHP or another agency investigated; a freeway crash is not automatically an Anaheim Police record.",
     evidence: "An incident involving a hotel shuttle, rideshare vehicle, tourist crossing or parking-area entrance calls for more than a generic car-crash checklist. Preserve the trip confirmation and timestamps if Uber or Lyft was involved, identify the shuttle company where relevant, and photograph pedestrian signal locations or loading areas. Ask promptly about hotel, business or dash-camera footage without claiming that such footage necessarily exists.",
     deadlines: "Anaheim's city limits do not create a special personal-injury lawsuit deadline. Determine the legally responsible person or entity and the relevant insurer; a transportation operator and an individual driver may raise different facts. Most California injury lawsuits use a general two-year period, but government-entity claims may require an earlier administrative claim. The appropriate courthouse depends on venue and court-assignment rules, not simply the resort district.",
@@ -47,8 +47,8 @@ export const locationGuidesEn: Record<string, LocalGuide> = {
     ],
   },
   "fullerton": {
-    seoTitle: "Fullerton Personal Injury Lawyer | Collision Evidence",
-    seoDescription: "Fullerton injury-claim guide covering injury-crash reporting, commuter and campus-area evidence, official police resources and court-venue questions.",
+    seoTitle: "Fullerton Injury & Accident Lawyer | Howard Choi",
+    seoDescription: "After a Fullerton car crash, find out what to document, how to request a police report and how Howard Choi can help. Free consultation from Buena Park.",
     records: "Fullerton Police specifically limits its online crash reporting system to eligible non-injury incidents, such as non-injury accidents or certain non-injury hit-and-runs. The department says injury crashes and cases with complete suspect information should be reported directly rather than through that online form. It also links a separate process to request copies. If the collision happened on a state freeway, identify the investigating agency before submitting a city report request.",
     evidence: "A Fullerton injury near a school, campus approach, rail crossing or commuter corridor may involve records beyond the police narrative. Document the exact crosswalk or turn, school or business camera location, sightline and witnesses. When the injury affects a student's education, preserve attendance, course and missed-placement records alongside treatment and wage evidence; only losses supported by the facts can be evaluated.",
     deadlines: "The Orange County Superior Court lists the North Justice Center in Fullerton and the matters it serves, but that does not mean every Fullerton personal-injury lawsuit is filed or heard there. Confirm venue and civil filing assignments separately. Injury limitation periods and earlier government-claim procedures depend on defendants and facts, not a campus address or court building's proximity.",
@@ -63,8 +63,8 @@ export const locationGuidesEn: Record<string, LocalGuide> = {
     ],
   },
   "garden-grove": {
-    seoTitle: "Garden Grove Personal Injury Lawyer | Injury Claims",
-    seoDescription: "Garden Grove accident guide: official collision-report requests, Harbor and Brookhurst corridor evidence, business cameras and injury-claim deadlines.",
+    seoTitle: "Garden Grove Injury & Accident Lawyer | Howard Choi",
+    seoDescription: "Hurt in a Garden Grove car accident? Get help with collision reports, witness or business video and insurance questions. Speak with Howard Choi.",
     records: "Garden Grove Police explains that a person who suffered injury or property damage from a traffic incident may be eligible to request a report, but some investigations remain restricted or require redaction. For collision reports the department requests that eligible people allow at least 21 days for review and approval before requesting a copy. This is a report-availability instruction, not a legal deadline to wait before seeking care, preserving evidence or evaluating a claim.",
     evidence: "On commercial corridors such as Harbor Boulevard and Brookhurst Street, the important record may identify a specific driveway, traffic movement, business entrance or intersection. For a fall inside a shop, photograph the surface and any warning signs, ask for the incident-report identifier, and document who was responsible for upkeep. For a road collision, note nearby cameras and the precise location before conditions change.",
     deadlines: "Do not confuse Garden Grove Police's suggested report-processing interval with the time allowed to bring a claim. California has separate rules for civil lawsuits and earlier claims against qualifying government entities. If the incident concerns a city-owned vehicle, street condition or public facility, identify the entity involved and obtain advice about the government-claim process promptly rather than waiting for a completed collision report.",
@@ -79,8 +79,8 @@ export const locationGuidesEn: Record<string, LocalGuide> = {
     ],
   },
   "cypress": {
-    seoTitle: "Cypress Personal Injury Lawyer | Accident Evidence",
-    seoDescription: "Cypress accident guidance on official police release forms, collision evidence near city boundaries, who may get reports and California deadlines.",
+    seoTitle: "Cypress Injury & Accident Lawyer | Howard Choi",
+    seoDescription: "Howard Choi helps people hurt in Cypress car and truck crashes and other injury incidents. Learn what evidence to preserve and request a free consultation.",
     records: "Cypress Police provides a specific Release of Records Application and instructions for traffic-collision copies. Its posted fee and records page explains that a requester generally must be directly involved, give a legitimate reason and present appropriate identification. Records are reviewed case by case. For an incident near Cypress's city boundaries, first verify the actual street address and responding agency before assuming Cypress Police maintains the report.",
     evidence: "Boundary-area incidents can be difficult to reconstruct if people remember only the nearest familiar intersection. Save the exact address or map pin, photographs showing lane markers and street signs, the responding officer's agency, and the report number. If a collision involved a turning motorcycle or a crosswalk, capture both parties' approaches and any obstructed sightline, not only close-ups of damage.",
     deadlines: "Cypress's police-record eligibility rules are separate from California's civil filing rules. A city boundary may affect which police department investigated, while civil venue can depend on incident location and the defendants. If there may be a claim against a government agency, the administrative filing requirement can arrive months before the ordinary personal-injury limitation period.",
@@ -95,8 +95,8 @@ export const locationGuidesEn: Record<string, LocalGuide> = {
     ],
   },
   "la-habra": {
-    seoTitle: "La Habra Personal Injury Lawyer | Accident Claims",
-    seoDescription: "Injured in La Habra? Find police Records and Traffic Bureau contacts, Whittier Boulevard evidence guidance and California claim-deadline questions.",
+    seoTitle: "La Habra Injury & Accident Lawyer | Howard Choi",
+    seoDescription: "After a La Habra accident, learn which records to save and get help with disputed turns, insurance questions and injury claims. Speak with Howard Choi.",
     records: "La Habra Police has its own Records Bureau and Traffic Bureau; the city's official contacts identify separate numbers for records and traffic inquiries. For a collision on a La Habra street, start by confirming whether La Habra Police took the report and keep its number. At the county line or on a state highway, verify the exact scene and investigating agency; a neighboring city's street name does not automatically establish who holds the records.",
     evidence: "At intersections along Whittier Boulevard or Imperial Highway, a useful record distinguishes the precise turning movement, signal direction and unobstructed approach from an allegation of speeding or failure to yield. Preserve images from each direction, a map pin, witnesses and medical timelines. If an incident concerns a business entrance, note whether the hazard or vehicle movement occurred on private or public property.",
     deadlines: "La Habra's proximity to Los Angeles County does not by itself establish the venue of a civil injury claim. California Courts explains that the place of injury and where defendants live or do business can matter. The general two-year personal-injury rule is not universal; public-entity claims may trigger an earlier administrative deadline. Identify the responsible party before assuming either the filing location or the deadline.",
@@ -111,8 +111,8 @@ export const locationGuidesEn: Record<string, LocalGuide> = {
     ],
   },
   "la-mirada": {
-    seoTitle: "La Mirada Personal Injury Lawyer | Sheriff Records",
-    seoDescription: "La Mirada injury guide covering Norwalk Sheriff's Station report access, city-boundary evidence, Los Angeles County courts and legal deadlines.",
+    seoTitle: "La Mirada Injury & Accident Lawyer | Howard Choi",
+    seoDescription: "Find help after an injury in La Mirada. See how to locate a sheriff’s report, preserve evidence and contact Howard Choi’s nearby Buena Park office.",
     records: "La Mirada receives law-enforcement services from the Los Angeles County Sheriff's Department. LASD confirms that Norwalk Sheriff's Station serves La Mirada, and the city also maintains a La Mirada Community Sheriff's Station. For report copies, verify which LASD station or Records and Identification Bureau process applies and have the incident number ready. Confirm whether an LASD deputy, CHP officer or other agency documented the actual incident before selecting a request path.",
     evidence: "La Mirada sits next to Orange County communities but belongs to Los Angeles County. Preserve the true crash or fall location, jurisdiction and property owner—not just a business name or the nearby Buena Park or La Habra address. For a pedestrian incident, note the crossing direction and driver sightlines; for a crash near a commercial entrance, identify storefront cameras and owners before requesting footage.",
     deadlines: "An LA County mailing or service area does not automatically mean every lawsuit must be filed at one named courthouse. The Los Angeles Superior Court uses a civil filing-court locator and rules that consider where the tort occurred and other venue facts. An earlier administrative government claim may be necessary if a public entity is potentially responsible; do not confuse a police-report request with filing such a claim.",
@@ -128,8 +128,8 @@ export const locationGuidesEn: Record<string, LocalGuide> = {
     ],
   },
   "cerritos": {
-    seoTitle: "Cerritos Personal Injury Lawyer | Accident Claims",
-    seoDescription: "Cerritos injury guide for SR-91/I-605 collisions, Cerritos Sheriff's Station reports, shopping-area evidence and Los Angeles County claim rules.",
+    seoTitle: "Cerritos Injury & Accident Lawyer | Howard Choi",
+    seoDescription: "Howard Choi helps people injured in Cerritos car, motorcycle, truck and rideshare crashes. Find local reporting resources and request a free consultation.",
     records: "The Los Angeles County Sheriff's Department operates Cerritos Station for incidents within the City of Cerritos. LASD also has a Records and Identification Bureau for report copies, with eligibility checks and request methods. If the event occurred on SR-91 or I-605, verify whether CHP investigated: a Cerritos mailing address does not make a freeway report a Cerritos Sheriff's Station document.",
     evidence: "For a freeway collision near SR-91 or I-605, record the route, direction, lane, closest exit or interchange, vehicles involved and CHP incident number. For a shopping-center or commercial driveway injury, preserve a different record: property or tenant control, exact entrance, camera locations, surface conditions and the business's own incident report. A freeway accident and a premises claim should not use the same evidence checklist.",
     deadlines: "Cerritos is in Los Angeles County, where the Superior Court assigns civil cases under its filing and venue rules. Do not assume a freeway case belongs in a particular courthouse or that a retail center necessarily bears legal responsibility. Filing limitations depend on the facts and defendants; claims involving a potentially responsible public entity can require a separate, earlier government-claim filing.",
@@ -145,8 +145,8 @@ export const locationGuidesEn: Record<string, LocalGuide> = {
     ],
   },
   "norwalk": {
-    seoTitle: "Norwalk Personal Injury Lawyer | Local Claims",
-    seoDescription: "Norwalk injury guidance for sheriff collision reports, I-5/I-605 investigations, the Norwalk courthouse and California filing questions.",
+    seoTitle: "Norwalk Injury & Accident Lawyer | Howard Choi",
+    seoDescription: "Hurt in a Norwalk car crash? Find local collision-report guidance, evidence to save and help with insurance questions from Howard Choi.",
     records: "Norwalk Sheriff's Station serves Norwalk and La Mirada, but a request for a copy may be handled through LASD's central Records and Identification Bureau. That Bureau lists a request-by-phone or mail process and asks for identification plus the incident date and location. A freeway collision on I-5 or I-605 may instead be documented by CHP; find the investigating agency before requesting the wrong report.",
     evidence: "For a crash near Firestone Boulevard or Rosecrans Avenue, preserve intersection geometry and turning movement rather than relying on the phrase 'in Norwalk.' For an I-5 or I-605 incident, note the roadway, travel direction, nearby exit and whether CHP responded. A Norwalk court-related injury or transit-area incident may require additional property, agency and surveillance records depending on the actual facts.",
     deadlines: "Norwalk has a Los Angeles Superior Court courthouse, but its presence does not control the venue of every injury case. The LA Superior Court's filing-court locator and civil assignment rules are the relevant starting point. Government entities, medical providers and ordinary private drivers can implicate different legal timelines; obtain the deadline based on the defendant and cause of action, not the courthouse address.",
@@ -162,8 +162,8 @@ export const locationGuidesEn: Record<string, LocalGuide> = {
     ],
   },
   "whittier": {
-    seoTitle: "Whittier Personal Injury Lawyer | Injury Claims",
-    seoDescription: "Whittier injury-claim guidance for Traffic Bureau investigations, police report requests, visibility evidence and Los Angeles County court rules.",
+    seoTitle: "Whittier Injury & Accident Lawyer | Howard Choi",
+    seoDescription: "Talk with Howard Choi about a Whittier car or truck crash or other injury. Learn what evidence to preserve and which agency may hold your report.",
     records: "Whittier Police says its Traffic Bureau investigates collisions occurring in the City of Whittier and Santa Fe Springs, including hit-and-runs and fatal collisions. The department's Records Bureau maintains traffic-accident documents and describes the request process. Parts of the broader Whittier area are unincorporated and served by the LA County Sheriff; a freeway scene may involve CHP. Verify the precise jurisdiction and report-taking agency instead of relying on a postal city alone.",
     evidence: "Whittier includes commercial streets as well as sloped residential roads. For a hillside or curved-road collision, photograph visibility from each driver's approach, parked cars, grade, road markings and sight obstructions. For a pedestrian crash at a commercial crossing, capture the position of the crosswalk, curb and turning traffic. Keep physical and clinical records separate; steep terrain alone is not proof of negligence.",
     deadlines: "A Whittier police report documents an investigation; it does not establish a civil lawsuit's time limit or prove fault conclusively. California's generally applicable personal-injury rule and exceptions still apply, while a potential municipal or other public-entity defendant can trigger an earlier claim process. LA Superior Court's civil filing guidance is necessary to determine the proper courthouse and venue.",

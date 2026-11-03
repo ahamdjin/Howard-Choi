@@ -10,6 +10,7 @@ export const Route = createFileRoute("/es_/blogs_/$slug")({
     return post;
   },
   head: ({ loaderData }) => {
+    if (!loaderData) return {};
     const path = `/es/blogs/${loaderData.slug}`;
     const seo = buildSeo({
       title: `${loaderData.title} | Buena Park Injury Lawyer`,

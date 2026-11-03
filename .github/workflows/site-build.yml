@@ -26,6 +26,8 @@ jobs:
           cache: "npm"
       - name: Install locked dependencies
         run: npm ci --no-audit --no-fund
+      - name: Lint, typecheck and regression tests
+        run: npm run lint && npm run typecheck && npm run test:html && npm run test:inquiries
       - name: Verify lawyer-first SEO wording
         run: node scripts/check-lawyer-seo.mjs
       - name: Build and prerender routes
@@ -51,4 +53,4 @@ jobs:
             echo "Local production server failed to become ready" >&2
             exit 1
           fi
-          timeout 95s node scripts/smoke-homepage-browser.mjs
+          timeout 180s node scripts/smoke-homepage-browser.mjs

@@ -1,7 +1,7 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { PracticeAreaDetailPage } from "@/pages/EditorialInnerPages";
 import { getPracticeArea } from "@/data/injurySite";
-import { breadcrumbJsonLd, buildSeo } from "@/lib/seo";
+import { breadcrumbJsonLd, buildSeo, serviceJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/ko_/practice-areas_/$slug")({
   loader: ({ params }) => {
@@ -10,6 +10,7 @@ export const Route = createFileRoute("/ko_/practice-areas_/$slug")({
     return practice;
   },
   head: ({ loaderData }) => {
+    if (!loaderData) return {};
     const path = `/ko/practice-areas/${loaderData.slug}`;
     const seo = buildSeo({
       title: `부에나파크 ${loaderData.koTitle} 변호사 | 증거·보험·손해 안내`,
@@ -21,6 +22,9 @@ export const Route = createFileRoute("/ko_/practice-areas_/$slug")({
     return {
       ...seo,
       scripts: [{
+        type: "application/ld+json",
+        children: JSON.stringify(serviceJsonLd({ name: `부에나파크 ${loaderData.koTitle} 변호사`, description: loaderData.koDescription, path, locale: "ko-US" })),
+      }, {
         type: "application/ld+json",
         children: JSON.stringify(breadcrumbJsonLd([
           { name: "홈", path: "/ko" },

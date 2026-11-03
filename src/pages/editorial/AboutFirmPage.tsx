@@ -230,6 +230,14 @@ export const AboutFirmPage = ({ locale }: { locale: SiteLocale }) => (
         </div>
       </div>
 
+      {locale === "en" && (
+        <nav aria-label="About the firm" className="site-shell flex flex-wrap gap-6 py-8">
+          <a className="editorial-inline-link" href="/about/our-difference">Our Difference</a>
+          <a className="editorial-inline-link" href="/about/what-to-expect">What to Expect</a>
+          <a className="editorial-inline-link" href="/about/faqs">FAQs</a>
+          <a className="editorial-inline-link" href="/about/zero-fee-guarantee">Zero Fee Guarantee</a>
+        </nav>
+      )}
       <SiteDepthSection locale={locale} topic="about" />
       <ConsultationCta locale={locale} />
     </main>
