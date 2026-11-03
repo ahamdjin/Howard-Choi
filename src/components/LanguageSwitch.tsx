@@ -11,7 +11,9 @@ const LanguageSwitch = ({ className = "" }: LanguageSwitchProps) => {
   const englishPath = basePath;
   const blogSlug = /^\/blogs\/([^/]+)$/.exec(basePath)?.[1];
   const translatedPath = (locale: "ko" | "es") =>
-    basePath === "/practice-areas/personal-injury"
+    basePath.startsWith("/about/")
+      ? `/${locale}/about`
+      : basePath === "/practice-areas/personal-injury"
       ? `/${locale}/practice-areas`
       : blogSlug && !hasLocalizedBlog(locale, blogSlug)
       ? `/${locale}/blogs`
