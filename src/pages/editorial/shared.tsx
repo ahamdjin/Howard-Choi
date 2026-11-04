@@ -35,9 +35,11 @@ type EditorialHeroProps = {
   detail?: boolean;
   imageAlt?: string;
   imageFallback?: string;
+  imageCaption?: string;
+  imagePosition?: string;
 };
 
-export const EditorialHero = ({ locale, eyebrow, title, description, image, detail = false, imageAlt = "", imageFallback }: EditorialHeroProps) => {
+export const EditorialHero = ({ locale, eyebrow, title, description, image, detail = false, imageAlt = "", imageFallback, imageCaption, imagePosition }: EditorialHeroProps) => {
   const [imageFailed, setImageFailed] = useState(false);
   const displayImage = imageFailed && imageFallback ? imageFallback : image;
 
@@ -85,7 +87,9 @@ export const EditorialHero = ({ locale, eyebrow, title, description, image, deta
               decoding="async"
               onError={() => { if (imageFallback && !imageFailed) setImageFailed(true); }}
               className="absolute inset-0 h-full w-full object-cover"
+              style={imageFailed ? undefined : { objectPosition: imagePosition }}
             />
+            {imageCaption && !imageFailed && <figcaption className="absolute inset-x-0 bottom-0 bg-black/65 px-5 py-3 text-xs leading-5 text-white">{imageCaption}</figcaption>}
           </figure>
         </div>
       </section>

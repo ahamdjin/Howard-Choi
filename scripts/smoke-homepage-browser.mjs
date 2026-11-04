@@ -101,7 +101,7 @@ try {
     { path: "/practice-areas/personal-injury", expected: /Buena Park Personal Injury Lawyer/i },
     { path: "/practice-areas/car-accidents", expected: /car accident/i },
     { path: "/locations/buena-park", expected: /Buena Park/i },
-    { path: "/locations/anaheim", expected: /Anaheim injury.*accident lawyer/i },
+    { path: "/locations/anaheim", expected: /Anaheim Personal Injury.*Accident Lawyer/i },
     { path: "/about/our-difference", expected: /Our Difference/i },
     { path: "/about/what-to-expect", expected: /What to Expect From Your Injury Claim/i },
     { path: "/blogs", expected: /./ },

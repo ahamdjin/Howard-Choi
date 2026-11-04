@@ -15,7 +15,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "start": "node .output/server/index.mjs",
-    "content:check": "python3 scripts/check-blog-parity.py",
+    "content:check": "python3 scripts/check-blog-parity.py && python3 scripts/check-location-parity.py",
     "test:inquiries": "node --experimental-strip-types --test src/lib/inquiry-client.test.ts",
     "prebuild": "npm run content:check",
     "postbuild": "node scripts/check-prerender-html.mjs",

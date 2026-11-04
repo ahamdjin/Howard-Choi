@@ -1,0 +1,33 @@
+{
+  "english": [
+    "costa-mesa",
+    "irvine",
+    "long-beach",
+    "los-angeles",
+    "huntington-beach",
+    "newport-beach",
+    "buena-park",
+    "fullerton",
+    "garden-grove",
+    "cypress",
+    "la-habra",
+    "la-mirada",
+    "cerritos",
+    "norwalk",
+    "whittier"
+  ],
+  "mirrored": [
+    "costa-mesa",
+    "irvine",
+    "long-beach",
+    "los-angeles",
+    "huntington-beach",
+    "newport-beach",
+    "buena-park",
+    "fullerton",
+    "garden-grove",
+    "cypress",
+    "la-habra",
+    "la-mirada"
+  ]
+}

@@ -1,40 +1,41 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { LocationDetailPage } from "@/pages/EditorialLocationPages";
+import LocationExperiencePage from "@/pages/locations/LocationExperiencePage";
 import { getServiceLocation } from "@/data/injurySite";
-import { getSpanishLocation } from "@/data/esLocationContent";
+import { getLocationExperience } from "@/data/locationExperiences";
 import { breadcrumbJsonLd, buildSeo } from "@/lib/seo";
 import { locationGuidesEs } from "@/data/locationGuidesEs";
 
 export const Route = createFileRoute("/es_/locations_/$slug")({
   loader: ({ params }) => {
-    const location = getServiceLocation(params.slug);
-    const copy = getSpanishLocation(params.slug);
-    if (!location || !copy) throw notFound();
-    return { location, copy };
+    const experience = getLocationExperience(params.slug, "es");
+    const location = experience ?? getServiceLocation(params.slug);
+    if (!location) throw notFound();
+    const guide = locationGuidesEs[params.slug];
+    return {
+      slug: location.slug,
+      name: location.name,
+      title: experience?.seoTitle ?? guide.seoTitle,
+      description: experience?.seoDescription ?? guide.seoDescription,
+      experience,
+    };
   },
   head: ({ loaderData }) => {
     if (!loaderData) return {};
-    const path = `/es/locations/${loaderData.location.slug}`;
-    const citySeo = locationGuidesEs[loaderData.location.slug];
-    const seo = buildSeo({
-      title: citySeo.seoTitle,
-      description: citySeo.seoDescription,
-      path,
-      locale: "es-US",
-      noindex: true,
-      followWhenNoindex: true,
-    });
+    const path = `/es/locations/${loaderData.slug}`;
     return {
-      ...seo,
-      scripts: [{
-        type: "application/ld+json",
-        children: JSON.stringify(breadcrumbJsonLd([
-          { name: "Inicio", path: "/es" },
-          { name: "Zonas de servicio", path: "/es/locations" },
-          { name: loaderData.location.name, path },
-        ])),
-      }],
+      ...buildSeo({ title: loaderData.title, description: loaderData.description, path, locale: "es-US", noindex: true, followWhenNoindex: true }),
+      scripts: [{ type: "application/ld+json", children: JSON.stringify(breadcrumbJsonLd([
+        { name: "Inicio", path: "/es" },
+        { name: "Zonas de servicio", path: "/es/locations" },
+        { name: loaderData.name, path },
+      ])) }],
     };
   },
-  component: () => <LocationDetailPage locale="es" />,
+  component: LocalizedLocationRoute,
 });
+
+function LocalizedLocationRoute() {
+  const { experience } = Route.useLoaderData();
+  return experience ? <LocationExperiencePage city={experience} locale="es" /> : <LocationDetailPage locale="es" />;
+}

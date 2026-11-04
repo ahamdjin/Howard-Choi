@@ -1,0 +1,96 @@
+export const fullertonReading = [
+  {
+    id: "station-approach",
+    label: "Station and downtown crashes",
+    title: "Reconstruct the route through downtown Fullerton",
+    paragraphs: [
+      "Near the Fullerton Transportation Center, a person may start out as a rail passenger, walk through a parking area and then cross a street to meet a ride. Describe where the injury happened within that trip. A fall on a platform approach, a collision in a public parking aisle and a turn across a sidewalk may involve different witnesses and records. The city’s downtown parking map can help you identify the lot or structure if your first notes only say ‘at the station.’",
+      "If a driver was looking for a pickup, save the message that identified the meeting place and any map pin sent at the time. If the meeting point changed, keep both versions. A friend may have seen you waiting at the curb without seeing the impact. Ask them to describe where they were standing and when they last saw you. A useful account can establish part of the sequence even when the witness did not see the whole event.",
+      "On Harbor Boulevard or a downtown side street, identify the direction of travel and the point where the vehicle crossed your path. A photograph taken safely from the sidewalk can show whether a doorway, parked vehicle or driveway affected visibility. Label any photograph taken on another day. If delivery activity or temporary parking mattered, explain what you saw at the time and mark anything you learned afterward separately.",
+      "Keep the train ticket, parking receipt or pickup confirmation if it helps narrow the time. An arrival time establishes one part of the trip. It may still take witness accounts, video or other records to determine when the contact occurred. When asking about footage, specify the approach you used and a short time range. Ask who controls the camera before assuming it belongs to the nearest storefront.",
+      "If you have several photos of different entrances, mark the one you actually used. Howard can review your route with you and identify what the available records can establish. That is especially helpful when a report uses a street address but your own notes refer to a parking structure or station entrance.",
+    ],
+  },
+  {
+    id: "campus-approach",
+    label: "Campus and parking approaches",
+    title: "Locate the incident at Cal State Fullerton before requesting records",
+    paragraphs: [
+      "A trip to Cal State Fullerton might involve exiting SR-57 at Nutwood Avenue, entering a structure and walking toward a building. If an injury occurs during that trip, write down the precise point where it happened. For the Nutwood or State College parking structure, record the level, stairwell or aisle. On an approach road, use the nearest intersection and note whether you were in the street, on the sidewalk or past a campus entrance.",
+      "A university map can help someone unfamiliar with the campus understand the route. Mark where you parked, where you were headed and where you stopped after the incident. If someone took you to a safer spot to wait for help, note where you were originally hurt as well as where responders met you. Those locations may differ in dispatch and witness records for good reason.",
+      "If campus police responded, the university lists a records bureau. If you spoke to Fullerton Police or another agency, use the department named on the incident paperwork. A campus address alone does not establish which department investigated. Save any case number, event number and email confirmation so the office can tell whether you are following up on the same incident.",
+      "For a parking structure incident, describe whether the movement came from a ramp, a stall, the direction of an exit or a pedestrian access point. A camera aimed at an entrance may confirm when a vehicle arrived, while a witness near the aisle may have a better view of the contact. Ask each witness what they saw and from where before drawing a single diagram from everyone’s recollections.",
+      "Students and campus employees often know an entrance by an informal name. If a report uses a different name, bring both. Screenshots of directions, the official parking map and your own sketch can help match the records without assuming that any one description is wrong.",
+    ],
+  },
+  {
+    id: "intersection-timing",
+    label: "Turns, lanes and signals",
+    title: "Work through a disputed turn or lane change",
+    paragraphs: [
+      "After a collision on a Fullerton arterial such as Commonwealth Avenue or State College Boulevard, two drivers may agree on the intersection but disagree about who entered first. Start the account a few seconds before the impact. Record the lane you were in, whether you had stopped and what you could see of the other vehicle. If the first thing you saw was a vehicle already turning, write that down as the beginning of your observation.",
+      "Separate what you saw on the signal from what you inferred from surrounding traffic. A driver following another vehicle through an intersection may see the vehicle move without having a clear view of the turn arrow. A pedestrian may have a clear view of the walk indication but limited visibility into a left turn lane. Record the position of each witness and the direction they were facing before comparing accounts.",
+      "Keep original dashcam or phone files, including any usable footage before and after impact. If a clock looks wrong, preserve the original and note the discrepancy separately. A receipt or a call timestamp can help orient the clip without editing its original timing. Photos of damaged panels can help explain contact but usually need to be considered with the street layout and accounts of vehicle movement.",
+      "For a collision close to a freeway entrance, distinguish the city street approach from the ramp and the point where the vehicles stopped. Write down the signed direction and route number if you know them. If you only remember the exit, leave the location provisional until the report or other records pin it down. Fullerton’s online crash filing system excludes state freeway incidents.",
+      "A consultation can start with the single disputed movement. Bring a report diagram if you have one and a short note on what you think it leaves out. Howard can identify the parts supported by the current material and what would help resolve the difference.",
+    ],
+  },
+  {
+    id: "property-boundaries",
+    label: "Falls and property boundaries",
+    title: "Identify the surface and its custodian after a Fullerton fall",
+    paragraphs: [
+      "A fall during a walk from a downtown parking structure to a shop could occur on a structure stair, a street curb ramp or a private entrance. Photograph the wider route from a safe position, then show the surface itself. A close-up may show a raised edge or liquid, while the wider view identifies whether it was at a doorway, a landing or a transition between properties.",
+      "Write down the direction you were walking, the light available and anything that blocked your view. If the surface looked different when you returned, keep the later photographs with their own date. A repair or moved object can help identify what changed, while an original image or witness may be needed to establish what was present at the time.",
+      "If staff made an incident record, save the name of the business or department, the approximate time and any reference they gave you. Ask where they directed the report if the location was a shared walkway or parking area. The person who took the report may work for the business you were visiting even if a separate entity handled maintenance.",
+      "For a condition that appears to have developed over time, such as a loose stair edge, bring observations that help distinguish what you saw from what someone later told you. For a sudden condition, such as a spill, timing may be more important. Keep a receipt, appointment reminder or parking transaction if it helps establish how long you were in the area.",
+      "If a public entity may have been responsible, raise that possibility promptly with the lawyer who reviews the case. Bring the exact spot and any response you have received. The identity of the responsible party can affect what records are available and which procedures need to be considered.",
+    ],
+  },
+  {
+    id: "schedule-disruption",
+    label: "Classes, shifts and recovery",
+    title: "Document the specific Fullerton classes, shifts and duties you missed",
+    paragraphs: [
+      "If you were studying and working when the accident occurred, organize academic and employment disruptions separately. A missed shift can show an earnings change, while a postponed lab or placement may require different records to understand its impact. Start with the schedule that was in place before the injury, then add dated changes and who approved them.",
+      "A person may attend lectures online while being unable to drive to a placement, carry equipment or stand for a lab. Keep the medical restriction and the course or placement requirement together so the reason for the change is clear. If a course was made up later, record the makeup date and any additional documented expense. If the instructor granted an extension, keep that message alongside the original deadline.",
+      "For hourly work, bring the posted schedule, the hours worked and pay records. If you normally trade shifts, distinguish a shift you picked up later from one you lost altogether. For a return with modified duties, record what you could do and who took over tasks you could not perform. Dated employer messages can explain a difference that payroll alone leaves unclear.",
+      "Keep a simple chronology if care was split between providers or if your restrictions changed. A release for one activity may still include limits on another. In your own notes, describe concrete examples such as needing a ride to campus twice a week or being unable to carry materials between buildings. Keep receipts if you paid for transportation, and distinguish money spent from rides a friend provided.",
+      "When you meet with Howard, explain which changes are still ongoing and which ended. A short timeline with supporting documents gives the consultation a clearer starting point than a broad estimate of how much school or work the injury disrupted.",
+    ],
+  },
+  {
+    id: "commercial-vehicle",
+    label: "Delivery and work vehicles",
+    title: "Separate the driver, the vehicle and the delivery records",
+    paragraphs: [
+      "A crash involving a van near a loading area on a Fullerton commercial street can start with a basic identification problem. The business receiving the goods, the company shown on the vehicle and the employer of the person driving may be different. Save photographs of the license plate and any visible company name or vehicle number when you can do so safely. A logo is a lead that can help identify the vehicle, while paperwork may establish who was operating it that day.",
+      "Describe the movement that caused concern. A truck backing from a street into a driveway presents a different set of visibility questions from a van pulling out of a curbside space. Write down where you were when you first saw the vehicle, whether it was stopped and what you noticed before impact. If a bystander was directing the driver, note where they were standing and what you saw them do.",
+      "A receiving clerk, a person making the delivery and a customer at the entrance may each have observed a different part of the event. Preserve names and contact information if offered. A delivery timestamp might establish when the vehicle reached the address, and an exterior camera might show whether it was moving during a particular interval. Some records are held by the carrier and others by the premises. Bring any existing correspondence so Howard can identify which questions to pursue with whom.",
+      "If the vehicle had already left when you received help, write down which identifying details you remember with confidence. A partial plate, route of departure or visible damage may help narrow the search when considered with other records. Keep any uncertain character or color marked as uncertain so it does not become a mistaken identification in later notes.",
+    ],
+  },
+  {
+    id: "school-crossing",
+    label: "School and neighborhood crossings",
+    title: "Preserve the viewpoint at a school or neighborhood crossing",
+    paragraphs: [
+      "At a Fullerton school approach, start by identifying the corner, crossing direction and approximate time. A parent waiting in a pickup line, a crossing guard and a driver approaching from a side street may have very different sightlines. If someone offers to help, record where they stood and whether they saw the approach, the contact or only what happened afterward.",
+      "A queue can obstruct a view even if the street looks wide and open later. Note the part of the crossing that was visible to you and what was in the way. Photograph the permanent layout from a safe spot and label the date. If temporary signs, a stopped vehicle or an unusual pickup arrangement mattered, keep any dated picture or message that shows what was in place on the day.",
+      "If the person hurt was a child, keep the report number and the school’s incident contact, where available. Document which pickup, attendance or activity routines changed and which changes followed a provider’s instructions. Some records involving minors have access restrictions. Avoid circulating personal details in public requests for witnesses and bring any agency response to the consultation.",
+      "For a bicycle or scooter collision, keep the equipment available for review if possible and photograph its condition. Note the route immediately before the crash, including whether the rider was crossing at the intersection or entering from a driveway. A route map may show where the trip was intended to go, while the observations and physical evidence help establish where the rider actually was.",
+    ],
+  },
+  {
+    id: "report-to-consultation",
+    label: "From report to consultation",
+    title: "Bring the unresolved questions to your first consultation",
+    paragraphs: [
+      "Fullerton Police provides different instructions for filing certain non-injury incidents and requesting a copy of an existing report. If someone was hurt, use the department’s injury collision instructions. When a different agency responded, start with the name shown on the paperwork. Save the confirmation from any records request so you can distinguish an outstanding request from a report that has already been obtained.",
+      "When you receive a report, compare the date, time, directions of travel and location with your own notes. Bring both even if they disagree. If a location is listed by the point where a vehicle stopped, your sketch can show where you believe the contact happened. If a witness has reached out since the report was written, keep their message and explain when you received it.",
+      "If video may exist, bring the camera location, the time range and any reply you received. Ask a business to identify the person who handles requests and document that contact. Video that cannot be shared directly may still be worth flagging for the lawyer to review promptly.",
+      "Put the first visit for your injuries, later appointments and current restrictions in date order. If you have a question about recovery, scheduling or a bill, include the document that prompted it. If a claim involves more than one injured person, use separate records for each so it is clear who was treated and when.",
+      "Howard serves Fullerton clients from the firm’s Buena Park office. You can request a free consultation even if you are waiting for a report or do not know which agency holds the material. Start with the most urgent decision and explain what information you have. Howard can review the next steps with you. No attorney fee unless there is a recovery.",
+    ],
+  },
+] as const;

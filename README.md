@@ -163,23 +163,17 @@ URL structure:
 
 ### Current indexing strategy
 
-**English and Korean are the indexed language set.**
+**English is the indexed language set.**
 
-Spanish is currently available to users but intentionally staged as:
+Korean and Spanish remain available to visitors with `noindex, follow` and are
+excluded from the sitemap and indexed hreflang links. Korean indexing is enforced
+centrally in `src/lib/seo.ts`, including a `/ko` path check; do not remove it in
+individual route configurations. Keep Korean URLs crawlable so search engines can
+read the noindex tag. Language switch links remain available to visitors.
 
-- `noindex, follow`
-- omitted from the XML sitemap
-- not yet included in the indexed hreflang cluster
-
-This is deliberate while the newer site builds authority.
-
-When Spanish is ready to be indexed:
-
-1. Remove `noindex: true` / `followWhenNoindex` from the Spanish route SEO configs.
-2. Extend `src/lib/seo.ts` hreflang output to include `es-US`.
-3. Add Spanish equivalents to `src/routes/sitemap[.]xml.ts`.
-4. Rebuild and verify canonical + hreflang tags.
-5. Submit the updated sitemap in Google Search Console.
+Before enabling another language for indexing, verify translation completeness
+and obtain the owner's instruction, then update SEO policy, sitemap and reciprocal
+hreflang together.
 
 ### Schema language distinction
 

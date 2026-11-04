@@ -1,11 +1,14 @@
+import { claimProcessCopy } from "@/data/claimProcessCopy";
+import { ClaimProcessSteps } from "@/components/editorial/ClaimProcess";
+import { CaseStories } from "@/components/editorial/CaseStories";
 import type { ReactNode } from "react";
-import { ArrowRight, ArrowUpRight, Check, Phone, MapPin, MessageCircle, FileText, Scale, HeartPulse, BriefcaseBusiness, Languages, Car, ChevronDown } from "lucide-react";
-import { EditorialFrame } from "@/pages/editorial/shared";
+import { ArrowRight, ArrowUpRight, Check, Phone, MapPin, Scale, HeartPulse, BriefcaseBusiness, Languages, Car, ChevronDown } from "lucide-react";
+import { EditorialHero, ReadingLayout, EditorialFrame } from "@/pages/editorial/shared";
 import { brand, serviceLocations } from "@/data/injurySite";
 import { anaheimCases, injuryQuestions } from "@/data/anaheimLanding";
 import { locationGuidesEn } from "@/data/locationGuidesEn";
 import { cityEvidencePaths } from "@/data/cityEvidencePaths";
-import { practiceMedia } from "@/data/practiceMedia";
+import { locationPracticeMedia as practiceMedia } from "@/data/locationPracticeMedia";
 import { locationMedia } from "@/data/locationMedia";
 import { responsiveImageProps } from "@/lib/responsive-images";
 import documents from "@/assets/law-firm/reviewing-documents.jpg";
@@ -29,23 +32,10 @@ function ContactLinks({ light = false }: { light?: boolean }) {
 
 export default function AnaheimLandingPage() {
   return <EditorialFrame locale="en"><main className="anaheim-landing">
-    <section className="al-hero">
-      <div className="al-shell al-hero-grid">
-        <div className="al-hero-copy">
-          <nav aria-label="Breadcrumb" className="al-breadcrumb"><a href="/">Home</a><span>/</span><a href="/locations">Locations</a><span>/</span><span aria-current="page">Anaheim</span></nav>
-          <p className="al-eyebrow">Serving Anaheim · Orange County, CA</p>
-          <h1>Anaheim injury<br />&amp; accident <em>lawyer.</em></h1>
-          <p className="al-hero-intro">An accident changes your day. An injury can change much more. Talk with Anaheim personal injury lawyer Howard Choi about what happened and what you need to move forward. The firm serves Anaheim from its Buena Park office.</p>
-          <ContactLinks light />
-          <div className="al-fee"><Check size={17} aria-hidden="true" /><span>No fee unless there is a recovery.</span><a href="/about/zero-fee-guarantee">Our fee promise <ArrowRight size={14} aria-hidden="true" /></a></div>
-        </div>
-        <figure className="al-portrait">
-          <img {...responsiveImageProps(office, "(max-width: 767px) 92vw, 45vw")} src={office} alt="Illustrative law-office interior" width={850} height={1050} fetchPriority="high" loading="eager" />
-          <figcaption><span>YOUR NEXT STEP</span><strong>Start with a conversation.</strong><a href="/attorney">Meet Howard <ArrowUpRight size={16} aria-hidden="true" /></a></figcaption>
-        </figure>
-      </div>
-    </section>
-
+    <EditorialHero locale="en" eyebrow="Orange County · Serving Anaheim"
+      title="Anaheim Personal Injury & Accident Lawyer"
+      description="Injured in Anaheim? Talk with Howard Choi about your accident, treatment and the changes to your daily life. Serving Anaheim from Buena Park. No fee unless there is a recovery."
+      image={media.src} imageFallback={office} imageAlt={media.alt} detail />
     <section className="al-credentials" aria-label="Firm information">
       <div className="al-shell al-credentials-grid">
         <div><strong>Since 2015</strong><span>Independent practice</span></div>
@@ -66,26 +56,23 @@ export default function AnaheimLandingPage() {
 
     <section id="process" className="al-section al-process">
       <div className="al-shell">
-        <SectionTitle eyebrow="From the first call onward" text="Know what each stage is for, what you can bring and which decisions deserve a conversation.">A clearer path through<br />an unfamiliar process.</SectionTitle>
-        <ol className="al-steps">
-          {[
-            { icon: MessageCircle, title: "Tell your story", text: "Start with the accident, your treatment and the questions on your mind. A free consultation helps identify what needs closer attention." },
-            { icon: FileText, title: "Build the record", text: "If the firm takes your case, the investigation connects evidence about the accident with medical records, insurance coverage and documented losses." },
-            { icon: Scale, title: "Consider your options", text: "Review an offer in the context of your injuries and the evidence. Discuss negotiation, remaining questions or litigation before deciding how to proceed." },
-          ].map(({ icon: Icon, title, text }, i) => <li key={title}><div className="al-step-top"><span>0{i + 1}</span><Icon size={25} strokeWidth={1.4} aria-hidden="true" /></div><h3>{title}</h3><p>{text}</p></li>)}
-        </ol>
+        <SectionTitle eyebrow={claimProcessCopy.en.eyebrow} text={claimProcessCopy.en.intro}>A clearer path through<br />an unfamiliar process.</SectionTitle>
+        <ClaimProcessSteps locale="en" />
         <a className="al-text-link" href="/about/what-to-expect">Explore what to expect <ArrowRight size={17} aria-hidden="true" /></a>
       </div>
     </section>
 
     <section id="cases" className="al-section al-shell">
       <SectionTitle eyebrow="Anaheim personal injury representation" text="Start with the kind of accident you experienced. Each situation calls for its own evidence and insurance review.">Different accidents.<br />Different questions to answer.</SectionTitle>
-      <div className="al-case-list">
-        {anaheimCases.map((item, index) => <article key={item.slug} className="al-case">
-          <a className="al-case-photo" href={'/practice-areas/' + item.slug} aria-label={item.title}><img {...responsiveImageProps(practiceMedia[item.slug].src, "(max-width: 767px) 92vw, 42vw")} src={practiceMedia[item.slug].src} alt={practiceMedia[item.slug].alt} width={720} height={480} loading="lazy" /><span>0{index + 1} / {item.label}</span></a>
-          <div className="al-case-copy"><h3>{item.title}</h3><p>{item.text}</p><p>{item.detail}</p><p>{item.representation}</p><div className="al-evidence"><FileText size={16} aria-hidden="true" />{item.evidence}</div><a className="al-text-link" href={'/practice-areas/' + item.slug}>Explore {item.label.toLowerCase()} <ArrowRight size={17} aria-hidden="true" /></a></div>
-        </article>)}
-      </div>
+      <CaseStories stories={anaheimCases.map(item => ({
+        id: `anaheim-${item.slug}`,
+        title: item.title,
+        label: item.label,
+        paragraphs: [item.text, item.detail, item.representation],
+        image: practiceMedia[item.slug],
+        evidence: item.evidence,
+        link: { href: `/practice-areas/${item.slug}`, label: `Explore ${item.label.toLowerCase()}` },
+      }))} />
       <div className="al-local-scenarios">
         <article>
           <h3>Traumatic brain injuries after an Anaheim accident</h3>
@@ -110,8 +97,15 @@ export default function AnaheimLandingPage() {
       </div>
     </section>
 
-    <nav className="al-jump" aria-label="Anaheim injury guide"><div className="al-shell"><span>YOUR ANAHEIM GUIDE</span>{[["local","Local context"],["records","Reports"],["fault","Fault"],["injuries","Injuries"],["compensation","Compensation"],["faq","FAQs"]].map(([id,label])=><a key={id} href={'#'+id}>{label}</a>)}</div></nav>
-
+    <ReadingLayout locale="en" label="Anaheim injury guide" sections={[
+      {id:"local",label:"Local overview"},{id:"data",label:"Local collision data"},
+      {id:"resort-injuries",label:"Resort-area injuries"},{id:"anaheim-evidence",label:"Disputed evidence"},
+      {id:"visitor-recovery",label:"Recovery after your visit"},{id:"records",label:"Records and agencies"},
+      {id:"deadlines",label:"Deadlines"},{id:"fault",label:"Establishing fault"},
+      {id:"injuries",label:"Injury consequences"},{id:"compensation",label:"Compensation"},
+      {id:"office",label:"Meet Howard"},{id:"faq",label:"Local questions"}
+    ]}>
+      <div className="al-reading-body">
     <section id="local" className="al-section al-shell">
       <div className="al-local-grid">
         <div><SectionTitle eyebrow="After an accident in Anaheim">A local detail can change<br />the next question.</SectionTitle><p>{city.localIntro}</p></div>
@@ -215,6 +209,9 @@ export default function AnaheimLandingPage() {
     </section>
 
     <section className="al-section al-warm"><div className="al-shell"><SectionTitle eyebrow="Continue with the question that matters to you">Useful reading.<br />A more informed next step.</SectionTitle><div className="al-reading">{[["01","Uber & Lyft insurance","Which trip records help identify coverage?","uber-lyft-accident-insurance-california"],["02","Truck accident evidence","What can disappear while you wait?","truck-accident-evidence-eld-records-california"],["03","After a California crash","What should you preserve first?","what-to-do-after-a-car-accident-in-california"]].map(([n,title,text,slug])=><a key={slug} href={'/blogs/'+slug}><span>{n}</span><h3>{title}</h3><p>{text}</p><ArrowUpRight size={21}/></a>)}</div><div className="al-nearby"><span>Nearby communities</span>{["buena-park","fullerton","garden-grove","la-habra"].map(slug=><a key={slug} href={'/locations/'+slug}>{serviceLocations.find(x=>x.slug===slug)?.name} <ArrowUpRight size={14}/></a>)}</div></div></section>
+
+      </div>
+    </ReadingLayout>
 
     <section className="al-final"><div className="al-shell"><span className="al-eyebrow">Buena Park Injury Lawyer · Serving Anaheim</span><h2>Let’s talk about<br /><em>what comes next.</em></h2><ContactLinks light/><p>No fee unless there is a recovery.</p></div></section>
   </main></EditorialFrame>;

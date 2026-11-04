@@ -1,0 +1,286 @@
+{
+  "sourceHash": "4d20507bf454f6078e8e3174326f4eca93b76e757e1eedff400764a629b253c6",
+  "reviewStatus": "reviewed-for-source-parity",
+  "content": {
+    "slug": "los-angeles",
+    "name": "Los Angeles",
+    "county": "Los Angeles County",
+    "heading": "Abogado de Accidentes de Auto y Lesiones Personales en Los Ángeles",
+    "lead": "¿Lesionado en Los Ángeles y no sabe por dónde empezar? Hable con Howard Choi sobre el accidente, la atención que está recibiendo y el trabajo o rutinas que se han interrumpido. Atendemos a clientes de Los Ángeles desde Buena Park. Sin honorarios a menos que se obtenga una compensación.",
+    "seoTitle": "Abogado de Accidentes de Auto y Lesiones en Los Ángeles | Howard Choi",
+    "seoDescription": "Discuta un accidente de auto o lesión en Los Ángeles con Howard Choi. Ayuda para comprender su caso, las pérdidas laborales y los siguientes pasos. Consulta gratuita desde Buena Park.",
+    "feature": {
+      "sectionId": "work-loss",
+      "image": "documents",
+      "eyebrow": "Comprender el efecto financiero",
+      "alt": "Documentos siendo revisados en un escritorio"
+    },
+    "sections": [
+      {
+        "id": "local",
+        "title": "Un solo accidente puede interrumpir una vida que transcurre en distintas partes de la ciudad.",
+        "paragraphs": [
+          "Su accidente, su hogar, su trabajo y sus citas médicas pueden estar todos en diferentes partes de Los Angeles. Explicar lo que sucedió puede convertirse en otra tarea además de superar la semana. Howard puede ayudarlo a ordenar la secuencia y comprender qué necesita atención primero, ya sea que la preocupación inmediata sea un giro disputado, una restricción laboral o un informe que aún no ha llegado.",
+          "El punto de partida es su experiencia, no el tamaño del expediente que presenta. Una conversación puede identificar las decisiones pendientes y lo que implicaría la representación. Para un cruce en el centro, una recogida con servicio de transporte compartido o una caída dentro de un edificio compartido, Howard puede examinar los detalles que hacen que su situación sea diferente. El bufete atiende a clientes de Los Ángeles desde su oficina en Buena Park; llame para programar una consulta gratuita."
+        ]
+      },
+      {
+        "id": "scene",
+        "title": "Precise el lugar del accidente en Los Ángeles antes de solicitar los registros",
+        "paragraphs": [
+          "Registre el vecindario, las calles transversales y la dirección del viaje, luego distinga entre una vía pública, un camino privado, un garaje o una rampa de autopista. Una ubicación guardada en una aplicación puede ayudar, pero verifique si marca el punto de recogida o la colisión real. Guarde el nombre de la agencia que respondió junto con el número de incidente.",
+          "Para un accidente durante un viaje más largo, anote el último giro o salida antes del impacto. El itinerario de un pasajero, un mensaje con marca de tiempo o un recibo de estacionamiento pueden acotar la secuencia. Howard puede utilizar esa cronología al comparar relatos que describen el mismo evento utilizando diferentes puntos de referencia."
+        ],
+        "label": "La ubicación exacta del accidente"
+      },
+      {
+        "id": "cases",
+        "title": "Accidentes de tráfico, recogidas de pasajeros y entregas comerciales",
+        "paragraphs": [
+          "Un cambio de carril disputado en Los Ángeles puede depender del movimiento relativo de varios vehículos. Conserve la grabación completa disponible, incluido el acercamiento. Un breve clip del impacto puede omitir la maniobra que lo explica. Anote qué vehículo pudo ver realmente cada testigo.",
+          "Para una recogida de pasajeros frente a un edificio, guarde la ubicación acordada y cualquier cambio enviado a través de la aplicación. Para un accidente de entrega, fotografíe las marcas de la empresa y anote si el conductor estaba ingresando a una zona de carga o continuando entre el tráfico. Howard puede examinar quién dirigió el movimiento y qué registros podrían aclarar un relato disputado."
+        ]
+      },
+      {
+        "id": "car-accidents",
+        "label": "Accidentes de automóviles",
+        "title": "Abogado de accidentes automovilísticos en Los Ángeles para colisiones en autopistas y calles",
+        "practice": "car-accidents",
+        "paragraphs": [
+          "Un choque descrito como ocurrido cerca del 101 o el 10 puede involucrar un carril de autopista, una cola de salida o un movimiento de giro hacia una calle urbana. Anote la dirección en la que conducía, la última señal que pasó y dónde vio por primera vez al otro vehículo. Si los vehículos se movieron a una calle lateral después, marque eso como una ubicación separada. Una dirección en un registro de grúa puede referirse a dónde fue recogido el vehículo.",
+          "Cuando la fila de vehículos se prolonga hasta un semáforo, identifique si el movimiento disputado fue un giro, un cambio de carril o un vehículo que ingresó a un carril ocupado. Una grabación de los últimos segundos puede mostrar contacto sin mostrar cómo se formó la cola. Preserve las imágenes disponibles de los momentos previos al choque y anote si el reloj de la cámara era correcto. Howard puede comparar la cronología y las posiciones con los relatos en el informe.",
+          "Para un choque que involucra a más de dos vehículos, informe a la oficina cuántos impactos recuerda y en qué orden. Un pasajero puede recordar solo uno mientras que un conductor ve otro vehículo acercándose en el espejo. Mantenga cada relato en las propias palabras del hablante e identifique dónde estaban sentados o parados."
+        ],
+        "link": {
+          "label": "Guía de práctica sobre accidentes automovilísticos",
+          "href": "/practice-areas/car-accidents"
+        }
+      },
+      {
+        "id": "rideshare",
+        "label": "Accidentes con Uber y Lyft",
+        "title": "Abogado de accidentes de Uber y Lyft en Los Ángeles",
+        "practice": "rideshare-accidents",
+        "paragraphs": [
+          "El punto de recogida en el centro puede trasladarse al otro lado de la calle o a otra entrada cuando la acera está congestionada. Guarde el marcador original de la aplicación y cualquier mensaje que le indique otro lugar. Luego marque dónde se detuvo realmente el vehículo. Si fue golpeado antes de llegar al coche, describa la ruta a pie y dónde entró en la calzada. El destino reservado es menos útil que la ubicación real y la hora del movimiento.",
+          "Si resultó lesionado mientras subía o bajaba del vehículo, anote qué puerta utilizó, si el coche estaba detenido y qué vio hacer al conductor u otro vehículo. Una persona en el asiento trasero puede ver la acera pero pasar por alto el tráfico que viene desde atrás. Howard puede comparar el registro del viaje con lo que observaron los testigos y determinar qué evidencia adicional podría aclarar la secuencia.",
+          "Cuando otra persona reservó el viaje, pídale que conserve el recibo original y la conversación completa. Guarde cualquier registro de un lugar o garaje en una carpeta separada etiquetada por su origen. Estos registros pueden ayudar a precisar cuándo el grupo abandonó una propiedad y distinguir un vehículo en el punto de recogida de uno que simplemente pasaba."
+        ],
+        "link": {
+          "label": "Guía de la práctica sobre accidentes con Uber y Lyft",
+          "href": "/practice-areas/rideshare-accidents"
+        }
+      },
+      {
+        "id": "pedestrians",
+        "label": "Lesiones a peatones",
+        "title": "Abogado de accidentes de peatones en Los Ángeles",
+        "practice": "pedestrian-accidents",
+        "paragraphs": [
+          "Un paseo desde una estación del Metro hasta un lugar de trabajo en el centro puede llevarlo por la salida de un garaje, una parada de autobús y un cruce con semáforo dentro de una cuadra. Registre qué parte de la ruta había alcanzado cuando fue golpeado. El nombre de una intersección aún puede dejar cuatro esquinas y varios caminos de giro para distinguir. Identifique el bordillo del que salió, la dirección en la que caminaba y la dirección desde la que se acercó el vehículo.",
+          "Si un autobús, un vehículo de reparto o una fila obstruían la vista, anote si estaba detenido o en movimiento. Un testigo en la esquina lejana puede ver al vehículo completar su giro sin ver cuándo usted salió del bordillo. Un pasajero dentro de un vehículo detenido puede tener la visión inversa. Registre dónde se paró o se sentó cada testigo para que Howard pueda hacer coincidir sus observaciones con la parte correcta del cruce.",
+          "Si recuerda una indicación de caminar o una cuenta regresiva, identifique a qué señal estaba enfrentado y cuándo miró. Una fotografía tomada después de la colisión puede ayudar a explicar la ubicación de las señales pero no puede mostrar lo que mostraban anteriormente. Preserve las grabaciones en su forma original, incluido el tiempo antes del impacto. Si una cámara de un negocio estaba orientada hacia la entrada en lugar de la intersección, aún podría ayudar a establecer cuándo salió de la propiedad.",
+          "El registro de recuperación debe explicar los viajes que cambiaron. Alguien que anteriormente podía caminar desde la estación hasta el trabajo puede necesitar que lo lleven durante la última parte del trayecto o tomar una ruta diferente para evitar escaleras. Anote cuándo comenzó el cambio y qué restricción o dificultad práctica lo provocó. Guarde cualquier recibo relacionado con las fechas de citas y ajustes laborales."
+        ],
+        "link": {
+          "label": "Guía de práctica sobre accidentes de peatones",
+          "href": "/practice-areas/pedestrian-accidents"
+        }
+      },
+      {
+        "id": "truck-accidents",
+        "label": "Accidentes de camiones",
+        "title": "Abogado de accidentes de camiones en Los Ángeles para choques por entregas y carga",
+        "practice": "truck-accidents",
+        "paragraphs": [
+          "Un vehículo de entrega puede salir de una vía arterial, cruzar una acera y retroceder hacia una entrada de servicio. Si usted resultó lesionado durante esa maniobra, observe si el camión estaba en el carril público, sobre la acera o dentro de la propiedad. Registre la entrada y si alguien estaba dirigiendo el tráfico. Una dirección del edificio puede identificar el destino de la entrega sin localizar la parte de la maniobra donde ocurrió el contacto.",
+          "Guarde la placa y la información de la flota que pueda capturar con seguridad. Si participaron un tractocamión y un remolque, registre cada identificador por separado. Guarde cualquier mensaje de entrega o instrucciones de acceso que haya recibido. Un nombre de empresa en la puerta puede identificar a un operador con quien contactar, mientras que una cita de entrega puede identificar al negocio que recibe los bienes. Howard puede revisar qué registros podrían establecer quién controlaba el vehículo o el área de carga.",
+          "Un observador dentro de un muelle de carga podría saber cuándo se esperaba el camión sin ver el movimiento exterior. Un peatón en la acera podría haber visto el giro pero no haber visto una señal de un trabajador. Preserve cada observación tal como se describió y anote la ubicación del observador. Esto puede ayudar a distinguir los movimientos del conductor de las instrucciones y condiciones que lo rodeaban.",
+          "Si un vehículo continuó después del incidente, escriba su dirección y cualquier identificación parcial sin completar los detalles faltantes. Preserve la fuente de cada hecho, ya sea que provino de su propia vista, de otro testigo o de una fotografía. Una placa incompleta y una hora fiable aún pueden proporcionar a la investigación un punto de partida útil."
+        ],
+        "link": {
+          "label": "Guía de práctica sobre accidentes de camiones comerciales",
+          "href": "/practice-areas/truck-accidents"
+        }
+      },
+      {
+        "id": "falls",
+        "label": "Lesiones por resbalones y caídas",
+        "title": "Abogado de Los Ángeles especializado en resbalones y caídas en edificios y garajes compartidos",
+        "practice": "slip-and-fall",
+        "paragraphs": [
+          "Una dirección en Wilshire o en otro corredor comercial puede incluir una entrada a la calle, un estacionamiento subterráneo y un vestíbulo compartido por varias empresas. Después de una caída, observe el piso, la puerta o la rampa y la dirección en la que caminaba. Guarde el boleto de estacionamiento o el mensaje de cita que ayude a situarlo allí. Una fotografía que incluya un letrero fijo o una columna puede facilitar localizar más tarde un primer plano de la condición.",
+          "Si el problema era agua en el suelo, registre si vio su origen o solo la superficie mojada. Si estaba involucrado un borde de escalón o una alfombra, anote la iluminación y cómo se veía la condición desde su dirección de aproximación. Distinga lo que vio antes de la caída de las observaciones realizadas después de que alguien llegó para ayudar. Una condición puede haber cambiado para el momento en que se redactó un informe del incidente.",
+          "Si alguien en la recepción de uno de los negocios del edificio tomó su nombre, pregunte si también un administrador del edificio o un servicio de seguridad crearon un registro. Guarde los números de referencia por separado. El negocio que visitó puede haberse enterado del incidente mientras otra organización gestionaba el garaje o la acera. Howard puede examinar esos roles para decidir qué registros de mantenimiento o testimonios de testigos podrían explicar la condición.",
+          "Una fotografía posterior aún puede mostrar cómo está dispuesto el espacio. Etiquete su fecha y describa cualquier diferencia que notó, como una alfombra reemplazada, un nuevo letrero de advertencia o una puerta que volvió a abrirse. Preserve las fotos originales del día si las tiene. La cronología ayuda a separar la evidencia del incidente de los cambios posteriores en la propiedad."
+        ],
+        "link": {
+          "label": "Guía de práctica sobre resbalones y caídas",
+          "href": "/practice-areas/slip-and-fall"
+        }
+      },
+      {
+        "id": "motorcycle",
+        "label": "Accidentes de motocicleta",
+        "title": "Abogado de accidentes de motocicleta en Los Ángeles",
+        "practice": "motorcycle-accidents",
+        "paragraphs": [
+          "Un conductor que gira a través de varios carriles puede ver un espacio libre en un carril sin ver a un motorista acercándose en otro. Si una colisión sigue a ese movimiento, se debe trazar el carril utilizado por cada vehículo y marcar cualquier cola que limitara la visibilidad. Se debe anotar dónde comenzó el giro y si provenía de una intersección, entrada de propiedad o área de estacionamiento. Las fotografías tomadas después de que el tráfico se movió pueden mostrar la geometría del carril mientras dejan incierta la obstrucción original.",
+          "Se deben preservar imágenes de la motocicleta antes de su reparación, incluyendo el lado o parte que hizo contacto. Se debe conservar cualquier grabación disponible que muestre el acercamiento del motorista. Si un testigo escuchó la colisión y luego miró hacia arriba, se debe registrar esa secuencia. Una declaración sobre lo que vieron después puede ser valiosa sin establecer cómo los vehículos ingresaron a la escena.",
+          "Para un motorista cuyo trabajo implica conducir, transportar equipo o usar herramientas manuales, se deben mantener las funciones laborales reales junto con cualquier restricción escrita. Poder regresar para un turno corto puede dejar otras tareas fuera de alcance. Howard puede revisar esa distinción mientras la investigación aborda por separado lo que cada persona pudo ver y hacer antes del contacto."
+        ],
+        "link": {
+          "label": "Guía de práctica sobre accidentes de motocicleta",
+          "href": "/practice-areas/motorcycle-accidents"
+        }
+      },
+      {
+        "id": "report-request",
+        "label": "Registros de la LAPD y la CHP",
+        "title": "Solicite el informe a la agencia que realizó la investigación",
+        "paragraphs": [
+          "Comience con el nombre de la agencia y el número de informe en la tarjeta o aviso que recibió. Una dirección postal de Los Ángeles puede describir un lugar atendido por otra agencia. Si la LAPD investigó, consulte sus instrucciones para informes de colisiones sobre elegibilidad y qué método de solicitud aplica. Algunas categorías, incluidas las colisiones mortales, se gestionan a través del correo en lugar del canal en línea. Si la CHP investigó, utilice el proceso separado de solicitud de informes de la CHP.",
+          "Al presentar una solicitud, identifique la ubicación, la fecha y su rol. Si solo tiene un número de incidente, inclúyalo y conserve la confirmación de la solicitud. Compare el informe completado con la escena exacta que recuerda. Un informe puede identificar la intersección mientras deja poco claro el acceso o la dirección del viaje. Lleve sus fotografías y un boceto separado para ayudar a Howard a evaluar cualquier diferencia."
+        ],
+        "link": {
+          "label": "Instrucciones para informes de colisiones de tráfico de la LAPD",
+          "href": "https://www.lapdonline.org/office-of-the-chief-of-police/office-of-special-operations/transit-services-bureau/file-a-traffic-collision-report/"
+        }
+      },
+      {
+        "id": "records",
+        "title": "Adecuar la solicitud del informe a la agencia investigadora",
+        "paragraphs": [
+          "El LAPD proporciona un canal para informes de colisiones de tráfico, pero no todo incidente dentro del condado de Los Angeles es una investigación del LAPD. Confirme la agencia en la tarjeta o recibo proporcionados en el lugar. Si respondió la CHP, utilice sus instrucciones para el informe. Guarde una copia de cualquier solicitud y los detalles ingresados.",
+          "Para una caída en un edificio o garaje, documente el piso, la entrada y la condición precisa. Registre el contacto de administración o seguridad si está disponible. Una fotografía de un letrero en la puerta puede ayudar a conectar un registro de incidente con la propiedad correcta cuando el edificio tiene múltiples negocios o entradas."
+        ],
+        "label": "Registros de incidentes"
+      },
+      {
+        "id": "impact",
+        "title": "Organice la atención recibida en distintos puntos de la ciudad",
+        "paragraphs": [
+          "Una persona lesionada puede recibir atención de emergencia cerca del accidente y tratamiento de seguimiento más cerca de su hogar o trabajo. Organice las visitas por fecha y proveedor. Guarde las instrucciones de alta, las derivaciones médicas y las restricciones escritas juntas para que la transición entre proveedores sea más fácil de seguir.",
+          "En la consulta, describa cómo la lesión afectó el trayecto real al trabajo y las funciones laborales. Guarde los cambios en los turnos o licencias, y distinga el tiempo dedicado a obtener atención de las restricciones para realizar el trabajo. Howard puede discutir qué registros se necesitan para comprender esas pérdidas y los siguientes pasos en la evaluación del caso."
+        ]
+      },
+      {
+        "id": "serious-injuries",
+        "label": "Lesiones graves y recuperación",
+        "title": "Construya una línea de tiempo del tratamiento cuando la atención ocurre en todo Los Ángeles",
+        "paragraphs": [
+          "Un paciente puede abandonar la escena en una parte de Los Ángeles, recibir una evaluación de emergencia en otro lugar y acudir después a un profesional médico cerca de su hogar. Si tiene registros de esas visitas, ordénelos por fecha e identifique la instalación que produjo cada uno. Un informe de imágenes y las notas de una cita de seguimiento pueden estar separados. Guarde las instrucciones de derivación o alta que conecten una visita con la siguiente.",
+          "Si recibe una nueva restricción después de intentar volver a su actividad normal, anote qué motivó la visita posterior. Alguien con una lesión en el hombro puede hacer un recado breve pero tener dificultades para transportar equipo en el trabajo. Una persona con una lesión en la cabeza puede notar problemas para seguir una secuencia familiar mientras se desplaza o trabaja. Describa la tarea y comunique al proveedor tratante qué cambió. Guarde la evaluación del proveedor junto a esas observaciones.",
+          "Conserve las revisiones de un plan de tratamiento en lugar de reemplazar los registros más antiguos con el más nuevo. Una derivación puede conducir a una evaluación, una recomendación cambiada o un plan que aún está bajo discusión. Howard puede revisar qué atención se brindó, qué limitaciones están documentadas y qué evidencia ayudaría a explicar las necesidades continuas. Si una fecha o duración es incierta, identifíquela como tal.",
+          "Un familiar puede ayudar con el transporte, las comidas o tareas recurrentes durante la parte temprana de la recuperación. Registre qué asistencia se brindó realmente y cuándo cesó o cambió. Esto puede mostrar cómo la lesión afectó la vida cotidiana mientras distingue las observaciones prácticas de las conclusiones médicas."
+        ],
+        "link": {
+          "label": "Guía de práctica para lesiones graves",
+          "href": "/practice-areas/serious-injuries"
+        }
+      },
+      {
+        "id": "work-loss",
+        "label": "Trabajo en varios lugares",
+        "title": "Cuando una lesión interrumpe turnos, asignaciones y trabajo de proyectos",
+        "paragraphs": [
+          "Para alguien que trabaja en distintos puntos de Los Ángeles, un solo nombre de empleador puede omitir el horario que se vio interrumpido. Un trabajador podría cubrir diferentes edificios, conducir una ruta con varias paradas o tomar asignaciones en diferentes sitios de producción. Identifique las funciones en cada ubicación y cuáles cambiaron después de la lesión. Guarde confirmaciones de reservas, horarios o mensajes de despacho junto con las restricciones por escrito.",
+          "Si un proyecto continuó sin usted, registre si el trabajo fue cancelado, reasignado o completado por usted en otra fecha. Una reserva que se movió una semana difiere de una que ya no pudo aceptar. Para el trabajo independiente, las facturas y los registros de pago pueden ayudar a mostrar lo que realmente se ganó. Guarde registros de períodos comparables antes del accidente para que las fluctuaciones ordinarias puedan separarse de una interrupción específica.",
+          "Regresar a un sitio puede aún dejar otras asignaciones inaccesibles. Alguien que pueda trabajar en un escritorio cercano podría seguir sin poder mover equipos entre sitios o tolerar un trayecto más largo al volante. Pida al empleador que documente cualquier cambio en las asignaciones o horas. Si usted organizó el trabajo por su cuenta, conserve los mensajes y registros que muestren lo que asumió y lo que declinó.",
+          "En una consulta, Howard puede utilizar su formación contable para revisar cómo los registros financieros se ajustan al historial laboral. Traiga tanto las funciones habituales como las revisadas. Un recibo de nómina registra lo que se pagó, mientras que un horario y las restricciones del profesional médico pueden ayudar a explicar por qué cambió."
+        ]
+      },
+      {
+        "id": "document-losses",
+        "label": "Gastos y cambios diarios",
+        "title": "Distinga los gastos pagados de los cambios en la vida diaria",
+        "paragraphs": [
+          "Un cambio en el transporte después de una lesión puede generar gastos distribuidos entre varias aplicaciones o cuentas. Si pagó un viaje para recibir tratamiento o tuvo que reemplazar un viaje ordinario debido a una restricción, registre la fecha, el propósito y el pago real. Guarde los reembolsos y las reintegraciones junto con el recibo original. Un correo electrónico de confirmación y un registro bancario pueden mostrar la misma transacción.",
+          "Cuando lleguen los estados de cuenta del tratamiento en diferentes momentos, agrúpelos por proveedor y fecha de servicio. Guarde cualquier estado de cuenta revisado junto con la versión anterior para que quede claro si se agrega un servicio o se actualiza un saldo existente. Si no sabe qué representa un cargo, márquelo para revisión. Howard puede discutir qué gastos están respaldados y qué información aún es necesaria.",
+          "Algunas consecuencias son más fáciles de explicar a través de una rutina regular que mediante un total. Alguien que solía caminar hasta una estación ahora podría depender de que alguien lo lleve o evitar un transbordo que implique escaleras. Un padre podría seguir haciendo el viaje escolar pero necesitar ayuda para llevar artículos o gestionar una parada adicional. Registre cuándo comenzó el cambio, si ocurrió todos los días y cuándo mejoró.",
+          "Lleve sus notas junto con los registros médicos y laborales. Sirven propósitos diferentes. Un recibo puede mostrar el costo de un viaje. Un profesional médico puede describir las restricciones. Una persona familiarizada con su rutina puede explicar cómo cambió. Juntos, ofrecen una descripción más completa del efecto sobre usted para la revisión del caso."
+        ],
+        "link": {
+          "label": "Guía sobre pérdidas por lesiones personales y valor de la reclamación",
+          "href": "/blogs/how-much-is-my-personal-injury-case-worth-california"
+        }
+      },
+      {
+        "id": "consultation-prep",
+        "label": "Prepárese para la primera llamada",
+        "title": "Lleve los detalles clave de la escena en Los Ángeles y de la recuperación a Howard",
+        "paragraphs": [
+          "Comience con la decisión que enfrenta. Puede no estar seguro si un edificio o una agencia policial posee el registro, si un testigo vio el giro disputado o cómo explicar una nueva restricción laboral. Lleve el registro que motivó la pregunta. Una lista breve de puntos sin resolver puede ayudar a enfocar la primera conversación.",
+          "Utilice la escena exacta en lugar del nombre del vecindario por sí solo. Incluya las calles transversales más cercanas, la entrada o rampa y la dirección que recorrió. Si solo tiene una foto o un mensaje con marca de tiempo, comparta lo que muestra y lo que aún necesita confirmar. Si más de una persona le dio información, etiquete cada fuente por separado.",
+          "Puede llamar mientras los registros siguen pendientes. Lleve la confirmación de la solicitud y cualquier aviso que haya recibido, con sus fechas. Howard puede discutir qué necesita atención primero y qué documentos pueden seguir. El bufete atiende a clientes de Los Ángeles desde su oficina en Buena Park, donde puede organizar una consulta inicial gratuita."
+        ],
+        "link": {
+          "label": "Qué esperar de la primera conversación",
+          "href": "/about/what-to-expect"
+        }
+      },
+      {
+        "id": "hit-and-run",
+        "label": "Evidencia de choque con fuga del conductor",
+        "title": "Preserve identificaciones parciales después de un choque con fuga del conductor en Los Ángeles",
+        "paragraphs": [
+          "Si alguien resulta herido o hay una emergencia, llame al 911. Una vez que esté a salvo, anote la dirección en la que se dirigió el vehículo y el último punto desde donde lo vio. En una cuadra de Los Ángeles con múltiples entradas, ayuda saber si el conductor continuó por la intersección o entró en una estructura de estacionamiento. Registre caracteres parciales de la placa, el color del vehículo y los daños visibles tal como los recuerda. Marque cualquier incertidumbre en lugar de intentar completar una placa desde la memoria.",
+          "Pida a los testigos que preserven su propio recuerdo de forma independiente. Una persona podría haber visto la partida mientras otra registró el acercamiento. Una cámara comercial orientada hacia la salida puede mostrar detalles identificables incluso si la colisión ocurrió fuera de su campo de visión. Anote la ubicación de la cámara y la hora aproximada. Si recibió una grabación, conserve el original y el mensaje que identifica a quien lo envió.",
+          "Cuando hable con Howard, lleve la referencia del informe y una lista de las fuentes que ha identificado. Una línea de tiempo clara puede reducir una búsqueda incluso si la descripción disponible es incompleta. Registre cualquier actualización posterior de la policía por separado para que la oficina pueda distinguir qué detalles se conocían en ese momento y cuáles se supieron después."
+        ],
+        "link": {
+          "label": "Preguntas sobre colisiones de tráfico del LAPD",
+          "href": "https://www.lapdonline.org/office-of-the-chief-of-police/office-of-special-operations/transit-services-bureau/traffic-collision-questions/"
+        }
+      },
+      {
+        "id": "public-property",
+        "label": "Plazos para agencias públicas",
+        "title": "Identifique quién controlaba la propiedad de Los Ángeles antes de asumir un plazo",
+        "paragraphs": [
+          "Un choque junto a una parada de tránsito o una caída cerca de un proyecto vial puede involucrar a una agencia pública, un contratista privado o más de una organización. Marque el lugar exacto y anote cualquier señal del proyecto, números de vehículo o barreras. Un nombre de contratista en un aviso puede aportar una pista para investigar sin demostrar quién controlaba el área. Si un desvío lo dirigió a otra ruta, conserve la señal y registre dónde ocurrió la lesión a lo largo de esa ruta.",
+          "Los tribunales de California explican que las reclamaciones contra agencias gubernamentales generalmente requieren presentar una reclamación ante la agencia antes de interponer una demanda, y que los plazos aplicables pueden ser más cortos que para otros asuntos de lesiones personales. Si cree que un vehículo público, propiedad pública o proyecto vial estuvo involucrado, avise a Howard con anticipación. Lleve la fecha del incidente y copias de cualquier aviso que haya recibido, incluida la fecha en que fueron enviados o entregados.",
+          "Una solicitud de servicio sobre una acera dañada o un informe policial sobre un choque cumplen un propósito diferente al de presentar una reclamación legal. Guarde cada número de referencia con su propia descripción. Si está esperando una respuesta, menciónelo en la consulta para que se puedan revisar los plazos mientras se recopilan los hechos."
+        ],
+        "link": {
+          "label": "Orientación de California Courts sobre reclamaciones gubernamentales",
+          "href": "https://selfhelp.courts.ca.gov/civil-lawsuit/government-claim"
+        }
+      },
+      {
+        "id": "fatal-collision",
+        "label": "Después de un choque fatal",
+        "title": "Organice los primeros registros después de un choque fatal en Los Ángeles",
+        "paragraphs": [
+          "Los miembros de la familia pueden recibir información de diferentes agencias, hospitales o testigos. Coloque el nombre de la agencia y el número de referencia junto a cada documento. Si solo tiene una descripción preliminar, etiquétela como tal. Guarde la correspondencia original y registre quién la recibió. Esto puede ayudar en la primera consulta a identificar qué registros aún se necesitan y quién puede solicitarlos.",
+          "Una conversación sobre una reclamación por muerte injusta puede abarcar quién puede presentarla, lo que se sabe sobre el choque y cómo la persona brindaba apoyo a otros. Lleve la información que ya tiene. Si un familiar se encargaba de las tareas regulares de cuidado infantil, transporte o responsabilidades del hogar, describa tanto las tareas como cualquier apoyo financiero. Esos detalles pueden recopilarse con el tiempo mientras la investigación aborda las circunstancias del choque."
+        ],
+        "link": {
+          "label": "Guía de práctica sobre muerte injusta",
+          "href": "/practice-areas/wrongful-death"
+        }
+      },
+      {
+        "id": "local-questions",
+        "label": "Preguntas antes de llamar",
+        "title": "Preguntas comunes sobre presentar un caso de lesión en Los Ángeles a Howard",
+        "paragraphs": [
+          "¿Puedo llamar si no estoy seguro de si la LAPD o la CHP investigaron? Sí. Lleve la fecha, la ruta, la dirección y cualquier tarjeta de agencia que haya recibido. Una ubicación guardada o un recibo de grúa pueden reducir la búsqueda. Explique qué dirección describe el impacto y cuál describe una parada posterior.",
+          "¿Qué pasa si mi lesión ocurrió dentro de un garaje con una dirección en Los Ángeles? Indique el nivel, la salida y el letrero cercano, y diga a Howard si la propiedad proporcionó una referencia del incidente. Una descripción precisa puede ayudar a identificar con qué operador o departamento de registros comunicarse.",
+          "¿Qué pasa si vivo en otro lugar y recibí tratamiento después de salir de Los Ángeles? Lleve la primera evaluación y los registros posteriores en orden cronológico. Anote cuándo viajó y qué profesional médico le indicó primero restricciones laborales o de actividad. Puede comenzar la consulta antes de que todos los proveedores hayan enviado sus registros."
+        ],
+        "kind": "faq"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Departamento de Policía de Los Ángeles",
+        "href": "https://www.lapdonline.org/"
+      },
+      {
+        "label": "Solicitudes de informes de accidentes del CHP",
+        "href": "https://www.chp.ca.gov/traffic/request-a-crash-report/"
+      }
+    ]
+  }
+}

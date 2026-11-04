@@ -1,0 +1,105 @@
+import { Bike, Building2, ClipboardList, GraduationCap, HeartPulse, Route, Truck } from "lucide-react";
+
+export const cypressReading = [
+  {
+    id: "valley-view-approach",
+    label: "Valley View approaches",
+    title: "Trace the approach to a Valley View Street collision",
+    Icon: Route,
+    paragraphs: [
+      "If a crash happened along Valley View Street, begin with where the vehicles were before contact. A driver leaving a driveway can cross a sidewalk before reaching the first travel lane. A driver already on the road may be moving toward a turn pocket. Mark the lane, the side of the street and the direction each person was traveling. A note that only says ‘near Cypress College’ may leave several possible entrances.",
+      "A useful sketch separates three locations: where you first saw the other vehicle, where you believe the impact occurred and where everyone stopped. If you only know one of those points, mark it and leave the others open. The address recorded for an officer’s arrival can refer to a place where it was safe to pull over. It can still help locate the incident without identifying the point of contact by itself.",
+      "If a parked vehicle or line of traffic affected the view, describe how much of the next lane you could see. A photo taken later can show the shape of the driveway or placement of a permanent sign. Record the time it was taken so it can be distinguished from evidence of the original traffic or lighting conditions. Do not stand in a travel lane to recreate a viewpoint.",
+      "For a disputed turn, save the earliest account you gave and any original video. If you remember the vehicle beginning to move but cannot tell which signal it was following, describe the movement you actually observed. Howard can review what a report or clip shows and identify which part of the sequence needs more evidence.",
+    ],
+  },
+  {
+    id: "cypress-college-records",
+    label: "Cypress College incidents",
+    title: "Identify the lot, campus office and incident number",
+    Icon: GraduationCap,
+    paragraphs: [
+      "Cypress College’s campus map shows multiple lots and approaches from Valley View Street and nearby roads. After a parking lot collision or an injury on foot, use the map to mark the lot number or nearest building. Include the row, exit, stair or curb ramp if you can identify it. A campus parking receipt can help establish when you arrived, while a photo of the lot sign can help locate where you were.",
+      "If Campus Safety took your information, save that reference and any instructions you received. The college describes a role for Campus Safety in initial investigations and says Cypress Police may be contacted when needed. If both offices were involved, record which office gave you each number. When following up, explain whether you are seeking the campus incident record or a police collision report.",
+      "A witness leaving a class may remember the time by the start or end of instruction. Ask how they know the time and where they were standing. If a parking aisle camera could cover the location, identify the camera’s apparent direction and the nearest fixed landmark. A camera may show a vehicle entering a lot without capturing the individual aisle where it later moved.",
+      "If the injury affected a lab, clinical placement or job on campus, save the schedule and the dated notice of any change. Explain which activity you could still do and what physical requirement kept you from the other one. A missed class, a rescheduled placement and a lost paid shift each need their own record. Bring the provider’s restriction if one was given.",
+      "When the place itself contributed to a fall, keep a photograph of the overall route as well as the surface. Mark whether you had already crossed into the lot or were still on the sidewalk approach. Bring the incident response and the location details to the consultation if you are unsure which organization controlled the area.",
+    ],
+  },
+  {
+    id: "katella-service-entrances",
+    label: "Katella deliveries and work vehicles",
+    title: "Document a delivery vehicle’s movement near a Katella Avenue entrance",
+    Icon: Truck,
+    paragraphs: [
+      "On a trip past a business entrance near Katella Avenue, the question may be whether a delivery vehicle was turning into the property, leaving it or backing toward a service area. Write down where the driver appeared to be headed and what part of the vehicle first came into view. For a large vehicle, record whether the cab and the back of the trailer were moving in different directions during the turn.",
+      "Keep any plate, unit number and business markings you safely recorded. A truck’s markings can help identify the vehicle, but a rental, contractor or separate operator may be involved. A receiving business may have a delivery appointment even when it has no information about the driver’s employer. Howard can review the available identifiers to decide which records would help distinguish the parties.",
+      "A person working at a dock, a customer at a driveway and a driver waiting in traffic may each have seen different portions of the maneuver. Keep their accounts separate. Note if a spotter was visible and what they appeared to signal. If a witness remembers hearing a reversing alarm, ask whether they could also see which vehicle was moving.",
+      "If the collision happened during your own work route, keep a separate note of the work assignment and the point in the trip where you were hurt. Save the shift record, dispatch message or delivery stop if it helps explain why you were there. Ask about any workplace reporting already completed and bring the corresponding reference so it can be distinguished from the collision paperwork.",
+    ],
+  },
+  {
+    id: "lincoln-crossing",
+    label: "Walking and cycling on Lincoln",
+    title: "Show how the crossing on Lincoln Avenue was approached",
+    Icon: Bike,
+    paragraphs: [
+      "For a pedestrian or bicycle collision near Lincoln Avenue, describe the route in terms of the corner and direction of travel. A collision at the mouth of a business driveway can involve a different movement from one at a marked intersection. Record whether the turning vehicle came from behind you, toward you or from an adjacent street. If a cyclist had dismounted, note that in the timeline.",
+      "If there was a signal or countdown, keep the part of the sequence you actually saw separate from what you assumed from other traffic. A person waiting at one end of a crossing may be able to see a pedestrian indication but have no view of the driver’s signal. Write down each witness’s position before deciding whether two accounts genuinely conflict.",
+      "Save the original condition of a bicycle, helmet or bag involved in the collision where practical. A photo can document visible damage before repair. If there is a ride record, keep the original export or screenshot and note that the path may be approximate. Combine it with a map sketch and firsthand observations to help identify where the approach began and where contact occurred.",
+      "If a car blocked the sightline or an object obstructed the approach, document the feature without stepping into traffic. Identify whether it was permanent or temporary and whether your photograph shows the same day. The goal of the evidence is to explain what people could see at the time, including what may have been hidden from view.",
+    ],
+  },
+  {
+    id: "public-private-walkway",
+    label: "Sidewalks and property boundaries",
+    title: "Identify where a Cypress sidewalk becomes a private entrance",
+    Icon: Building2,
+    paragraphs: [
+      "A fall on the way from a Cypress commercial street to a shop or appointment can occur at a seam between surfaces. Start with the path you actually used. For example, mark whether you were on the sidewalk parallel to the road, turning across a driveway apron or approaching the door from a private parking stall. Two people describing the same business can be referring to different sides of its property.",
+      "Where the condition was uneven pavement, a wide photograph can show the joint in relation to the entrance or nearest fixed sign. A closer photo can show the difference between the surfaces. If it is safe to do so, capture both views from the area where you were walking. If someone else takes the photos, keep their date and ask them to identify the position. A picture taken from the street may show a different line of sight from one taken while approaching the door.",
+      "For water or another temporary condition, write down when you first noticed it, where it was and whether you observed anything that might explain its presence. Describe a warning cone, mat or cleanup effort only as you saw it. If someone mentioned a recurring problem, record who said it and when. That gives Howard a lead without mixing another person’s statement into your own account.",
+      "If a property employee recorded the incident, save the reference and any information about who manages the common area. A tenant may handle its doorway while a separate operator oversees the parking lot. An address and a report may help identify the property, while contracts or maintenance records may help establish who controlled the specific surface. Bring both descriptions if the business and another party give conflicting information.",
+      "If the location may belong to a public entity, tell Howard early and bring the nearest cross street, a map pin and any response you already received. A repair request can help trace who handled a concern, but a separate claims process may apply. The consultation can focus on identifying the correct party before time is spent pursuing records from the wrong office.",
+    ],
+  },
+  {
+    id: "neighborhood-visibility",
+    label: "Neighborhood visibility and turns",
+    title: "Rebuild the view at a Cypress neighborhood intersection",
+    Icon: Route,
+    paragraphs: [
+      "A trip from a residential street toward Orange Avenue or Ball Road may start at a driveway, pass a row of parked cars and end at a turn onto a wider road. If a collision happened along that path, locate the last point at which each driver or pedestrian could see approaching traffic. For someone crossing on foot, this might be when they stepped past the front of a parked vehicle. For a driver turning, it might be when the front of the car reached the edge of the nearest lane.",
+      "If the collision happened around school arrival or dismissal, keep the time and describe how traffic was moving. Someone waiting to pick up a child may remember where a line started, while a resident may have seen a car enter from a different direction. Ask witnesses what they could see from where they were standing. The exact corner and direction are more useful than an account that simply says traffic was busy.",
+      "Keep a sketch of permanent features, such as the curb line and driveway, and a separate note about anything temporary. A stopped van, waste container or yard crew may have changed the view on the day. A later visit can confirm the street geometry. It can take a dated image, witness account or recording to confirm where a temporary obstacle was positioned.",
+      "If a vehicle moved after the impact, identify the spot where you saw it stop and explain who moved it, if known. If the person you spoke with arrived after everyone had moved, make that clear. A photograph of the final positions can still be useful, provided the reviewer understands when it was taken. Preserve originals instead of drawing arrows directly on the only copy.",
+      "When a hit-and-run leaves limited identifying information, write down the details while they are fresh and label anything you are unsure of. The type of vehicle, direction of departure and visible damage may help narrow a search. If someone has a recording, note the original time window and camera location. An account from across the intersection may capture the departure even if the actual impact was obscured.",
+    ],
+  },
+  {
+    id: "recovery-work-records",
+    label: "Work and recovery records",
+    title: "Document the difference between attending a shift and doing the job",
+    Icon: HeartPulse,
+    paragraphs: [
+      "For someone who works in a Cypress warehouse, office or service business, returning to the workplace may involve a temporary assignment. Keep the description of your normal duties and note what changed. A person could answer calls but stop handling stock, or complete a shift while relying on a coworker for a part of the route. Dated examples help explain how an injury affected the work even if the pay period looks ordinary.",
+      "Bring the schedule that existed before the accident and the revisions that followed. If a shift was shortened, record the hours worked and the duties handed off. If you normally work overtime or occasionally swap shifts, include comparable records from before the injury so the difference can be understood in context. Separate hours you later made up from work you lost.",
+      "For a provider’s restriction, note when it started, when it was sent to your employer and whether it was later revised. Keep prior versions. A restriction on lifting may explain one assignment change while a separate restriction on driving explains a different change. A dated timeline can show how the limits affected the job as your recovery progressed.",
+      "Use the same approach for daily life. Record a particular activity, the date range it changed and whether someone helped. If an injury kept you from driving to appointments, save the trips you paid for and separately note rides arranged by a friend. If you were able to resume driving but still needed help carrying items, note when those abilities returned independently.",
+      "At your consultation, bring the specific change you most want to explain. Howard can review the provider’s note, schedule and pay record together, then identify what else would help. If you are still waiting on an employer record, include the request and say what it was meant to show. A clear gap in the timeline is more helpful than an estimate presented as a confirmed figure.",
+    ],
+  },
+  {
+    id: "cypress-records-followup",
+    label: "Records and first consultation",
+    title: "Bring the right Cypress records request and a short timeline",
+    Icon: ClipboardList,
+    paragraphs: [
+      "Check the responding agency on the incident card before submitting a records request. Cypress Police publishes an official records application and information about report release. If the incident began on campus, keep any Campus Safety paperwork separately. An initial campus contact and a later police response can produce different reference numbers for the same event.",
+      "Write down what you have already requested and what you received. If a report is pending, bring the confirmation and the incident number. If the report is available but leaves out a photograph or witness, keep a copy of the report and the missing item separately. A lawyer can compare them without losing the context in which each record was created.",
+      "If different paperwork names Cypress and a neighboring city, first check whether the documents describe the same point in the trip. A tow record can name the location where the vehicle was collected, while a medical intake can use the landmark the patient remembered. Write the incident location, response location and tow destination on separate lines. Bring a map pin or sketch if the street crosses a jurisdiction boundary.",
+      "If an agency says it has no report, keep the response and check the number, date and spelling used in the request. If the officer’s card lists a different agency, start the follow-up there. If the number came from a call or dispatch rather than a completed report, ask what the number identifies. This can help distinguish an unavailable record from a request sent to the wrong office.",
+      "For your first discussion with Howard, bring a short list of the decisions that are time sensitive. A vehicle might be awaiting transfer, a business may only hold video for a limited period, or you may have received a response identifying a different records custodian. Bring the actual message if you have it. You can arrange a free consultation through the firm’s Buena Park office.",
+    ],
+  },
+] as const;

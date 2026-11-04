@@ -1,3 +1,6 @@
+import { getLocationExperience } from "@/data/locationExperiences";
+import { hasLocalizedLocation } from "@/data/locationLocaleAvailability";
+import { additionalLocations } from "@/data/additionalLocations";
 import { practiceGroups } from "@/data/practiceGroups";
 import { useState } from "react";
 import { ArrowRight, ExternalLink, MapPin } from "lucide-react";
@@ -109,7 +112,17 @@ export function LocationHubDirectory({ locale }: { locale: SiteLocale }) {
   const ko = locale === "ko";
   const es = locale === "es";
   return (
-    <div className="grid gap-6 md:grid-cols-2 md:gap-7" aria-label={ko ? "서비스 지역 10곳" : es ? "Diez comunidades atendidas" : "Ten communities served from our Buena Park office"}>
+    <div className="grid gap-6 md:grid-cols-2 md:gap-7" aria-label={ko ? "서비스 지역" : es ? "Comunidades atendidas" : "Communities served from our Buena Park office"}>
+      {additionalLocations.filter(city => hasLocalizedLocation(locale, city.slug)).map(original => {
+        const city = getLocationExperience(original.slug, locale) ?? original;
+        return (
+        <article key={city.slug} className="border border-[#1E1C1A]/15 bg-[#F9F7F3] p-6">
+          <span className="text-xs">{city.county}</span>
+          <h3 className="editorial-serif mt-5 text-3xl"><a href={prefix + "/locations/" + city.slug}>{city.name}</a></h3>
+          <p className="my-5 text-sm leading-7">{city.lead}</p>
+          <a href={prefix + "/locations/" + city.slug} className="underline underline-offset-4">{ko ? `${city.name} 상해 사건 안내 보기` : es ? `Explore la guía de lesiones de ${city.name}` : `Explore the ${city.name} injury guide`} →</a>
+        </article>
+      );})}
       {serviceLocations.map((location, index) => {
         const name = ko ? location.koName : location.name;
         const href = `${prefix}/locations/${location.slug}`;

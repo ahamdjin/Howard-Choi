@@ -1,0 +1,372 @@
+{
+  "sourceHash": "a77fbce9f60c716e545923e15c233c9e2bf379249e9226f3a3edb0531ef79da6",
+  "reviewStatus": "reviewed-for-source-parity",
+  "content": {
+    "slug": "buena-park",
+    "heading": "Oficina de Buena Park y recursos locales sobre accidentes",
+    "seoTitle": "Oficina de Buena Park y recursos sobre accidentes | Howard Choi",
+    "seoDescription": "¿Lesionado cerca de Beach Boulevard, SR-91 o I-5? Consulte cómo solicitar informes de colisión en Buena Park, preguntas sobre pruebas, datos de seguridad de OTS y plazos de reclamaciones en California.",
+    "lead": "Visite la oficina de Howard Choi en Beach Boulevard o llame para hablar sobre una lesión en Buena Park. Traiga sus preguntas sobre el accidente, la recuperación o los cambios en el trabajo. Consulta gratuita. Sin honorarios a menos que se obtenga una compensación.",
+    "name": "Buena Park",
+    "county": "Orange County",
+    "feature": {
+      "sectionId": "shift-records",
+      "image": "consultation",
+      "eyebrow": "El impacto en el trabajo y el hogar",
+      "alt": "Personas revisando documentos durante una reunión"
+    },
+    "heroCaption": "Ayuntamiento de Buena Park · punto de referencia local",
+    "sections": [
+      {
+        "id": "local",
+        "title": "Traiga sus preguntas a la oficina de Buena Park.",
+        "paragraphs": [
+          "La oficina de Howard Choi está en 6301 Beach Boulevard, Suite 216. Puede llamar para concertar una consulta sobre un accidente, un cambio en su capacidad de trabajar o una pregunta pendiente sobre un informe. Si llegar a la oficina resulta difícil durante la recuperación, explíquelo al programar la cita para hablar de las opciones disponibles.",
+          "La cercanía puede facilitar una conversación. Comprender el caso sigue comenzando por sus circunstancias: dónde ocurrió el accidente, qué experimentó y qué cambió después. Una colisión fuera de un negocio de Beach Boulevard puede requerir una investigación muy distinta de una caída en su paso peatonal. Howard puede revisar lo que ya sabe y ayudar a identificar el próximo paso útil."
+        ]
+      },
+      {
+        "id": "overview",
+        "title": "Si ocurrió un accidente en Buena Park o sus alrededores.",
+        "label": "Panorama local",
+        "paragraphs": [
+          "Beach Boulevard conecta negocios, grandes intersecciones y destinos de visitantes en Buena Park, mientras I-5 y SR-91 llevan tráfico de autopista separado por la zona. Tras un accidente, la primera cuestión práctica es la ubicación precisa: una colisión en una intersección urbana con semáforo, otra en la autopista y una lesión dentro de una propiedad comercial pueden involucrar investigadores y registros distintos. El bufete está en Beach Boulevard, pero su dirección no demuestra que un accidente o caso concreto corresponda a la policía municipal o a un tribunal determinado."
+        ]
+      },
+      {
+        "id": "cases",
+        "title": "Empiece por el accidente y cómo le afectó",
+        "label": "Casos que atendemos",
+        "paragraphs": [
+          "Una colisión en Beach Boulevard, un cruce en una zona de visitantes y una caída en un centro comercial plantean preguntas distintas. Las siguientes secciones explican cómo la ubicación, el movimiento y las condiciones pueden orientar la revisión de una lesión en Buena Park."
+        ]
+      },
+      {
+        "id": "beach-boulevard",
+        "title": "Accidentes de automóvil en Beach Boulevard y las calles de Buena Park",
+        "label": "Accidentes de automóvil",
+        "paragraphs": [
+          "Tras una colisión en la entrada de un negocio de Beach Boulevard, identifique si cada vehículo giraba para entrar a la propiedad, salía de ella o continuaba por la calle. Dibuje la entrada vehicular, el semáforo más cercano y el carril donde ocurrió el contacto. Si después los automóviles entraron al estacionamiento, marque ese lugar por separado. La dirección de una tienda puede identificar dónde se detuvo sin mostrar dónde comenzó el choque.",
+          "Un peatón que viene del estacionamiento y un conductor que se acerca por Beach Boulevard pueden tener perspectivas distintas del mismo giro. Identifique dónde un automóvil estacionado o una fila bloqueaban cada vista. Una cámara sobre una puerta puede grabar a alguien saliendo de la tienda sin captar la calle. Conserve la grabación original si la tiene y anote la ubicación y orientación de otras cámaras que haya observado.",
+          "Para un choque cerca de una rampa de I-5 o SR-91, registre la dirección de la autopista, la rampa o intersección y la agencia de la tarjeta del informe. Una dirección de Buena Park no determina qué departamento investigó. La Policía de Buena Park ha documentado investigaciones de calles de la ciudad realizadas por la CHP, así que compruebe la referencia real antes de solicitar el informe."
+        ],
+        "link": {
+          "label": "Guía sobre accidentes de automóvil",
+          "href": "/practice-areas/car-accidents"
+        },
+        "practice": "car-accidents"
+      },
+      {
+        "id": "pedestrian-accidents",
+        "label": "Lesiones a peatones",
+        "title": "Lesiones peatonales en cruces y entradas vehiculares de Buena Park",
+        "practice": "pedestrian-accidents",
+        "paragraphs": [
+          "Al caminar por Beach Boulevard puede pasar varias entradas vehiculares antes de llegar al siguiente cruce. Si un vehículo que giraba lo golpeó, su recorrido y el punto donde lo cruzó el automóvil ayudan a explicar lo ocurrido. Quizá recuerde mejor el negocio al que se dirigía que la entrada en sí. Un recibo, una fotografía o la dirección en que caminaba pueden ayudar a precisar esa ubicación durante la consulta.",
+          "El efecto en su rutina también importa. Alguien que suele ir caminando a su turno puede necesitar transporte, ayuda para cargar sus pertenencias o una ruta distinta durante la recuperación. Describa esos cambios al profesional que le atiende y conserve las restricciones por escrito. Howard puede revisar juntos las pruebas del cruce y el impacto práctico sin suponer que una fotografía de la carretera cuenta toda la historia de la lesión."
+        ],
+        "link": {
+          "label": "Guía sobre lesiones a peatones",
+          "href": "/practice-areas/pedestrian-accidents"
+        }
+      },
+      {
+        "id": "visitor-route",
+        "title": "Precise el recorrido entre el hotel, la atracción y la calle",
+        "label": "Recorridos de visitantes",
+        "paragraphs": [
+          "Si se lesionó cerca de un hotel o atracción de Beach Boulevard, el nombre del destino es solo el principio. Empiece por la entrada que utilizó y trace el recorrido hasta donde cayó o fue golpeado. Quien sale de un estacionamiento puede cruzar un acceso privado antes de llegar a una acera pública. A quien espera transporte pueden dirigirlo del vestíbulo a una zona de recogida separada. Describa dónde ocurrió el cambio y qué podía ver desde allí.",
+          "Si el accidente involucró un transporte de enlace o vehículo de una aplicación, guarde la reserva y las instrucciones sobre dónde esperar. Anote la identificación del vehículo, la puerta a la que se acercaba y si ya estaba dentro cuando se movió. Un recibo puede ayudar a establecer cuándo estuvo allí. Un mensaje que cambia el punto de recogida puede explicar por qué cruzó un carril o fue a otra entrada.",
+          "Para una lesión en un paso peatonal, registre si el peligro estaba en un bordillo, una rampa, una puerta o dentro de la propiedad. Si puede hacerlo con seguridad, incluya una fotografía amplia que muestre un letrero u otro elemento fijo. Un primer plano puede mostrar un defecto sin facilitar su ubicación. Si las condiciones cambiaron después, feche las fotos posteriores y explique las diferencias.",
+          "Guarde los nombres del personal o seguridad con quienes habló y las referencias separadas que le dieron. La atracción, el hotel y el operador del transporte de enlace pueden conservar registros distintos. Howard puede utilizar el recorrido, la hora y los documentos disponibles para determinar qué consultas son relevantes para su situación."
+        ],
+        "links": [
+          {
+            "label": "Guía de accidentes en viajes por aplicación",
+            "href": "/practice-areas/rideshare-accidents"
+          },
+          {
+            "label": "Guía de resbalones y caídas",
+            "href": "/practice-areas/slip-and-fall"
+          }
+        ]
+      },
+      {
+        "id": "rideshare-accidents",
+        "label": "Accidentes con Uber y Lyft",
+        "title": "Accidentes con Uber y Lyft cerca de hoteles y atracciones de Buena Park",
+        "practice": "rideshare-accidents",
+        "paragraphs": [
+          "Una lesión relacionada con un viaje reservado puede ocurrir durante el trayecto, al subir o al caminar hacia un punto de recogida cambiado. Diga a Howard cuál de esas situaciones corresponde a su caso. Si el conductor lo dirigió desde el vestíbulo del hotel a otra entrada, los mensajes pueden explicar por qué estaba en esa parte de la propiedad. No necesita determinar el papel de cada operador antes de solicitar una revisión del caso.",
+          "Guarde juntos la confirmación del viaje y la conversación sobre la recogida. Si un familiar reservó el viaje, pídale que conserve el registro en su cuenta. Describa lo que vio personalmente y lo que supo por otra persona. Esa distinción permite seguir la secuencia real e identificar qué registros pueden aclarar el movimiento del conductor o un relato contradictorio."
+        ],
+        "link": {
+          "label": "Guía sobre accidentes con uber y lyft",
+          "href": "/practice-areas/rideshare-accidents"
+        }
+      },
+      {
+        "id": "freeway-approach",
+        "title": "Accidentes de camiones cerca de accesos a autopistas de Buena Park",
+        "label": "Accidentes de camiones",
+        "paragraphs": [
+          "Un conductor que sale de I-5 o SR-91 puede describir un choque por el primer negocio de Buena Park al que llegó después. Registre la dirección de la autopista, el último letrero de salida y dónde sintió el primer contacto. Si entró a un estacionamiento o calle lateral, márquelo como una parada posterior. Una factura de grúa puede ubicar el punto de recogida, mientras una foto de un pasajero o un diagrama del informe pueden ayudar a localizar el impacto.",
+          "Si el tráfico disminuía la velocidad hacia una salida, describa el orden de los hechos antes de intentar atribuir responsabilidad. Anote si vio formarse la fila, sintió más de un impacto o cambió de carril antes de detenerse. Si está disponible, conserve la grabación larga de la cámara del vehículo y no solo los segundos finales. Howard puede compararla con los relatos de quienes vieron distintas partes de la reducción de velocidad.",
+          "Si participó un vehículo comercial, conserve por separado los identificadores del tractocamión y el remolque cuando los tenga. Anote si seguía por la vía, entraba en una rampa o giraba hacia una entrega. El logotipo, la placa y el destino pueden conducir a registros distintos. Traiga lo que tenga y marque la información recibida de otra persona para poder verificarla."
+        ],
+        "link": {
+          "label": "Guía sobre accidentes de camiones",
+          "href": "/practice-areas/truck-accidents"
+        },
+        "practice": "truck-accidents"
+      },
+      {
+        "id": "disputed-turn",
+        "title": "Cómo puede presentarse un giro en disputa cerca de un negocio de Buena Park",
+        "label": "Giros en disputa",
+        "paragraphs": [
+          "Imagine un automóvil que sale de un estacionamiento de Beach Boulevard mientras otro conductor se dirige hacia la entrada. Ambos dicen que el otro giró primero. Un cliente junto a la puerta ve el contacto y alguien que espera en la acera solo ve al primer automóvil cruzar el paso peatonal. Un primer paso útil es representar qué podía ver cada persona. El cliente puede ayudar a ubicar el contacto aunque no haya visto qué giro empezó primero.",
+          "Marque la entrada vehicular y los carriles cercanos en un croquis. Separe el punto de contacto del lugar donde se estacionaron los automóviles después. Si un testigo dice que un vehículo venía del norte, pregunte hacia dónde miraba y si lo vio antes o después de cruzar la entrada. Conserve las grabaciones con el tiempo previo al contacto para evaluar el movimiento en contexto.",
+          "Si el diagrama policial muestra la entrada, pero no la camioneta de reparto que recuerda obstruyendo la vista, guarde el informe y su nota separada. Una fotografía posterior puede ilustrar el espacio sin mostrar la obstrucción de entonces. Indique cuándo se tomó. Howard puede explicar qué establecen los materiales y si otro testigo, grabación o registro del vehículo podría resolver una diferencia concreta.",
+          "Estas preguntas importan incluso cuando el choque parece leve desde lejos. Los daños ayudan a explicar cómo se tocaron los automóviles, mientras los registros médicos explican lo que le ocurrió a usted. Traiga ambas categorías a la oficina y manténgalas diferenciadas para considerar la evaluación de la lesión junto con la investigación."
+        ]
+      },
+      {
+        "id": "shift-records",
+        "title": "Muestre qué partes de su turno en Buena Park pudo realizar después de lesionarse",
+        "label": "Trabajo y recuperación",
+        "paragraphs": [
+          "Un trabajador cerca del corredor de visitantes puede atender el mostrador, reponer suministros y ayudar a cerrar el negocio en el mismo turno. Si volvió al mostrador, pero dejó de levantar objetos o cerrar, anote qué tareas cambiaron y en qué fechas. La fecha de regreso puede omitir esos detalles. Guarde la asignación habitual junto con las instrucciones escritas que limitan permanecer de pie, cargar o conducir.",
+          "Compare los horarios anteriores y posteriores al accidente. Si el negocio suele cambiar horas por fines de semana o eventos, traiga varias semanas representativas. Distinga un turno cancelado de uno intercambiado o trabajado después. Conserve mensajes que muestren que alguien asumió una tarea. La nómina puede mostrar el cambio de ingresos y los horarios y mensajes explicar por qué ocurrió.",
+          "Si recibió atención en más de un lugar, ordene las visitas y restricciones por fecha. Anote quién recomendó primero un cambio y cuándo lo recibió el empleador. Una nota posterior puede modificar una restricción anterior. Conserve ambas, no solo la última. Howard puede usar la cronología para revisar si los registros respaldan una pérdida temporal, una limitación continua o una cuestión que necesita más información.",
+          "Describa los cambios en casa con el mismo cuidado. Si alguien le ayudó con las compras o lo llevó a citas, anote cuándo comenzó y cuándo pudo retomar la tarea. Separe los gastos reales de la ayuda no remunerada. Los ejemplos fechados pueden explicar el impacto cotidiano sin suponer que cada cambio recibirá el mismo tratamiento en una reclamación."
+        ],
+        "link": {
+          "label": "Guía para documentar pérdidas por lesiones",
+          "href": "/blogs/how-much-is-my-personal-injury-case-worth-california"
+        }
+      },
+      {
+        "id": "property-records",
+        "title": "Lesiones por resbalones y caídas en negocios de Buena Park",
+        "label": "Lesiones por resbalones y caídas",
+        "paragraphs": [
+          "Una visita a un restaurante, centro comercial o atracción de Buena Park puede llevarlo por varios espacios gestionados por separado. Puede estacionar en un lote compartido, cruzar un paso mantenido por el centro y entrar en una tienda que se ocupa de su propia puerta. Si cae entre dos locales, el nombre del letrero más cercano sirve como referencia. La primera cuestión es en qué zona estaba cuando perdió el equilibrio.",
+          "Describa su recorrido desde un punto fijo. Por ejemplo, caminó desde el pasillo del estacionamiento hacia la entrada de la esquina y cayó junto a la rampa de la acera antes de llegar a la puerta. Una foto amplia puede mostrar el recorrido y otra cercana la superficie. Guarde los originales y anote cuándo se tomaron. Si vuelve después y ve una alfombra, señal de advertencia o reparación que no recuerda, márquela como observación posterior. Pida a los testigos que describan lo que vieron personalmente antes o inmediatamente después de la caída.",
+          "Si el personal tomó un informe, registre el nombre del negocio, la hora aproximada de la conversación y el número de referencia. Guarde recibos, confirmaciones de pedidos móviles o registros de estacionamiento que ayuden a precisar el período. Un informe puede identificar a quien respondió, mientras un horario de limpieza, solicitud de reparación o queja previa pueden explicar cómo se desarrolló el peligro. Distintos negocios pueden conservar esos registros. Traiga la correspondencia de cada uno para que Howard evalúe a quién contactar y qué información solicitar.",
+          "Donde un estacionamiento se une a una acera, use una fotografía o marcador de mapa para mostrar el límite con la mayor precisión posible. Si el problema era la poca visibilidad, explique la hora, qué luces estaban encendidas y hacia dónde miraba al acercarse. Para un derrame repentino, anote si vio un recipiente volcado o si alguien se lo contó después. Esa distinción separa las observaciones directas de las pistas que todavía necesitan corroboración.",
+          "Si es posible, conserve los zapatos u otros objetos involucrados tal como quedaron después. Puede documentarlos sin recrear la caída. Una primera consulta práctica puede centrarse en qué detalles ubican el incidente, qué registros podrían explicar el peligro y cómo encaja la cronología del tratamiento con el relato."
+        ],
+        "link": {
+          "label": "Explore los casos de resbalones y caídas",
+          "href": "/practice-areas/slip-and-fall"
+        },
+        "practice": "slip-and-fall"
+      },
+      {
+        "id": "family-records",
+        "title": "Qué organizar cuando la persona lesionada no puede hacer las primeras llamadas",
+        "label": "Ayudar a un familiar lesionado",
+        "paragraphs": [
+          "Tras un choque grave en Buena Park, un familiar puede estar en el hospital mientras otro busca el vehículo o identifica la agencia que respondió. Inicien una lista compartida con la hora y el lugar tal como los entienden, los nombres de las personas con quienes hablaron y los números de referencia recibidos. Marquen con una interrogación lo incierto. Si supieron la ubicación por alguien que llegó después, anoten quién la proporcionó para distinguirla de la ubicación oficial del incidente.",
+          "Mantengan separados los datos de transporte, hospital y vehículo. El centro donde alguien recibe atención puede ser distinto del primero que lo evaluó. El vehículo puede ser trasladado después del remolque inicial. Para cada traslado, anoten la fecha y quién lo confirmó. Si está en un depósito, averigüen dónde y pregunten qué plazos o cargos se aplican antes de decidir sobre el almacenamiento. Traigan esos detalles a la consulta si el acceso o la conservación son urgentes.",
+          "Guarden los mensajes de testigos, negocios o agencias en la forma en que los recibieron. Si alguien ofrece un video, pidan el original y anoten si se sabe que la hora de la cámara es correcta. Si un negocio dice que solo puede hablar con una persona autorizada, registren el nombre y la fecha de la conversación. Howard puede revisar quién podría solicitar el material y qué información necesitará quien lo conserva para identificarlo.",
+          "Para un familiar en recuperación, mantengan una lista sencilla de lo que puede y no puede hacer por sí mismo. Si un profesional dio instrucciones de movilidad o seguimiento, conserven una copia con las fechas de citas y ejemplos de ayuda realmente prestada. También pueden registrar quién ha pagado transporte u otras necesidades inmediatas. Esto aporta información concreta para que Howard la revise aunque todavía no se conozca todo el proceso de recuperación.",
+          "Si la lesión fue mortal, la primera consulta puede centrarse en las personas involucradas, los registros disponibles y las decisiones que no pueden esperar. Traigan la correspondencia existente y expliquen quién ha gestionado los trámites o recibido llamadas. Si hay relatos contradictorios, guárdenlos separados con la fuente y fecha de cada uno. Pueden preguntar a Howard qué registros ayudarían a resolver esas diferencias y qué información necesita para hablar de las opciones de la familia."
+        ]
+      },
+      {
+        "id": "office-visit",
+        "title": "Traiga la pregunta que necesita resolver a la oficina de Beach Boulevard",
+        "label": "Visita a la oficina",
+        "paragraphs": [
+          "La oficina de Howard Choi está en 6301 Beach Blvd, Suite 216, Buena Park, CA 90621. Llame para programar una consulta gratuita antes de acudir. Si trae un informe, incluya la agencia y el número del incidente. Para una caída en un negocio, traiga el recorrido exacto hasta la superficie y cualquier referencia del personal. Si espera un registro, traiga la confirmación de solicitud y explique qué falta.",
+          "Organice la primera visita médica y las citas posteriores por fecha. Traiga las restricciones actuales y ejemplos de cómo afectaron al trabajo o las actividades diarias. Por ejemplo, alguien puede haber retomado un turno delegando las tareas de levantar objetos, o vuelto al trabajo mientras todavía necesita transporte para las citas. Un horario fechado y las instrucciones médicas ayudan a explicar qué cambió.",
+          "Empiece por la decisión que enfrenta. Quizá necesita identificar una agencia, comprender un giro en disputa o determinar qué documentos respaldan un cambio de ingresos. Howard puede revisar lo que establecen los registros actuales y qué preguntas necesitan seguimiento. Sin honorarios a menos que se obtenga una compensación.",
+          "Puede ser útil traer una cronología de una página si el mismo viaje produjo varios registros. Una colisión cerca de un acceso a autopista puede aparecer con una ubicación en los documentos de la grúa y otra en las notas de su cita porque describió un punto de referencia cercano. Añada la dirección en que viajaba, dónde se detuvieron los vehículos y dónde lo encontró el agente. Separar esos puntos ayuda a quien lee el expediente a entender las distintas descripciones.",
+          "Si está evaluando si una visita presencial es viable, llame antes para hablar de las opciones. Avise si llegar resulta difícil porque no puede conducir o depende de otra persona. Al programar la cita, mencione problemas inmediatos con los registros, como un vehículo que será trasladado o imágenes que un negocio aceptó conservar por poco tiempo. Traiga la respuesta o aviso del negocio para que Howard vea lo que dice y decida qué revisar primero."
+        ],
+        "links": [
+          {
+            "label": "Cómo llegar a la oficina de Buena Park",
+            "href": "https://www.google.com/maps/place/Buena+Park+Injury+Lawyer/@33.868851,-118.0013508,17z/data=!3m1!4b1!4m6!3m5!1s0x80dd2ba112d784eb:0xddb1dce440eff6fb!8m2!3d33.868851!4d-117.9987705!16s%2Fg%2F11nvy6qqf7"
+          },
+          {
+            "label": "Programe una consulta gratuita",
+            "href": "/contact"
+          }
+        ]
+      },
+      {
+        "id": "data",
+        "title": "Las lesiones por colisiones en Buena Park, en contexto.",
+        "label": "Datos locales de colisiones",
+        "paragraphs": [
+          "La Oficina de Seguridad del Tráfico de California informó de 227 personas muertas o lesionadas en colisiones de tráfico en Buena Park en 2023. El mismo conjunto de datos registró 13 víctimas en motocicleta, 11 peatones y 15 ciclistas. Estas cifras de toda la ciudad no predicen ningún caso individual; aportan contexto sobre la seguridad local."
+        ],
+        "stats": [
+          {
+            "value": 227,
+            "label": "Personas muertas o lesionadas"
+          },
+          {
+            "value": 27,
+            "label": "Colisiones con muertes o lesiones relacionadas con la velocidad"
+          },
+          {
+            "value": 10,
+            "label": "Colisiones con fuga y muertes o lesiones"
+          }
+        ],
+        "link": {
+          "label": "Ver los datos municipales de California OTS",
+          "href": "https://www.ots.ca.gov/rankings/buena-park-2023/"
+        }
+      },
+      {
+        "id": "records",
+        "title": "Recursos oficiales locales para un incidente en Buena Park.",
+        "label": "Registros y agencias locales",
+        "paragraphs": [
+          "Para un choque en una calle de Buena Park, conserve el número del incidente e identifique si realmente investigó la Policía de Buena Park. La política de registros del departamento limita la entrega de informes de colisión a partes autorizadas conforme a la sección 20012 del Código de Vehículos de California. Una colisión en I-5 o SR-91 puede tener, en cambio, un informe de la California Highway Patrol. La CHP ofrece un portal de informes y el formulario CHP 190; ninguna de las agencias puede proporcionar la investigación de la otra solo porque la dirección postal diga Buena Park."
+        ],
+        "links": [
+          {
+            "label": "Departamento de Policía de Buena Park",
+            "href": "https://www.bppd.com/"
+          },
+          {
+            "label": "Tribunal Superior del Condado de Orange",
+            "href": "https://www.occourts.org/"
+          },
+          {
+            "label": "Policía de Buena Park: política de entrega de informes de colisión",
+            "href": "https://public.powerdms.com/BUENAPPD/documents/333411"
+          },
+          {
+            "label": "CHP: solicitar un informe de colisión",
+            "href": "https://www.chp.ca.gov/traffic/request-a-crash-report/"
+          }
+        ]
+      },
+      {
+        "id": "evidence",
+        "title": "Registros útiles después de un accidente en Buena Park.",
+        "label": "Pruebas que conviene conservar",
+        "paragraphs": [
+          "Las intersecciones de Beach Boulevard, las entradas comerciales y el tráfico de visitantes cerca de la zona de ocio plantean distintas preguntas sobre las pruebas. Marque el carril exacto de aproximación, la dirección de circulación, la fase del semáforo y el punto de contacto; conserve las fotografías originales en lugar de capturas editadas. Para una colisión frente a un local o en un estacionamiento, identifique qué negocio controla las cámaras y solicite pronto la conservación de las imágenes. Para una lesión en una propiedad privada, identifique al operador responsable y fotografíe el peligro antes de que cambie."
+        ]
+      },
+      {
+        "id": "situations",
+        "title": "Dos incidentes de Buena Park que requieren registros distintos",
+        "label": "Ejemplos locales de pruebas",
+        "paragraphs": [],
+        "items": [
+          {
+            "title": "Una colisión en Beach Boulevard en una intersección urbana",
+            "text": "Documente el semáforo, el cruce peatonal, el carril de aproximación, la calle exacta y el nombre del investigador. Pregunte a la Policía de Buena Park si tiene el informe y consulte sus requisitos de acceso. Para una cámara de un negocio cercano, registre su ubicación y pregunte al operador por la conservación de las imágenes; la entrega no está garantizada. Distinga el deber de informar al DMV del informe policial."
+          },
+          {
+            "title": "Un choque descrito únicamente como cercano a SR-91 o I-5",
+            "text": "Primero aclare si el impacto ocurrió en la autopista o en el acceso a una rampa desde una calle. Puede haber investigado la CHP en lugar de la policía municipal. Guarde la dirección de la autopista, la salida más cercana y el número de caso antes de elegir un portal para solicitar el informe; una dirección postal de Buena Park no basta para determinar la jurisdicción."
+          }
+        ]
+      },
+      {
+        "id": "deadlines",
+        "title": "¿Qué plazos legales pueden aplicarse en Buena Park?",
+        "label": "Plazos de California",
+        "paragraphs": [
+          "Una lesión en Buena Park no significa automáticamente que la ciudad sea responsable ni que el caso corresponda a un tribunal concreto. California Courts indica generalmente un plazo de dos años para presentar demandas por lesiones personales, con excepciones. Una posible reclamación contra una entidad pública puede requerir una reclamación administrativa mucho antes, a menudo en seis meses para lesiones; identifique al demandado correcto antes de depender de un plazo general. El lugar de presentación depende de las partes, el incidente y las reglas aplicables."
+        ],
+        "link": {
+          "label": "California Courts · Plazos de prescripción",
+          "href": "https://selfhelp.courts.ca.gov/civil-lawsuit/statute-limitations"
+        }
+      },
+      {
+        "id": "claim-value",
+        "title": "¿Qué afecta al valor de una reclamación por lesiones en Buena Park?",
+        "label": "Factores que afectan al valor",
+        "paragraphs": [
+          "El efecto de una lesión es individual. El tratamiento, el trabajo perdido y los cambios prácticos en la vida diaria deben considerarse con las circunstancias del accidente. Una dirección de Buena Park o un tipo de colisión no pueden establecer por sí solos un importe."
+        ],
+        "items": [
+          {
+            "title": "Tratamiento y recuperación",
+            "text": "Guarde facturas, notas de tratamiento y necesidades documentadas de atención continua."
+          },
+          {
+            "title": "Trabajo y vida diaria",
+            "text": "Conserve registros salariales, turnos perdidos, restricciones laborales y notas sobre cambios en sus actividades habituales."
+          },
+          {
+            "title": "Hechos en disputa",
+            "text": "Guarde informes, fotografías y los relatos recibidos. Identifique el giro, cruce o peligro concreto que las personas describen de forma distinta para evaluar el desacuerdo."
+          }
+        ],
+        "link": {
+          "label": "Cómo se valoran las reclamaciones por lesiones en California",
+          "href": "/blogs/how-much-is-my-personal-injury-case-worth-california"
+        }
+      },
+      {
+        "id": "faq",
+        "title": "Preguntas prácticas después de un accidente en Buena Park.",
+        "label": "Preguntas sobre reclamaciones locales",
+        "paragraphs": [
+          "¿Cómo obtengo un informe de una colisión en Beach Boulevard? Primero identifique qué agencia lo tomó y guarde su número de incidente. La Policía de Buena Park gestiona sus propias investigaciones municipales; la CHP gestiona los informes de los casos que investigó, que pueden incluir colisiones en autopistas. El portal de la CHP y el procedimiento CHP 190 son para sus informes, no para registros de la policía municipal.",
+          "¿Qué debo conservar después de un choque cerca de Knott’s o una entrada comercial? Guarde fotografías de la entrada, direcciones de los carriles, cruce peatonal o semáforo, posiciones de vehículos y letreros de negocios. Identifique testigos y negocios cercanos que puedan controlar videos relevantes. No suponga que las imágenes de seguridad de zonas de visitantes se conservarán indefinidamente.",
+          "¿Contratar a un abogado de Buena Park significa que debo presentar la demanda allí? No. La ubicación de la oficina no determina el lugar del juicio. California Courts señala como factores habituales dónde ocurrió la lesión y dónde vive o hace negocios el demandado; también importan la reclamación concreta y las reglas de asignación judicial."
+        ],
+        "kind": "faq"
+      },
+      {
+        "id": "guides",
+        "title": "Guías para su próxima decisión",
+        "label": "Guías relacionadas",
+        "paragraphs": [],
+        "links": [
+          {
+            "label": "Qué hacer después de un accidente de automóvil en California",
+            "href": "/blogs/what-to-do-after-a-car-accident-in-california"
+          },
+          {
+            "label": "¿Cuánto vale mi caso de lesiones personales en California?",
+            "href": "/blogs/how-much-is-my-personal-injury-case-worth-california"
+          },
+          {
+            "label": "Qué esperar al contactar a Howard Choi",
+            "href": "/about/what-to-expect"
+          }
+        ]
+      },
+      {
+        "id": "nearby",
+        "title": "Comunidades cercanas a las que atendemos.",
+        "label": "Comunidades cercanas",
+        "paragraphs": [],
+        "links": [
+          {
+            "label": "Anaheim",
+            "href": "/locations/anaheim"
+          },
+          {
+            "label": "Fullerton",
+            "href": "/locations/fullerton"
+          },
+          {
+            "label": "Cypress",
+            "href": "/locations/cypress"
+          },
+          {
+            "label": "La Mirada",
+            "href": "/locations/la-mirada"
+          }
+        ]
+      }
+    ],
+    "sources": []
+  }
+}

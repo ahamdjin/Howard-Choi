@@ -1,5 +1,5 @@
+import { localizedPath } from "@/lib/localized-path";
 import { useLocation } from "@/lib/router-compat";
-import { hasLocalizedBlog } from "@/data/blogLocaleAvailability";
 
 type LanguageSwitchProps = {
   className?: string;
@@ -9,17 +9,8 @@ const LanguageSwitch = ({ className = "" }: LanguageSwitchProps) => {
   const location = useLocation();
   const basePath = location.pathname.replace(/^\/(?:ko|es)(?=\/|$)/, "") || "/";
   const englishPath = basePath;
-  const blogSlug = /^\/blogs\/([^/]+)$/.exec(basePath)?.[1];
-  const translatedPath = (locale: "ko" | "es") =>
-    basePath.startsWith("/about/")
-      ? `/${locale}/about`
-      : basePath === "/practice-areas/personal-injury"
-      ? `/${locale}/practice-areas`
-      : blogSlug && !hasLocalizedBlog(locale, blogSlug)
-      ? `/${locale}/blogs`
-      : basePath === "/" ? `/${locale}` : `/${locale}${basePath}`;
-  const koreanPath = translatedPath("ko");
-  const spanishPath = translatedPath("es");
+  const koreanPath = localizedPath(basePath, "ko");
+  const spanishPath = localizedPath(basePath, "es");
   const current = location.pathname === "/ko" || location.pathname.startsWith("/ko/")
     ? "ko"
     : location.pathname === "/es" || location.pathname.startsWith("/es/")

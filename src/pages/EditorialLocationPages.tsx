@@ -1,9 +1,17 @@
+import { whittierReading } from "@/data/whittierReading";
+import { norwalkReading } from "@/data/norwalkReading";
+import { cerritosReading } from "@/data/cerritosReading";
+import { laMiradaReading } from "@/data/laMiradaReading";
+import { laHabraReading } from "@/data/laHabraReading";
+import { cypressReading } from "@/data/cypressReading";
+import { gardenGroveReading } from "@/data/gardenGroveReading";
+import { fullertonReading } from "@/data/fullertonReading";
 import { citySearchFocus } from "@/data/citySearchFocus";
 import { practiceMedia } from "@/data/practiceMedia";
 import { cityLandingCopy } from "@/data/cityLandingCopy";
 import { getBlogBySlug } from "@/data/blogs";
 import SiteDepthSection from "@/components/SiteDepthSection";
-import { ArrowRight, MapPin, Route, ShieldCheck } from "lucide-react";
+import { ArrowRight, ClipboardList, Footprints, GraduationCap, MapPin, Route, ShieldCheck, TrainFront, Truck } from "lucide-react";
 import { useParams } from "@tanstack/react-router";
 import heroBoardroom from "@/assets/law-firm/hero-city-boardroom.webp";
 import heroJustice from "@/assets/law-firm/hero-justice-library.webp";
@@ -77,7 +85,7 @@ export const LocationsPage = ({ locale }: { locale: SiteLocale }) => (
           ? "Buena Park와 인근 Orange County·Los Angeles County 경계 지역의 사고·개인상해 사건을 지원합니다."
           : isEs(locale)
             ? "Estamos en Beach Blvd en Buena Park y atendemos casos en el norte de Orange County y las ciudades vecinas de Los Angeles County. Cada página local incluye datos de colisiones, la agencia que prepara reportes y el sistema judicial del condado."
-            : "Our office is in Buena Park, California. Explore accident and injury guides for ten nearby cities across Orange and Los Angeles counties, with official traffic-safety figures, reporting resources and practical evidence questions for each community."}
+            : "Our office is in Buena Park, California. Explore accident and injury guides for cities across Orange and Los Angeles counties, with official traffic-safety figures, reporting resources and practical evidence questions for each community."}
         image={heroBoardroom}
       />
       <ReadingLayout
@@ -93,7 +101,7 @@ export const LocationsPage = ({ locale }: { locale: SiteLocale }) => (
           id="areas"
           locale={locale}
           kicker={isKo(locale) ? "01 · 지역" : isEs(locale) ? "01 · Comunidades" : "01 · Communities"}
-          title={isKo(locale) ? "가까운 지역 페이지에서 시작하세요." : isEs(locale) ? "Elija la ciudad donde realmente ocurrió." : "Local accident and injury guides for ten communities."}
+          title={isKo(locale) ? "가까운 지역 페이지에서 시작하세요." : isEs(locale) ? "Elija la ciudad donde realmente ocurrió." : "Local accident and injury guides across Orange and Los Angeles counties."}
           intro={isKo(locale)
             ? "각 지역 페이지는 해당 지역에서 사고 이후 확인해야 할 일반적인 문제와 상담 시작 방법을 정리합니다."
             : isEs(locale)
@@ -176,6 +184,12 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
   const landing = cityLandingCopy[location.slug];
   const search = citySearchFocus[location.slug];
   const featuredCases = locale === "en" ? [...new Set([...search.cases, ...localFocus.practices])] : localFocus.practices;
+  const fullertonSections = location.slug === "fullerton" && locale === "en" ? fullertonReading : [];
+  const fullertonIcons = [TrainFront, GraduationCap, Route, MapPin, ClipboardList, Truck, Footprints, ShieldCheck];
+  const localReadingSections = locale === "en"
+    ? ({ "garden-grove": gardenGroveReading, cypress: cypressReading, "la-habra": laHabraReading, "la-mirada": laMiradaReading, cerritos: cerritosReading, norwalk: norwalkReading, whittier: whittierReading } as const)[location.slug as "garden-grove" | "cypress" | "la-habra" | "la-mirada" | "cerritos" | "norwalk" | "whittier"] ?? []
+    : [];
+  const locationPhoto = locationMedia[location.slug];
   const isBuenaPark = location.slug === "buena-park";
   const heroTitle = isBuenaPark
     ? (isKo(locale) ? "부에나파크 사무실과 지역 상해 자료" : isEs(locale) ? "Oficina de Buena Park y recursos locales para lesiones" : "Buena Park Office & Local Accident Resources")
@@ -225,11 +239,19 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
           eyebrow={isKo(locale) ? "서비스 지역" : isEs(locale) ? `${location.county} · Zona de servicio` : `${location.county} · Service area`}
           title={heroTitle}
           description={locale === "en" ? landing.lead : description}
-          image={locationMedia[location.slug]?.src ?? cityImages[location.slug] ?? heroJustice}
-          imageAlt={locationMedia[location.slug]?.alt || `${name}, California`}
+          image={locationPhoto?.src ?? cityImages[location.slug] ?? heroJustice}
+          imageAlt={locationPhoto?.alt || `${name}, California`}
           imageFallback={cityImages[location.slug] ?? heroJustice}
           detail
         />
+        {locationPhoto && (
+          <p className="site-shell py-2 text-right text-xs text-foreground/70">
+            <a href={locationPhoto.source} className="underline underline-offset-4">
+              {locationPhoto.credit} · {locationPhoto.license}
+            </a>
+            {" · "}{isKo(locale) ? "화면에 맞춰 잘라낸 사진" : isEs(locale) ? "Foto recortada" : "Photo cropped to fit"}
+          </p>
+        )}
         {locale === "en" && (
           <section aria-label="Office and consultation" className="border-b border-foreground/15 bg-white">
             <div className="site-shell grid gap-6 py-7 text-sm leading-6 md:grid-cols-3">
@@ -273,7 +295,10 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
                   { id: "faq", label: "Preguntas locales" }, { id: "nearby", label: "Comunidades cercanas" },
                 ]
               : [
-                  { id: "overview", label: "Local overview" }, { id: "first-steps", label: "What to do first" }, { id: "cases", label: "Cases we handle" }, { id: "data", label: "Local collision data" }, { id: "records", label: "Local records & agencies" },
+                  { id: "overview", label: "Local overview" }, { id: "first-steps", label: "What to do first" }, { id: "cases", label: "Cases we handle" },
+                  ...localReadingSections.map(({ id, label }) => ({ id, label })),
+                  ...fullertonSections.map(({ id, label }) => ({ id, label })),
+                  ...(isBuenaPark ? [{ id: "beach-boulevard", label: "Beach Boulevard crashes" }, { id: "visitor-route", label: "Visitor routes" }, { id: "freeway-approach", label: "Freeway approaches" }, { id: "disputed-turn", label: "Disputed turns" }, { id: "shift-records", label: "Work and recovery" }, { id: "property-records", label: "Property incident records" }, { id: "family-records", label: "Helping an injured family member" }, { id: "office-visit", label: "Visiting the office" }] : []), { id: "data", label: "Local collision data" }, { id: "records", label: "Local records & agencies" },
                   { id: "evidence", label: "Evidence to preserve" }, { id: "situations", label: "Local evidence scenarios" }, { id: "deadlines", label: "California deadlines" },
                   { id: "claim-value", label: "What affects claim value" }, { id: "faq", label: "Local claim questions" }, { id: "guides", label: "Related guides" }, { id: "nearby", label: "Nearby communities" },
                 ]}
@@ -297,6 +322,83 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
             </ReadingSectionBlock>
           )}
           {locale === "en" && caseSection}
+          {localReadingSections.map(({ id, label, title, paragraphs, Icon }) => (
+            <ReadingSectionBlock key={id} id={id} locale={locale} kicker={label} title={title} Icon={Icon}>
+              {paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+            </ReadingSectionBlock>
+          ))}
+          {fullertonSections.map(({ id, label, title, paragraphs }, index) => (
+            <ReadingSectionBlock key={id} id={id} locale={locale} kicker={label} title={title} Icon={fullertonIcons[index]}>
+              {paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+            </ReadingSectionBlock>
+          ))}
+          {locale === "en" && isBuenaPark && (
+            <>
+              <ReadingSectionBlock id="beach-boulevard" locale="en" kicker="Buena Park collision evidence" title="Reconstruct the turn from Beach Boulevard">
+                <img src={cityCarCollision} alt="Illustrative photograph of a car collision" width={900} height={500} loading="lazy" className="mb-7 aspect-[16/9] w-full object-cover" />
+                <p>After a collision at a Beach Boulevard business entrance, identify whether each vehicle was turning into the property, leaving it or continuing along the street. Draw the driveway, nearest signal and the lane where contact occurred. If the cars later pulled into the lot, mark that location separately. A store address may identify where you stopped without showing where the crash began.</p>
+                <p>A pedestrian coming from the lot and a driver approaching on Beach Boulevard may have different views of the same turn. Identify where a parked car or queue blocked either view. A camera above a doorway may record someone leaving the store while missing the street entirely. Keep the original recording if you have it, and note the location and direction of any other camera you observed.</p>
+                <p>For a crash near an I-5 or SR-91 ramp, record the freeway direction, ramp or intersection and the agency on the report card. A Buena Park address does not settle which department investigated. Buena Park Police has documented city-street investigations handled by CHP, so check the actual report reference before making a request.</p>
+                <a className="editorial-inline-link mt-5" href="/practice-areas/car-accidents">Read the car accident practice guide</a>
+              </ReadingSectionBlock>
+              <ReadingSectionBlock id="visitor-route" locale="en" kicker="Buena Park visitor routes" title="Pin down the walk between a hotel, an attraction and the street" Icon={MapPin}>
+                <p>If you were hurt near a Beach Boulevard hotel or attraction, the destination name is only the beginning. Start with the entrance you used and trace the route to the point where you fell or were struck. A person leaving a parking area may cross a private drive before reaching a public sidewalk. A person waiting for a ride may be directed from the lobby to a separate pickup area. Describe where the change happened and what you could see from there.</p>
+                <p>If the accident involved a shuttle or rideshare vehicle, save the booking record and any instructions about where to wait. Write down the vehicle identifier, the door you were approaching and whether you were already inside when the vehicle moved. A receipt can help establish when you were there. A message changing the pickup location may explain why you crossed a lane or went to a different entrance.</p>
+                <p>For an injury on a walkway, record whether the condition was at a curb, ramp, doorway or inside the property. Include a wider photograph showing a sign or other fixed feature if you can take it safely. A close-up can show a defect but leave it difficult to locate. If the condition changed after the incident, label any later photos with their date and explain what was different.</p>
+                <p>Keep the names of the staff or security personnel you spoke with and any separate reference they gave you. The attraction, hotel and operator of a shuttle may hold different records. Howard can use the route, time and available documents to work out which inquiries are relevant to your situation.</p>
+                <div className="mt-5 flex flex-wrap gap-5">
+                  <a href="/practice-areas/rideshare-accidents" className="underline underline-offset-4">Rideshare accident guide</a>
+                  <a href="/practice-areas/slip-and-fall" className="underline underline-offset-4">Slip and fall guide</a>
+                </div>
+              </ReadingSectionBlock>
+              <ReadingSectionBlock id="freeway-approach" locale="en" kicker="Freeway and surface-street evidence" title="Separate the impact from the place you pulled over" Icon={Route}>
+                <img src={cityTruckHighway} alt="Illustrative photograph of commercial traffic on a highway" width={900} height={500} loading="lazy" className="mb-7 aspect-[16/9] w-full object-cover" />
+                <p>A driver coming off I-5 or SR-91 may describe a crash by the first Buena Park business they reached afterward. Record the freeway direction, last exit sign and where you first felt contact. If you pulled into a lot or onto a side street, mark that as a later stop. A tow invoice can place the collection point, while a passenger’s photo or a report diagram may help locate the impact.</p>
+                <p>When traffic was slowing toward an exit, describe the order of events before trying to assign responsibility. Note whether you saw the queue form, felt more than one impact or moved lanes before stopping. If available, preserve the longer dashcam recording rather than only the final seconds. Howard can compare what the recording shows with accounts from people who saw different parts of the slowdown.</p>
+                <p>If a commercial vehicle was involved, keep the identifiers for the tractor and trailer separately when available. Note whether it was continuing through traffic, entering a ramp or turning toward a delivery. The business logo, plate and trip destination may point to different records. Bring the information you have and flag anything learned from another person so it can be verified.</p>
+                <a href="/practice-areas/truck-accidents" className="editorial-inline-link mt-5">Read the commercial truck accident guide</a>
+              </ReadingSectionBlock>
+              <ReadingSectionBlock id="disputed-turn" locale="en" kicker="Compare the accounts" title="What a disputed turn near a Buena Park business can look like" Icon={Route}>
+                <p>Imagine a car leaving a lot along Beach Boulevard while another driver moves toward the entrance. Both people say the other turned first. A customer near the door sees the vehicles come together, and someone waiting at the sidewalk sees only the first car cross the walking route. A useful first step is to map what each person could see. The customer can help locate the contact even if they did not see which turn began first.</p>
+                <p>Mark the driveway and nearby lanes on a sketch. Place the contact separately from the spot where the cars were parked after the crash. If a witness describes a car as coming from the north, ask where the witness was looking and whether they saw it before or after it crossed the driveway. Preserve any recording with the time before contact so the movement can be considered in context.</p>
+                <p>If the police diagram shows the driveway but not the delivery van you recall blocking the view, keep both the report and your separate note. A later photograph can illustrate the space without showing the obstruction at the time. Label when it was taken. Howard can discuss what the materials establish and whether another witness, recording or vehicle record could resolve a particular difference.</p>
+                <p>These questions matter even when the crash appears minor from a distance. Vehicle damage helps explain how the cars touched, while treatment records help explain what happened to you. Bring both categories to the office and keep them distinct so the injury evaluation can be considered alongside the investigation.</p>
+              </ReadingSectionBlock>
+              <ReadingSectionBlock id="shift-records" locale="en" kicker="Work and daily activities" title="Show which parts of a Buena Park shift you could do after the injury">
+                <p>A worker near the visitor corridor might handle the front counter, stock supplies and help close the property during the same shift. If you returned to the counter but stopped lifting or closing, write down which tasks changed and on what dates. A return-to-work date may leave those details out. Keep the normal assignment alongside any written instructions restricting standing, carrying or driving.</p>
+                <p>Compare schedules from before and after the accident. If the business normally changes hours around weekends or events, bring several representative weeks. Mark a shift that was canceled separately from one you traded or worked later. Keep any messages showing that someone took over a duty. Payroll can show the change in earnings while the schedule and messages help explain why it happened.</p>
+                <p>If you received care at more than one location, keep the visits and restrictions in date order. Note which provider first recommended a change and when your employer received it. A later note can revise an earlier restriction. Preserve both rather than keeping only the most recent one. Howard can use the timeline to review whether the records support a temporary loss, a continuing limitation or a question that needs additional information.</p>
+                <p>Describe changes at home with the same care. If someone helped with groceries or drove you to appointments, write down when it started and when you could resume the task. Keep actual expenses separate from unpaid help. Dated examples can explain the day-to-day impact without assuming every change will be treated the same way in a claim.</p>
+                <a href="/blogs/how-much-is-my-personal-injury-case-worth-california" className="editorial-inline-link mt-5">Read the guide to documenting injury losses</a>
+              </ReadingSectionBlock>
+              <ReadingSectionBlock id="property-records" locale="en" kicker="Falls and property injuries" title="Identify who maintained the exact spot where you fell">
+                <p>A visit to a Buena Park restaurant, shopping center or attraction can take you across several separately managed spaces. You might park in a shared lot, cross a walkway maintained by the center and then enter a shop that handles its own doorway. If you fall between two storefronts, the name on the nearest sign is a useful landmark. The first question is which area you were in when you lost your footing.</p>
+                <p>Describe your route from a fixed point. For example, you walked from the parking aisle toward the corner entrance and fell beside the curb ramp before reaching the door. A wider photo can show that path and a closer photo can show the surface. Keep the originals and write down when they were taken. If you go back later and see a mat, warning sign or patch that you do not recall, label it as a later observation. Ask witnesses to describe what they personally saw before or immediately after the fall.</p>
+                <p>If staff took an incident report, record the business name, the approximate time you spoke and any reference number. Save receipts, mobile order confirmations or parking records that help narrow the time window. A report may identify the person who responded, while a cleaning schedule, repair request or prior complaint could help answer how the condition developed. Those records can be held by different businesses. Bring correspondence from each so Howard can evaluate who to contact and what information to request.</p>
+                <p>Where a parking lot crosses into a sidewalk, use a photo or map pin to show the boundary as accurately as you can. If the issue was poor visibility, explain the time of day, what lights were on and where you were looking as you approached. For a sudden spill, record whether you saw an overturned container or whether someone told you about it afterward. That distinction helps separate firsthand observations from leads that still need corroboration.</p>
+                <p>Keep any shoes or other items involved as they were after the incident if possible. You can document them without recreating the fall. A practical first consultation can then focus on which details locate the incident, which records might explain the condition and how the treatment timeline fits with the account.</p>
+                <a href="/practice-areas/slip-and-fall" className="editorial-inline-link mt-5">Explore slip and fall cases</a>
+              </ReadingSectionBlock>
+              <ReadingSectionBlock id="family-records" locale="en" kicker="For family members" title="What to organize when the injured person cannot handle the first calls">
+                <p>After a serious crash in Buena Park, one relative may be at the hospital while another is trying to find the vehicle or identify the responding agency. Start a shared list with the time and place as you understand them, the names of people you spoke with and any reference numbers they gave you. Put a question mark next to anything uncertain. If you heard the location from a caller who arrived later, record who provided it so the family can distinguish it from an official incident location.</p>
+                <p>Keep transport, hospital and vehicle details on separate lines. The facility where a person is receiving care may be different from the first facility that assessed them. A vehicle may be transferred after the original tow. For every transfer, note the date and who confirmed it. If a vehicle is at a yard, find out where it is held and ask what deadlines or charges apply before making decisions about storage. Bring those details to the consultation if access or preservation is urgent.</p>
+                <p>Set aside messages from witnesses, businesses or agencies in the form you received them. If someone offers a clip, ask for the original and record whether the camera time is known to be accurate. If a business says it can only speak to an authorized person, note the name and date of the conversation. Howard can review who may be able to request the material and what information the custodian will need to identify it.</p>
+                <p>For a family member who is recovering, keep a simple list of things they can and cannot manage independently. If a clinician gave instructions about mobility or follow-up, keep a copy alongside appointment dates and examples of help actually provided. You may also want to track who has been paying for transportation or other immediate needs. This gives Howard concrete information to review even when the full course of recovery is still unknown.</p>
+                <p>If the injury was fatal, the first consultation can focus on the people involved, the records already available and decisions that cannot wait. Bring any existing correspondence and explain who has been handling arrangements or receiving calls. If there are conflicting accounts of what occurred, keep them separately with the source and date of each. You can ask Howard which records may help resolve those differences and what information he needs to discuss the family’s options.</p>
+              </ReadingSectionBlock>
+              <ReadingSectionBlock id="office-visit" locale="en" kicker="Consultation in Buena Park" title="Bring the question you need answered to the Beach Boulevard office" Icon={MapPin}>
+                <p>Howard Choi’s office is at {brand.address}. Call to arrange a free consultation before coming in. If you are bringing a report, include the agency name and incident number. For a fall at a business, bring the exact route to the surface and any reference given by staff. If you are waiting on a record, bring the request confirmation and explain what is still missing.</p>
+                <p>Organize the first medical visit and later appointments by date. Bring current restrictions and examples of how they affected work or daily activities. For instance, someone may have resumed a shift while handing off lifting duties, or returned to work while still needing rides to appointments. A dated schedule and the provider’s instructions can help explain what changed.</p>
+                <p>Start the discussion with the decision you are facing. You may need to identify an agency, understand a disputed turn or work out which documents support a change in earnings. Howard can review what the current records establish and which questions require follow-up. No fee unless there is a recovery.</p>
+                <p>It can be useful to bring a one-page timeline if the same trip produced several records. A collision near a freeway approach might appear under one location in the tow paperwork and another in your appointment notes because you described a nearby landmark. Add the direction you were traveling, where the vehicles stopped and where the officer met you. Keeping those points separate helps someone reading the file understand why the records may use different descriptions.</p>
+                <p>If you are deciding whether an in-person visit is practical, call ahead to discuss your options. Tell the office if getting there is difficult because you cannot drive or are relying on someone else for transportation. When arranging the appointment, mention any immediate records issue, such as a vehicle that will be moved or footage a business has agreed to hold for a short time. Bring the business’s response or notice so Howard can see what it actually says and decide what to review first.</p>
+                <div className="mt-5 flex flex-wrap gap-5">
+                  <a href={brand.mapsHref} className="underline underline-offset-4">Directions to the Buena Park office</a>
+                  <a href="/contact" className="underline underline-offset-4">Arrange a free consultation</a>
+                </div>
+              </ReadingSectionBlock>
+            </>
+          )}
           {locale === "en" && (
             <aside className="my-10 bg-[#27211C] px-6 py-8 text-[#FAF5ED] md:p-9">
               <h2 className="editorial-serif text-3xl">What can an injury lawyer help you sort out?</h2>

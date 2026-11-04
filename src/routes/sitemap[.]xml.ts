@@ -1,6 +1,6 @@
+import { additionalLocations } from "@/data/additionalLocations";
 import { createFileRoute } from "@tanstack/react-router";
 import { blogPosts } from "@/data/blogs";
-import { hasIndexableKoreanBlog } from "@/data/blogLocaleAvailability";
 import { practiceAreas, serviceLocations } from "@/data/injurySite";
 import { absoluteUrl } from "@/lib/seo";
 
@@ -11,56 +11,45 @@ const xmlEscape = (value: string) => value
   .replace(/"/g, "&quot;")
   .replace(/'/g, "&apos;");
 
-const renderUrl = (path: string, englishPath: string, koreanPath: string, lastmod?: string) => `
+const renderUrl = (path: string, lastmod?: string) => `
   <url>
-    <loc>${xmlEscape(absoluteUrl(path))}</loc>${lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : ""}
-    <xhtml:link rel="alternate" hreflang="en-US" href="${xmlEscape(absoluteUrl(englishPath))}" />
-    <xhtml:link rel="alternate" hreflang="ko-US" href="${xmlEscape(absoluteUrl(koreanPath))}" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="${xmlEscape(absoluteUrl(englishPath))}" />
+    <loc>${xmlEscape(absoluteUrl(path))}</loc>${lastmod ? `\n    <lastmod>${xmlEscape(lastmod)}</lastmod>` : ""}
   </url>`;
-
-const englishOnly = (path: string, lastmod?: string) => `\n  <url>\n    <loc>${xmlEscape(absoluteUrl(path))}</loc>${lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : ""}\n  </url>`;
-
-const pair = (en: string, ko: string, lastmod?: string) => [
-  renderUrl(en, en, ko, lastmod),
-  renderUrl(ko, en, ko, lastmod),
-];
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
         const staticUrls = [
-          englishOnly("/practice-areas/personal-injury"),
-          ...pair("/", "/ko"),
-          ...pair("/practice-areas", "/ko/practice-areas"),
-          ...pair("/attorney", "/ko/attorney"),
-          ...pair("/about", "/ko/about"),
-          englishOnly("/about/our-difference"),
-          englishOnly("/about/what-to-expect"),
-          englishOnly("/about/faqs"),
-          englishOnly("/about/zero-fee-guarantee"),
-          ...pair("/results", "/ko/results"),
-          ...pair("/locations", "/ko/locations"),
-          ...pair("/case-value-calculator", "/ko/case-value-calculator"),
-          ...pair("/blogs", "/ko/blogs"),
-          ...pair("/contact", "/ko/contact"),
+          ...additionalLocations.map(city => renderUrl("/locations/" + city.slug)),
+          renderUrl("/practice-areas/personal-injury"),
+          renderUrl("/"),
+          renderUrl("/practice-areas"),
+          renderUrl("/attorney"),
+          renderUrl("/about"),
+          renderUrl("/about/our-difference"),
+          renderUrl("/about/what-to-expect"),
+          renderUrl("/about/faqs"),
+          renderUrl("/about/zero-fee-guarantee"),
+          renderUrl("/results"),
+          renderUrl("/locations"),
+          renderUrl("/case-value-calculator"),
+          renderUrl("/blogs"),
+          renderUrl("/contact"),
         ];
 
-        const practiceUrls = practiceAreas.flatMap((practice) =>
-          pair(`/practice-areas/${practice.slug}`, `/ko/practice-areas/${practice.slug}`),
+        const practiceUrls = practiceAreas.map((practice) =>
+          renderUrl(`/practice-areas/${practice.slug}`),
         );
-        const locationUrls = serviceLocations.flatMap((location) =>
-          pair(`/locations/${location.slug}`, `/ko/locations/${location.slug}`),
+        const locationUrls = serviceLocations.map((location) =>
+          renderUrl(`/locations/${location.slug}`),
         );
-        const articleUrls = blogPosts.flatMap((post) =>
-          hasIndexableKoreanBlog(post.slug)
-            ? pair(`/blogs/${post.slug}`, `/ko/blogs/${post.slug}`, post.updatedAt)
-            : [englishOnly(`/blogs/${post.slug}`, post.updatedAt)],
+        const articleUrls = blogPosts.map((post) =>
+          renderUrl(`/blogs/${post.slug}`, post.updatedAt),
         );
 
         const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">${[
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${[
           ...staticUrls,
           ...practiceUrls,
           ...locationUrls,

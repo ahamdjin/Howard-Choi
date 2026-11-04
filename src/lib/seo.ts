@@ -25,7 +25,6 @@ export const buildSeo = ({
   title,
   description,
   path,
-  alternatePath,
   locale = "en-US",
   type = "website",
   image,
@@ -33,8 +32,11 @@ export const buildSeo = ({
   followWhenNoindex = false,
 }: SeoOptions) => {
   const canonical = absoluteUrl(path);
-  const englishPath = locale === "ko-US" ? alternatePath : path;
-  const koreanPath = locale === "ko-US" ? path : alternatePath;
+  // Korean remains accessible for visitors, but is excluded from search.
+  // Check the path too so a missing locale cannot accidentally index it.
+  const koreanPage = locale === "ko-US" || /^\/ko(?:\/|$)/.test(path);
+  noindex ||= koreanPage;
+  followWhenNoindex ||= koreanPage;
   const robots = noindex
     ? `noindex, ${followWhenNoindex ? "follow" : "nofollow"}`
     : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
@@ -65,13 +67,7 @@ export const buildSeo = ({
   }
 
   const links: Array<Record<string, string>> = noindex ? [] : [{ rel: "canonical", href: canonical }];
-  if (!noindex && englishPath && koreanPath && locale !== "es-US") {
-    links.push(
-      { rel: "alternate", hrefLang: "en-US", href: absoluteUrl(englishPath) },
-      { rel: "alternate", hrefLang: "ko-US", href: absoluteUrl(koreanPath) },
-      { rel: "alternate", hrefLang: "x-default", href: absoluteUrl(englishPath) },
-    );
-  }
+
 
   return { meta, links };
 };

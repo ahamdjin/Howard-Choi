@@ -211,7 +211,7 @@
   word-spacing: 0.02em;
 }
 
-.site-typography :where(main, section, article) h3 {
+.site-typography :where(main, section, article) h3:where(:not(.case-story h3, .claim-process-steps h3)) {
   font-size: clamp(1.2rem, 1.6vw, 1.5rem) !important;
   line-height: 1.15 !important;
   letter-spacing: -0.01em !important;
@@ -363,7 +363,7 @@ nav + .relative > .sticky.top-0.h-\[100svh\] > section {
     letter-spacing: -0.012em !important;
   }
 
-  .site-typography :where(main, section, article) h3 {
+  .site-typography :where(main, section, article) h3:where(:not(.case-story h3, .claim-process-steps h3)) {
     font-size: clamp(1.08rem, 5vw, 1.25rem) !important;
     line-height: 1.18 !important;
   }

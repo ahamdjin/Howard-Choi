@@ -1,15 +1,57 @@
 /** City-specific photographs researched on Wikimedia Commons, with attribution.
  * Source-file links expose the licensing information. Photos use direct 620px Wikimedia thumbnails where available,
  * and remain third-party assets to avoid large unoptimized bundles. */
-export const locationMedia: Record<string, { src: string; alt: string; credit: string; license: string; source: string }> = {
+export const locationMedia: Record<string, { src: string; alt: string; credit: string; license: string; source: string; position?: string }> = {
+  "newport-beach": {
+    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Balboa_Pier%2C_Newport.JPG/960px-Balboa_Pier%2C_Newport.JPG",
+    alt: "Balboa Pier on the Balboa Peninsula in Newport Beach, California",
+    credit: "Adrián Cerón",
+    license: "CC BY-SA 4.0",
+    source: "https://commons.wikimedia.org/wiki/File:Balboa_Pier%2C_Newport.JPG",
+  },
+  "huntington-beach": {
+    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Huntington_Beach_Pier.jpg/960px-Huntington_Beach_Pier.jpg",
+    alt: "Huntington Beach Pier at sunset in Huntington Beach, California",
+    credit: "Bamsb900",
+    license: "CC BY-SA 4.0",
+    source: "https://commons.wikimedia.org/wiki/File:Huntington_Beach_Pier.jpg",
+  },
+  "los-angeles": {
+    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Los_Angeles_with_Mount_Baldy.jpg/960px-Los_Angeles_with_Mount_Baldy.jpg",
+    alt: "Downtown Los Angeles skyline with snow-covered Mount Baldy in the distance",
+    credit: "Alek Leckszas",
+    license: "CC BY-SA 4.0",
+    source: "https://commons.wikimedia.org/wiki/File:Los_Angeles_with_Mount_Baldy.jpg",
+  },
+  "long-beach": {
+    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/SkylineofLongbeach.jpg/960px-SkylineofLongbeach.jpg",
+    alt: "Downtown Long Beach skyline in California",
+    credit: "MatthewAndrew",
+    license: "Public domain",
+    source: "https://commons.wikimedia.org/wiki/File:SkylineofLongbeach.jpg",
+  },
+  irvine: {
+    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Giant_Wheel_at_Irvine_Spectrum_Center.jpg/960px-Giant_Wheel_at_Irvine_Spectrum_Center.jpg",
+    alt: "The Giant Wheel at Irvine Spectrum Center in Irvine, California",
+    credit: "Azusa Tarn",
+    license: "CC BY-SA 4.0",
+    source: "https://commons.wikimedia.org/wiki/File:Giant_Wheel_at_Irvine_Spectrum_Center.jpg",
+  },
+  "costa-mesa": {
+    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Costa_Mesa_CA_(2013)_05.JPG/960px-Costa_Mesa_CA_(2013)_05.JPG",
+    alt: "Office buildings along Bristol Street across from South Coast Plaza in Costa Mesa",
+    credit: "Nandaro",
+    license: "CC BY-SA 3.0",
+    source: "https://commons.wikimedia.org/wiki/File:Costa_Mesa_CA_(2013)_05.JPG",
+  },
   "buena-park": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Buena_Park_City_Hall.jpg/960px-Buena_Park_City_Hall.jpg", alt: "Photograph of Buena Park City Hall", credit: "Sony 1992", license: "CC0", source: "https://commons.wikimedia.org/wiki/File:Buena_Park_City_Hall.jpg" },
   "anaheim": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Anaheim_City_Hall_West%2C_Anaheim%2C_CA%2C_lower_SE_corner.jpg/960px-Anaheim_City_Hall_West%2C_Anaheim%2C_CA%2C_lower_SE_corner.jpg", alt: "Photograph of Anaheim City Hall West,  Anaheim,  CA,  lower SE corner", credit: "Ken Lund", license: "CC BY-SA 2.0", source: "https://commons.wikimedia.org/wiki/File:Anaheim_City_Hall_West,_Anaheim,_CA,_lower_SE_corner.jpg" },
   "fullerton": { src: "https://upload.wikimedia.org/wikipedia/commons/7/77/Fullerton_Station.jpg", alt: "Photograph of Fullerton Station", credit: "Oakshade", license: "CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Fullerton_Station.jpg" },
   "garden-grove": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Main_street_garden_grove.jpg/960px-Main_street_garden_grove.jpg", alt: "Photograph of Main street garden grove", credit: "Justin.skoda", license: "CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Main_street_garden_grove.jpg" },
   "cypress": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Cypress_california_city_hall.JPG/960px-Cypress_california_city_hall.JPG", alt: "Photograph of Cypress california city hall", credit: "Epolk", license: "CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Cypress_california_city_hall.JPG" },
   "la-habra": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/La_Habra_Circle_Shopping_Center%2C_La_Habra%2C_California_%282021-06-25%29.jpeg/960px-La_Habra_Circle_Shopping_Center%2C_La_Habra%2C_California_%282021-06-25%29.jpeg", alt: "Photograph of La Habra Circle Shopping Center,  La Habra,  California (2021-06-25)", credit: "Amin Eshaiker", license: "CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:La_Habra_Circle_Shopping_Center,_La_Habra,_California_(2021-06-25).jpeg" },
-  "la-mirada": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/La_Mirada_Library.png/960px-La_Mirada_Library.png", alt: "Photograph of La Mirada Library", credit: "ShticktatorTal", license: "CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:La_Mirada_Library.png" },
+  "la-mirada": { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Bell_Tower_Biola_University.JPG/960px-Bell_Tower_Biola_University.JPG", alt: "Biola University bell tower in La Mirada, California", position: "50% 20%", credit: "Stacy Eltiti", license: "CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Bell_Tower_Biola_University.JPG" },
   "cerritos": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Cerritos_Library_exterior_%282175178271%29.jpg/960px-Cerritos_Library_exterior_%282175178271%29.jpg", alt: "Photograph of Cerritos Library exterior (2175178271)", credit: "Rebecca Jones", license: "CC BY 2.0", source: "https://commons.wikimedia.org/wiki/File:Cerritos_Library_exterior_(2175178271).jpg" },
-  "norwalk": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Norwalk_CA_City_Hall.jpg/960px-Norwalk_CA_City_Hall.jpg", alt: "Photograph of Norwalk CA City Hall", credit: "Bwolfsonsgch", license: "CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Norwalk_CA_City_Hall.jpg" },
+  "norwalk": { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Norwalk_City_Hall%2C_Norwalk%2C_CA.jpg/960px-Norwalk_City_Hall%2C_Norwalk%2C_CA.jpg", alt: "Norwalk City Hall on Norwalk Boulevard, California", credit: "Northwalker", license: "CC0", source: "https://commons.wikimedia.org/wiki/File:Norwalk_City_Hall,_Norwalk,_CA.jpg" },
   "whittier": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Downtown_Whittier_California_Greenleaf_ave.jpg/960px-Downtown_Whittier_California_Greenleaf_ave.jpg", alt: "Photograph of Downtown Whittier California Greenleaf ave", credit: "Northwalker", license: "CC0", source: "https://commons.wikimedia.org/wiki/File:Downtown_Whittier_California_Greenleaf_ave.jpg" },
 };

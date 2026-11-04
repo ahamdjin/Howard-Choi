@@ -1,0 +1,89 @@
+.location-experience{--experience-ink:#26211c;--experience-muted:#655c52;--experience-paper:#f8f5ef;--experience-warm:#eee7dd;background:var(--experience-paper);color:var(--experience-ink)}
+.location-experience h2,.location-experience h3{font-family:"Newsreader",Georgia,serif;font-weight:400;letter-spacing:-.035em;text-wrap:balance}
+.location-experience p{font-size:16px;line-height:1.85;color:var(--experience-muted)}
+.location-experience section[id]{scroll-margin-top:110px}
+.experience-section{padding-block:85px}
+.experience-heading{max-width:780px;margin-bottom:36px}
+.experience-heading h2{font-size:clamp(36px,4.4vw,60px);line-height:1.06;margin:16px 0 24px}
+.experience-heading p{max-width:650px}
+.experience-eyebrow{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8c4c30}
+.experience-credentials{background:#eee6db;border-bottom:1px solid #d5c8b8}
+.experience-credentials>.site-shell{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px;padding-block:25px}
+.experience-credentials span,.experience-credentials a{display:block;font-size:12px;line-height:1.8;color:#655c52}
+.experience-credentials strong{display:block;font-size:14px;color:#26211c;font-weight:600}
+.experience-credentials svg{display:inline;vertical-align:middle}
+.experience-intro{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center}
+.experience-intro p+p{margin-top:20px}
+.experience-city-photo img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.experience-city-photo figcaption{font-size:11px;line-height:1.6;margin-top:12px;color:#655c52}
+.experience-city-photo a{text-decoration:underline}
+.experience-link{display:inline-flex;align-items:center;gap:12px;min-height:44px;font-size:14px;border-bottom:1px solid currentColor;margin-top:24px;line-height:1.6}
+.experience-warm{background:var(--experience-warm)}
+.experience-feature{background:#e3dbcf}
+.experience-feature-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:70px;align-items:center}
+.experience-feature-grid>img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.experience-feature .experience-heading{margin-bottom:25px}
+.experience-feature p+p{margin-top:20px}
+.experience-case-overview{border-top:1px solid #d8cec0;padding-top:24px;margin-bottom:45px}
+.experience-case-overview h3{margin-bottom:20px}
+.experience-case-overview>div{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.experience-contact{background:#29231e;padding-block:60px;color:#f8f1e8}
+.experience-contact>.site-shell{display:grid;grid-template-columns:1.25fr .75fr;gap:70px;align-items:center}
+.experience-contact .experience-heading{margin-bottom:20px}
+.experience-contact h2{font-size:clamp(36px,4vw,48px)}
+.experience-contact p{color:#d6c9ba}
+.experience-contact .experience-eyebrow{color:#dbb697}
+.experience-actions{display:flex;align-items:flex-start;flex-direction:column;gap:24px}
+.experience-actions>a{display:inline-flex;align-items:center;gap:12px;min-height:44px}
+.experience-button{padding:16px 22px;background:#f3e8d8;color:#28211c;font-size:14px;font-weight:500}
+.experience-guide-intro{padding-block:80px 10px}
+.experience-reading{min-width:0}
+.experience-guide-section{padding-block:45px;border-top:1px solid #d8cec0}
+.experience-guide-section h2{font-size:clamp(30px,3vw,42px);line-height:1.1;margin-bottom:26px}
+.experience-guide-section p+p{margin-top:20px}
+.experience-section-icon{color:#8c4c30;margin-bottom:20px}
+.experience-reading-photo{width:100%;aspect-ratio:16/9;object-fit:cover;margin-bottom:30px}
+.experience-guide-section--case-review,.experience-guide-section--compensation{background:#eee7dd;padding:32px;margin-block:25px;border:0}
+.experience-resources{margin-top:25px}
+.experience-resources li{border-top:1px solid #d8cec0}
+.experience-resources a{display:flex;justify-content:space-between;gap:20px;padding:16px 0;text-decoration:underline;text-underline-offset:4px;font-size:14px;line-height:1.6}
+.experience-resources svg{flex-shrink:0}
+.experience-guide-details>div{display:grid;grid-template-columns:24px minmax(0,1fr);gap:18px;padding-block:26px;border-top:1px solid #d8cec0}
+.experience-guide-details svg{color:#8c4c30;margin-top:5px}
+.experience-guide-details h3{margin-bottom:14px}
+.experience-guide-statistics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-block:30px;border-block:1px solid #d8cec0}
+.experience-guide-statistics>div{display:flex;flex-direction:column;padding:25px 20px;border-right:1px solid #d8cec0}
+.experience-guide-statistics>div:first-child{padding-left:0}
+.experience-guide-statistics>div:last-child{border-right:0}
+.experience-guide-statistics dt{font-size:13px;line-height:1.6;color:#655c52}
+.experience-guide-statistics dd{order:-1;font-family:Newsreader,Georgia,serif;font-size:48px;line-height:1.2;margin-bottom:12px}
+.experience-faq details{border-top:1px solid #d8cec0}
+.experience-faq summary{display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;padding:24px 0;font-size:17px;line-height:1.6;list-style:none}
+.experience-faq summary::-webkit-details-marker{display:none}
+.experience-faq summary svg{flex-shrink:0}
+.experience-faq details[open] summary svg{transform:rotate(180deg)}
+.experience-faq p{padding-bottom:24px}
+.experience-office{background:#3b3027;padding:35px;color:#f9f3e9}
+.experience-office p{color:#d6c9ba;margin-block:24px}
+.experience-office address{font-style:normal;line-height:1.8}
+.location-experience a:focus-visible,.location-experience summary:focus-visible{outline:2px solid #ad6e43;outline-offset:5px}
+@media(max-width:1023px){.experience-intro,.experience-contact>.site-shell{gap:35px}.experience-credentials>.site-shell{gap:20px}}
+@media(max-width:767px){
+.experience-feature-grid,.experience-case-overview>div{grid-template-columns:minmax(0,1fr);gap:28px}
+.experience-feature-grid>img{aspect-ratio:4/3}
+.experience-section{padding-block:55px}
+.experience-intro,.experience-contact>.site-shell,.experience-credentials>.site-shell{grid-template-columns:minmax(0,1fr)}
+.experience-city-photo img{aspect-ratio:4/3}
+.experience-credentials>.site-shell{gap:18px}
+.experience-credentials span+span,.experience-credentials a{border-top:1px solid #cbbfb0;padding-top:15px}
+.experience-guide-intro{padding-top:55px}
+.experience-guide-section--case-review,.experience-guide-section--compensation,.experience-office{padding:25px 18px}
+}
+/* Match the approved Anaheim page's type and content measure. */
+.location-experience{font-family:Inter,Arial,sans-serif}
+.location-experience .site-shell{width:min(1240px,calc(100% - 80px));max-width:none;padding-inline:0;margin-inline:auto}
+@media(max-width:1100px){.location-experience .site-shell{width:calc(100% - 48px)}}
+@media(max-width:767px){.location-experience .site-shell{width:calc(100% - 36px)}}
+.location-experience[lang="ko"]{font-family:"Noto Sans KR",Inter,Arial,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+.location-experience[lang="ko"] h2,.location-experience[lang="ko"] h3{font-family:"Noto Serif KR",serif;line-height:1.3}
+.experience-resource-language{font-size:12px;font-weight:400}

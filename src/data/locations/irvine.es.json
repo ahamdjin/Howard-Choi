@@ -1,0 +1,291 @@
+{
+  "sourceHash": "aeb2254e5eb5b66f5e9111b478be0a4cfa59e969debe0fa09add5e4c3de9b8a3",
+  "reviewStatus": "reviewed-for-source-parity",
+  "content": {
+    "slug": "irvine",
+    "name": "Irvine",
+    "county": "Orange County",
+    "heading": "Abogado de lesiones y accidentes en Irvine",
+    "lead": "Un accidente en Irvine puede cambiar su trayecto al trabajo, su empleo y la forma en que enfrenta un día normal. Hable con Howard Choi sobre su lesión y las decisiones que tiene por delante. Atendemos a Irvine desde Buena Park, sin honorarios a menos que se obtenga una compensación.",
+    "seoTitle": "Abogado de lesiones y accidentes en Irvine | Howard Choi",
+    "seoDescription": "¿Lesionado en un choque automovilístico, caída o accidente de vehículo compartido en Irvine? Discuta su caso con Howard Choi. Consulta gratuita. Sin honorarios a menos que se obtenga una compensación.",
+    "feature": {
+      "sectionId": "impact",
+      "image": "consultation",
+      "eyebrow": "El efecto sobre su vida laboral",
+      "alt": "Personas discutiendo documentos alrededor de una mesa de reuniones"
+    },
+    "sections": [
+      {
+        "id": "local",
+        "title": "Ayuda con el accidente. Espacio para enfocarse en su recuperación.",
+        "paragraphs": [
+          "Es posible que esté intentando volver al trabajo mientras se acumulan las citas, las llamadas perdidas y las preguntas sin respuesta. Puede hablar con Howard sin esperar a que lleguen todos los informes ni a que se conozca el curso completo del tratamiento. La primera conversación comienza con lo que sucedió en Irvine, qué ha cambiado para usted y qué decisión necesita atención ahora.",
+          "Una colisión en la entrada vehicular de unas oficinas cerca de Jamboree Road, una caída entre un estacionamiento y un vestíbulo, y una lesión durante la recogida de un viaje de Uber o Lyft requieren investigaciones diferentes. Howard puede ayudar a relacionar el incidente con sus efectos en su vida, identificar las preguntas que necesitan pruebas y explicar lo que implicaría presentar una reclamación. Traiga lo que tenga; no necesita preparar un caso completo antes de pedir ayuda."
+        ]
+      },
+      {
+        "id": "scene",
+        "title": "Describa la ruta a través de una intersección en Irvine",
+        "paragraphs": [
+          "En un cruce en Jamboree Road o Culver Drive, los nombres de las calles pueden identificar un área grande sin mostrar qué movimiento causó la colisión. Anote la dirección de aproximación, el carril, la dirección del giro y el punto de impacto. Si los vehículos se movieron antes de que se tomaran fotografías, explique dónde se detuvieron originalmente. Mantenga cualquier grabación de la cámara de a bordo en su forma original.",
+          "Para un accidente cerca de una entrada vehicular de oficinas, anote si el vehículo que giraba estaba saliendo de una propiedad privada o entrando en un carril público. Un mensaje de registro de visita, un recibo de estacionamiento o la hora de la reunión pueden ayudar a establecer la secuencia. Howard puede comparar esos detalles con los relatos proporcionados por los conductores."
+        ],
+        "label": "Dónde ocurrió el accidente"
+      },
+      {
+        "id": "cases",
+        "title": "Una investigación diferente para cada tipo de accidente",
+        "paragraphs": [
+          "Un accidente automovilístico en Irvine que involucra un cambio de carril requiere una revisión distinta a la de una colisión con un peatón en la entrada vehicular de unas oficinas. El relato del cambio de carril puede depender de las posiciones de los vehículos y del daño visible. Para una persona que cruza por una entrada vehicular, la visibilidad, el recorrido del peatón y el giro del conductor se convierten en preguntas centrales.",
+          "Si el punto de recogida de Uber o Lyft cambió de una entrada a otra, conserve los mensajes de la aplicación y el lugar donde realmente subió al vehículo. Para un accidente de motocicleta, conserve fotografías de ambas direcciones de aproximación y de la motocicleta antes de las reparaciones. Howard puede examinar qué registros respaldan cada versión y qué preguntas siguen sin resolverse."
+        ]
+      },
+      {
+        "id": "car-accidents",
+        "label": "Accidentes de automóvil",
+        "title": "Abogado de accidentes automovilísticos en Irvine para choques en intersecciones y entradas privadas",
+        "practice": "car-accidents",
+        "paragraphs": [
+          "Un choque cerca de Jamboree Road puede comenzar en una entrada vehicular de oficinas y terminar en un carril de circulación. Si eso le sucedió a usted, dibuje el punto donde cada vehículo ingresó primero al camino del otro conductor. Agregue la entrada más cercana y cualquier abertura en la mediana. Un marcador colocado en la dirección de la oficina puede identificar el destino mientras omite la parte de la carretera donde los vehículos hicieron contacto por primera vez.",
+          "Considere a un conductor que sale de un campus y afirma que el tráfico en el carril más cercano se detuvo para dejarlo pasar. Un segundo conductor podría haber estado viajando en el carril adyacente, fuera del campo de visión del primer conductor. Una fotografía del carril con vehículos en fila puede explicar una obstrucción, pero no puede establecer lo que sucedió en el carril contiguo. Howard puede comparar las direcciones de aproximación, los puntos de impacto y lo que cada testigo pudo ver antes de decidir qué parte de la secuencia aún necesita apoyo.",
+          "Un video de una cámara frontal (dashcam) que comienza en el momento del impacto puede omitir el giro o el cambio de señal que es más importante. Guarde la grabación original más larga disponible, incluyendo el tiempo antes del impacto. Si posteriormente hace una copia corta para explicar el evento, manténgala junto al original y anote qué eliminó. Para una cámara de seguridad, anote hacia qué entrada estaba orientada para que una solicitud pueda identificar la vista correcta."
+        ],
+        "link": {
+          "label": "Guía de práctica sobre accidentes automovilísticos",
+          "href": "/practice-areas/car-accidents"
+        }
+      },
+      {
+        "id": "pedestrians",
+        "label": "Lesiones a peatones",
+        "title": "Abogado de accidentes de peatones en Irvine para cruces y salidas de estacionamientos",
+        "practice": "pedestrian-accidents",
+        "paragraphs": [
+          "Alguien que camina desde una estructura de estacionamiento hacia un local comercial de Irvine Spectrum puede cruzar una rampa de salida o una vía interna antes de llegar a la acera pública. Si un vehículo lo golpea, identifique qué parte de esa ruta había alcanzado. Anote el nivel del garaje o la salida, la dirección en la que caminaba y si una columna, un vehículo estacionado o el paisajismo bloqueaban la vista.",
+          "Documente también la dirección de aproximación del conductor y la suya siempre que pueda hacerlo de manera segura. Una foto tomada desde el lado peatonal podría mostrar un camino marcado que es difícil para un conductor ver en una rampa descendente. Un testigo en el vestíbulo pudo haber visto salir el vehículo pero no haber visto el momento en que cruzó el camino. Proporcione a Howard suficiente contexto para vincular cada observación con un punto específico de la secuencia.",
+          "Si el personal del estacionamiento o la seguridad tomaron una declaración, anote quién la recibió y en qué ubicación trabajaban. Conserve un recibo o boleto de entrada que ayude a establecer cuándo llegó. Juntos, la ruta y las marcas de tiempo pueden ayudar a identificar los registros de propiedad adecuados sin asumir que cada cámara o informe cubre el mismo incidente."
+        ],
+        "link": {
+          "label": "Guía de práctica sobre accidentes de peatones",
+          "href": "/practice-areas/pedestrian-accidents"
+        }
+      },
+      {
+        "id": "records",
+        "title": "Mantenga los registros de propiedad separados del informe vial",
+        "paragraphs": [
+          "Confirme si la Policía de Irvine, el CHP u otra agencia respondieron antes de solicitar un informe de colisión. Lleve el número de incidente, la fecha y la escena exacta. Un informe de seguridad del edificio puede documentar una lesión en una propiedad incluso cuando no contiene una investigación de colisión vial.",
+          "Para una caída en un vestíbulo de oficina o una estructura de estacionamiento, registre el nivel, la entrada y la ruta que utilizó. Tome fotografías de la iluminación, las señales de advertencia y la condición desde su dirección de desplazamiento. Identifique al administrador de la propiedad si se conoce. Esos detalles ayudan a un abogado a localizar la condición e investigar quién era responsable de su mantenimiento."
+        ]
+      },
+      {
+        "id": "freeway",
+        "label": "Informes de autopistas y rampas",
+        "title": "Encuentre el informe correcto después de un accidente cerca de la I-5 o la I-405",
+        "paragraphs": [
+          "Un accidente en Irvine descrito como ocurrido en una salida de autopista puede haber sucedido en la vía principal, en la rampa o en el semáforo situado después de la rampa. La agencia que respondió y el primer punto de contacto son más útiles que la dirección comercial más cercana. Anote la autopista, la dirección del viaje, el nombre de la salida y dónde vio por primera vez al otro vehículo. Si los vehículos terminaron en una parte diferente de la carretera, registre eso por separado.",
+          "La CHP proporciona informes para colisiones que investigó. Si la CHP manejó su accidente, su página oficial de solicitudes explica el portal y el formulario CHP 190. Guarde su tarjeta de informe e identifique su rol en el incidente. Si la Policía de Irvine investigó en su lugar, utilice su canal de registros. Un resultado faltante de una agencia es una razón para confirmar quién investigó antes de pedir otra copia.",
+          "Una colisión que involucra a varios vehículos también puede producir versiones contradictorias sobre el orden del impacto. Por ejemplo, un conductor podría recordar un empujón desde atrás antes de golpear el vehículo de delante, mientras que otro solo vio el impacto frontal. Guarde la cantidad y el orden de los impactos que recuerda, fotografías de ambos extremos del vehículo y cualquier grabación que muestre cuándo la fila comenzó a reducir la velocidad. Howard puede utilizar esos detalles para identificar qué relatos describen momentos separados del mismo evento."
+        ],
+        "link": {
+          "label": "Solicitudes de informes de accidentes de la CHP",
+          "href": "https://www.chp.ca.gov/traffic/request-a-crash-report/"
+        }
+      },
+      {
+        "id": "signal-evidence",
+        "label": "Evidencia de señales y cámaras",
+        "title": "Lo que una cámara puede establecer en un cruce de Irvine",
+        "paragraphs": [
+          "En un cruce de múltiples carriles, la pregunta útil es qué movimiento estaba controlado por un semáforo concreto. Una flecha de giro a la izquierda, un semáforo para seguir de frente y una cuenta regresiva para peatones pueden aparecer todos en una sola fotografía. Marque el carril que utilizó cada persona y hacia qué dirección apuntaba la cámara. Una grabación desde la esquina opuesta puede mostrar el cruce peatonal mientras deja fuera del encuadre un semáforo concreto.",
+          "El centro de gestión de tráfico de Irvine utiliza cámaras para monitorear el tráfico. La presencia de una cámara no establece que se haya guardado filmación de su accidente ni que esté disponible para solicitarla. Anote su posición, la fecha y la hora aproximada, y hacia qué parecía apuntar. Cámaras de negocios cercanos o un dashcam pueden proporcionar vistas diferentes. Preserve las grabaciones originales que ya tenga, junto con suficiente contexto para relacionar sus marcas de tiempo.",
+          "Si un pasajero recuerda una luz verde pero no puede decir a qué luz estaba mirando, registre su observación en esos términos. Un relato que separa las observaciones directas de las inferencias le da a Howard una base más clara para comparar los testimonios de testigos con el diseño físico."
+        ],
+        "link": {
+          "label": "Gestión de tráfico de la ciudad de Irvine",
+          "href": "https://legacy.cityofirvine.org/cityhall/pw/traffic/traffic_management.asp"
+        }
+      },
+      {
+        "id": "rideshare",
+        "label": "Accidentes con Uber y Lyft",
+        "title": "Abogado de accidentes de Uber y Lyft en Irvine",
+        "practice": "rideshare-accidents",
+        "paragraphs": [
+          "En un gran complejo de oficinas o comercios en Irvine, un marcador de recogida puede señalar una entrada mientras el conductor le pide al pasajero que espere en otra. Conserve el marcador original, las instrucciones modificadas y el punto real de abordaje. Identifique si ya estaba sentado, acercándose al vehículo o cruzando un carril interno en el momento del incidente. Un solo recibo del viaje puede mostrar la ruta reservada sin mostrar ese cambio.",
+          "Si otra persona reservó el viaje, pídale que conserve los mensajes y el recibo en el dispositivo de reserva. Anote qué detalles observó usted mismo y cuáles provienen de la cuenta de reserva. Si el personal de seguridad registró el incidente, conserve el número de referencia y el nombre de la propiedad donde trabajaban. Howard puede comparar esos registros para acotar el tiempo e identificar la entrada relevante."
+        ],
+        "link": {
+          "label": "Guía de práctica sobre accidentes con Uber y Lyft",
+          "href": "/practice-areas/rideshare-accidents"
+        }
+      },
+      {
+        "id": "falls",
+        "label": "Lesiones por resbalones y caídas",
+        "title": "Abogado de resbalones y caídas en Irvine: oficinas y áreas compartidas",
+        "practice": "slip-and-fall",
+        "paragraphs": [
+          "Un visitante de una oficina puede pasar por un garaje, un vestíbulo de ascensor y un sendero al aire libre antes de llegar a la empresa que vino a visitar. Si usted cayó en ese recorrido, el nombre de la empresa y la dirección del edificio pueden aún dejar el lugar poco claro. Registre el nivel del estacionamiento, el grupo de ascensores y la puerta que utilizó. Una fotografía más amplia puede mostrar la ruta desde el ascensor hasta la superficie, mientras que una más cercana puede mostrar las condiciones que encontró.",
+          "Una fuga en una rampa de garaje plantea preguntas diferentes a una alfombra enrollada en la puerta del vestíbulo. Para una fuga, anote si vio goteo de agua o solo un parche húmedo. Si tropezó con una alfombra, registre su posición en relación con la puerta, si una esquina estaba levantada y qué podía ver mientras se acercaba. Separe lo que vio antes de la caída de cualquier cosa que notó después. La superficie puede haber cambiado para cuando otra persona llegó.",
+          "Si un empleado tomó su nombre o llamó a seguridad del edificio, escriba para qué empresa o puesto de atención trabajaba. Un inquilino pudo haber sido el primero en enterarse de la lesión mientras que un administrador de propiedades o contratista manejaba el área. Howard puede examinar esa división de responsabilidad e identificar qué registros de inspección, solicitudes de mantenimiento o testimonios de testigos pueden ayudar a explicar lo sucedido.",
+          "Una credencial de entrada, un recordatorio de cita o un recibo de estacionamiento pueden ayudar a precisar el momento. Una foto de la propiedad tomada en otro día aún puede ayudar a explicar la distribución, siempre que su fecha sea clara. Mantenga esas fotos de referencia separadas de cualquier toma realizada cuando la condición estaba presente."
+        ],
+        "link": {
+          "label": "Guía de práctica sobre resbalones y caídas",
+          "href": "/practice-areas/slip-and-fall"
+        }
+      },
+      {
+        "id": "truck-accidents",
+        "label": "Accidentes de camiones",
+        "title": "Abogado de accidentes de camiones en Irvine para choques de entregas comerciales",
+        "practice": "truck-accidents",
+        "paragraphs": [
+          "Un camión que retrocede hacia una entrada de servicio puede cruzar el camino de un empleado, contratista u otro conductor de entrega. Observe el número de la bahía de carga, la dirección hacia la que apuntaba el camión y si alguien estaba guiando la maniobra. Si una barrera o una fila de vehículos estacionados afectaron la visibilidad, marque dónde se encontraba. Una dirección de entrega puede identificar la propiedad sin mostrar dónde se le pidió al camión que se detuviera.",
+          "Guarde los identificadores del vehículo que tenga y cualquier instrucción recibida para ingresar al sitio. Un logotipo comercial identifica un nombre que vale la pena investigar. La empresa que recibe las mercancías, la compañía que organizó el viaje y el propietario del camión pueden tener registros diferentes. Una cita de carga puede ayudar a precisar el horario, mientras que un mensaje de despacho puede ayudar a explicar por qué el conductor utilizó una entrada particular.",
+          "Si estaba caminando por el área de servicio, explique cómo llegó allí y si señales o personal lo dirigieron hacia ese lugar. Si estaba conduciendo, separe la trayectoria de su automóvil del espacio ocupado por la cabina o el remolque del camión. Howard puede comparar esos detalles con el patrón de daños y los testimonios disponibles. La investigación puede necesitar considerar el movimiento del vehículo y la forma en que el sitio manejó a las personas y las entregas en ese momento."
+        ],
+        "link": {
+          "label": "Guía de práctica sobre accidentes de camiones comerciales",
+          "href": "/practice-areas/truck-accidents"
+        }
+      },
+      {
+        "id": "motorcycle",
+        "label": "Accidentes de motocicleta",
+        "title": "Abogado de accidentes de motocicleta en Irvine",
+        "practice": "motorcycle-accidents",
+        "paragraphs": [
+          "Cuando un conductor gira a través de un espacio en el tráfico, un motociclista en un carril adyacente puede ser difícil de ver para un testigo hasta tarde en la secuencia. Identifique la dirección del viaje, qué carriles estaban en cola y si el giro comenzó desde una entrada o un carril de espera para girar debidamente marcado. Si el tráfico se despejó posteriormente, etiquete cualquier fotografía tomada después para que puedan usarse para explicar la disposición sin distorsionar la vista anterior.",
+          "Mantenga las estimaciones de reparación y las fotografías de la motocicleta antes de que sea reparada. Si el equipo fue dañado, consérvelo y registre dónde aparecieron las marcas. Un testigo que vio al conductor comenzar a girar puede ayudar a establecer el momento incluso si no pudo ver toda la trayectoria de aproximación de la motocicleta. Howard puede comparar estas diferentes observaciones sin tratar una sola declaración de un testigo o una fotografía del daño como un relato completo."
+        ],
+        "link": {
+          "label": "Guía de práctica sobre accidentes de motocicleta",
+          "href": "/practice-areas/motorcycle-accidents"
+        }
+      },
+      {
+        "id": "impact",
+        "title": "Cuando el regreso a un trabajo en Irvine no significa una recuperación completa",
+        "paragraphs": [
+          "Alguien con un trabajo de escritorio puede reanudar el trabajo mientras lucha con la concentración sostenida, los desplazamientos o estar sentado. Mantenga las restricciones médicas y los cambios en el horario o las funciones juntos. Anote qué cambió después de intentar la jornada laboral normal, con ejemplos concretos y fechas.",
+          "Una revisión de la reclamación debe conectar esas limitaciones con el registro de tratamiento y los ingresos documentados. Lleve la descripción del puesto, los registros de permisos y ausencias laborales y cualquier acuerdo de trabajo revisado a la consulta de Howard. Él puede discutir qué registros adicionales ayudarían a distinguir una ausencia inmediata de un efecto más prolongado en el trabajo."
+        ],
+        "link": {
+          "href": "/contact",
+          "label": "Hable sobre los cambios en su jornada laboral"
+        }
+      },
+      {
+        "id": "recovery",
+        "label": "Recuperación y deberes laborales",
+        "title": "Cómo documentar los cambios en una jornada laboral de oficina en Irvine",
+        "paragraphs": [
+          "El regreso a la oficina cuenta parte de la historia. Una persona podría trabajar las mismas horas mientras transfiere llamadas de clientes, evita un segundo desplazamiento el mismo día o hace pausas para dejar de mirar la pantalla. Describa la tarea, cuándo comenzó el cambio y si continuó. Un mensaje para organizar reuniones más cortas puede mostrar cómo una restricción afectó el trabajo, incluso cuando el título del puesto y el salario permanecieron iguales.",
+          "Mantenga los registros del empleador y las recomendaciones médicas juntos, preservando la distinción entre ellos. Un supervisor puede describir las adaptaciones que se realizaron. Un clínico puede documentar las limitaciones que evaluó y cuándo cambiaron. Si trabajó desde casa durante un período, registre qué tareas podía realizar allí y cuáles aún requerían ayuda o reasignación.",
+          "Si la lesión afectó su capacidad para conducir al trabajo, mantenga ese relato separado de cualquier restricción sobre el desempeño del trabajo una vez que llegue. Por ejemplo, un cambio temporal en el transporte puede generar gastos adicionales sin una reducción en las horas. Una posterior reducción de funciones puede afectar los ingresos de manera diferente. Los recibos fechados, los registros de tiempo y la correspondencia ayudan a Howard a revisar cada efecto sin contar la misma pérdida dos veces.",
+          "En la primera reunión, traiga los registros más representativos. Un horario normal anterior al accidente, una restricción escrita y un horario revisado pueden mostrar el cambio con mayor claridad que una carpeta de mensajes no relacionados. Explique qué ha mejorado así como lo que aún es difícil. Esto proporciona a la oficina un punto de partida para decidir cuáles períodos y registros necesitan una revisión más detallada."
+        ]
+      },
+      {
+        "id": "serious-injuries",
+        "label": "Registros de lesiones graves",
+        "title": "Conecte el tratamiento inicial con las limitaciones que surgen más tarde",
+        "paragraphs": [
+          "La primera visita médica puede registrar lo que pudo evaluarse ese día. Las citas posteriores pueden documentar una restricción que se hizo evidente durante la actividad ordinaria. Mantenga las visitas en orden, incluyendo dónde recibió atención, qué reportó y qué recomendó el proveedor. Si había estado viendo a un proveedor por un problema similar antes del accidente, identifique ese historial para que el cambio pueda evaluarse con precisión.",
+          "Un problema de concentración o equilibrio puede afectar un trabajo de maneras que una nota de cita puede no describir completamente. Anote tareas específicas que se volvieron difíciles, como seguir una secuencia en un laboratorio, revisar un documento durante un período prolongado o subir o bajar escaleras en una ruta habitual. Describa el cambio a su proveedor tratante. Para la revisión del caso, Howard puede comparar esas observaciones con el registro médico e identificar dónde puede ser necesaria documentación adicional.",
+          "Si cambia el plan de tratamiento, conserve la recomendación fechada y anote qué partes se completaron. Una derivación para una evaluación es diferente a una recomendación para terapia continua. Organizar los registros de esta manera ayuda a distinguir la atención que ya ha recibido, la atención que ha sido recomendada y las preguntas que aún están siendo evaluadas."
+        ],
+        "link": {
+          "label": "Guía de práctica sobre lesiones graves",
+          "href": "/practice-areas/serious-injuries"
+        }
+      },
+      {
+        "id": "records-review",
+        "label": "Leer su informe",
+        "title": "Qué buscar en un informe de colisión del Departamento de Policía de Irvine",
+        "paragraphs": [
+          "Si el Departamento de Policía de Irvine preparó el informe, verifique las instrucciones del departamento sobre quién puede obtenerlo y cómo confirmar su disponibilidad. Tenga a mano el número de incidente y su rol cuando se ponga en contacto con el departamento. Un conductor, un pasajero listado y el propietario de un vehículo pueden tener información identificativa diferente que proporcionar. Guarde cualquier comprobante de referencia incluso mientras espera el informe completo.",
+          "Cuando llegue el informe, verifique primero los datos básicos: la fecha, la carretera o entrada privada, los vehículos involucrados y dónde el diagrama los ubica. Si un informe identifica un complejo comercial por su dirección callejera, añada su propio boceto que muestre qué entrada estaba en uso. Un boceto posterior debe etiquetarse como su recuerdo. Preserve el informe en su forma original.",
+          "Lea la declaración de un testigo junto con el diagrama. Alguien esperando salir de la misma propiedad podría describir si un vehículo estaba detenido, mientras que una persona en la siguiente intersección podría haber visto solo lo que ocurrió después de que ingresó a la carretera. Identifique cualquier contacto o documento faltante sin asumir que el material omitido apoya una u otra versión. Howard puede usar las discrepancias para decidir qué verificar a continuación."
+        ],
+        "link": {
+          "label": "Orientación del Departamento de Policía de Irvine sobre cómo obtener informes",
+          "href": "https://legacy.cityofirvine.org/crm/ReqFaq/answers.asp?id=8352"
+        }
+      },
+      {
+        "id": "claim-value",
+        "label": "Documentación de pérdidas",
+        "title": "Calcule los costos reales de los cambios en su desplazamiento a Irvine",
+        "paragraphs": [
+          "Cuando una restricción cambia la forma en que viaja al trabajo, mantenga juntos los detalles antes y después. Un pasajero que normalmente toma un autobús podría necesitar temporalmente transporte para acudir a sus citas. Alguien que normalmente conduce a un campus puede organizar transporte pagado por un período. Registre las fechas, por qué fue necesario el cambio y las cantidades realmente pagadas. Separe los viajes al tratamiento del desplazamiento ordinario para que cada gasto pueda entenderse en su contexto.",
+          "Mantenga un libro de contabilidad simple junto con los recibos. Si un miembro de la familia pagó por un viaje o un compañero de trabajo lo condujo, registre qué sucedió y quién pagó, si alguien lo hizo. Si un gasto fue reembolsado o se devolvió el importe de una reserva, marque eso también. Una confirmación de pago y una factura pueden referirse al mismo gasto. Howard puede revisar los registros contra el cronograma del tratamiento y el trabajo antes de evaluar qué podría incluirse en una reclamación.",
+          "Algunos efectos no tienen recibo. Si aún puede tomar su ruta habitual pero necesita tiempo adicional o asistencia en una estación, describa el cambio específico y cuánto duró. Manténgalo separado del total en dólares. Esto proporciona a la consulta un relato más claro de las limitaciones diarias mientras deja las preguntas sobre la compensación que puede obtenerse legalmente para los hechos y la evidencia."
+        ]
+      },
+      {
+        "id": "deadlines",
+        "label": "Plazos y partes",
+        "title": "Una ubicación en Irvine puede plantear una pregunta temprana sobre quién controlaba la escena",
+        "paragraphs": [
+          "En una entrada vehicular compartida o a lo largo de una carretera de acceso al campus, establezca si la condición involucraba a un operador privado, a una agencia pública o a ambas. Un incidente dentro de un edificio y un incidente en la acera pública exterior pueden requerir registros diferentes y preguntas distintas sobre el mantenimiento. Fotografe cualquier letrero que ayude a identificar el límite y anote quién respondió. Una dirección postal por sí sola no establece el control.",
+          "Los tribunales de California describen un período general de dos años para muchas demandas por lesiones personales. Las reclamaciones que involucran a una agencia gubernamental tienen procedimientos diferentes y pueden requerir una presentación de reclamo mucho más temprana. Si parece estar involucrado un vehículo público, un proyecto vial o una agencia, identifíquela cuando se comunique con Howard. Lleve cualquier notificación que haya recibido y la fecha del incidente para que el plazo pueda revisarse en contexto.",
+          "Una solicitud de informe es un paso separado de presentar y tramitar una reclamación. Guarde sus solicitudes y respuestas con sus fechas. Si aún está esperando un documento, lleve la información que tenga y diga qué falta. La primera conversación puede abordar cuestiones urgentes mientras se recopila evidencia."
+        ],
+        "link": {
+          "label": "Orientación de los tribunales de California sobre los plazos de presentación",
+          "href": "https://selfhelp.courts.ca.gov/civil-lawsuit/statute-limitations"
+        }
+      },
+      {
+        "id": "first-call",
+        "label": "Preparándose para una consulta",
+        "title": "Traiga las preguntas sin respuesta a su primera revisión de caso en Irvine",
+        "paragraphs": [
+          "Si se lesionó al salir de un complejo de oficinas en Irvine, su pregunta más urgente puede ser si existe un registro del edificio. Si resultó herido en el tráfico de la autopista, es posible que no esté seguro de qué agencia realizó la investigación. Si la preocupación inmediata es una restricción para regresar al trabajo, traiga las instrucciones del proveedor y las funciones afectadas. Comenzar con la decisión que debe tomar ayuda a enfocar la conversación.",
+          "Una cronología breve puede ser útil incluso si algunos momentos son aproximados. Liste dónde ocurrió el incidente, quién respondió, cuándo comenzó la atención médica y cuándo cambiaron sus actividades habituales. Utilice entradas separadas para los eventos que recuerda y los detalles aprendidos de otra persona o documento. Si dos registros discrepan, traiga ambos para que la diferencia pueda ser evaluada en lugar de resolverse solo con base en la memoria.",
+          "En una consulta con Howard sobre un incidente en Irvine, pregunte qué problema necesita atención primero y qué material puede recopilarse más tarde. Si decide contratar al despacho, revise el acuerdo por escrito y discuta cómo enviar actualizaciones a medida que cambien el tratamiento o el trabajo. El despacho sirve a Irvine desde su oficina en Buena Park y ofrece una consulta inicial gratuita."
+        ],
+        "link": {
+          "label": "Qué esperar de la primera conversación",
+          "href": "/about/what-to-expect"
+        }
+      },
+      {
+        "id": "shared-access",
+        "label": "Rutas de acceso compartido",
+        "title": "Cuando un desvío temporal cambia cómo las personas llegan a una propiedad en Irvine",
+        "paragraphs": [
+          "Una oficina o propiedad comercial puede redirigir a las personas alrededor de una entrada cerrada durante el mantenimiento. Si usted resultó lesionado mientras seguía un desvío, conserve el aviso, la ruta que le indicaron tomar y qué era diferente ese día. Por ejemplo, un cartel en una entrada puede dirigir a los visitantes a una puerta alternativa sin mostrar que la ruta cruza un carril de servicio. Un mapa del sitio más antiguo puede describir el diseño normal, mientras que sus fotografías y mensajes ayudan a establecer qué se indicó hacer a los visitantes en ese momento.",
+          "Si otra persona le dirigió personalmente, anote dónde estaba esa persona y qué recuerda que le dijo. Identifique si parecía trabajar para la propiedad, un inquilino o un contratista, y marque eso como incierto si no lo sabe. Una empresa puede conocer sobre una ruta temporal sin controlar el trabajo que la creó. Howard puede examinar quién planificó el cambio, quién mantuvo el acceso y qué información estaba disponible para las personas que la utilizaban.",
+          "Guarde registros de cuándo la ruta volvió a la normalidad si los tiene. Una visita posterior puede ayudar a explicar por dónde corría el desvío, pero las fotografías tomadas después de que se reabriera un portón deben estar fechadas claramente. El objetivo es reconstruir las condiciones en el momento de la lesión utilizando las piezas que pueda verificar."
+        ]
+      },
+      {
+        "id": "questions",
+        "label": "Preguntas locales",
+        "title": "Preguntas que los clientes de Irvine pueden hacer en la primera llamada",
+        "paragraphs": [
+          "¿Qué hago si me lastimé en un estacionamiento y nunca recibí un número de informe policial? Comience con la propiedad, el nivel del garaje y el empleado o mostrador de seguridad al que contactó. Un recibo de estacionamiento o un mensaje de visitante puede ayudar a establecer la ubicación y la hora. Explique lo que ya ha solicitado y si la propiedad le dio un número de referencia.",
+          "¿Puedo llamar si el informe de la autopista describe un punto de impacto diferente? Lleve el informe, la ruta que recorrió y cualquier foto que muestre las posiciones de los vehículos. Distinga dónde sintió por primera vez el impacto de dónde se detuvo. Howard puede discutir cómo esos detalles afectan la investigación.",
+          "¿Qué hago si todavía trabajo pero tengo funciones reducidas? Lleve ejemplos de tareas que dejó de realizar, restricciones escritas y cualquier cambio en las horas o el salario. Si trabaja de forma remota, explique qué permitió el arreglo y qué sigue siendo difícil. Los cambios prácticos son útiles incluso cuando permaneció en el mismo puesto.",
+          "¿Howard recibe a los clientes en una oficina de Irvine? Howard atiende a clientes de Irvine desde la oficina de Buena Park. Llame para discutir el accidente y programar una consulta gratuita. Puede comenzar con los detalles del incidente que tenga mientras espera los registros restantes."
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "label": "Departamento de Policía de Irvine",
+        "href": "https://www.cityofirvine.org/irvine-police-department"
+      },
+      {
+        "label": "Solicitudes de informes de accidentes del CHP",
+        "href": "https://www.chp.ca.gov/traffic/request-a-crash-report/"
+      }
+    ]
+  }
+}

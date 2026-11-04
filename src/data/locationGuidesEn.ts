@@ -58,6 +58,10 @@ export const locationGuidesEn: Record<string, LocalGuide> = {
       ["Is the North Justice Center the courthouse for every Fullerton injury case?", "No. North Justice Center is a real Orange County court location, but California venue rules, case type and the court's current assignment practices determine where a particular civil claim belongs."],
     ],
     sources: [
+      { label: "Fullerton downtown parking and Transportation Center", href: "https://www.cityoffullerton.com/government/departments/public-works/traffic-engineering-signals/parking" },
+      { label: "Cal State Fullerton campus parking maps", href: "https://parking.fullerton.edu/maps/" },
+      { label: "Cal State Fullerton Police Records Bureau", href: "https://police.fullerton.edu/contact-us-hours/index.html" },
+      { label: "Fullerton Police — request an existing report", href: "https://www.cityoffullerton.com/government/departments/police/police-services/request-police-report" },
       { label: "Fullerton Police — traffic collision reporting rules", href: "https://www.cityoffullerton.com/government/departments/police/police-services/traffic-collision-report" },
       { label: "Orange County Superior Court — North Justice Center", href: "https://www.occourts.org/location/north-justice-center" },
     ],
@@ -74,6 +78,8 @@ export const locationGuidesEn: Record<string, LocalGuide> = {
       ["Can I obtain a report just because I know where the crash happened?", "Not necessarily. Garden Grove Police outlines eligibility and restrictions on release; some records require redaction or remain unavailable during an investigation. Follow the department's request rules and identify your connection to the incident."],
     ],
     sources: [
+      { label: "Garden Grove Public Works and SR-22 contacts", href: "https://ggcity.org/report-issue" },
+      { label: "Garden Grove Police online reporting eligibility", href: "https://ggcity.org/police/online-reporting" },
       { label: "Garden Grove Police — report request and eligibility", href: "https://ggcity.org/police/rar" },
       { label: "California Courts — government-claim deadlines", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/government-claim" },
     ],
@@ -90,6 +96,8 @@ export const locationGuidesEn: Record<string, LocalGuide> = {
       ["Do I need to wait for the report before preserving evidence?", "No. Photograph road signs, vehicles, damage and visibility conditions promptly. The time allowed to request a record is not a reason to delay medical evaluation or witness and video preservation."],
     ],
     sources: [
+      { label: "Cypress College campus map", href: "https://www.cypresscollege.edu/campus-map-directions/" },
+      { label: "Cypress College Campus Safety services", href: "https://www.cypresscollege.edu/academics/divisions-special-programs/services/campus-safety/services/" },
       { label: "Cypress Police — records fee and release process", href: "https://www.cypressca.org/departments/police/fees-and-services/records-fee-schedule" },
       { label: "Cypress Police — official records application", href: "https://www.cypressca.org/departments/police/forms-documents" },
     ],
@@ -122,7 +130,8 @@ export const locationGuidesEn: Record<string, LocalGuide> = {
       ["Will the case necessarily be heard at the Norwalk courthouse?", "Not necessarily. Los Angeles Superior Court has a civil court locator and assignment rules. Confirm the permitted venue and assigned court for the particular case rather than assuming the nearest courthouse handles it."],
     ],
     sources: [
-      { label: "City of La Mirada — Public Safety and Sheriff services", href: "https://www.cityoflamirada.org/departments/public-safety/la-mirada-public-safety" },
+      { label: "Biola University — campus and parking map", href: "https://www.biola.edu/campus-map" },
+      { label: "Los Angeles County — Sheriff’s service area for La Mirada", href: "https://locator.lacounty.gov/lac/Location/3177214/norwalk-sheriffs-station" },
       { label: "LASD — Norwalk Sheriff's Station", href: "https://lasd.org/norwalk/" },
       { label: "LA Superior Court — where to file a civil case", href: "https://www.lacourt.org/division/civil/CI0014.aspx" },
     ],
@@ -139,6 +148,10 @@ export const locationGuidesEn: Record<string, LocalGuide> = {
       ["Can any shopper request the Sheriff's collision report?", "No. LASD requires the proper connection to the incident and has records-release rules. Its Records and Identification Bureau explains how an eligible requester can apply for a copy."],
     ],
     sources: [
+      { label: "City of Cerritos — Heritage Park", href: "https://www.cerritos.gov/recreation-culture/parks/heritage-park/" },
+      { label: "City of Cerritos — Community Safety Division services", href: "https://www.cerritos.gov/community-safety/public-safety/" },
+      { label: "City of Cerritos — Sheriff's counter and report services", href: "https://www.cerritos.gov/community-safety/police-fire-and-emergency-services/cerritos-sheriffs-station/" },
+      { label: "Cerritos Library — Civic Center location", href: "https://library.cerritos.gov/about-the-library/hours-and-location/" },
       { label: "LASD — Cerritos Sheriff's Station", href: "https://lasd.org/cerritos/" },
       { label: "LASD — records request requirements", href: "https://lasd.org/records-faq/" },
       { label: "CHP — crash report request", href: "https://www.chp.ca.gov/traffic/request-a-crash-report/" },
@@ -156,6 +169,9 @@ export const locationGuidesEn: Record<string, LocalGuide> = {
       ["Does an injury claim in Norwalk always get filed in Norwalk courthouse?", "No. The courthouse exists, but Los Angeles Superior Court directs civil filers to the court locator and applicable venue rules. Where the injury occurred and where a defendant lives or does business may matter."],
     ],
     sources: [
+      { label: "Los Angeles County — Norwalk City Hall location", href: "https://locator.lacounty.gov/lac/Location/3177275/norwalk-city-hall" },
+      { label: "OCTA — Norwalk transfer between Metrolink and Metro C Line", href: "https://www.octa.net/getting-around/rail/metrolink/how-to-ride/metrolink-connections" },
+      { label: "Metrolink — Norwalk / Santa Fe Springs station information", href: "https://metrolinktrains.com/rider-info/general-info/stations/norwalksanta-fe-springs/" },
       { label: "LASD — Norwalk Sheriff's Station", href: "https://lasd.org/norwalk/" },
       { label: "LASD — requesting collision reports", href: "https://lasd.org/records-faq/" },
       { label: "LA Superior Court — civil filing locator", href: "https://www.lacourt.org/division/civil/CI0014.aspx" },
@@ -173,6 +189,7 @@ export const locationGuidesEn: Record<string, LocalGuide> = {
       ["How should I document a visibility dispute on a Whittier hillside road?", "Photograph each approach, roadway curvature, parked vehicles, grade, lighting and signage while conditions are safe. Independent video and eyewitnesses may help test whether an obstruction affected what someone could see."],
     ],
     sources: [
+      { label: "City of Whittier — Greenway Trail information", href: "https://www.cityofwhittier.org/services/online-resources/frequently-asked-questions" },
       { label: "Whittier Police — Traffic Bureau responsibilities", href: "https://www.whittierpd.org/services/patrol-operations/traffic-bureau" },
       { label: "Whittier Police — records and accident documents", href: "https://www.whittierpd.org/services/services-division/police-records" },
       { label: "LASD — Norwalk Station service area", href: "https://lasd.org/norwalk/" },

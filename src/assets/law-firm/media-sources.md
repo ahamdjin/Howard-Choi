@@ -72,3 +72,13 @@ shown where the firm actually holds the award, issued in this firm's name.
    two sections away. The two claims cannot headline the same page. If the
    firm's real recovery figure is restated, this badge can come back — the
    artwork is recoverable from git history.
+
+# Location experience photography (November 4, 2026)
+
+- Location case stories now use a California street scene instead of `pedestrian-crossing.jpg`. That older illustrative photo is a poor regional fit and is not used in the new location experience.
+- 3rd Street / South Burlington Avenue, Los Angeles: David James Henry, CC BY-SA 4.0. Source: https://commons.wikimedia.org/wiki/File:3rd_Street_Westlake_Los_Angeles.jpg. Direct Wikimedia thumbnail; source and licence links displayed below the image. This is illustrative California street photography, not a claimed scene of a client accident.
+- Los Angeles city hero: Alek Leckszas, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Los_Angeles_with_Mount_Baldy.jpg. Credit retained in the city photo caption.
+
+- La Mirada location hero and local introduction: Biola University bell tower, Stacy Eltiti, CC BY-SA 3.0. Source: https://commons.wikimedia.org/wiki/File:Bell_Tower_Biola_University.JPG . License: https://creativecommons.org/licenses/by-sa/3.0/ . Original photograph dated March 21, 2008; CSS crops for the page layout. Replaces the library interior so the city page uses an outdoor landmark.
+
+- Norwalk location hero and introduction: Norwalk City Hall, Northwalker, CC0. Source: https://commons.wikimedia.org/wiki/File:Norwalk_City_Hall,_Norwalk,_CA.jpg . Original 4467 x 2978 photograph replaces the low-resolution panoramic City Hall image; served as a 960px thumbnail with responsive CSS cropping.
