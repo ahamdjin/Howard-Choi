@@ -7,6 +7,7 @@ export type BlogSection = { heading: string; paragraphs: string[] };
 export type BlogPost = {
   slug: string;
   title: string;
+  metaTitle?: string;
   excerpt: string;
   category: string;
   date: string;
@@ -24,6 +25,7 @@ export type BlogPost = {
 type BlogFrontmatter = {
   slug: string;
   title: string;
+  metaTitle?: string;
   excerpt: string;
   category: string;
   publishedAt: string;
@@ -111,7 +113,8 @@ const parseSections = (body: string): { leadParagraphs: string[]; sections: Blog
 
   const flushParagraph = () => {
     if (paragraphLines.length === 0) return;
-    const paragraph = paragraphLines.join(" ").trim();
+    const isBlock = paragraphLines.every((line) => /^(?:- |\d+\. |\|)/.test(line));
+    const paragraph = paragraphLines.join(isBlock ? "\n" : " ").trim();
     if (current) current.paragraphs.push(paragraph);
     else leadParagraphs.push(paragraph);
     paragraphLines = [];
@@ -166,6 +169,7 @@ const parseBlog = (raw: string): BlogPost | null => {
   return {
     slug: data.slug,
     title: data.title,
+    metaTitle: data.metaTitle?.trim() || undefined,
     excerpt: data.excerpt,
     category: data.category,
     date: formatPublishedDate(data.publishedAt),

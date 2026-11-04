@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title">
+<title id="title">Diagram of a correctly positioned lap and shoulder seat belt</title>
+<rect width="1200" height="630" fill="#eae5dd"/>
+<rect x="390" y="70" width="420" height="490" rx="80" fill="#252c31"/>
+<path d="M422 510h356l62 80H360z" fill="#424d55"/>
+<circle cx="600" cy="188" r="69" fill="#c7a78d"/>
+<path d="M514 265q86-40 172 0l75 242H439z" fill="#718391"/>
+<path d="M458 264l257 235M465 495l287 16" fill="none" stroke="#f0c984" stroke-width="29" stroke-linecap="round"/>
+<rect x="695" y="477" width="56" height="54" rx="10" fill="#992f2f"/>
+<path d="M466 340H222M520 501H222" fill="none" stroke="#252c31" stroke-width="4"/>
+<g fill="#252c31" font-family="sans-serif" font-size="30">
+<text x="46" y="326">Shoulder belt</text><text x="46" y="366">across the chest</text>
+<text x="46" y="486">Lap belt</text><text x="46" y="526">low across hips</text>
+</g>
+</svg>

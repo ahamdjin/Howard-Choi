@@ -8,7 +8,7 @@ export const Route = createFileRoute("/blogs_/$slug")({
   head: ({ loaderData }) => {
     if (!loaderData) return {};
     const path = `/blogs/${loaderData.slug}`;
-    const seo = buildSeo({ title: `${loaderData.title} | Buena Park Injury Lawyer`, description: loaderData.excerpt, path, locale: "en-US", type: "article", image: loaderData.image });
+    const seo = buildSeo({ title: loaderData.metaTitle || `${loaderData.title} | Buena Park Injury Lawyer`, description: loaderData.excerpt, path, locale: "en-US", type: "article", image: loaderData.image });
     return {
       ...seo,
       meta: [...seo.meta, { property: "article:published_time", content: loaderData.publishedAt }, { property: "article:modified_time", content: loaderData.updatedAt }, { property: "article:section", content: loaderData.category }],

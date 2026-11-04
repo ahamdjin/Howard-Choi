@@ -1,3 +1,4 @@
+import { getBlogAuthor, authorProfilePath } from "@/data/blogAuthors";
 import { brand, serviceLocations } from "@/data/injurySite";
 
 export const SITE_URL = (import.meta.env.VITE_SITE_URL || "https://www.buenaparkinjurylawyer.com").replace(/\/$/, "");
@@ -185,7 +186,7 @@ export const articleJsonLd = ({
   locale: "en-US" | "ko-US" | "es-US";
 }) => ({
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "BlogPosting",
   "@id": `${absoluteUrl(path)}#article`,
   headline: title,
   description,
@@ -196,6 +197,20 @@ export const articleJsonLd = ({
   mainEntityOfPage: absoluteUrl(path),
   isPartOf: { "@id": `${SITE_URL}/#website` },
   about: { "@id": `${SITE_URL}/#howard-choi` },
-  author: { "@id": `${SITE_URL}/#legal-service` },
+  author: (() => {
+    const author = getBlogAuthor(path.split("/").filter(Boolean).at(-1));
+    const language = locale.startsWith("ko") ? "ko" : locale.startsWith("es") ? "es" : "en";
+    return {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#${author.id}`,
+      name: author.name,
+      url: absoluteUrl(authorProfilePath(author, language)),
+      image: absoluteUrl(author.image),
+      jobTitle: author.role[language],
+      description: author.bio[language],
+      sameAs: author.sameAs,
+      identifier: author.credentials.map(c => ({ "@type": "PropertyValue", propertyID: c.label, value: c.value })),
+    };
+  })(),
   publisher: { "@id": `${SITE_URL}/#legal-service` },
 });

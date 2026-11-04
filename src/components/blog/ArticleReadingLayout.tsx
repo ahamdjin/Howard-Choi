@@ -1,3 +1,4 @@
+import { ArticleByline } from "./ArticleAuthor";
 import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowUpRight, Check, Copy, Facebook, Linkedin, Phone } from "lucide-react";
 import { absoluteUrl } from "@/lib/seo";
@@ -51,7 +52,7 @@ Fuente: ${url}`,
 출처: ${url}`,
 };
 
-type ArticlePost = { title: string; image: string; alt: string; category: string; date: string; readingTime: string; sections: { heading: string }[] };
+type ArticlePost = { slug?: string; title: string; image: string; alt: string; category: string; date: string; readingTime: string; sections: { heading: string }[] };
 type Props = { post: ArticlePost; locale: SiteLocale };
 
 export function ArticleHero({ post, locale }: Props) {
@@ -59,7 +60,7 @@ export function ArticleHero({ post, locale }: Props) {
   return <header className="article-reading-hero">
     <div className="site-shell">
       <Link to={prefix + "/blogs"} className="article-back"><ArrowLeft size={16} />{copy[locale].back}</Link>
-      <div className="article-reading-meta"><span>{post.category}</span><span>{post.date}</span><span>{post.readingTime}</span></div>
+      <div className="article-reading-meta"><span>{post.category}</span><span>{post.date}</span><span>{post.readingTime}</span><ArticleByline slug={post.slug} locale={locale} /></div>
       <h1>{post.title}</h1>
       <img {...responsiveImageProps(post.image)} src={post.image} alt={post.alt} loading="eager" fetchPriority="high" decoding="async" className="article-reading-image" />
     </div>

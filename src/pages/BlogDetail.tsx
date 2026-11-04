@@ -1,3 +1,5 @@
+import { ArticleParagraph } from "@/components/blog/ArticleParagraph";
+import { ArticleAuthorBio } from "@/components/blog/ArticleAuthor";
 import { ARTICLE_READING_LAYOUT, ArticleHero, ArticleReadingSidebar } from "@/components/blog/ArticleReadingLayout";
 import { responsiveImageProps } from "@/lib/responsive-images";
 import { m as motion, useScroll, useTransform } from "framer-motion";
@@ -8,7 +10,6 @@ import PageBreadcrumb from "@/components/PageBreadcrumb";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { blogPosts, getBlogBySlug } from "@/data/blogs";
-import brandLogo from "@/assets/law-firm/howard-choi-logo.png";
 
 type ArticleSupport = {
   relatedHref: string;
@@ -223,7 +224,7 @@ const BlogDetail = () => {
                 )}
                 <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.68 }}>
                   <div className="mb-5 flex items-center gap-3 text-[11px] text-foreground/42 lg:hidden"><span>{post.category}</span><span>·</span><span>{post.readingTime}</span></div>
-                  <p className="article-introduction text-foreground/90">{post.intro}</p>
+                  <ArticleParagraph className="article-introduction text-foreground/90" text={post.intro} />
                 </motion.div>
 
                 {post.slug === "how-long-car-accident-settlement-takes-california" && (
@@ -254,7 +255,7 @@ const BlogDetail = () => {
 
                 {post.leadParagraphs.length > 0 && (
                   <div className="mt-8 max-w-[730px] space-y-5 text-[17px] leading-[1.75] text-foreground/84 md:text-[18px]">
-                    {post.leadParagraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}
+                    {post.leadParagraphs.map((paragraph, index) => <ArticleParagraph key={index} text={paragraph} />)}
                   </div>
                 )}
 
@@ -269,7 +270,7 @@ const BlogDetail = () => {
                       <div className="mb-4 flex items-center gap-3"><span className="text-[11px] tracking-[0.12em] text-foreground/34">0{index + 1}</span><span className="h-px w-8 bg-foreground/12" /></div>
                       <h2 className="editorial-serif max-w-[700px] text-[clamp(2.05rem,3vw,3.15rem)] leading-[0.98] tracking-[-0.022em] text-foreground">{section.heading}</h2>
                       <div className="article-reading-width mt-6 max-w-[730px] space-y-6 text-[17px] leading-[1.75] text-foreground/84 md:text-[18px]">
-                        {section.paragraphs.map((paragraph, paragraphIndex) => <p key={paragraph} className={index === 0 && paragraphIndex === 0 ? "first-letter:float-left first-letter:mr-2 first-letter:mt-1 first-letter:font-serif first-letter:text-[4.1rem] first-letter:leading-[0.72] first-letter:text-foreground" : undefined}>{paragraph}</p>)}
+                        {section.paragraphs.map((paragraph, paragraphIndex) => <ArticleParagraph key={paragraphIndex} text={paragraph} className={index === 0 && paragraphIndex === 0 ? "first-letter:float-left first-letter:mr-2 first-letter:mt-1 first-letter:font-serif first-letter:text-[4.1rem] first-letter:leading-[0.72] first-letter:text-foreground" : undefined} />)}
                       </div>
                     </motion.section>
                   ))}
@@ -292,12 +293,7 @@ const BlogDetail = () => {
                   </div>
                 )}
 
-                <div className="mt-10 rounded-[3px] bg-[#e9e6e1] p-7 md:p-8">
-                  <div className="flex items-start gap-4">
-                    <img {...responsiveImageProps(brandLogo, "28px")} src={brandLogo} alt="" width={42} height={42} loading="lazy" decoding="async" className="h-10 w-10 shrink-0 object-contain" />
-                    <div><div className="text-[12px] font-medium text-foreground">Buena Park Injury Lawyer</div><div className="mt-1 text-[12px] text-foreground/46">California accident &amp; injury legal information</div><p className="mt-4 max-w-[590px] text-[13px] leading-6 text-foreground/58">Practical legal guidance for people navigating accident claims, insurance, evidence, deadlines, medical documentation, and recovery in California. Attorney licensing information is available on the <Link to="/attorney" className="underline underline-offset-2">attorneys page</Link>.</p></div>
-                  </div>
-                </div>
+                <ArticleAuthorBio slug={post.slug} locale="en" />
 
                 <div className="mt-8 border-t border-foreground/12 pt-6 text-[12px] leading-5 text-foreground/46">This article is general information only and is not legal advice. Specific matters depend on their own facts, deadlines, defendants, insurance, and applicable law.</div>
               </div>
