@@ -1,3 +1,4 @@
+import { ARTICLE_READING_LAYOUT, ArticleHero, ArticleReadingSidebar } from "@/components/blog/ArticleReadingLayout";
 import { responsiveImageProps } from "@/lib/responsive-images";
 import { m as motion, useScroll, useTransform } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -99,6 +100,7 @@ const EsBlogDetail = () => {
       <motion.div aria-hidden="true" className="fixed inset-x-0 top-0 z-[120] h-[2px] origin-left bg-[#8b7864]" style={{ scaleX: scrollYProgress }} />
 
       <article ref={articleRef} className="relative">
+        {ARTICLE_READING_LAYOUT ? <ArticleHero post={post} locale="es" /> : (
         <header className="sticky top-0 flex h-[66svh] min-h-[540px] items-end overflow-hidden bg-[#17130f] text-[#f3eee5]">
           <motion.img {...responsiveImageProps(post.image)} src={post.image} alt={post.alt} style={{ y: imageY, scale: imageScale }} fetchPriority="high" decoding="async" className="absolute inset-0 h-[118%] w-full object-cover" />
           <div className="absolute inset-0 bg-[#17130f]/64" /><div className="absolute inset-0 bg-gradient-to-t from-[#17130f]/88 via-[#17130f]/10 to-[#17130f]/18" /><div className="hero-bottom-readability" />
@@ -110,10 +112,12 @@ const EsBlogDetail = () => {
             </div>
           </div>
         </header>
+        )}
 
         <div className="relative z-10 bg-background">
           <div className="site-shell py-14 md:py-18 lg:py-22">
-            <div className="mx-auto grid max-w-[1080px] gap-10 lg:grid-cols-[210px_minmax(0,790px)] lg:gap-16 xl:gap-20">
+            <div className={ARTICLE_READING_LAYOUT ? "article-reading-grid mx-auto grid gap-10" : "mx-auto grid max-w-[1080px] gap-10 lg:grid-cols-[210px_minmax(0,790px)] lg:gap-16 xl:gap-20"}>
+              {ARTICLE_READING_LAYOUT ? <ArticleReadingSidebar post={post} locale="es" /> : (
               <aside className="hidden lg:block">
                 <div className="sticky top-28 border-t border-foreground/14 pt-5">
                   <div className="text-[10px] uppercase tracking-[0.15em] text-foreground/38">Artículo</div>
@@ -129,6 +133,7 @@ const EsBlogDetail = () => {
                   </div>
                 </div>
               </aside>
+              )}
 
               <div className="min-w-0">
                 <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.68 }}>
@@ -138,7 +143,7 @@ const EsBlogDetail = () => {
 
                 {post.leadParagraphs?.map((paragraph) => <p key={paragraph} className="mb-6 text-[17px] leading-8 text-foreground/80">{paragraph}</p>)}
 
-                <motion.blockquote initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.62 }} className="my-10 rounded-[3px] bg-[#1a1714] px-7 py-8 text-[#f3eee5] md:my-12 md:px-9 md:py-10">
+                <motion.blockquote id="article-key-takeaway" initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.62 }} className="my-10 rounded-[3px] bg-[#1a1714] px-7 py-8 text-[#f3eee5] md:my-12 md:px-9 md:py-10">
                   <div className="mb-5 text-[10px] uppercase tracking-[0.16em] text-[#f3eee5]/38">Punto clave</div>
                   <p className="editorial-serif max-w-[680px] text-[clamp(1.8rem,2.65vw,2.65rem)] leading-[1.04] tracking-[-0.018em]">“{post.takeaway}”</p>
                 </motion.blockquote>

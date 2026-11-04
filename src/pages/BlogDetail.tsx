@@ -1,3 +1,4 @@
+import { ARTICLE_READING_LAYOUT, ArticleHero, ArticleReadingSidebar } from "@/components/blog/ArticleReadingLayout";
 import { responsiveImageProps } from "@/lib/responsive-images";
 import { m as motion, useScroll, useTransform } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -165,6 +166,7 @@ const BlogDetail = () => {
       <motion.div aria-hidden="true" className="fixed inset-x-0 top-0 z-[120] h-[2px] origin-left bg-[#8b7864]" style={{ scaleX: scrollYProgress }} />
 
       <article ref={articleRef} className="legal-blog-article relative">
+        {ARTICLE_READING_LAYOUT ? <ArticleHero post={post} locale="en" /> : (
         <header className="relative flex min-h-[460px] items-end overflow-hidden bg-[#17130f] text-[#f3eee5] md:sticky md:top-0 md:h-[66svh] md:min-h-[540px]">
           <motion.img {...responsiveImageProps(post.image)} src={post.image} alt={post.alt} style={{ y: imageY, scale: imageScale }} loading="eager" fetchPriority="high" decoding="async" className="absolute inset-0 h-[118%] w-full object-cover" />
           <div className="absolute inset-0 bg-[#17130f]/64" /><div className="absolute inset-0 bg-gradient-to-t from-[#17130f]/88 via-[#17130f]/10 to-[#17130f]/18" /><div className="hero-bottom-readability" />
@@ -176,10 +178,12 @@ const BlogDetail = () => {
             </div>
           </div>
         </header>
+        )}
 
         <div className="relative z-10 bg-background">
           <div className="site-shell py-14 md:py-18 lg:py-22">
-            <div className="mx-auto grid max-w-[1080px] gap-10 lg:grid-cols-[210px_minmax(0,790px)] lg:gap-16 xl:gap-20">
+            <div className={ARTICLE_READING_LAYOUT ? "article-reading-grid mx-auto grid gap-10" : "mx-auto grid max-w-[1080px] gap-10 lg:grid-cols-[210px_minmax(0,790px)] lg:gap-16 xl:gap-20"}>
+              {ARTICLE_READING_LAYOUT ? <ArticleReadingSidebar post={post} locale="en" /> : (
               <aside className="hidden lg:block">
                 <div className="sticky top-28 border-t border-foreground/14 pt-5">
                   <div className="text-[10px] uppercase tracking-[0.15em] text-foreground/38">Article</div>
@@ -196,6 +200,7 @@ const BlogDetail = () => {
                   </div>
                 </div>
               </aside>
+              )}
 
               <div className="min-w-0">
                 <div className="mb-8 flex flex-wrap items-center gap-x-5 gap-y-2 border-b border-foreground/12 pb-5 text-[12px] leading-5 text-foreground/65">
@@ -203,6 +208,7 @@ const BlogDetail = () => {
                   <Link to="/attorney" className="font-medium text-foreground underline underline-offset-4">Meet attorney Howard Choi</Link>
                   <a href="https://apps.calbar.ca.gov/attorney/Licensee/Detail/284364" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">Verify California State Bar No. 284364</a>
                 </div>
+                {!ARTICLE_READING_LAYOUT && (
                 <details className="mb-8 border-y border-foreground/12 py-3 lg:hidden">
                   <summary className="cursor-pointer py-2 text-[15px] font-semibold text-foreground">Browse sections in this guide</summary>
                   <nav aria-label="Article sections" className="grid gap-2 pb-3 pt-4">
@@ -214,6 +220,7 @@ const BlogDetail = () => {
                     ))}
                   </nav>
                 </details>
+                )}
                 <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.68 }}>
                   <div className="mb-5 flex items-center gap-3 text-[11px] text-foreground/42 lg:hidden"><span>{post.category}</span><span>·</span><span>{post.readingTime}</span></div>
                   <p className="article-introduction text-foreground/90">{post.intro}</p>
@@ -251,7 +258,7 @@ const BlogDetail = () => {
                   </div>
                 )}
 
-                <motion.blockquote initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.62 }} className="my-10 rounded-[3px] bg-[#1a1714] px-7 py-8 text-[#f3eee5] md:my-12 md:px-9 md:py-10">
+                <motion.blockquote id="article-key-takeaway" initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.62 }} className="my-10 rounded-[3px] bg-[#1a1714] px-7 py-8 text-[#f3eee5] md:my-12 md:px-9 md:py-10">
                   <div className="mb-5 text-[10px] uppercase tracking-[0.16em] text-[#f3eee5]/38">Key point</div>
                   <p className="article-key-point editorial-serif max-w-[680px]">“{post.takeaway}”</p>
                 </motion.blockquote>
