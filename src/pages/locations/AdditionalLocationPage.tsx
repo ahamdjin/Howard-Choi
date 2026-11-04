@@ -25,7 +25,6 @@ export default function AdditionalLocationPage({ city }: { city: AdditionalLocat
       <main className="detail-guide">
         <EditorialHero locale="en" eyebrow={city.county + " · Service area"} title={city.heading ?? city.name + " Personal Injury & Car Accident Lawyer"} description={city.lead} image={photo?.src ?? heroImage} imageAlt={photo?.alt ?? "Illustrative law-office interior"} imageFallback={heroImage} detail />
         <section id="local" className="site-shell py-14 md:py-20">
-          {photo && <p className="mb-6 text-xs text-foreground/70">Location photograph: <a href={photo.source} className="underline">{photo.credit} · {photo.license}</a> · cropped to fit</p>}
           <MapPin aria-hidden="true" className="mb-4 h-6 w-6 text-[#755D46]" />
           <h2 className="editorial-serif max-w-3xl text-4xl">{city.sections[0].title}</h2>
           <div className="mt-7 grid gap-6 md:grid-cols-2">
