@@ -35,9 +35,9 @@ A DMV action against driving privileges and a criminal prosecution follow separa
 
 Suppose a witness saw a car cross the center line twice. That observation can help reconstruct the collision, even if nobody knows why the driver crossed it. A police report, testing records when available, and other evidence can help investigators assess possible impairment. The movement of the car and the condition of its driver are separate questions.
 
-Get to safety and call for emergency help when needed. If you can safely do so, save photographs of the vehicles and roadway, the names of witnesses, and any dashcam footage. Write down what you observed before discussing the crash with others. Record details such as where the car was, what direction it was traveling, and when you noticed an unusual movement. Save the original footage even if you send someone a shorter clip.
+Get to safety and call for emergency help when needed. If you can safely do so, save photographs of the vehicles and roadway, the names of witnesses, and any dashcam footage. Write down what you observed before discussing the crash with others. Record details such as where the car was, what direction it was traveling, and when you noticed an unusual movement. Save the original footage even if you send someone a shorter clip. The [California after-crash checklist](/blogs/what-to-do-after-a-car-accident-in-california) covers other records worth preserving.
 
-An injury claim raises additional questions about what caused the crash, what injuries followed, and which insurance may apply. Keep medical records and insurer correspondence together. An attorney can explain what evidence is available and which issues still need investigation. [California Courts personal injury guidance](https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury)
+An injury claim raises additional questions about what caused the crash, what injuries followed, and which insurance may apply. Keep medical records and insurer correspondence together. A [Buena Park car accident lawyer](/practice-areas/car-accidents) can help identify which evidence is available and what still needs investigation. [California Courts personal injury guidance](https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury)
 
 ## How impairment changes an ordinary drive
 
@@ -88,7 +88,7 @@ Yes, if it impairs the ability to drive safely. Check the label and ask a pharma
 
 ### Does a DUI arrest establish who caused a crash?
 
-A crash investigation still needs evidence showing how the vehicles collided and how the driver's conduct contributed. An arrest is one part of the record.
+A crash investigation still needs evidence showing how the vehicles collided and how the driver's conduct contributed. An arrest is one part of the record. See [how fault and insurance work after a California crash](/blogs/is-california-a-no-fault-state-or-an-at-fault-state) for the separate civil claim process.
 
 ### What if I did not see the other driver drinking?
 

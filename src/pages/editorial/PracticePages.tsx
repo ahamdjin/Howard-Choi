@@ -66,6 +66,7 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
     guides: [
       { title: "What to do after a car accident in California", koTitle: "캘리포니아 자동차 사고 후 해야 할 일", slug: "what-to-do-after-a-car-accident-in-california" },
       { title: "California comparative fault explained", koTitle: "캘리포니아 비교과실 이해하기", slug: "california-comparative-fault-personal-injury" },
+      { title: "Impaired driving in California", koTitle: "캘리포니아의 약물·음주 운전", slug: "what-is-impaired-driving-in-california" },
       { title: "California personal injury deadlines", koTitle: "캘리포니아 개인상해 청구 기한", slug: "california-personal-injury-deadlines" },
     ],
   },

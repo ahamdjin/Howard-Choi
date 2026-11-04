@@ -43,7 +43,7 @@ Try the check in the seat the person actually uses. A child who sits upright in 
 
 A crash can injure a person even when the belt is worn properly. Whether the belt contributed to a particular injury calls for evidence about the impact, the occupant’s position, and the injury itself. If symptoms are concerning, seek medical evaluation. Keep photographs and relevant records if restraint use or performance later becomes an issue. [NHTSA seat belt guidance](https://www.nhtsa.gov/vehicle-safety/seat-belts)
 
-If an insurer raises belt use, ask which injury it believes the belt affected and what evidence supports that position. A dispute over injury causation is separate from the question of what caused the crash. [California Vehicle Code § 27315(i), reproduced by FindLaw](https://codes.findlaw.com/ca/vehicle-code/veh-sect-27315/)
+If an insurer raises belt use, ask which injury it believes the belt affected and what evidence supports that position. A dispute over injury causation is separate from the question of what caused the crash. See [how California divides fault after a crash](/blogs/california-comparative-fault-personal-injury). [California Vehicle Code § 27315(i), reproduced by FindLaw](https://codes.findlaw.com/ca/vehicle-code/veh-sect-27315/)
 
 ## Check belt fit in the seat the passenger will use
 
@@ -67,7 +67,7 @@ If the buckle fails to latch, the belt will not retract, or the strap shows dama
 
 ## What to preserve when belt use becomes part of a claim
 
-Start with the person’s seating position. A rear passenger’s restraint and the driver’s restraint may be different, so note which seat and belt you mean. If you can safely take photos, record the interior and exterior damage before repairs. Keep the originals and note when the photos were taken. If you are concerned about a buckle or child restraint, ask how to document it before it is replaced or discarded.
+Start with the person’s seating position. For the broader evidence checklist, see [what to do after a California car accident](/blogs/what-to-do-after-a-car-accident-in-california). A rear passenger’s restraint and the driver’s restraint may be different, so note which seat and belt you mean. If you can safely take photos, record the interior and exterior damage before repairs. Keep the originals and note when the photos were taken. If you are concerned about a buckle or child restraint, ask how to document it before it is replaced or discarded.
 
 Put the medical records on a separate timeline. Note when symptoms began, when the person received care, and which injuries the clinician documented. A photograph may show a damaged buckle, while a medical record can show what injury was diagnosed. Neither record by itself explains the entire crash. A careful account lets someone compare the timing, the impact, the restraint and the injury without relying on a single clue. [California Courts personal injury guidance](https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury)
 

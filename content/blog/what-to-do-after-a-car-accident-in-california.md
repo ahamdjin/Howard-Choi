@@ -27,7 +27,7 @@ Follow medical advice as appropriate, and tell your care team if appointments, i
 
 At the scene, if you are physically able: both vehicles from several angles, the wider intersection or stretch of road, skid marks, debris, traffic controls, the other car's plate, and any damage to property that is not a vehicle.
 
-The one people skip is the wide shot. Close-ups of a crumpled bumper prove there was a crash. A wide photo showing where the vehicles ended up, which lane, how far past the limit line, is what actually helps when somebody later disputes how it happened.
+The one people skip is the wide shot. Close-ups of a crumpled bumper prove there was a crash. A wide photo showing where the vehicles ended up, which lane, how far past the limit line, is what actually helps when somebody later disputes how it happened. If restraint use is disputed, see [what to document about seat belt use after a crash](/blogs/california-seat-belt-laws).
 
 ## Know which evidence has a clock on it
 
@@ -55,7 +55,7 @@ Then the things that are harder to put a number on but matter just as much: the 
 
 ## Do not assume fault is settled
 
-California uses comparative fault, which means responsibility can be divided rather than assigned entirely to one driver. Being found partly at fault does not end a claim; it reduces what you can recover by your share.
+[California uses comparative fault](/blogs/is-california-a-no-fault-state-or-an-at-fault-state), which means responsibility can be divided rather than assigned entirely to one driver. Being found partly at fault does not end a claim; it reduces what you can recover by your share.
 
 Worth knowing: the insurance adjuster's view of fault is not a legal ruling. It is one company's opinion, usually formed early and from limited information. It can and does change when better evidence turns up.
 

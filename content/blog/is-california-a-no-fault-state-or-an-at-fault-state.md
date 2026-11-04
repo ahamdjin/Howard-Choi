@@ -98,7 +98,7 @@ A police report can help an investigation, but an officer’s assessment does no
 
 California follows pure comparative negligence. An injured person’s proven damages can be reduced by their percentage of responsibility. Being partly responsible does not automatically bar a claim, but comparative fault does not guarantee a payment either. Liability, damages, defenses, and collectability still matter. [Judicial Council of California Civil Jury Instructions](https://www.courts.ca.gov/partners/317.htm)
 
-**Hypothetical example.** Suppose proven damages total $100,000 and the injured driver is assigned 25 percent of the fault. Comparative negligence would reduce the damages attributable to the other party to $75,000, before other applicable limitations or adjustments.
+**Hypothetical example.** Suppose proven damages total $100,000 and the injured driver is assigned 25 percent of the fault. Comparative negligence would reduce the damages attributable to the other party to $75,000, before other applicable limitations or adjustments. See [how partial fault affects compensation](/blogs/california-comparative-fault-personal-injury) for more examples.
 
 Fault allocation is not necessarily all-or-nothing. Multiple drivers may contribute to a crash, and their insurers may disagree about the percentages. When multiple defendants are involved, California also distinguishes between responsibility for economic and noneconomic damages. [California Civil Code section 1431.2](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=1431.2.&lawCode=CIV)
 
@@ -146,7 +146,7 @@ California’s pure comparative negligence system can permit recovery despite su
 
 ### What if the other driver has no insurance?
 
-Check whether your policy includes uninsured motorist coverage and collision coverage. Each addresses different losses and has its own requirements. The absence of insurance does not eliminate the other driver’s potential legal responsibility.
+Check whether your policy includes uninsured motorist coverage and collision coverage. Each addresses different losses and has its own requirements. The absence of insurance does not eliminate the other driver’s potential legal responsibility. The [uninsured and hit-and-run insurance guide](/blogs/california-uninsured-driver-hit-and-run-injury-claims) explains which records to keep and which coverage to check.
 
 ### How long do I have to file a car accident lawsuit?
 
