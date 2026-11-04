@@ -33,7 +33,7 @@ function ContactLinks({ light = false }: { light?: boolean }) {
 export default function AnaheimLandingPage() {
   return <EditorialFrame locale="en"><main className="anaheim-landing">
     <EditorialHero locale="en" eyebrow="Orange County · Serving Anaheim"
-      title="Anaheim Personal Injury & Accident Lawyer"
+      title="Anaheim Injury and Accident Lawyer"
       description="Injured in Anaheim? Talk with Howard Choi about your accident, treatment and the changes to your daily life. Serving Anaheim from Buena Park. No fee unless there is a recovery."
       image={media.src} imageFallback={office} imageAlt={media.alt} detail />
     <section className="al-credentials" aria-label="Firm information">

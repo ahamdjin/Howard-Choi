@@ -1,6 +1,6 @@
 export const anaheimSeo = {
-  title: "Anaheim Personal Injury Lawyer | Howard Choi",
-  description: "Injured in Anaheim? Talk with personal injury lawyer Howard Choi about your accident, insurance and recovery. Free consultation. No fee unless there is a recovery.",
+  title: "Trusted Injury Law Help in Anaheim | Free Consultation",
+  description: "Injured in Anaheim? Howard Choi handles car accidents, pedestrian injuries and serious falls. Free consultation. No fee unless there is a recovery.",
 };
 
 export const anaheimCases = [
