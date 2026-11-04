@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { EditorialFrame } from "@/pages/editorial/shared";
 import { serviceLocations, type SiteLocale } from "@/data/injurySite";
+import { additionalLocations } from "@/data/additionalLocations";
 import { locationMedia } from "@/data/locationMedia";
 import { buildSeo } from "@/lib/seo";
 
@@ -28,7 +29,7 @@ export const PhotoCreditsPage = ({ locale = "en" }: { locale?: SiteLocale }) => 
               : "City photographs used in the service-area carousel, location directory and city guides are credited below. Photographs may be resized or cropped for responsive layouts. The images do not depict the firm's clients or a particular case."}
         </p>
         <ul className="mt-10 divide-y divide-[#1E1C1A]/15 border-y border-[#1E1C1A]/15">
-          {serviceLocations.map((location) => {
+          {[...serviceLocations, ...additionalLocations].map((location) => {
             const photo = locationMedia[location.slug];
             if (!photo) return null;
             return (
