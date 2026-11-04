@@ -47,7 +47,7 @@ export default function LocationExperiencePage({ city, locale = "en" }: { city: 
         {local.paragraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}
         <a className="experience-link" href={href("/contact")}>{t("talk")} <ArrowRight size={17} /></a>
       </div>
-      <figure className="experience-city-photo"><img src={photo.src} alt={photo.alt} style={{objectPosition: photo.position}} width={800} height={700} loading="lazy" decoding="async" /><figcaption>{photo.alt} · <a href={photo.source} target="_blank" rel="noreferrer">{photo.credit} / {photo.license}</a></figcaption></figure>
+      <figure className="experience-city-photo"><img src={photo.src} alt={photo.alt} style={{objectPosition: photo.position}} width={800} height={700} loading="lazy" decoding="async" /></figure>
     </section>
 
     <section id="process" className="experience-section experience-warm"><div className="site-shell">
