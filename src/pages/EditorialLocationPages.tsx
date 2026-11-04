@@ -244,14 +244,6 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
           imageFallback={cityImages[location.slug] ?? heroJustice}
           detail
         />
-        {locationPhoto && (
-          <p className="site-shell py-2 text-right text-xs text-foreground/70">
-            <a href={locationPhoto.source} className="underline underline-offset-4">
-              {locationPhoto.credit} · {locationPhoto.license}
-            </a>
-            {" · "}{isKo(locale) ? "화면에 맞춰 잘라낸 사진" : isEs(locale) ? "Foto recortada" : "Photo cropped to fit"}
-          </p>
-        )}
         {locale === "en" && (
           <section aria-label="Office and consultation" className="border-b border-foreground/15 bg-white">
             <div className="site-shell grid gap-6 py-7 text-sm leading-6 md:grid-cols-3">
