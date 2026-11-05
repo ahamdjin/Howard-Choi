@@ -21,9 +21,9 @@ If you saw the other car drift, write down the lane, direction, and distance you
 
 ## What California’s DUI rules cover
 
-For most adult drivers, 0.08% is the familiar blood alcohol concentration threshold. The DMV lists a 0.04% threshold for commercial driving and driving passengers for hire. It also lists 0.01% rules for drivers under 21 and drivers on DUI probation. The exact consequence depends on which rule applies. Impaired driving can support a DUI case even below the ordinary adult threshold or without a BAC measurement. [California DMV guide to alcohol and drugs](https://www.dmv.ca.gov/portal/handbook/california-driver-handbook/alcohol-and-drugs/)
+For most adult drivers, 0.08% is the familiar blood alcohol concentration threshold. The DMV lists a 0.04% threshold for commercial driving and driving passengers for hire. It also lists 0.01% rules for drivers under 21 and drivers on DUI probation. The exact consequence depends on which rule applies. Impaired driving can support a DUI case even below the ordinary adult threshold or without a BAC measurement.
 
-The rules also cover impairing drugs, including cannabis, prescription medicine, and products available without a prescription. A medication label can warn that a drug causes drowsiness or affects alertness. Ask a pharmacist about driving if you are unsure how a new medicine or combination could affect you. [California DMV guide to alcohol and drugs](https://www.dmv.ca.gov/portal/handbook/california-driver-handbook/alcohol-and-drugs/)
+The rules also cover impairing drugs, including cannabis, prescription medicine, and products available without a prescription. A medication label can warn that a drug causes drowsiness or affects alertness. Ask a pharmacist about driving if you are unsure how a new medicine or combination could affect you.
 
 Fatigue and distraction can also make driving unsafe. Those behaviors raise their own safety and potential fault questions. An account of a driver looking at a phone, for example, supports a different line of investigation from a report that the driver had been drinking.
 
@@ -43,31 +43,31 @@ An injury claim raises additional questions about what caused the crash, what in
 
 Think about approaching an intersection after dark. In a few seconds, the driver has to read the light, watch for someone entering a crosswalk, judge the speed of a turning vehicle, and decide how hard to brake. Alcohol can affect judgment and coordination, making those tasks harder to manage together. A familiar route can still require a quick response when someone steps off the curb or the car ahead stops unexpectedly. [NHTSA guidance on alcohol and driving](https://www.nhtsa.gov/risky-driving/drunk-driving)
 
-Medication raises a different practical question. If you start a new prescription or change your dose, read the label and ask your pharmacist how it may affect driving and whether other medicines or alcohol change the risk. Plan transportation while you are figuring out how it affects you. Keep that plan for short errands as well as longer trips. [California DMV guidance on alcohol and drugs](https://www.dmv.ca.gov/portal/handbook/california-driver-handbook/alcohol-and-drugs/)
+Medication raises a different practical question. If you start a new prescription or change your dose, read the label and ask your pharmacist how it may affect driving and whether other medicines or alcohol change the risk. Plan transportation while you are figuring out how it affects you. Keep that plan for short errands as well as longer trips.
 
 ## What a BAC number can tell you
 
-Blood alcohol concentration measures the concentration of alcohol in the body. If a case turns on a particular reading, the timing of that reading matters. The time of driving, the time of the collision, and the time a sample was taken may be different. A person reading a report should keep those times distinct and ask what the result was actually used to establish. [NHTSA explanation of blood alcohol concentration](https://www.nhtsa.gov/risky-driving/drunk-driving)
+Blood alcohol concentration measures the concentration of alcohol in the body. If a case turns on a particular reading, the timing of that reading matters. The time of driving, the time of the collision, and the time a sample was taken may be different. A person reading a report should keep those times distinct and ask what the result was actually used to establish.
 
-Different rules can apply to different drivers. For instance, a driver taking a passenger for hire may be subject to a threshold different from the one that applies to a person driving home in a personal car. Drug impairment also requires attention to the actual circumstances. A witness's description of how the car moved can help explain the crash, while a properly interpreted test can help investigators address a separate question about the driver's condition. [California DMV guide to alcohol and drugs](https://www.dmv.ca.gov/portal/handbook/california-driver-handbook/alcohol-and-drugs/)
+Different rules can apply to different drivers. For instance, a driver taking a passenger for hire may be subject to a threshold different from the one that applies to a person driving home in a personal car. Drug impairment also requires attention to the actual circumstances. A witness's description of how the car moved can help explain the crash, while a properly interpreted test can help investigators address a separate question about the driver's condition.
 
 ## Make a safe plan when someone may be impaired
 
-Arrange a sober ride before the event if you expect to drink. Choose a driver who will stay sober, check transit hours, or pick a safe place to wait for a ride. If the original plan falls through, call a sober friend or use another available ride. For a group, it helps to agree on a pickup spot and a backup before people split up. [NHTSA guidance on planning a sober ride](https://www.nhtsa.gov/risky-driving/drunk-driving)
+Arrange a sober ride before the event if you expect to drink. Choose a driver who will stay sober, check transit hours, or pick a safe place to wait for a ride. If the original plan falls through, call a sober friend or use another available ride. For a group, it helps to agree on a pickup spot and a backup before people split up.
 
-If a driver nearby is swerving or repeatedly crossing lane lines, give yourself room and avoid confronting them. If you can contact law enforcement safely, provide the road, direction of travel, and a description of the vehicle. Report the conduct you observed. You can give a useful account without deciding what caused it. [NHTSA responsible driving guidance](https://www.nhtsa.gov/risky-driving/drunk-driving)
+If a driver nearby is swerving or repeatedly crossing lane lines, give yourself room and avoid confronting them. If you can contact law enforcement safely, provide the road, direction of travel, and a description of the vehicle. Report the conduct you observed. You can give a useful account without deciding what caused it.
 
 ## Build a timeline for the crash and a separate record of your losses
 
 Start with the moments before impact. Mark your direction of travel, the location of the vehicles, and what you could see. If a witness saw events from another angle, save their contact details and let them give their own account. Keep notes about road conditions or the signal cycle separate from anything you learned later. A short timeline can show an investigator where a recording or a witness might fill a gap.
 
-Next, make a record of what happened after impact. Include when emergency responders arrived, where you received care, and when you first noticed symptoms. Keep the collision report number, repair estimates, medical paperwork, and insurer letters together. If you missed work, save the dates and any records that explain the time away. Those records help a reviewer connect specific losses to the incident. [California Courts personal injury guidance](https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury)
+Next, make a record of what happened after impact. Include when emergency responders arrived, where you received care, and when you first noticed symptoms. Keep the collision report number, repair estimates, medical paperwork, and insurer letters together. If you missed work, save the dates and any records that explain the time away. Those records help a reviewer connect specific losses to the incident.
 
 ## What to ask when an insurer contacts you
 
 Find out who is calling, which company they represent, and whether they are requesting documents or asking for a recorded account. Write down the claim number and any deadline. If you need time to check the facts, say which details you are still confirming. Ask for a written copy of any proposed release and identify whether it concerns the vehicle, your injuries, or both before deciding how to respond. [California Department of Insurance auto insurance guide](https://www.insurance.ca.gov/01-consumers/105-type/95-guides/01-auto/auto101.cfm)
 
-The insurer’s timetable and the legal deadlines for an injury claim can differ. If a government vehicle or agency may be involved, flag it early when seeking legal advice because special procedures can apply. The collision report and insurance correspondence give an attorney a starting point for checking the dates and identifying the parties. [California Courts personal injury guidance](https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury)
+The insurer’s timetable and the legal deadlines for an injury claim can differ. If a government vehicle or agency may be involved, flag it early when seeking legal advice because special procedures can apply. The collision report and insurance correspondence give an attorney a starting point for checking the dates and identifying the parties.
 
 ## How to give a useful account when details are missing
 
@@ -80,11 +80,11 @@ Ask nearby businesses or witnesses whether a recording exists as soon as it is s
 
 ### Can someone be charged below 0.08%?
 
-Yes. California can pursue an impairment-based DUI when the evidence shows the person was under the influence. Separate alcohol thresholds also apply to some drivers. [California DMV guide to alcohol and drugs](https://www.dmv.ca.gov/portal/handbook/california-driver-handbook/alcohol-and-drugs/)
+Yes. California can pursue an impairment-based DUI when the evidence shows the person was under the influence. Separate alcohol thresholds also apply to some drivers.
 
 ### Can a prescription medication lead to a DUI?
 
-Yes, if it impairs the ability to drive safely. Check the label and ask a pharmacist or prescriber how the medicine might affect driving. [California DMV guide to alcohol and drugs](https://www.dmv.ca.gov/portal/handbook/california-driver-handbook/alcohol-and-drugs/)
+Yes, if it impairs the ability to drive safely. Check the label and ask a pharmacist or prescriber how the medicine might affect driving.
 
 ### Does a DUI arrest establish who caused a crash?
 
@@ -96,4 +96,4 @@ Describe what you actually saw, such as a lane departure or a missed signal. Wit
 
 ### Does the DMV handle my injury claim?
 
-The DMV handles driving privileges and other administrative matters. An injury claim follows a separate insurance or civil process. [California DMV DUI guidance](https://www.dmv.ca.gov/portal/driver-education-and-safety/dmv-safety-guidelines-actions/driving-under-the-influence/)
+The DMV handles driving privileges and other administrative matters. An injury claim follows a separate insurance or civil process.

@@ -80,7 +80,7 @@ If you discover a nearby camera, note who controls it, which way it points, the 
 
 ## Who needs a report, and what does the DMV actually require?
 
-California DMV guidance describes a separate SR-1 accident-reporting requirement for certain crashes causing injury, death or property damage above the applicable statutory threshold, typically due within ten days for a reportable accident. A police report and an insurance claim are not substitutes for the DMV report when the SR-1 requirement applies. Check the current DMV instructions for your circumstances and confirm whether you must file rather than assuming a responding officer handled it.
+California DMV guidance describes a separate [SR-1 accident-reporting requirement](/blogs/notify-the-california-dmv-about-an-accident) for certain crashes causing injury, death or property damage above the applicable statutory threshold, typically due within ten days for a reportable accident. A police report and an insurance claim are not substitutes for the DMV report when the SR-1 requirement applies. Check the current DMV instructions for your circumstances and confirm whether you must file rather than assuming a responding officer handled it.
 
 The official California Courts personal-injury materials also distinguish the time to bring a lawsuit from the steps involved in handling an insurer's claim. A claim involving a public agency may follow a special, earlier government-claim process. These are three different clocks: evidence preservation, insurance or administrative notice, and court filing.
 

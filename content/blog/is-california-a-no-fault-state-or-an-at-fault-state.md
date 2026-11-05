@@ -19,7 +19,7 @@ That does not mean your own insurance is irrelevant, or that every claim require
 
 ## Separate the crash from the bills that follow
 
-Draw two columns. In the first, list the evidence about who caused the crash. In the second, list the bills and the coverages that might respond to each one. A dispute about a lane change can take time to resolve. Meanwhile, your policy declarations can tell you whether you have collision or medical payments coverage to ask about. [California Department of Insurance auto guide](https://www.insurance.ca.gov/01-consumers/105-type/95-guides/01-auto/auto101.cfm)
+Draw two columns. In the first, list the evidence about who caused the crash. In the second, list the bills and the coverages that might respond to each one. A dispute about a lane change can take time to resolve. Meanwhile, your policy declarations can tell you whether you have collision or medical payments coverage to ask about.
 
 ## At-Fault and No-Fault Insurance Systems Explained
 
@@ -37,7 +37,7 @@ In states with no-fault insurance systems, injured people generally turn first t
 
 “No-fault” does not mean drivers can never be sued. Some states restrict injury lawsuits unless a statutory threshold is met, and those thresholds vary. PIP generally does not compensate for pain and suffering. Property damage may also be handled separately from no-fault injury benefits.
 
-California does not use a mandatory PIP-based no-fault system. However, optional California coverages can pay certain expenses without first establishing another driver’s liability. Those benefits do not change California’s underlying fault-based approach. [California Department of Insurance](https://www.insurance.ca.gov/01-consumers/105-type/95-guides/01-auto/auto101.cfm)
+California does not use a mandatory PIP-based no-fault system. However, optional California coverages can pay certain expenses without first establishing another driver’s liability. Those benefits do not change California’s underlying fault-based approach.
 
 ## Which Insurance May Pay After a California Crash?
 
@@ -57,7 +57,7 @@ Your policy may provide several potential routes to payment.
 - **Medical payments coverage**, often called MedPay, may cover eligible medical expenses regardless of fault, up to the purchased limit.
 - **Uninsured and underinsured motorist coverage** may help when a responsible driver has no insurance or insufficient coverage, subject to eligibility requirements and policy terms.
 
-After paying a covered loss, your insurer may seek reimbursement from a responsible party through subrogation. Whether a deductible is recovered depends on the circumstances. Review the policy rather than assuming every expense will be reimbursed. [California Department of Insurance](https://www.insurance.ca.gov/01-consumers/105-type/95-guides/01-auto/auto101.cfm)
+After paying a covered loss, your insurer may seek reimbursement from a responsible party through subrogation. Whether a deductible is recovered depends on the circumstances. Review the policy rather than assuming every expense will be reimbursed.
 
 ## How Do You Prove Fault After a Car Accident?
 
@@ -77,7 +77,7 @@ The unsafe conduct must have caused the claimed harm. For example, evidence that
 
 ### Damages
 
-The claimant must establish actual harm, such as medical expenses, lost earnings, vehicle damage, or pain and suffering. In an ordinary civil negligence case, the burden is generally a preponderance of the evidence, meaning more likely than not. Meeting that burden requires evidence connecting the defendant’s conduct to the losses claimed. [California Courts](https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury)
+The claimant must establish actual harm, such as medical expenses, lost earnings, vehicle damage, or pain and suffering. In an ordinary civil negligence case, the burden is generally a preponderance of the evidence, meaning more likely than not. Meeting that burden requires evidence connecting the defendant’s conduct to the losses claimed.
 
 ## Evidence That Can Strengthen a Claim
 
@@ -90,7 +90,7 @@ Useful evidence tells a consistent story about both the collision and its conseq
 - Medical records, treatment recommendations, bills, and receipts.
 - Pay records or employer documentation showing missed work.
 
-A police report can help an investigation, but an officer’s assessment does not automatically resolve civil liability. Medical records are important for documenting injuries and treatment, while photographs or video may help explain the collision itself. Different evidence serves different purposes. [California Courts](https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury)
+A police report can help an investigation, but an officer’s assessment does not automatically resolve civil liability. Medical records are important for documenting injuries and treatment, while photographs or video may help explain the collision itself. Different evidence serves different purposes.
 
 **Hypothetical example.** A driver changes lanes and strikes another vehicle. Photographs document the damage, but dashcam footage shows how the vehicles moved before impact. Treatment records then help establish whether the collision caused the injured driver’s reported symptoms. No single item necessarily proves the entire claim.
 
@@ -122,7 +122,7 @@ If responsibility is disputed or injuries are significant, legal advice can help
 
 ## Filing Deadlines Require Individual Review
 
-California personal injury claims generally have a two-year filing deadline, while property-damage claims generally have a three-year deadline. These are starting points, not universal rules. Claims involving public entities can require an administrative claim much earlier, often within six months. Different rules may apply to minors, delayed discovery, and other circumstances. [California Courts](https://www.sucorte.ca.gov/civil-lawsuit/statute-limitations)
+California personal injury claims generally have a two-year filing deadline, while property-damage claims generally have a three-year deadline. These are starting points, not universal rules. Claims involving public entities can require an administrative claim much earlier, often within six months. Different rules may apply to minors, delayed discovery, and other circumstances. [California Courts](https://selfhelp.courts.ca.gov/civil-lawsuit/statute-limitations)
 
 Do not assume ongoing insurance negotiations extend a filing deadline. An attorney can review the relevant dates and distinguish a personal injury claim from any other available action. For case-specific questions, contact an injury attorney in Fullerton or use the contact page for.
 
