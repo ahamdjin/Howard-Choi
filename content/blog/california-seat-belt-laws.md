@@ -78,6 +78,8 @@ If an insurer raises a question about the belt, ask which injury it believes the
 Keep the ticket and court notice with your collision paperwork, but track their response dates separately. A ticket can raise an issue about the restraint rule, while the injury claim may require evidence about how the crash happened and which injuries followed. If you speak with a lawyer, bring the exact code section on the citation and any photos showing the seating position. That helps narrow the discussion to the facts of your case and the rule the officer cited.
 
 
+Seat belts are one part of occupant protection. Our guide to [evaluating safer vehicles](/blogs/the-safest-cars-to-drive-in-the-us) explains how crash ratings, equipment, and recall checks fit together.
+
 ## Frequently asked questions
 
 ### Does the adult rule apply in the back seat?

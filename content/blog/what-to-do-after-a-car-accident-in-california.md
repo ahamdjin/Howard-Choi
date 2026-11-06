@@ -25,7 +25,7 @@ Follow medical advice as appropriate, and tell your care team if appointments, i
 
 ## Photograph more than you think you need
 
-At the scene, if you are physically able: both vehicles from several angles, the wider intersection or stretch of road, skid marks, debris, traffic controls, the other car's plate, and any damage to property that is not a vehicle.
+At the scene, if you are physically able: both vehicles from several angles, the wider intersection or stretch of road, [skid marks](/blogs/car-accidents-what-is-a-skid-and-how-can-you-avoid-them), debris, traffic controls, the other car's plate, and any damage to property that is not a vehicle.
 
 The one people skip is the wide shot. Close-ups of a crumpled bumper prove there was a crash. A wide photo showing where the vehicles ended up, which lane, how far past the limit line, is what actually helps when somebody later disputes how it happened. If restraint use is disputed, see [what to document about seat belt use after a crash](/blogs/california-seat-belt-laws).
 

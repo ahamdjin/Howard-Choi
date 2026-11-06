@@ -64,6 +64,7 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
     ],
     sources: californiaCourtSources,
     guides: [
+      { title: "California minimum speed law", koTitle: "California minimum speed law", slug: "californias-minimum-speed-law" },
       { title: "California DMV accident reporting", koTitle: "California DMV accident reporting", slug: "notify-the-california-dmv-about-an-accident" },
       { title: "Diminished value claims in California", koTitle: "Diminished value claims in California", slug: "diminished-value-claim-california" },
       { title: "How GAP insurance works", koTitle: "How GAP insurance works", slug: "insurance-how-does-gap-insurance-work" },
