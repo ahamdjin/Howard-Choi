@@ -26,7 +26,7 @@ The earliest records may include emergency medical services notes, emergency-dep
 
 When it is safe, preserve photographs of the scene, vehicle or helmet damage, time-stamped communications, witness contact information, insurance details and the incident report number. A passenger, cyclist or pedestrian should also preserve the exact location, road markings, signal conditions and the names of agencies that responded. Keep originals as well as copies, so dates and context remain clear.
 
-A simple contemporaneous timeline is useful: date and time of the event; whether there was a head strike or abrupt acceleration; first symptoms; first clinical contact; follow-up appointments; and the first time someone noticed a meaningful change in memory, behavior or work. Record what is known, what is uncertain and who witnessed each fact.
+A simple contemporaneous timeline is useful: date and time of the event; whether there was a head strike or abrupt acceleration; first symptoms; first clinical contact; follow-up appointments; and the first time someone noticed a meaningful change in memory, behavior or work. Record what is known, what is uncertain and who witnessed each fact. Our [blunt-trauma liability guide](/blogs/blunt-force-trauma-determining-liability-in-blunt-trauma-lawsuits) explains the separate evidence needed to establish fault.
 
 ## A normal CT scan does not answer every question
 

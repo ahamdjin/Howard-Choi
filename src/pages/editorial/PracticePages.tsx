@@ -64,6 +64,7 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
     ],
     sources: californiaCourtSources,
     guides: [
+      { title: "New Year’s crashes and sober ride planning", koTitle: "New Year’s crashes and sober ride planning", slug: "new-year-alcohol-related-crashes" },
       { title: "California minimum speed law", koTitle: "California minimum speed law", slug: "californias-minimum-speed-law" },
       { title: "California DMV accident reporting", koTitle: "California DMV accident reporting", slug: "notify-the-california-dmv-about-an-accident" },
       { title: "Diminished value claims in California", koTitle: "Diminished value claims in California", slug: "diminished-value-claim-california" },
@@ -177,6 +178,7 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
       { label: "California Code of Civil Procedure § 377.60", href: "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CCP&sectionNum=377.60." },
     ],
     guides: [
+      { title: "Preparing for a wrongful death consultation", koTitle: "Preparing for a wrongful death consultation", slug: "buena-park-wrongful-death-attorney" },
       { title: "California personal injury deadlines", koTitle: "캘리포니아 개인상해 청구 기한", slug: "california-personal-injury-deadlines" },
     ],
   },
@@ -195,6 +197,7 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
       { label: "Judicial Council of California · Civil jury instructions", href: "https://courts.ca.gov/partners/california-jury-instructions/civil-jury-instructions-resource-center/civil-jury-instructions" },
     ],
     guides: [
+      { title: "Blunt trauma: liability and evidence", koTitle: "Blunt trauma: liability and evidence", slug: "blunt-force-trauma-determining-liability-in-blunt-trauma-lawsuits" },
       { title: "How much is a California personal injury case worth?", koTitle: "캘리포니아 개인상해 사건 가치는 어떻게 정해지나요?", slug: "how-much-is-my-personal-injury-case-worth-california" },
       { title: "California personal injury deadlines", koTitle: "캘리포니아 개인상해 청구 기한", slug: "california-personal-injury-deadlines" },
     ],

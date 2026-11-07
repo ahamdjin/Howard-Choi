@@ -51,7 +51,7 @@ A common and costly misunderstanding. Negotiations with an insurance company do 
 
 The date of injury, who the potential defendants are, whether any of them is a public entity, the age of the injured person, and the specific facts of how and when the harm was discovered.
 
-Work it out from those rather than from the general rule, and do it early. Nothing in this area rewards waiting.
+For a fatal incident, the [wrongful-death consultation guide](/blogs/buena-park-wrongful-death-attorney) explains which family and incident details to bring. Work it out from those rather than from the general rule, and do it early. Nothing in this area rewards waiting.
 
 
 ## Three deadlines that should never be treated as one

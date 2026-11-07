@@ -49,7 +49,7 @@ Medication raises a different practical question. If you start a new prescriptio
 
 Blood alcohol concentration measures the concentration of alcohol in the body. If a case turns on a particular reading, the timing of that reading matters. The time of driving, the time of the collision, and the time a sample was taken may be different. A person reading a report should keep those times distinct and ask what the result was actually used to establish.
 
-Different rules can apply to different drivers. For instance, a driver taking a passenger for hire may be subject to a threshold different from the one that applies to a person driving home in a personal car. Drug impairment also requires attention to the actual circumstances. A witness's description of how the car moved can help explain the crash, while a properly interpreted test can help investigators address a separate question about the driver's condition.
+Different rules can apply to different drivers. For instance, a driver taking a passenger for hire may be subject to a threshold different from the one that applies to a person driving home in a personal car. Drug impairment also requires attention to the actual circumstances. A witness's description of how the car moved can help explain the crash, while a properly interpreted test can help investigators address a separate question about the driver's condition. For holiday transport planning, see our [New Year’s sober-ride guide](/blogs/new-year-alcohol-related-crashes).
 
 ## Make a safe plan when someone may be impaired
 
