@@ -1,3 +1,5 @@
+import { ArticleParagraph } from "@/components/blog/ArticleParagraph";
+import { ArticleAuthorBio } from "@/components/blog/ArticleAuthor";
 import { ARTICLE_READING_LAYOUT, ArticleHero, ArticleReadingSidebar } from "@/components/blog/ArticleReadingLayout";
 import { responsiveImageProps } from "@/lib/responsive-images";
 import { m as motion, useScroll, useTransform } from "framer-motion";
@@ -8,7 +10,6 @@ import PageBreadcrumb from "@/components/PageBreadcrumb";
 import SpanishNavigation from "@/components/SpanishNavigation";
 import SpanishFooter from "@/components/SpanishFooter";
 import { esBlogPosts, getSpanishBlogBySlug } from "@/data/esBlogs";
-import brandLogo from "@/assets/law-firm/howard-choi-logo.png";
 
 type ArticleSupport = {
   relatedHref: string;
@@ -141,7 +142,7 @@ const EsBlogDetail = () => {
                   <p className="editorial-serif text-[clamp(1.62rem,2.2vw,2.18rem)] leading-[1.17] tracking-[-0.014em] text-foreground/94">{post.intro}</p>
                 </motion.div>
 
-                {post.leadParagraphs?.map((paragraph) => <p key={paragraph} className="mb-6 text-[17px] leading-8 text-foreground/80">{paragraph}</p>)}
+                {post.leadParagraphs?.map((paragraph) => <ArticleParagraph key={paragraph} text={paragraph} className="mb-6 text-[17px] leading-8 text-foreground/80" />)}
 
                 <motion.blockquote id="article-key-takeaway" initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.62 }} className="my-10 rounded-[3px] bg-[#1a1714] px-7 py-8 text-[#f3eee5] md:my-12 md:px-9 md:py-10">
                   <div className="mb-5 text-[10px] uppercase tracking-[0.16em] text-[#f3eee5]/38">Punto clave</div>
@@ -154,7 +155,7 @@ const EsBlogDetail = () => {
                       <div className="mb-4 flex items-center gap-3"><span className="text-[11px] tracking-[0.12em] text-foreground/34">0{index + 1}</span><span className="h-px w-8 bg-foreground/12" /></div>
                       <h2 className="editorial-serif max-w-[700px] text-[clamp(2.05rem,3vw,3.15rem)] leading-[0.98] tracking-[-0.022em] text-foreground">{section.heading}</h2>
                       <div className="mt-6 max-w-[730px] space-y-6 text-[17px] leading-[1.75] text-foreground/84 md:text-[18px]">
-                        {section.paragraphs.map((paragraph, paragraphIndex) => <p key={paragraph} className={index === 0 && paragraphIndex === 0 ? "first-letter:float-left first-letter:mr-2 first-letter:mt-1 first-letter:font-serif first-letter:text-[4.1rem] first-letter:leading-[0.72] first-letter:text-foreground" : undefined}>{paragraph}</p>)}
+                        {section.paragraphs.map((paragraph, paragraphIndex) => <ArticleParagraph key={paragraph} text={paragraph} className={index === 0 && paragraphIndex === 0 ? "first-letter:float-left first-letter:mr-2 first-letter:mt-1 first-letter:font-serif first-letter:text-[4.1rem] first-letter:leading-[0.72] first-letter:text-foreground" : undefined} />)}
                       </div>
                     </motion.section>
                   ))}
@@ -177,12 +178,7 @@ const EsBlogDetail = () => {
                   </div>
                 )}
 
-                <div className="mt-10 rounded-[3px] bg-[#e9e6e1] p-7 md:p-8">
-                  <div className="flex items-start gap-4">
-                    <img {...responsiveImageProps(brandLogo, "28px")} src={brandLogo} alt="" width={42} height={42} loading="lazy" decoding="async" className="h-10 w-10 shrink-0 object-contain" />
-                    <div><div className="text-[12px] font-medium text-foreground">Buena Park Injury Lawyer</div><div className="mt-1 text-[12px] text-foreground/46">Información legal sobre accidentes y lesiones en California</div><p className="mt-4 max-w-[590px] text-[13px] leading-6 text-foreground/58">Orientación legal práctica para personas que navegan reclamos por accidentes, seguro, evidencia, plazos, documentación médica y recuperación en California. Howard Choi habla inglés y coreano; estas páginas ofrecen información del sitio en español. La información de licencia está disponible en la <Link to="/es/attorney" className="underline underline-offset-2">página del abogado</Link>.</p></div>
-                  </div>
-                </div>
+                <ArticleAuthorBio slug={post.slug} locale="es" />
 
                 <div className="mt-8 border-t border-foreground/12 pt-6 text-[12px] leading-5 text-foreground/46">Este artículo ofrece información general y no constituye asesoría legal. Los asuntos específicos dependen de sus propios hechos, plazos, demandados, seguro y ley aplicable.</div>
               </div>

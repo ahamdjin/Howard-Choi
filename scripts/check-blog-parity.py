@@ -46,6 +46,8 @@ for p in sorted((root/'content/blog').glob('*.md')):
     elif len(y)<len(x)*0.25:failures.append(label+f': suspiciously short paragraph {i}/{j}')
     urls=lambda t:sorted(re.findall(r'https?://[^\s)\]>]+',t))
     if urls(x)!=urls(y):failures.append(label+f': source URL mismatch {i}/{j}')
+    internal_links=lambda text:sorted(re.findall(r'\]\((/[^\s)]+)\)',text))
+    if internal_links(x)!=internal_links(y):failures.append(label+f': internal link mismatch {i}/{j}')
     # Numbers should remain explicit in legal translations. Separators and sentence order may
     # be localized; preserve the count of each explicit numeric value.
     nums=numeric_tokens

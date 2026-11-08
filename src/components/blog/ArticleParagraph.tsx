@@ -1,8 +1,10 @@
+import type { ReactNode } from "react";
+
 const inlinePattern = /(\*\*([^*]+)\*\*|\[([^\]\n]+)\]\((https?:\/\/[^\s)]+|\/(?!\/)[^\s)]+)\))/g;
 const localImagePattern = /^!\[([^\]\n]+)\]\((\/blog-images\/[A-Za-z0-9._/-]+)\)$/;
 
 function renderInline(text: string) {
-  const parts = [];
+  const parts: ReactNode[] = [];
   let cursor = 0;
   for (const match of text.matchAll(inlinePattern)) {
     const start = match.index ?? cursor;

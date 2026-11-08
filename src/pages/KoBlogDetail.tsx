@@ -1,3 +1,5 @@
+import { ArticleParagraph } from "@/components/blog/ArticleParagraph";
+import { ArticleAuthorBio } from "@/components/blog/ArticleAuthor";
 import { ARTICLE_READING_LAYOUT, ArticleHero, ArticleReadingSidebar } from "@/components/blog/ArticleReadingLayout";
 import { responsiveImageProps } from "@/lib/responsive-images";
 import { m as motion, useScroll, useTransform } from "framer-motion";
@@ -8,7 +10,6 @@ import PageBreadcrumb from "@/components/PageBreadcrumb";
 import KoreanNavigation from "@/components/KoreanNavigation";
 import KoreanFooter from "@/components/KoreanFooter";
 import { getKoBlogBySlug, koBlogPosts } from "@/data/koBlogs";
-import brandLogo from "@/assets/law-firm/howard-choi-logo.png";
 
 const koSerif = { fontFamily: '"Noto Serif KR", serif' } as const;
 
@@ -139,7 +140,7 @@ const KoBlogDetail = () => {
                 </div>
                 <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.68 }}><div className="mb-5 flex items-center gap-3 text-[11px] text-foreground/42 lg:hidden"><span>{post.category}</span><span>·</span><span>{post.readingTime}</span></div><p style={koSerif} className="text-[clamp(1.5rem,2vw,2rem)] font-medium leading-[1.55] tracking-[-0.035em] text-foreground/94">{post.intro}</p></motion.div>
 
-                {post.leadParagraphs?.map((paragraph) => <p key={paragraph} className="mb-6 text-[17px] leading-8 text-foreground/80">{paragraph}</p>)}
+                {post.leadParagraphs?.map((paragraph) => <ArticleParagraph key={paragraph} text={paragraph} className="mb-6 text-[17px] leading-8 text-foreground/80" />)}
 
                 <motion.blockquote id="article-key-takeaway" initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.62 }} className="my-10 rounded-[3px] bg-[#1a1714] px-7 py-8 text-[#f3eee5] md:my-12 md:px-9 md:py-10"><div className="mb-5 text-[10px] tracking-[0.1em] text-[#f3eee5]/38">핵심 포인트</div><p style={koSerif} className="max-w-[690px] text-[clamp(1.65rem,2.35vw,2.35rem)] font-medium leading-[1.45] tracking-[-0.04em]">“{post.takeaway}”</p></motion.blockquote>
 
@@ -148,7 +149,7 @@ const KoBlogDetail = () => {
                     <motion.section id={`ko-article-section-${index + 1}`} key={section.heading} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.16 }} transition={{ duration: 0.62 }} className="scroll-mt-28 border-b border-foreground/10 py-10 last:border-b-0 md:py-12">
                       <div className="mb-4 flex items-center gap-3"><span className="text-[11px] tracking-[0.12em] text-foreground/34">0{index + 1}</span><span className="h-px w-8 bg-foreground/12" /></div>
                       <h2 style={koSerif} className="max-w-[710px] text-[clamp(1.9rem,2.75vw,2.85rem)] font-medium leading-[1.25] tracking-[-0.045em] text-foreground">{section.heading}</h2>
-                      <div className="mt-6 max-w-[730px] space-y-6 text-[16px] leading-[1.9] text-foreground/84 md:text-[17px]">{section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
+                      <div className="mt-6 max-w-[730px] space-y-6 text-[16px] leading-[1.9] text-foreground/84 md:text-[17px]">{section.paragraphs.map((paragraph) => <ArticleParagraph key={paragraph} text={paragraph} />)}</div>
                     </motion.section>
                   ))}
                 </div>
@@ -160,7 +161,7 @@ const KoBlogDetail = () => {
                   </div>
                 )}
 
-                <div className="mt-10 rounded-[3px] bg-[#e9e6e1] p-7 md:p-8"><div className="flex items-start gap-4"><img {...responsiveImageProps(brandLogo, "28px")} src={brandLogo} alt="" width={42} height={42} loading="lazy" decoding="async" className="h-10 w-10 shrink-0 object-contain" /><div><div className="text-[12px] font-medium text-foreground">Buena Park Injury Lawyer</div><div className="mt-1 text-[12px] text-foreground/46">캘리포니아 사고 · 개인 상해 법률정보</div><p className="mt-4 max-w-[590px] text-[13px] leading-6 text-foreground/58">캘리포니아 사고 청구, 보험, 증거, 기한, 치료 기록과 회복 과정을 이해하기 위한 실용적인 정보를 제공합니다. 변호사 등록 정보는 <Link to="/ko/attorney" className="underline underline-offset-2">변호사 페이지</Link>에서 확인할 수 있습니다.</p></div></div></div>
+                <ArticleAuthorBio slug={post.slug} locale="ko" />
 
                 <div className="mt-8 border-t border-foreground/12 pt-6 text-[12px] leading-6 text-foreground/46">본 글은 일반적인 정보 제공을 위한 것이며 법률자문이 아닙니다. 구체적인 법률 판단은 사실관계, 기한, 상대방, 보험 및 적용 법률에 따라 달라질 수 있습니다.</div>
               </div>
