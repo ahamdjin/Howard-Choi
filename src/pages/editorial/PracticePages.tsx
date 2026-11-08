@@ -142,6 +142,7 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
       { label: "California Public Utilities Commission · TNC insurance requirements", href: "https://www.cpuc.ca.gov/regulatory-services/licensing/transportation-licensing-and-analysis-branch/transportation-network-companies/tnc-insurance-requirements" },
     ],
     guides: [
+      { title: "Fullerton Uber and Lyft accident claims", koTitle: "Fullerton Uber and Lyft accident claims", slug: "fullerton-uber-lyft-accident-lawyer" },
       { title: "Uber and Lyft accident insurance in California", koTitle: "캘리포니아 우버·리프트 사고 보험", slug: "uber-lyft-accident-insurance-california" },
       { title: "California comparative fault explained", koTitle: "캘리포니아 비교과실 이해하기", slug: "california-comparative-fault-personal-injury" },
       { title: "How much is a California personal injury case worth?", koTitle: "캘리포니아 개인상해 사건 가치는 어떻게 정해지나요?", slug: "how-much-is-my-personal-injury-case-worth-california" },
@@ -159,6 +160,7 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
     ],
     sources: californiaCourtSources,
     guides: [
+      { title: "Disneyland incidents and amusement park safety", koTitle: "Disneyland incidents and amusement park safety", slug: "disneyland-deaths" },
       { title: "California comparative fault explained", koTitle: "캘리포니아 비교과실 이해하기", slug: "california-comparative-fault-personal-injury" },
       { title: "California personal injury deadlines", koTitle: "캘리포니아 개인상해 청구 기한", slug: "california-personal-injury-deadlines" },
     ],
@@ -197,6 +199,7 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
       { label: "Judicial Council of California · Civil jury instructions", href: "https://courts.ca.gov/partners/california-jury-instructions/civil-jury-instructions-resource-center/civil-jury-instructions" },
     ],
     guides: [
+      { title: "California work injury reporting and claims", koTitle: "California work injury reporting and claims", slug: "workers-comp-step-by-step-process-of-filing-a-workers-comp-claim-in-california" },
       { title: "Blunt trauma: liability and evidence", koTitle: "Blunt trauma: liability and evidence", slug: "blunt-force-trauma-determining-liability-in-blunt-trauma-lawsuits" },
       { title: "How much is a California personal injury case worth?", koTitle: "캘리포니아 개인상해 사건 가치는 어떻게 정해지나요?", slug: "how-much-is-my-personal-injury-case-worth-california" },
       { title: "California personal injury deadlines", koTitle: "캘리포니아 개인상해 청구 기한", slug: "california-personal-injury-deadlines" },

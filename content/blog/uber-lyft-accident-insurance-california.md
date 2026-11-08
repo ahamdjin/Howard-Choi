@@ -16,13 +16,13 @@
 
 A useful rideshare investigation asks whether the driver was offline, logged into the app and waiting for a request, traveling to pick up a passenger after accepting a ride, or actively transporting a passenger. Those are not interchangeable situations for insurance purposes.
 
-Passengers can usually confirm part of that timeline through the trip receipt and app history. When another road user is injured by a rideshare driver, other records may be needed to establish the driver's status.
+Passengers can usually confirm part of that timeline through the trip receipt and app history. When another road user is injured by a rideshare driver, other records may be needed to establish the driver's status. For a local example, our [Fullerton rideshare accident guide](/blogs/fullerton-uber-lyft-accident-lawyer) covers trip records, current coverage questions, and consultation preparation.
 
 ## California uses different coverage periods
 
 California Public Utilities Commission requirements divide rideshare activity into coverage periods. During the period when a driver is logged in and waiting for a ride request, the required primary liability limits are lower than the commercial coverage that applies after a ride has been accepted.
 
-Once the driver has accepted a ride and is traveling to pick up the passenger, and while the passenger is being transported, California requires $1 million in primary commercial liability insurance. The passenger-transport period also includes $1 million in uninsured and underinsured motorist coverage under the CPUC requirements.
+Once the driver has accepted a ride and is traveling to pick up the passenger, and while the passenger is being transported, California requires $1 million in primary commercial liability insurance. Passenger-trip UM/UIM coverage is separate: older CPUC summaries list superseded limits, so review the current legislation and the policy effective on the crash date.
 
 ## Preserve the trip information early
 
@@ -77,7 +77,7 @@ Where a governmental road condition or public vehicle is allegedly involved, ask
 
 The California Public Utilities Commission organizes transportation network company activity into three periods. Period 1 means a driver is logged into the app and waiting for a match. CPUC's stated primary coverage requirement for this period is at least $50,000 for injury or death of one person, $100,000 per incident for injury or death, and $30,000 for property damage, plus an applicable $200,000 excess liability requirement. These are regulatory coverage requirements, not a promise that any claimant receives those sums.
 
-Period 2 begins when the driver accepts a request and is traveling to pick up the passenger; Period 3 begins when a passenger enters and continues until the passenger exits. CPUC describes at least $1 million in primary commercial liability coverage for Periods 2 and 3. The agency separately specifies $1 million in uninsured/underinsured motorist protection during Period 3. Do not treat those coverages as identical: liability, UM and UIM serve different purposes.
+Period 2 begins when the driver accepts a request and travels to the pickup; Period 3 covers the passenger trip. The $1 million commercial liability requirement is separate from UM/UIM coverage. For crashes from January 1, 2026, older CPUC summaries describing $1 million in UM/UIM protection are outdated. Uber states that its California UM/UIM limits are $60,000 per individual and $300,000 per accident. Confirm the platform and policy effective on the crash date. [Uber’s California insurance update](https://www.uber.com/us/en/newsroom/california-insurance-reform/)
 
 When the app is off, ordinary personal-auto coverage issues may dominate. Even then, the identity of drivers, vehicle owners, applicable exclusions, employers and other insurers must be evaluated from actual facts and policies. The existence of a rideshare decal or an open phone is insufficient by itself to prove the coverage period.
 
@@ -95,7 +95,7 @@ Suppose a driver was waiting for a trip request when the collision happened. The
 
 Now suppose the platform shows the driver accepted a trip two minutes before the crash but had not reached the passenger. The same driver, vehicle and roadway may implicate Period 2 instead. Precise timestamps, platform records and conflicting accounts can therefore affect insurance analysis even when the physical collision evidence is identical.
 
-Finally, if the passenger was inside the car, Period 3 rules include the specific UM/UIM requirement in CPUC's description. Whether such protection responds to a particular collision still depends on coverage terms and the facts. Do not assume a policy applies without confirming the actual incident details.
+Finally, if the passenger was inside the car, review the UM/UIM provisions effective on that trip’s date. Older regulatory summaries may show superseded limits. Whether coverage responds still depends on the policy and facts; do not infer current protection from a legacy website figure.
 
 ## What to ask each insurance adjuster
 
@@ -115,7 +115,7 @@ Is Uber or Lyft automatically at fault for every collision involving its driver?
 
 Can you rely on one screenshot showing that a ride was accepted? It is a useful piece of the timeline, but it may not establish all critical events or whether the status changed. Preserve originals and seek corroborating information where available.
 
-Where do the stated limits come from? The California Public Utilities Commission's TNC Insurance Requirements page describes Periods 1 through 3 and the required liability and UM/UIM layers. California Courts explains the underlying personal-injury and deadline concepts. Use both as starting points; the actual policy documents still control many coverage disputes.
+Where do the stated limits come from? CPUC explains the trip periods, while current legislation and the trip-date policy must be checked for later coverage changes. California Courts explains personal-injury and deadline concepts. Use these as starting points; a legacy regulatory summary is not proof of current policy terms.
 
 
 ## Create a trip-status evidence packet

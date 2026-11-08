@@ -23,7 +23,7 @@ Alongside the incident date, write down when you received a report, when an insu
 
 ## What qualifies as wrongful death in California?
 
-A wrongful death claim can arise when another person’s wrongful act or neglect causes a death. A fatal traffic collision, an unsafe condition on a property, or a defective product can prompt an investigation. The circumstances determine which legal theory applies and who might be responsible. [California Code of Civil Procedure § 377.60](https://law.justia.com/codes/california/code-ccp/part-2/title-3/chapter-4/article-6/section-377-60/)
+A wrongful death claim can arise when another person’s wrongful act or neglect causes a death. A fatal traffic collision, an unsafe condition on a property, or a defective product can prompt an investigation. The [Disneyland incident guide](/blogs/disneyland-deaths) illustrates why documented accidents and medical emergencies require different factual analysis. The circumstances determine which legal theory applies and who might be responsible. [California Code of Civil Procedure § 377.60](https://law.justia.com/codes/california/code-ccp/part-2/title-3/chapter-4/article-6/section-377-60/)
 
 A family may know exactly where the incident occurred while still lacking a clear account of what caused it. A crash report, for example, can document the location and the people involved. Photographs, witness accounts, vehicle information, and medical records can help answer the separate question of how the collision led to the death. [California Courts personal injury guidance](https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury)
 

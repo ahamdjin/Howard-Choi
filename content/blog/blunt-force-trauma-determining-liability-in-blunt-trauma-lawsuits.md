@@ -131,7 +131,7 @@ Fatal injuries require a distinction between wrongful-death and survival actions
 
 California personal injury and wrongful-death claims often start with a general two-year filing rule. That deadline is not universal. Delayed discovery, minors, medical malpractice, and other circumstances can change the analysis. Claims involving public entities may require an administrative claim well before the ordinary lawsuit deadline. [California Courts deadline guidance](https://selfhelp.courts.ca.gov/civil-lawsuit/statute-limitations)
 
-Workplace injuries may involve workers’ compensation rules as well as possible claims against third parties. If medical treatment allegedly caused additional harm, that allegation may involve requirements different from those governing the original accident.
+Workplace injuries may involve [workers’ compensation reporting and filing rules](/blogs/workers-comp-step-by-step-process-of-filing-a-workers-comp-claim-in-california) as well as possible claims against third parties. If medical treatment allegedly caused additional harm, that allegation may involve requirements different from those governing the original accident.
 
 Do not assume insurance negotiations extend a filing deadline. Our [California filing-deadline guide](/blogs/california-personal-injury-deadlines) explains why court, notice, and evidence timelines need separate attention. Early review should identify the relevant parties, claim types, and deadlines rather than rely on a general timeline.
 
