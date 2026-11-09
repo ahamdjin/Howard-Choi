@@ -1,3 +1,4 @@
+import { getPracticeMessaging } from "@/data/practicePageMessaging";
 import { ArrowUpRight } from "lucide-react";
 import { brand, practiceAreas } from "@/data/injurySite";
 import { practiceSearchNames } from "@/data/practiceSeo";
@@ -51,8 +52,8 @@ export default function PersonalInjuryPage() {
         <EditorialHero
           locale="en"
           eyebrow="Practice area · Howard Choi"
-          title="Buena Park Personal Injury Lawyer"
-          description="Discuss your accident, insurance questions and injury losses with Howard Choi. Personal injury representation from our Buena Park office, with a free consultation to understand your next steps."
+          title={getPracticeMessaging("personal-injury", "en").heading}
+          description={getPracticeMessaging("personal-injury", "en").description}
           image={legalIllustration}
           imageAlt="Illustrative Lady Justice statue in a law library"
           detail

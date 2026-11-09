@@ -9,7 +9,8 @@
   "alt": "Legal documents and calendars accompanying a California car accident settlement timeline",
   "intro": "A California car accident settlement has no reliable universal deadline. Some claims resolve without a lawsuit; others cannot be evaluated responsibly until treatment, long-term medical needs, disputed fault or insurance coverage becomes clearer. The insurer may have deadlines to acknowledge communications or address completed proof of claim, but those rules should not be confused with a promise that your injury case will be paid in 15, 30 or 40 days. This detailed guide separates the medical, investigation, insurance, litigation and payment stages—so you can identify what is actually holding a claim up and what information would move it forward.",
   "takeaway": "The useful question is not 'How many months does a California settlement take?' but 'What must be proved, which insurance applies, which legal deadlines are running, and what still has to happen before a release and payment?' A fast offer is not necessarily a well-supported settlement.",
-  "updatedAt": "2026-10-28"
+  "updatedAt": "2026-10-28",
+  "metaTitle": "How Long Does a California Car Accident Settlement Take?"
 }
 
 ## The short answer: there is no California settlement countdown

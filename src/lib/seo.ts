@@ -1,5 +1,6 @@
 import { getBlogAuthor, authorProfilePath } from "@/data/blogAuthors";
 import { brand, serviceLocations } from "@/data/injurySite";
+import defaultSocialImage from "@/assets/law-firm/hero-law-office.webp";
 
 export const SITE_URL = (import.meta.env.VITE_SITE_URL || "https://www.buenaparkinjurylawyer.com").replace(/\/$/, "");
 export const SITE_NAME = "Buena Park Injury Lawyer";
@@ -28,7 +29,7 @@ export const buildSeo = ({
   path,
   locale = "en-US",
   type = "website",
-  image,
+  image = defaultSocialImage,
   noindex = false,
   followWhenNoindex = false,
 }: SeoOptions) => {

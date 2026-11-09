@@ -8,6 +8,7 @@ export type BlogPost = {
   slug: string;
   title: string;
   metaTitle?: string;
+  metaDescription?: string;
   excerpt: string;
   category: string;
   date: string;
@@ -26,6 +27,7 @@ type BlogFrontmatter = {
   slug: string;
   title: string;
   metaTitle?: string;
+  metaDescription?: string;
   excerpt: string;
   category: string;
   publishedAt: string;
@@ -170,6 +172,7 @@ const parseBlog = (raw: string): BlogPost | null => {
     slug: data.slug,
     title: data.title,
     metaTitle: data.metaTitle?.trim() || undefined,
+    metaDescription: data.metaDescription?.trim() || undefined,
     excerpt: data.excerpt,
     category: data.category,
     date: formatPublishedDate(data.publishedAt),

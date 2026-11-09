@@ -1,14 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
-import Blogs from "@/pages/Blogs";
-import { buildSeo } from "@/lib/seo";
+import { createFileRoute, Outlet } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/blogs")({
-  head: () => buildSeo({
-    title: "California Injury Law Guides | Buena Park Injury Lawyer",
-    description: "Practical California personal injury guides covering car and truck accidents, comparative fault, Uber and Lyft insurance, evidence, filing deadlines, medical documentation, and what affects case value.",
-    path: "/blogs",
-    alternatePath: "/ko/blogs",
-    locale: "en-US",
-  }),
-  component: Blogs,
+  component: Outlet,
 });

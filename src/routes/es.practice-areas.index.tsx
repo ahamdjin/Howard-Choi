@@ -1,0 +1,15 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { PracticeAreasPage } from "@/pages/editorial/PracticePages";
+import { buildSeo } from "@/lib/seo";
+
+export const Route = createFileRoute("/es/practice-areas/")({
+  head: () => buildSeo({
+    title: "Nuestras áreas de práctica | Consulta gratuita",
+    description: "Explore accidentes de auto, camión, motocicleta, peatones, Uber y Lyft, resbalones y caídas, muerte por negligencia y lesiones graves.",
+    path: "/es/practice-areas",
+    locale: "es-US",
+    noindex: true,
+    followWhenNoindex: true,
+  }),
+  component: () => <PracticeAreasPage locale="es" />,
+});

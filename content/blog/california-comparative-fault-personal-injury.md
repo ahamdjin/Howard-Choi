@@ -9,7 +9,8 @@
   "alt": "California courthouse interior",
   "intro": "A personal injury claim does not automatically disappear because the injured person may have contributed to an accident. California uses comparative fault, which allows responsibility to be divided among the people or entities involved. The practical question is therefore not only whether someone was partly at fault, but how responsibility is supported by the evidence and how the assigned percentage changes the damages that can be recovered.",
   "takeaway": "Shared fault can reduce a recovery without necessarily eliminating the claim. The percentage matters, and the evidence used to assign that percentage can matter just as much.",
-  "reviewStatus": "pending-attorney-review"
+  "reviewStatus": "pending-attorney-review",
+  "metaTitle": "California Comparative Fault: What If You Were Partly at Fault?"
 }
 
 

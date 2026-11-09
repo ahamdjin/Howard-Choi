@@ -9,7 +9,9 @@
   "alt": "Law office used for commercial truck accident evidence review",
   "intro": "A commercial-truck crash can create evidence that does not exist in an ordinary two-car collision. Electronic logging devices, driver qualification files, maintenance records, dispatch information, onboard cameras, inspection materials, and company communications may help explain what happened before impact. Some of that evidence is retained for limited periods, which makes early preservation an important part of a serious truck-accident investigation.",
   "takeaway": "Truck cases can depend on records held by the carrier, not just evidence at the scene. Identifying those records early can prevent an important part of the crash history from disappearing.",
-  "reviewStatus": "pending-attorney-review"
+  "reviewStatus": "pending-attorney-review",
+  "metaTitle": "California Truck Accident Evidence: ELDs & Company Records",
+  "metaDescription": "Learn which records matter after a California truck crash, including ELDs, driver hours, maintenance records, onboard video and company documents."
 }
 
 ## Electronic logging devices can show driving-time information

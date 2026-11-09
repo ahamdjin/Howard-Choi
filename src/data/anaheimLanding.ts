@@ -1,6 +1,6 @@
 export const anaheimSeo = {
   title: "Trusted Injury Law Help in Anaheim | Free Consultation",
-  description: "Injured in Anaheim? Howard Choi handles car accidents, pedestrian injuries and serious falls. Free consultation. No fee unless there is a recovery.",
+  description: "Serving Anaheim from Buena Park, Howard Choi handles your injury claim while you focus on healing. Free consultation. No fee unless there is a recovery.",
 };
 
 export const anaheimCases = [

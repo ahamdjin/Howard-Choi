@@ -1,3 +1,4 @@
+import { getPracticeMessaging } from "@/data/practicePageMessaging";
 import { practiceSearchNames } from "@/data/practiceSeo";
 import { practiceConsultationFocus } from "@/data/practiceConsultationFocus";
 import SiteDepthSection from "@/components/SiteDepthSection";
@@ -260,7 +261,7 @@ export const PracticeAreasPage = ({ locale }: { locale: SiteLocale }) => (
       <EditorialHero
         locale={locale}
         eyebrow={isKo(locale) ? "개인상해 업무 분야" : isEs(locale) ? "Áreas de práctica de lesiones personales" : "Personal injury practice areas"}
-        title={isKo(locale) ? "부에나파크 개인상해 업무 분야" : isEs(locale) ? "Áreas de práctica de lesiones personales en Buena Park." : "Personal Injury Services in Buena Park."}
+        title={isKo(locale) ? "내 사건에 맞는 법률 도움을 찾으세요" : isEs(locale) ? "Encuentre la ayuda legal adecuada para su caso" : "Find the Right Legal Help for Your Case"}
         description={isKo(locale)
           ? "자동차 사고부터 중대 상해까지, 각 사건 분야에서 어떤 사실과 증거가 중요한지 명확하게 설명합니다."
           : isEs(locale)
@@ -413,8 +414,8 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
   const enhancement = practiceEnhancements[practice.slug];
 
   const title = isKo(locale) ? practice.koTitle : isEs(locale) ? (esCopy?.shortTitle || practice.title) : practice.title;
-  const heroTitle = isKo(locale) ? `부에나파크 ${practice.koTitle} 변호사` : isEs(locale) ? (esCopy?.title || `Abogado de ${practice.title} en Buena Park`) : `Buena Park ${practiceSearchNames[practice.slug] || practice.title} Lawyer`;
-  const description = isKo(locale) ? practice.koDescription : isEs(locale) ? (esCopy?.description || practice.description) : practice.description;
+  const heroTitle = getPracticeMessaging(practice.slug, locale)?.heading ?? (isKo(locale) ? `부에나파크 ${practice.koTitle} 변호사` : isEs(locale) ? (esCopy?.title || `Abogado de ${practice.title} en Buena Park`) : `Buena Park ${practiceSearchNames[practice.slug] || practice.title} Lawyer`);
+  const description = getPracticeMessaging(practice.slug, locale)?.description ?? (isKo(locale) ? practice.koDescription : isEs(locale) ? (esCopy?.description || practice.description) : practice.description);
   const intro = isKo(locale) ? practice.koIntro : isEs(locale) ? (esCopy?.intro || practice.intro) : practice.intro;
   const issues = isKo(locale) ? practice.koIssues : isEs(locale) ? (esCopy?.issues || practice.issues) : practice.issues;
   const evidenceTitle = isKo(locale) ? practice.koEvidenceTitle : isEs(locale) ? (esCopy?.evidenceTitle || practice.evidenceTitle) : practice.evidenceTitle;

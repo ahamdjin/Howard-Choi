@@ -40,6 +40,12 @@ content:
         label: Excerpt
         type: text
         required: true
+      - name: metaTitle
+        label: SEO title (optional)
+        type: string
+      - name: metaDescription
+        label: SEO description (optional)
+        type: text
       - name: category
         label: Category
         type: string

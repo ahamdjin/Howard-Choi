@@ -95,18 +95,18 @@ try {
   await send("Log.enable");
 
   const checks = [
-    { path: "/", expected: /Buena Park Personal Injury Lawyer/i },
+    { path: "/", expected: /Buena Park Personal Injury(?: & Car Accident)? Lawyer/i },
     { path: "/ko", expected: /변호사/ },
     { path: "/es", expected: /Abogado/i },
-    { path: "/practice-areas/personal-injury", expected: /Buena Park Personal Injury Lawyer/i },
-    { path: "/practice-areas/car-accidents", expected: /car accident/i },
+    { path: "/practice-areas/personal-injury", expected: /^(?:Buena Park Personal Injury Lawyer|We Win Personal Injury Cases\.)$/i },
+    { path: "/practice-areas/car-accidents", expected: /^(?:Buena Park Car Accident Lawyer|We Win Car Accident Cases\.)$/i },
     { path: "/locations/buena-park", expected: /Buena Park/i },
     { path: "/locations/anaheim", expected: /^Anaheim Injury and Accident Lawyer$/i },
     { path: "/about/our-difference", expected: /Our Difference/i },
     { path: "/about/what-to-expect", expected: /What to Expect From Your Injury Claim/i },
     { path: "/blogs", expected: /./ },
-    { path: "/practice-areas/personal-injury", expected: /Buena Park Personal Injury Lawyer/i, mobile: true },
-    { path: "/", expected: /Buena Park Personal Injury Lawyer/i, mobile: true },
+    { path: "/practice-areas/personal-injury", expected: /^(?:Buena Park Personal Injury Lawyer|We Win Personal Injury Cases\.)$/i, mobile: true },
+    { path: "/", expected: /Buena Park Personal Injury(?: & Car Accident)? Lawyer/i, mobile: true },
     { path: "/ko", expected: /변호사/, mobile: true },
     { path: "/es", expected: /Abogado/i, mobile: true },
   ];
@@ -130,6 +130,8 @@ try {
         htmlExists: Boolean(document.documentElement),
         htmlStart: document.documentElement?.outerHTML?.slice(0, 350) || "",
         h1: document.querySelector("h1")?.textContent?.trim() || "",
+        h1Count: document.querySelectorAll("h1").length,
+        malformedLinks: [...document.querySelectorAll("a[href]")].map(a => a.getAttribute("href")).filter(href => /_[/]|[$]slug/.test(href || "")),
         bodyExists: Boolean(document.body),
         headExists: Boolean(document.head),
         bodyText: document.body?.innerText?.slice(0, 18000) || "",
@@ -138,7 +140,7 @@ try {
       returnByValue: true,
     });
     const state = result.result?.value;
-    if (!state?.bodyExists || !state.headExists || !state.h1) {
+    if (!state?.bodyExists || !state.headExists || !state.h1 || state.h1Count !== 1 || state.malformedLinks.length) {
       throw new Error(`Homepage DOM missing on ${check.path}: ${JSON.stringify(state)}; exceptions=${JSON.stringify(exceptions.slice(-8)).slice(0, 4500)}; errors=${JSON.stringify(errors.slice(-8)).slice(0, 1800)}; console=${JSON.stringify(consoleCalls.slice(-12)).slice(0, 6500)}`);
     }
     if (!check.expected.test(state.h1)) {

@@ -23,6 +23,15 @@ for (const output of outputRoots) {
     if (!entry.isFile() || !entry.name.endsWith(".html")) continue;
     const file = path.join(entry.parentPath, entry.name);
     const html = await readFile(file, "utf8");
+    const publicUrls = html.matchAll(/\b(?:href|src|action)=["']([^"']*)["']/gi);
+    for (const [, value] of publicUrls) {
+      if (!value.startsWith("/") && !/^https?:\/\//i.test(value)) continue;
+      const url = new URL(value, "https://www.buenaparkinjurylawyer.com");
+      if (!["www.buenaparkinjurylawyer.com", "buenaparkinjurylawyer.com"].includes(url.hostname)) continue;
+      if (/(?:^|\/)[^/]+_\//.test(url.pathname) || /\$|%24/i.test(url.pathname)) {
+        throw new Error(`Internal route ID or parameter template leaked into HTML: ${value} in ${file}`);
+      }
+    }
     if (html.includes("\0")) {
       throw new Error(`Invalid NUL character in prerendered HTML: ${file}`);
     }
@@ -50,3 +59,9 @@ if (!scanned || !checked) {
 console.log(`Verified ${checked} prerendered HTML files contain no NUL characters.`);
 
 console.log(`Verified noindex, follow on ${koreanChecked} Korean pages and no noindex-language hreflang links.`);
+
+const routeTree = await readFile("src/routeTree.gen.ts", "utf8");
+if (/id:\s*['"][^'"\n]*_\//.test(routeTree)) {
+  throw new Error("Trailing underscores returned to generated route IDs; use layout/index routes.");
+}
+console.log("Verified clean route IDs and no internal URL/template links in prerendered HTML.");

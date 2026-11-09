@@ -16,10 +16,11 @@
     "preview": "vite preview",
     "start": "node .output/server/index.mjs",
     "content:check": "python3 scripts/check-blog-parity.py && python3 scripts/check-location-parity.py",
+    "seo:check": "python3 scripts/audit-seo.py",
     "test:inquiries": "node --experimental-strip-types --test src/lib/inquiry-client.test.ts",
     "prebuild": "npm run content:check",
     "postbuild": "node scripts/check-prerender-html.mjs",
-    "test:html": "node --experimental-strip-types --test src/lib/html-response.server.test.ts",
+    "test:html": "node --experimental-strip-types --test src/lib/html-response.server.test.ts src/lib/legacy-route-redirect.test.ts",
     "typecheck": "tsc --noEmit -p tsconfig.app.json && tsc --noEmit -p tsconfig.node.json",
     "test:browser": "node scripts/smoke-homepage-browser.mjs",
     "check": "npm run lint && npm run typecheck && npm run test:html && npm run test:inquiries && npm run build"

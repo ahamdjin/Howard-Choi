@@ -69,6 +69,17 @@ Application infrastructure lives in `src/components/app/`.
 Run `npm run check` for lint, TypeScript, regression tests and the production build.
 Run `npm run start`, then `npm run test:browser` in another terminal for Chrome hydration checks. Set `SMOKE_ORIGIN` if the server uses another port. On macOS set `CHROME_PATH` to the installed Chrome executable.
 
+With the production server running, use `npm run seo:check -- --origin http://127.0.0.1:3000`
+for the rendered page audit. It checks linked pages, sitemap indexability, canonical
+and social metadata, duplicate indexed titles/descriptions, headings, image assets,
+JSON-LD syntax and internal section links. The JSON result defaults to
+`output/seo-audit.json`; use `--output` to choose a report file. Title/description
+lengths are editorial advisories, not Google indexing errors.
+
+Published blog records can set `metaTitle` and `metaDescription` independently of
+their visible title and excerpt. Keep the full article intact when shortening
+search snippets, and refresh translated source hashes after metadata-only edits.
+
 
 
 ### Routes
@@ -78,13 +89,21 @@ Run `npm run start`, then `npm run test:browser` in another terminal for Chrome 
 Examples:
 
 - `index.tsx` → English homepage
-- `practice-areas.tsx` / `practice-areas_.$slug.tsx`
-- `locations.tsx` / `locations_.$slug.tsx`
+- `practice-areas.tsx` is an empty layout; `practice-areas.index.tsx` is its directory page and `practice-areas.$slug.tsx` is a service page.
+- `locations.tsx` is an empty layout; `locations.index.tsx` is its directory page and `locations.$slug.tsx` is a city page.
 - `ko*.tsx` → Korean routes
 - `es*.tsx` → Spanish routes
 - `sitemap[.]xml.ts` → XML sitemap
 - `robots[.]txt.ts` → robots.txt
 - `__root.tsx` → global document, GTM, global providers, HighLevel script loading
+
+Route groups use empty `Outlet` layouts and separate `.index.tsx` pages. Keep
+trailing underscores out of filenames and route IDs; the generated tree should
+use clean IDs such as `/ko/attorney` and `/about/faqs`. `$slug` is an internal
+dynamic parameter and must be resolved to an actual slug in every public link.
+The postbuild check rejects internal IDs and unresolved parameters in HTML URLs.
+Historical malformed static URLs are redirected by `src/lib/legacy-route-redirect.ts`;
+unknown URLs and literal parameter templates remain 404s.
 
 ### Shared inner-page design
 

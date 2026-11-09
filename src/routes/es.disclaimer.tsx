@@ -1,0 +1,15 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { LegalPage } from "@/pages/LegalPages";
+import { buildSeo } from "@/lib/seo";
+
+export const Route = createFileRoute("/es/disclaimer")({
+  head: () => buildSeo({
+    title: "Aviso Legal | Buena Park Injury Lawyer",
+    description: "Información sobre publicidad de abogado, asesoría legal, relación abogado-cliente y resultados.",
+    path: "/es/disclaimer",
+    locale: "es-US",
+    noindex: true,
+    followWhenNoindex: true,
+  }),
+  component: () => <LegalPage type="disclaimer" locale="es" />,
+});
