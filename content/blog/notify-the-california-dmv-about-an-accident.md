@@ -2,7 +2,7 @@
   "title": "Is it Necessary to Notify the California DMV About an Accident?",
   "slug": "notify-the-california-dmv-about-an-accident",
   "published": true,
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved",
   "author": "Howard Choi",
   "excerpt": "Learn when California requires an SR-1 accident report, how the 10-day deadline works, and why DMV, police, and insurance reports are separate.",
   "metaTitle": "When to Notify the California DMV About an Accident",

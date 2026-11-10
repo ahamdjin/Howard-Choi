@@ -9,9 +9,10 @@ import brandLogo from "@/assets/law-firm/howard-choi-logo.png";
 import UtilityBar from "@/components/UtilityBar";
 import { brand, serviceLocations, type SiteLocale } from "@/data/injurySite";
 import { esPracticeContent } from "@/data/esPracticeContent";
+import "./site-navigation.css";
 
-type PanelKey = "practice" | "locations" | "about" | null;
-type MobileGroup = "practice" | "locations" | null;
+type PanelKey = "practice" | "locations" | "about" | "learning" | null;
+type MobileGroup = "practice" | "locations" | "about" | "learning" | null;
 
 type NavigationLocale = SiteLocale | "es";
 
@@ -39,7 +40,11 @@ const SiteNavigation = ({ locale }: { locale: NavigationLocale }) => {
     if (!mobileOpen) return;
     const previous = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    return () => { document.body.style.overflow = previous; };
+    document.documentElement.setAttribute("data-mobile-navigation-open", "true");
+    return () => {
+      document.body.style.overflow = previous;
+      document.documentElement.removeAttribute("data-mobile-navigation-open");
+    };
   }, [mobileOpen]);
 
   useEffect(() => {
@@ -86,12 +91,23 @@ const SiteNavigation = ({ locale }: { locale: NavigationLocale }) => {
     language: "Language", call: "Call",
   };
 
+  const aboutLinks = [
+    ["About the Firm", "/about"], ["Our Difference", "/about/our-difference"],
+    ["What to Expect", "/about/what-to-expect"], ["Zero Fee Guarantee", "/about/zero-fee-guarantee"],
+    ["Meet Howard Choi", "/attorney"], ["Results", "/results"],
+  ];
+  const learningLinks = [
+    ["Explore the Learning Hub", "/learning-hub"],
+    ["Blogs", "/blogs"], ["Accident & Injury Guides", "/blogs/guides"],
+    ["FAQs", "/faqs"], ["Injury Types", "/injury-types"],
+  ];
+
   const topItems = [
     { key: "practice" as const, label: labels.practice, href: href("/practice-areas") },
     { key: "locations" as const, label: labels.locations, href: href("/locations") },
     { key: "attorneys" as const, label: labels.attorneys, href: href("/attorney") },
     { key: "results" as const, label: labels.results, href: href("/results") },
-    { key: "blog" as const, label: labels.blog, href: href("/blogs") },
+    ...(locale === "en" ? [{ key: "learning" as const, label: "Learning Hub", href: "/learning-hub" }] : [{ key: "blog" as const, label: labels.blog, href: href("/blogs") }]),
     { key: "about" as const, label: labels.about, href: href("/about") },
 
   ];
@@ -116,7 +132,7 @@ const SiteNavigation = ({ locale }: { locale: NavigationLocale }) => {
 
   const renderPanel = () => {
     if (panel === "practice") return (
-      <div className="site-shell grid gap-8 py-8 lg:grid-cols-[0.42fr_1.58fr] lg:gap-10 lg:py-10 xl:gap-14">
+      <div className="site-navigation-shell grid gap-8 py-8 lg:grid-cols-[0.42fr_1.58fr] lg:gap-10 lg:py-10 xl:gap-14">
         <PanelIntro number="01" eyebrow={labels.practice} title={ko ? "사고 유형에서 바로 시작하세요." : es ? "Empiece por el tipo de accidente." : "Start with the accident, not the legal jargon."} body={ko ? "사고 유형별 정보, 담당 변호사, 관련 지역과 자료를 서로 연결합니다." : es ? "Elija el accidente o la lesión sobre la que necesita información." : "Choose the accident or injury you need help with."} link={href("/practice-areas")} linkLabel={labels.allPractices} />
         <div className="grid gap-8 sm:grid-cols-2">
           {practiceGroups.map((group) => (
@@ -124,7 +140,7 @@ const SiteNavigation = ({ locale }: { locale: NavigationLocale }) => {
               <h3 className="editorial-serif border-b border-foreground/20 pb-3 text-2xl">{group.title[locale]}</h3>
               <div className="divide-y divide-foreground/10">
                 {group.id === "personal-injury" && !ko && !es && <a href="/practice-areas/personal-injury" onClick={closeAll} className="flex min-h-11 items-center justify-between gap-4 py-2 text-sm font-semibold hover:underline">Personal Injury Lawyer <ArrowRight aria-hidden="true" className="h-4 w-4" /></a>}
-                {group.practices.map((practice) => <a key={practice.slug} href={href(`/practice-areas/${practice.slug}`)} onClick={closeAll} aria-current={isCurrent(href(`/practice-areas/${practice.slug}`)) ? "page" : undefined} className="flex min-h-11 items-center justify-between gap-4 py-2 text-sm hover:underline">{ko ? practice.koTitle : es ? (esPracticeContent[practice.slug]?.shortTitle || practice.title) : practice.title}<ArrowRight aria-hidden="true" className="h-4 w-4" /></a>)}
+                {group.practices.filter(p => locale === "en" || !p.englishOnly).map((practice) => <a key={practice.slug} href={href(`/practice-areas/${practice.slug}`)} onClick={closeAll} aria-current={isCurrent(href(`/practice-areas/${practice.slug}`)) ? "page" : undefined} className="flex min-h-11 items-center justify-between gap-4 py-2 text-sm hover:underline">{ko ? practice.koTitle : es ? (esPracticeContent[practice.slug]?.shortTitle || practice.title) : practice.title}<ArrowRight aria-hidden="true" className="h-4 w-4" /></a>)}
               </div>
             </section>
           ))}
@@ -132,20 +148,17 @@ const SiteNavigation = ({ locale }: { locale: NavigationLocale }) => {
       </div>
     );
 
-    if (panel === "about") return (
-      <div className="site-shell grid gap-8 py-8 lg:grid-cols-[0.42fr_1.58fr] lg:gap-10 lg:py-10 xl:gap-14">
-        <PanelIntro number="03" eyebrow="About" title="Get to know Howard Choi" body="Learn about the firm and what happens after your first call." link="/about" linkLabel="About the Firm" />
-        <div className="grid border-t border-foreground/12 sm:grid-cols-2">
-          <PanelLink number="01" title="Our Difference" link="/about/our-difference" />
-          <PanelLink number="02" title="What to Expect" link="/about/what-to-expect" />
-          <PanelLink number="03" title="FAQs" link="/about/faqs" />
-          <PanelLink number="04" title="Zero Fee Guarantee" link="/about/zero-fee-guarantee" />
-        </div>
-      </div>
-    );
+    if (panel === "about" || panel === "learning") {
+      const learning = panel === "learning";
+      const links = learning ? learningLinks : aboutLinks;
+      return <div className="site-navigation-shell grid gap-8 py-8 lg:grid-cols-[0.42fr_1.58fr] lg:gap-10 lg:py-10 xl:gap-14">
+        <PanelIntro number={learning ? "04" : "03"} eyebrow={learning ? "Learning Hub" : "About"} title={learning ? "Understand your injury and your next step." : "Get to know Howard Choi"} body={learning ? "Find answers, detailed guides and explanations of specific injuries." : "Learn about the firm and what happens after your first call."} link={learning ? "/learning-hub" : "/about"} linkLabel={learning ? "Explore the Learning Hub" : "About the Firm"} />
+        <div className="grid border-t border-foreground/12 sm:grid-cols-2">{links.map(([title, link], i) => <PanelLink key={link} number={String(i+1).padStart(2,"0")} title={title} link={link} />)}</div>
+      </div>;
+    }
 
     if (panel === "locations") return (
-      <div className="site-shell grid gap-8 py-8 lg:grid-cols-[0.42fr_1.58fr] lg:gap-10 lg:py-10 xl:gap-14">
+      <div className="site-navigation-shell grid gap-8 py-8 lg:grid-cols-[0.42fr_1.58fr] lg:gap-10 lg:py-10 xl:gap-14">
         <PanelIntro number="02" eyebrow={labels.locations} title={ko ? "지역별로 필요한 정보를 연결합니다." : es ? "Información local para cada comunidad." : "A local hub for every community we serve."} body={ko ? "각 지역을 관련 업무 분야, 변호사, 결과와 법률 자료에 연결합니다." : es ? "Encuentre orientación, recursos y datos de contacto para su zona." : "Find guidance and contact information for your community."} link={href("/locations")} linkLabel={labels.allLocations} />
         <div className="grid border-t border-foreground/12 sm:grid-cols-2 lg:grid-cols-3">{[...serviceLocations, ...additionalLocationDirectory.filter(city => hasLocalizedLocation(locale, city.slug))].map((item, index) => <PanelLink key={item.slug} number={String(index + 1).padStart(2, "0")} title={ko ? item.koName : item.name} link={href(`/locations/${item.slug}`)} />)}</div>
       </div>
@@ -161,11 +174,11 @@ const SiteNavigation = ({ locale }: { locale: NavigationLocale }) => {
 
       <motion.nav initial={{ y: -10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }} onKeyDown={(event) => { if (event.key === "Escape") { const trigger = event.currentTarget.querySelector<HTMLButtonElement>('[aria-expanded="true"]'); closeAll(); trigger?.focus(); } }} onPointerLeave={(event) => { if (event.pointerType === "mouse") setPanel(null); }} onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setPanel(null); }} className="fixed left-0 right-0 top-0 z-[120] overflow-hidden bg-background text-foreground" style={{ top: -utilityOffset, fontFamily: ko ? '"Noto Sans KR", sans-serif' : '"Inter", Arial, sans-serif' }}>
         <UtilityBar locale={locale} />
-        <div className="site-shell h-[60px]">
+        <div className="site-navigation-shell h-[60px]">
           <div className="hidden h-full grid-cols-[minmax(180px,0.84fr)_minmax(500px,2.12fr)_minmax(190px,1.04fr)] items-center lg:grid">
             <a href={homeHref} onClick={closeAll} className="flex min-w-0 items-center gap-2.5 pr-5"><span className="flex h-7 w-7 shrink-0 items-center justify-center overflow-hidden rounded-[2px]"><img {...responsiveImageProps(brandLogo, "28px")} src={brandLogo} alt="" width={28} height={28} decoding="async" className="h-full w-full object-contain" /></span><span className="truncate text-[13px] font-semibold tracking-[-0.025em]">{brand.name}</span></a>
             <div className="grid h-full grid-cols-6">{topItems.map((item) => {
-              const expandable = item.key === "practice" || item.key === "locations" || (item.key === "about" && !ko && !es);
+              const expandable = item.key === "practice" || item.key === "locations" || ((item.key === "about" || item.key === "learning") && !ko && !es);
               const active = panel === item.key;
               const className = (isCurrent(item.href) ? "border-b-2 border-current bg-foreground/[0.045] " : "border-b-2 border-transparent ") + "flex h-full items-center justify-center gap-1.5 px-2 text-center text-[13px] font-medium transition-colors hover:bg-foreground/[0.045]";
               return expandable ? <button key={item.key} type="button" aria-current={isCurrent(item.href) ? "location" : undefined} onPointerEnter={(event) => { if (event.pointerType === "mouse") setPanel(item.key); }} aria-expanded={active} aria-controls="desktop-navigation-panel" onClick={() => setPanel(active ? null : item.key)} className={className}>{item.label}<ChevronDown className="h-3 w-3" /></button> : <a key={item.key} href={item.href} aria-current={isCurrent(item.href) ? "page" : undefined} onPointerEnter={() => setPanel(null)} onFocus={() => setPanel(null)} onClick={closeAll} className={className}>{item.label}</a>;
@@ -173,24 +186,29 @@ const SiteNavigation = ({ locale }: { locale: NavigationLocale }) => {
             <div className="flex h-full items-center justify-end gap-3 pl-4"><a href={brand.phoneHref} onMouseEnter={() => setPanel(null)} className="whitespace-nowrap text-[12px] font-semibold transition-opacity hover:opacity-65">{brand.phoneDisplay}</a><a href={href("/contact")} onMouseEnter={() => setPanel(null)} onFocus={() => setPanel(null)} onClick={closeAll} className="inline-flex h-9 items-center justify-center whitespace-nowrap border border-foreground/15 px-4 text-[10px] font-semibold uppercase tracking-[0.11em] transition-colors hover:bg-foreground hover:text-background">{labels.contact}</a></div>
           </div>
 
-          <div className="flex h-full items-center justify-between gap-3 lg:hidden"><a href={homeHref} onClick={closeAll} className="flex min-w-0 items-center gap-2.5"><span className="flex h-7 w-7 shrink-0 items-center justify-center overflow-hidden rounded-[2px]"><img {...responsiveImageProps(brandLogo, "28px")} src={brandLogo} alt="" width={28} height={28} decoding="async" className="h-full w-full object-contain" /></span><span className="max-w-[205px] truncate text-[12px] font-semibold tracking-[-0.025em] sm:max-w-[260px] sm:text-[13px]">{brand.name}</span></a><div className="flex shrink-0 items-center"><a href={brand.phoneHref} aria-label={`${labels.call} ${brand.phoneDisplay}`} className="flex min-h-11 items-center justify-center gap-1.5 whitespace-nowrap px-1 text-[11px] font-semibold"><Phone aria-hidden="true" className="hidden h-3.5 w-3.5 stroke-[1.5] sm:block" />{brand.phoneDisplay}</a><a href={href("/contact")} onClick={closeAll} className="ml-1 inline-flex min-h-9 items-center border border-foreground/20 px-1.5 text-[10px] font-semibold sm:ml-2 sm:px-3 sm:text-xs">{labels.contact}</a><button type="button" onClick={() => setMobileOpen((current) => !current)} className={`flex h-[60px] w-11 items-center justify-center ${mobileOpen ? "bg-foreground/[0.045]" : ""}`} aria-label={mobileOpen ? (ko ? "메뉴 닫기" : es ? "Cerrar menú" : "Close menu") : labels.menu} aria-expanded={mobileOpen} aria-controls="mobile-navigation-panel">{mobileOpen ? <X className="h-5 w-5 stroke-[1.4]" /> : <Menu className="h-5 w-5 stroke-[1.4]" />}</button></div></div>
+          <div className="flex h-full items-center justify-between gap-3 lg:hidden"><a href={homeHref} onClick={closeAll} className="flex min-w-0 items-center gap-2.5"><span className="flex h-7 w-7 shrink-0 items-center justify-center overflow-hidden rounded-[2px]"><img {...responsiveImageProps(brandLogo, "28px")} src={brandLogo} alt="" width={28} height={28} decoding="async" className="h-full w-full object-contain" /></span><span className="max-w-[205px] truncate text-[12px] font-semibold tracking-[-0.025em] sm:max-w-[260px] sm:text-[13px]">{brand.name}</span></a><div className="flex shrink-0 items-center"><a href={brand.phoneHref} aria-label={`${labels.call} ${brand.phoneDisplay}`} className="flex h-11 w-11 items-center justify-center"><Phone aria-hidden="true" className="h-5 w-5 stroke-[1.5]" /></a><button type="button" onClick={() => { setMobileOpen((current) => !current); setMobileGroup(null); }} className={`flex h-11 w-11 items-center justify-center ${mobileOpen ? "bg-foreground/[0.045]" : ""}`} aria-label={mobileOpen ? (ko ? "메뉴 닫기" : es ? "Cerrar menú" : "Close menu") : labels.menu} aria-expanded={mobileOpen} aria-controls="mobile-navigation-panel">{mobileOpen ? <X className="h-5 w-5 stroke-[1.4]" /> : <Menu className="h-5 w-5 stroke-[1.4]" />}</button></div></div>
         </div>
 
         <AnimatePresence mode="wait" initial={false}>{panel && <motion.div id="desktop-navigation-panel" key={panel} initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ height: { duration: 0.38, ease: [0.22, 1, 0.36, 1] }, opacity: { duration: 0.18 } }} className="hidden overflow-hidden border-t border-foreground/[0.08] bg-background text-foreground lg:block">{renderPanel()}</motion.div>}</AnimatePresence>
 
 
       </motion.nav>
-      <AnimatePresence initial={false}>{mobileOpen && <motion.div id="mobile-navigation-panel" role="navigation" aria-label={labels.menu} initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.22 }} style={{ top: 104 - utilityOffset, WebkitOverflowScrolling: "touch" }} className="fixed inset-x-0 bottom-0 z-[119] overflow-y-auto overscroll-contain border-t border-foreground/[0.08] bg-background text-foreground lg:hidden"><div className="site-shell flex min-h-full flex-col pb-8 pt-3">
+      <AnimatePresence initial={false}>{mobileOpen && <motion.div id="mobile-navigation-panel" role="navigation" aria-label={labels.menu} initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.22 }} style={{ top: 104 - utilityOffset, WebkitOverflowScrolling: "touch", fontFamily: ko ? '"Noto Sans KR", sans-serif' : '"Inter", Arial, sans-serif' }} className="mobile-site-navigation fixed inset-x-0 bottom-0 z-[119] overflow-y-auto overscroll-contain border-t border-foreground/[0.08] bg-background text-foreground lg:hidden"><div className="mobile-site-navigation__inner flex min-h-full flex-col pb-8 pt-3">
           <div>
             <button type="button" aria-expanded={mobileGroup === "practice"} aria-controls="mobile-practice-links" onClick={() => setMobileGroup((current) => current === "practice" ? null : "practice")} className="flex w-full items-center justify-between border-b border-foreground/10 py-4 text-left"><span className="text-[1.05rem] font-medium tracking-[-0.025em]">{labels.practice}</span><ChevronDown className={`h-4 w-4 stroke-[1.35] transition-transform ${mobileGroup === "practice" ? "rotate-180" : ""}`} /></button>
-            <AnimatePresence initial={false}>{mobileGroup === "practice" && <motion.div id="mobile-practice-links" initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden border-b border-foreground/10"><div className="grid grid-cols-1 gap-x-5 gap-y-2 py-4 text-[16px] leading-6 text-foreground/85 sm:grid-cols-2">{practiceGroups.map((group) => <section key={group.id}>
-              <h3 className="font-semibold">{group.title[locale]}</h3>
+            <AnimatePresence initial={false}>{mobileGroup === "practice" && <motion.div id="mobile-practice-links" initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden border-b border-foreground/10"><div className="grid grid-cols-1 gap-x-5 gap-y-2 py-4 text-[16px] leading-6 text-foreground/85 sm:grid-cols-2">{practiceGroups.map((group) => <div key={group.id} className="mobile-site-navigation__practice-group">
+              <h3 className="mb-2 border-b border-foreground/10 pb-2 text-sm font-semibold text-foreground/65">{group.title[locale]}</h3>
               {group.id === "personal-injury" && !ko && !es && <a href="/practice-areas/personal-injury" onClick={closeAll} className="flex min-h-12 items-center">Personal Injury Lawyer</a>}
-              {group.practices.map((practice) => <a key={practice.slug} href={href(`/practice-areas/${practice.slug}`)} aria-current={isCurrent(href("/practice-areas/" + practice.slug)) ? "page" : undefined} onClick={closeAll} className="flex min-h-12 items-center leading-5">{ko ? practice.koTitle : es ? (esPracticeContent[practice.slug]?.shortTitle || practice.title) : practice.title}</a>)}
-            </section>)}</div></motion.div>}</AnimatePresence>
+              {group.practices.filter(p => locale === "en" || !p.englishOnly).map((practice) => <a key={practice.slug} href={href(`/practice-areas/${practice.slug}`)} aria-current={isCurrent(href("/practice-areas/" + practice.slug)) ? "page" : undefined} onClick={closeAll} className="flex min-h-12 items-center leading-5">{ko ? practice.koTitle : es ? (esPracticeContent[practice.slug]?.shortTitle || practice.title) : practice.title}</a>)}
+            </div>)}</div></motion.div>}</AnimatePresence>
             <button type="button" aria-expanded={mobileGroup === "locations"} aria-controls="mobile-location-links" onClick={() => setMobileGroup((current) => current === "locations" ? null : "locations")} className="flex w-full items-center justify-between border-b border-foreground/10 py-4 text-left"><span className="text-[1.05rem] font-medium tracking-[-0.025em]">{labels.locations}</span><ChevronDown className={`h-4 w-4 stroke-[1.35] transition-transform ${mobileGroup === "locations" ? "rotate-180" : ""}`} /></button>
             <AnimatePresence initial={false}>{mobileGroup === "locations" && <motion.div id="mobile-location-links" initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden border-b border-foreground/10"><div className="grid grid-cols-1 gap-x-5 gap-y-2 py-4 text-[16px] leading-6 text-foreground/85 sm:grid-cols-2">{[...serviceLocations, ...additionalLocationDirectory.filter(city => hasLocalizedLocation(locale, city.slug))].map((item) => <a key={item.slug} href={href(`/locations/${item.slug}`)} aria-current={isCurrent(href("/locations/" + item.slug)) ? "page" : undefined} onClick={closeAll} className="flex min-h-12 items-center">{ko ? item.koName : item.name}</a>)}</div></motion.div>}</AnimatePresence>
-            {[[labels.attorneys, href("/attorney")], [labels.results, href("/results")], [labels.blog, href("/blogs")], [labels.about, href("/about")], ...(!ko && !es ? [["Our Difference", "/about/our-difference"], ["What to Expect", "/about/what-to-expect"], ["FAQs", "/about/faqs"], ["Zero Fee Guarantee", "/about/zero-fee-guarantee"]] : []), [labels.contact, href("/contact")]].map(([label, itemHref]) => <a key={itemHref} href={itemHref} aria-current={isCurrent(itemHref) ? "page" : undefined} onClick={closeAll} className="block min-h-12 border-b border-foreground/10 py-4 text-[1.0625rem] font-medium tracking-[-0.025em]">{label}</a>)}
+            {[[labels.attorneys, href("/attorney")], [labels.results, href("/results")], ...(!ko && !es ? [] : [[labels.blog, href("/blogs")], [labels.about, href("/about")]])].map(([label, itemHref]) => <a key={itemHref} href={itemHref} aria-current={isCurrent(itemHref) ? "page" : undefined} onClick={closeAll} className="block min-h-12 border-b border-foreground/10 py-4 text-[1.0625rem] font-medium tracking-[-0.025em]">{label}</a>)}
+            {!ko && !es && ([{id:"about" as const, label:"About", links:aboutLinks}, {id:"learning" as const, label:"Learning Hub", links:learningLinks}]).map(group => <div key={group.id}>
+              <button type="button" aria-expanded={mobileGroup === group.id} aria-controls={`mobile-${group.id}-links`} onClick={() => setMobileGroup(current => current === group.id ? null : group.id)} className="flex min-h-14 w-full items-center justify-between border-b border-foreground/10 py-4 text-left text-[1.05rem] font-medium"><span>{group.label}</span><ChevronDown aria-hidden="true" className={`h-4 w-4 ${mobileGroup === group.id ? "rotate-180" : ""}`} /></button>
+              {mobileGroup === group.id && <div id={`mobile-${group.id}-links`} className="border-b border-foreground/10 py-2 pl-5">{group.links.map(([label, link]) => <a key={link} href={link} aria-current={isCurrent(link) ? "page" : undefined} onClick={closeAll} className="flex min-h-12 items-center py-3 text-base">{label}</a>)}</div>}
+            </div>)}
+            <a href={href("/contact")} onClick={closeAll} className="block min-h-12 border-b border-foreground/10 py-4 font-medium">{labels.contact}</a>
           </div>
           <div className="mt-auto pt-8"><a href={brand.phoneHref} className="mt-5 flex w-full items-center justify-between border border-foreground/14 px-5 py-4"><span className="text-[9px] font-medium uppercase tracking-[0.12em] text-foreground/52">{labels.call}</span><span className="text-[13px] font-medium">{brand.phoneDisplay}</span></a></div>
         </div></motion.div>}</AnimatePresence>

@@ -1,3 +1,5 @@
+import dog from "@/assets/law-firm/dog-walking-context.jpg";
+import cycling from "@/assets/law-firm/cycling-street-context.jpg";
 import collision from "@/assets/law-firm/collision-damage.jpg";
 import cars from "@/assets/law-firm/car-collision.jpg";
 import truck from "@/assets/law-firm/truck-highway.jpg";
@@ -10,6 +12,8 @@ import support from "@/assets/law-firm/family-support.jpg";
 
 // Source and license records live in src/assets/law-firm/media-sources.md.
 export const practiceMedia: Record<string, { src: string; alt: string }> = {
+  "bicycle-accidents": { src: cycling, alt: "Helmeted cyclist travelling through an urban street" },
+  "dog-bites": { src: dog, alt: "Dog on a leash being walked along a paved path" },
   "car-accidents": { src: collision, alt: "Damaged car with a broken windshield after a collision" },
   "truck-accidents": { src: truck, alt: "Commercial truck on a highway" },
   "motorcycle-accidents": { src: motorcycle, alt: "Motorcyclist travelling along a road" },

@@ -3,7 +3,8 @@
 const legacyRoutes = new Map([
   ["/ko_/case-value-calculator", "/ko/case-value-calculator"],
   ["/ko_/attorney", "/ko/attorney"],
-  ["/about_/faqs", "/about/faqs"],
+  ["/about_/faqs", "/faqs"],
+  ["/about/faqs", "/faqs"],
   ["/about_/what-to-expect", "/about/what-to-expect"],
   ["/about_/zero-fee-guarantee", "/about/zero-fee-guarantee"],
   ["/about_/our-difference", "/about/our-difference"],

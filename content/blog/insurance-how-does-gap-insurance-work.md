@@ -2,7 +2,7 @@
   "title": "How Does Gap Insurance Work?",
   "slug": "insurance-how-does-gap-insurance-work",
   "published": true,
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved",
   "author": "Howard Choi",
   "excerpt": "Learn how GAP insurance works after a total loss or theft, what it may exclude, and how depreciation, deductibles, and loan balances affect your claim.",
   "metaTitle": "How Does Gap Insurance Work?",

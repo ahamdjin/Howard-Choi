@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-const inlinePattern = /(\*\*([^*]+)\*\*|\[([^\]\n]+)\]\((https?:\/\/[^\s)]+|\/(?!\/)[^\s)]+)\))/g;
+const inlinePattern = /(\*\*([^*]+)\*\*|\[([^\]\n]+)\]\((https?:\/\/[^\s)]+|\/(?!\/)[^\s)]+)\)|\*([^*\n]+)\*)/g;
 const localImagePattern = /^!\[([^\]\n]+)\]\((\/blog-images\/[A-Za-z0-9._/-]+)\)$/;
 
 function renderInline(text: string) {
@@ -11,6 +11,7 @@ function renderInline(text: string) {
     parts.push(text.slice(cursor, start));
     parts.push(match[2]
       ? <strong key={start}>{match[2]}</strong>
+      : match[5] ? <em key={start}>{match[5]}</em>
       : <a key={start} href={match[4]} className="underline underline-offset-4">{match[3]}</a>);
     cursor = start + match[0].length;
   }

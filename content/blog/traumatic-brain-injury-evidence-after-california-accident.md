@@ -1,5 +1,5 @@
 {
-  "title": "Traumatic Brain Injury After a California Accident: Evidence, Recovery & Claims",
+  "title": "Traumatic Brain Injuries",
   "slug": "traumatic-brain-injury-evidence-after-california-accident",
   "published": true,
   "reviewStatus": "approved",
@@ -10,7 +10,8 @@
   "alt": "Law office and legal records accompanying a guide to brain injury evidence",
   "intro": "A traumatic brain injury (TBI) claim is often difficult for a reason that has little to do with the severity of the crash: a person may look physically well while struggling with memory, concentration, fatigue, balance or work. A careful California injury claim connects a medically supported diagnosis and course of care with evidence of how the event happened and how functioning changed afterward. This guide explains which records matter, what they can and cannot prove, and why the early and long-term timelines must be handled together.",
   "takeaway": "A strong brain-injury record joins medical evaluation, contemporaneous symptom history, daily functioning, independent accident evidence and a realistic treatment plan. Neither a normal early scan nor a dramatic accident description decides a case by itself.",
-  "metaTitle": "Brain Injury After a California Accident: Evidence & Claims"
+  "metaTitle": "Traumatic Brain Injuries From Accidents | Warning Signs and Legal Help",
+  "metaDescription": "TBIs are among the most serious accident injuries. Learn how to identify symptoms, when to seek treatment, and how Buena Park Injury Lawyer supports your legal case."
 }
 
 ## First, recognize when medical care cannot wait
@@ -25,7 +26,7 @@ Do not treat this guide as an assessment of any specific person. A legal record 
 
 The earliest records may include emergency medical services notes, emergency-department history, observations by family or coworkers, the timing of symptoms, neurological examinations, medications, and discharge instructions. They can be useful for showing the sequence between an accident and later changes. They can also contain gaps: the person may have been dazed, distracted by another injury or unable to give a complete account.
 
-When it is safe, preserve photographs of the scene, vehicle or helmet damage, time-stamped communications, witness contact information, insurance details and the incident report number. A passenger, cyclist or pedestrian should also preserve the exact location, road markings, signal conditions and the names of agencies that responded. Keep originals as well as copies, so dates and context remain clear.
+When it is safe, preserve photographs of the scene, vehicle or helmet damage, time-stamped communications, witness contact information, insurance details and the incident report number. A passenger, [cyclist](/blogs/california-bicycle-accident-guide) or pedestrian should also preserve the exact location, road markings, signal conditions and the names of agencies that responded. Keep originals as well as copies, so dates and context remain clear.
 
 A simple contemporaneous timeline is useful: date and time of the event; whether there was a head strike or abrupt acceleration; first symptoms; first clinical contact; follow-up appointments; and the first time someone noticed a meaningful change in memory, behavior or work. Record what is known, what is uncertain and who witnessed each fact. Our [blunt-trauma liability guide](/blogs/blunt-force-trauma-determining-liability-in-blunt-trauma-lawsuits) explains the separate evidence needed to establish fault.
 

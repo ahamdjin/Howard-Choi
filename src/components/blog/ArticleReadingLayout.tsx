@@ -1,6 +1,8 @@
+import { ConsultationCard } from "@/components/editorial/ConsultationCard";
+import { guideTopics, injuryTopics } from "@/data/learningResources";
 import { ArticleByline } from "./ArticleAuthor";
 import { useEffect, useRef, useState } from "react";
-import { ArrowLeft, ArrowUpRight, Check, Copy, Facebook, Linkedin, Phone } from "lucide-react";
+import { ArrowLeft, Check, Copy, Facebook, Linkedin } from "lucide-react";
 import { absoluteUrl } from "@/lib/seo";
 import { Link } from "@/lib/router-compat";
 import { responsiveImageProps } from "@/lib/responsive-images";
@@ -57,9 +59,14 @@ type Props = { post: ArticlePost; locale: SiteLocale };
 
 export function ArticleHero({ post, locale }: Props) {
   const prefix = locale === "en" ? "" : "/" + locale;
+  const path = `/blogs/${post.slug}`;
+  const guide = locale === "en" && guideTopics.some(topic => topic.path === path);
+  const injury = locale === "en" && injuryTopics.some(topic => topic.path === path);
+  const parent = guide ? "/blogs/guides" : injury ? "/injury-types" : prefix + "/blogs";
+  const backLabel = guide ? "All guides" : injury ? "All injury types" : copy[locale].back;
   return <header className="article-reading-hero">
     <div className="site-shell">
-      <Link to={prefix + "/blogs"} className="article-back"><ArrowLeft size={16} />{copy[locale].back}</Link>
+      <Link to={parent} className="article-back"><ArrowLeft size={16} aria-hidden="true" />{backLabel}</Link>
       <div className="article-reading-meta"><span>{post.category}</span><span>{post.date}</span><span>{post.readingTime}</span><ArticleByline slug={post.slug} locale={locale} /></div>
       <h1>{post.title}</h1>
       <img {...responsiveImageProps(post.image)} src={post.image} alt={post.alt} loading="eager" fetchPriority="high" decoding="async" className="article-reading-image" />
@@ -69,7 +76,6 @@ export function ArticleHero({ post, locale }: Props) {
 
 export function ArticleReadingSidebar({ post, locale }: Props) {
   const c = copy[locale];
-  const prefix = locale === "en" ? "" : "/" + locale;
   const sectionPrefix = locale === "ko" ? "ko-article-section-" : "article-section-";
   const [active, setActive] = useState("article-key-takeaway");
   const [address, setAddress] = useState("");
@@ -124,6 +130,7 @@ export function ArticleReadingSidebar({ post, locale }: Props) {
   const encoded = encodeURIComponent(address);
   return <aside className="article-reading-sidebar">
     <div className="article-reading-tools">
+      <ConsultationCard locale={locale} />
       <div className="article-summary">
         <p className="article-tool-label">{c.summarize}</p>
         <div className="article-ai-links">
@@ -145,11 +152,7 @@ export function ArticleReadingSidebar({ post, locale }: Props) {
         </div>
       </div>
       <p role="status" className={feedback === c.copied ? "sr-only" : "article-copy-status"}>{feedback}</p>
-      <div className="article-reading-cta">
-        <h2>{c.question}</h2><p>{c.body}</p>
-        <Link to={prefix + "/contact"}>{c.cta}<ArrowUpRight size={18} /></Link>
-        <a href="tel:+17148448494" aria-label={c.phone + " 714-844-8494"}><Phone size={16} />714-844-8494</a>
-      </div>
+
     </div>
   </aside>;
 }

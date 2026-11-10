@@ -2,7 +2,7 @@
   "title": "New Year’s Holiday and Drunk Driving Crashes",
   "slug": "new-year-alcohol-related-crashes",
   "published": true,
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved",
   "author": "Howard Choi",
   "excerpt": "Plan a sober ride for New Year’s Eve, learn how alcohol affects driving, and know what to document if a collision occurs.",
   "metaTitle": "New Year’s Drunk Driving Crash Statistics and Safety",

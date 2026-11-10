@@ -2,7 +2,7 @@
   "title": "California’s Minimum Speed Law",
   "slug": "californias-minimum-speed-law",
   "published": true,
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved",
   "author": "Howard Choi",
   "excerpt": "Learn how California’s minimum speed law works, when slower driving is justified, and what to consider if you receive a citation or are involved in a crash.",
   "metaTitle": "California’s Minimum Speed Law",

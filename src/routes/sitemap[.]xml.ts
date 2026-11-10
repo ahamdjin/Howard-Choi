@@ -1,3 +1,4 @@
+import { faqTopics, injuryTopics, newServices } from "@/data/learningResources";
 import { additionalLocations } from "@/data/additionalLocations";
 import { createFileRoute } from "@tanstack/react-router";
 import { blogPosts } from "@/data/blogs";
@@ -21,6 +22,8 @@ export const Route = createFileRoute("/sitemap.xml")({
     handlers: {
       GET: async () => {
         const staticUrls = [
+          renderUrl("/learning-hub"), renderUrl("/faqs"), renderUrl("/injury-types"), renderUrl("/blogs/guides"),
+          ...[...faqTopics, ...injuryTopics.filter(r => r.path.startsWith("/injury-types/")), ...newServices].map(r => renderUrl(r.path)),
           ...additionalLocations.map(city => renderUrl("/locations/" + city.slug)),
           renderUrl("/practice-areas/personal-injury"),
           renderUrl("/"),
@@ -29,7 +32,6 @@ export const Route = createFileRoute("/sitemap.xml")({
           renderUrl("/about"),
           renderUrl("/about/our-difference"),
           renderUrl("/about/what-to-expect"),
-          renderUrl("/about/faqs"),
           renderUrl("/about/zero-fee-guarantee"),
           renderUrl("/results"),
           renderUrl("/locations"),

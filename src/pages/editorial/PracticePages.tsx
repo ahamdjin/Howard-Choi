@@ -1,3 +1,6 @@
+import { practiceSourceContents } from "@/data/learningResourceContent";
+import { ClaimVisualStory } from "@/components/editorial/ClaimVisualStory";
+import PracticeLearningResources, { PracticeSourceSections } from "@/components/PracticeLearningResources";
 import { getPracticeMessaging } from "@/data/practicePageMessaging";
 import { practiceSearchNames } from "@/data/practiceSeo";
 import { practiceConsultationFocus } from "@/data/practiceConsultationFocus";
@@ -71,8 +74,8 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
       { title: "Diminished value claims in California", koTitle: "Diminished value claims in California", slug: "diminished-value-claim-california" },
       { title: "How GAP insurance works", koTitle: "How GAP insurance works", slug: "insurance-how-does-gap-insurance-work" },
       { title: "What to do after a car accident in California", koTitle: "캘리포니아 자동차 사고 후 해야 할 일", slug: "what-to-do-after-a-car-accident-in-california" },
-      { title: "California comparative fault explained", koTitle: "캘리포니아 비교과실 이해하기", slug: "california-comparative-fault-personal-injury" },
       { title: "Impaired driving in California", koTitle: "캘리포니아의 약물·음주 운전", slug: "what-is-impaired-driving-in-california" },
+      { title: "California comparative fault explained", koTitle: "캘리포니아 비교과실 이해하기", slug: "california-comparative-fault-personal-injury" },
       { title: "California personal injury deadlines", koTitle: "캘리포니아 개인상해 청구 기한", slug: "california-personal-injury-deadlines" },
     ],
   },
@@ -200,6 +203,7 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
       { label: "Judicial Council of California · Civil jury instructions", href: "https://courts.ca.gov/partners/california-jury-instructions/civil-jury-instructions-resource-center/civil-jury-instructions" },
     ],
     guides: [
+      { title: "Bicycle crash evidence and insurance", koTitle: "Bicycle crash evidence and insurance", slug: "california-bicycle-accident-guide" },
       { title: "California work injury reporting and claims", koTitle: "California work injury reporting and claims", slug: "workers-comp-step-by-step-process-of-filing-a-workers-comp-claim-in-california" },
       { title: "Blunt trauma: liability and evidence", koTitle: "Blunt trauma: liability and evidence", slug: "blunt-force-trauma-determining-liability-in-blunt-trauma-lawsuits" },
       { title: "How much is a California personal injury case worth?", koTitle: "캘리포니아 개인상해 사건 가치는 어떻게 정해지나요?", slug: "how-much-is-my-personal-injury-case-worth-california" },
@@ -287,7 +291,7 @@ export const PracticeAreasPage = ({ locale }: { locale: SiteLocale }) => (
             ? "각 페이지는 일반적인 사건 구조를 설명하기 위한 것이며 실제 사건의 사실관계에 따라 접근은 달라집니다."
             : isEs(locale)
               ? "Un reclamo por lesiones no funciona igual en todos los casos. Un choque de camión puede depender de registros empresariales que se eliminan según un calendario. Una caída puede depender de demostrar cuánto tiempo existió un peligro. Un caso de Uber o Lyft puede depender de una sola captura de pantalla. Elija la página que corresponda a lo que ocurrió."
-              : "A Buena Park car accident can raise different questions from a truck collision, an unsafe-property fall or a rideshare crash. These eight practice guides explain what evidence is most useful for each type of claim, how coverage may differ, and which steps deserve early attention. Choose the guide that best matches what happened; more than one category may apply."}
+              : "A Buena Park car accident can raise different questions from a truck collision, an unsafe-property fall or a rideshare crash. These practice guides explain what evidence is most useful for each type of claim, how coverage may differ, and which steps deserve early attention. Choose the guide that best matches what happened; more than one category may apply."}
         >
           <p className="mb-7 text-sm leading-7">
             <a href={localePrefix(locale) || "/"} className="underline underline-offset-4">{isKo(locale) ? "부에나파크 개인상해 변호사 안내" : isEs(locale) ? "Representación por lesiones personales en Buena Park" : "Personal injury representation in Buena Park"}</a>
@@ -475,11 +479,14 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
                   { id: "faq", label: "Preguntas frecuentes" }, { id: "resources", label: "Guías y fuentes" }, { id: "related", label: "Áreas relacionadas" }, { id: "areas", label: "Dónde atendemos" },
                 ]
               : [
-                  { id: "understand", label: "Understanding the claim" }, { id: "issues", label: "Key issues" }, { id: "evidence", label: "Evidence to preserve" }, { id: "case-guide", label: "Case-specific guidance" }, { id: "research", label: "Legal & evidence analysis" },
+                  ...practiceSourceContents(practice.slug),
+                  { id: "understand", label: "Further claim guidance" }, { id: "issues", label: "Key issues" }, { id: "evidence", label: "Evidence to preserve" }, { id: "case-guide", label: "Case-specific guidance" }, { id: "research", label: "Legal & evidence analysis" },
                   { id: "value", label: "Damages & case value" }, { id: "insurance", label: "Insurance & responsibility" }, { id: "deadlines", label: "California deadlines" },
                   { id: "faq", label: "Common questions" }, { id: "resources", label: "Guides & sources" }, { id: "related", label: "Related practice areas" }, { id: "areas", label: "Where we handle these" },
                 ]}
         >
+          {locale === "en" && <PracticeSourceSections slug={practice.slug} />}
+          {locale === "en" && <ClaimVisualStory subject={practice.slug} />}
           <ReadingSectionBlock
             id="understand"
             locale={locale}
@@ -646,6 +653,7 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
           </ReadingSectionBlock>
         </ReadingLayout>
         <div className="site-shell pb-12"><PageReviewed locale={locale} /></div>
+        {locale === "en" && <PracticeLearningResources slug={practice.slug} />}
         <ConsultationCta locale={locale} />
       </main>
     </EditorialFrame>

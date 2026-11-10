@@ -9,7 +9,7 @@
   "alt": "Law firm boardroom used for rideshare insurance review",
   "intro": "An Uber or Lyft collision can look like an ordinary car accident at the scene, but the insurance analysis may be different. California ties transportation-network-company coverage to what the driver was doing in the app when the crash occurred. The driver's status can determine which policy layer needs to be evaluated and which trip records should be preserved.",
   "takeaway": "In a California rideshare crash, preserve the trip and app timeline as carefully as the accident timeline. Driver status can affect which insurance applies.",
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved",
   "metaTitle": "Uber & Lyft Accident Insurance in California: Coverage Guide",
   "metaDescription": "Understand California Uber and Lyft insurance periods, why driver app status matters and which trip records to preserve after a crash."
 }

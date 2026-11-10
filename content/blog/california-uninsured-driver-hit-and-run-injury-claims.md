@@ -2,7 +2,7 @@
   "title": "Hit-and-Run or Uninsured Driver in California: Insurance & Injury Claims",
   "slug": "california-uninsured-driver-hit-and-run-injury-claims",
   "published": true,
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved",
   "excerpt": "Understand uninsured and underinsured motorist coverage in California, hit-and-run evidence, police reports, medical bills, claim notices and possible next steps.",
   "category": "Car Accident Insurance",
   "publishedAt": "2026-10-23",

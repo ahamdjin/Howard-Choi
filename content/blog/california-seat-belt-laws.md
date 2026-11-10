@@ -2,7 +2,7 @@
   "title": "California Seat Belt Laws",
   "slug": "california-seat-belt-laws",
   "published": true,
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved",
   "author": "Howard Choi",
   "excerpt": "Learn who must wear a seat belt in California, how fines and child restraints differ, and how belt use may matter in a crash claim.",
   "metaTitle": "California Seat Belt Laws",

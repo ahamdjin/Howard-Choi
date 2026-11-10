@@ -1016,12 +1016,6 @@ nav + .relative > .sticky.top-0.h-\[100svh\] > section {
   }
 }
 
-/* Keep the HighLevel launcher from colliding with open mobile navigation. */
-@media (max-width: 1023px) {
-  nav .overflow-y-auto {
-    padding-bottom: calc(env(safe-area-inset-bottom) + 7.5rem) !important;
-  }
-}
 
 
 /* Mobile-only inner-page type sizing; desktop layout remains untouched. */
@@ -1269,4 +1263,37 @@ nav + .relative > .sticky.top-0.h-\[100svh\] > section {
   opacity: 1;
   object-fit: cover;
   object-position: center;
+}
+
+/* Mobile hero text hierarchy; preserve the existing photography, frame and controls. */
+@media (max-width: 767px) {
+  .home-hero .home-hero-shell { padding-bottom: 36px; }
+  .site-typography .home-hero .home-hero-eyebrow {
+    font-size: 12px !important;
+    line-height: 1.45 !important;
+    max-width: 30ch;
+    margin-bottom: 14px;
+  }
+  .site-typography .home-hero h1 {
+    font-size: clamp(30px, 8.2vw, 40px) !important;
+    line-height: 1.08 !important;
+    text-wrap: balance;
+    max-width: 20ch;
+  }
+  .site-typography .home-hero .home-hero-description {
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+    margin-top: 16px;
+    max-width: 40ch;
+  }
+  .home-hero .home-hero-actions { margin-top: 22px; gap: 12px; }
+  .home-hero .home-hero-actions :is(button, a) { min-height: 44px; }
+  .site-typography .home-hero .home-hero-fee {
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+    margin-top: 14px;
+    max-width: 40ch;
+  }
+  .home-hero .home-hero-attorney { margin-top: 22px; padding-top: 16px; }
+  .home-hero .home-hero-attorney > span { font-size: 11px; line-height: 1.5; }
 }

@@ -1,0 +1,127 @@
+/* Different visual explanations share tokens, not one repeated composition. */
+.site-typography .visual-study{margin:42px 0 50px;border-radius:18px;overflow:hidden;background:#ece5d9;color:#332c24;font-family:Inter,Arial,sans-serif}
+.site-typography .visual-study figcaption{padding:30px 28px 22px}
+.visual-study__eyebrow{display:block;font-size:11px;color:#806b50;margin-bottom:12px}
+.site-typography .visual-study figcaption>strong{display:block;font:400 clamp(1.65rem,2.5vw,2.3rem)/1.12 Newsreader,Georgia,serif;max-width:27ch;text-wrap:balance}
+.site-typography .visual-study figcaption>p{font:400 14px/1.7 Inter,Arial,sans-serif!important;max-width:55ch;margin:15px 0 0!important;color:#6c5f50}
+.site-typography .visual-study h3{font:600 16px/1.4 Inter,Arial,sans-serif!important;margin:0 0 12px!important;letter-spacing:0}
+.site-typography .visual-study p{hyphens:manual!important}
+.site-typography .visual-study ul{list-style:none;padding:0!important;margin:0!important}
+.site-typography .visual-study ul li{display:flex;gap:9px;font:400 13px/1.65 Inter,Arial,sans-serif!important;margin:10px 0 0!important}
+.visual-study ul svg{flex-shrink:0;margin-top:3px;color:#7c896f}
+.site-typography .visual-study__annotation{display:block;padding:20px 28px;font:400 12px/1.7 Inter,Arial,sans-serif!important;color:#786b59;margin:0!important}
+.visual-study img{display:block;width:100%;height:100%;object-fit:cover}
+/* Everyday function: a central question surrounded by activities, not anatomy. */
+.activity-compass{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:22px;padding:10px 28px 25px}
+.activity-compass__center{grid-column:1/-1;justify-self:center;display:flex;flex-direction:column;justify-content:center;text-align:center;width:220px;height:220px;border-radius:50%;background:#394434;color:#f5f1e8;margin-bottom:14px;padding:25px}
+.activity-compass__center span{font-size:13px;color:#d5d7cb}
+.activity-compass__center strong{font:400 34px/1.1 Newsreader,Georgia,serif;margin:8px 0}
+.activity-compass__center small{font-size:11px;line-height:1.6;color:#c7cdbd}
+.activity-compass__item{padding:20px 22px;background:#faf7ef;border-radius:8px 24px 8px 8px}
+.activity-compass__item svg{color:#8a7151;margin-bottom:18px}
+.activity-compass__item:nth-child(odd){background:#dfdfcf}
+.site-typography .activity-compass__item p{font:400 13px/1.65 Inter,Arial,sans-serif!important;margin:0;color:#70624f}
+/* One oversized agreement slip with questions alongside it. */
+.site-typography .visual-study--agreement{display:grid;grid-template-columns:1fr 1fr;padding:28px;gap:24px;background:#e1d7c8}
+.agreement-slip{align-self:center;background:#faf8f2;padding:32px 25px;transform:rotate(-2deg);box-shadow:0 12px 18px -16px #58442a}
+.agreement-slip>span{display:block;font-size:11px;color:#8b775f;margin:22px 0}
+.agreement-slip>strong{font:400 30px/1.15 Newsreader,Georgia,serif;display:block}
+.agreement-slip em{font-style:normal;color:#69755b}
+.site-typography .agreement-slip>p{font:400 13px/1.7 Inter,Arial,sans-serif!important;color:#746754;margin-top:24px}
+.agreement-slip__signature{padding-top:25px;font:italic 18px Georgia,serif;color:#8b7254}
+.site-typography .visual-study--agreement figcaption{padding:10px 0 20px}
+.site-typography .agreement-questions li{padding:12px 0}
+/* A letter on a desk, with an editorial checklist in the margin. */
+.decision-desk{display:grid;grid-template-columns:1fr 1.1fr;gap:28px;padding:0 28px 32px;align-items:center}
+.decision-letter{background:#faf8f1;padding:28px;transform:rotate(-2deg);box-shadow:0 13px 18px -17px #413121}
+.decision-letter small{display:block;margin:24px 0 18px;font-size:11px;color:#877254}
+.site-typography .decision-letter h3{font:400 30px/1.2 Newsreader,Georgia,serif!important}
+.decision-letter>span{display:block;margin-top:30px;font-size:12px;line-height:1.7;color:#796a56}
+.decision-checks>div{display:flex;gap:15px;padding:17px 0;align-items:baseline}
+.decision-checks>div>span{font-size:11px;color:#967d5b}
+.site-typography .decision-checks p{font:500 15px/1.6 Inter,Arial,sans-serif!important;margin:0}
+/* Four staggered stages. Spacing communicates the sequence without ruled lines. */
+.site-typography .journey-trail{list-style:none;display:grid;gap:14px;padding:4px 28px 28px!important;margin:0!important}
+.journey-trail>li{display:flex;align-items:center;gap:20px;background:#f8f4eb;padding:23px;border-radius:12px;max-width:88%}
+.journey-trail>li:nth-child(even){margin-left:12%;background:#dde2d3}
+.journey-trail>li>svg{flex-shrink:0;color:#8b775c;margin-left:auto}
+.journey-trail__number{font:400 37px/1 Newsreader,Georgia,serif;color:#a28b6d;flex-shrink:0}
+.site-typography .journey-trail p{font:400 13px/1.65 Inter,Arial,sans-serif!important;margin:0;color:#6f6251}
+/* Editorial portrait/photo strip and alternating questions. */
+.site-typography .visual-study--conversation{display:grid;grid-template-columns:.8fr 1.2fr;background:#eee8dd}
+.conversation-photo{position:relative;min-height:470px}
+.conversation-photo>span{position:absolute;bottom:22px;left:18px;right:18px;background:#fbf6ed;padding:16px;font-size:12px;line-height:1.6;display:flex;gap:10px;align-items:center}
+.conversation-photo>span>svg{flex-shrink:0}
+.site-typography .visual-study--conversation figcaption{padding:27px 24px 15px}
+.conversation-notes{padding:0 24px 24px;display:grid;gap:16px}
+.conversation-notes>div{padding:18px;background:#faf7f1;border-radius:3px 20px 20px 20px;margin-right:22px}
+.conversation-notes>.conversation-notes__reply{margin-right:0;margin-left:22px;background:#dddcca;border-radius:20px 3px 20px 20px}
+.conversation-notes>div>span{display:block;font-size:10px;color:#8a7455;margin-bottom:12px}
+.site-typography .conversation-notes p{font:400 12px/1.65 Inter,Arial,sans-serif!important;margin:0;color:#72624e}
+/* The truck-photo centre connects records held by different parties. */
+.roles-photo{height:230px;position:relative;margin:0 28px;overflow:hidden;border-radius:100px 100px 12px 12px}
+.roles-photo>div{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);background:#f7f3e9;display:flex;align-items:center;gap:12px;padding:15px 20px;white-space:nowrap;font-size:14px}
+.roles-orbit{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:24px 28px 30px}
+.roles-orbit>div{background:#faf7ef;padding:22px;border-radius:50% 50% 14px 14px/18px 18px 14px 14px}
+.roles-orbit>div:last-child{grid-column:1/-1;max-width:75%;justify-self:center;background:#dce1d1}
+.roles-orbit>div>span{display:block;color:#8e7757;font-size:10px;margin-bottom:15px}
+/* A real visual notebook: image cover next to a continuous incident record. */
+.site-typography .visual-study--file{display:grid;grid-template-columns:.75fr 1.25fr;background:#e5ddce}
+.file-cover{position:relative;min-height:510px}
+.file-cover>span{position:absolute;bottom:25px;left:20px;right:20px;padding:18px;background:#faf6ed;font-size:12px;line-height:1.8;color:#806d50}
+.file-cover strong{display:block;font:400 28px/1.1 Newsreader,Georgia,serif;color:#392f22;margin-top:8px}
+.site-typography .file-pages figcaption{padding:28px 25px 20px}
+.file-entry{display:flex;align-items:baseline;gap:18px;margin:0 25px 22px;padding:8px 0}
+.file-entry>span{font-size:11px;color:#8b7354}
+/* Equipment inventory, with the photograph acting as the evidence envelope. */
+.equipment-photo{position:relative;height:240px;margin:0 26px}
+.equipment-photo>span{position:absolute;right:16px;bottom:16px;display:flex;align-items:center;gap:12px;padding:13px;background:#faf7ed;font-size:12px}
+.equipment-inventory{background:#3b4234;color:#f8f3e9;padding:28px}
+.equipment-inventory>div{display:flex;gap:20px;align-items:baseline;margin-top:22px}
+.equipment-inventory>div>span{font-size:12px;color:#c5b694}
+.equipment-inventory>div>svg{flex-shrink:0;margin-left:auto;color:#bbccb0}
+.equipment-inventory strong{font-size:15px;font-weight:500}
+.site-typography .equipment-inventory p{font:400 13px/1.7 Inter,Arial,sans-serif!important;color:#dbddcd;margin:8px 0 0}
+/* Clinical versus daily-life records: deliberately unequal, overlapping sheets. */
+.injury-diptych{display:grid;grid-template-columns:.9fr 1.1fr;gap:0;padding:15px 28px 35px;align-items:start}
+.injury-diptych>div{padding:27px 24px;background:#faf8f1;box-shadow:0 12px 18px -16px #5a4933}
+.injury-diptych__record{transform:rotate(-2deg);padding-bottom:40px!important}
+.injury-diptych__life{margin-top:38px;background:#dde2d3!important;transform:rotate(1deg)}
+.injury-diptych>div>span{display:block;font-size:10px;color:#877153;margin:24px 0 13px}
+.injury-diptych small{display:block;font-size:10px;color:#84755e;margin-top:28px;line-height:1.8}
+/* A photo with observational labels, followed by a field-note caption. */
+.scene-window{height:300px;position:relative;margin:0 26px;border-radius:12px;overflow:hidden}
+.scene-window__tag{position:absolute;background:#faf6eb;padding:11px 14px;box-shadow:0 6px 16px #2b211514;font-size:12px;max-width:65%}
+.scene-window__tag--one{top:25px;left:18px}.scene-window__tag--two{top:125px;right:18px}.scene-window__tag--three{bottom:22px;left:30px}
+.scene-caption{display:flex;gap:13px;align-items:center;padding:20px 28px;color:#806b4c}
+.scene-caption svg{flex-shrink:0}
+.site-typography .scene-caption p{font:400 12px/1.65 Inter,Arial,sans-serif!important;margin:0}
+.scene-observations{padding:2px 28px 30px;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.scene-observations>div:last-child{grid-column:1/-1;max-width:75%;background:#dddcca;padding:20px;border-radius:9px}
+.scene-observations>div>span{font-size:11px;color:#99805e;display:block;margin-bottom:12px}
+.site-typography .scene-observations p{font:400 13px/1.7 Inter,Arial,sans-serif!important;color:#71614f;margin:0}
+@media(max-width:640px){
+ .site-typography .visual-study figcaption{padding:24px 20px 20px}
+ .site-typography .visual-study--agreement,.site-typography .visual-study--file,.site-typography .visual-study--conversation{grid-template-columns:1fr}
+ .site-typography .visual-study--agreement{padding:24px;gap:25px}
+ .agreement-slip{transform:rotate(-1deg)}
+ .site-typography .visual-study--agreement figcaption{padding:10px 0}
+ .activity-compass{gap:12px;padding:0 18px 20px}
+ .activity-compass__center{height:190px;width:190px}.activity-compass__item{padding:18px 14px}
+ .site-typography .activity-compass__item h3{font-size:14px!important}
+ .decision-desk{grid-template-columns:1fr;padding:0 24px 24px;gap:22px}.decision-letter{margin:4px 12px}.decision-checks>div{padding:12px 0}
+ .site-typography .journey-trail{padding:0 18px 20px!important}.journey-trail>li{max-width:96%;padding:18px;gap:12px}.journey-trail>li:nth-child(even){margin-left:4%}.journey-trail__number{font-size:29px}
+ .conversation-photo{height:230px;min-height:0}.conversation-photo img{object-position:center 45%}
+ .file-cover{min-height:0;height:225px}.file-cover>span{left:auto;max-width:75%;bottom:17px}.file-cover strong{font-size:25px}
+ .roles-photo{height:205px;margin:0 20px}.roles-photo>div{font-size:12px;padding:12px;gap:8px}
+ .roles-orbit{padding:20px;grid-template-columns:1fr}.roles-orbit>div:last-child{grid-column:auto;max-width:none}
+ .equipment-photo{height:200px;margin:0 18px}.equipment-photo>span{font-size:11px;max-width:85%;left:12px;right:auto}.equipment-inventory{padding:24px 20px}
+ .injury-diptych{grid-template-columns:1fr;padding:8px 24px 28px;gap:18px}.injury-diptych>div{transform:none;padding:24px!important}.injury-diptych__life{margin-top:0}
+ .scene-window{height:260px;margin:0 18px}.scene-window__tag{font-size:11px;padding:10px}.scene-window__tag--two{top:112px}.scene-observations{padding:0 20px 24px;gap:20px}.scene-observations>div:last-child{max-width:none}
+}
+@media(max-width:380px){.activity-compass{grid-template-columns:1fr}.activity-compass__center{grid-column:auto}.scene-observations{grid-template-columns:1fr}.scene-observations>div:last-child{grid-column:auto}}
+
+.visual-study{scroll-margin-top:100px}
+
+.activity-compass__item:last-child{grid-column:1/-1;max-width:80%;width:100%;justify-self:center}
+@media(max-width:380px){.activity-compass__item:last-child{max-width:none}}

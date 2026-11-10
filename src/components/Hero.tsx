@@ -69,19 +69,19 @@ const Hero = ({ locale = "en" }: { locale?: SiteLocale }) => {
   const contentOpacity = useTransform(scrollY, [0, transitionEnd * 0.72], [1, 0]);
   const contentY = useTransform(scrollY, [0, transitionEnd * 0.72], [0, -22]);
 
-  const eyebrow = ko ? "사고 · 개인상해 변호사 · 부에나파크, 캘리포니아" : es ? "Abogado de accidentes y lesiones personales · Buena Park, California" : "Accident & Personal Injury Lawyer · Buena Park, California";
-  const title = ko ? "부에나파크 개인상해 변호사." : es ? "Abogado de lesiones personales en Buena Park, CA." : "Buena Park Personal Injury Lawyer";
+  const eyebrow = ko ? "개인상해 · 교통사고 변호사 · 부에나파크, 캘리포니아" : es ? "Abogado de lesiones personales y accidentes · Buena Park, California" : "Personal Injury & Car Accident Lawyer · Buena Park, California";
+  const title = ko ? "부에나파크 개인상해 및 교통사고 변호사." : es ? "Abogado de lesiones personales y accidentes de auto en Buena Park, CA." : "Buena Park Personal Injury & Car Accident Lawyer";
   const body = ko
-    ? "자동차 사고나 그 밖의 중대한 사고 이후, 증거와 보험 그리고 다음 단계에 초점을 둔 개인상해 법률 안내를 제공합니다."
+    ? "부상이나 교통사고 후, 한 분 한 분의 상황을 살핍니다. 회복에 집중하실 수 있도록 Howard Choi 변호사가 법적 절차를 돕습니다."
     : es
-      ? "Orientación clara después de un choque de auto u otro accidente grave, con representación de lesiones personales centrada en la evidencia, el seguro y lo que sigue."
-      : "Clear guidance after a car crash or other serious accident, with personal injury representation focused on the evidence, insurance, and what comes next.";
+      ? "Atención personal tras una lesión o un accidente de auto. Howard Choi se encarga del proceso legal para que usted pueda centrarse en recuperarse."
+      : "Personal attention after an injury or car accident. Howard Choi handles the legal work so you can focus on recovery.";
   const consultation = ko ? "무료 상담" : es ? "Consulta gratuita" : "Free Consultation";
   const call = ko ? "또는 전화" : es ? "O llame al" : "Or call";
   const fee = ko ? "무료 상담 · 배상이 없으면 변호사 수임료도 없습니다." : es ? "Consulta gratuita · Sin honorarios de abogado si no hay recuperación." : "Free consultation · No lawyer fee unless there is a recovery.";
 
   return (
-    <section className="relative h-[100svh] min-h-[680px] w-full overflow-hidden bg-[#17130f]">
+    <section className="home-hero relative h-[100svh] min-h-[680px] w-full overflow-hidden bg-[#17130f]">
       {/* The first photograph remains identical, but only this single image is
           eligible for download at mobile widths. Desktop keeps the carousel. */}
       <picture className="absolute inset-0 md:hidden">
@@ -134,24 +134,24 @@ const Hero = ({ locale = "en" }: { locale?: SiteLocale }) => {
       <div className="hero-bottom-readability" />
 
       <motion.div className="absolute inset-0 z-10 flex items-end" style={shouldReduceMotion || isMobile ? undefined : { opacity: contentOpacity, y: contentY }}>
-        <div className="site-shell pb-24 md:pb-28">
+        <div className="home-hero-shell site-shell pb-24 md:pb-28">
           <div className="max-w-[700px] text-[#f3eee5]">
-            <motion.p initial={false} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.18, duration: 0.7 }} className="mb-4 text-[13px] font-medium tracking-[-0.01em] text-[#f3eee5]/88 md:text-sm">
+            <motion.p initial={false} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.18, duration: 0.7 }} className="home-hero-eyebrow mb-4 text-[13px] font-medium tracking-[-0.01em] text-[#f3eee5]/88 md:text-sm">
               {eyebrow}
             </motion.p>
             <motion.h1 initial={false} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.27, duration: 0.9, ease: [0.22, 1, 0.36, 1] }} className="editorial-serif text-[clamp(3rem,4.5vw,4.75rem)] leading-[0.93] tracking-[-0.024em] text-[#f3eee5]">
               {title}
             </motion.h1>
-            <motion.p initial={false} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.7 }} className="mt-5 max-w-[560px] text-[15px] leading-6 text-[#f3eee5]/74 md:text-base">
+            <motion.p initial={false} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.7 }} className="home-hero-description mt-5 max-w-[560px] text-[15px] leading-6 text-[#f3eee5]/74 md:text-base">
               {body}
             </motion.p>
-            <motion.div initial={false} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.7 }} className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <motion.div initial={false} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.7 }} className="home-hero-actions mt-7 flex flex-col gap-4 sm:flex-row sm:items-center">
               <button onClick={() => document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })} className="liquid-cta inline-flex w-fit items-center gap-3 rounded-full px-6 py-3 text-[13px] font-medium">
                 <span className="relative z-10">{consultation}</span><ArrowRight className="relative z-10 h-4 w-4" />
               </button>
               <a href="tel:+17148448494" className="text-[13px] text-[#f3eee5]/82 transition-opacity hover:opacity-70 md:text-sm">{call} (+1) 714-844-8494</a>
             </motion.div>
-            <motion.p initial={false} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.58, duration: 0.7 }} className="mt-5 text-[13px] text-[#f3eee5]/62">
+            <motion.p initial={false} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.58, duration: 0.7 }} className="home-hero-fee mt-5 text-[13px] text-[#f3eee5]/62">
               {fee}
             </motion.p>
 
@@ -160,7 +160,7 @@ const Hero = ({ locale = "en" }: { locale?: SiteLocale }) => {
               initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.66, duration: 0.7 }}
-              className="mt-7 flex w-fit items-center gap-3.5 border-t border-[#f3eee5]/18 pt-5 transition-opacity hover:opacity-75"
+              className="home-hero-attorney mt-7 flex w-fit items-center gap-3.5 border-t border-[#f3eee5]/18 pt-5 transition-opacity hover:opacity-75"
             >
               <img {...responsiveImageProps(attorneyPortrait, "44px")}
                 src={attorneyPortrait}

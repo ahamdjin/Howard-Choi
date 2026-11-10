@@ -1,3 +1,4 @@
+import { learningResources } from "@/data/learningResources";
 import { practicePageMessaging } from "@/data/practicePageMessaging";
 
 // Service-specific keyword targets; see the Semrush URL map in docs.
@@ -13,4 +14,4 @@ export const practiceSearchNames: Record<string, string> = {
 };
 
 // The same source supplies metadata, social previews and visible hero copy.
-export const serviceSeo = Object.fromEntries(Object.entries(practicePageMessaging).map(([slug, locales]) => [slug, locales.en]));
+export const serviceSeo = Object.fromEntries(Object.entries(practicePageMessaging).map(([slug, locales]) => { const source = learningResources.find(r => r.kind === "service" && r.path === "/practice-areas/" + slug); return [slug, source ? { ...locales.en, title: source.metaTitle, description: source.description } : locales.en]; }));

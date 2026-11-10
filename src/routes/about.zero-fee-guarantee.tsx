@@ -9,5 +9,5 @@ export const Route = createFileRoute("/about/zero-fee-guarantee")({
     path: "/about/zero-fee-guarantee",
     locale: "en-US",
   }),
-  component: () => <FirmHelpPage fees={true} />,
+  component: () => <FirmHelpPage />,
 });

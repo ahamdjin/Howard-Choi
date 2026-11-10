@@ -23,7 +23,7 @@ export default function UtilityBar({ locale }: { locale: SiteLocale }) {
 
   return (
     <div aria-label={ko ? "빠른 메뉴" : es ? "Navegación rápida" : "Utility navigation"} className="h-11 border-b border-[#b99a70]/30 bg-[#211c17] text-[#f3eee5]">
-      <div className="site-shell flex h-full items-center justify-between gap-2 text-[11px] sm:text-xs">
+      <div className="site-navigation-shell flex h-full items-center justify-between gap-2 text-[11px] sm:text-xs">
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-1" aria-label={languageLabel}>
             <a href={englishPath + suffix} hrefLang="en-US" lang="en" aria-current={!ko && !es ? "true" : undefined} className={`inline-flex min-h-9 items-center rounded-sm px-2 transition-colors hover:bg-white/15 ${!ko && !es ? "bg-white/10 text-white" : "text-[#f3eee5]/70"}`}><span className="sm:hidden">EN</span><span className="hidden sm:inline">English</span></a>

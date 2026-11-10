@@ -1,10 +1,10 @@
-import { getPracticeMessaging } from "@/data/practicePageMessaging";
+import { serviceSeo } from "@/data/practiceSeo";
 import { createFileRoute } from "@tanstack/react-router";
 import PersonalInjuryPage from "@/pages/editorial/PersonalInjuryPage";
 import { breadcrumbJsonLd, buildSeo, serviceJsonLd } from "@/lib/seo";
 
 const path = "/practice-areas/personal-injury";
-const { title, description } = getPracticeMessaging("personal-injury", "en");
+const { title, description } = serviceSeo["personal-injury"];
 
 export const Route = createFileRoute("/practice-areas/personal-injury")({
   head: () => ({

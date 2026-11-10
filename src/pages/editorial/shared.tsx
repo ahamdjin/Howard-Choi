@@ -1,3 +1,4 @@
+import { ConsultationCard } from "@/components/editorial/ConsultationCard";
 import { responsiveImageProps } from "@/lib/responsive-images";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import PageBreadcrumb from "@/components/PageBreadcrumb";
@@ -60,7 +61,7 @@ export const EditorialHero = ({ locale, eyebrow, title, description, image, deta
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href={`${localePrefix(locale)}/contact`} className="inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-[#211C17] px-6 py-3 text-[13px] font-semibold text-[#F6F1E9] transition-colors hover:bg-[#493323]">
-                {isKo(locale) ? "무료 상담 요청" : isEs(locale) ? "Solicitar una consulta" : "Request a free consultation"}
+                {isKo(locale) ? "무료 상담 요청" : isEs(locale) ? "Solicitar una consulta" : "Free consultation"}
                 <ArrowRight aria-hidden="true" className="h-4 w-4" />
               </a>
               <a href={brand.phoneHref} className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#1E1C1A]/25 px-6 py-3 text-[13px] font-medium text-[#1E1C1A] hover:border-[#1E1C1A]/70">
@@ -173,9 +174,10 @@ export const ReadingLayout = ({ locale, label, sections, children }: { locale: S
     <div className="site-shell editorial-reading-grid py-12 md:py-16 lg:py-20">
       <aside className="editorial-reading-rail" aria-label={onThisPage}>
         <div className="editorial-reading-rail__inner">
-          <div className="editorial-reading-rail__eyebrow">{onThisPage}</div>
+          <ConsultationCard locale={locale} /><div className="editorial-reading-rail__eyebrow">{onThisPage}</div>
           <div className="editorial-reading-rail__label">{label}</div>
           <div className="editorial-reading-rail__rule" />
+          <details className="editorial-mobile-contents"><summary>{onThisPage}<span aria-hidden="true">+</span></summary><nav aria-label={onThisPage}>{sections.map(section => <a key={section.id} href={`#${section.id}`} aria-current={activeId === section.id ? "location" : undefined}>{section.label}</a>)}</nav></details>
           <nav ref={navRef} className="editorial-reading-rail__nav">
             {sections.map((section, index) => {
               const active = activeId === section.id;
@@ -186,7 +188,7 @@ export const ReadingLayout = ({ locale, label, sections, children }: { locale: S
               );
             })}
           </nav>
-          <div className="editorial-reading-rail__meta"><span>{brand.phoneDisplay}</span><span>{isKo(locale) ? "부에나파크 · 캘리포니아" : "Buena Park · California"}</span></div>
+
         </div>
       </aside>
       <div className="editorial-reading-content">{children}</div>
@@ -196,7 +198,7 @@ export const ReadingLayout = ({ locale, label, sections, children }: { locale: S
 
 export const ReadingSectionBlock = ({ id, locale, kicker, title, intro, children, tone = "plain", Icon }: { id: string; locale: SiteLocale; kicker: string; title: string; intro?: string; children?: ReactNode; tone?: "plain" | "warm"; Icon?: LucideIcon }) => (
   <section id={id} className={`editorial-reading-section ${tone === "warm" ? "editorial-reading-section--warm" : ""}`}>
-    <div className="editorial-reading-section__kicker flex items-center gap-2.5">{Icon ? <Icon aria-hidden="true" className="h-3.5 w-3.5 shrink-0 stroke-[1.5] text-[#7b5b3e]" /> : null}{kicker}</div>
+    <div className="editorial-reading-section__kicker flex items-center gap-2.5" hidden={!kicker && !Icon}>{Icon ? <Icon aria-hidden="true" className="h-3.5 w-3.5 shrink-0 stroke-[1.5] text-[#7b5b3e]" /> : null}{kicker}</div>
     <h2 style={serifStyle(locale)} className={isKo(locale) ? "editorial-reading-section__title text-[clamp(1.7rem,2.8vw,2.8rem)] font-medium leading-[1.35] tracking-[-0.035em]" : "editorial-reading-section__title editorial-serif text-[clamp(2rem,3.3vw,3.6rem)] leading-[1.02] tracking-[-0.03em]"}>{title}</h2>
     {intro ? <p className="editorial-reading-section__intro">{intro}</p> : null}
     {children ? <div className="editorial-reading-section__body">{children}</div> : null}

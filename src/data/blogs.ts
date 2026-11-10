@@ -1,3 +1,10 @@
+import care from "@/assets/law-firm/medical-care.jpg";
+import crossing from "@/assets/law-firm/pedestrian-crossing.jpg";
+import truck from "@/assets/law-firm/truck-highway.jpg";
+import motorcycle from "@/assets/law-firm/motorcycle-road.jpg";
+import family from "@/assets/law-firm/family-support.jpg";
+import collision from "@/assets/law-firm/collision-damage.jpg";
+import premises from "@/assets/law-firm/wet-floor.jpg";
 import heroCityBoardroom from "@/assets/law-firm/hero-city-boardroom.webp";
 import heroLawOffice from "@/assets/law-firm/hero-law-office.webp";
 import heroJusticeLibrary from "@/assets/law-firm/hero-justice-library.webp";
@@ -43,6 +50,17 @@ type BlogFrontmatter = {
 // Local editorial imagery keeps the legal resource library visually consistent
 // with the rest of the firm website without adding a new design system.
 const legacyImages: Record<string, string> = {
+  "california-bicycle-accident-guide": crossing,
+  "california-catastrophic-injury-guide": care,
+  "california-dog-bite-accidents-guide": family,
+  "california-motorcycle-accident-guide": motorcycle,
+  "california-pedestrian-accident-guide": crossing,
+  "california-personal-injury-guide": heroCourthouse,
+  "california-rideshare-accidents-guide": collision,
+  "california-slip-and-fall-accidents-guide": premises,
+  "california-truck-accident-guide": truck,
+  "california-wrongful-death-guide": family,
+
   "what-to-do-after-a-car-accident-in-california": heroLawOffice,
   "california-comparative-fault-personal-injury": heroCourthouse,
   "how-much-is-my-personal-injury-case-worth-california": heroJusticeLibrary,

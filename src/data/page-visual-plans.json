@@ -1,0 +1,1539 @@
+{
+  "/faqs/bicycle-accidents": {
+    "layout": "review",
+    "title": "A bicycle claim is not decided by one missing detail.",
+    "caption": "Keep the road evidence separate from questions about responsibility.",
+    "notes": [
+      {
+        "title": "The road account",
+        "items": [
+          "Positions, markings and the vehicle approach.",
+          "Witness details and original photographs."
+        ]
+      },
+      {
+        "title": "The open questions",
+        "items": [
+          "What can the available evidence establish?",
+          "Which details need a closer legal review?"
+        ]
+      },
+      {
+        "title": "The injury record",
+        "items": [
+          "Treatment and follow-up information.",
+          "Equipment damage and related expenses."
+        ]
+      }
+    ],
+    "imageKey": "bicycle-accidents",
+    "afterSection": 3,
+    "imagePosition": "50% 85%"
+  },
+  "/faqs/case-value-and-settlement-process": {
+    "layout": "decision",
+    "title": "An offer is a number. Your losses need an explanation.",
+    "caption": "Use the records to ask what the proposal includes and what remains unresolved.",
+    "notes": [
+      {
+        "title": "The proposal",
+        "items": [
+          "Keep the offer and accompanying documents.",
+          "Note the date and any requested response."
+        ]
+      },
+      {
+        "title": "The supported losses",
+        "items": [
+          "Treatment, income and practical effects.",
+          "The evidence behind each claimed loss."
+        ]
+      },
+      {
+        "title": "The questions to resolve",
+        "items": [
+          "What is included in the proposal?",
+          "What remains uncertain or disputed?"
+        ]
+      }
+    ],
+    "imageKey": "documents",
+    "afterSection": 1
+  },
+  "/faqs/catastrophic-injury": {
+    "layout": "review",
+    "title": "Immediate care and long-term needs are different questions.",
+    "caption": "The early medical record is only the beginning of the discussion.",
+    "notes": [
+      {
+        "title": "Care today",
+        "items": [
+          "Clinical findings and current treatment.",
+          "Instructions from the treating team."
+        ]
+      },
+      {
+        "title": "Life after the injury",
+        "items": [
+          "Daily assistance and accessibility needs.",
+          "Changes affecting work and independence."
+        ]
+      },
+      {
+        "title": "Future questions",
+        "items": [
+          "Which needs require further assessment?",
+          "What information is still developing?"
+        ]
+      }
+    ],
+    "imageKey": "care",
+    "afterSection": 3
+  },
+  "/faqs/dog-bite-injury": {
+    "layout": "file",
+    "title": "After a bite, keep the details you might not remember later.",
+    "caption": "A short incident note can connect the animal, location and follow-up.",
+    "notes": [
+      {
+        "title": "Identify the dog",
+        "items": [
+          "Owner and contact information, if known.",
+          "Animal-control information, if available."
+        ]
+      },
+      {
+        "title": "Describe the encounter",
+        "items": [
+          "Where and when it happened.",
+          "Witnesses and original photographs."
+        ]
+      },
+      {
+        "title": "Record the follow-up",
+        "items": [
+          "Medical care and recommendations.",
+          "Dated photographs and related expenses."
+        ]
+      }
+    ],
+    "imageKey": "dog-bites",
+    "afterSection": 0
+  },
+  "/faqs/hiring-a-personal-injury-lawyer": {
+    "layout": "conversation",
+    "title": "Use the consultation to understand the working relationship.",
+    "caption": "Ask about the people, the agreement and the next step.",
+    "notes": [
+      {
+        "title": "Who handles my case?",
+        "items": [
+          "Ask who reviews the facts.",
+          "Know whom to contact with questions."
+        ]
+      },
+      {
+        "title": "How will we communicate?",
+        "items": [
+          "Ask how updates are shared.",
+          "Discuss what the office needs from you."
+        ]
+      },
+      {
+        "title": "What am I agreeing to?",
+        "items": [
+          "Read the representation terms.",
+          "Ask about fees before deciding."
+        ]
+      }
+    ],
+    "imageKey": "consultation",
+    "afterSection": 3
+  },
+  "/faqs/insurance-claim": {
+    "layout": "decision",
+    "title": "An insurance request arrives. What does it ask you to do?",
+    "caption": "Information, an offer and a release raise different questions.",
+    "notes": [
+      {
+        "title": "The document",
+        "items": [
+          "Save the complete correspondence.",
+          "Record when it arrived and any dates listed."
+        ]
+      },
+      {
+        "title": "The request",
+        "items": [
+          "Identify exactly what is being requested.",
+          "Separate information from an agreement."
+        ]
+      },
+      {
+        "title": "Your response",
+        "items": [
+          "Write down what you do not understand.",
+          "Discuss the wording before deciding."
+        ]
+      }
+    ],
+    "imageKey": "documents",
+    "afterSection": 1
+  },
+  "/faqs/medical-treatment-after-an-accident": {
+    "layout": "journey",
+    "title": "Connect the first visit with what happens afterwards.",
+    "caption": "Your clinician directs treatment. Your records keep the history together.",
+    "notes": [
+      {
+        "title": "The visit",
+        "items": [
+          "Tell the clinician what happened.",
+          "Keep the examination and discharge records."
+        ]
+      },
+      {
+        "title": "The follow-up",
+        "items": [
+          "Retain referrals and care instructions.",
+          "Note appointments and treatment changes."
+        ]
+      },
+      {
+        "title": "The practical questions",
+        "items": [
+          "Keep bills and payment correspondence.",
+          "Ask about instructions you do not understand."
+        ]
+      }
+    ],
+    "imageKey": "care",
+    "afterSection": 3
+  },
+  "/faqs/motorcycle-accidents": {
+    "layout": "equipment",
+    "title": "Keep the rider’s equipment in the conversation.",
+    "caption": "The motorcycle, helmet and scene each hold a different part of the account.",
+    "notes": [
+      {
+        "title": "The motorcycle",
+        "items": [
+          "Photograph damage and identifying details.",
+          "Keep repair or valuation documents."
+        ]
+      },
+      {
+        "title": "The rider’s equipment",
+        "items": [
+          "Retain available helmet and clothing records.",
+          "Photograph their condition before changes."
+        ]
+      },
+      {
+        "title": "The collision account",
+        "items": [
+          "Write down location and vehicle positions.",
+          "Save witness and reporting information."
+        ]
+      }
+    ],
+    "imageKey": "motorcycle-accidents",
+    "afterSection": 0,
+    "imagePosition": "50% 70%"
+  },
+  "/faqs/ongoing-case-faqs": {
+    "layout": "file",
+    "title": "A case update is easier when changes are kept together.",
+    "caption": "You do not need to wait until you remember every detail.",
+    "notes": [
+      {
+        "title": "Treatment changes",
+        "items": [
+          "New appointments or providers.",
+          "Updated instructions and work restrictions."
+        ]
+      },
+      {
+        "title": "New correspondence",
+        "items": [
+          "Letters, requests and contact details.",
+          "The date each message arrived."
+        ]
+      },
+      {
+        "title": "Questions for the office",
+        "items": [
+          "What do you need to provide next?",
+          "Which part of the process needs explanation?"
+        ]
+      }
+    ],
+    "imageKey": "documents",
+    "afterSection": 1
+  },
+  "/faqs/pedestrian-accidents": {
+    "layout": "scene",
+    "title": "A pedestrian claim needs the wider street picture.",
+    "caption": "Keep more than a close-up of the crossing.",
+    "notes": [
+      {
+        "title": "The approach",
+        "items": [
+          "Direction of travel and vehicle positions.",
+          "Visibility and surrounding conditions."
+        ]
+      },
+      {
+        "title": "The crossing",
+        "items": [
+          "Signs, signals and road markings.",
+          "The location of witnesses or cameras."
+        ]
+      },
+      {
+        "title": "The aftermath",
+        "items": [
+          "Medical evaluation and follow-up.",
+          "Reports and insurer correspondence."
+        ]
+      }
+    ],
+    "imageKey": "pedestrian-accidents",
+    "afterSection": 1
+  },
+  "/faqs/personal-injury": {
+    "layout": "roles",
+    "title": "Turn “Do I have a case?” into questions that can be reviewed.",
+    "caption": "An incident, an injury and a supported loss need to be considered together.",
+    "notes": [
+      {
+        "title": "What happened?",
+        "items": [
+          "Describe the event and the people involved.",
+          "Identify the available evidence."
+        ]
+      },
+      {
+        "title": "What changed?",
+        "items": [
+          "Keep the injury and treatment history.",
+          "Record changes to work and ordinary activities."
+        ]
+      },
+      {
+        "title": "What needs review?",
+        "items": [
+          "Identify the unanswered questions.",
+          "Discuss responsibility and the available legal options."
+        ]
+      }
+    ],
+    "imageKey": "documents",
+    "afterSection": 3
+  },
+  "/faqs/rideshare-accidents": {
+    "layout": "decision",
+    "title": "Start with the ride information, not an assumption about coverage.",
+    "caption": "The trip record helps frame the insurance questions.",
+    "notes": [
+      {
+        "title": "The ride record",
+        "items": [
+          "Save the receipt and available app screenshots.",
+          "Keep driver and vehicle details."
+        ]
+      },
+      {
+        "title": "The incident record",
+        "items": [
+          "Record the collision location and witnesses.",
+          "Keep scene photographs and report details."
+        ]
+      },
+      {
+        "title": "The coverage questions",
+        "items": [
+          "Who has contacted you about the claim?",
+          "What do the available documents actually say?"
+        ]
+      }
+    ],
+    "imageKey": "rideshare-accidents",
+    "afterSection": 2
+  },
+  "/injury-types/amputations": {
+    "layout": "review",
+    "title": "The recovery record includes independence, not only treatment.",
+    "caption": "Document practical needs alongside clinical care.",
+    "notes": [
+      {
+        "title": "The treating team",
+        "items": [
+          "Surgery, rehabilitation and follow-up records.",
+          "Recommendations about equipment or assistance."
+        ]
+      },
+      {
+        "title": "Daily independence",
+        "items": [
+          "Changes to mobility and personal tasks.",
+          "Help needed at home or away from home."
+        ]
+      },
+      {
+        "title": "Practical support",
+        "items": [
+          "Equipment, accessibility and care expenses.",
+          "Work restrictions and questions about future needs."
+        ]
+      }
+    ],
+    "imageKey": "care",
+    "afterSection": 4
+  },
+  "/injury-types/burns": {
+    "layout": "journey",
+    "title": "A burn recovery has a history worth keeping.",
+    "caption": "Use dates to connect treatment, visible changes and daily limitations.",
+    "notes": [
+      {
+        "title": "Initial care",
+        "items": [
+          "Keep the original clinical assessment.",
+          "Retain instructions and treatment information."
+        ]
+      },
+      {
+        "title": "Changes over time",
+        "items": [
+          "Keep dated photographs where appropriate.",
+          "Save follow-up and referral records."
+        ]
+      },
+      {
+        "title": "Effects on daily life",
+        "items": [
+          "Note work and activity restrictions.",
+          "Keep care-related bills and receipts."
+        ]
+      }
+    ],
+    "imageKey": "care",
+    "afterSection": 5
+  },
+  "/injury-types/fractures": {
+    "layout": "file",
+    "title": "Keep the fracture record together from examination to follow-up.",
+    "caption": "One folder can hold the changing treatment and work picture.",
+    "notes": [
+      {
+        "title": "Clinical documents",
+        "items": [
+          "Examination and imaging reports.",
+          "Discharge and treatment instructions."
+        ]
+      },
+      {
+        "title": "Recovery documents",
+        "items": [
+          "Follow-up appointments and referrals.",
+          "Recommendations or changes in restrictions."
+        ]
+      },
+      {
+        "title": "Practical documents",
+        "items": [
+          "Time-away and earnings information.",
+          "Equipment, travel and care receipts."
+        ]
+      }
+    ],
+    "imageKey": "care",
+    "afterSection": 5
+  },
+  "/injury-types/internal-injuries": {
+    "layout": "decision",
+    "title": "What is visible outside may not explain the medical record.",
+    "caption": "The clinical assessment belongs with your treating team.",
+    "notes": [
+      {
+        "title": "The medical findings",
+        "items": [
+          "Keep examinations and test reports.",
+          "Retain discharge and follow-up instructions."
+        ]
+      },
+      {
+        "title": "Changes to discuss",
+        "items": [
+          "Record new or changing concerns.",
+          "Tell the treating team what has changed."
+        ]
+      },
+      {
+        "title": "The connected history",
+        "items": [
+          "Keep incident and treatment dates together.",
+          "Preserve referrals, bills and correspondence."
+        ]
+      }
+    ],
+    "imageKey": "care",
+    "afterSection": 4
+  },
+  "/injury-types/meniscus-injuries": {
+    "layout": "activity",
+    "title": "A knee injury can interrupt the route through your day.",
+    "caption": "Describe which activities changed and keep your clinician’s restrictions alongside them.",
+    "notes": [
+      {
+        "title": "Walking",
+        "items": [
+          "Note when getting around becomes difficult.",
+          "Describe any assistance you use."
+        ]
+      },
+      {
+        "title": "Stairs and daily tasks",
+        "items": [
+          "Keep practical examples from home or work.",
+          "Record restrictions given by the clinician."
+        ]
+      },
+      {
+        "title": "Work and travel",
+        "items": [
+          "Save changes to duties or hours.",
+          "Retain relevant travel and treatment expenses."
+        ]
+      }
+    ],
+    "imageKey": "care",
+    "afterSection": 3
+  },
+  "/injury-types/ptsd": {
+    "layout": "activity",
+    "title": "Some effects of an incident do not appear in a photograph.",
+    "caption": "Keep dated observations to discuss with a qualified clinician.",
+    "notes": [
+      {
+        "title": "Sleep and routines",
+        "items": [
+          "Describe changes in ordinary patterns.",
+          "Keep the timing of those changes."
+        ]
+      },
+      {
+        "title": "Concentration and work",
+        "items": [
+          "Note practical effects on your tasks.",
+          "Keep related clinical or workplace records."
+        ]
+      },
+      {
+        "title": "Care and support",
+        "items": [
+          "Retain treatment and referral information.",
+          "Write down questions for the treating team."
+        ]
+      }
+    ],
+    "imageKey": "care",
+    "afterSection": 3
+  },
+  "/injury-types/road-rash": {
+    "layout": "equipment",
+    "title": "Preserve the clothing record as well as the treatment record.",
+    "caption": "The equipment and recovery history explain different parts of the injury.",
+    "notes": [
+      {
+        "title": "Clothing and equipment",
+        "items": [
+          "Photograph their condition after the incident.",
+          "Keep available damage records."
+        ]
+      },
+      {
+        "title": "Medical care",
+        "items": [
+          "Retain the examination and treatment history.",
+          "Keep instructions and follow-up notes."
+        ]
+      },
+      {
+        "title": "Visible changes",
+        "items": [
+          "Date photographs where appropriate.",
+          "Connect them with appointments and expenses."
+        ]
+      }
+    ],
+    "imageKey": "motorcycle-accidents",
+    "afterSection": 4,
+    "imagePosition": "50% 70%"
+  },
+  "/injury-types/rotator-cuff": {
+    "layout": "activity",
+    "title": "A shoulder injury can change an ordinary day.",
+    "caption": "Describe the activity that changed. Keep your clinician’s restrictions alongside it.",
+    "notes": [
+      {
+        "title": "Reaching and lifting",
+        "items": [
+          "Describe the task and when it became difficult.",
+          "Record help or changes to your routine."
+        ]
+      },
+      {
+        "title": "Work and rest",
+        "items": [
+          "Keep practical examples from the day.",
+          "Note restrictions provided by your clinician."
+        ]
+      },
+      {
+        "title": "The treatment history",
+        "items": [
+          "Save assessments and follow-up recommendations.",
+          "Connect dated notes with the care record."
+        ]
+      }
+    ],
+    "imageKey": "care",
+    "afterSection": 3
+  },
+  "/injury-types/spinal-injuries": {
+    "layout": "review",
+    "title": "Clinical care and everyday support need their own space.",
+    "caption": "A spinal-injury record can include both treatment and practical assistance.",
+    "notes": [
+      {
+        "title": "The medical history",
+        "items": [
+          "Clinical findings and specialist records.",
+          "Treatment and rehabilitation recommendations."
+        ]
+      },
+      {
+        "title": "The daily experience",
+        "items": [
+          "Changes to mobility and ordinary tasks.",
+          "Assistance or equipment you use."
+        ]
+      },
+      {
+        "title": "The practical needs",
+        "items": [
+          "Documented care and accessibility expenses.",
+          "Work changes and questions for further assessment."
+        ]
+      }
+    ],
+    "imageKey": "care",
+    "afterSection": 5
+  },
+  "/injury-types/whiplash": {
+    "layout": "journey",
+    "title": "Keep the sequence, not just a description of neck pain.",
+    "caption": "Connect the collision, the clinical visit and the follow-up record.",
+    "notes": [
+      {
+        "title": "The incident",
+        "items": [
+          "Save the original collision account.",
+          "Keep scene and vehicle photographs."
+        ]
+      },
+      {
+        "title": "The evaluation",
+        "items": [
+          "Retain the examination and clinical findings.",
+          "Keep instructions and referrals."
+        ]
+      },
+      {
+        "title": "The follow-up",
+        "items": [
+          "Document appointments and activity restrictions.",
+          "Record dated changes to discuss with the clinician."
+        ]
+      }
+    ],
+    "imageKey": "care",
+    "afterSection": 5
+  },
+  "/practice-areas/bicycle-accidents": {
+    "layout": "equipment",
+    "title": "The bicycle can preserve details that a short account misses.",
+    "caption": "Keep the road context and the equipment record connected.",
+    "notes": [
+      {
+        "title": "The bicycle",
+        "items": [
+          "Photograph damage before repair.",
+          "Keep estimates and replacement information."
+        ]
+      },
+      {
+        "title": "The rider’s equipment",
+        "items": [
+          "Retain available helmet and clothing records.",
+          "Keep dated condition photographs."
+        ]
+      },
+      {
+        "title": "The setting",
+        "items": [
+          "Record markings, visibility and vehicle approach.",
+          "Save witness and camera information."
+        ]
+      }
+    ],
+    "imageKey": "bicycle-accidents",
+    "afterSection": 9,
+    "imagePosition": "50% 85%"
+  },
+  "/practice-areas/car-accidents": {
+    "layout": "scene",
+    "title": "The collision scene has a wider story than the damaged panel.",
+    "caption": "Keep the original context before the scene changes.",
+    "notes": [
+      {
+        "title": "The approach",
+        "items": [
+          "Vehicle positions and direction of travel.",
+          "Signals, markings and sightlines."
+        ]
+      },
+      {
+        "title": "The collision",
+        "items": [
+          "Original vehicle and scene photographs.",
+          "Witness information and report details."
+        ]
+      },
+      {
+        "title": "The aftermath",
+        "items": [
+          "Medical care and work restrictions.",
+          "Repair records and insurer correspondence."
+        ]
+      }
+    ],
+    "imageKey": "car-accidents",
+    "afterSection": 0
+  },
+  "/practice-areas/motorcycle-accidents": {
+    "layout": "review",
+    "title": "The crash account and the rider’s recovery need equal attention.",
+    "caption": "A useful record preserves both how it happened and what changed.",
+    "notes": [
+      {
+        "title": "How the collision happened",
+        "items": [
+          "Vehicle approach, road position and witnesses.",
+          "Available video and equipment photographs."
+        ]
+      },
+      {
+        "title": "How the injury developed",
+        "items": [
+          "The clinical findings and treatment history.",
+          "Restrictions and follow-up recommendations."
+        ]
+      },
+      {
+        "title": "How daily life changed",
+        "items": [
+          "Work, transport and ordinary activities.",
+          "Supported expenses and assistance needs."
+        ]
+      }
+    ],
+    "imageKey": "motorcycle-accidents",
+    "afterSection": 4,
+    "imagePosition": "50% 70%"
+  },
+  "/practice-areas/pedestrian-accidents": {
+    "layout": "scene",
+    "title": "Look at the street from the pedestrian’s position.",
+    "caption": "The approach and the surroundings belong with the crossing record.",
+    "notes": [
+      {
+        "title": "The route",
+        "items": [
+          "Where the pedestrian was travelling.",
+          "Markings, signals and visibility."
+        ]
+      },
+      {
+        "title": "The vehicle",
+        "items": [
+          "Its direction and available position evidence.",
+          "Witnesses or original camera records."
+        ]
+      },
+      {
+        "title": "The impact",
+        "items": [
+          "Medical findings and restrictions.",
+          "Changes to work, mobility and daily tasks."
+        ]
+      }
+    ],
+    "imageKey": "pedestrian-accidents",
+    "afterSection": 2
+  },
+  "/practice-areas/personal-injury": {
+    "layout": "review",
+    "title": "An injury claim connects the event with its consequences.",
+    "caption": "The evidence should explain both responsibility and supported losses.",
+    "notes": [
+      {
+        "title": "The incident record",
+        "items": [
+          "What happened and who was involved.",
+          "Reports, photographs and witness details."
+        ]
+      },
+      {
+        "title": "The injury record",
+        "items": [
+          "Clinical findings and treatment history.",
+          "Restrictions and developing care needs."
+        ]
+      },
+      {
+        "title": "The loss record",
+        "items": [
+          "Income, bills and practical assistance.",
+          "Changes supported by the available documents."
+        ]
+      }
+    ],
+    "imageKey": "documents",
+    "afterSection": 5
+  },
+  "/practice-areas/serious-injuries": {
+    "layout": "roles",
+    "title": "Serious injuries often need several kinds of records to meet.",
+    "caption": "The medical, practical and financial accounts should describe the same reality.",
+    "notes": [
+      {
+        "title": "Care records",
+        "items": [
+          "Treating clinicians and rehabilitation providers.",
+          "The findings and recommendations in their records."
+        ]
+      },
+      {
+        "title": "Daily support",
+        "items": [
+          "Assistance with ordinary tasks.",
+          "Equipment and accessibility information."
+        ]
+      },
+      {
+        "title": "Financial effects",
+        "items": [
+          "Work restrictions and earnings records.",
+          "Care expenses and supported future questions."
+        ]
+      }
+    ],
+    "imageKey": "serious-injuries",
+    "afterSection": 3
+  },
+  "/practice-areas/dog-bites": {
+    "layout": "file",
+    "title": "Keep the animal, the encounter and the injury connected.",
+    "caption": "The dog’s identity is a different question from the treatment history.",
+    "notes": [
+      {
+        "title": "Animal and owner",
+        "items": [
+          "Names and contact information, if known.",
+          "Animal-control correspondence, if available."
+        ]
+      },
+      {
+        "title": "The encounter",
+        "items": [
+          "Location, circumstances and witnesses.",
+          "Original photographs or incident records."
+        ]
+      },
+      {
+        "title": "The injury",
+        "items": [
+          "Examination and follow-up information.",
+          "Dated photographs and practical expenses."
+        ]
+      }
+    ],
+    "imageKey": "dog-bites",
+    "afterSection": 8
+  },
+  "/practice-areas/slip-and-fall": {
+    "layout": "scene",
+    "title": "A fall happens at a point. The property tells the wider story.",
+    "caption": "Preserve the condition and the surrounding context.",
+    "notes": [
+      {
+        "title": "The condition",
+        "items": [
+          "Surface, lighting and available warnings.",
+          "Photos taken close to the incident."
+        ]
+      },
+      {
+        "title": "The property",
+        "items": [
+          "Who controlled or maintained the location.",
+          "Witnesses and incident-report information."
+        ]
+      },
+      {
+        "title": "The consequences",
+        "items": [
+          "Treatment and activity restrictions.",
+          "Work changes and care-related expenses."
+        ]
+      }
+    ],
+    "imageKey": "slip-and-fall",
+    "afterSection": 2
+  },
+  "/practice-areas/rideshare-accidents": {
+    "layout": "file",
+    "title": "A rideshare collision leaves a digital record, too.",
+    "caption": "Keep the trip information with the scene and treatment records.",
+    "notes": [
+      {
+        "title": "The app record",
+        "items": [
+          "Available trip details and receipts.",
+          "Driver and vehicle information."
+        ]
+      },
+      {
+        "title": "The collision record",
+        "items": [
+          "Location, witnesses and photographs.",
+          "Police or incident-report details."
+        ]
+      },
+      {
+        "title": "The follow-up record",
+        "items": [
+          "Platform and insurer correspondence.",
+          "Medical records and related expenses."
+        ]
+      }
+    ],
+    "imageKey": "rideshare-accidents",
+    "afterSection": 0
+  },
+  "/practice-areas/truck-accidents": {
+    "layout": "roles",
+    "title": "One truck. Several places to look for records.",
+    "caption": "The vehicle, the people and the sequence may each need a separate investigation.",
+    "notes": [
+      {
+        "title": "The vehicle",
+        "items": [
+          "Truck and trailer identifiers.",
+          "Damage photographs and available vehicle records."
+        ]
+      },
+      {
+        "title": "The people",
+        "items": [
+          "Driver and carrier information.",
+          "Witnesses and other involved parties."
+        ]
+      },
+      {
+        "title": "The sequence",
+        "items": [
+          "Where and when the collision occurred.",
+          "Reports, available video and treatment dates."
+        ]
+      }
+    ],
+    "imageKey": "truck-accidents",
+    "afterSection": 3
+  },
+  "/practice-areas/wrongful-death": {
+    "layout": "conversation",
+    "title": "Give the family’s questions a place to begin.",
+    "caption": "You do not need every answer before you speak with the office.",
+    "notes": [
+      {
+        "title": "What happened?",
+        "items": [
+          "Keep the available investigation information.",
+          "Identify the questions that remain open."
+        ]
+      },
+      {
+        "title": "What records are available?",
+        "items": [
+          "Relevant medical and family records.",
+          "Correspondence and supporting documents."
+        ]
+      },
+      {
+        "title": "What help is needed now?",
+        "items": [
+          "Practical concerns and immediate questions.",
+          "Who should communicate with the office?"
+        ]
+      }
+    ],
+    "imageKey": "wrongful-death",
+    "afterSection": 6
+  },
+  "/blogs/california-bicycle-accident-guide": {
+    "layout": "journey",
+    "title": "From the road to the claim record: keep the sequence connected.",
+    "caption": "The practical task changes as you move away from the scene.",
+    "notes": [
+      {
+        "title": "At the scene",
+        "items": [
+          "Record the road context and involved vehicles.",
+          "Save original photographs and witness details."
+        ]
+      },
+      {
+        "title": "After the examination",
+        "items": [
+          "Keep clinical findings and instructions.",
+          "Retain the damaged equipment record."
+        ]
+      },
+      {
+        "title": "Before the claim discussion",
+        "items": [
+          "Gather related expenses and work information.",
+          "List the questions the evidence has not answered."
+        ]
+      }
+    ],
+    "imageKey": "bicycle-accidents",
+    "afterSection": 4,
+    "imagePosition": "50% 85%"
+  },
+  "/blogs/what-to-do-after-a-car-accident-in-california": {
+    "layout": "file",
+    "title": "Your claim folder should make sense to someone else.",
+    "caption": "Organize the papers by what they explain, not just when they arrived.",
+    "notes": [
+      {
+        "title": "How it happened",
+        "items": [
+          "Scene photographs, witnesses and reports.",
+          "Vehicle and repair information."
+        ]
+      },
+      {
+        "title": "How you were affected",
+        "items": [
+          "Treatment and follow-up records.",
+          "Work changes and daily limitations."
+        ]
+      },
+      {
+        "title": "What was communicated",
+        "items": [
+          "Insurer letters, requests and offers.",
+          "A dated record of your questions."
+        ]
+      }
+    ],
+    "imageKey": "documents",
+    "afterSection": 4
+  },
+  "/blogs/california-catastrophic-injury-guide": {
+    "layout": "review",
+    "title": "The long-term picture needs more than an initial diagnosis.",
+    "caption": "Keep developing care information alongside practical support needs.",
+    "notes": [
+      {
+        "title": "The clinical account",
+        "items": [
+          "Specialist findings and treatment history.",
+          "Rehabilitation and follow-up recommendations."
+        ]
+      },
+      {
+        "title": "The practical account",
+        "items": [
+          "Assistance, equipment and accessibility needs.",
+          "Changes to independence and work."
+        ]
+      },
+      {
+        "title": "The open questions",
+        "items": [
+          "Which needs require further assessment?",
+          "What supporting information is still developing?"
+        ]
+      }
+    ],
+    "imageKey": "serious-injuries",
+    "afterSection": 6
+  },
+  "/blogs/california-dog-bite-accidents-guide": {
+    "layout": "journey",
+    "title": "Follow the dog-bite record from the encounter to follow-up.",
+    "caption": "Each stage produces different details worth keeping.",
+    "notes": [
+      {
+        "title": "The encounter",
+        "items": [
+          "Identify the dog, owner and location if possible.",
+          "Keep witness and incident information."
+        ]
+      },
+      {
+        "title": "The care",
+        "items": [
+          "Save examination and follow-up records.",
+          "Retain dated photographs where appropriate."
+        ]
+      },
+      {
+        "title": "The claim questions",
+        "items": [
+          "Gather animal-control correspondence if available.",
+          "Connect expenses and practical effects with the records."
+        ]
+      }
+    ],
+    "imageKey": "dog-bites",
+    "afterSection": 6
+  },
+  "/blogs/california-motorcycle-accident-guide": {
+    "layout": "equipment",
+    "title": "Keep an inventory before the motorcycle is repaired.",
+    "caption": "The equipment record should sit beside the collision account.",
+    "notes": [
+      {
+        "title": "Motorcycle",
+        "items": [
+          "Condition photographs and identifying details.",
+          "Repair or valuation documents."
+        ]
+      },
+      {
+        "title": "Rider equipment",
+        "items": [
+          "Available helmet and clothing information.",
+          "Photographs of damage before changes."
+        ]
+      },
+      {
+        "title": "Supporting context",
+        "items": [
+          "Road position, witnesses and reports.",
+          "Treatment, restrictions and related expenses."
+        ]
+      }
+    ],
+    "imageKey": "motorcycle-accidents",
+    "afterSection": 2,
+    "imagePosition": "50% 70%"
+  },
+  "/blogs/california-pedestrian-accident-guide": {
+    "layout": "review",
+    "title": "The street evidence and the recovery evidence answer different questions.",
+    "caption": "Keep the two accounts connected without expecting one to replace the other.",
+    "notes": [
+      {
+        "title": "The street account",
+        "items": [
+          "Crossing, signals and the vehicle approach.",
+          "Visibility, witnesses and available video."
+        ]
+      },
+      {
+        "title": "The recovery account",
+        "items": [
+          "Clinical findings and follow-up records.",
+          "Mobility and activity restrictions."
+        ]
+      },
+      {
+        "title": "The practical account",
+        "items": [
+          "Work, transport and assistance needs.",
+          "Supported expenses and unanswered questions."
+        ]
+      }
+    ],
+    "imageKey": "pedestrian-accidents",
+    "afterSection": 4
+  },
+  "/blogs/california-personal-injury-guide": {
+    "layout": "journey",
+    "title": "Understand the claim by following the questions it must answer.",
+    "caption": "A record becomes useful when its parts connect.",
+    "notes": [
+      {
+        "title": "Responsibility",
+        "items": [
+          "What happened and who may be involved?",
+          "Which evidence supports the account?"
+        ]
+      },
+      {
+        "title": "The injury",
+        "items": [
+          "What do the clinical records show?",
+          "How has the injury affected ordinary life?"
+        ]
+      },
+      {
+        "title": "The losses",
+        "items": [
+          "What expenses and work effects are documented?",
+          "Which needs or disputes require more review?"
+        ]
+      }
+    ],
+    "imageKey": "documents",
+    "afterSection": 7
+  },
+  "/blogs/california-rideshare-accidents-guide": {
+    "layout": "decision",
+    "title": "The ride details help frame the coverage discussion.",
+    "caption": "Start with the available trip record, then review the correspondence.",
+    "notes": [
+      {
+        "title": "The trip details",
+        "items": [
+          "Receipt, app information and vehicle details.",
+          "What was happening when the collision occurred?"
+        ]
+      },
+      {
+        "title": "The correspondence",
+        "items": [
+          "Messages from the platform or insurers.",
+          "The wording of any request or proposal."
+        ]
+      },
+      {
+        "title": "The questions",
+        "items": [
+          "Which documents are still missing?",
+          "What needs a legal or coverage review?"
+        ]
+      }
+    ],
+    "imageKey": "rideshare-accidents",
+    "afterSection": 4
+  },
+  "/blogs/california-slip-and-fall-accidents-guide": {
+    "layout": "file",
+    "title": "Make a property-incident file, not just a photograph collection.",
+    "caption": "Give the condition, property and medical records their own places.",
+    "notes": [
+      {
+        "title": "The condition",
+        "items": [
+          "Original scene photographs and warnings.",
+          "The time, location and surrounding circumstances."
+        ]
+      },
+      {
+        "title": "The property",
+        "items": [
+          "Who controlled the premises.",
+          "Witnesses, reports and available correspondence."
+        ]
+      },
+      {
+        "title": "The effect",
+        "items": [
+          "Medical findings and follow-up instructions.",
+          "Work changes and supported practical losses."
+        ]
+      }
+    ],
+    "imageKey": "slip-and-fall",
+    "afterSection": 5
+  },
+  "/blogs/california-truck-accident-guide": {
+    "layout": "journey",
+    "title": "A truck-accident investigation connects different record sources.",
+    "caption": "The vehicle, operator and recovery histories need to be brought together.",
+    "notes": [
+      {
+        "title": "Identify the sources",
+        "items": [
+          "Truck, trailer, driver and carrier details.",
+          "Reports and available witness information."
+        ]
+      },
+      {
+        "title": "Preserve the context",
+        "items": [
+          "Scene images and available original video.",
+          "Vehicle records that require a closer review."
+        ]
+      },
+      {
+        "title": "Explain the consequences",
+        "items": [
+          "Clinical history and restrictions.",
+          "Income, expenses and developing care questions."
+        ]
+      }
+    ],
+    "imageKey": "truck-accidents",
+    "afterSection": 4
+  },
+  "/blogs/california-wrongful-death-guide": {
+    "layout": "review",
+    "title": "Separate the incident questions from the family’s practical needs.",
+    "caption": "Both deserve attention without rushing the family’s decisions.",
+    "notes": [
+      {
+        "title": "The incident questions",
+        "items": [
+          "What do the available records establish?",
+          "Which parts still need investigation?"
+        ]
+      },
+      {
+        "title": "The family’s records",
+        "items": [
+          "Relevant relationship and support information.",
+          "Medical and other supporting documents."
+        ]
+      },
+      {
+        "title": "The practical questions",
+        "items": [
+          "Available expense records.",
+          "The questions the family wants the office to answer."
+        ]
+      }
+    ],
+    "imageKey": "wrongful-death",
+    "afterSection": 5
+  },
+  "/blogs/traumatic-brain-injury-evidence-after-california-accident": {
+    "layout": "review",
+    "title": "Clinical findings and everyday observations belong side by side.",
+    "caption": "Keep dated changes to discuss with the treating clinician.",
+    "notes": [
+      {
+        "title": "The clinical record",
+        "items": [
+          "Examination, testing and referral information.",
+          "Treatment and follow-up recommendations."
+        ]
+      },
+      {
+        "title": "The everyday record",
+        "items": [
+          "Changes in concentration or ordinary activities.",
+          "Dated observations from the recovery period."
+        ]
+      },
+      {
+        "title": "The practical record",
+        "items": [
+          "Work restrictions and assistance needs.",
+          "Appointments, bills and related expenses."
+        ]
+      }
+    ],
+    "imageKey": "care",
+    "afterSection": 6
+  },
+  "/about/our-difference": {
+    "layout": "conversation",
+    "title": "Judge the working relationship through clear questions.",
+    "caption": "Understand the service you are considering before deciding.",
+    "notes": [
+      {
+        "title": "Your point of contact",
+        "items": [
+          "Who will answer questions about the case?",
+          "How should you share a new development?"
+        ]
+      },
+      {
+        "title": "Your information",
+        "items": [
+          "How are records and open questions reviewed?",
+          "What will the office need from you?"
+        ]
+      },
+      {
+        "title": "Your decisions",
+        "items": [
+          "How will options be explained?",
+          "What should you understand before agreeing?"
+        ]
+      }
+    ],
+    "imageKey": "consultation",
+    "afterSection": 2
+  },
+  "/about/what-to-expect": {
+    "layout": "journey",
+    "title": "Know the next decision, not just the next document.",
+    "caption": "The process may overlap or change as the facts develop.",
+    "notes": [
+      {
+        "title": "The first discussion",
+        "items": [
+          "Explain the incident and your questions.",
+          "Review what records are available."
+        ]
+      },
+      {
+        "title": "The investigation",
+        "items": [
+          "Connect the responsibility and injury evidence.",
+          "Keep the office informed of new information."
+        ]
+      },
+      {
+        "title": "The proposed resolution",
+        "items": [
+          "Review the options and supporting records.",
+          "Understand any proposal before deciding."
+        ]
+      }
+    ],
+    "imageKey": "documents",
+    "afterSection": 2
+  },
+  "/about/zero-fee-guarantee": {
+    "layout": "agreement",
+    "title": "Understand the promise. Read the agreement.",
+    "caption": "No attorney fee unless there is a recovery.",
+    "notes": [
+      {
+        "title": "The fee terms",
+        "items": [
+          "Ask how the attorney fee is calculated.",
+          "Understand the written representation terms."
+        ]
+      },
+      {
+        "title": "Your questions",
+        "items": [
+          "Ask about anything that is unclear.",
+          "Know whom to contact for an explanation."
+        ]
+      },
+      {
+        "title": "Your copy",
+        "items": [
+          "Keep the agreement for reference.",
+          "Review it before representation begins."
+        ]
+      }
+    ],
+    "imageKey": "documents",
+    "afterSection": 2
+  },
+  "/about": {
+    "layout": "conversation",
+    "title": "The firm’s story should lead to a clear conversation.",
+    "caption": "Connect what you read here with the questions that matter to you.",
+    "notes": [
+      {
+        "title": "Your circumstances",
+        "items": [
+          "Explain what happened and what concerns you.",
+          "Identify the help you are looking for."
+        ]
+      },
+      {
+        "title": "The office’s role",
+        "items": [
+          "Ask how your information will be reviewed.",
+          "Understand who will communicate with you."
+        ]
+      },
+      {
+        "title": "The fit",
+        "items": [
+          "Review the proposed next steps.",
+          "Decide after your questions are answered."
+        ]
+      }
+    ],
+    "imageKey": "consultation",
+    "afterSection": -1
+  },
+  "/results": {
+    "layout": "decision",
+    "title": "A past result is not a valuation of your case.",
+    "caption": "Assess the facts and supporting records in your own situation.",
+    "notes": [
+      {
+        "title": "The result you are reading",
+        "items": [
+          "Consider the circumstances described.",
+          "Avoid treating an outcome as a personal forecast."
+        ]
+      },
+      {
+        "title": "Your own evidence",
+        "items": [
+          "Responsibility, injury and documented losses.",
+          "The disputes and information that remain open."
+        ]
+      },
+      {
+        "title": "Your next question",
+        "items": [
+          "What does your available record support?",
+          "What needs a closer review before discussing value?"
+        ]
+      }
+    ],
+    "imageKey": "documents",
+    "afterSection": -1
+  },
+  "/attorney": {
+    "layout": "conversation",
+    "title": "Meet the lawyer through the questions you want answered.",
+    "caption": "Use Howard’s profile as a starting point for a practical discussion.",
+    "notes": [
+      {
+        "title": "The professional record",
+        "items": [
+          "Review the State Bar profile linked above.",
+          "Ask about the representation you are considering."
+        ]
+      },
+      {
+        "title": "Your accident",
+        "items": [
+          "Bring a short account and available records.",
+          "Explain what remains unclear to you."
+        ]
+      },
+      {
+        "title": "The working relationship",
+        "items": [
+          "Ask who will communicate with you.",
+          "Understand the proposed next step and agreement."
+        ]
+      }
+    ],
+    "imageKey": "consultation",
+    "afterSection": -1
+  }
+}

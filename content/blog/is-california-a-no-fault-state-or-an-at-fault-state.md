@@ -2,7 +2,7 @@
   "title": "Is California a No-Fault State or an At-Fault State?",
   "slug": "is-california-a-no-fault-state-or-an-at-fault-state",
   "published": true,
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved",
   "author": "Howard Choi",
   "excerpt": "California is an at-fault state. Learn how fault, insurance coverage, shared responsibility, evidence, and filing deadlines affect car accident claims.",
   "metaTitle": "Is California a No-Fault State or an At-Fault State?",

@@ -9,7 +9,7 @@
   "alt": "Lady Justice and legal reference library",
   "intro": "There is no honest way to value every California personal injury case with one multiplier or one settlement table. Case value develops from the losses that can be supported, the responsibility for the accident, the available insurance or assets, and the strength of the evidence connecting those pieces. A calculator can organize the inputs, but the final range still depends on facts a simple formula cannot see.",
   "takeaway": "Case value is a combination of damages, liability, coverage, and proof. A larger medical bill by itself does not automatically mean a larger settlement.",
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved",
   "metaTitle": "How Much Is a California Personal Injury Case Worth?",
   "metaDescription": "Learn how treatment, lost income, future care, evidence and fault can affect the value of a California personal injury claim."
 }

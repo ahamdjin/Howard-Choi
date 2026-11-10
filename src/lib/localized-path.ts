@@ -8,7 +8,9 @@ export function localizedPath(path: string, locale: SiteLocale): string {
   if (locale === "en") return base;
   const location = /^\/locations\/([^/]+)\/?$/.exec(base)?.[1];
   const blog = /^\/blogs\/([^/]+)\/?$/.exec(base)?.[1];
-  const fallback = base.startsWith("/about/") ? "/about"
+  const englishResource = /^\/(?:learning-hub|faqs|injury-types)(?:\/|$)/.test(base);
+  const newService = /^\/practice-areas\/(?:bicycle-accidents|dog-bites)\/?$/.test(base);
+  const fallback = englishResource ? "/blogs" : newService ? "/practice-areas" : base.startsWith("/about/") ? "/about"
     : base === "/practice-areas/personal-injury" ? "/practice-areas"
     : location && !hasLocalizedLocation(locale, location) ? "/locations"
     : blog && !hasLocalizedBlog(locale, blog) ? "/blogs"

@@ -2,7 +2,7 @@
   "title": "The Safest Cars to Drive in The US",
   "slug": "the-safest-cars-to-drive-in-the-us",
   "published": true,
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved",
   "author": "Howard Choi",
   "excerpt": "Compare vehicle safety ratings, explore nine major brands, and learn what to check before buying a car and what to do after a California crash.",
   "metaTitle": "The Safest Cars to Drive in The US",

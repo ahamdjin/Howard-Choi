@@ -1,3 +1,9 @@
+import { pageVisualAfter } from "@/data/pageVisualPlans";
+import { TopicVisual } from "@/components/editorial/TopicVisual";
+import { withEnglishSourceDepth } from "@/lib/english-source-depth";
+import { ClaimVisualStory } from "@/components/editorial/ClaimVisualStory";
+import { ContentBlocks } from "@/components/editorial/ContentBlocks";
+import { ContentPhoto } from "@/components/editorial/ContentPhoto";
 import { ArticleParagraph } from "@/components/blog/ArticleParagraph";
 import { ArticleAuthorBio } from "@/components/blog/ArticleAuthor";
 import { ARTICLE_READING_LAYOUT, ArticleHero, ArticleReadingSidebar } from "@/components/blog/ArticleReadingLayout";
@@ -143,7 +149,8 @@ const articleSupport: Record<string, ArticleSupport> = {
 
 const BlogDetail = () => {
   const { slug } = useParams();
-  const post = slug ? getBlogBySlug(slug) : undefined;
+  const basePost = slug ? getBlogBySlug(slug) : undefined;
+  const post = basePost ? withEnglishSourceDepth(basePost) : undefined;
   const articleRef = useRef<HTMLElement | null>(null);
   const { scrollY } = useScroll();
   const { scrollYProgress } = useScroll({ target: articleRef, offset: ["start start", "end end"] });
@@ -267,10 +274,13 @@ const BlogDetail = () => {
                 <div className="border-t border-foreground/12">
                   {post.sections.map((section, index) => (
                     <motion.section id={`article-section-${index + 1}`} key={section.heading} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.16 }} transition={{ duration: 0.62 }} className="scroll-mt-28 border-b border-foreground/10 py-10 last:border-b-0 md:py-12">
-                      <div className="mb-4 flex items-center gap-3"><span className="text-[11px] tracking-[0.12em] text-foreground/34">0{index + 1}</span><span className="h-px w-8 bg-foreground/12" /></div>
+
                       <h2 className="editorial-serif max-w-[700px] text-[clamp(2.05rem,3vw,3.15rem)] leading-[0.98] tracking-[-0.022em] text-foreground">{section.heading}</h2>
                       <div className="article-reading-width mt-6 max-w-[730px] space-y-6 text-[17px] leading-[1.75] text-foreground/84 md:text-[18px]">
-                        {section.paragraphs.map((paragraph, paragraphIndex) => <ArticleParagraph key={paragraphIndex} text={paragraph} className={index === 0 && paragraphIndex === 0 ? "first-letter:float-left first-letter:mr-2 first-letter:mt-1 first-letter:font-serif first-letter:text-[4.1rem] first-letter:leading-[0.72] first-letter:text-foreground" : undefined} />)}
+                        <ContentBlocks paragraphs={section.paragraphs} />
+                        {index === 1 && <ClaimVisualStory subject={post.slug} />}
+                        {pageVisualAfter(`/blogs/${post.slug}`, index) && <TopicVisual pagePath={`/blogs/${post.slug}`} />}
+                        {index === 7 && <ContentPhoto subject={post.slug} />}
                       </div>
                     </motion.section>
                   ))}

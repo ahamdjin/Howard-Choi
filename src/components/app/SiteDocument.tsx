@@ -1,3 +1,5 @@
+import "@/styles/content-presentation.css";
+import "@/styles/reading-visuals.css";
 import { useEffect, type ReactNode } from "react";
 import { HeadContent, Scripts, useRouterState } from "@tanstack/react-router";
 import DeferredIntegrations from "@/components/DeferredIntegrations";
@@ -28,7 +30,7 @@ export default function SiteDocument({ children }: { children: ReactNode }) {
   const pathname = useRouterState({ select: (state) => state.location.pathname });
   const lang = pathname === "/ko" || pathname.startsWith("/ko/") ? "ko" : pathname === "/es" || pathname.startsWith("/es/") ? "es-US" : "en";
   const isHomepage = pathname === "/" || pathname === "/ko" || pathname === "/es";
-  const innerSitePage = /^\/(?:(?:ko|es)\/)?(?:practice-areas|locations|attorney|results|about)(?:\/|$)/.test(pathname);
+  const innerSitePage = /^\/(?:(?:ko|es)\/)?(?:practice-areas|locations|attorney|results|about|faqs|injury-types)(?:\/|$)/.test(pathname) || pathname === "/blogs/guides";
   const attorneyPage = /^\/(?:(?:ko|es)\/)?attorney(?:\/|$)/.test(pathname);
   // Pages that may need HighLevel embed support. Managed enquiry forms submit
   // through HighLevel External Tracking; no duplicate webhook delivery is used.

@@ -1,0 +1,92 @@
+/* Shared presentation roles. Existing palette, content and page identities stay authoritative. */
+.site-typography .content-blocks{font-family:Inter,Arial,sans-serif;font-size:1rem;line-height:1.8;color:#534d46;overflow-wrap:break-word}
+.site-typography .content-prose>*+*{margin-top:1.15rem}
+.site-typography .content-blocks h3{font-family:Inter,Arial,sans-serif;font-size:1.2rem;font-weight:600;line-height:1.4;margin:0 0 .8rem;text-wrap:balance}
+.site-typography .content-subsections>div{margin-top:2rem}
+.site-typography .content-blocks :is(p,li){hyphens:manual;max-width:76ch;text-wrap:pretty}
+.site-typography .content-blocks :is(ul,ol):not(.content-steps){padding-left:1.4rem;margin-block:1.2rem}
+.site-typography .content-blocks li+li{margin-top:.6rem}
+.site-typography .content-blocks li::marker{color:#755d46}
+.site-typography .content-blocks a{color:#433426;text-decoration-color:#a89178;text-underline-offset:4px}
+.site-typography .content-blocks a:hover{text-decoration-thickness:2px}
+.site-typography .content-steps{list-style:none;padding:0;margin:2rem 0}
+.site-typography .content-steps>li{display:grid;grid-template-columns:38px minmax(0,1fr);gap:1rem;padding:1.3rem 0;border-top:1px solid #dcd5cb;margin:0}
+.content-step-number{display:grid;place-items:center;align-self:start;width:34px;height:34px;border-radius:50%;background:#e9e1d6;color:#5a412b;font-size:.85rem;font-weight:600;font-variant-numeric:tabular-nums}
+.site-typography .content-comparison{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:2rem;border-block:1px solid #d8cec0}
+.site-typography .content-comparison>div{padding:1.5rem 1.5rem 1.5rem 0}
+.site-typography .content-comparison>div+div{padding-left:1.5rem;border-left:1px solid #d8cec0}
+.site-typography .content-photo{margin:2.5rem 0 3rem}
+.site-typography .content-photo img{width:100%;height:auto;aspect-ratio:2/1;object-fit:cover}
+.site-typography .content-photo figcaption{font-family:Inter,Arial,sans-serif;font-size:.8rem;line-height:1.6;margin-top:.8rem;color:#766b5f;max-width:68ch}
+.site-typography .resource-intro{max-width:1240px;padding-top:155px;padding-bottom:35px;border-bottom:1px solid #dcd5cb}
+.site-typography .resource-back{display:inline-flex;align-items:center;min-height:44px;font:500 .85rem Inter,Arial,sans-serif;color:#755d46}
+.site-typography .resource-intro h1{font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(2.5rem,5vw,4.5rem);line-height:1.07;max-width:22ch;margin:1rem 0 1.2rem;text-wrap:balance}
+.site-typography .resource-intro>p{font:400 1.1rem/1.7 Inter,Arial,sans-serif;color:#655b50;max-width:65ch;margin-bottom:1.3rem}
+.site-typography .learning-hub>section.site-shell{max-width:1240px}
+.site-typography .learning-hub section.site-shell>a{padding-block:1rem}
+.site-typography .learning-detail--faq .editorial-reading-grid{padding-top:2.5rem}
+.site-typography .faq-answer{scroll-margin-top:110px;padding:1.8rem 0 2rem;border-bottom:1px solid #ded6ca}
+.site-typography .faq-answer:first-child{padding-top:0}
+.site-typography .faq-answer h2{font-family:Inter,Arial,sans-serif;font-size:clamp(1.2rem,2vw,1.65rem);font-weight:600;line-height:1.4;max-width:36ch;margin-bottom:1rem;text-wrap:balance}
+.site-typography .learning-detail .editorial-reading-section__title{font-family:Newsreader,Georgia,serif!important;font-weight:400!important;font-size:clamp(1.9rem,3vw,2.8rem);line-height:1.15}
+.site-typography .learning-detail .editorial-reading-section__body{margin-top:1.4rem}
+.site-typography .learning-detail .editorial-reading-section__kicker[hidden]{display:none}
+.site-typography .editorial-mobile-contents{display:none}
+.site-typography .editorial-reading-section__body{max-width:76ch}
+.site-typography .legal-blog-article .article-reading-width{max-width:72ch;font-family:Inter,Arial,sans-serif}
+.site-typography .legal-blog-article .article-reading-width p{font-size:1rem!important;line-height:1.8!important;hyphens:manual!important}
+.site-typography .legal-blog-article .article-reading-hero h1{font-family:Newsreader,Georgia,serif}
+.site-typography .legal-blog-article .article-reading-width .content-photo{margin-top:2rem}
+.site-typography .article-reading-grid .article-key-point{font-size:clamp(1.25rem,2.2vw,1.65rem);line-height:1.5}
+.site-typography section[id^="research-"]{font-family:Inter,Arial,sans-serif}
+.site-typography section[id^="research-"] :is(h2,h3){font-family:Newsreader,Georgia,serif}
+.site-typography section[id^="research-"] p:not(:first-child){font-size:1rem;line-height:1.8;max-width:72ch}
+@media(max-width:1023px){
+ .site-typography .editorial-mobile-contents{display:block;border-block:1px solid #d8cec0;font-family:Inter,Arial,sans-serif}
+ .site-typography .editorial-mobile-contents summary{display:flex;align-items:center;justify-content:space-between;list-style:none;padding:1rem 0;font-size:.9rem;font-weight:600;cursor:pointer}
+ .site-typography .editorial-mobile-contents summary::-webkit-details-marker{display:none}
+ .site-typography .editorial-mobile-contents[open] summary span{transform:rotate(45deg)}
+ .site-typography .editorial-mobile-contents nav{display:grid;padding-bottom:1rem;gap:.25rem}
+ .site-typography .editorial-mobile-contents a{display:block;min-height:44px;padding:.65rem .75rem;font-size:.875rem;line-height:1.5}
+ .site-typography .editorial-mobile-contents a[aria-current]{background:#ede6dc;color:#433426}
+ .site-typography .editorial-reading-rail__nav,.site-typography .editorial-reading-rail__label,.site-typography .editorial-reading-rail__eyebrow,.site-typography .editorial-reading-rail__rule{display:none}
+ .site-typography .editorial-reading-rail__inner{padding:0;border:0}
+ .site-typography .editorial-reading-grid{gap:1.8rem}
+ .site-typography .detail-hero--split>div{min-height:0}
+ .site-typography .detail-hero--split>div>div{padding-block:2rem}
+ .site-typography .detail-hero--split figure{min-height:220px;max-height:220px}
+}
+@media(max-width:767px){
+ .site-typography .resource-intro{padding-top:116px;padding-bottom:24px;width:calc(100% - 40px)}
+ .site-typography .resource-intro h1{font-size:2.25rem;line-height:1.1;margin-top:.6rem}
+ .site-typography .resource-intro>p{font-size:1rem;line-height:1.7;hyphens:manual!important}
+ .site-typography .resource-intro nav{column-gap:1rem;row-gap:0}
+ .site-typography .resource-intro nav a{font-size:.8rem}
+ .site-typography .detail-hero--split>div>div{padding-block:1.6rem}
+ .site-typography .detail-hero--split h1{font-size:2.25rem!important;line-height:1.1!important}
+ .site-typography .detail-hero--split p{font-size:1rem!important;line-height:1.65!important;hyphens:manual!important}
+ .site-typography .detail-hero--split .mt-8{margin-top:1.25rem}
+ .site-typography .detail-hero--split .mt-7{margin-top:1.1rem}
+ .site-typography .detail-hero--split .mt-10{margin-top:1.25rem;padding-top:.8rem}
+ .site-typography .detail-hero--split a.rounded-full{padding-inline:14px;font-size:12px;min-height:44px}
+ .site-typography .detail-hero--split figure{min-height:180px;max-height:180px}
+ .site-typography .resource-directory-links nav{display:none}
+ .site-typography .content-blocks :is(p,li){font-size:1rem!important;line-height:1.75!important;hyphens:manual!important}
+ .site-typography .content-comparison{grid-template-columns:1fr}
+ .site-typography .content-comparison>div,.site-typography .content-comparison>div+div{padding:1.25rem 0;border-left:0}
+ .site-typography .content-comparison>div+div{border-top:1px solid #d8cec0}
+ .site-typography .content-steps>li{grid-template-columns:30px minmax(0,1fr);gap:.8rem}
+ .site-typography .content-step-number{width:28px;height:28px}
+ .site-typography .content-photo{margin-block:1.75rem}
+ .site-typography .content-photo img{aspect-ratio:3/2}
+ .site-typography .learning-detail .editorial-reading-section{padding-block:1.75rem}
+ .site-typography .learning-detail--faq .editorial-reading-grid{padding-top:1.5rem}
+ .site-typography .faq-answer{padding-block:1.5rem}
+ .site-typography .faq-answer h2{font-size:1.25rem!important;line-height:1.4!important}
+ .site-typography .legal-blog-article .article-reading-image{aspect-ratio:16/10}
+ .site-typography .legal-blog-article .article-reading-hero{padding-top:2rem}
+ .site-typography .legal-blog-article .article-reading-hero h1{font-size:2.2rem}
+ .site-typography .legal-blog-article .article-reading-width p{hyphens:manual!important}
+ .site-typography .location-experience p,.site-typography .anaheim-landing p{hyphens:manual}
+}
+@media(prefers-reduced-motion:reduce){.site-typography .editorial-mobile-contents summary span{transition:none}}

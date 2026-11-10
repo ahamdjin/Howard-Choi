@@ -1,3 +1,5 @@
+import { TopicVisual } from "@/components/editorial/TopicVisual";
+import { ConsultationCard } from "@/components/editorial/ConsultationCard";
 import { responsiveImageProps } from "@/lib/responsive-images";
 import { ArrowRight, CalendarDays, Check, FileText, MapPin, MessageCircle, Phone, Scale } from "lucide-react";
 import { brand, practiceAreas, type SiteLocale } from "@/data/injurySite";
@@ -34,7 +36,7 @@ export default function AttorneyContent({ locale }: { locale: SiteLocale }) {
           <div className="mt-6 flex items-center gap-3 text-sm text-[#57514b]"><MapPin aria-hidden="true" className="h-5 w-5 text-[#7b5b3e]" />Buena Park, California</div>
           <a href={`${prefix}/contact`} className="attorney-button mt-8">{ko ? "상담 요청" : es ? "Solicitar una consulta" : "Request a consultation"}<ArrowRight aria-hidden="true" className="h-4 w-4" /></a>
         </div>
-        <div className="rounded-md bg-[#eee8df] p-6 md:p-8">
+        <div><ConsultationCard locale={locale} /><div className="mt-6 rounded-2xl bg-[#eee8df] p-6 md:p-8">
           <h3 className="mb-5">{ko ? "등록 정보" : es ? "Datos profesionales" : "Professional details"}</h3>
           <dl className="divide-y divide-[#211c17]/10">{[
             [ko ? "이름" : es ? "Nombre completo" : "Full name", "Howard Jong-yol Choi"],
@@ -48,7 +50,7 @@ export default function AttorneyContent({ locale }: { locale: SiteLocale }) {
           <p className="mt-4 text-[12px] leading-5 text-[#675f55]">{ko ? "위 정보는 캘리포니아 주 변호사 협회(State Bar of California)의 공식 등록 기록을 기준으로 합니다." : es ? "Los datos anteriores corresponden al registro oficial del State Bar of California." : "The details above are as published on the official State Bar of California licensee record."}</p>
           <a href="https://apps.calbar.ca.gov/attorney/Licensee/Detail/284364" target="_blank" rel="noreferrer" className="mt-3 inline-flex min-h-11 items-center gap-3 text-sm font-medium underline underline-offset-4">{ko ? "주 변호사 협회 프로필 보기" : es ? "Ver perfil del State Bar" : "View State Bar profile"}<ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0" /></a>
         </div>
-      </div>
+      </div></div>
     </section>
 
     <section id="how-we-help" className="scroll-mt-24 bg-[#eee8df] py-16 md:py-24">
@@ -72,6 +74,8 @@ export default function AttorneyContent({ locale }: { locale: SiteLocale }) {
         })}</div>
       </div>
     </section>
+
+    {locale === "en" && <div className="attorney-content-shell max-w-[900px]"><TopicVisual pagePath="/attorney" /></div>}
 
     <section id="consultation" className="scroll-mt-24 bg-[#211a16] py-16 text-[#f3eee5] md:py-24">
       <div className="attorney-content-shell grid items-start gap-12 lg:grid-cols-2 lg:gap-20">

@@ -2,7 +2,7 @@
   "title": "Buena Park Wrongful Death Attorney",
   "slug": "buena-park-wrongful-death-attorney",
   "published": true,
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved",
   "author": "Howard Choi",
   "excerpt": "Understand who may bring a California wrongful death claim, what evidence to preserve, and how a Buena Park attorney can help a family evaluate its options.",
   "metaTitle": "Buena Park Wrongful Death Lawyer | Wrongful Death Claims",

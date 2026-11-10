@@ -1,3 +1,4 @@
+import { learningResources } from "@/data/learningResources";
 import type { SiteLocale } from "@/data/injurySite";
 
 // Short title and heading patterns checked against DK Law on November 4, 2026.
@@ -160,4 +161,9 @@ export const practicePageMessaging: Record<string, Record<SiteLocale, PracticeMe
   }
 };
 
-export const getPracticeMessaging = (slug: string, locale: SiteLocale) => practicePageMessaging[slug]?.[locale];
+export const getPracticeMessaging = (slug: string, locale: SiteLocale) => {
+  const fallback = practicePageMessaging[slug]?.[locale];
+  if (locale !== "en") return fallback;
+  const source = learningResources.find(r => r.kind === "service" && r.path === `/practice-areas/${slug}`);
+  return source ? { title: source.metaTitle, heading: source.title, description: source.description } : fallback;
+};

@@ -1,3 +1,4 @@
+import { TopicVisual } from "@/components/editorial/TopicVisual";
 import SiteDepthSection from "@/components/SiteDepthSection";
 import { responsiveImageProps } from "@/lib/responsive-images";
 import { ArrowRight, MessageSquareText, Scale, ShieldCheck } from "lucide-react";
@@ -210,6 +211,7 @@ export const AboutFirmPage = ({ locale }: { locale: SiteLocale }) => (
           <img {...responsiveImageProps(suburbanPalms)} src={suburbanPalms} alt={isKo(locale) ? "북부 오렌지카운티 주택가" : isEs(locale) ? "Techos residenciales y palmeras en el norte del Condado de Orange" : "Residential rooftops and palms in north Orange County"} width={1400} height={1050} loading="lazy" decoding="async" className="aspect-[16/9] w-full rounded-md object-cover" />
           <a href={`${localePrefix(locale)}/locations`} className="editorial-inline-link mt-8"><span>{isKo(locale) ? "지역별 사고·상해 가이드 보기" : isEs(locale) ? "Ver guías locales de accidentes" : "See the local accident guides"}</span><ArrowRight className="h-4 w-4" /></a>
         </ReadingSectionBlock>
+        {locale === "en" && <TopicVisual pagePath="/about" />}
       </ReadingLayout>
 
       <div className="site-shell pb-5 pt-1">
@@ -234,7 +236,7 @@ export const AboutFirmPage = ({ locale }: { locale: SiteLocale }) => (
         <nav aria-label="About the firm" className="site-shell flex flex-wrap gap-6 py-8">
           <a className="editorial-inline-link" href="/about/our-difference">Our Difference</a>
           <a className="editorial-inline-link" href="/about/what-to-expect">What to Expect</a>
-          <a className="editorial-inline-link" href="/about/faqs">FAQs</a>
+          <a className="editorial-inline-link" href="/faqs">FAQs</a>
           <a className="editorial-inline-link" href="/about/zero-fee-guarantee">Zero Fee Guarantee</a>
         </nav>
       )}

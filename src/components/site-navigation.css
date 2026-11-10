@@ -1,0 +1,33 @@
+.site-navigation-shell {
+  width: min(calc(100% - 2rem), 1600px);
+  margin-inline: auto;
+}
+.mobile-site-navigation__inner {
+  padding-inline: 1rem;
+}
+/* Navigation is an interface, independent of the page's editorial typography. */
+.mobile-site-navigation {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  scrollbar-gutter: stable;
+}
+.mobile-site-navigation__practice-group {
+  min-width: 0;
+  padding-block: .5rem;
+}
+.mobile-site-navigation a,
+.mobile-site-navigation button,
+.mobile-site-navigation h3 {
+  font-family: inherit;
+}
+.mobile-site-navigation a:focus-visible,
+.mobile-site-navigation button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: -2px;
+}
+/* Keep the vendor widget mounted, but below the task while the menu is open.
+   The host selector also covers widgets injected after the menu opens. */
+@media (max-width: 1023px) {
+  html[data-mobile-navigation-open="true"] chat-widget {
+    display: none !important;
+  }
+}

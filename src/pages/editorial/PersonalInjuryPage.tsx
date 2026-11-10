@@ -1,10 +1,13 @@
+import { practiceSourceContents } from "@/data/learningResourceContent";
+import { ClaimVisualStory } from "@/components/editorial/ClaimVisualStory";
+import PracticeLearningResources, { PracticeSourceSections } from "@/components/PracticeLearningResources";
 import { getPracticeMessaging } from "@/data/practicePageMessaging";
 import { ArrowUpRight } from "lucide-react";
 import { brand, practiceAreas } from "@/data/injurySite";
 import { practiceSearchNames } from "@/data/practiceSeo";
 import legalIllustration from "@/assets/law-firm/hero-justice-library.webp";
 import PersonalInjuryGuide from "@/components/PersonalInjuryGuide";
-import { EditorialFrame, EditorialHero, ConsultationCta } from "./shared";
+import { EditorialFrame, EditorialHero, ConsultationCta, ReadingLayout } from "./shared";
 
 const topics = [
   {
@@ -63,6 +66,9 @@ export default function PersonalInjuryPage() {
           <a href="#injury-services" className="underline underline-offset-4">Injury services</a>
           <a href="/contact" className="underline underline-offset-4">Free consultation</a>
         </nav>
+        <ReadingLayout locale="en" label="Personal injury guidance" sections={practiceSourceContents("personal-injury")}>
+          <PracticeSourceSections slug="personal-injury" />
+        </ReadingLayout>
         <div className="site-shell grid gap-12 py-12 lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-20">
           <div>
             {topics.map((topic, index) => (
@@ -82,6 +88,7 @@ export default function PersonalInjuryPage() {
             <a href="/locations/buena-park" className="mt-3 block py-2 text-sm underline underline-offset-4">Buena Park office and local resources</a>
           </aside>
         </div>
+        <div className="site-shell max-w-5xl"><ClaimVisualStory subject="personal-injury" /></div>
         <PersonalInjuryGuide locale="en" />
         <section id="injury-services" className="site-shell scroll-mt-28 py-16 md:py-24">
           <h2 className="editorial-serif text-4xl">Find the service that matches what happened.</h2>
@@ -105,6 +112,7 @@ export default function PersonalInjuryPage() {
             <li><a href="https://www.calbar.ca.gov/public/legal-resources/working-attorney/what-expect-regarding-fees-and-billing" target="_blank" rel="noreferrer">California State Bar · lawyer fees and case expenses</a></li>
           </ul>
         </section>
+        <PracticeLearningResources slug="personal-injury" />
         <ConsultationCta locale="en" />
       </main>
     </EditorialFrame>

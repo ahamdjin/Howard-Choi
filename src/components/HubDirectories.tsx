@@ -16,6 +16,8 @@ import localRoad from "@/assets/law-firm/car-collision.jpg";
 // Keep the directory summaries short, useful, and specific to each type of
 // injury claim. The full legal discussion lives on each individual practice page.
 const practiceFocus: Record<string, string> = {
+  "bicycle-accidents": "Intersection conflicts, passing clearance, dooring, road conditions and the evidence needed to explain a cyclist’s injuries.",
+  "dog-bites": "Owner responsibility, bite reports, medical treatment, scarring, insurance and the difference between a bite and a knockdown.",
   "car-accidents": "Rear-end and intersection crashes, disputed fault, uninsured drivers, medical records and available insurance.",
   "truck-accidents": "Commercial-carrier responsibility, electronic logs, inspection records, maintenance and multiple possible insurers.",
   "motorcycle-accidents": "Left-turn and lane-change collisions, sightlines, roadway evidence and the effect of serious rider injuries.",
@@ -88,7 +90,7 @@ export function PracticeHubDirectory({ locale }: { locale: SiteLocale }) {
                   <ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-1" />
                 </a></li>
               )}
-              {group.practices.map((practice) => {
+              {group.practices.filter(p => locale === "en" || !p.englishOnly).map((practice) => {
                 const esCopy = esPracticeContent[practice.slug];
                 const name = ko ? practice.koTitle : es ? esCopy?.shortTitle || practice.title : practice.title;
                 const description = ko ? practice.koDescription : es ? esCopy?.description || practice.description : practiceFocus[practice.slug] || practice.description;

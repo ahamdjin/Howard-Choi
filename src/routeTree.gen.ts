@@ -18,7 +18,10 @@ import { Route as CaseValueCalculatorRouteImport } from './routes/case-value-cal
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DisclaimerRouteImport } from './routes/disclaimer'
 import { Route as EsRouteImport } from './routes/es'
+import { Route as FaqsRouteImport } from './routes/faqs'
+import { Route as InjuryTypesRouteImport } from './routes/injury-types'
 import { Route as KoRouteImport } from './routes/ko'
+import { Route as LearningHubRouteImport } from './routes/learning-hub'
 import { Route as LocationsRouteImport } from './routes/locations'
 import { Route as PhotoCreditsRouteImport } from './routes/photo-credits'
 import { Route as PracticeAreasRouteImport } from './routes/practice-areas'
@@ -37,6 +40,7 @@ import { Route as AboutZeroFeeGuaranteeRouteImport } from './routes/about.zero-f
 import { Route as ApiReviewRouteImport } from './routes/api.review'
 import { Route as BlogsIndexRouteImport } from './routes/blogs.index'
 import { Route as BlogsSlugRouteImport } from './routes/blogs.$slug'
+import { Route as BlogsGuidesRouteImport } from './routes/blogs.guides'
 import { Route as EsIndexRouteImport } from './routes/es.index'
 import { Route as EsAboutRouteImport } from './routes/es.about'
 import { Route as EsAccessibilityRouteImport } from './routes/es.accessibility'
@@ -52,6 +56,10 @@ import { Route as EsPrivacyPolicyRouteImport } from './routes/es.privacy-policy'
 import { Route as EsResultsRouteImport } from './routes/es.results'
 import { Route as EsTermsRouteImport } from './routes/es.terms'
 import { Route as EsThankYouRouteImport } from './routes/es.thank-you'
+import { Route as FaqsIndexRouteImport } from './routes/faqs.index'
+import { Route as FaqsSlugRouteImport } from './routes/faqs.$slug'
+import { Route as InjuryTypesIndexRouteImport } from './routes/injury-types.index'
+import { Route as InjuryTypesSlugRouteImport } from './routes/injury-types.$slug'
 import { Route as KoIndexRouteImport } from './routes/ko.index'
 import { Route as KoAboutRouteImport } from './routes/ko.about'
 import { Route as KoAccessibilityRouteImport } from './routes/ko.accessibility'
@@ -71,6 +79,8 @@ import { Route as LocationsIndexRouteImport } from './routes/locations.index'
 import { Route as LocationsSlugRouteImport } from './routes/locations.$slug'
 import { Route as PracticeAreasIndexRouteImport } from './routes/practice-areas.index'
 import { Route as PracticeAreasSlugRouteImport } from './routes/practice-areas.$slug'
+import { Route as PracticeAreasBicycleAccidentsRouteImport } from './routes/practice-areas.bicycle-accidents'
+import { Route as PracticeAreasDogBitesRouteImport } from './routes/practice-areas.dog-bites'
 import { Route as PracticeAreasPersonalInjuryRouteImport } from './routes/practice-areas.personal-injury'
 import { Route as EsBlogsIndexRouteImport } from './routes/es.blogs.index'
 import { Route as EsBlogsSlugRouteImport } from './routes/es.blogs.$slug'
@@ -130,9 +140,24 @@ const EsRoute = EsRouteImport.update({
   path: '/es',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FaqsRoute = FaqsRouteImport.update({
+  id: '/faqs',
+  path: '/faqs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InjuryTypesRoute = InjuryTypesRouteImport.update({
+  id: '/injury-types',
+  path: '/injury-types',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const KoRoute = KoRouteImport.update({
   id: '/ko',
   path: '/ko',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LearningHubRoute = LearningHubRouteImport.update({
+  id: '/learning-hub',
+  path: '/learning-hub',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LocationsRoute = LocationsRouteImport.update({
@@ -225,6 +250,11 @@ const BlogsSlugRoute = BlogsSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => BlogsRoute,
 } as any)
+const BlogsGuidesRoute = BlogsGuidesRouteImport.update({
+  id: '/guides',
+  path: '/guides',
+  getParentRoute: () => BlogsRoute,
+} as any)
 const EsIndexRoute = EsIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -299,6 +329,26 @@ const EsThankYouRoute = EsThankYouRouteImport.update({
   id: '/thank-you',
   path: '/thank-you',
   getParentRoute: () => EsRoute,
+} as any)
+const FaqsIndexRoute = FaqsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => FaqsRoute,
+} as any)
+const FaqsSlugRoute = FaqsSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => FaqsRoute,
+} as any)
+const InjuryTypesIndexRoute = InjuryTypesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => InjuryTypesRoute,
+} as any)
+const InjuryTypesSlugRoute = InjuryTypesSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => InjuryTypesRoute,
 } as any)
 const KoIndexRoute = KoIndexRouteImport.update({
   id: '/',
@@ -395,6 +445,17 @@ const PracticeAreasSlugRoute = PracticeAreasSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => PracticeAreasRoute,
 } as any)
+const PracticeAreasBicycleAccidentsRoute =
+  PracticeAreasBicycleAccidentsRouteImport.update({
+    id: '/bicycle-accidents',
+    path: '/bicycle-accidents',
+    getParentRoute: () => PracticeAreasRoute,
+  } as any)
+const PracticeAreasDogBitesRoute = PracticeAreasDogBitesRouteImport.update({
+  id: '/dog-bites',
+  path: '/dog-bites',
+  getParentRoute: () => PracticeAreasRoute,
+} as any)
 const PracticeAreasPersonalInjuryRoute =
   PracticeAreasPersonalInjuryRouteImport.update({
     id: '/personal-injury',
@@ -472,7 +533,10 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/disclaimer': typeof DisclaimerRoute
   '/es': typeof EsRouteWithChildren
+  '/faqs': typeof FaqsRouteWithChildren
+  '/injury-types': typeof InjuryTypesRouteWithChildren
   '/ko': typeof KoRouteWithChildren
+  '/learning-hub': typeof LearningHubRoute
   '/locations': typeof LocationsRouteWithChildren
   '/photo-credits': typeof PhotoCreditsRoute
   '/practice-areas': typeof PracticeAreasRouteWithChildren
@@ -489,6 +553,7 @@ export interface FileRoutesByFullPath {
   '/about/zero-fee-guarantee': typeof AboutZeroFeeGuaranteeRoute
   '/api/review': typeof ApiReviewRoute
   '/blogs/$slug': typeof BlogsSlugRoute
+  '/blogs/guides': typeof BlogsGuidesRoute
   '/es/about': typeof EsAboutRoute
   '/es/accessibility': typeof EsAccessibilityRoute
   '/es/attorney': typeof EsAttorneyRoute
@@ -503,6 +568,8 @@ export interface FileRoutesByFullPath {
   '/es/results': typeof EsResultsRoute
   '/es/terms': typeof EsTermsRoute
   '/es/thank-you': typeof EsThankYouRoute
+  '/faqs/$slug': typeof FaqsSlugRoute
+  '/injury-types/$slug': typeof InjuryTypesSlugRoute
   '/ko/about': typeof KoAboutRoute
   '/ko/accessibility': typeof KoAccessibilityRoute
   '/ko/attorney': typeof KoAttorneyRoute
@@ -519,10 +586,14 @@ export interface FileRoutesByFullPath {
   '/ko/thank-you': typeof KoThankYouRoute
   '/locations/$slug': typeof LocationsSlugRoute
   '/practice-areas/$slug': typeof PracticeAreasSlugRoute
+  '/practice-areas/bicycle-accidents': typeof PracticeAreasBicycleAccidentsRoute
+  '/practice-areas/dog-bites': typeof PracticeAreasDogBitesRoute
   '/practice-areas/personal-injury': typeof PracticeAreasPersonalInjuryRoute
   '/about/': typeof AboutIndexRoute
   '/blogs/': typeof BlogsIndexRoute
   '/es/': typeof EsIndexRoute
+  '/faqs/': typeof FaqsIndexRoute
+  '/injury-types/': typeof InjuryTypesIndexRoute
   '/ko/': typeof KoIndexRoute
   '/locations/': typeof LocationsIndexRoute
   '/practice-areas/': typeof PracticeAreasIndexRoute
@@ -546,6 +617,7 @@ export interface FileRoutesByTo {
   '/case-value-calculator': typeof CaseValueCalculatorRoute
   '/contact': typeof ContactRoute
   '/disclaimer': typeof DisclaimerRoute
+  '/learning-hub': typeof LearningHubRoute
   '/photo-credits': typeof PhotoCreditsRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/results': typeof ResultsRoute
@@ -560,6 +632,7 @@ export interface FileRoutesByTo {
   '/about/zero-fee-guarantee': typeof AboutZeroFeeGuaranteeRoute
   '/api/review': typeof ApiReviewRoute
   '/blogs/$slug': typeof BlogsSlugRoute
+  '/blogs/guides': typeof BlogsGuidesRoute
   '/es/about': typeof EsAboutRoute
   '/es/accessibility': typeof EsAccessibilityRoute
   '/es/attorney': typeof EsAttorneyRoute
@@ -571,6 +644,8 @@ export interface FileRoutesByTo {
   '/es/results': typeof EsResultsRoute
   '/es/terms': typeof EsTermsRoute
   '/es/thank-you': typeof EsThankYouRoute
+  '/faqs/$slug': typeof FaqsSlugRoute
+  '/injury-types/$slug': typeof InjuryTypesSlugRoute
   '/ko/about': typeof KoAboutRoute
   '/ko/accessibility': typeof KoAccessibilityRoute
   '/ko/attorney': typeof KoAttorneyRoute
@@ -584,10 +659,14 @@ export interface FileRoutesByTo {
   '/ko/thank-you': typeof KoThankYouRoute
   '/locations/$slug': typeof LocationsSlugRoute
   '/practice-areas/$slug': typeof PracticeAreasSlugRoute
+  '/practice-areas/bicycle-accidents': typeof PracticeAreasBicycleAccidentsRoute
+  '/practice-areas/dog-bites': typeof PracticeAreasDogBitesRoute
   '/practice-areas/personal-injury': typeof PracticeAreasPersonalInjuryRoute
   '/about': typeof AboutIndexRoute
   '/blogs': typeof BlogsIndexRoute
   '/es': typeof EsIndexRoute
+  '/faqs': typeof FaqsIndexRoute
+  '/injury-types': typeof InjuryTypesIndexRoute
   '/ko': typeof KoIndexRoute
   '/locations': typeof LocationsIndexRoute
   '/practice-areas': typeof PracticeAreasIndexRoute
@@ -615,7 +694,10 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/disclaimer': typeof DisclaimerRoute
   '/es': typeof EsRouteWithChildren
+  '/faqs': typeof FaqsRouteWithChildren
+  '/injury-types': typeof InjuryTypesRouteWithChildren
   '/ko': typeof KoRouteWithChildren
+  '/learning-hub': typeof LearningHubRoute
   '/locations': typeof LocationsRouteWithChildren
   '/photo-credits': typeof PhotoCreditsRoute
   '/practice-areas': typeof PracticeAreasRouteWithChildren
@@ -632,6 +714,7 @@ export interface FileRoutesById {
   '/about/zero-fee-guarantee': typeof AboutZeroFeeGuaranteeRoute
   '/api/review': typeof ApiReviewRoute
   '/blogs/$slug': typeof BlogsSlugRoute
+  '/blogs/guides': typeof BlogsGuidesRoute
   '/es/about': typeof EsAboutRoute
   '/es/accessibility': typeof EsAccessibilityRoute
   '/es/attorney': typeof EsAttorneyRoute
@@ -646,6 +729,8 @@ export interface FileRoutesById {
   '/es/results': typeof EsResultsRoute
   '/es/terms': typeof EsTermsRoute
   '/es/thank-you': typeof EsThankYouRoute
+  '/faqs/$slug': typeof FaqsSlugRoute
+  '/injury-types/$slug': typeof InjuryTypesSlugRoute
   '/ko/about': typeof KoAboutRoute
   '/ko/accessibility': typeof KoAccessibilityRoute
   '/ko/attorney': typeof KoAttorneyRoute
@@ -662,10 +747,14 @@ export interface FileRoutesById {
   '/ko/thank-you': typeof KoThankYouRoute
   '/locations/$slug': typeof LocationsSlugRoute
   '/practice-areas/$slug': typeof PracticeAreasSlugRoute
+  '/practice-areas/bicycle-accidents': typeof PracticeAreasBicycleAccidentsRoute
+  '/practice-areas/dog-bites': typeof PracticeAreasDogBitesRoute
   '/practice-areas/personal-injury': typeof PracticeAreasPersonalInjuryRoute
   '/about/': typeof AboutIndexRoute
   '/blogs/': typeof BlogsIndexRoute
   '/es/': typeof EsIndexRoute
+  '/faqs/': typeof FaqsIndexRoute
+  '/injury-types/': typeof InjuryTypesIndexRoute
   '/ko/': typeof KoIndexRoute
   '/locations/': typeof LocationsIndexRoute
   '/practice-areas/': typeof PracticeAreasIndexRoute
@@ -694,7 +783,10 @@ export interface FileRouteTypes {
     | '/contact'
     | '/disclaimer'
     | '/es'
+    | '/faqs'
+    | '/injury-types'
     | '/ko'
+    | '/learning-hub'
     | '/locations'
     | '/photo-credits'
     | '/practice-areas'
@@ -711,6 +803,7 @@ export interface FileRouteTypes {
     | '/about/zero-fee-guarantee'
     | '/api/review'
     | '/blogs/$slug'
+    | '/blogs/guides'
     | '/es/about'
     | '/es/accessibility'
     | '/es/attorney'
@@ -725,6 +818,8 @@ export interface FileRouteTypes {
     | '/es/results'
     | '/es/terms'
     | '/es/thank-you'
+    | '/faqs/$slug'
+    | '/injury-types/$slug'
     | '/ko/about'
     | '/ko/accessibility'
     | '/ko/attorney'
@@ -741,10 +836,14 @@ export interface FileRouteTypes {
     | '/ko/thank-you'
     | '/locations/$slug'
     | '/practice-areas/$slug'
+    | '/practice-areas/bicycle-accidents'
+    | '/practice-areas/dog-bites'
     | '/practice-areas/personal-injury'
     | '/about/'
     | '/blogs/'
     | '/es/'
+    | '/faqs/'
+    | '/injury-types/'
     | '/ko/'
     | '/locations/'
     | '/practice-areas/'
@@ -768,6 +867,7 @@ export interface FileRouteTypes {
     | '/case-value-calculator'
     | '/contact'
     | '/disclaimer'
+    | '/learning-hub'
     | '/photo-credits'
     | '/privacy-policy'
     | '/results'
@@ -782,6 +882,7 @@ export interface FileRouteTypes {
     | '/about/zero-fee-guarantee'
     | '/api/review'
     | '/blogs/$slug'
+    | '/blogs/guides'
     | '/es/about'
     | '/es/accessibility'
     | '/es/attorney'
@@ -793,6 +894,8 @@ export interface FileRouteTypes {
     | '/es/results'
     | '/es/terms'
     | '/es/thank-you'
+    | '/faqs/$slug'
+    | '/injury-types/$slug'
     | '/ko/about'
     | '/ko/accessibility'
     | '/ko/attorney'
@@ -806,10 +909,14 @@ export interface FileRouteTypes {
     | '/ko/thank-you'
     | '/locations/$slug'
     | '/practice-areas/$slug'
+    | '/practice-areas/bicycle-accidents'
+    | '/practice-areas/dog-bites'
     | '/practice-areas/personal-injury'
     | '/about'
     | '/blogs'
     | '/es'
+    | '/faqs'
+    | '/injury-types'
     | '/ko'
     | '/locations'
     | '/practice-areas'
@@ -836,7 +943,10 @@ export interface FileRouteTypes {
     | '/contact'
     | '/disclaimer'
     | '/es'
+    | '/faqs'
+    | '/injury-types'
     | '/ko'
+    | '/learning-hub'
     | '/locations'
     | '/photo-credits'
     | '/practice-areas'
@@ -853,6 +963,7 @@ export interface FileRouteTypes {
     | '/about/zero-fee-guarantee'
     | '/api/review'
     | '/blogs/$slug'
+    | '/blogs/guides'
     | '/es/about'
     | '/es/accessibility'
     | '/es/attorney'
@@ -867,6 +978,8 @@ export interface FileRouteTypes {
     | '/es/results'
     | '/es/terms'
     | '/es/thank-you'
+    | '/faqs/$slug'
+    | '/injury-types/$slug'
     | '/ko/about'
     | '/ko/accessibility'
     | '/ko/attorney'
@@ -883,10 +996,14 @@ export interface FileRouteTypes {
     | '/ko/thank-you'
     | '/locations/$slug'
     | '/practice-areas/$slug'
+    | '/practice-areas/bicycle-accidents'
+    | '/practice-areas/dog-bites'
     | '/practice-areas/personal-injury'
     | '/about/'
     | '/blogs/'
     | '/es/'
+    | '/faqs/'
+    | '/injury-types/'
     | '/ko/'
     | '/locations/'
     | '/practice-areas/'
@@ -914,7 +1031,10 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   DisclaimerRoute: typeof DisclaimerRoute
   EsRoute: typeof EsRouteWithChildren
+  FaqsRoute: typeof FaqsRouteWithChildren
+  InjuryTypesRoute: typeof InjuryTypesRouteWithChildren
   KoRoute: typeof KoRouteWithChildren
+  LearningHubRoute: typeof LearningHubRoute
   LocationsRoute: typeof LocationsRouteWithChildren
   PhotoCreditsRoute: typeof PhotoCreditsRoute
   PracticeAreasRoute: typeof PracticeAreasRouteWithChildren
@@ -993,11 +1113,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/faqs': {
+      id: '/faqs'
+      path: '/faqs'
+      fullPath: '/faqs'
+      preLoaderRoute: typeof FaqsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/injury-types': {
+      id: '/injury-types'
+      path: '/injury-types'
+      fullPath: '/injury-types'
+      preLoaderRoute: typeof InjuryTypesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/ko': {
       id: '/ko'
       path: '/ko'
       fullPath: '/ko'
       preLoaderRoute: typeof KoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/learning-hub': {
+      id: '/learning-hub'
+      path: '/learning-hub'
+      fullPath: '/learning-hub'
+      preLoaderRoute: typeof LearningHubRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/locations': {
@@ -1126,6 +1267,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogsSlugRouteImport
       parentRoute: typeof BlogsRoute
     }
+    '/blogs/guides': {
+      id: '/blogs/guides'
+      path: '/guides'
+      fullPath: '/blogs/guides'
+      preLoaderRoute: typeof BlogsGuidesRouteImport
+      parentRoute: typeof BlogsRoute
+    }
     '/es/': {
       id: '/es/'
       path: '/'
@@ -1230,6 +1378,34 @@ declare module '@tanstack/react-router' {
       fullPath: '/es/thank-you'
       preLoaderRoute: typeof EsThankYouRouteImport
       parentRoute: typeof EsRoute
+    }
+    '/faqs/': {
+      id: '/faqs/'
+      path: '/'
+      fullPath: '/faqs/'
+      preLoaderRoute: typeof FaqsIndexRouteImport
+      parentRoute: typeof FaqsRoute
+    }
+    '/faqs/$slug': {
+      id: '/faqs/$slug'
+      path: '/$slug'
+      fullPath: '/faqs/$slug'
+      preLoaderRoute: typeof FaqsSlugRouteImport
+      parentRoute: typeof FaqsRoute
+    }
+    '/injury-types/': {
+      id: '/injury-types/'
+      path: '/'
+      fullPath: '/injury-types/'
+      preLoaderRoute: typeof InjuryTypesIndexRouteImport
+      parentRoute: typeof InjuryTypesRoute
+    }
+    '/injury-types/$slug': {
+      id: '/injury-types/$slug'
+      path: '/$slug'
+      fullPath: '/injury-types/$slug'
+      preLoaderRoute: typeof InjuryTypesSlugRouteImport
+      parentRoute: typeof InjuryTypesRoute
     }
     '/ko/': {
       id: '/ko/'
@@ -1364,6 +1540,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PracticeAreasSlugRouteImport
       parentRoute: typeof PracticeAreasRoute
     }
+    '/practice-areas/bicycle-accidents': {
+      id: '/practice-areas/bicycle-accidents'
+      path: '/bicycle-accidents'
+      fullPath: '/practice-areas/bicycle-accidents'
+      preLoaderRoute: typeof PracticeAreasBicycleAccidentsRouteImport
+      parentRoute: typeof PracticeAreasRoute
+    }
+    '/practice-areas/dog-bites': {
+      id: '/practice-areas/dog-bites'
+      path: '/dog-bites'
+      fullPath: '/practice-areas/dog-bites'
+      preLoaderRoute: typeof PracticeAreasDogBitesRouteImport
+      parentRoute: typeof PracticeAreasRoute
+    }
     '/practice-areas/personal-injury': {
       id: '/practice-areas/personal-injury'
       path: '/personal-injury'
@@ -1478,11 +1668,13 @@ const AboutRouteWithChildren = AboutRoute._addFileChildren(AboutRouteChildren)
 
 interface BlogsRouteChildren {
   BlogsSlugRoute: typeof BlogsSlugRoute
+  BlogsGuidesRoute: typeof BlogsGuidesRoute
   BlogsIndexRoute: typeof BlogsIndexRoute
 }
 
 const BlogsRouteChildren: BlogsRouteChildren = {
   BlogsSlugRoute: BlogsSlugRoute,
+  BlogsGuidesRoute: BlogsGuidesRoute,
   BlogsIndexRoute: BlogsIndexRoute,
 }
 
@@ -1566,6 +1758,32 @@ const EsRouteChildren: EsRouteChildren = {
 }
 
 const EsRouteWithChildren = EsRoute._addFileChildren(EsRouteChildren)
+
+interface FaqsRouteChildren {
+  FaqsSlugRoute: typeof FaqsSlugRoute
+  FaqsIndexRoute: typeof FaqsIndexRoute
+}
+
+const FaqsRouteChildren: FaqsRouteChildren = {
+  FaqsSlugRoute: FaqsSlugRoute,
+  FaqsIndexRoute: FaqsIndexRoute,
+}
+
+const FaqsRouteWithChildren = FaqsRoute._addFileChildren(FaqsRouteChildren)
+
+interface InjuryTypesRouteChildren {
+  InjuryTypesSlugRoute: typeof InjuryTypesSlugRoute
+  InjuryTypesIndexRoute: typeof InjuryTypesIndexRoute
+}
+
+const InjuryTypesRouteChildren: InjuryTypesRouteChildren = {
+  InjuryTypesSlugRoute: InjuryTypesSlugRoute,
+  InjuryTypesIndexRoute: InjuryTypesIndexRoute,
+}
+
+const InjuryTypesRouteWithChildren = InjuryTypesRoute._addFileChildren(
+  InjuryTypesRouteChildren,
+)
 
 interface KoBlogsRouteChildren {
   KoBlogsSlugRoute: typeof KoBlogsSlugRoute
@@ -1662,12 +1880,16 @@ const LocationsRouteWithChildren = LocationsRoute._addFileChildren(
 
 interface PracticeAreasRouteChildren {
   PracticeAreasSlugRoute: typeof PracticeAreasSlugRoute
+  PracticeAreasBicycleAccidentsRoute: typeof PracticeAreasBicycleAccidentsRoute
+  PracticeAreasDogBitesRoute: typeof PracticeAreasDogBitesRoute
   PracticeAreasPersonalInjuryRoute: typeof PracticeAreasPersonalInjuryRoute
   PracticeAreasIndexRoute: typeof PracticeAreasIndexRoute
 }
 
 const PracticeAreasRouteChildren: PracticeAreasRouteChildren = {
   PracticeAreasSlugRoute: PracticeAreasSlugRoute,
+  PracticeAreasBicycleAccidentsRoute: PracticeAreasBicycleAccidentsRoute,
+  PracticeAreasDogBitesRoute: PracticeAreasDogBitesRoute,
   PracticeAreasPersonalInjuryRoute: PracticeAreasPersonalInjuryRoute,
   PracticeAreasIndexRoute: PracticeAreasIndexRoute,
 }
@@ -1686,7 +1908,10 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   DisclaimerRoute: DisclaimerRoute,
   EsRoute: EsRouteWithChildren,
+  FaqsRoute: FaqsRouteWithChildren,
+  InjuryTypesRoute: InjuryTypesRouteWithChildren,
   KoRoute: KoRouteWithChildren,
+  LearningHubRoute: LearningHubRoute,
   LocationsRoute: LocationsRouteWithChildren,
   PhotoCreditsRoute: PhotoCreditsRoute,
   PracticeAreasRoute: PracticeAreasRouteWithChildren,

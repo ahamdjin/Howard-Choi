@@ -2,7 +2,7 @@
   "title": "Determining Liability in Blunt Trauma Lawsuits",
   "slug": "blunt-force-trauma-determining-liability-in-blunt-trauma-lawsuits",
   "published": true,
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved",
   "author": "Howard Choi",
   "excerpt": "Learn how California blunt trauma claims address fault, medical evidence, damages, filing deadlines, and injuries from crashes, falls, assaults, and sports.",
   "metaTitle": "Determining Liability in Blunt Trauma Lawsuits",
@@ -31,7 +31,7 @@ The skin can remain intact despite serious underlying injuries. Visible bruising
 
 ### How the circumstances affect a claim
 
-In a vehicle collision, an occupant may strike the steering wheel, dashboard, or another interior surface. Pedestrians, cyclists, and motorcyclists can suffer injuries from contact with a vehicle or the ground. Investigators must determine what caused the collision and how the impacts occurred.
+In a vehicle collision, an occupant may strike the steering wheel, dashboard, or another interior surface. Pedestrians, [cyclists](/blogs/california-bicycle-accident-guide), and motorcyclists can suffer injuries from contact with a vehicle or the ground. Investigators must determine what caused the collision and how the impacts occurred.
 
 Falls can cause head, hip, spinal, and other injuries. A claim may turn on a damaged stair, spill, or maintenance problem rather than the fall itself.
 

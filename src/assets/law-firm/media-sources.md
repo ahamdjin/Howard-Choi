@@ -82,3 +82,14 @@ shown where the firm actually holds the award, issued in this firm's name.
 - La Mirada location hero and local introduction: Biola University bell tower, Stacy Eltiti, CC BY-SA 3.0. Source: https://commons.wikimedia.org/wiki/File:Bell_Tower_Biola_University.JPG . License: https://creativecommons.org/licenses/by-sa/3.0/ . Original photograph dated March 21, 2008; CSS crops for the page layout. Replaces the library interior so the city page uses an outdoor landmark.
 
 - Norwalk location hero and introduction: Norwalk City Hall, Northwalker, CC0. Source: https://commons.wikimedia.org/wiki/File:Norwalk_City_Hall,_Norwalk,_CA.jpg . Original 4467 x 2978 photograph replaces the low-resolution panoramic City Hall image; served as a 960px thumbnail with responsive CSS cropping.
+
+## Web-first supporting photography (November 10, 2026)
+
+- `dog-walking-context.jpg`: Samson Katt, Pexels. https://www.pexels.com/photo/crop-ethnic-woman-walking-dog-on-street-5255592/ . Illustrative dog/owner context; not a client, injury or local incident.
+- `cycling-street-context.jpg`: CK Seng, Pexels. https://www.pexels.com/photo/cyclist-riding-through-tree-lined-urban-street-32710596/ . Illustrative cycling context only; not presented as California or a client incident. Do not use as a location-page landmark.
+- Both downloaded from the corresponding official images.pexels.com photo endpoint. Pexels licence permits commercial website use: https://www.pexels.com/license/ . No endorsement or involvement of depicted people is implied.
+
+
+## November 10 reading-layout archive additions
+- `/editorial-images/orange-county-courthouse.webp`: Cbl62, Old Orange County Courthouse, Santa Ana, 2012. Source: https://commons.wikimedia.org/wiki/File:Old_Orange_County_Courthouse,_Santa_Ana,_California.jpg . CC BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/ . Resized to 1200px and converted to WebP; adaptation retains the same license.
+- `/editorial-images/shoulder-examination.webp`: U.S. Navy / Robert Winn, shoulder examination aboard USS Nimitz, October 3, 2009, 091003-N-8960W-011. Public domain U.S. government photograph, via Wikimedia Commons. Resized to 1200px and converted to WebP. Illustrative only, not a firm client or endorsement.

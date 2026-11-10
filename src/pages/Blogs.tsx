@@ -1,3 +1,4 @@
+import { LearningLinks } from "@/pages/learning/LearningPages";
 import SiteDepthSection from "@/components/SiteDepthSection";
 import { responsiveImageProps } from "@/lib/responsive-images";
 import { m as motion, useScroll, useTransform } from "framer-motion";
@@ -55,6 +56,7 @@ const Blogs = () => {
                       </Link>
                     ))}
                   </div>
+                  <div className="mt-6"><LearningLinks /></div>
                   <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-[12px]">
                     <Link to="/practice-areas" className="inline-flex items-center gap-2 hover:opacity-60">Browse personal injury practice areas <ArrowRight className="h-3.5 w-3.5" /></Link>
                     <Link to="/practice-areas/car-accidents" className="inline-flex items-center gap-2 hover:opacity-60">Buena Park car accident claims <ArrowRight className="h-3.5 w-3.5" /></Link>

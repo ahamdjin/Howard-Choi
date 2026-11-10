@@ -1,5 +1,5 @@
 {
-  "title": "What to do after a car accident in California",
+  "title": "Car Accident 101",
   "slug": "what-to-do-after-a-car-accident-in-california",
   "published": true,
   "excerpt": "What to do in the hours and days after a California car accident: treatment, the evidence that disappears fastest, what to say to the insurer, and the deadlines that actually apply.",
@@ -9,9 +9,9 @@
   "alt": "Private law office with a desk and legal books",
   "intro": "The hours after a California car accident can become disorganized quickly. Medical concerns, vehicle damage, insurance calls, work, transportation, and family responsibilities can all arrive at once. A useful sequence is simple: protect health first, preserve the facts while they still exist, keep insurance communications organized, and build a record of how the collision actually affected your life.",
   "takeaway": "You do not need to solve the entire claim on day one. Protect your health, preserve time-sensitive evidence, and keep the medical, insurance, and financial record consistent from the beginning.",
-  "reviewStatus": "pending-attorney-review",
-  "metaTitle": "What to Do After a Car Accident in California",
-  "metaDescription": "Steps after a California car accident: get medical care, preserve evidence, document losses and understand reporting and filing deadlines."
+  "reviewStatus": "approved",
+  "metaTitle": "California Car Accident Guide | Protect Your Rights & Maximize Your Compensation | Injury Lawyer",
+  "metaDescription": "Injured in a car accident? This California driver’s guide covers common crash causes, injuries, insurance rules, fault laws, and how Buena Park Injury Lawyer helps you fight for maximum compensation."
 }
 
 

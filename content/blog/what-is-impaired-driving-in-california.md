@@ -2,7 +2,7 @@
   "title": "What is Impaired Driving in California?",
   "slug": "what-is-impaired-driving-in-california",
   "published": true,
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved",
   "author": "Howard Choi",
   "excerpt": "Learn how California treats alcohol and drug impairment, what BAC limits mean, and what evidence can matter after an impaired-driving crash.",
   "metaTitle": "What is Impaired Driving in California?",

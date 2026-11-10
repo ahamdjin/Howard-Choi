@@ -13,121 +13,133 @@ import image10 from '@/assets/law-firm/responsive/collision-damage-96.webp';
 import image11 from '@/assets/law-firm/responsive/collision-damage-480.webp';
 import image12 from '@/assets/law-firm/responsive/collision-damage-960.webp';
 import image13 from '@/assets/law-firm/responsive/collision-damage-1440.webp';
-import image14 from '@/assets/law-firm/family-support.jpg';
-import image15 from '@/assets/law-firm/responsive/family-support-96.webp';
-import image16 from '@/assets/law-firm/responsive/family-support-480.webp';
-import image17 from '@/assets/law-firm/responsive/family-support-960.webp';
-import image18 from '@/assets/law-firm/responsive/family-support-1440.webp';
-import image19 from '@/assets/law-firm/hero-city-boardroom.webp';
-import image20 from '@/assets/law-firm/responsive/hero-city-boardroom-96.webp';
-import image21 from '@/assets/law-firm/responsive/hero-city-boardroom-480.webp';
-import image22 from '@/assets/law-firm/responsive/hero-city-boardroom-960.webp';
-import image23 from '@/assets/law-firm/responsive/hero-city-boardroom-1440.webp';
-import image24 from '@/assets/law-firm/responsive/hero-city-boardroom-mobile-540.webp';
-import image25 from '@/assets/law-firm/responsive/hero-city-boardroom-mobile-810.webp';
-import image26 from '@/assets/law-firm/hero-courthouse.webp';
-import image27 from '@/assets/law-firm/responsive/hero-courthouse-96.webp';
-import image28 from '@/assets/law-firm/responsive/hero-courthouse-480.webp';
-import image29 from '@/assets/law-firm/responsive/hero-courthouse-960.webp';
-import image30 from '@/assets/law-firm/responsive/hero-courthouse-1440.webp';
-import image31 from '@/assets/law-firm/responsive/hero-courthouse-mobile-540.webp';
-import image32 from '@/assets/law-firm/responsive/hero-courthouse-mobile-810.webp';
-import image33 from '@/assets/law-firm/hero-justice-library.webp';
-import image34 from '@/assets/law-firm/responsive/hero-justice-library-96.webp';
-import image35 from '@/assets/law-firm/responsive/hero-justice-library-480.webp';
-import image36 from '@/assets/law-firm/responsive/hero-justice-library-960.webp';
-import image37 from '@/assets/law-firm/responsive/hero-justice-library-1440.webp';
-import image38 from '@/assets/law-firm/responsive/hero-justice-library-mobile-540.webp';
-import image39 from '@/assets/law-firm/responsive/hero-justice-library-mobile-810.webp';
-import image40 from '@/assets/law-firm/hero-law-office.webp';
-import image41 from '@/assets/law-firm/responsive/hero-law-office-96.webp';
-import image42 from '@/assets/law-firm/responsive/hero-law-office-480.webp';
-import image43 from '@/assets/law-firm/responsive/hero-law-office-960.webp';
-import image44 from '@/assets/law-firm/responsive/hero-law-office-1440.webp';
-import image45 from '@/assets/law-firm/responsive/hero-law-office-mobile-540.webp';
-import image46 from '@/assets/law-firm/responsive/hero-law-office-mobile-810.webp';
-import image47 from '@/assets/law-firm/hospital-corridor.jpg';
-import image48 from '@/assets/law-firm/responsive/hospital-corridor-96.webp';
-import image49 from '@/assets/law-firm/responsive/hospital-corridor-480.webp';
-import image50 from '@/assets/law-firm/responsive/hospital-corridor-960.webp';
-import image51 from '@/assets/law-firm/lead-counsel.avif';
-import image52 from '@/assets/law-firm/responsive/lead-counsel-96.webp';
-import image53 from '@/assets/law-firm/responsive/lead-counsel-480.webp';
-import image54 from '@/assets/law-firm/medical-care.jpg';
-import image55 from '@/assets/law-firm/responsive/medical-care-96.webp';
-import image56 from '@/assets/law-firm/responsive/medical-care-480.webp';
-import image57 from '@/assets/law-firm/responsive/medical-care-960.webp';
-import image58 from '@/assets/law-firm/responsive/medical-care-1440.webp';
-import image59 from '@/assets/law-firm/motorcycle-road.jpg';
-import image60 from '@/assets/law-firm/responsive/motorcycle-road-96.webp';
-import image61 from '@/assets/law-firm/responsive/motorcycle-road-480.webp';
-import image62 from '@/assets/law-firm/responsive/motorcycle-road-960.webp';
-import image63 from '@/assets/law-firm/responsive/motorcycle-road-1440.webp';
-import image64 from '@/assets/law-firm/pedestrian-crossing.jpg';
-import image65 from '@/assets/law-firm/responsive/pedestrian-crossing-96.webp';
-import image66 from '@/assets/law-firm/responsive/pedestrian-crossing-480.webp';
-import image67 from '@/assets/law-firm/responsive/pedestrian-crossing-960.webp';
-import image68 from '@/assets/law-firm/responsive/pedestrian-crossing-1440.webp';
-import image69 from '@/assets/law-firm/practice-commercial-litigation.webp';
-import image70 from '@/assets/law-firm/responsive/practice-commercial-litigation-96.webp';
-import image71 from '@/assets/law-firm/responsive/practice-commercial-litigation-480.webp';
-import image72 from '@/assets/law-firm/responsive/practice-commercial-litigation-960.webp';
-import image73 from '@/assets/law-firm/practice-corporate-law.webp';
-import image74 from '@/assets/law-firm/responsive/practice-corporate-law-96.webp';
-import image75 from '@/assets/law-firm/responsive/practice-corporate-law-480.webp';
-import image76 from '@/assets/law-firm/responsive/practice-corporate-law-960.webp';
-import image77 from '@/assets/law-firm/practice-regulatory-compliance.webp';
-import image78 from '@/assets/law-firm/responsive/practice-regulatory-compliance-96.webp';
-import image79 from '@/assets/law-firm/responsive/practice-regulatory-compliance-480.webp';
-import image80 from '@/assets/law-firm/responsive/practice-regulatory-compliance-960.webp';
-import image81 from '@/assets/law-firm/reviewing-documents.jpg';
-import image82 from '@/assets/law-firm/responsive/reviewing-documents-96.webp';
-import image83 from '@/assets/law-firm/responsive/reviewing-documents-480.webp';
-import image84 from '@/assets/law-firm/responsive/reviewing-documents-960.webp';
-import image85 from '@/assets/law-firm/signing-medical-form.jpg';
-import image86 from '@/assets/law-firm/responsive/signing-medical-form-96.webp';
-import image87 from '@/assets/law-firm/responsive/signing-medical-form-480.webp';
-import image88 from '@/assets/law-firm/responsive/signing-medical-form-960.webp';
-import image89 from '@/assets/law-firm/suburban-palms.jpg';
-import image90 from '@/assets/law-firm/responsive/suburban-palms-96.webp';
-import image91 from '@/assets/law-firm/responsive/suburban-palms-480.webp';
-import image92 from '@/assets/law-firm/responsive/suburban-palms-960.webp';
-import image93 from '@/assets/law-firm/truck-highway.jpg';
-import image94 from '@/assets/law-firm/responsive/truck-highway-96.webp';
-import image95 from '@/assets/law-firm/responsive/truck-highway-480.webp';
-import image96 from '@/assets/law-firm/responsive/truck-highway-960.webp';
-import image97 from '@/assets/law-firm/responsive/truck-highway-1440.webp';
-import image98 from '@/assets/law-firm/wet-floor.jpg';
-import image99 from '@/assets/law-firm/responsive/wet-floor-96.webp';
-import image100 from '@/assets/law-firm/responsive/wet-floor-480.webp';
-import image101 from '@/assets/law-firm/responsive/wet-floor-960.webp';
-import image102 from '@/assets/law-firm/responsive/wet-floor-1440.webp';
+import image14 from '@/assets/law-firm/cycling-street-context.jpg';
+import image15 from '@/assets/law-firm/responsive/cycling-street-context-96.webp';
+import image16 from '@/assets/law-firm/responsive/cycling-street-context-480.webp';
+import image17 from '@/assets/law-firm/responsive/cycling-street-context-960.webp';
+import image18 from '@/assets/law-firm/responsive/cycling-street-context-1440.webp';
+import image19 from '@/assets/law-firm/dog-walking-context.jpg';
+import image20 from '@/assets/law-firm/responsive/dog-walking-context-96.webp';
+import image21 from '@/assets/law-firm/responsive/dog-walking-context-480.webp';
+import image22 from '@/assets/law-firm/responsive/dog-walking-context-960.webp';
+import image23 from '@/assets/law-firm/responsive/dog-walking-context-1440.webp';
+import image24 from '@/assets/law-firm/family-support.jpg';
+import image25 from '@/assets/law-firm/responsive/family-support-96.webp';
+import image26 from '@/assets/law-firm/responsive/family-support-480.webp';
+import image27 from '@/assets/law-firm/responsive/family-support-960.webp';
+import image28 from '@/assets/law-firm/responsive/family-support-1440.webp';
+import image29 from '@/assets/law-firm/hero-city-boardroom.webp';
+import image30 from '@/assets/law-firm/responsive/hero-city-boardroom-96.webp';
+import image31 from '@/assets/law-firm/responsive/hero-city-boardroom-480.webp';
+import image32 from '@/assets/law-firm/responsive/hero-city-boardroom-960.webp';
+import image33 from '@/assets/law-firm/responsive/hero-city-boardroom-1440.webp';
+import image34 from '@/assets/law-firm/responsive/hero-city-boardroom-mobile-540.webp';
+import image35 from '@/assets/law-firm/responsive/hero-city-boardroom-mobile-810.webp';
+import image36 from '@/assets/law-firm/hero-courthouse.webp';
+import image37 from '@/assets/law-firm/responsive/hero-courthouse-96.webp';
+import image38 from '@/assets/law-firm/responsive/hero-courthouse-480.webp';
+import image39 from '@/assets/law-firm/responsive/hero-courthouse-960.webp';
+import image40 from '@/assets/law-firm/responsive/hero-courthouse-1440.webp';
+import image41 from '@/assets/law-firm/responsive/hero-courthouse-mobile-540.webp';
+import image42 from '@/assets/law-firm/responsive/hero-courthouse-mobile-810.webp';
+import image43 from '@/assets/law-firm/hero-justice-library.webp';
+import image44 from '@/assets/law-firm/responsive/hero-justice-library-96.webp';
+import image45 from '@/assets/law-firm/responsive/hero-justice-library-480.webp';
+import image46 from '@/assets/law-firm/responsive/hero-justice-library-960.webp';
+import image47 from '@/assets/law-firm/responsive/hero-justice-library-1440.webp';
+import image48 from '@/assets/law-firm/responsive/hero-justice-library-mobile-540.webp';
+import image49 from '@/assets/law-firm/responsive/hero-justice-library-mobile-810.webp';
+import image50 from '@/assets/law-firm/hero-law-office.webp';
+import image51 from '@/assets/law-firm/responsive/hero-law-office-96.webp';
+import image52 from '@/assets/law-firm/responsive/hero-law-office-480.webp';
+import image53 from '@/assets/law-firm/responsive/hero-law-office-960.webp';
+import image54 from '@/assets/law-firm/responsive/hero-law-office-1440.webp';
+import image55 from '@/assets/law-firm/responsive/hero-law-office-mobile-540.webp';
+import image56 from '@/assets/law-firm/responsive/hero-law-office-mobile-810.webp';
+import image57 from '@/assets/law-firm/hospital-corridor.jpg';
+import image58 from '@/assets/law-firm/responsive/hospital-corridor-96.webp';
+import image59 from '@/assets/law-firm/responsive/hospital-corridor-480.webp';
+import image60 from '@/assets/law-firm/responsive/hospital-corridor-960.webp';
+import image61 from '@/assets/law-firm/lead-counsel.avif';
+import image62 from '@/assets/law-firm/responsive/lead-counsel-96.webp';
+import image63 from '@/assets/law-firm/responsive/lead-counsel-480.webp';
+import image64 from '@/assets/law-firm/medical-care.jpg';
+import image65 from '@/assets/law-firm/responsive/medical-care-96.webp';
+import image66 from '@/assets/law-firm/responsive/medical-care-480.webp';
+import image67 from '@/assets/law-firm/responsive/medical-care-960.webp';
+import image68 from '@/assets/law-firm/responsive/medical-care-1440.webp';
+import image69 from '@/assets/law-firm/motorcycle-road.jpg';
+import image70 from '@/assets/law-firm/responsive/motorcycle-road-96.webp';
+import image71 from '@/assets/law-firm/responsive/motorcycle-road-480.webp';
+import image72 from '@/assets/law-firm/responsive/motorcycle-road-960.webp';
+import image73 from '@/assets/law-firm/responsive/motorcycle-road-1440.webp';
+import image74 from '@/assets/law-firm/pedestrian-crossing.jpg';
+import image75 from '@/assets/law-firm/responsive/pedestrian-crossing-96.webp';
+import image76 from '@/assets/law-firm/responsive/pedestrian-crossing-480.webp';
+import image77 from '@/assets/law-firm/responsive/pedestrian-crossing-960.webp';
+import image78 from '@/assets/law-firm/responsive/pedestrian-crossing-1440.webp';
+import image79 from '@/assets/law-firm/practice-commercial-litigation.webp';
+import image80 from '@/assets/law-firm/responsive/practice-commercial-litigation-96.webp';
+import image81 from '@/assets/law-firm/responsive/practice-commercial-litigation-480.webp';
+import image82 from '@/assets/law-firm/responsive/practice-commercial-litigation-960.webp';
+import image83 from '@/assets/law-firm/practice-corporate-law.webp';
+import image84 from '@/assets/law-firm/responsive/practice-corporate-law-96.webp';
+import image85 from '@/assets/law-firm/responsive/practice-corporate-law-480.webp';
+import image86 from '@/assets/law-firm/responsive/practice-corporate-law-960.webp';
+import image87 from '@/assets/law-firm/practice-regulatory-compliance.webp';
+import image88 from '@/assets/law-firm/responsive/practice-regulatory-compliance-96.webp';
+import image89 from '@/assets/law-firm/responsive/practice-regulatory-compliance-480.webp';
+import image90 from '@/assets/law-firm/responsive/practice-regulatory-compliance-960.webp';
+import image91 from '@/assets/law-firm/reviewing-documents.jpg';
+import image92 from '@/assets/law-firm/responsive/reviewing-documents-96.webp';
+import image93 from '@/assets/law-firm/responsive/reviewing-documents-480.webp';
+import image94 from '@/assets/law-firm/responsive/reviewing-documents-960.webp';
+import image95 from '@/assets/law-firm/signing-medical-form.jpg';
+import image96 from '@/assets/law-firm/responsive/signing-medical-form-96.webp';
+import image97 from '@/assets/law-firm/responsive/signing-medical-form-480.webp';
+import image98 from '@/assets/law-firm/responsive/signing-medical-form-960.webp';
+import image99 from '@/assets/law-firm/suburban-palms.jpg';
+import image100 from '@/assets/law-firm/responsive/suburban-palms-96.webp';
+import image101 from '@/assets/law-firm/responsive/suburban-palms-480.webp';
+import image102 from '@/assets/law-firm/responsive/suburban-palms-960.webp';
+import image103 from '@/assets/law-firm/truck-highway.jpg';
+import image104 from '@/assets/law-firm/responsive/truck-highway-96.webp';
+import image105 from '@/assets/law-firm/responsive/truck-highway-480.webp';
+import image106 from '@/assets/law-firm/responsive/truck-highway-960.webp';
+import image107 from '@/assets/law-firm/responsive/truck-highway-1440.webp';
+import image108 from '@/assets/law-firm/wet-floor.jpg';
+import image109 from '@/assets/law-firm/responsive/wet-floor-96.webp';
+import image110 from '@/assets/law-firm/responsive/wet-floor-480.webp';
+import image111 from '@/assets/law-firm/responsive/wet-floor-960.webp';
+import image112 from '@/assets/law-firm/responsive/wet-floor-1440.webp';
 export const imageVariants: Record<string, { srcSet: string; width: number; height: number }> = {
   [image0]: { srcSet: [`${image1} 96w`, `${image2} 480w`, `${image3} 960w`, `${image0} 1400w`].join(', '), width: 1400, height: 933 },
   [image4]: { srcSet: [`${image5} 96w`, `${image6} 480w`, `${image7} 960w`, `${image8} 1440w`, `${image4} 1800w`].join(', '), width: 1800, height: 2700 },
   [image9]: { srcSet: [`${image10} 96w`, `${image11} 480w`, `${image12} 960w`, `${image13} 1440w`, `${image9} 1800w`].join(', '), width: 1800, height: 2700 },
-  [image14]: { srcSet: [`${image15} 96w`, `${image16} 480w`, `${image17} 960w`, `${image18} 1440w`, `${image14} 1600w`].join(', '), width: 1600, height: 1068 },
-  [image19]: { srcSet: [`${image20} 96w`, `${image21} 480w`, `${image22} 960w`, `${image23} 1440w`, `${image19} 1448w`].join(', '), width: 1448, height: 1086 },
-  [image26]: { srcSet: [`${image27} 96w`, `${image28} 480w`, `${image29} 960w`, `${image30} 1440w`, `${image26} 1448w`].join(', '), width: 1448, height: 1086 },
-  [image33]: { srcSet: [`${image34} 96w`, `${image35} 480w`, `${image36} 960w`, `${image37} 1440w`, `${image33} 1448w`].join(', '), width: 1448, height: 1086 },
-  [image40]: { srcSet: [`${image41} 96w`, `${image42} 480w`, `${image43} 960w`, `${image44} 1440w`, `${image40} 1448w`].join(', '), width: 1448, height: 1086 },
-  [image47]: { srcSet: [`${image48} 96w`, `${image49} 480w`, `${image50} 960w`, `${image47} 1400w`].join(', '), width: 1400, height: 1050 },
-  [image51]: { srcSet: [`${image52} 96w`, `${image53} 480w`, `${image51} 960w`].join(', '), width: 960, height: 1200 },
-  [image54]: { srcSet: [`${image55} 96w`, `${image56} 480w`, `${image57} 960w`, `${image58} 1440w`, `${image54} 1600w`].join(', '), width: 1600, height: 1175 },
-  [image59]: { srcSet: [`${image60} 96w`, `${image61} 480w`, `${image62} 960w`, `${image63} 1440w`, `${image59} 1600w`].join(', '), width: 1600, height: 2133 },
-  [image64]: { srcSet: [`${image65} 96w`, `${image66} 480w`, `${image67} 960w`, `${image68} 1440w`, `${image64} 1600w`].join(', '), width: 1600, height: 2400 },
-  [image69]: { srcSet: [`${image70} 96w`, `${image71} 480w`, `${image72} 960w`, `${image69} 1086w`].join(', '), width: 1086, height: 1448 },
-  [image73]: { srcSet: [`${image74} 96w`, `${image75} 480w`, `${image76} 960w`, `${image73} 1086w`].join(', '), width: 1086, height: 1448 },
-  [image77]: { srcSet: [`${image78} 96w`, `${image79} 480w`, `${image80} 960w`, `${image77} 1086w`].join(', '), width: 1086, height: 1448 },
-  [image81]: { srcSet: [`${image82} 96w`, `${image83} 480w`, `${image84} 960w`, `${image81} 1400w`].join(', '), width: 1400, height: 935 },
-  [image85]: { srcSet: [`${image86} 96w`, `${image87} 480w`, `${image88} 960w`, `${image85} 1400w`].join(', '), width: 1400, height: 2100 },
-  [image89]: { srcSet: [`${image90} 96w`, `${image91} 480w`, `${image92} 960w`, `${image89} 1400w`].join(', '), width: 1400, height: 1050 },
-  [image93]: { srcSet: [`${image94} 96w`, `${image95} 480w`, `${image96} 960w`, `${image97} 1440w`, `${image93} 1600w`].join(', '), width: 1600, height: 983 },
-  [image98]: { srcSet: [`${image99} 96w`, `${image100} 480w`, `${image101} 960w`, `${image102} 1440w`, `${image98} 1600w`].join(', '), width: 1600, height: 2843 },
+  [image14]: { srcSet: [`${image15} 96w`, `${image16} 480w`, `${image17} 960w`, `${image18} 1440w`, `${image14} 1600w`].join(', '), width: 1600, height: 2000 },
+  [image19]: { srcSet: [`${image20} 96w`, `${image21} 480w`, `${image22} 960w`, `${image23} 1440w`, `${image19} 1600w`].join(', '), width: 1600, height: 1067 },
+  [image24]: { srcSet: [`${image25} 96w`, `${image26} 480w`, `${image27} 960w`, `${image28} 1440w`, `${image24} 1600w`].join(', '), width: 1600, height: 1068 },
+  [image29]: { srcSet: [`${image30} 96w`, `${image31} 480w`, `${image32} 960w`, `${image33} 1440w`, `${image29} 1448w`].join(', '), width: 1448, height: 1086 },
+  [image36]: { srcSet: [`${image37} 96w`, `${image38} 480w`, `${image39} 960w`, `${image40} 1440w`, `${image36} 1448w`].join(', '), width: 1448, height: 1086 },
+  [image43]: { srcSet: [`${image44} 96w`, `${image45} 480w`, `${image46} 960w`, `${image47} 1440w`, `${image43} 1448w`].join(', '), width: 1448, height: 1086 },
+  [image50]: { srcSet: [`${image51} 96w`, `${image52} 480w`, `${image53} 960w`, `${image54} 1440w`, `${image50} 1448w`].join(', '), width: 1448, height: 1086 },
+  [image57]: { srcSet: [`${image58} 96w`, `${image59} 480w`, `${image60} 960w`, `${image57} 1400w`].join(', '), width: 1400, height: 1050 },
+  [image61]: { srcSet: [`${image62} 96w`, `${image63} 480w`, `${image61} 960w`].join(', '), width: 960, height: 1200 },
+  [image64]: { srcSet: [`${image65} 96w`, `${image66} 480w`, `${image67} 960w`, `${image68} 1440w`, `${image64} 1600w`].join(', '), width: 1600, height: 1175 },
+  [image69]: { srcSet: [`${image70} 96w`, `${image71} 480w`, `${image72} 960w`, `${image73} 1440w`, `${image69} 1600w`].join(', '), width: 1600, height: 2133 },
+  [image74]: { srcSet: [`${image75} 96w`, `${image76} 480w`, `${image77} 960w`, `${image78} 1440w`, `${image74} 1600w`].join(', '), width: 1600, height: 2400 },
+  [image79]: { srcSet: [`${image80} 96w`, `${image81} 480w`, `${image82} 960w`, `${image79} 1086w`].join(', '), width: 1086, height: 1448 },
+  [image83]: { srcSet: [`${image84} 96w`, `${image85} 480w`, `${image86} 960w`, `${image83} 1086w`].join(', '), width: 1086, height: 1448 },
+  [image87]: { srcSet: [`${image88} 96w`, `${image89} 480w`, `${image90} 960w`, `${image87} 1086w`].join(', '), width: 1086, height: 1448 },
+  [image91]: { srcSet: [`${image92} 96w`, `${image93} 480w`, `${image94} 960w`, `${image91} 1400w`].join(', '), width: 1400, height: 935 },
+  [image95]: { srcSet: [`${image96} 96w`, `${image97} 480w`, `${image98} 960w`, `${image95} 1400w`].join(', '), width: 1400, height: 2100 },
+  [image99]: { srcSet: [`${image100} 96w`, `${image101} 480w`, `${image102} 960w`, `${image99} 1400w`].join(', '), width: 1400, height: 1050 },
+  [image103]: { srcSet: [`${image104} 96w`, `${image105} 480w`, `${image106} 960w`, `${image107} 1440w`, `${image103} 1600w`].join(', '), width: 1600, height: 983 },
+  [image108]: { srcSet: [`${image109} 96w`, `${image110} 480w`, `${image111} 960w`, `${image112} 1440w`, `${image108} 1600w`].join(', '), width: 1600, height: 2843 },
 };
 export const mobileHeroVariants: Record<string, string> = {
-  [image19]: [`${image24} 540w`, `${image25} 810w`].join(', '),
-  [image26]: [`${image31} 540w`, `${image32} 810w`].join(', '),
-  [image33]: [`${image38} 540w`, `${image39} 810w`].join(', '),
-  [image40]: [`${image45} 540w`, `${image46} 810w`].join(', '),
+  [image29]: [`${image34} 540w`, `${image35} 810w`].join(', '),
+  [image36]: [`${image41} 540w`, `${image42} 810w`].join(', '),
+  [image43]: [`${image48} 540w`, `${image49} 810w`].join(', '),
+  [image50]: [`${image55} 540w`, `${image56} 810w`].join(', '),
 };

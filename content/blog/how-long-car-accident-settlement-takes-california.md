@@ -2,7 +2,7 @@
   "title": "How Long Does a Car Accident Settlement Take in California?",
   "slug": "how-long-car-accident-settlement-takes-california",
   "published": true,
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved",
   "excerpt": "An evidence-based California car accident settlement timeline: insurer response rules, medical recovery, demand packages, negotiation, lawsuits, Medi-Cal liens and payment.",
   "category": "California Car Accident Claims",
   "publishedAt": "2026-10-19",

@@ -2,7 +2,7 @@
   "title": "Diminished Value Claim, California",
   "slug": "diminished-value-claim-california",
   "published": true,
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved",
   "author": "Howard Choi",
   "excerpt": "Learn how California diminished value claims work, what evidence supports lost vehicle value, how insurance coverage differs, and which deadlines may apply.",
   "metaTitle": "Diminished Value Claim California",

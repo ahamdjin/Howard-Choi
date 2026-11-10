@@ -2,7 +2,7 @@
   "title": "What is a Skid, and How Can You Avoid Them?",
   "slug": "car-accidents-what-is-a-skid-and-how-can-you-avoid-them",
   "published": true,
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved",
   "author": "Howard Choi",
   "excerpt": "Learn how skids start, how understeer and oversteer feel, what changes with ABS, and what evidence matters after a skid-related crash.",
   "metaTitle": "What is a Skid, and How Can You Avoid Them?",

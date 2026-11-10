@@ -1,13 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
-import FirmHelpPage from "@/pages/editorial/FirmHelpPage";
-import { buildSeo } from "@/lib/seo";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
+// Keep old bookmarks working without a second, outdated FAQ library.
 export const Route = createFileRoute("/about/faqs")({
-  head: () => buildSeo({
-    title: "Personal Injury FAQs | Howard Choi",
-    description: "Answers about consultations, fees, case timelines and working with Howard Choi, a personal injury lawyer in Buena Park.",
-    path: "/about/faqs",
-    locale: "en-US",
-  }),
-  component: () => <FirmHelpPage fees={false} />,
+  beforeLoad: () => { throw redirect({ to: "/faqs", statusCode: 301 }); },
 });

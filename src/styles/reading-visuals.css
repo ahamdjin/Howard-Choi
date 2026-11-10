@@ -1,0 +1,93 @@
+/* Reading-first visual treatment. Remove this import to revert this presentation pass. */
+.site-typography .consultation-card{background:#30261f;color:#fcf7ef;border:0;border-radius:20px;padding:25px;box-shadow:0 12px 32px #30261f0b;font-family:Inter,Arial,sans-serif;min-width:0}
+.site-typography .consultation-card__eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#d4bca2}
+.site-typography .consultation-card h2{font-family:Newsreader,Georgia,serif!important;font-size:29px!important;line-height:1.12!important;font-weight:400!important;letter-spacing:-.025em;margin:14px 0 12px;color:inherit}
+.site-typography .consultation-card p{font-size:14px!important;line-height:1.65!important;color:#e2d7cb;margin:0 0 20px;hyphens:manual!important}
+.site-typography .consultation-card a{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:48px;padding:12px 17px;border-radius:100px;background:#f4ebdf;color:#30261f;font-size:14px;font-weight:600;text-decoration:none}
+.site-typography .consultation-card a:hover{background:#fffaf3}
+.site-typography .consultation-card a:focus-visible{outline:3px solid #c09b75;outline-offset:4px}
+.site-typography .consultation-card small{display:block;margin-top:14px;color:#c6b6a6;font-size:11px;line-height:1.5}
+.site-typography .editorial-reading-rail__rule,.site-typography .editorial-reading-rail__meta{display:none}
+.site-typography .editorial-reading-rail__eyebrow{margin-top:26px;color:#776858}
+.site-typography .editorial-reading-rail__label{margin-block:8px 14px}
+.site-typography .editorial-reading-rail__inner{border:0!important;padding-top:0!important}
+.site-typography .editorial-reading-rail__nav{max-height: min(30dvh,280px);overflow-y:auto!important;scrollbar-width:thin;overscroll-behavior:contain}
+.site-typography .editorial-reading-rail__link,.site-typography .editorial-reading-rail__link[data-active="true"]{border:0!important;box-shadow:none!important;transform:none!important;border-radius:9px;padding:10px 12px;opacity:1;color:#756c62;font-size:12px;grid-template-columns:24px minmax(0,1fr)}
+.site-typography .editorial-reading-rail__link[data-active="true"]{background:#eae2d7;color:#30261f}
+.site-typography .editorial-reading-rail__link:hover{background:#eee8df;transform:none;box-shadow:none}
+.site-typography .editorial-reading-section{border:0!important;padding-block:38px!important}
+.site-typography .editorial-reading-section__body{max-width:70ch}
+.site-typography .editorial-reading-section__title{max-width:25ch;text-wrap:balance}
+.site-typography .content-steps{display:grid;gap:18px}
+.site-typography .content-steps>li{border:0;background:#eee8df;border-radius:16px;padding:24px;gap:16px}
+.site-typography .content-step-number{background:#ded1be;color:#493826}
+.site-typography .content-steps>li:nth-child(even){background:#f1ede6}
+.site-typography .content-comparison{border:0;gap:18px}
+.site-typography .content-comparison>div,.site-typography .content-comparison>div+div{border:0;border-radius:16px;background:#ede6db;padding:24px}
+.site-typography .content-photo img{border-radius:20px;aspect-ratio:16/9}
+.site-typography .content-photo figcaption{font-size:12px;line-height:1.6}
+.site-typography .resource-intro{border:0}
+.site-typography .faq-answer{border:0;margin-bottom:18px;padding:28px!important;background:#f0ebe3;border-radius:18px}
+.site-typography .faq-answer:nth-child(even){background:#f5f1eb}
+.site-typography .learning-hub .group{border:0;border-radius:18px;background:#f0ebe3;padding:24px}
+.site-typography .learning-hub .group img{border-radius:12px}
+.site-typography .learning-hub section>a,.site-typography .learning-hub section>div>a{border:0;border-radius:16px;background:#f0ebe3;padding:24px}
+.site-typography .claim-notes{margin:36px 0 44px;padding:28px;background:#eae5dc;border-radius:20px}
+.site-typography .claim-notes>figcaption{font:500 12px/1.5 Inter,Arial,sans-serif;color:#766350;margin-bottom:24px}
+.claim-notes__board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:start}
+.site-typography .claim-note{position:relative;background:#faf6ec;border-radius:3px 3px 22px 3px;padding:24px 18px;box-shadow:2px 6px 12px #4b382a0a;min-width:0}
+.claim-note:nth-child(2){background:#ede0c7;transform:translateY(9px)}
+.claim-note:nth-child(3){background:#e3e8dc}
+.site-typography .claim-note__number{position:absolute;right:18px;top:20px;font:500 11px Inter,Arial,sans-serif;color:#8a7963}
+.site-typography .claim-note h3{font:500 21px/1.2 Newsreader,Georgia,serif;margin:20px 0 10px;color:#3f3327}
+.site-typography .claim-note p{font:400 13px/1.65 Inter,Arial,sans-serif!important;color:#65594c;hyphens:manual}
+.site-typography .inner-site-page main section[class*="border-"],.site-typography .inner-site-page main nav[class*="border-"]{border-color:transparent}
+body.inner-site-page main :is(section,nav,figure)[class*="border-t"],body.inner-site-page main :is(section,nav,figure)[class*="border-b"]{border-color:transparent}
+.site-typography .attorney-content dl>div{border:0!important;padding-block:12px}
+.site-typography .article-share,.site-typography .article-mobile-toc{border:0;background:#eee8df;border-radius:12px;padding:12px}
+.site-typography .article-reading-toc a{border:0;border-radius:8px}
+.site-typography .article-reading-toc a[aria-current]{background:#eae2d7}
+@media(min-width:1024px){
+ .site-typography .editorial-reading-grid{grid-template-columns:minmax(0,1fr) 300px!important;gap:clamp(40px,5vw,80px);align-items:stretch}
+ .site-typography .editorial-reading-content{grid-column:1;grid-row:1;min-width:0}
+ .site-typography .editorial-reading-rail{grid-column:2;grid-row:1}
+ .site-typography .editorial-reading-rail__inner{position:sticky;top:96px;max-height:calc(100dvh - 120px);overflow:visible;padding-right:0}
+ .site-typography .article-reading-grid{grid-template-columns:minmax(0,1fr) 300px!important;gap:60px!important}
+ .site-typography .article-reading-sidebar{grid-column:2;grid-row:1}
+ .site-typography .article-reading-grid>.min-w-0{grid-column:1;grid-row:1}
+ .site-typography .article-reading-tools{height:auto;max-height:calc(100dvh - 120px);padding:0;gap:16px}
+ .site-typography .article-desktop-toc{min-height:70px;max-height:22dvh}
+ .site-typography .article-summary>p:last-child{display:none}
+ .site-typography .article-copy-status:empty{display:none}
+ .site-typography .article-reading-tools .consultation-card{flex-shrink:0}
+ .site-typography .article-summary{order:3}
+ .site-typography .article-share{order:4;padding:0;background:transparent}
+ .site-typography .article-copy-status{order:5}
+}
+@media(max-width:1023px){
+ .site-typography .editorial-reading-rail__inner{display:flex;flex-direction:column;gap:16px}
+ .site-typography .editorial-mobile-contents{order:2;border:0;background:#ede6dc;border-radius:12px;padding:0 16px}
+ .site-typography .editorial-mobile-contents nav{max-height:240px;overflow-y:auto}
+ .site-typography .editorial-reading-rail .consultation-card{padding:22px}
+ .site-typography .article-reading-tools .consultation-card{grid-column:1/-1}
+ .site-typography .claim-notes{padding:22px}
+}
+@media(max-width:600px){
+ .claim-notes__board{grid-template-columns:1fr;gap:12px}
+ .claim-note:nth-child(2){transform:none}
+ .site-typography .claim-note{padding:20px 22px}
+ .site-typography .claim-note h3{margin:12px 0 8px;font-size:24px}
+ .site-typography .claim-note p{max-width:35ch}
+ .site-typography .content-steps>li{padding:20px 16px;grid-template-columns:28px minmax(0,1fr);gap:12px}
+ .site-typography .faq-answer{padding:22px!important}
+ .site-typography .editorial-reading-section{padding-block:28px!important}
+}
+@media(max-height:760px) and (min-width:1024px){
+ .site-typography .consultation-card{padding:19px}
+ .site-typography .consultation-card p{display:none}
+ .site-typography .consultation-card h2{font-size:25px!important;margin-block:10px}
+ .site-typography .editorial-reading-rail__nav{max-height:24dvh}
+ .site-typography .article-desktop-toc{max-height:15dvh}
+}
+
+@media(min-width:1024px){.site-navigation-shell button{white-space:nowrap}}

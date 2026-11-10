@@ -38,7 +38,11 @@ const Footer = () => {
               <Link to="/attorney" className="block hover:opacity-60">Lawyer</Link>
               <Link to="/results" className="block hover:opacity-60">Results</Link>
               <Link to="/case-value-calculator" className="block hover:opacity-60">Case Value Calculator</Link>
+              <Link to="/learning-hub" className="block hover:opacity-60">Learning Hub</Link>
               <Link to="/blogs" className="block hover:opacity-60">Blogs</Link>
+              <Link to="/blogs/guides" className="block hover:opacity-60">Accident & Injury Guides</Link>
+              <Link to="/faqs" className="block hover:opacity-60">Topic FAQs</Link>
+              <Link to="/injury-types" className="block hover:opacity-60">Injury Types</Link>
               <Link to="/about" className="block hover:opacity-60">About</Link>
               <Link to="/contact" className="block hover:opacity-60">Contact</Link>
             </div>
