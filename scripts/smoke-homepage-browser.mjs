@@ -1,5 +1,5 @@
 import { spawn } from "node:child_process";
-import { existsSync, mkdtempSync, rmSync } from "node:fs";
+import { existsSync, mkdtempSync, readFileSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 
@@ -25,10 +25,17 @@ const chrome = spawn(browserBinary, [
   "--no-first-run",
   "--no-default-browser-check",
   "--remote-allow-origins=*",
-  "--remote-debugging-port=9227",
+  "--remote-debugging-address=127.0.0.1",
+  "--remote-debugging-port=0",
   `--user-data-dir=${profile}`,
   "about:blank",
-], { stdio: "ignore" });
+], { stdio: ["ignore", "ignore", "pipe"] });
+// A fresh port avoids runner collisions. Retain startup diagnostics instead of
+// turning every browser-launch problem into an opaque missing-page error.
+let chromeStartupLog = "";
+let chromeSpawnError;
+chrome.stderr.on("data", chunk => { chromeStartupLog = (chromeStartupLog + chunk.toString()).slice(-8000); });
+chrome.on("error", error => { chromeSpawnError = error; });
 
 const pause = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 let socket;
@@ -51,19 +58,23 @@ const send = (method, params = {}) => new Promise((resolve, reject) => {
 
 try {
   let target;
-  for (let attempt = 0; attempt < 60; attempt++) {
-    if (chrome.exitCode !== null) throw new Error("Chrome exited before opening DevTools.");
+  let lastStartupError = "";
+  for (let attempt = 0; attempt < 150; attempt++) {
+    if (chromeSpawnError) throw chromeSpawnError;
+    if (chrome.exitCode !== null) throw new Error("Chrome exited before opening DevTools: " + chromeStartupLog);
     try {
-      const response = await fetch("http://127.0.0.1:9227/json/list");
+      const debugPort = Number(readFileSync(path.join(profile, "DevToolsActivePort"), "utf8").split("\n")[0]);
+      if (!Number.isInteger(debugPort) || debugPort < 1) throw new Error("Chrome has not written a debugging port yet.");
+      const response = await fetch(`http://127.0.0.1:${debugPort}/json/list`, { signal: AbortSignal.timeout(1000) });
       if (response.ok) {
         const pages = await response.json();
         target = pages.find((item) => item.type === "page");
       }
-    } catch { /* Chrome is starting. */ }
+    } catch (error) { lastStartupError = String(error); /* Chrome is starting. */ }
     if (target) break;
     await pause(200);
   }
-  if (!target) throw new Error("Chrome DevTools page was not available.");
+  if (!target) throw new Error(`Chrome DevTools page was not available. Last probe: ${lastStartupError}. Browser log: ${chromeStartupLog}`);
 
   socket = new WebSocket(target.webSocketDebuggerUrl);
   await new Promise((resolve, reject) => {
