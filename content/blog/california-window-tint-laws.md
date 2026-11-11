@@ -1,7 +1,7 @@
 {
   "title": "California Tint Laws (2026) | Is Your Window Tint Legal?",
   "slug": "california-window-tint-laws",
-  "published": false,
+  "published": true,
   "reviewStatus": "pending-attorney-review",
   "author": "Howard Choi",
   "metaTitle": "California Window Tint Laws 2026: Legal VLT Limits Explained",

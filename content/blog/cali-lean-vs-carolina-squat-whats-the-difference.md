@@ -1,7 +1,7 @@
 {
   "title": "Cali Lean vs. Carolina Squat: What’s the Difference?",
   "slug": "cali-lean-vs-carolina-squat-whats-the-difference",
-  "published": false,
+  "published": true,
   "reviewStatus": "pending-attorney-review",
   "author": "Howard Choi",
   "metaTitle": "Cali Lean vs. Carolina Squat: Differences, Laws & Bans",

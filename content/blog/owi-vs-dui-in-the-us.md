@@ -1,7 +1,7 @@
 {
   "title": "OWI vs DUI (2026): What’s the Difference in CA, FL, NY & More",
   "slug": "owi-vs-dui-in-the-us",
-  "published": false,
+  "published": true,
   "reviewStatus": "pending-attorney-review",
   "author": "Howard Choi",
   "metaTitle": "OWI vs DUI: What's the Difference? | State-by-State Guide",

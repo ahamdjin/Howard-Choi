@@ -68,6 +68,8 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
     ],
     sources: californiaCourtSources,
     guides: [
+      { title: "California window tint and visibility", koTitle: "California window tint and visibility", slug: "california-window-tint-laws" },
+      { title: "OWI versus DUI: charges and civil claims", koTitle: "OWI versus DUI: charges and civil claims", slug: "owi-vs-dui-in-the-us" },
       { title: "New Year’s crashes and sober ride planning", koTitle: "New Year’s crashes and sober ride planning", slug: "new-year-alcohol-related-crashes" },
       { title: "California minimum speed law", koTitle: "California minimum speed law", slug: "californias-minimum-speed-law" },
       { title: "California DMV accident reporting", koTitle: "California DMV accident reporting", slug: "notify-the-california-dmv-about-an-accident" },
@@ -127,6 +129,7 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
     ],
     sources: californiaCourtSources,
     guides: [
+      { title: "Front-high trucks, modifications and visibility", koTitle: "Front-high trucks, modifications and visibility", slug: "cali-lean-vs-carolina-squat-whats-the-difference" },
       { title: "California comparative fault explained", koTitle: "캘리포니아 비교과실 이해하기", slug: "california-comparative-fault-personal-injury" },
       { title: "California personal injury deadlines", koTitle: "캘리포니아 개인상해 청구 기한", slug: "california-personal-injury-deadlines" },
     ],

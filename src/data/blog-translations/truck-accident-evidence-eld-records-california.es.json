@@ -7,7 +7,7 @@
       "heading": "Los dispositivos de registro electrónico pueden mostrar información sobre el tiempo de conducción",
       "paragraphs": [
         "Las reglas de la Administración Federal de Seguridad del Tráfico en Carreteras (FMCSA) exigen que muchos conductores comerciales utilicen dispositivos de registro electrónico para registrar la información sobre las horas de servicio. Un dispositivo ELD se sincroniza con el motor del vehículo y registra automáticamente elementos como el tiempo de conducción, la fecha y la hora, la ubicación, las horas de funcionamiento del motor, los millas recorridas por el vehículo y la información de identificación.",
-        "Esos registros pueden ayudar a evaluar cuánto tiempo ha estado operando el conductor el vehículo y si el estado de servicio registrado del conductor es coherente con otra evidencia. Un ELD no responde por sí solo a todas las preguntas sobre responsabilidad, pero puede convertirse en una parte importante de la cronología."
+        "Esos registros pueden ayudar a evaluar cuánto tiempo ha estado operando el conductor el vehículo y si el estado de servicio registrado del conductor es coherente con otra evidencia. Un ELD no responde por sí solo a todas las preguntas sobre responsabilidad, pero puede convertirse en una parte importante de la cronología. Para una camioneta con la parte delantera elevada, la [guía de Cali Lean y Carolina Squat](/blogs/cali-lean-vs-carolina-squat-whats-the-difference) (en inglés) explica por qué importan las medidas reales y el posible efecto en la visibilidad o el manejo."
       ]
     },
     {
@@ -136,6 +136,6 @@
       ]
     }
   ],
-  "sourceHash": "3590f05e2d104878e7c4709f237fa23886442bcf69d5bec8c2ebeb922cae5eb0",
+  "sourceHash": "30825f552cf077e780f3e76fcc00e7457170c90fc1e77ddc2e6635a6d1188036",
   "reviewStatus": "translation-draft-pending-legal-language-review"
 }

@@ -25,7 +25,7 @@ For most adult drivers, 0.08% is the familiar blood alcohol concentration thresh
 
 The rules also cover impairing drugs, including cannabis, prescription medicine, and products available without a prescription. A medication label can warn that a drug causes drowsiness or affects alertness. Ask a pharmacist about driving if you are unsure how a new medicine or combination could affect you.
 
-Fatigue and distraction can also make driving unsafe. Those behaviors raise their own safety and potential fault questions. An account of a driver looking at a phone, for example, supports a different line of investigation from a report that the driver had been drinking.
+Fatigue and distraction can also make driving unsafe. Those behaviors raise their own safety and potential fault questions. An account of a driver looking at a phone, for example, supports a different line of investigation from a report that the driver had been drinking. Our [OWI versus DUI comparison](/blogs/owi-vs-dui-in-the-us) explains why the terminology used in another state should be separated from the evidence needed for a California civil claim.
 
 ## What happens after a DUI arrest?
 

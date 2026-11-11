@@ -18,7 +18,7 @@
 
 Federal Motor Carrier Safety Administration rules require many commercial drivers to use electronic logging devices to record hours-of-service information. An ELD synchronizes with the vehicle's engine and automatically records elements such as driving time, date and time, location, engine hours, vehicle miles, and identifying information.
 
-Those records may help evaluate how long the driver had been operating the vehicle and whether the driver's recorded duty status is consistent with other evidence. An ELD does not answer every liability question by itself, but it can become an important part of the timeline.
+Those records may help evaluate how long the driver had been operating the vehicle and whether the driver's recorded duty status is consistent with other evidence. An ELD does not answer every liability question by itself, but it can become an important part of the timeline. For a pickup with a front-high stance, the [Cali Lean and Carolina Squat guide](/blogs/cali-lean-vs-carolina-squat-whats-the-difference) explains why actual measurements and the alleged effect on visibility or handling matter more than the modification’s nickname.
 
 ## Hours-of-service records are only one part of the company file
 

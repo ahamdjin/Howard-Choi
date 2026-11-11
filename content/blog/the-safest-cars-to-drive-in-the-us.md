@@ -95,7 +95,7 @@ Ford Co-Pilot360 equipment varies. Confirm whether the vehicle includes blind-sp
 
 The Grand Cherokee, Wagoneer, and Grand Wagoneer need separate evaluations. Their size and weight do not establish superior crash protection or rollover resistance.
 
-Read frontal, side, and rollover results individually. Verify whether the exact trim includes forward collision warning, automatic braking, blind-spot monitoring, and rear cross-traffic alerts. If passengers regularly use the second or third row, examine available rear-occupant evidence rather than relying only on front-seat results or an overall score.
+Read frontal, side, and rollover results individually. Verify whether the exact trim includes forward collision warning, automatic braking, blind-spot monitoring, and rear cross-traffic alerts. If passengers regularly use the second or third row, examine available rear-occupant evidence rather than relying only on front-seat results or an overall score. Also review [California window-tint requirements](/blogs/california-window-tint-laws) if the glass has been modified; a crash rating does not establish that an aftermarket installation complies with equipment rules.
 
 ## A practical checklist before buying
 
