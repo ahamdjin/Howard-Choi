@@ -37,7 +37,7 @@ Some things will still be there in six months. Some will not.
 
 Nearby camera footage is a frequent time-sensitive source. Businesses and private cameras have different policies: footage might be kept briefly, longer, or not recorded at all. Record who controls a camera and ask promptly about lawful preservation instead of assuming a standard retention window. If you think a business had a view of the road, note the name and address while you are still there.
 
-Witnesses fade in a different way. People do not forget that they saw a crash, but they stop being findable. A phone number written down at the scene is worth more than a detailed statement you try to collect a month later.
+Witnesses fade in a different way. People do not forget that they saw a crash, but they stop being findable. A phone number written down at the scene is worth more than a detailed statement you try to collect a month later. If a driver’s license status is part of the dispute, the [California unlicensed-driving guide](/blogs/what-happens-if-you-drive-without-a-license-california) explains why that issue should be separated from what caused the collision.
 
 ## Be careful on the first insurance call
 

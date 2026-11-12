@@ -55,7 +55,7 @@ Reporting a crash does not mean every loss is covered. Liability insurance addre
 
 ### The California DMV
 
-Submit the SR-1 within 10 days when a reporting trigger applies. Your insurance agent, broker, or legal representative may submit it for you. If someone agrees to handle the report, ask for confirmation that it was submitted. Opening an insurance claim alone does not complete this step.
+Submit the SR-1 within 10 days when a reporting trigger applies. Your insurance agent, broker, or legal representative may submit it for you. If someone agrees to handle the report, ask for confirmation that it was submitted. Opening an insurance claim alone does not complete this step. If the vehicle uses an electronic plate, keep its registration and device records separate from the accident report. The [digital license plate guide](/blogs/digital-license-plates) explains the product and account records to preserve.
 
 ## How to Submit an SR-1
 

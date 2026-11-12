@@ -68,6 +68,8 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
     ],
     sources: californiaCourtSources,
     guides: [
+      { title: "Digital license plates and crash records", koTitle: "Digital license plates and crash records", slug: "digital-license-plates" },
+      { title: "Unlicensed driving: citations and civil claims", koTitle: "Unlicensed driving: citations and civil claims", slug: "what-happens-if-you-drive-without-a-license-california" },
       { title: "California window tint and visibility", koTitle: "California window tint and visibility", slug: "california-window-tint-laws" },
       { title: "OWI versus DUI: charges and civil claims", koTitle: "OWI versus DUI: charges and civil claims", slug: "owi-vs-dui-in-the-us" },
       { title: "New Year’s crashes and sober ride planning", koTitle: "New Year’s crashes and sober ride planning", slug: "new-year-alcohol-related-crashes" },
@@ -206,6 +208,7 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
       { label: "Judicial Council of California · Civil jury instructions", href: "https://courts.ca.gov/partners/california-jury-instructions/civil-jury-instructions-resource-center/civil-jury-instructions" },
     ],
     guides: [
+      { title: "Personal injury trends and settlement questions", koTitle: "Personal injury trends and settlement questions", slug: "state-of-personal-injury-2026-ca-trends" },
       { title: "Bicycle crash evidence and insurance", koTitle: "Bicycle crash evidence and insurance", slug: "california-bicycle-accident-guide" },
       { title: "California work injury reporting and claims", koTitle: "California work injury reporting and claims", slug: "workers-comp-step-by-step-process-of-filing-a-workers-comp-claim-in-california" },
       { title: "Blunt trauma: liability and evidence", koTitle: "Blunt trauma: liability and evidence", slug: "blunt-force-trauma-determining-liability-in-blunt-trauma-lawsuits" },

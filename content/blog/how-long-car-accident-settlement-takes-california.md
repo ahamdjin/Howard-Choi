@@ -19,7 +19,8 @@ California does not set a single 30-day, 90-day or six-month deadline for every 
 
 Separate three dates from the outset: when an insurer opens a claim, when the parties agree to a settlement, and when the claimant receives available funds after settlement documents and reimbursement issues are addressed. An open claim does not mean a settlement offer exists. An accepted offer does not necessarily mean a check has cleared. A settlement check does not necessarily equal the client's net proceeds after fees, costs and valid reimbursements.
 
-The California Courts explains that personal-injury damages may include medical bills, lost wages, emotional harm, ongoing treatment and future problems from injury. Those categories are more complicated than paying to replace a damaged bumper. A meaningful bodily-injury evaluation must connect each claimed loss to the collision and to an actual evidentiary basis. It may be incomplete even when the vehicle property-damage portion has already been resolved.
+The California Courts explains that personal-injury damages may include medical bills, lost wages, emotional harm, ongoing treatment and future problems from injury. Those categories are more complicated than paying to replace a damaged bumper. A meaningful bodily-injury evaluation must connect each claimed loss to the collision and to an actual evidentiary basis. It may be incomplete even when the vehicle property-damage portion has already been resolved. The [personal injury trends guide](/blogs/state-of-personal-injury-2026-ca-trends) offers questions about fee agreements, funding, and settlement deductions; industry headlines do not replace review of the actual release.
+
 
 ## A phase-by-phase map: what happens before money changes hands
 

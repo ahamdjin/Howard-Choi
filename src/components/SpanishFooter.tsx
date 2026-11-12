@@ -48,7 +48,7 @@ const SpanishFooter = () => (
       </div>
 
       <div className="grid gap-5 pt-8 text-[11px] text-muted-foreground lg:grid-cols-[auto_1fr_auto] lg:items-center">
-        <span>© 2026 {brand.name}</span>
+        <span>© 2026 Law Offices of Howard Choi DBA Buena Park Injury Lawyer</span>
         <div className="flex flex-wrap gap-x-4 gap-y-2 lg:justify-center">
           <Link to="/es/privacy-policy" className="hover:text-foreground">Privacidad</Link>
           <Link to="/es/terms" className="hover:text-foreground">Términos de uso</Link>

@@ -52,7 +52,7 @@ const Footer = () => {
         </div>
 
         <div className="grid gap-5 pt-8 text-[11px] text-muted-foreground lg:grid-cols-[auto_1fr_auto] lg:items-center">
-          <span>© 2026 {brand.name}</span>
+          <span>© 2026 Law Offices of Howard Choi DBA Buena Park Injury Lawyer</span>
           <div className="flex flex-wrap gap-x-4 gap-y-2 lg:justify-center">
             <Link to="/privacy-policy" className="hover:text-foreground">Privacy Policy</Link>
             <Link to="/terms" className="hover:text-foreground">Terms of Use</Link>
