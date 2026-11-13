@@ -57,7 +57,7 @@ Your policy may provide several potential routes to payment.
 - **Medical payments coverage**, often called MedPay, may cover eligible medical expenses regardless of fault, up to the purchased limit.
 - **Uninsured and underinsured motorist coverage** may help when a responsible driver has no insurance or insufficient coverage, subject to eligibility requirements and policy terms.
 
-After paying a covered loss, your insurer may seek reimbursement from a responsible party through subrogation. Whether a deductible is recovered depends on the circumstances. Review the policy rather than assuming every expense will be reimbursed.
+After paying a covered loss, your insurer may seek reimbursement from a responsible party through subrogation. Whether a deductible is recovered depends on the circumstances. Review the policy rather than assuming every expense will be reimbursed. The [car insurance deductible guide](/blogs/car-insurance-deductible-after-accident-california) explains what you may owe up front and how a later recovery can affect that amount.
 
 ## How Do You Prove Fault After a Car Accident?
 

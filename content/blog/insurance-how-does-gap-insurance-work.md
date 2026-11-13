@@ -149,7 +149,7 @@ No. GAP generally addresses eligible debt after a qualifying total loss or theft
 
 ### Will GAP pay my deductible?
 
-Not necessarily. An agreement may cover a deductible, exclude it, or limit the amount allowed. Request a calculation that separates the deductible from the difference between your loan balance and the vehicle’s value.
+Not necessarily. An agreement may cover a deductible, exclude it, or limit the amount allowed. Request a calculation that separates the deductible from the difference between your loan balance and the vehicle’s value. See [how a car insurance deductible is applied](/blogs/car-insurance-deductible-after-accident-california) for the separate calculation on the primary claim.
 
 ### Is GAP insurance required in California?
 

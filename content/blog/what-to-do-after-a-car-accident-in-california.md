@@ -43,7 +43,7 @@ Witnesses fade in a different way. People do not forget that they saw a crash, b
 
 You will get a call, often within a day or two, from the other driver's insurer. They will be pleasant and they will ask how you are doing.
 
-You do not have to give a recorded statement to the other side's insurance company. You also do not have to answer "how are you feeling" with "I'm fine," which is what almost everyone says out of reflex. It is entirely reasonable to say you are still being evaluated and will follow up in writing once you know more.
+You do not have to give a recorded statement to the other side's insurance company. You also do not have to answer "how are you feeling" with "I'm fine," which is what almost everyone says out of reflex. It is entirely reasonable to say you are still being evaluated and will follow up in writing once you know more. See [what an insurance adjuster does after a crash](/blogs/what-is-an-insurance-adjuster-car-accident) for questions to ask before sharing records or giving a statement.
 
 Be equally careful with anything you are asked to sign. A broad medical authorization can open your entire history rather than the treatment related to this crash. A settlement payment may be conditioned on signing a release. Read the precise scope of any proposed release before accepting it, especially when the extent of an injury or the need for additional treatment is still uncertain.
 
@@ -102,7 +102,7 @@ Now consider the injury record. The emergency visit documents neck pain, the lat
 
 First attend to immediate safety, then document. Move away from moving traffic when safe; call emergency services when injuries, fire, danger or other circumstances warrant a response. If a person may have a serious head, neck or spinal injury, avoid moving them except when necessary for immediate safety and follow emergency responders' guidance. A collision scene is not the place to negotiate fault or make a medical diagnosis.
 
-Record the location precisely: nearest intersection, direction of travel, lane, traffic controls, weather, and approximate time. Exchange identifying and insurance information as required; if a person cannot do so because of injury or a dangerous situation, explain that accurately when speaking to responders. Where available, record vehicle plate numbers, owners and the insurer's policy and claim identifiers. Photograph the scene only if doing so does not create danger or interfere with emergency care.
+Record the location precisely: nearest intersection, direction of travel, lane, traffic controls, weather, and approximate time. Exchange identifying and insurance information as required; if a person cannot do so because of injury or a dangerous situation, explain that accurately when speaking to responders. Where available, record vehicle plate numbers, owners and the insurer's policy and claim identifiers. If the driver and owner are different people, check [how insurance can apply to a borrowed car](/blogs/does-car-insurance-follow-the-car-or-driver-california). Photograph the scene only if doing so does not create danger or interfere with emergency care.
 
 Keep an original set of photographs and videos. If you later draw on an image to explain an intersection, save the annotated copy separately. The difference matters: an original image contains context and metadata that can be lost through cropping, filters or messaging apps.
 

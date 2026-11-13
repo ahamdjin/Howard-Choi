@@ -77,6 +77,7 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
       { title: "California DMV accident reporting", koTitle: "California DMV accident reporting", slug: "notify-the-california-dmv-about-an-accident" },
       { title: "Diminished value claims in California", koTitle: "Diminished value claims in California", slug: "diminished-value-claim-california" },
       { title: "How GAP insurance works", koTitle: "How GAP insurance works", slug: "insurance-how-does-gap-insurance-work" },
+      { title: "What to ask when an insurance adjuster calls", koTitle: "What to ask when an insurance adjuster calls", slug: "what-is-an-insurance-adjuster-car-accident" },
       { title: "What to do after a car accident in California", koTitle: "캘리포니아 자동차 사고 후 해야 할 일", slug: "what-to-do-after-a-car-accident-in-california" },
       { title: "Impaired driving in California", koTitle: "캘리포니아의 약물·음주 운전", slug: "what-is-impaired-driving-in-california" },
       { title: "California comparative fault explained", koTitle: "캘리포니아 비교과실 이해하기", slug: "california-comparative-fault-personal-injury" },
