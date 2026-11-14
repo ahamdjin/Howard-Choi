@@ -3,12 +3,14 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import type { SiteLocale } from "@/data/injurySite";
+import { cn } from "@/lib/utils";
 
 type WebsiteInquiryFormProps = {
   locale?: SiteLocale;
+  prominentSubmit?: boolean;
 };
 
-const WebsiteInquiryForm = ({ locale = "en" }: WebsiteInquiryFormProps) => {
+const WebsiteInquiryForm = ({ locale = "en", prominentSubmit = false }: WebsiteInquiryFormProps) => {
   const [formData, setFormData] = useState({ full_name: "", email: "", phone: "", subject: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const isKorean = locale === "ko";
@@ -54,7 +56,16 @@ const WebsiteInquiryForm = ({ locale = "en" }: WebsiteInquiryFormProps) => {
       <Input name="phone" type="tel" autoComplete="tel" value={formData.phone} onChange={handleChange} placeholder={phone} aria-label={phone} className="h-12 rounded-[2px] border-foreground/10 bg-background/70 px-4 text-[13px] shadow-none" />
       <Input name="subject" value={formData.subject} onChange={handleChange} required placeholder={subject} aria-label={subject} className="h-12 rounded-[2px] border-foreground/10 bg-background/70 px-4 text-[13px] shadow-none" />
       <Textarea name="message" value={formData.message} onChange={handleChange} required placeholder={message} aria-label={message} rows={7} className="resize-none rounded-[2px] border-foreground/10 bg-background/70 p-4 text-[13px] leading-6 shadow-none" />
-      <button type="submit" disabled={isSubmitting} className="liquid-cta mt-2 inline-flex rounded-full px-6 py-3 text-[12px] font-medium disabled:cursor-wait disabled:opacity-70">
+      <button
+        type="submit"
+        disabled={isSubmitting}
+        className={cn(
+          "mt-2 inline-flex items-center justify-center rounded-full px-6 py-3 disabled:cursor-wait disabled:opacity-70",
+          prominentSubmit
+            ? "min-h-12 w-full bg-[#2b241e] text-sm font-semibold text-white hover:bg-[#47382c] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2b241e] sm:w-auto"
+            : "liquid-cta text-[12px] font-medium",
+        )}
+      >
         <span className="relative z-10">{isSubmitting ? sending : send}</span>
       </button>
       <p className="max-w-[520px] pt-2 text-[10px] leading-5 text-foreground/42">

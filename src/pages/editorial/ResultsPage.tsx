@@ -1,12 +1,13 @@
 import { TopicVisual } from "@/components/editorial/TopicVisual";
+import { SplitPageHero } from "@/components/editorial/SplitPageHero";
 import SiteDepthSection from "@/components/SiteDepthSection";
 import { ArrowRight, FileCheck2, Scale, ShieldCheck } from "lucide-react";
 import heroCourthouse from "@/assets/law-firm/hero-courthouse.webp";
 import type { SiteLocale } from "@/data/injurySite";
+import { responsiveImageProps } from "@/lib/responsive-images";
 import {
   ConsultationCta,
   EditorialFrame,
-  EditorialHero,
   isEs,
   isKo,
   localePrefix,
@@ -24,17 +25,27 @@ const resultExamples = [
 export const ResultsPage = ({ locale }: { locale: SiteLocale }) => (
   <EditorialFrame locale={locale}>
     <main>
-      <EditorialHero
+      <SplitPageHero
         locale={locale}
-        eyebrow={isKo(locale) ? "사건 결과" : isEs(locale) ? "Resultados de casos" : "Case results"}
+        breadcrumb={isKo(locale) ? "사건 결과" : isEs(locale) ? "Resultados de casos" : "Case results"}
         title={isKo(locale) ? "결과는 숫자만으로 설명되지 않습니다." : isEs(locale) ? "Un número por sí solo no dice mucho." : "A number on its own does not tell you much."}
         description={isKo(locale)
           ? "사건 결과는 금액만 보는 것이 아니라 사건 유형, 책임, 부상, 치료, 보험과 증거를 함께 봐야 의미가 있습니다."
           : isEs(locale)
             ? "La gravedad de la lesión, el tratamiento, la responsabilidad, el seguro disponible, la fuerza de la evidencia, la atención futura y el efecto de la lesión en la vida de la persona son lo que produce una cifra. Sin ese contexto, el número es solo un número."
             : "How badly someone was hurt, what treatment they needed, who was at fault, how much insurance existed, how strong the evidence was, what care they will still need, and what the injury did to their life. Those are what produced the number. Strip them away and the figure is just a figure."}
-        image={heroCourthouse}
-      />
+        action={{ href: "#results", label: isKo(locale) ? "사건 결과 보기" : isEs(locale) ? "Ver resultados seleccionados" : "View selected outcomes" }}
+      >
+        <div className="relative aspect-[2/1] bg-[#e9e2d7] sm:aspect-[5/2] lg:aspect-auto">
+          <img
+            {...responsiveImageProps(heroCourthouse, "(min-width: 1024px) 640px, 100vw")}
+            src={heroCourthouse}
+            alt=""
+            loading="eager"
+            className="absolute inset-0 size-full object-cover"
+          />
+        </div>
+      </SplitPageHero>
 
       <ReadingLayout
         locale={locale}

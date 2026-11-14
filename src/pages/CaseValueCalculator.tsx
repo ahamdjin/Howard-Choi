@@ -1,10 +1,9 @@
 import { trackExternalFormSubmission } from "@/lib/inquiry-client";
 import SiteDepthSection from "@/components/SiteDepthSection";
 import { responsiveImageProps } from "@/lib/responsive-images";
-import PageBreadcrumb from "@/components/PageBreadcrumb";
+import { SplitPageHero } from "@/components/editorial/SplitPageHero";
 import { useMemo, useState } from "react";
 import { ArrowRight, CheckCircle2, Info, Mail, RotateCcw } from "lucide-react";
-import heroBoardroom from "@/assets/law-firm/hero-city-boardroom.webp";
 import heroCourthouse from "@/assets/law-firm/hero-courthouse.webp";
 import heroJusticeLibrary from "@/assets/law-firm/hero-justice-library.webp";
 import heroLawOffice from "@/assets/law-firm/hero-law-office.webp";
@@ -283,38 +282,42 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
 
   return (
     <EditorialFrame locale={locale}>
-      <main className="bg-[#F7F6F3] pt-[60px] text-[#211E1B]">
-        <section className="bg-[#17130f] text-[#f3eee5]">
-          <div className="site-shell grid min-h-[520px] gap-0 lg:grid-cols-[0.86fr_1.14fr] lg:min-h-[590px]">
-            <div className="flex items-end py-10 pr-0 md:py-12 lg:pr-12 lg:py-14">
-              <div className="max-w-[560px]">
-                <div className="text-[10px] font-medium text-[#f3eee5]/52">{ko ? "캘리포니아 개인상해 계산기" : es ? "Calculadora de lesiones personales de California" : "California personal injury calculator"}</div>
-                <PageBreadcrumb locale={locale} title={ko ? "예상 배상액 계산기" : es ? "Calculadora de valor del caso" : "Case Value Calculator"} />
-                <h1 style={serifStyle(locale)} className={ko ? "mt-4 text-[clamp(2rem,3.6vw,3rem)] font-medium leading-[1.18] tracking-[-0.03em]" : "editorial-serif mt-4 text-[clamp(2.25rem,3.6vw,3.25rem)] leading-[0.98] tracking-[-0.026em]"}>
-                  {ko ? "내 사건의 가치는 얼마일까요?" : es ? "¿Cuánto podría valer su caso?" : "What could your case be worth?"}
-                </h1>
-                <p className="mt-4 max-w-[480px] text-[13px] leading-6 text-[#f3eee5]/64 md:text-[14px]">
-                  {ko ? "핵심 정보를 입력해 캘리포니아 개인상해 사건의 교육용 예상 범위를 확인하세요." : es ? "Responda algunas preguntas y obtendrá un rango aproximado. Es un punto de partida para la conversación, no una valoración de su caso." : "Answer a few questions and you will get a rough range. It is a starting point for the conversation, not a valuation of your case."}
-                </p>
-                <a href="#calculator" className="mt-6 inline-flex items-center gap-3 rounded-full bg-[#f3eee5] px-5 py-3 text-[11px] font-medium text-[#17130f]">
-                  {ko ? "계산 시작" : es ? "Iniciar la calculadora" : "Start the calculator"}<ArrowRight className="h-3.5 w-3.5" />
-                </a>
-              </div>
-            </div>
-
-            <div className="relative min-h-[300px] overflow-hidden lg:min-h-0">
-              <img {...responsiveImageProps(heroBoardroom)} src={heroBoardroom} alt={ko ? "법률 사무실 회의 공간" : es ? "Sala de conferencias de un bufete" : "Law firm conference room"} className="absolute inset-0 h-full w-full object-cover" />
-              <div className="absolute inset-0 bg-black/18" />
-              <div className="absolute bottom-5 left-5 right-5 flex flex-wrap gap-2 text-[9px] font-medium text-white/74 md:bottom-7 md:left-7">
-                <span className="rounded-full border border-white/24 bg-black/15 px-3 py-1.5 backdrop-blur-sm">{ko ? "무료" : es ? "Gratis" : "Free"}</span>
-                <span className="rounded-full border border-white/24 bg-black/15 px-3 py-1.5 backdrop-blur-sm">{ko ? "가입 불필요" : es ? "Sin registro" : "No signup"}</span>
-                <span className="rounded-full border border-white/24 bg-black/15 px-3 py-1.5 backdrop-blur-sm">{ko ? "즉시 결과" : es ? "Resultado inmediato" : "Instant result"}</span>
-              </div>
-            </div>
+      <main className="bg-[#F7F6F3] text-[#211E1B]">
+        <SplitPageHero
+          locale={locale}
+          breadcrumb={ko ? "예상 배상액 계산기" : es ? "Calculadora de valor del caso" : "Case Value Calculator"}
+          title={ko ? "내 사건의 가치는 얼마일까요?" : es ? "¿Cuánto podría valer su caso?" : "What could your case be worth?"}
+          description={ko
+            ? "핵심 정보를 입력해 캘리포니아 개인상해 사건의 교육용 예상 범위를 확인하세요."
+            : es
+              ? "Responda algunas preguntas y obtendrá un rango aproximado. Es un punto de partida para la conversación, no una valoración de su caso."
+              : "Answer a few questions and you will get a rough range. It is a starting point for the conversation, not a valuation of your case."}
+          action={{ href: "#calculator", label: ko ? "계산 시작" : es ? "Iniciar la calculadora" : "Start the calculator" }}
+        >
+          <div className="flex min-w-0 flex-col justify-center border-t border-[#2b241e]/15 bg-[#efe9df] px-5 py-8 sm:p-8 lg:border-l lg:border-t-0 lg:p-10 xl:p-12">
+            <h2 style={serifStyle(locale)} className="editorial-serif text-balance text-3xl leading-tight">
+              {ko ? "계산에 필요한 정보" : es ? "Qué necesita para calcular" : "What you’ll need"}
+            </h2>
+            <ul className="mt-5 space-y-3 text-sm leading-6 text-[#54483e]">
+              {(ko
+                ? ["현재까지의 의료비", "부상으로 잃은 소득", "부상 정도와 받은 치료"]
+                : es
+                  ? ["Gastos médicos hasta la fecha", "Ingresos perdidos por la lesión", "Gravedad de la lesión y tratamiento recibido"]
+                  : ["Medical bills so far", "Income you missed because of the injury", "Injury severity and treatment received"]
+              ).map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <CheckCircle2 aria-hidden="true" className="mt-1 size-4 shrink-0 text-[#54483e]" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-6 border-t border-[#2b241e]/15 pt-5 text-sm leading-6 text-[#54483e]">
+              {ko ? "결과를 보려면 가입하거나 연락처를 입력할 필요가 없습니다." : es ? "Puede ver el resultado sin registrarse ni dar sus datos de contacto." : "You can see the result without signing up or entering contact details."}
+            </p>
           </div>
-        </section>
+        </SplitPageHero>
 
-        <section id="calculator" className="site-shell scroll-mt-20 py-12 md:py-16 lg:py-20">
+        <section id="calculator" tabIndex={-1} className="site-shell scroll-mt-28 py-12 md:py-16 lg:py-20">
           <div className="mx-auto max-w-[1080px]">
             <div className="mb-7 flex items-end justify-between gap-4 border-t border-[#211E1B]/12 pt-5">
               <div>
