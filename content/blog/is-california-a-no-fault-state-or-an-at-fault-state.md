@@ -47,7 +47,7 @@ Start by identifying the coverage involved rather than assuming one insurer will
 
 California generally requires drivers to maintain financial responsibility, commonly through liability insurance. Since January 1, 2025, standard minimum liability limits have been $30,000 for injury or death to one person, $60,000 for injury or death to multiple people in one accident, and $15,000 for property damage.
 
-These are coverage limits, not guaranteed settlement amounts. They also may be insufficient for a serious collision. Liability coverage generally pays covered claims arising from the insured driver’s responsibility to others, rather than repairing that driver’s own vehicle. [California DMV](https://www.dmv.ca.gov/portal/vehicle-registration/insurance-requirements/)
+These are coverage limits, not guaranteed settlement amounts. Our [California auto liability guide](/blogs/what-is-auto-liability-insurance-california) explains how per-person, per-crash and property damage limits work together. They also may be insufficient for a serious collision. Liability coverage generally pays covered claims arising from the insured driver’s responsibility to others, rather than repairing that driver’s own vehicle. [California DMV](https://www.dmv.ca.gov/portal/vehicle-registration/insurance-requirements/)
 
 ### Your own insurance coverage
 

@@ -116,7 +116,7 @@ A calculator result is not a substitute for explaining the loss. The useful ques
 
 ### Treat total-loss disputes separately
 
-When the insurer treats the vehicle as a total loss, focus on the pre-loss valuation and settlement calculation rather than a hypothetical resale price after repairs. Check the recorded trim, options, mileage, condition, and comparable vehicles.
+When the insurer treats the vehicle as a total loss, focus on the pre-loss valuation and settlement calculation rather than a hypothetical resale price after repairs. Check the recorded trim, options, mileage, condition, and comparable vehicles using the [totaled-car valuation checklist](/blogs/what-happens-when-car-is-totaled-california).
 
 Your loan balance is another figure entirely. GAP coverage, if purchased and applicable, addresses a different financial problem from residual diminished value. Review its terms instead of assuming a valuation dispute or ordinary auto coverage will eliminate a loan shortfall.
 

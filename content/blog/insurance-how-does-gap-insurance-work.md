@@ -25,7 +25,7 @@ Get the lender’s dated payoff figure and the insurer’s written settlement ca
 
 ## What GAP pays for after a total loss
 
-Standard auto insurance generally bases a total-loss settlement on the vehicle’s actual cash value, or ACV. This is its value immediately before the loss, not its original purchase price or your outstanding loan balance.
+The [totaled-car valuation guide](/blogs/what-happens-when-car-is-totaled-california) explains how to check the insurer’s comparison vehicles and adjustments. Standard auto insurance generally bases a total-loss settlement on the vehicle’s actual cash value, or ACV. This is its value immediately before the loss, not its original purchase price or your outstanding loan balance.
 
 Your debt follows a separate calculation based on your financing terms and payment history. If the covered insurance settlement falls below the eligible debt, GAP may pay or waive part of the difference. Coverage caps, exclusions, and the agreement’s calculation method determine the benefit. Owing more than the insurance payment does not make the entire shortfall eligible.
 
