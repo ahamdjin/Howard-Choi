@@ -158,6 +158,8 @@ Do not send passwords or account access codes to an adjuster. Preserve your own 
 
 A witness, business camera or driver message may help fill a gap, but preservation and access are separate questions. Avoid assuming that a request guarantees a copy. Bring the available records to an [initial consultation](/contact), along with any insurer deadline or proposed release that needs prompt attention. The [California rideshare insurance guide](/blogs/uber-lyft-accident-insurance-california) provides the broader coverage framework.
 
+If treatment bills are arriving during the claim, use the [guide to handling medical bills before a settlement](/blogs/medical-bills-while-car-accident-claim-pending-california) to track provider statements, payments and outstanding balances.
+
 ## Frequently asked questions
 
 ### Can I bring a claim if I was a rideshare passenger?

@@ -54,6 +54,8 @@ Notify your insurer promptly, even if you believe another driver caused the cras
 
 Reporting a crash does not mean every loss is covered. Liability insurance addresses covered claims against you. Collision, medical payments, and uninsured or underinsured motorist coverage serve different purposes. What your insurer pays depends on the coverage, policy limits, deductibles, and circumstances. [California Department of Insurance automobile insurance guide](https://www.insurance.ca.gov/01-consumers/105-type/95-guides/01-auto/auto101.cfm)
 
+If you still need to open a claim, see [what insurers may accept when you do not have a police report](/blogs/car-insurance-claim-without-police-report-california).
+
 ### The California DMV
 
 Submit the SR-1 within 10 days when a reporting trigger applies. Your insurance agent, broker, or legal representative may submit it for you. If someone agrees to handle the report, ask for confirmation that it was submitted. Opening an insurance claim alone does not complete this step. If the vehicle uses an electronic plate, keep its registration and device records separate from the accident report. The [digital license plate guide](/blogs/digital-license-plates) explains the product and account records to preserve.
@@ -133,6 +135,8 @@ Do not alter an official report yourself or describe a requested correction as o
 **Hypothetical example.** A claim was opened using the date you called the insurer rather than the earlier date of the collision. Compare the claim acknowledgement with scene records and the policy effective dates. Identify the source of the discrepancy before sending more forms that repeat it. The example illustrates record checking, not a determination of coverage.
 
 If a notice threatens your driving privilege or sets a response date, address it promptly. You can [contact the office](/contact) about the injury-claim issues and bring the actual notice, submitted report and insurance correspondence. Do not wait for a correction request to resolve before checking an independent deadline.
+
+If the error is in the police or CHP report, read [how to ask the investigating agency to review it](/blogs/correct-inaccurate-car-accident-police-report-california).
 
 ## Frequently asked questions
 

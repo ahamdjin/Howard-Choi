@@ -366,5 +366,29 @@
     ],
     "href": "/locations/buena-park",
     "linkLabel": "Find Buena Park office and local reporting resources"
+  },
+  "/blogs/car-insurance-claim-without-police-report-california": {
+    "title": "Keep the agency response next to the claim request",
+    "paragraphs": [
+      "If the agency says no written report is available, record who told you and when. Save any confirmation, call number or incident record. If the adjuster asks for a report later, send the agency response with your claim number and ask which other evidence it will accept for the coverage being reviewed."
+    ],
+    "href": "/faqs/insurance-claim",
+    "linkLabel": "Read how to track insurance document requests"
+  },
+  "/blogs/correct-inaccurate-car-accident-police-report-california": {
+    "title": "Track which version each person has",
+    "paragraphs": [
+      "When you receive a new page or supplement, note its date and compare it with the original. Keep a short list of which insurer or representative received each version. Ask the person reviewing your claim whether the new record addresses the disputed detail or whether they still need another source."
+    ],
+    "href": "/blogs/what-is-an-insurance-adjuster-car-accident",
+    "linkLabel": "Read how to keep an adjuster informed about new records"
+  },
+  "/blogs/medical-bills-while-car-accident-claim-pending-california": {
+    "title": "Match payments to the services they cover",
+    "paragraphs": [
+      "When a payment appears on a statement, check the service date, account number and name of the payer. An imaging office and the clinician who read the image may bill separately. If a payment or adjustment seems to be missing, ask the billing office for the account history before adding the balance to your ledger."
+    ],
+    "href": "/faqs/medical-treatment-after-an-accident",
+    "linkLabel": "Read how to keep treatment and billing records organized"
   }
 }
