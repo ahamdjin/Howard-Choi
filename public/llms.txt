@@ -1,6 +1,6 @@
 # Buena Park Injury Lawyer
 
-> Buena Park Injury Lawyer is the website of California personal injury attorney Howard Choi, serving Buena Park and nearby Orange County and Los Angeles County communities. The site covers attorney credentials, accident and injury practice areas, local service-area information, case results, educational legal guides, a case-value estimator, and consultation options.
+> Buena Park Injury Lawyer is the website of Law Offices of Howard Choi DBA Buena Park Injury Lawyer, led by California personal injury attorney Howard Choi, serving Buena Park and nearby Orange County and Los Angeles County communities. The site covers attorney credentials, accident and injury practice areas, local service-area information, case results, educational legal guides, a case-value estimator, and consultation options.
 
 ## Canonical website
 - https://www.buenaparkinjurylawyer.com/
@@ -11,7 +11,7 @@
 - https://www.buenaparkinjurylawyer.com/ — Home
 - https://www.buenaparkinjurylawyer.com/attorney — Howard Choi attorney profile and credentials
 - https://www.buenaparkinjurylawyer.com/about — Firm background and approach
-- https://www.buenaparkinjurylawyer.com/results — Verified firm-reported case results and context
+- https://www.buenaparkinjurylawyer.com/results — Firm-reported case results and context
 - https://www.buenaparkinjurylawyer.com/practice-areas — Personal injury practice areas
 - https://www.buenaparkinjurylawyer.com/locations — Communities served
 - https://www.buenaparkinjurylawyer.com/blogs — California injury-law guides
@@ -19,6 +19,7 @@
 - https://www.buenaparkinjurylawyer.com/contact — Contact and consultation booking
 
 ## Practice areas
+- https://www.buenaparkinjurylawyer.com/practice-areas/personal-injury — Personal injury claims
 - https://www.buenaparkinjurylawyer.com/practice-areas/car-accidents — Car accidents
 - https://www.buenaparkinjurylawyer.com/practice-areas/truck-accidents — Truck and commercial vehicle accidents
 - https://www.buenaparkinjurylawyer.com/practice-areas/motorcycle-accidents — Motorcycle accidents
@@ -41,12 +42,49 @@
 - https://www.buenaparkinjurylawyer.com/locations/whittier — Whittier
 
 ## Legal guides
-- https://www.buenaparkinjurylawyer.com/blogs/what-to-do-after-a-car-accident-in-california
-- https://www.buenaparkinjurylawyer.com/blogs/california-personal-injury-deadlines
-- https://www.buenaparkinjurylawyer.com/blogs/truck-accident-evidence-eld-records-california
-- https://www.buenaparkinjurylawyer.com/blogs/uber-lyft-accident-insurance-california
-- https://www.buenaparkinjurylawyer.com/blogs/how-much-is-my-personal-injury-case-worth-california
-- https://www.buenaparkinjurylawyer.com/blogs/california-comparative-fault-personal-injury
+- https://www.buenaparkinjurylawyer.com/blogs/what-is-an-insurance-adjuster-car-accident — What is an insurance adjuster?
+- https://www.buenaparkinjurylawyer.com/blogs/does-car-insurance-follow-the-car-or-driver-california — Does car insurance cover the car or driver?
+- https://www.buenaparkinjurylawyer.com/blogs/car-insurance-deductible-after-accident-california — What is a car insurance deductible?
+- https://www.buenaparkinjurylawyer.com/blogs/what-happens-if-you-drive-without-a-license-california — What Happens If You Drive Without a License in California (2026 Guide)
+- https://www.buenaparkinjurylawyer.com/blogs/state-of-personal-injury-2026-ca-trends — State of Personal Injury 2026 | 10 Trends Shaping an Industry
+- https://www.buenaparkinjurylawyer.com/blogs/owi-vs-dui-in-the-us — OWI vs DUI (2026): What’s the Difference in CA, FL, NY & More
+- https://www.buenaparkinjurylawyer.com/blogs/digital-license-plates — Digital License Plates: What You Need to Know
+- https://www.buenaparkinjurylawyer.com/blogs/california-window-tint-laws — California Tint Laws (2026) | Is Your Window Tint Legal?
+- https://www.buenaparkinjurylawyer.com/blogs/cali-lean-vs-carolina-squat-whats-the-difference — Cali Lean vs. Carolina Squat: What’s the Difference?
+- https://www.buenaparkinjurylawyer.com/blogs/california-wrongful-death-guide — Wrongful Death 101
+- https://www.buenaparkinjurylawyer.com/blogs/california-truck-accident-guide — Truck Accident 101
+- https://www.buenaparkinjurylawyer.com/blogs/california-slip-and-fall-accidents-guide — Slip and Fall 101
+- https://www.buenaparkinjurylawyer.com/blogs/california-rideshare-accidents-guide — Rideshare Accident 101
+- https://www.buenaparkinjurylawyer.com/blogs/california-personal-injury-guide — Personal Injury 101
+- https://www.buenaparkinjurylawyer.com/blogs/california-pedestrian-accident-guide — Pedestrian Accident 101
+- https://www.buenaparkinjurylawyer.com/blogs/california-motorcycle-accident-guide — Motorcycle Accident 101
+- https://www.buenaparkinjurylawyer.com/blogs/california-dog-bite-accidents-guide — Dog Bite 101
+- https://www.buenaparkinjurylawyer.com/blogs/california-catastrophic-injury-guide — Catastrophic Injury 101
+- https://www.buenaparkinjurylawyer.com/blogs/california-bicycle-accident-guide — Bicycle Accident 101
+- https://www.buenaparkinjurylawyer.com/blogs/workers-comp-step-by-step-process-of-filing-a-workers-comp-claim-in-california — Step-by-Step Process of Filing a Workers’ Comp Claim in CA
+- https://www.buenaparkinjurylawyer.com/blogs/fullerton-uber-lyft-accident-lawyer — Fullerton Uber & Lyft Accident Attorney
+- https://www.buenaparkinjurylawyer.com/blogs/disneyland-deaths — How Many People Have Died at Disneyland?
+- https://www.buenaparkinjurylawyer.com/blogs/new-year-alcohol-related-crashes — New Year’s Holiday and Drunk Driving Crashes
+- https://www.buenaparkinjurylawyer.com/blogs/buena-park-wrongful-death-attorney — Buena Park Wrongful Death Attorney
+- https://www.buenaparkinjurylawyer.com/blogs/blunt-force-trauma-determining-liability-in-blunt-trauma-lawsuits — Determining Liability in Blunt Trauma Lawsuits
+- https://www.buenaparkinjurylawyer.com/blogs/the-safest-cars-to-drive-in-the-us — The Safest Cars to Drive in The US
+- https://www.buenaparkinjurylawyer.com/blogs/car-accidents-what-is-a-skid-and-how-can-you-avoid-them — What is a Skid, and How Can You Avoid Them?
+- https://www.buenaparkinjurylawyer.com/blogs/californias-minimum-speed-law — California’s Minimum Speed Law
+- https://www.buenaparkinjurylawyer.com/blogs/notify-the-california-dmv-about-an-accident — Is it Necessary to Notify the California DMV About an Accident?
+- https://www.buenaparkinjurylawyer.com/blogs/insurance-how-does-gap-insurance-work — How Does Gap Insurance Work?
+- https://www.buenaparkinjurylawyer.com/blogs/diminished-value-claim-california — Diminished Value Claim, California
+- https://www.buenaparkinjurylawyer.com/blogs/what-is-impaired-driving-in-california — What is Impaired Driving in California?
+- https://www.buenaparkinjurylawyer.com/blogs/is-california-a-no-fault-state-or-an-at-fault-state — Is California a No-Fault State or an At-Fault State?
+- https://www.buenaparkinjurylawyer.com/blogs/california-seat-belt-laws — California Seat Belt Laws
+- https://www.buenaparkinjurylawyer.com/blogs/traumatic-brain-injury-evidence-after-california-accident — Traumatic Brain Injuries
+- https://www.buenaparkinjurylawyer.com/blogs/california-uninsured-driver-hit-and-run-injury-claims — Hit-and-Run or Uninsured Driver in California: Insurance & Injury Claims
+- https://www.buenaparkinjurylawyer.com/blogs/how-long-car-accident-settlement-takes-california — How Long Does a Car Accident Settlement Take in California?
+- https://www.buenaparkinjurylawyer.com/blogs/california-comparative-fault-personal-injury — California comparative fault: what happens if you were partly at fault?
+- https://www.buenaparkinjurylawyer.com/blogs/how-much-is-my-personal-injury-case-worth-california — How much is my personal injury case worth in California?
+- https://www.buenaparkinjurylawyer.com/blogs/uber-lyft-accident-insurance-california — Uber and Lyft accident insurance in California: which coverage may apply?
+- https://www.buenaparkinjurylawyer.com/blogs/truck-accident-evidence-eld-records-california — Truck accident evidence in California: ELDs, company records, and what can disappear
+- https://www.buenaparkinjurylawyer.com/blogs/california-personal-injury-deadlines — California personal injury deadlines: how long do you have to file?
+- https://www.buenaparkinjurylawyer.com/blogs/what-to-do-after-a-car-accident-in-california — Car Accident 101
 
 ## Attorney
 - Howard Jong-yol Choi
@@ -58,7 +96,7 @@
 - Background includes accounting / CPA experience
 
 ## Office
-- Buena Park Injury Lawyer
+- Law Offices of Howard Choi DBA Buena Park Injury Lawyer
 - 6301 Beach Blvd, Suite 216, Buena Park, CA 90621
 - Phone: 714-844-8494
 - Email: case@buenaparkinjurylawyer.com
@@ -67,8 +105,9 @@
 ## Languages and indexing
 - English: https://www.buenaparkinjurylawyer.com/
 - Korean: https://www.buenaparkinjurylawyer.com/ko
-- English and Korean are the current indexed language set and are represented in the XML sitemap and hreflang.
-- Spanish pages are available under https://www.buenaparkinjurylawyer.com/es but are intentionally staged as noindex and omitted from the XML sitemap for now.
+- English pages are the indexed language set and are represented in the XML sitemap.
+- Korean pages are available under https://www.buenaparkinjurylawyer.com/ko with noindex, follow and are omitted from the XML sitemap and indexed hreflang.
+- Spanish pages are available under https://www.buenaparkinjurylawyer.com/es with noindex, follow and are omitted from the XML sitemap and indexed hreflang.
 
 ## Case results
 - The firm reports more than $100 million in total client recoveries.
