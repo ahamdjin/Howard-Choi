@@ -1,3 +1,5 @@
+import { PageReadingNote } from "@/components/editorial/PageReadingNote";
+import readingNotes from "../../../content/learning/page-reading-notes/articles-es.json";
 import { ArticleParagraph } from "@/components/blog/ArticleParagraph";
 import { ArticleAuthorBio } from "@/components/blog/ArticleAuthor";
 import { ARTICLE_READING_LAYOUT, ArticleHero, ArticleReadingSidebar } from "@/components/blog/ArticleReadingLayout";
@@ -186,6 +188,8 @@ const EsBlogDetail = () => {
           </div>
         </div>
       </article>
+
+      <PageReadingNote notes={readingNotes} />
 
       {related && (
         <section className="relative z-10 border-t border-foreground/10 bg-[#e9e6e1] py-14 md:py-18">

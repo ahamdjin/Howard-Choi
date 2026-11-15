@@ -2,7 +2,7 @@
   "title": "What is a car insurance deductible?",
   "slug": "car-insurance-deductible-after-accident-california",
   "published": true,
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved",
   "author": "Howard Choi",
   "metaTitle": "Car Insurance Deductibles Explained",
   "metaDescription": "Learn how car insurance deductibles work after a California crash, when you may have to pay one, and how a later recovery may refund it.",
@@ -14,7 +14,9 @@
   "image": "/blog-images/imported-drafts/howard-choi-car-collision.jpg",
   "alt": "Rear-end collision damage to a passenger car",
   "intro": "A car insurance deductible is the part of a covered loss you absorb before your insurer pays the rest. After a California crash, you can owe your collision deductible even when you believe the other driver caused the crash. If your insurer recovers money later, you may receive some or all of it back. Start by asking which coverage is paying and which deductible applies to it.",
-  "takeaway": "Ask which coverage is paying, how the deductible is collected and whether the insurer will try to recover it."
+  "takeaway": "Ask which coverage is paying, how the deductible is collected and whether the insurer will try to recover it.",
+  "reviewedBy": "howard-choi",
+  "reviewConfirmationDate": "2026-11-15"
 }
 
 ## What a deductible looks like on a repair bill

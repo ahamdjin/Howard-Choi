@@ -11,8 +11,10 @@
   "takeaway": "Road position, visibility, physical evidence and medical findings can help separate the facts of a motorcycle crash from assumptions about the rider.",
   "published": true,
   "requiredTranslations": [],
-  "reviewStatus": "needs-attorney-review",
-  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-motorcycle-accident-101/"
+  "reviewStatus": "approved",
+  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-motorcycle-accident-101/",
+  "reviewedBy": "howard-choi",
+  "reviewConfirmationDate": "2026-11-15"
 }
 
 ## Introduction

@@ -1,3 +1,5 @@
+import { PageReadingNote } from "@/components/editorial/PageReadingNote";
+import readingNotes from "../../../content/learning/page-reading-notes/locations.json";
 import { claimProcessCopy } from "@/data/claimProcessCopy";
 import { ClaimProcessSteps } from "@/components/editorial/ClaimProcess";
 import { CaseStories } from "@/components/editorial/CaseStories";
@@ -214,5 +216,6 @@ export default function AnaheimLandingPage() {
     </ReadingLayout>
 
     <section className="al-final"><div className="al-shell"><span className="al-eyebrow">Buena Park Injury Lawyer · Serving Anaheim</span><h2>Let’s talk about<br /><em>what comes next.</em></h2><ContactLinks light/><p>No fee unless there is a recovery.</p></div></section>
+  <PageReadingNote notes={readingNotes} />
   </main></EditorialFrame>;
 }

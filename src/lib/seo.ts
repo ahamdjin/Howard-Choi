@@ -110,6 +110,8 @@ export const legalServiceJsonLd = {
   "@type": "LegalService",
   "@id": `${SITE_URL}/#legal-service`,
   name: SITE_NAME,
+  sameAs: [brand.mapsHref, brand.gbpHref, brand.yelpHref, brand.facebookHref, brand.instagramHref, brand.linkedinHref],
+  hasMap: brand.mapsHref,
   url: SITE_URL,
   telephone: brand.phoneHref.replace(/^tel:/, ""),
   address: {

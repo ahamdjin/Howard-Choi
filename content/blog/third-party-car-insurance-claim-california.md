@@ -2,7 +2,7 @@
   "title": "What is a third-party insurance claim?",
   "slug": "third-party-car-insurance-claim-california",
   "published": true,
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved",
   "author": "Howard Choi",
   "metaTitle": "What Is a Third-Party Insurance Claim?",
   "metaDescription": "Learn what a third-party insurance claim is, how to file against another driver, and how to compare it with using your own coverage.",
@@ -14,7 +14,9 @@
   "image": "/blog-images/imported-drafts/howard-choi-reviewing-documents.jpg",
   "alt": "Accident claim documents being reviewed",
   "intro": "A third-party auto insurance claim is a request for payment from someone else’s liability insurer. If another driver caused a California crash, their insurer may investigate your vehicle damage, injuries, or both. You may also have benefits under your own policy. Where you file can affect how quickly a car is inspected, whether a deductible applies, and which company handles disputed fault.",
-  "takeaway": "Compare the two claims by which losses each carrier can pay, whether fault is disputed, and what you would owe up front."
+  "takeaway": "Compare the two claims by which losses each carrier can pay, whether fault is disputed, and what you would owe up front.",
+  "reviewedBy": "howard-choi",
+  "reviewConfirmationDate": "2026-11-15"
 }
 
 ## Decide what needs attention first

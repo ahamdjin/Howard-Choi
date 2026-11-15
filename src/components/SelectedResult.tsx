@@ -48,23 +48,22 @@ const SelectedResult = ({ locale = "en" }: { locale?: SiteLocale }) => {
   const es = locale === "es";
   const prefix = ko ? "/ko" : es ? "/es" : "";
   return (
-    <section id="results" aria-labelledby="home-results-heading" style={{ minHeight: "100svh" }} className="flex w-full items-center bg-[#0f0f0f] py-20 text-[#f4f1ea] md:py-24 lg:py-28">
+    <section id="results" aria-labelledby="home-results-heading" className="!min-h-0 w-full bg-[#0f0f0f] py-14 text-[#f4f1ea] md:py-20">
       <div className="site-shell">
         <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-16">
           <div>
-            <div className="text-[10px] uppercase tracking-[0.16em] text-white/38">{ko ? "실적 및 경력" : es ? "Resultados y experiencia" : "Results & experience"}</div>
-            <h2 id="home-results-heading" className="editorial-serif mt-5 max-w-[720px] text-[clamp(2.5rem,4.4vw,4.6rem)] leading-[0.94] tracking-[-0.035em]">
-              {ko ? "숫자로 보는 실적." : es ? "Los números, explicados con claridad." : "The numbers, in plain terms."}
+            <h2 id="home-results-heading" className="editorial-serif max-w-[720px] text-[clamp(2.5rem,4.4vw,4.6rem)] leading-[0.94] tracking-[-0.035em]">
+              {ko ? "사건 결과와 변호 경력" : es ? "Resultados y experiencia" : "Case results and experience"}
             </h2>
           </div>
           <a href={`${prefix}/results`} className="inline-flex items-center gap-2 whitespace-nowrap rounded-[3px] bg-[#f3eee5] px-4 py-3 text-[11px] font-medium text-[#17130f] transition-opacity hover:opacity-85 lg:mb-2">
             {ko ? "사건 결과 보기" : es ? "Ver resultados" : "View case results"} <ArrowUpRight className="h-3.5 w-3.5" />
           </a>
         </div>
-        <div className="mt-12 grid gap-4 md:grid-cols-3 lg:mt-14">
+        <div className="mt-8 grid gap-4 md:grid-cols-3 lg:mt-10">
           {results.map((result) => (
             <div key={result.title} className="overflow-hidden rounded-[3px] bg-[#191919]">
-              <div className="relative aspect-[16/10] overflow-hidden">
+              <div className="relative h-28 overflow-hidden md:h-36">
                 <img {...responsiveImageProps(result.image)} src={result.image} alt={result.alt} loading="lazy" decoding="async" className="h-full w-full object-cover opacity-45" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] via-[#0f0f0f]/35 to-transparent" />
                 <div className="absolute inset-x-5 bottom-4">
@@ -80,7 +79,7 @@ const SelectedResult = ({ locale = "en" }: { locale?: SiteLocale }) => {
             </div>
           ))}
         </div>
-        <p className="mt-9 max-w-[760px] text-[10px] leading-4 text-white/30">
+        <p className="mt-6 max-w-[760px] text-xs leading-5 text-white/65">
           {ko ? "과거의 결과가 유사한 결과를 보장하지는 않습니다. 모든 사건은 고유한 사실관계, 손해, 보험, 증거와 상황에 따라 달라집니다." : es ? "Los resultados anteriores no garantizan un resultado similar. Cada asunto depende de sus propios hechos, daños, seguro, evidencia y circunstancias." : "Prior results do not guarantee a similar outcome. Every matter depends on its own facts, damages, insurance, evidence, and circumstances."}
         </p>
       </div>

@@ -1,10 +1,37 @@
 import { ArrowUpRight } from "lucide-react";
 import type { SiteLocale } from "@/data/injurySite";
 
-const metrics = [
-  { value: "$100M+", label: "Total recovered", koLabel: "총 배상액", esLabel: "Total recuperado" },
-  { value: "Since 2015", value_ko: "2015년부터", value_es: "Desde 2015", label: "Independent practice", koLabel: "독립 개업", esLabel: "Práctica independiente" },
-  { value: "$1M", label: "Largest single-client recovery", koLabel: "최대 단일 의뢰인 배상액", esLabel: "Mayor recuperación de un solo cliente" },
+const consultationExamples = [
+  {
+    slug: "car-accidents",
+    title: { en: "The insurer disputes fault", ko: "보험사가 과실을 다투는 경우", es: "La aseguradora disputa la responsabilidad" },
+    body: {
+      en: "Bring the insurer’s explanation, the collision report number and any photos. If the crash happened near the I-5 and SR-91 interchange, note the ramp and direction of travel. Those details help identify which records or witnesses could clarify what happened.",
+      ko: "보험사의 설명, 사고 보고서 번호, 사진을 준비하세요. I-5와 SR-91 나들목 근처에서 사고가 났다면 진출입로와 진행 방향도 기록하세요. 어떤 기록이나 목격자가 사고 경위를 밝히는 데 도움이 될지 판단할 수 있습니다.",
+      es: "Traiga la explicación de la aseguradora, el número de informe y las fotos disponibles. Si el choque ocurrió cerca del enlace entre la I-5 y la SR-91, anote la rampa y el sentido de circulación. Esto ayuda a identificar qué registros o testigos podrían aclarar lo ocurrido.",
+    },
+    link: { en: "Car accident claims", ko: "자동차 사고 청구", es: "Reclamos por accidentes de auto" },
+  },
+  {
+    slug: "serious-injuries",
+    title: { en: "Your injury is affecting your work", ko: "부상이 업무에 지장을 주는 경우", es: "Su lesión está afectando su trabajo" },
+    body: {
+      en: "Write down the days or shifts you missed. Bring any written work restrictions and a short treatment timeline. If you’ve returned on reduced hours or lighter duties, document those changes too so we can discuss how the injury is affecting your income.",
+      ko: "일하지 못한 날짜나 근무 시간을 적고, 의료진이 작성한 업무 제한과 간단한 치료 경과를 준비하세요. 복귀 후 근무 시간이 줄었거나 업무가 바뀌었다면 그 내용도 기록해 두면 소득에 미친 영향을 상담하는 데 도움이 됩니다.",
+      es: "Anote los días o turnos que perdió y traiga las restricciones laborales por escrito y un resumen de su tratamiento. Si volvió con menos horas o tareas más livianas, documente esos cambios para hablar de cómo la lesión está afectando sus ingresos.",
+    },
+    link: { en: "Serious injury claims", ko: "중상해 청구", es: "Reclamos por lesiones graves" },
+  },
+  {
+    slug: "slip-and-fall",
+    title: { en: "You were hurt on someone else’s property", ko: "다른 사람이 관리하는 장소에서 다친 경우", es: "Se lesionó en propiedad ajena" },
+    body: {
+      en: "After a fall at a store or in a Beach Boulevard parking lot, record the exact spot and who took your report. Photos, a receipt or an incident report can help identify who controlled that part of the property and which records to request.",
+      ko: "매장이나 Beach Boulevard 주차장에서 넘어졌다면 정확한 장소와 신고를 받은 사람을 기록하세요. 사진, 영수증, 사고 보고서는 해당 장소의 관리 주체와 요청할 기록을 파악하는 데 도움이 될 수 있습니다.",
+      es: "Si se cayó en una tienda o en un estacionamiento de Beach Boulevard, anote el lugar exacto y quién recibió su aviso. Las fotos, un recibo o el informe del incidente pueden ayudar a identificar quién controlaba esa parte del inmueble y qué registros pedir.",
+    },
+    link: { en: "Slip and fall claims", ko: "미끄러짐 및 낙상 청구", es: "Reclamos por resbalones y caídas" },
+  },
 ] as const;
 
 const FirmSnapshot = ({ locale = "en" }: { locale?: SiteLocale }) => {
@@ -12,35 +39,28 @@ const FirmSnapshot = ({ locale = "en" }: { locale?: SiteLocale }) => {
   const es = locale === "es";
   const prefix = ko ? "/ko" : es ? "/es" : "";
   return (
-    <section className="flex min-h-[100svh] w-full bg-[#f7f6f3] text-foreground">
-      <div className="site-shell flex min-h-[100svh] w-full flex-col py-8 sm:py-10 lg:py-12">
-        <div className="border-t border-foreground/12 pt-6">
-          <div className="text-[10px] font-medium tracking-[-0.01em] text-foreground/46">{ko ? "의뢰인이 선택하는 이유" : es ? "Por qué nos eligen los clientes" : "Why Clients Choose Us"}</div>
-        </div>
-        <div className="grid flex-1 content-center py-10 lg:grid-cols-[0.25fr_0.75fr] lg:py-8">
-          <div className="hidden lg:block" />
-          <div className="max-w-[1180px]">
-            <h2 className="editorial-serif max-w-[1120px] text-[clamp(2rem,3vw,3.45rem)] leading-[1.08] tracking-[-0.028em] text-foreground">
-              {ko ? "증거와 명확한 소통, 그리고 사고가 실제로 바꾼 것을 반영한 전략 위에 사건을 세웁니다." : es ? "Representación por lesiones basada en evidencia, comunicación clara y una estrategia que refleja lo que el accidente realmente cambió." : "Injury representation built around evidence, clear communication, and a strategy that reflects what the accident actually changed."}
-            </h2>
-            <div className="mt-10 max-w-[470px] sm:mt-12">
-              <p className="text-[13px] leading-[1.55] text-foreground/68 sm:text-[14px]">
-                {ko ? "개인상해 청구에는 치료, 보험, 과실 다툼, 소득 손실, 향후 치료와 기한 문제가 한꺼번에 얽힐 수 있습니다. 저희는 그 조각들을 정리하고 기록을 지키며, 다음 결정을 이해할 수 있게 설명합니다." : es ? "Un reclamo por lesiones personales puede involucrar al mismo tiempo tratamiento médico, cobertura de seguro, responsabilidad disputada, pérdida de ingresos, atención futura y plazos. Nuestro papel es organizar esas piezas, proteger el expediente y mantener claro el siguiente paso." : "A personal injury claim can involve medical treatment, insurance coverage, disputed fault, lost income, future care, and deadlines at the same time. Our role is to organize those pieces, protect the record, and keep the next decision understandable."}
-              </p>
-              <a href={`${prefix}/attorney`} className="mt-7 inline-flex items-center gap-2 rounded-[3px] bg-[#171717] px-4 py-3 text-[11px] font-medium text-white transition-opacity hover:opacity-82">
-                {ko ? "Howard Choi 변호사 소개" : es ? "Conozca a Howard Choi" : "Meet Howard Choi"} <ArrowUpRight className="h-3.5 w-3.5" />
+    <section id="when-to-call" aria-labelledby="when-to-call-heading" className="!min-h-0 w-full bg-[#f7f6f3] text-foreground">
+      <div className="site-shell w-full py-12 md:py-16">
+        <h2 id="when-to-call-heading" className="editorial-serif max-w-[830px] text-[clamp(2rem,3.8vw,4rem)] leading-[1.08]">
+          {ko ? "부에나파크 개인상해 변호사에게 언제 상담해야 할까요?" : es ? "Cuándo consultar a un abogado de lesiones en Buena Park" : "When to call a Buena Park injury lawyer"}
+        </h2>
+        <p className="mt-4 max-w-[65ch] text-[15px] leading-7 text-foreground/75">
+          {ko ? "부상으로 일을 쉬어야 하거나 사고 경위에 다툼이 생겼다면, 먼저 어떤 자료가 필요한지 확인해 보세요. Howard Choi와 상담할 때 아래 사항을 참고할 수 있습니다." : es ? "Si faltó al trabajo por una lesión o hay desacuerdo sobre lo ocurrido, conviene saber qué documentos pueden ayudar. Estos son ejemplos de lo que puede comentar con Howard Choi en una consulta." : "If your injury kept you from working or there’s disagreement about what happened, a consultation can help you identify what records matter. Here’s what you can bring to a conversation with Howard Choi."}
+        </p>
+        <div className="mt-7 grid gap-x-8 md:grid-cols-3">
+          {consultationExamples.map(({ slug, title, body, link }) => (
+            <article key={slug} className="flex flex-col border-t border-foreground/15 py-5">
+              <h3 className="editorial-serif text-2xl leading-tight">{title[locale]}</h3>
+              <p className="mt-3 flex-1 text-[15px] leading-7 text-foreground/75">{body[locale]}</p>
+              <a href={`${prefix}/practice-areas/${slug}`} className="mt-3 inline-flex min-h-11 items-center gap-2 self-start text-sm font-medium underline underline-offset-4 hover:opacity-70">
+                {link[locale]} <ArrowUpRight aria-hidden="true" className="h-3.5 w-3.5 shrink-0" />
               </a>
-            </div>
-          </div>
-        </div>
-        <div className="grid grid-cols-2 border-t border-foreground/14 sm:grid-cols-3">
-          {metrics.map((metric, index) => (
-            <div key={metric.label} className={`flex min-h-[118px] flex-col justify-between px-4 py-4 sm:min-h-[150px] sm:px-5 sm:py-5 lg:min-h-[170px] ${index > 0 ? "border-l border-foreground/14" : ""} ${index === 2 ? "border-l-0 border-t border-foreground/14 sm:border-l sm:border-t-0" : ""}`}>
-              <div className="editorial-serif text-[clamp(2rem,3.6vw,4rem)] leading-none tracking-[-0.04em]">{ko && "value_ko" in metric ? metric.value_ko : es && "value_es" in metric ? metric.value_es : metric.value}</div>
-              <div className="text-[9px] leading-4 text-foreground/46 sm:text-[10px]">{ko ? metric.koLabel : es ? metric.esLabel : metric.label}</div>
-            </div>
+            </article>
           ))}
         </div>
+        <a href={prefix ? `${prefix}/about` : "/about/our-difference"} className="inline-flex min-h-11 items-center gap-2 rounded-[3px] bg-[#171717] px-4 py-3 text-sm font-medium text-white hover:opacity-80">
+          {ko ? "로펌 소개" : es ? "Sobre el despacho" : "How we build your case"} <ArrowUpRight aria-hidden="true" className="h-3.5 w-3.5" />
+        </a>
       </div>
     </section>
   );

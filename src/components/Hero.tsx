@@ -7,7 +7,6 @@ import heroCityBoardroom from "@/assets/law-firm/hero-city-boardroom.webp";
 import heroCourthouse from "@/assets/law-firm/hero-courthouse.webp";
 import heroJusticeLibrary from "@/assets/law-firm/hero-justice-library.webp";
 import heroLawOffice from "@/assets/law-firm/hero-law-office.webp";
-import attorneyPortrait from "@/assets/law-firm/lead-counsel.avif";
 
 const slides = [
   { image: heroJusticeLibrary, alt: { en: "Lady Justice in a private law library", es: "Estatua de la Justicia en una biblioteca jurídica privada", ko: "법률 서재의 정의의 여신상" } },
@@ -72,10 +71,10 @@ const Hero = ({ locale = "en" }: { locale?: SiteLocale }) => {
   const eyebrow = ko ? "개인상해 · 교통사고 변호사 · 부에나파크, 캘리포니아" : es ? "Abogado de lesiones personales y accidentes · Buena Park, California" : "Personal Injury & Car Accident Lawyer · Buena Park, California";
   const title = ko ? "부에나파크 개인상해 및 교통사고 변호사." : es ? "Abogado de lesiones personales y accidentes de auto en Buena Park, CA." : "Buena Park Personal Injury & Car Accident Lawyer";
   const body = ko
-    ? "부상이나 교통사고 후, 한 분 한 분의 상황을 살핍니다. 회복에 집중하실 수 있도록 Howard Choi 변호사가 법적 절차를 돕습니다."
+    ? "부에나파크 사무실에서 오렌지카운티와 로스앤젤레스카운티의 부상 피해자를 돕습니다. Howard Choi 변호사가 사건 진행 상황과 다음 단계를 직접 설명합니다."
     : es
-      ? "Atención personal tras una lesión o un accidente de auto. Howard Choi se encarga del proceso legal para que usted pueda centrarse en recuperarse."
-      : "Personal attention after an injury or car accident. Howard Choi handles the legal work so you can focus on recovery.";
+      ? "Desde Buena Park, representamos a personas lesionadas en los condados de Orange y Los Ángeles. Howard Choi le explica cómo avanza su caso y qué sigue."
+      : "From our Buena Park office, we represent injured people across Orange and Los Angeles counties. Howard Choi stays involved throughout your case, so you know where things stand and what comes next.";
   const consultation = ko ? "무료 상담" : es ? "Consulta gratuita" : "Free Consultation";
   const call = ko ? "또는 전화" : es ? "O llame al" : "Or call";
   const fee = ko ? "무료 상담 · 배상이 없으면 변호사 수임료도 없습니다." : es ? "Consulta gratuita · Sin honorarios de abogado si no hay recuperación." : "Free consultation · No lawyer fee unless there is a recovery.";
@@ -160,16 +159,9 @@ const Hero = ({ locale = "en" }: { locale?: SiteLocale }) => {
               initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.66, duration: 0.7 }}
-              className="home-hero-attorney mt-7 flex w-fit items-center gap-3.5 border-t border-[#f3eee5]/18 pt-5 transition-opacity hover:opacity-75"
+              className="home-hero-attorney mt-7 block w-fit border-t border-[#f3eee5]/18 pt-5 transition-opacity hover:opacity-75"
             >
-              <img {...responsiveImageProps(attorneyPortrait, "44px")}
-                src={attorneyPortrait}
-                alt="Howard Choi, California accident and personal injury lawyer"
-                loading="eager"
-                decoding="async"
-                className="h-11 w-11 shrink-0 rounded-full object-cover object-center"
-              />
-              <span className="text-[12px] leading-4 text-[#f3eee5]/82">
+              <span className="block text-[12px] leading-4 text-[#f3eee5]/82">
                 <span className="block font-medium text-[#f3eee5]">Howard Choi</span>
                 {ko ? "캘리포니아 변호사 · State Bar No. 284364 · 영어 · 한국어 · 스페인어 지원" : es ? "Abogado de California · State Bar No. 284364 · Atención en inglés, coreano y español" : <>California Personal Injury Lawyer · State Bar No. 284364 · English, Korean &amp; Spanish assistance</>}
               </span>

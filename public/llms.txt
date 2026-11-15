@@ -1,6 +1,6 @@
 # Buena Park Injury Lawyer
 
-> Buena Park Injury Lawyer is the website of Law Offices of Howard Choi DBA Buena Park Injury Lawyer, led by California personal injury attorney Howard Choi, serving Buena Park and nearby Orange County and Los Angeles County communities. The site covers attorney credentials, accident and injury practice areas, local service-area information, case results, educational legal guides, a case-value estimator, and consultation options.
+> Buena Park Injury Lawyer is led by California personal injury attorney Howard Choi and serves Buena Park and nearby Orange County and Los Angeles County communities. The site covers attorney credentials, accident and injury practice areas, local service-area information, case results, educational legal guides, a case-value estimator, and consultation options.
 
 ## Canonical website
 - https://www.buenaparkinjurylawyer.com/
@@ -87,7 +87,7 @@
 - https://www.buenaparkinjurylawyer.com/blogs/uber-lyft-accident-insurance-california — Uber and Lyft accident insurance in California: which coverage may apply?
 - https://www.buenaparkinjurylawyer.com/blogs/truck-accident-evidence-eld-records-california — Truck accident evidence in California: ELDs, company records, and what can disappear
 - https://www.buenaparkinjurylawyer.com/blogs/california-personal-injury-deadlines — California personal injury deadlines: how long do you have to file?
-- https://www.buenaparkinjurylawyer.com/blogs/what-to-do-after-a-car-accident-in-california — Car Accident 101
+- https://www.buenaparkinjurylawyer.com/blogs/what-to-do-after-a-car-accident-in-california — What to Do After a Car Accident in Buena Park
 
 ## Attorney
 - Howard Jong-yol Choi
@@ -99,7 +99,7 @@
 - Background includes accounting / CPA experience
 
 ## Office
-- Law Offices of Howard Choi DBA Buena Park Injury Lawyer
+- Buena Park Injury Lawyer
 - 6301 Beach Blvd, Suite 216, Buena Park, CA 90621
 - Phone: 714-844-8494
 - Email: case@buenaparkinjurylawyer.com

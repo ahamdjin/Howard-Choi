@@ -1,3 +1,5 @@
+import { PageReadingNote } from "@/components/editorial/PageReadingNote";
+import readingNotes from "../../content/learning/page-reading-notes/site.json";
 import SiteDepthSection from "@/components/SiteDepthSection";
 import { ArrowRight, FileText, Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
 import { Link } from "@/lib/router-compat";
@@ -63,6 +65,7 @@ const Contact = () => {
           </div>
         </section>
         <SiteDepthSection locale="en" topic="contact" />
+      <PageReadingNote notes={readingNotes} withinShell />
       </main>
 
       <Footer />

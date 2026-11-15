@@ -2,7 +2,7 @@
   "title": "Step-by-Step Process of Filing a Workers’ Comp Claim in CA",
   "slug": "workers-comp-step-by-step-process-of-filing-a-workers-comp-claim-in-california",
   "published": true,
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved",
   "author": "Howard Choi",
   "excerpt": "Learn how to report a California work injury, complete the DWC-1 form, obtain treatment, understand benefits, and respond to claim disputes.",
   "metaTitle": "Step-by-Step Process of Filing a Workers' Comp Claim in California",
@@ -12,7 +12,9 @@
   "alt": "Medical care in a clinical setting",
   "intro": "A California workers’ compensation claim involves several separate tasks. You must notify your employer, submit a claim form, and arrange appropriate medical care. If a dispute develops, you may also need to file documents with the Workers’ Compensation Appeals Board, or WCAB. Completing one task does not necessarily protect the deadlines for another.",
   "takeaway": "Learn how to report a California work injury, complete the DWC-1 form, obtain treatment, understand benefits, and respond to claim disputes.",
-  "requiredTranslations": []
+  "requiredTranslations": [],
+  "reviewedBy": "howard-choi",
+  "reviewConfirmationDate": "2026-11-15"
 }
 
 Start with the reporting and filing steps below. Treatment, disability payments, medical evaluations, and return-to-work discussions can then overlap. They do not always happen in a fixed sequence.

@@ -16,6 +16,8 @@ export type BlogPost = {
   title: string;
   metaTitle?: string;
   metaDescription?: string;
+  reviewStatus?: string;
+  reviewedBy?: string;
   excerpt: string;
   category: string;
   date: string;
@@ -35,6 +37,8 @@ type BlogFrontmatter = {
   title: string;
   metaTitle?: string;
   metaDescription?: string;
+  reviewStatus?: string;
+  reviewedBy?: string;
   excerpt: string;
   category: string;
   publishedAt: string;
@@ -61,7 +65,7 @@ const legacyImages: Record<string, string> = {
   "california-truck-accident-guide": truck,
   "california-wrongful-death-guide": family,
 
-  "what-to-do-after-a-car-accident-in-california": heroLawOffice,
+  "what-to-do-after-a-car-accident-in-california": collision,
   "california-comparative-fault-personal-injury": heroCourthouse,
   "how-much-is-my-personal-injury-case-worth-california": heroJusticeLibrary,
   "uber-lyft-accident-insurance-california": heroCityBoardroom,
@@ -191,6 +195,8 @@ const parseBlog = (raw: string): BlogPost | null => {
     title: data.title,
     metaTitle: data.metaTitle?.trim() || undefined,
     metaDescription: data.metaDescription?.trim() || undefined,
+    reviewStatus: data.reviewStatus,
+    reviewedBy: data.reviewedBy,
     excerpt: data.excerpt,
     category: data.category,
     date: formatPublishedDate(data.publishedAt),

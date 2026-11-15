@@ -1,3 +1,5 @@
+import { PageReadingNote } from "@/components/editorial/PageReadingNote";
+import readingNotes from "../../../content/learning/page-reading-notes/practice.json";
 import { practiceSourceContents } from "@/data/learningResourceContent";
 import { ClaimVisualStory } from "@/components/editorial/ClaimVisualStory";
 import PracticeLearningResources, { PracticeSourceSections } from "@/components/PracticeLearningResources";
@@ -378,6 +380,7 @@ export const PracticeAreasPage = ({ locale }: { locale: SiteLocale }) => (
         )}
       </ReadingLayout>
       <SiteDepthSection locale={locale} topic="practice-hub" />
+      <PageReadingNote notes={readingNotes} />
       <ConsultationCta locale={locale} />
     </main>
   </EditorialFrame>
@@ -664,6 +667,7 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
         </ReadingLayout>
         <div className="site-shell pb-12"><PageReviewed locale={locale} /></div>
         {locale === "en" && <PracticeLearningResources slug={practice.slug} />}
+        <PageReadingNote notes={readingNotes} />
         <ConsultationCta locale={locale} />
       </main>
     </EditorialFrame>

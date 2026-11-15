@@ -2,7 +2,7 @@
   "title": "What is liability insurance coverage?",
   "slug": "what-is-auto-liability-insurance-california",
   "published": true,
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved",
   "author": "Howard Choi",
   "metaTitle": "What Is Liability Insurance Coverage?",
   "metaDescription": "Learn what auto liability insurance covers in California, how bodily injury and property damage limits work, and what to check after a crash.",
@@ -14,7 +14,9 @@
   "image": "/blog-images/imported-drafts/howard-choi-hero-city-boardroom.webp",
   "alt": "Meeting table and chairs in an office overlooking the city",
   "intro": "Auto liability insurance can pay covered claims for injuries or property damage you cause to other people. California’s standard minimum limits are $30,000 per injured person, $60,000 for bodily injury per accident, and $15,000 for property damage per accident. Read those as three separate limits. The amount available for one person, one crash, and a damaged car can be very different. [California DMV insurance requirements](https://www.dmv.ca.gov/portal/vehicle-registration/insurance-requirements/)",
-  "takeaway": "Read the injury limit per person, injury limit per crash and property damage limit separately. Ask which policy was in force on the collision date."
+  "takeaway": "Read the injury limit per person, injury limit per crash and property damage limit separately. Ask which policy was in force on the collision date.",
+  "reviewedBy": "howard-choi",
+  "reviewConfirmationDate": "2026-11-15"
 }
 
 ## What bodily injury and property damage coverage each do

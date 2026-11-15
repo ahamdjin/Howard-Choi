@@ -5,8 +5,11 @@ import { HeadContent, Scripts, useRouterState } from "@tanstack/react-router";
 import DeferredIntegrations from "@/components/DeferredIntegrations";
 import heroJusticeLibrary from "@/assets/law-firm/hero-justice-library.webp";
 import { mobileHeroSource } from "@/lib/responsive-images";
+import { installContactAnalytics } from "@/lib/contact-analytics";
+import { brand } from "@/data/injurySite";
 
 export default function SiteDocument({ children }: { children: ReactNode }) {
+  useEffect(() => installContactAnalytics(document, window, brand), []);
   useEffect(() => {
     const loadAnalytics = () => {
       if (document.getElementById('site-gtm')) return;

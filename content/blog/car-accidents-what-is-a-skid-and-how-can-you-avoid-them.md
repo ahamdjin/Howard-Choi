@@ -2,7 +2,7 @@
   "title": "What is a Skid, and How Can You Avoid Them?",
   "slug": "car-accidents-what-is-a-skid-and-how-can-you-avoid-them",
   "published": true,
-  "reviewStatus": "approved",
+  "reviewStatus": "pending-attorney-review",
   "author": "Howard Choi",
   "excerpt": "Learn how skids start, how understeer and oversteer feel, what changes with ABS, and what evidence matters after a skid-related crash.",
   "metaTitle": "What is a Skid, and How Can You Avoid Them?",
@@ -12,7 +12,8 @@
   "alt": "Smooth inputs help preserve grip — Reduce speed before the curve",
   "intro": "A car skids when its tires lose enough grip that the vehicle no longer follows the path the driver expects. You may turn the wheel and feel the front of the car continue wide. In another skid, the rear may swing to one side. The two events can feel similar in the first instant, but the part of the car that loses grip helps explain what is happening.",
   "takeaway": "Learn how skids start, how understeer and oversteer feel, what changes with ABS, and what evidence matters after a skid-related crash.",
-  "requiredTranslations": []
+  "requiredTranslations": [],
+  "updatedAt": "2026-11-15"
 }
 
 The most useful decisions happen before a skid starts. Set your speed for the surface, leave enough space to slow down gradually, and make steering and braking inputs smoothly. A driver approaching a wet curve should have already reduced speed before needing to turn. [California Driver’s Handbook](https://www.dmv.ca.gov/portal/handbook/california-driver-handbook/safe-driving/)
@@ -116,6 +117,27 @@ Keep a record of expenses and work missed, along with the documents that support
 If you consult an attorney, bring your timeline, the collision report if available, repair estimates, and any correspondence with insurers. Flag evidence that may disappear quickly, such as footage from a nearby business or a temporary road hazard that has already been cleared. Ask what the attorney needs to verify and which records are likely to answer those questions.
 
 For a crash involving injuries, our [car accident practice page](/practice-areas/car-accidents) explains the evidence and claim considerations.
+
+## What a skid can tell you about an injury claim
+
+A slide describes how a vehicle moved. It does not, by itself, establish the speed before the slide, why traction was lost, or which person caused the collision. Keep those questions separate when discussing the crash with an adjuster. A useful account explains what you observed before the tires lost grip and what evidence could confirm the sequence.
+
+| Question to investigate | Records that may help | Limit of that evidence |
+| --- | --- | --- |
+| What was on the road? | Original scene photographs, weather observations and nearby video | A later photograph may show a different surface condition |
+| What did each driver do first? | Dashcam originals, independent witnesses and approach views | Final vehicle positions do not show every earlier movement |
+| Was the vehicle condition relevant? | Tire photographs, maintenance records and an appropriate inspection | A worn tire is not proof that it caused this particular crash |
+| What harm followed? | Treatment dates, medical findings, work restrictions and expense records | Visible vehicle damage does not establish the extent of an injury |
+
+**Hypothetical example.** A driver reports sliding while avoiding a car that entered the lane. The other driver says the following vehicle was moving too fast. A short video showing only the impact may leave both explanations unresolved. A longer original recording could show when the lane change began, the following distance and the available sightline. Preserve the complete file rather than selecting only the moment that seems most helpful.
+
+If a tire, brake component or road condition is disputed, flag it before repairs or disposal change the evidence. Do not attempt a risky roadside inspection. Keep the tow destination and repair contact, and ask how the relevant condition can be documented safely. The [California crash guide](/blogs/what-to-do-after-a-car-accident-in-california) includes a printable record checklist.
+
+## Prepare questions for a skid-related claim review
+
+Bring a short timeline and identify what you know firsthand. A passenger may recall the vehicle’s movement without seeing the road surface; a witness may see a lane change without seeing the driver’s controls. State those limits instead of combining several accounts into one confident story.
+
+Useful questions include which fact remains disputed, whether original video or a vehicle inspection could address it, and which deadline needs attention while evidence is gathered. If responsibility may be shared, read the [California comparative-fault explanation](/blogs/california-comparative-fault-personal-injury). For questions about treatment records, insurer requests or the documents available now, [contact the office](/contact) for an individual review.
 
 ## Frequently asked questions
 

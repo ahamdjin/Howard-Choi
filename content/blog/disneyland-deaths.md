@@ -2,7 +2,7 @@
   "title": "How Many People Have Died at Disneyland?",
   "slug": "disneyland-deaths",
   "published": true,
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved",
   "author": "Howard Choi",
   "excerpt": "How many people have died at Disneyland? Explore documented fatal accidents, historic ride incidents, safety changes, and the facts behind the headlines.",
   "metaTitle": "Disneyland Deaths: Documented Incidents and Safety",
@@ -12,7 +12,9 @@
   "alt": "Illustration showing incident facts, safety records, and legal review",
   "intro": "Disneyland has welcomed visitors to Anaheim, California, since 1955. For generations of families, it has been a place to enjoy famous attractions, meet favorite characters, and make lasting memories.",
   "takeaway": "How many people have died at Disneyland? Explore documented fatal accidents, historic ride incidents, safety changes, and the facts behind the headlines.",
-  "requiredTranslations": []
+  "requiredTranslations": [],
+  "reviewedBy": "howard-choi",
+  "reviewConfirmationDate": "2026-11-15"
 }
 
 But Disneyland has also experienced serious accidents. Some involved rides, while others happened in areas outside the attractions.

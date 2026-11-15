@@ -11,8 +11,10 @@
   "takeaway": "A catastrophic-injury claim needs evidence of future care and changed function, not just the bills already received.",
   "published": true,
   "requiredTranslations": [],
-  "reviewStatus": "needs-attorney-review",
-  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-catastrophic-injury-101/"
+  "reviewStatus": "approved",
+  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-catastrophic-injury-101/",
+  "reviewedBy": "howard-choi",
+  "reviewConfirmationDate": "2026-11-15"
 }
 
 ## What Is a Catastrophic Injury?

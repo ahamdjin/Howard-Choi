@@ -1,3 +1,5 @@
+import { PageReadingNote } from "@/components/editorial/PageReadingNote";
+import readingNotes from "../../content/learning/page-reading-notes/site.json";
 import SiteDepthSection from "@/components/SiteDepthSection";
 import { responsiveImageProps } from "@/lib/responsive-images";
 import { m as motion, useScroll, useTransform } from "framer-motion";
@@ -82,6 +84,7 @@ const KoBlogs = () => {
             </div>
           </div>
         <SiteDepthSection locale="ko" topic="blogs" />
+        <PageReadingNote notes={readingNotes} />
         </main>
       </div>
       <KoreanFooter />

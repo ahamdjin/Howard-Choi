@@ -1,3 +1,5 @@
+import { PageReadingNote } from "@/components/editorial/PageReadingNote";
+import readingNotes from "../../content/learning/page-reading-notes/utility.json";
 import Navigation from "@/components/Navigation";
 import KoreanNavigation from "@/components/KoreanNavigation";
 import SpanishNavigation from "@/components/SpanishNavigation";
@@ -511,6 +513,7 @@ export const LegalPage = ({ type, locale = "en" }: { type: LegalDocumentType; lo
             {ko ? "본 페이지는 웹사이트 운영을 위한 일반적인 정책 및 고지입니다. 법률사무소의 구체적인 업무 관행 또는 규제 의무가 변경되는 경우 내용도 그에 맞게 검토·수정되어야 합니다." : "These website policies are intended as general operational notices. They should be reviewed and updated if the firm's actual data practices, technology providers, advertising practices, or regulatory obligations change."}
           </div>
         </section>
+        <PageReadingNote notes={readingNotes} />
       </main>
       <SiteFooter />
     </div>

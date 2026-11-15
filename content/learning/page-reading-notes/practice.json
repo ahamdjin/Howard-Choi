@@ -1,0 +1,227 @@
+{
+  "/practice-areas": {
+    "title": "Choose a guide by the question you need answered",
+    "paragraphs": [
+      "Start with the event if you are trying to identify who handled the report or what evidence may be available. A car crash, a fall at a store and an injury during a rideshare trip can leave very different records. Start with the injury if your concern is how to describe your treatment, work restrictions or the effect on daily tasks.",
+      "Write down one question before opening a guide. For example, “Who kept the camera recording?” leads to a narrower search than “How much is my case worth?” If you have a letter or a proposed release, keep its response date where you can see it as you read."
+    ],
+    "href": "/injury-types",
+    "linkLabel": "Browse the guides by injury"
+  },
+  "/practice-areas/personal-injury": {
+    "title": "The timeline when symptoms change over time",
+    "paragraphs": [
+      "Start your chronology with the incident and add each medical visit, work change and new restriction by date. If you returned to work and later needed different duties, preserve both records. If a family member took over childcare or errands, record when it started and what they did. A timeline that includes improvements and setbacks lets a reviewer see what changed and which period needs better documentation."
+    ],
+    "href": "/faqs/medical-treatment-after-an-accident",
+    "linkLabel": "Read how to organize treatment questions"
+  },
+  "/practice-areas/car-accidents": {
+    "title": "What to save when the drivers disagree about a lane change",
+    "paragraphs": [
+      "Keep any dashcam clip that shows the vehicles before impact. Record the road, direction of travel, lane markings and where the first contact occurred. Take wider vehicle photos that show where the damage sits relative to each door or wheel. If the insurer attributes the crash to one driver’s movement, ask which frames, statements or observed damage support that account."
+    ],
+    "href": "/blogs/california-comparative-fault-personal-injury",
+    "linkLabel": "Read how California handles shared fault"
+  },
+  "/practice-areas/truck-accidents": {
+    "title": "Identify the truck and the trailer separately",
+    "paragraphs": [
+      "A tractor, trailer and cargo can be managed by different businesses. If you can safely record identifying details, keep the unit or plate numbers for both vehicles, along with any carrier name and the investigating agency’s report number. Write down where the contact occurred on the trailer or tractor. Those details can help determine whose records may show the vehicle’s route, inspection or dispatch instructions."
+    ],
+    "href": "/blogs/truck-accident-evidence-eld-records-california",
+    "linkLabel": "See what records a truck crash can leave"
+  },
+  "/practice-areas/motorcycle-accidents": {
+    "title": "Document the approach to the collision",
+    "paragraphs": [
+      "When a driver says a rider appeared suddenly, the part that matters may be the few seconds before impact. Save an uninterrupted video if one exists. Record the direction of travel, any parked vehicles or obstructions and where each person was able to see cross traffic. Keep photos of the motorcycle and riding equipment before repairs or disposal. Different records answer questions about visibility, contact and injury."
+    ],
+    "href": "/faqs/motorcycle-accidents",
+    "linkLabel": "Read common motorcycle collision questions"
+  },
+  "/practice-areas/pedestrian-accidents": {
+    "title": "Record where the crossing began and ended",
+    "paragraphs": [
+      "Mark the curb you left and the place you were trying to reach. Note the direction of any turning driver and which signal you could see. A single picture of the impact area may omit the view from the corner, landscaping or parked vehicles. Wider scene photos and a clear map pin can help a reviewer understand what was visible before contact."
+    ],
+    "href": "/faqs/pedestrian-accidents",
+    "linkLabel": "Read what can matter in a pedestrian claim"
+  },
+  "/practice-areas/rideshare-accidents": {
+    "title": "Preserve the trip record if the ride ended early",
+    "paragraphs": [
+      "Save the booking receipt even if the driver canceled or ended the ride after the crash. Keep messages about the pickup or drop-off location, plus the time the trip appeared to start or end in the app. If the passenger and the person who booked the trip differ, ask the account holder to keep the original record. Put the actual collision time in a separate entry."
+    ],
+    "href": "/blogs/uber-lyft-accident-insurance-california",
+    "linkLabel": "Read about rideshare coverage and trip status"
+  },
+  "/practice-areas/slip-and-fall": {
+    "title": "Identify who controlled the exact spot",
+    "paragraphs": [
+      "Write down whether you fell inside the store, on a shared walkway or in the parking lot. A store employee may have taken your report even when another business maintained that part of the property. Save a receipt or check-in record that helps establish the time, and take a wider photo showing the route. Ask for the report reference and record who responded."
+    ],
+    "href": "/results#court-examples",
+    "linkLabel": "Read a court example about store inspections"
+  },
+  "/practice-areas/wrongful-death": {
+    "title": "Organize practical records without sharing more than necessary",
+    "paragraphs": [
+      "Families can start with a private list of who has each record. Note where to find the incident report, funeral invoices, employment or benefits paperwork, and any insurer correspondence. Keep a record of who has been asked to respond or sign. An initial message can describe the incident and what paperwork has arrived. A detailed family or medical record can stay private until the office explains what it needs and how to send it."
+    ],
+    "href": "/contact",
+    "linkLabel": "Contact the Buena Park office"
+  },
+  "/practice-areas/serious-injuries": {
+    "title": "Record what support a discharge plan actually requires",
+    "paragraphs": [
+      "Keep the discharge instructions with a short account of the help someone needed at home. Note transportation, appointments, equipment and any tasks the family had to take over. If the plan changes after a follow-up appointment, save the newer guidance and when it took effect. Separating a recommendation from what happened at home helps explain both the care plan and its day-to-day impact."
+    ],
+    "href": "/faqs/catastrophic-injury",
+    "linkLabel": "Read more about long-term care records"
+  },
+  "/es/practice-areas": {
+    "title": "Elija la guía según lo que necesita averiguar",
+    "paragraphs": [
+      "Si busca identificar quién hizo un informe o qué grabación puede existir, empiece por el tipo de accidente. Si su pregunta se refiere a las limitaciones en el trabajo o en casa, empiece por la lesión. Tenga a mano la carta del seguro y anote su fecha de respuesta antes de leer sobre ese trámite."
+    ],
+    "href": "/injury-types",
+    "linkLabel": "Explore las guías por lesión (en inglés)"
+  },
+  "/ko/practice-areas": {
+    "title": "확인하려는 내용에 맞는 안내 선택하기",
+    "paragraphs": [
+      "누가 보고서를 작성했는지, 영상 자료가 어디에 있을지 알고 싶다면 사고 유형부터 확인하세요. 직장이나 집에서 어떤 활동이 어려워졌는지가 궁금하다면 부상 유형 안내부터 살펴보세요. 보험사 서류가 있다면 관련 절차를 읽기 전에 회신 날짜를 먼저 적어 두세요."
+    ],
+    "href": "/injury-types",
+    "linkLabel": "부상 유형별 안내 보기 (영어)"
+  },
+  "/es/practice-areas/car-accidents": {
+    "title": "Qué conservar cuando se discute un cambio de carril",
+    "paragraphs": [
+      "Guarde el video que muestre la aproximación de ambos vehículos antes del impacto. Anote el sentido, las marcas de los carriles y el primer punto de contacto. Tome fotografías amplias que ubiquen el daño respecto de una puerta o una rueda. Si el seguro atribuye el choque a una maniobra, pregunte qué registro respalda esa versión."
+    ],
+    "href": "/es/blogs/california-comparative-fault-personal-injury",
+    "linkLabel": "Lea cómo se reparte la culpa"
+  },
+  "/ko/practice-areas/car-accidents": {
+    "title": "차로 변경을 두고 진술이 엇갈릴 때",
+    "paragraphs": [
+      "충돌 전 두 차량이 접근하는 모습이 담긴 영상을 보관하세요. 진행 방향, 차선 표시, 처음 맞닿은 지점을 기록하세요. 파손 부위를 문이나 바퀴와 함께 찍어 위치가 드러나게 하세요. 특정 차량의 움직임이 원인이라는 답변을 받았다면 어떤 자료에 근거했는지 물어보세요."
+    ],
+    "href": "/ko/blogs/california-comparative-fault-personal-injury",
+    "linkLabel": "캘리포니아 비교과실 안내 보기"
+  },
+  "/es/practice-areas/truck-accidents": {
+    "title": "Identifique el tractocamión y el remolque por separado",
+    "paragraphs": [
+      "Conserve los números de unidad o placas de ambos, el nombre visible de la empresa y la referencia del informe. Anote en qué parte del vehículo ocurrió el primer contacto. Estos detalles ayudan a identificar quién podría tener los registros de la ruta, la inspección o el despacho."
+    ],
+    "href": "/es/blogs/truck-accident-evidence-eld-records-california",
+    "linkLabel": "Vea qué registros puede dejar un choque de camión"
+  },
+  "/ko/practice-areas/truck-accidents": {
+    "title": "트랙터와 트레일러를 각각 확인하세요",
+    "paragraphs": [
+      "트랙터와 트레일러의 차량 번호나 등록번호, 확인한 운송사 이름, 사고 보고서 번호를 따로 적어 두세요. 어느 부분이 처음 맞닿았는지도 남기세요. 이 정보는 운행 기록이나 점검 자료, 배차 정보를 어느 회사가 갖고 있는지 알아보는 데 도움이 됩니다."
+    ],
+    "href": "/ko/blogs/truck-accident-evidence-eld-records-california",
+    "linkLabel": "트럭 사고에서 확인할 수 있는 기록 보기"
+  },
+  "/es/practice-areas/motorcycle-accidents": {
+    "title": "Documente cómo se acercaron los vehículos",
+    "paragraphs": [
+      "Cuando alguien dice que la moto apareció de repente, el video de los segundos previos puede aclarar la visibilidad. Anote el sentido de marcha y cualquier vehículo estacionado u obstáculo. Conserve fotografías de la moto y del equipo antes de reparar o desechar algo."
+    ],
+    "href": "/faqs/motorcycle-accidents",
+    "linkLabel": "Lea las preguntas sobre choques de motocicleta (en inglés)"
+  },
+  "/ko/practice-areas/motorcycle-accidents": {
+    "title": "충돌 전 접근 경로를 기록하세요",
+    "paragraphs": [
+      "오토바이가 갑자기 나타났다는 진술이 있다면 충돌 전 몇 초를 보여 주는 영상이 시야를 이해하는 데 도움이 됩니다. 주행 방향과 주차 차량, 시야를 가린 물체를 적어 두세요. 수리하거나 버리기 전에 오토바이와 장비 상태를 사진으로 남기세요."
+    ],
+    "href": "/faqs/motorcycle-accidents",
+    "linkLabel": "오토바이 사고 관련 질문 보기 (영어)"
+  },
+  "/es/practice-areas/pedestrian-accidents": {
+    "title": "Marque dónde comenzó el cruce",
+    "paragraphs": [
+      "Señale la acera desde la que salió, su destino y el sentido del auto que giraba. Anote qué señal podía ver. Una foto amplia tomada desde la esquina ayuda a ubicar vehículos estacionados, señales y otras obstrucciones antes del punto de impacto."
+    ],
+    "href": "/faqs/pedestrian-accidents",
+    "linkLabel": "Lea qué puede importar en un reclamo peatonal (en inglés)"
+  },
+  "/ko/practice-areas/pedestrian-accidents": {
+    "title": "횡단을 시작한 위치부터 표시하세요",
+    "paragraphs": [
+      "출발한 연석, 향하던 곳, 회전 차량이 오던 방향을 표시하세요. 보였던 신호도 적어 두세요. 모퉁이에서 넓게 찍은 사진은 충돌 지점에 도달하기 전 주차 차량이나 표지판 때문에 시야가 어떻게 달랐는지 보여 줄 수 있습니다."
+    ],
+    "href": "/faqs/pedestrian-accidents",
+    "linkLabel": "보행자 사고 청구에서 중요한 내용 보기 (영어)"
+  },
+  "/es/practice-areas/rideshare-accidents": {
+    "title": "Guarde el registro si el viaje terminó antes de tiempo",
+    "paragraphs": [
+      "Conserve el recibo y los mensajes sobre cambios en la recogida, aunque se haya cancelado el viaje después del choque. Guarde la hora que muestra la aplicación para cada cambio y anote la hora del choque por separado. Si otra persona pidió el viaje, pídale que conserve el original."
+    ],
+    "href": "/es/blogs/uber-lyft-accident-insurance-california",
+    "linkLabel": "Lea sobre la cobertura según el estado del viaje"
+  },
+  "/ko/practice-areas/rideshare-accidents": {
+    "title": "승차공유 운행이 일찍 끝나도 기록을 보관하세요",
+    "paragraphs": [
+      "사고 뒤 운행이 취소되었더라도 예약 영수증과 탑승 위치 변경 메시지를 보관하세요. 앱에 표시된 변경 시각과 실제 사고 시각을 따로 적어 주세요. 다른 사람이 차량을 호출했다면 그 사람에게 원본 기록을 보관해 달라고 하세요."
+    ],
+    "href": "/ko/blogs/uber-lyft-accident-insurance-california",
+    "linkLabel": "운행 상태와 승차공유 보험 안내 보기"
+  },
+  "/es/practice-areas/slip-and-fall": {
+    "title": "Identifique quién controlaba el punto de la caída",
+    "paragraphs": [
+      "Anote si se cayó dentro de la tienda, en una zona común o en un estacionamiento. Guarde un recibo que ayude a establecer la hora y una fotografía amplia de su recorrido. Pregunte quién recibió el informe y cuál es su referencia."
+    ],
+    "href": "/es/results#court-examples",
+    "linkLabel": "Lea un caso judicial sobre inspecciones de tiendas"
+  },
+  "/ko/practice-areas/slip-and-fall": {
+    "title": "넘어진 장소를 누가 관리했는지 확인하세요",
+    "paragraphs": [
+      "매장 내부, 공용 통로, 주차장 중 어디에서 넘어졌는지 적어 두세요. 시간을 확인할 수 있는 영수증과 이동 경로가 담긴 넓은 사진을 보관하세요. 누가 사고를 접수했는지, 보고서 번호를 받을 수 있는지도 확인하세요."
+    ],
+    "href": "/ko/results#court-examples",
+    "linkLabel": "매장 점검에 관한 캘리포니아 판례 보기"
+  },
+  "/es/practice-areas/wrongful-death": {
+    "title": "Organice los documentos de la familia en privado",
+    "paragraphs": [
+      "Hagan una lista de quién tiene el informe, las facturas funerarias y la correspondencia del seguro o del empleador. Anoten a quién se le pidió firmar o responder y en qué fecha. En el primer contacto, pueden mencionar qué papeles recibieron y preguntar cómo enviar lo que se necesite."
+    ],
+    "href": "/es/contact",
+    "linkLabel": "Comuníquese con la oficina"
+  },
+  "/ko/practice-areas/wrongful-death": {
+    "title": "유가족이 가진 자료를 비공개로 정리하세요",
+    "paragraphs": [
+      "어떤 가족이 사고 보고서, 장례 비용 내역, 보험사나 고용주 서류를 가지고 있는지 목록을 만드세요. 누가 서명이나 회신을 요청받았고 그 날짜는 언제인지 적으세요. 첫 문의에서는 받은 서류와 급한 문제를 설명하고 안전한 자료 전달 방법을 확인하면 됩니다."
+    ],
+    "href": "/ko/contact",
+    "linkLabel": "사무실에 문의하기"
+  },
+  "/es/practice-areas/serious-injuries": {
+    "title": "Anote la ayuda que exige el plan de alta",
+    "paragraphs": [
+      "Guarde las instrucciones de alta y anote qué ayuda fue necesaria en casa, incluidos traslados, citas y equipo. Si cambian las recomendaciones, guarde la versión más reciente con la fecha en que empezó a aplicarse. Así puede explicar tanto el plan como lo que ocurrió en la práctica."
+    ],
+    "href": "/faqs/catastrophic-injury",
+    "linkLabel": "Lea sobre los registros de cuidado a largo plazo (en inglés)"
+  },
+  "/ko/practice-areas/serious-injuries": {
+    "title": "퇴원 뒤 실제로 필요했던 도움을 기록하세요",
+    "paragraphs": [
+      "퇴원 안내문을 보관하고 통원, 장비 사용, 일상생활에서 어떤 도움을 받았는지 적으세요. 추후 진료에서 안내가 바뀌면 새 문서와 적용 시작 날짜를 남겨 두세요. 진료 계획과 집에서 실제로 받은 도움을 각각 설명할 수 있습니다."
+    ],
+    "href": "/faqs/catastrophic-injury",
+    "linkLabel": "장기 돌봄 기록에 관한 질문 보기 (영어)"
+  }
+}

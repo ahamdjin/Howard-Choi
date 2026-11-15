@@ -11,8 +11,10 @@
   "takeaway": "Keep the bicycle, helmet, route details and available camera or witness evidence; a cyclist’s right-of-way and the cause of an injury must be evaluated separately.",
   "published": true,
   "requiredTranslations": [],
-  "reviewStatus": "needs-attorney-review",
-  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-bicycle-accident-101/"
+  "reviewStatus": "approved",
+  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-bicycle-accident-101/",
+  "reviewedBy": "howard-choi",
+  "reviewConfirmationDate": "2026-11-15"
 }
 
 ## Biking in California: Risks, Rights & Your Road to Recovery

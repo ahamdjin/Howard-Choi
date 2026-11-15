@@ -11,8 +11,10 @@
   "takeaway": "An injury claim connects a legal duty, an unsafe act, the cause of the injury and supported losses. Each element needs evidence.",
   "published": true,
   "requiredTranslations": [],
-  "reviewStatus": "needs-attorney-review",
-  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-personal-injury-101/"
+  "reviewStatus": "approved",
+  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-personal-injury-101/",
+  "reviewedBy": "howard-choi",
+  "reviewConfirmationDate": "2026-11-15"
 }
 
 ## Introduction

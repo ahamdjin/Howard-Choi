@@ -1,3 +1,5 @@
+import { PageReadingNote } from "@/components/editorial/PageReadingNote";
+import readingNotes from "../../../content/learning/page-reading-notes/practice.json";
 import { practiceSourceContents } from "@/data/learningResourceContent";
 import { ClaimVisualStory } from "@/components/editorial/ClaimVisualStory";
 import PracticeLearningResources, { PracticeSourceSections } from "@/components/PracticeLearningResources";
@@ -113,6 +115,7 @@ export default function PersonalInjuryPage() {
           </ul>
         </section>
         <PracticeLearningResources slug="personal-injury" />
+        <PageReadingNote notes={readingNotes} />
         <ConsultationCta locale="en" />
       </main>
     </EditorialFrame>

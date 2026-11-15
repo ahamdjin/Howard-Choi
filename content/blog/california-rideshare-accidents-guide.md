@@ -11,8 +11,10 @@
   "takeaway": "Save the ride receipt and app status. Liability and uninsured-motorist coverage are separate questions, and the accident date matters.",
   "published": true,
   "requiredTranslations": [],
-  "reviewStatus": "needs-attorney-review",
-  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-rideshare-accidents-101/"
+  "reviewStatus": "approved",
+  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-rideshare-accidents-101/",
+  "reviewedBy": "howard-choi",
+  "reviewConfirmationDate": "2026-11-15"
 }
 
 ## Injured in a Rideshare Crash? Here’s What to Do Next

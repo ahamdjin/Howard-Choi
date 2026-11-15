@@ -1,3 +1,5 @@
+import { PageReadingNote } from "@/components/editorial/PageReadingNote";
+import readingNotes from "../../../content/learning/page-reading-notes/locations.json";
 import { locationExperienceCopy, formatLocationText } from "@/data/locationExperienceCopy";
 import { localizedContentHref } from "@/lib/localized-path";
 import { ArrowRight, ArrowUpRight, Phone, MapPin, FileText, HeartPulse, BriefcaseBusiness, Clock, ChevronDown } from "lucide-react";
@@ -108,5 +110,6 @@ export default function LocationExperiencePage({ city, locale = "en" }: { city: 
         </section>
       </div>
     </ReadingLayout>
+  <PageReadingNote notes={readingNotes} />
   </main></EditorialFrame>;
 }

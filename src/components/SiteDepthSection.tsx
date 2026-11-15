@@ -13,20 +13,18 @@ type Depth = {
   intro: LanguageCopy;
   points: [{ heading: LanguageCopy; body: LanguageCopy }, { heading: LanguageCopy; body: LanguageCopy }];
   source: { label: string; href: string };
-  next?: { href: string; label: LanguageCopy };
 };
 const depth: Record<Topic, Depth> = {
   home: {
-    title: { en: "Before a settlement number, get the facts in order.", ko: "합의금보다 먼저 사건의 사실관계를 정리하세요.", es: "Antes de calcular un acuerdo, ordene los hechos." },
-    intro: { en: "A useful first conversation identifies who investigated, what evidence may disappear, which insurance policies require review and whether an unusually short legal deadline applies. You do not have to guess the value of your claim before documenting what happened.", ko: "첫 상담에서는 조사 기관, 사라질 수 있는 증거, 검토할 보험과 특별히 짧은 법적 기한이 있는지를 구분하는 것이 중요합니다. 사고 경위를 기록하기도 전에 청구액을 추측할 필요는 없습니다.", es: "Una primera conversación útil identifica quién investigó, qué pruebas podrían desaparecer, qué seguros requieren examen y si existe algún plazo legal especialmente corto. No necesita adivinar el valor del reclamo antes de documentar lo ocurrido." },
+    title: { en: "What to do after a crash in Buena Park", ko: "부에나파크에서 교통사고가 났다면", es: "Qué hacer tras un choque en Buena Park" },
+    intro: { en: "Save the exact location, the responding agency’s report number and any photos or footage. If the crash happened near a freeway interchange, check which agency investigated before requesting the collision report. The Buena Park guide explains where to start.", ko: "정확한 사고 위치, 출동 기관의 사고번호, 사진과 영상을 보관하세요. 고속도로 나들목 근처에서 사고가 났다면 보고서를 요청하기 전에 어느 기관이 조사했는지 확인하세요. 부에나파크 지역 안내에서 시작 방법을 확인할 수 있습니다.", es: "Guarde la ubicación exacta, el número de informe de la agencia que acudió al lugar y las fotos o videos disponibles. Si el choque ocurrió cerca de un enlace de autopistas, compruebe qué agencia investigó antes de solicitar el informe. La guía de Buena Park indica por dónde empezar." },
     points: [
-      { heading: { en: "Two separate traffic reporting systems", ko: "교통사고 신고는 한 가지가 아닙니다", es: "Dos sistemas distintos para reportar choques" },
+      { heading: { en: "When to file California DMV Form SR-1", ko: "캘리포니아 DMV SR-1 신고가 필요한 경우", es: "Cuándo presentar el formulario SR-1 al DMV" },
         body: { en: "For a qualifying California vehicle collision, an SR-1 must be sent to DMV within ten days even when another report was made to police, CHP or an insurer. Whether the investigator was city police, a sheriff's station or CHP depends on who handled the actual scene. Keep its event number and the exact location.", ko: "신고 요건을 충족하는 캘리포니아 교통사고는 경찰·CHP·보험사에 신고했더라도 10일 이내 DMV에 SR-1을 제출해야 합니다. 시 경찰, 셰리프 또는 CHP 중 어떤 기관이 조사했는지는 실제 현장에 따라 다릅니다. 사건번호와 정확한 장소를 보관하세요.", es: "En un choque que cumpla los requisitos de California, debe enviarse el SR-1 a DMV dentro de diez días aunque exista reporte de policía, CHP o seguro. La agencia que investigó depende del lugar real. Conserve su número de incidente y dirección exacta." } },
-      { heading: { en: "A public entity may change the calendar", ko: "공공기관이 관련되면 기한이 달라질 수 있습니다", es: "Una entidad pública puede cambiar el calendario" },
+      { heading: { en: "Claims against a city or public agency", ko: "시 또는 공공기관에 대한 청구", es: "Reclamos contra una ciudad o entidad pública" },
         body: { en: "The general personal-injury lawsuit period is often two years, but an injury claim against a government entity usually requires an administrative claim much earlier, often within six months. Do not treat a police report request, an insurance conversation or a calendar estimate as filing the required government claim.", ko: "일반적인 개인상해 소송은 흔히 2년 규칙이 적용되지만 정부기관 상대 부상 청구에는 보통 6개월 이내의 별도 행정 청구가 필요할 수 있습니다. 경찰 보고서 신청, 보험사 상담이나 날짜 계산 자체가 정부 청구의 제출을 대신하지는 않습니다.", es: "Muchas demandas por lesiones se rigen por el plazo general de dos años, pero contra una entidad pública suele exigirse un reclamo administrativo mucho antes, a menudo en seis meses. Pedir un informe policial o hablar con el seguro no equivale a presentar ese reclamo." } },
     ],
     source: { label: "California Courts · government claims", href: "https://selfhelp.courts.ca.gov/civil-lawsuit/government-claim" },
-    next: { href: "/blogs/what-to-do-after-a-car-accident-in-california", label: { en: "Read the after-accident guide", ko: "사고 후 안내 보기", es: "Leer la guía posterior al accidente" } },
   },
   "practice-hub": {
     title: { en: "Choose the investigation, not just the accident label.", ko: "사고 이름보다 필요한 조사를 기준으로 선택하세요.", es: "Elija la investigación, no solo la etiqueta del accidente." },
@@ -118,9 +116,50 @@ const depth: Record<Topic, Depth> = {
   },
 };
 
+function HomeAccidentGuidance({ locale }: { locale: SiteLocale }) {
+  const d = depth.home;
+  const ko = locale === "ko";
+  const es = locale === "es";
+  const prefix = ko ? "/ko" : es ? "/es" : "";
+  const sources = [
+    { href: "https://www.dmv.ca.gov/portal/dmv-virtual-office/accident-reporting/", label: ko ? "캘리포니아 DMV 신고 요건" : es ? "Requisitos del DMV de California" : "California DMV reporting requirements" },
+    { href: d.source.href, label: ko ? "캘리포니아 법원의 정부기관 상대 청구 안내" : es ? "Tribunales de California · Reclamos contra entidades públicas" : "California Courts · Government claims" },
+  ];
+
+  return (
+    <section id="research-home" aria-labelledby="home-accident-guidance-heading" className="!min-h-0 border-y border-[#211c17]/15 bg-[#f1ebe0] py-14 text-[#211c17] md:py-20 lg:py-24">
+      <div className="site-shell grid items-start gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-12 xl:gap-20">
+        <div>
+          <h2 id="home-accident-guidance-heading" className="editorial-serif max-w-[520px] text-balance text-[clamp(2.25rem,4vw,4.5rem)] leading-[1.04]">{d.title[locale]}</h2>
+          <p className="mt-5 max-w-[54ch] text-[16px] leading-7 text-[#57514b]">{d.intro[locale]}</p>
+          <div className="mt-6 flex flex-col items-start gap-1.5">
+            <a href={`${prefix}/blogs/what-to-do-after-a-car-accident-in-california`} className="inline-flex min-h-11 items-center gap-3 rounded-[3px] bg-[#211c17] px-4 py-2.5 text-sm font-medium text-[#f7f6f3] hover:bg-[#3b3128] focus-visible:outline-offset-4">
+              {ko ? "부에나파크 교통사고 대응 가이드" : es ? "Guía tras un accidente de auto en Buena Park" : "Buena Park car accident guide"} <ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0" />
+            </a>
+            <a href={`${prefix}/locations/buena-park`} className="inline-flex min-h-11 items-center gap-2 text-sm font-medium underline underline-offset-4 hover:opacity-70">
+              {ko ? "부에나파크 사고 기록과 지역 안내" : es ? "Informes y recursos locales de Buena Park" : "Buena Park collision reports and local resources"} <ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0" />
+            </a>
+          </div>
+        </div>
+        <div className="grid gap-3">
+          {d.points.map((point, index) => (
+            <article key={point.heading.en} className="rounded-[3px] border border-[#211c17]/15 bg-[#f8f5ee] px-5 py-5 sm:px-7 sm:py-6">
+              <h3 className="editorial-serif text-[clamp(1.4rem,2.15vw,1.9rem)] leading-tight">{point.heading[locale]}</h3>
+              <p className="mt-3 max-w-[68ch] text-[15px] leading-7 text-[#57514b]">{point.body[locale]}</p>
+              <a href={sources[index].href} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex min-h-11 items-center gap-2 text-sm font-medium underline underline-offset-4 hover:opacity-70">
+                {sources[index].label} <ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0" />
+              </a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function SiteDepthSection({ locale, topic }: { locale: SiteLocale; topic: Topic }) {
+  if (topic === "home") return <HomeAccidentGuidance locale={locale} />;
   const d = depth[topic];
-  const prefix = locale === "ko" ? "/ko" : locale === "es" ? "/es" : "";
   return (
     <section id={`research-${topic}`} aria-label={d.title[locale]} className="border-y border-[#211c17]/12 bg-[#f5f1e9] px-5 py-16 text-[#211c17] md:py-20">
       <div className="mx-auto max-w-[1120px]">
@@ -135,7 +174,6 @@ export default function SiteDepthSection({ locale, topic }: { locale: SiteLocale
         </div>
         <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 border-t border-[#211c17]/15 pt-5 text-[12px]">
           <a href={d.source.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 underline underline-offset-4 hover:opacity-65"><span>{locale === "ko" ? "공식 근거: " : locale === "es" ? "Fuente oficial: " : "Original source: "}{d.source.label}</span><ArrowRight className="h-3.5 w-3.5" /></a>
-          {d.next && <a href={`${prefix}${d.next.href}`} className="inline-flex items-center gap-2 underline underline-offset-4 hover:opacity-65">{d.next.label[locale]} <ArrowRight className="h-3.5 w-3.5" /></a>}
         </div>
       </div>
     </section>

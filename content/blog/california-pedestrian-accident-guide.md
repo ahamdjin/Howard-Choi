@@ -11,8 +11,10 @@
   "takeaway": "Preserve crossing, signal, lighting and witness evidence as well as medical records; responsibility can extend beyond a single driver.",
   "published": true,
   "requiredTranslations": [],
-  "reviewStatus": "needs-attorney-review",
-  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-pedestrian-accident-101/"
+  "reviewStatus": "approved",
+  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-pedestrian-accident-101/",
+  "reviewedBy": "howard-choi",
+  "reviewConfirmationDate": "2026-11-15"
 }
 
 ## Why Pedestrian Accidents Are Rising in California

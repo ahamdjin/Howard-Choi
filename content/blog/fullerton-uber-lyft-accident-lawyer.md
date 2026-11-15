@@ -12,7 +12,8 @@
   "alt": "Illustration of waiting, ride accepted, and passenger-onboard stages of a rideshare trip",
   "intro": "After an Uber or Lyft crash in Fullerton, getting medical care may be straightforward. Figuring out which insurer should pay often is not. A passenger, rideshare driver, pedestrian, or occupant of another vehicle may face different coverage questions, even when everyone was involved in the same collision.",
   "takeaway": "Injured in a Fullerton Uber or Lyft crash? Learn how insurance phases, California’s 2026 coverage changes, evidence, damages, and filing deadlines affect your claim.",
-  "requiredTranslations": []
+  "requiredTranslations": [],
+  "updatedAt": "2026-11-15"
 }
 
 The driver’s app status matters, but it is only part of the analysis. Fault, the date of the crash, policy exclusions, and the injured person’s role can also affect a claim. California’s 2026 changes to uninsured and underinsured motorist coverage make older rideshare insurance summaries particularly unreliable.
@@ -128,6 +129,34 @@ Look for clear explanations of coverage, evidence preservation, communication pr
 Prospective clients can [learn about Howard Choi](/attorney) and ask how those priorities would apply to their case. The [rideshare accident practice page](/practice-areas/rideshare-accidents) and [Fullerton location page](/locations/fullerton) provide additional context.
 
 If you want to discuss a Fullerton Uber or Lyft collision, [contact the firm](/contact) to ask about an initial consultation and confirm current fees and terms. Have your trip receipt, collision information, insurance correspondence, and available medical records ready.
+
+## A practical document checklist for the first claim review
+
+You can begin a useful conversation before every medical bill or collision report arrives. Organize the available material around the questions it answers. Keep the original files and identify missing records instead of recreating them from memory.
+
+| Record | What to preserve | Why it matters |
+| --- | --- | --- |
+| Trip history | Receipt, trip identifier, pickup details and original app messages | Connects the person and vehicle to a particular trip |
+| Crash timeline | Exact location, time, travel direction and when the impact occurred | Helps compare the collision with the trip’s recorded stages |
+| Other vehicles | Driver, owner, plate and insurer details where available | The rideshare company may not be the only relevant party |
+| Claims correspondence | Carrier names, claim numbers, adjuster contacts and written coverage explanations | Keeps separate insurance investigations from being confused |
+| Injury and work records | Treatment dates, recommendations, work restrictions and supporting pay records | Explains losses beyond the trip receipt or repair estimate |
+
+Do not send passwords or account access codes to an adjuster. Preserve your own trip records and ask about an appropriate way to provide copies. If a detail in the app seems inconsistent with the crash time, keep both records and explain the discrepancy. An estimated timestamp should be labelled as an estimate.
+
+## Three misunderstandings that can complicate a rideshare claim
+
+**An app report is not an accepted insurance claim.** Keep the submission confirmation, then identify the carrier handling each part of the matter. Ask whether a claim number has been assigned, what records are needed and whether the company has actually accepted a coverage position. A response from customer support may answer a different question from a letter from an insurer.
+
+**A police report number is not the same as the full report.** Identify which agency investigated and request the available report through that agency. For a CHP investigation, use the [official CHP report-request instructions](https://www.chp.ca.gov/traffic/request-a-crash-report/). Keep request confirmations and follow up without postponing other evidence preservation.
+
+**A policy limit is not a settlement estimate.** A limit concerns available coverage under a policy. Recoverable losses, responsibility, exclusions and competing claims require separate analysis. A medical bill also does not necessarily wait for that analysis to finish. Keep provider balances and insurance payments current while the injury claim proceeds.
+
+## Put a disputed pickup time into a usable timeline
+
+**Hypothetical example.** A passenger recalls the collision occurring just after entering a rideshare car outside a Fullerton business. The receipt begins at a nearby location, and a photograph has a different displayed time. Record where each time came from, retain the full receipt and original photograph, and note any uncertainty about the device clock. Ask the reviewer to compare the sources rather than deciding the insurance period from one cropped screenshot.
+
+A witness, business camera or driver message may help fill a gap, but preservation and access are separate questions. Avoid assuming that a request guarantees a copy. Bring the available records to an [initial consultation](/contact), along with any insurer deadline or proposed release that needs prompt attention. The [California rideshare insurance guide](/blogs/uber-lyft-accident-insurance-california) provides the broader coverage framework.
 
 ## Frequently asked questions
 

@@ -2,7 +2,7 @@
   "title": "California Tint Laws (2026) | Is Your Window Tint Legal?",
   "slug": "california-window-tint-laws",
   "published": true,
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved",
   "author": "Howard Choi",
   "metaTitle": "California Window Tint Laws 2026: Legal VLT Limits Explained",
   "metaDescription": "California requires 70% VLT on front windows but allows any darkness on rear windows. Learn the legal limits, medical exemptions, and penalties for illegal tint.",
@@ -14,7 +14,9 @@
   "intro": "California window-tint compliance involves more than choosing a percentage from a shop’s display. The location of the glass, the film itself, the finished window’s light transmission, and required documentation can all matter. Start with the window you intend to modify, then check the applicable conditions.",
   "takeaway": "Understand California tint requirements, film versus finished-window transmission, installation records, medical exceptions, and post-crash evidence.",
   "requiredTranslations": [],
-  "updatedAt": "2026-11-12"
+  "updatedAt": "2026-11-12",
+  "reviewedBy": "howard-choi",
+  "reviewConfirmationDate": "2026-11-15"
 }
 
 The problem is that the rules are confusing. You hear different things from your buddies, the tint shop guy, and random forums. Some people say a “light” tint is okay on the front. Others swear that a doctor’s note lets you run limo tint all around.

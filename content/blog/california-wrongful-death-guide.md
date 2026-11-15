@@ -11,8 +11,10 @@
   "takeaway": "Identify who is legally entitled to bring the claim, preserve the incident evidence and distinguish wrongful-death losses from a survival action.",
   "published": true,
   "requiredTranslations": [],
-  "reviewStatus": "needs-attorney-review",
-  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-wrongful-death-101/"
+  "reviewStatus": "approved",
+  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-wrongful-death-101/",
+  "reviewedBy": "howard-choi",
+  "reviewConfirmationDate": "2026-11-15"
 }
 
 ## Understanding Your Rights After a Tragic Loss

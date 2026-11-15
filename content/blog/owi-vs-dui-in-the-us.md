@@ -2,7 +2,7 @@
   "title": "OWI vs DUI (2026): What’s the Difference in CA, FL, NY & More",
   "slug": "owi-vs-dui-in-the-us",
   "published": true,
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved",
   "author": "Howard Choi",
   "metaTitle": "OWI vs DUI: What's the Difference? | State-by-State Guide",
   "metaDescription": "OWI and DUI both mean drunk driving, but the terminology varies by state. Learn which states use OWI vs DUI and when the distinction actually matters.",
@@ -14,7 +14,9 @@
   "intro": "OWI and DUI are labels used by different states for impaired-driving offenses. If an impaired driver injured you, the more useful questions are what happened, what the evidence proves, and which civil claims and insurance policies may apply.",
   "takeaway": "Understand OWI and DUI terminology, the difference between criminal charges and civil claims, and the evidence to preserve after an impaired-driving crash.",
   "requiredTranslations": [],
-  "updatedAt": "2026-11-12"
+  "updatedAt": "2026-11-12",
+  "reviewedBy": "howard-choi",
+  "reviewConfirmationDate": "2026-11-15"
 }
 
 Here’s the short answer: OWI (Operating While Intoxicated) and DUI (Driving Under the Influence) describe the same basic offense. Drunk driving. The terminology just varies by state. But as someone injured by a drunk driver, what really matters is how those criminal charges affect your ability to recover compensation.

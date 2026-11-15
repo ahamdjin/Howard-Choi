@@ -9,6 +9,25 @@ import motorcycleFallback from "@/assets/law-firm/responsive/motorcycle-road-480
 
 const fallbackPhotos = [carFallback, crossingFallback, truckFallback, motorcycleFallback];
 
+const featuredCounties = [
+  {
+    name: { en: "Orange County", ko: "오렌지카운티", es: "Condado de Orange" },
+    cities: [
+      { slug: "buena-park", name: "Buena Park", koName: "부에나파크" },
+      { slug: "anaheim", name: "Anaheim", koName: "애너하임" },
+      { slug: "irvine", name: "Irvine", koName: "어바인" },
+    ],
+  },
+  {
+    name: { en: "Los Angeles County", ko: "로스앤젤레스카운티", es: "Condado de Los Ángeles" },
+    cities: [
+      { slug: "los-angeles", name: "Los Angeles", koName: "로스앤젤레스" },
+      { slug: "long-beach", name: "Long Beach", koName: "롱비치" },
+      { slug: "cerritos", name: "Cerritos", koName: "세리토스" },
+    ],
+  },
+] as const;
+
 const HomeServiceAreas = ({ locale = "en" }: { locale?: SiteLocale }) => {
   const ko = locale === "ko";
   const es = locale === "es";
@@ -26,15 +45,32 @@ const HomeServiceAreas = ({ locale = "en" }: { locale?: SiteLocale }) => {
           <div>
             <p className="max-w-[520px] text-[14px] leading-7 text-foreground/70">
               {ko
-                ? "사무실은 부에나파크 Beach Blvd에 있습니다. 오렌지카운티와 인근 로스앤젤레스카운티의 열 개 지역별 안내에서 사고 기록, 담당 기관 및 다음 단계를 살펴보세요."
+                ? "사무실은 부에나파크 Beach Boulevard에 있습니다. 사고가 난 도시를 선택하면 사고 보고서 요청 방법, 보관할 자료와 지역별 다음 단계를 확인할 수 있습니다."
                 : es
-                  ? "Nuestra oficina está en Beach Blvd, Buena Park. Explore diez comunidades de los condados de Orange y Los Ángeles, con información sobre accidentes y recursos locales."
-                  : "Our office is on Beach Boulevard in Buena Park. Browse ten nearby Orange and Los Angeles County communities for local accident records, reporting agencies and practical information after an injury."}
+                  ? "Nuestra oficina está en Beach Boulevard, en Buena Park. Elija la ciudad donde ocurrió el accidente para saber dónde pedir el informe, qué documentos guardar y cómo dar el siguiente paso."
+                  : "Our office is on Beach Boulevard in Buena Park. Choose the city where you were injured to find out where to request a collision report, which records to keep, and what to do next."}
             </p>
             <a href={`${prefix}/locations`} className="mt-5 inline-flex min-h-11 items-center gap-2 text-[12px] font-medium underline underline-offset-4">
               {ko ? "모든 지역 보기" : es ? "Ver todas las ciudades" : "View all service locations"} <ArrowUpRight className="h-4 w-4" />
             </a>
           </div>
+        </div>
+
+        <div className="mb-10 grid gap-x-12 gap-y-6 border-y border-foreground/15 py-5 sm:grid-cols-2">
+          {featuredCounties.map((county) => (
+            <div key={county.name.en}>
+              <h3 className="editorial-serif text-2xl">{county.name[locale]}</h3>
+              <ul className="mt-1 flex flex-wrap gap-x-5">
+                {county.cities.map((city) => (
+                  <li key={city.slug}>
+                    <a href={`${prefix}/locations/${city.slug}`} className="inline-flex min-h-11 items-center text-sm underline underline-offset-4 hover:opacity-70">
+                      {ko ? city.koName : city.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
         <ScrollableCards

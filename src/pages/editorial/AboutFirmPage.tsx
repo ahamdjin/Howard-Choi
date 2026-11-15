@@ -1,3 +1,5 @@
+import { PageReadingNote } from "@/components/editorial/PageReadingNote";
+import readingNotes from "../../../content/learning/page-reading-notes/site.json";
 import { TopicVisual } from "@/components/editorial/TopicVisual";
 import SiteDepthSection from "@/components/SiteDepthSection";
 import { responsiveImageProps } from "@/lib/responsive-images";
@@ -241,6 +243,7 @@ export const AboutFirmPage = ({ locale }: { locale: SiteLocale }) => (
         </nav>
       )}
       <SiteDepthSection locale={locale} topic="about" />
+      <PageReadingNote notes={readingNotes} />
       <ConsultationCta locale={locale} />
     </main>
   </EditorialFrame>

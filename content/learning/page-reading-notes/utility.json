@@ -1,0 +1,154 @@
+{
+  "/privacy-policy": {
+    "title": "How to ask about information you sent",
+    "paragraphs": [
+      "Identify the form or page you used and the approximate date. Describe what you want to know about the information you shared. Ask how to send any records needed to identify the request securely."
+    ],
+    "href": "/contact",
+    "linkLabel": "Contact the office about privacy"
+  },
+  "/es/privacy-policy": {
+    "title": "Cómo preguntar por la información que envió",
+    "paragraphs": [
+      "Indique el formulario o la página que usó y la fecha aproximada. Explique qué desea saber sobre la información que compartió. Pregunte cómo enviar de forma segura los datos que ayuden a identificar su solicitud."
+    ],
+    "href": "/es/contact",
+    "linkLabel": "Comuníquese con la oficina sobre privacidad"
+  },
+  "/ko/privacy-policy": {
+    "title": "보낸 정보에 대해 문의하는 방법",
+    "paragraphs": [
+      "사용한 양식이나 페이지와 대략적인 날짜를 알려 주세요. 보낸 정보에 관해 무엇을 확인하려는지 설명하세요. 요청을 확인하는 데 필요한 자료가 있다면 안전하게 보내는 방법을 먼저 문의하세요."
+    ],
+    "href": "/ko/contact",
+    "linkLabel": "개인정보 관련 문의하기"
+  },
+  "/terms": {
+    "title": "Find the document that answers your question",
+    "paragraphs": [
+      "For a question about using the website, include the page address. If your question concerns fees, services or a matter the office is already handling, have your written agreement or the message you received nearby. That helps the office identify which terms you are asking about."
+    ],
+    "href": "/contact",
+    "linkLabel": "Ask the office about the terms you received"
+  },
+  "/es/terms": {
+    "title": "Busque el documento relacionado con su pregunta",
+    "paragraphs": [
+      "Si pregunta por el uso del sitio, indique la dirección de la página. Si su pregunta trata de honorarios, servicios o un asunto que lleva la oficina, tenga a mano el convenio escrito o el mensaje que recibió. Eso ayuda a identificar las condiciones que quiere aclarar."
+    ],
+    "href": "/es/contact",
+    "linkLabel": "Pregunte a la oficina sobre las condiciones"
+  },
+  "/ko/terms": {
+    "title": "질문에 해당하는 문서를 확인하세요",
+    "paragraphs": [
+      "웹사이트 이용에 관한 질문이라면 해당 페이지 주소를 알려 주세요. 수임료, 업무 범위, 진행 중인 사건에 관한 질문이라면 받은 계약서나 메시지를 곁에 두세요. 어떤 조건을 확인하려는지 사무실이 파악하는 데 도움이 됩니다."
+    ],
+    "href": "/ko/contact",
+    "linkLabel": "받은 조건에 관해 문의하기"
+  },
+  "/disclaimer": {
+    "title": "Use your own paperwork when a date matters",
+    "paragraphs": [
+      "If a guide mentions a deadline and you have a notice, keep the notice and record when it arrived. Note who issued it and what it asks you to do. Bring the original language into an individual conversation so the discussion starts with the facts of your situation."
+    ],
+    "href": "/contact",
+    "linkLabel": "Contact the office about your situation"
+  },
+  "/es/disclaimer": {
+    "title": "Use sus propios documentos cuando importe una fecha",
+    "paragraphs": [
+      "Si una guía menciona un plazo y usted recibió un aviso, guarde el aviso y anote cuándo llegó. Identifique quién lo emitió y qué le pide hacer. Tenga el texto original a mano al pedir orientación sobre su situación."
+    ],
+    "href": "/es/contact",
+    "linkLabel": "Comuníquese con la oficina sobre su situación"
+  },
+  "/ko/disclaimer": {
+    "title": "날짜가 중요할 때는 본인이 받은 서류를 확인하세요",
+    "paragraphs": [
+      "안내문을 받았다면 원본과 수신 날짜를 보관하세요. 누가 발행했는지, 어떤 조치를 요청하는지 적어 두세요. 상담 시 실제 문구를 보여 주면 본인 상황에 맞는 사실부터 확인할 수 있습니다."
+    ],
+    "href": "/ko/contact",
+    "linkLabel": "본인 상황에 관해 사무실에 문의하기"
+  },
+  "/accessibility": {
+    "title": "What to include when reporting an access problem",
+    "paragraphs": [
+      "Share the page address, the device or browser you were using, and the action you were trying to complete. For example, tell us if you could read a form but could not reach its submit button with your keyboard. If the matter is time sensitive, call the number on our Contact page."
+    ],
+    "href": "/contact",
+    "linkLabel": "Find phone and message options"
+  },
+  "/es/accessibility": {
+    "title": "Qué incluir al informar un problema de acceso",
+    "paragraphs": [
+      "Indique la página, el dispositivo o navegador y la acción que intentaba realizar. Por ejemplo, cuéntenos si podía leer un formulario pero no llegar al botón de envío con el teclado. Si necesita ayuda pronto, llame al número que aparece en la página de contacto."
+    ],
+    "href": "/es/contact",
+    "linkLabel": "Vea las opciones por teléfono y mensaje"
+  },
+  "/ko/accessibility": {
+    "title": "접근성 문제를 알릴 때 포함할 내용",
+    "paragraphs": [
+      "문제가 발생한 페이지 주소, 사용한 기기나 브라우저, 하려던 작업을 알려 주세요. 예를 들어 양식은 읽을 수 있지만 키보드로 제출 버튼에 이동할 수 없었다고 설명할 수 있습니다. 급한 문제라면 문의 페이지에 표시된 번호로 전화해 주세요."
+    ],
+    "href": "/ko/contact",
+    "linkLabel": "전화와 메시지 문의 방법 보기"
+  },
+  "/photo-credits": {
+    "title": "How to locate a photograph’s original credit",
+    "paragraphs": [
+      "Find the city or subject above, then open the original image and its license to see the creator and reuse terms. If you are asking about an image on another page, include that page’s address and a short description so the office can identify the right photograph."
+    ],
+    "href": "/contact",
+    "linkLabel": "Ask about an image credit"
+  },
+  "/es/photo-credits": {
+    "title": "Cómo encontrar el crédito original de una fotografía",
+    "paragraphs": [
+      "Busque arriba la ciudad o el tema. Abra la imagen original y su licencia para ver el nombre de la persona que la creó y las condiciones de reutilización. Si consulta por una imagen de otra página, indique su dirección y describa la fotografía."
+    ],
+    "href": "/es/contact",
+    "linkLabel": "Pregunte por el crédito de una imagen"
+  },
+  "/ko/photo-credits": {
+    "title": "사진의 원본 출처를 찾는 방법",
+    "paragraphs": [
+      "위 목록에서 도시나 사진의 주제를 찾으세요. 원본과 이용허락 링크에서 촬영자와 재사용 조건을 확인할 수 있습니다. 다른 페이지의 사진에 대해 문의한다면 페이지 주소와 사진에 대한 짧은 설명을 함께 보내 주세요."
+    ],
+    "href": "/ko/contact",
+    "linkLabel": "사진 출처 문의하기"
+  },
+  "/thank-you": {
+    "title": "Keep new information handy for the follow-up",
+    "paragraphs": [
+      "If you receive another letter or learn a new detail after sending your message, keep it together with the date you first contacted us. Mention any new response date when you call. That will help the office connect the new information to your original inquiry."
+    ],
+    "href": "/contact",
+    "linkLabel": "View the office contact details"
+  },
+  "/es/thank-you": {
+    "title": "Tenga a mano la información nueva",
+    "paragraphs": [
+      "Si recibe otra carta o se entera de un dato nuevo después de enviar el mensaje, consérvelo junto a la fecha del primer contacto. Si llama, mencione cualquier fecha de respuesta que haya cambiado. Así la oficina podrá relacionar la información con su consulta inicial."
+    ],
+    "href": "/es/contact",
+    "linkLabel": "Vea los datos de contacto de la oficina"
+  },
+  "/ko/thank-you": {
+    "title": "추가 정보를 첫 문의 기록과 함께 보관하세요",
+    "paragraphs": [
+      "메시지를 보낸 뒤 새 서류를 받거나 추가 사실을 알게 되면 처음 문의한 날짜와 함께 기록해 두세요. 통화할 때 새 회신 기한이 생겼다면 알려 주세요. 새 정보를 처음 문의 내용과 연결하는 데 도움이 됩니다."
+    ],
+    "href": "/ko/contact",
+    "linkLabel": "사무실 연락처 보기"
+  },
+  "/review": {
+    "title": "Keep private case details out of feedback",
+    "paragraphs": [
+      "Describe your own experience in general terms. Keep case numbers, medical details and other people’s contact information out of the comment or any attachment. If you want the office to speak with you about your matter, use the office’s contact details."
+    ],
+    "href": "/contact",
+    "linkLabel": "Contact the office privately"
+  }
+}

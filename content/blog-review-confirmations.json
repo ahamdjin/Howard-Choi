@@ -1,0 +1,130 @@
+{
+  "basis": "User explicitly confirmed that Howard Choi personally reviewed all 25 existing articles. Actual review dates were not supplied. Confirmation covers these versions of the English articles, not subsequent revisions or translations.",
+  "articles": {
+    "cali-lean-vs-carolina-squat-whats-the-difference": {
+      "reviewedBy": "howard-choi",
+      "confirmationDate": "2026-11-15",
+      "contentHash": "0058433a389b010c450dce72ba7032310b480d96f56ca30cc37456696909fdcf"
+    },
+    "california-bicycle-accident-guide": {
+      "reviewedBy": "howard-choi",
+      "confirmationDate": "2026-11-15",
+      "contentHash": "63f68016644fe1be76a47702ad6616cee7760c3e1633022dc13e6a3d57a67490"
+    },
+    "california-catastrophic-injury-guide": {
+      "reviewedBy": "howard-choi",
+      "confirmationDate": "2026-11-15",
+      "contentHash": "3f9ebef0976f7c6b8197dcd18df7d386d1bea37dbc539eb6ba47f9308798836b"
+    },
+    "california-dog-bite-accidents-guide": {
+      "reviewedBy": "howard-choi",
+      "confirmationDate": "2026-11-15",
+      "contentHash": "435bfa94d85994013a4b053936f47064746a8105a3218f96e5d8c6bb50d106a4"
+    },
+    "california-motorcycle-accident-guide": {
+      "reviewedBy": "howard-choi",
+      "confirmationDate": "2026-11-15",
+      "contentHash": "7e26a6c855a71550ed1527ed6c7f9fd3a981280bae2a41493ac802f81d34c337"
+    },
+    "california-pedestrian-accident-guide": {
+      "reviewedBy": "howard-choi",
+      "confirmationDate": "2026-11-15",
+      "contentHash": "ad66f909209448394853e5feae40c58a51be51641094e8377def4d6f2fc6b350"
+    },
+    "california-personal-injury-guide": {
+      "reviewedBy": "howard-choi",
+      "confirmationDate": "2026-11-15",
+      "contentHash": "42db6468ecf6bc3b8d73e70fd5447f125bb51db436c56a4cdc7e19efeda85e3c"
+    },
+    "california-rideshare-accidents-guide": {
+      "reviewedBy": "howard-choi",
+      "confirmationDate": "2026-11-15",
+      "contentHash": "fa04c46095d9ffd09aa2942a2e76248234bb7d5f7664cdf35aba820cb241412f"
+    },
+    "california-slip-and-fall-accidents-guide": {
+      "reviewedBy": "howard-choi",
+      "confirmationDate": "2026-11-15",
+      "contentHash": "aa4963de059ad141aa53c1029fb60912a1abbde4e02501510f1dd4da3500f2c8"
+    },
+    "california-truck-accident-guide": {
+      "reviewedBy": "howard-choi",
+      "confirmationDate": "2026-11-15",
+      "contentHash": "04eeaae4cb8fe52a754b92d4b23b0e6a487cb94059ee8905d6ae6e048878ec51"
+    },
+    "california-window-tint-laws": {
+      "reviewedBy": "howard-choi",
+      "confirmationDate": "2026-11-15",
+      "contentHash": "fc648f3db9784c5f58c34620a952f24a1803d67bcef7b31642f2a0626f44268f"
+    },
+    "california-wrongful-death-guide": {
+      "reviewedBy": "howard-choi",
+      "confirmationDate": "2026-11-15",
+      "contentHash": "9dd198c1d5917f5b6649d462e6826707ff4f602255dfb4bfd67e7315e0bf0522"
+    },
+    "car-insurance-deductible-after-accident-california": {
+      "reviewedBy": "howard-choi",
+      "confirmationDate": "2026-11-15",
+      "contentHash": "7871dd40d3f70938f7e8f4238ad56f3b9fbf4c4cc1ffe71cd4d69c83b9f9970b"
+    },
+    "digital-license-plates": {
+      "reviewedBy": "howard-choi",
+      "confirmationDate": "2026-11-15",
+      "contentHash": "fd859ce01f3a68fc7d97e1f317da6e4f3f9804cb31ff1638e35b625878ef5b85"
+    },
+    "disneyland-deaths": {
+      "reviewedBy": "howard-choi",
+      "confirmationDate": "2026-11-15",
+      "contentHash": "9c7a2167ee49487d4fcd99e347d13f3ddd214fe75ab3c6ca0c6ccc61889b061c"
+    },
+    "does-car-insurance-follow-the-car-or-driver-california": {
+      "reviewedBy": "howard-choi",
+      "confirmationDate": "2026-11-15",
+      "contentHash": "e7b1743d54c648fe48464ced3ec1c82f63d600c70bad0761778d970046025b80"
+    },
+    "fullerton-uber-lyft-accident-lawyer": {
+      "reviewedBy": "howard-choi",
+      "confirmationDate": "2026-11-15",
+      "contentHash": "3324891e240413171faffd679cd950809a47dd634381a0f4d5c4e32a5cd8b5e2"
+    },
+    "owi-vs-dui-in-the-us": {
+      "reviewedBy": "howard-choi",
+      "confirmationDate": "2026-11-15",
+      "contentHash": "7e26b314e5a2620884692220cc7de163c3c1350410137dc423586f780444c8f8"
+    },
+    "state-of-personal-injury-2026-ca-trends": {
+      "reviewedBy": "howard-choi",
+      "confirmationDate": "2026-11-15",
+      "contentHash": "651442a1f2b676518ac27a546dcb020cf1ac8fa5efef0b652188970141f0d675"
+    },
+    "third-party-car-insurance-claim-california": {
+      "reviewedBy": "howard-choi",
+      "confirmationDate": "2026-11-15",
+      "contentHash": "b6b82e16c37628f8dafa3c21d656189dd43318896b4dd4614b9dd31cbd66e8bd"
+    },
+    "what-happens-if-you-drive-without-a-license-california": {
+      "reviewedBy": "howard-choi",
+      "confirmationDate": "2026-11-15",
+      "contentHash": "67b4a7abb6eaff56841f2fc28efdac7f2132f72e83240802df57d0858654c14f"
+    },
+    "what-happens-when-car-is-totaled-california": {
+      "reviewedBy": "howard-choi",
+      "confirmationDate": "2026-11-15",
+      "contentHash": "fefd0a29e7a61d2eee40855f169d531fd52a74f0332da3ce328462161d504d11"
+    },
+    "what-is-an-insurance-adjuster-car-accident": {
+      "reviewedBy": "howard-choi",
+      "confirmationDate": "2026-11-15",
+      "contentHash": "a12f0d363d612ee0a073b92a69292c2a3d254a2ee20040dc3c7b504f5c9ffd86"
+    },
+    "what-is-auto-liability-insurance-california": {
+      "reviewedBy": "howard-choi",
+      "confirmationDate": "2026-11-15",
+      "contentHash": "8d906b8f9b54a345f76db754b4412325a6d8ce7656e5cf25b62ad888f8677102"
+    },
+    "workers-comp-step-by-step-process-of-filing-a-workers-comp-claim-in-california": {
+      "reviewedBy": "howard-choi",
+      "confirmationDate": "2026-11-15",
+      "contentHash": "1853ce90724c1303dfaf90359e12d24d6c022e773e2263f113aea8ac06ed42a6"
+    }
+  }
+}

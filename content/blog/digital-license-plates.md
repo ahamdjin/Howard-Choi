@@ -2,7 +2,7 @@
   "title": "Digital License Plates: What You Need to Know",
   "slug": "digital-license-plates",
   "published": true,
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved",
   "author": "Howard Choi",
   "metaTitle": "Everything You Need to Know About Digital License Plates",
   "metaDescription": "Digital license plates promise app-based renewals and theft alerts—but raise cost, security, and privacy questions. Here’s what to know in 2025.",
@@ -14,7 +14,9 @@
   "intro": "A digital license plate replaces a conventional rear plate with a connected display. It may simplify certain registration tasks, but it also adds hardware, service terms, and data questions to something that normally works without an app. Compare the complete ownership arrangement before deciding whether the convenience is worth it.",
   "takeaway": "Compare digital license plate eligibility, ownership costs, service plans, privacy questions, and the records to preserve if a plate is damaged.",
   "requiredTranslations": [],
-  "updatedAt": "2026-11-12"
+  "updatedAt": "2026-11-12",
+  "reviewedBy": "howard-choi",
+  "reviewConfirmationDate": "2026-11-15"
 }
 
 But like many new technologies, they come with tradeoffs. Here is how to evaluate the product, its eligibility requirements, and the practical tradeoffs before buying.

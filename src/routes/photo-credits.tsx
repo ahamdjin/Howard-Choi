@@ -1,3 +1,5 @@
+import { PageReadingNote } from "@/components/editorial/PageReadingNote";
+import readingNotes from "../../content/learning/page-reading-notes/utility.json";
 import { createFileRoute } from "@tanstack/react-router";
 import { EditorialFrame } from "@/pages/editorial/shared";
 import { serviceLocations, type SiteLocale } from "@/data/injurySite";
@@ -47,6 +49,7 @@ export const PhotoCreditsPage = ({ locale = "en" }: { locale?: SiteLocale }) => 
             );
           })}
         </ul>
+        <PageReadingNote notes={readingNotes} withinShell />
       </div>
     </main>
   </EditorialFrame>

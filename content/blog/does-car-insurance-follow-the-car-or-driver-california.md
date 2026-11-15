@@ -2,7 +2,7 @@
   "title": "Does car insurance cover the car or driver?",
   "slug": "does-car-insurance-follow-the-car-or-driver-california",
   "published": true,
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved",
   "author": "Howard Choi",
   "metaTitle": "Does Car Insurance Cover the Car or Driver?",
   "metaDescription": "Learn how permissive use may cover someone who borrows your car and how California insurers review the car, the driver and the trip.",
@@ -14,7 +14,9 @@
   "image": "/blog-images/imported-drafts/howard-choi-reviewing-documents.jpg",
   "alt": "Accident claim documents being reviewed",
   "intro": "If a friend borrows your car in California and crashes it, start with the policy that lists the car. It may cover a driver who had permission, and the borrower’s own policy may also matter. The answer can change with the driver’s relationship to you, how they used the car, and which loss the insurer is being asked to pay.",
-  "takeaway": "Start with the policy that lists the car. Check permission, exclusions, how the driver used it and any other policy that could apply."
+  "takeaway": "Start with the policy that lists the car. Check permission, exclusions, how the driver used it and any other policy that could apply.",
+  "reviewedBy": "howard-choi",
+  "reviewConfirmationDate": "2026-11-15"
 }
 
 ## Start with the car, then ask about the driver

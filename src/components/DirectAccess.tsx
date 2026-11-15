@@ -1,39 +1,40 @@
-import { responsiveImageProps } from "@/lib/responsive-images";
-import { m as motion, useInView } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
-import { useRef } from "react";
-import type { SiteLocale } from "@/data/injurySite";
-import leadCounselImage from "@/assets/law-firm/lead-counsel.avif";
+import { ArrowUpRight, MapPin } from "lucide-react";
+import { brand, type SiteLocale } from "@/data/injurySite";
 
 const DirectAccess = ({ locale = "en" }: { locale?: SiteLocale }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: .2 });
   const ko = locale === "ko";
   const es = locale === "es";
   const prefix = ko ? "/ko" : es ? "/es" : "";
   return (
-    <section ref={ref} className="flex min-h-[100svh] items-center bg-[#171717] py-16 text-white md:py-20 lg:py-0">
-      <div className="site-shell grid w-full gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
-        <motion.div initial={{opacity:0,y:22}} animate={isInView?{opacity:1,y:0}:{}} transition={{duration:.75}} className="lg:py-10">
-          <span className="mb-5 block text-[10px] uppercase tracking-[0.2em] text-white/42">Howard Choi</span>
-          <h2 className="editorial-serif text-[clamp(3rem,4.6vw,5rem)] leading-[0.91] text-white">
-            {ko ? <>캘리포니아 변호사.<br/>직접 책임.</> : es ? <>Abogado de California.<br/>Responsabilidad directa.</> : <>California lawyer.<br/>Direct responsibility.</>}
+    <section aria-labelledby="home-attorney-heading" className="!min-h-0 bg-[#171717] py-14 text-white md:py-20">
+      <div className="site-shell grid w-full items-center gap-9 md:grid-cols-[1.2fr_0.8fr] lg:gap-16">
+        <div>
+          <h2 id="home-attorney-heading" className="editorial-serif max-w-[650px] text-[clamp(2.5rem,4.2vw,4.5rem)] leading-[1.02] text-white">
+            {ko ? "Howard Choi 변호사와 직접 소통하세요" : es ? "Hable directamente con Howard Choi" : "Work directly with Howard Choi"}
           </h2>
-          <p className="mt-6 max-w-[430px] text-[15px] leading-6 text-white/58">
+          <p className="mt-6 max-w-[550px] text-[16px] leading-7 text-white/85">
+            {ko
+              ? "첫 상담부터 사건이 마무리될 때까지 Howard Choi 변호사가 함께합니다. 보험사가 과실을 다투거나 합의안을 제시하면 무엇이 달라졌는지, 어떤 선택지가 있는지 설명합니다."
+              : es
+                ? "Howard sigue involucrado desde la primera consulta hasta que se resuelve su caso. Si la aseguradora cuestiona la responsabilidad o presenta una oferta, él le explica qué cambió y qué opciones tiene."
+                : "Howard stays involved from your first consultation through the resolution of your case. If the insurer disputes fault or makes an offer, he explains what changed, what it means for your claim, and what options you have."}
+          </p>
+          <p className="mt-4 max-w-[550px] text-[15px] leading-6 text-white/70">
             {ko ? "Howard Choi는 캘리포니아 현직 변호사로 State Bar No. 284364이며 2012년에 등록되었습니다. Santa Ana의 William Howard Taft University에서 공부했으며 영어와 한국어를 구사합니다." : es ? "Howard Choi es un abogado activo de California, State Bar No. 284364, admitido en 2012. Estudió en William Howard Taft University en Santa Ana y habla inglés y coreano." : "Howard Choi is an active California lawyer, Bar No. 284364, admitted in 2012. He attended William Howard Taft University in Santa Ana and speaks English and Korean."}
           </p>
-          <div className="mt-14 grid max-w-[420px] grid-cols-2 gap-10 border-t border-white/12 pt-7">
-            <div><div className="editorial-serif text-[2.7rem] leading-none">2012</div><div className="mt-2 text-[10px] uppercase tracking-[0.18em] text-white/38">{ko ? "캘리포니아 등록" : es ? "Admitido en California" : "Admitted in California"}</div></div>
-            <div><div className="editorial-serif text-[2.7rem] leading-none">284364</div><div className="mt-2 text-[10px] uppercase tracking-[0.18em] text-white/38">{ko ? "State Bar 번호" : es ? "Número del State Bar" : "State Bar number"}</div></div>
+          <div className="mt-5 flex flex-wrap items-center gap-x-7 gap-y-0">
+            <a href={`${prefix}/attorney`} className="inline-flex min-h-11 items-center gap-2 text-[13px] font-medium text-white underline underline-offset-4">{ko ? "변호사 전체 프로필" : es ? "Perfil completo del abogado" : "Meet Howard Choi"} <ArrowUpRight className="h-3.5 w-3.5"/></a>
+            <a href="https://apps.calbar.ca.gov/attorney/Licensee/Detail/284364" target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center gap-2 text-[13px] text-white/75 underline underline-offset-4 transition-colors hover:text-white">{ko ? "State Bar에서 확인" : es ? "Verificar con el State Bar" : "Verify with the State Bar"} <ArrowUpRight className="h-3.5 w-3.5"/></a>
           </div>
-          <div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-3">
-            <a href={`${prefix}/attorney`} className="inline-flex items-center gap-2 text-[11px] font-medium text-white underline underline-offset-4">{ko ? "변호사 전체 프로필" : es ? "Perfil completo del abogado" : "Howard Choi’s lawyer profile"} <ArrowUpRight className="h-3.5 w-3.5"/></a>
-            <a href="https://apps.calbar.ca.gov/attorney/Licensee/Detail/284364" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-[11px] text-white/62 underline underline-offset-4 transition-colors hover:text-white">{ko ? "State Bar에서 확인" : es ? "Verificar con el State Bar" : "Verify with the State Bar"} <ArrowUpRight className="h-3.5 w-3.5"/></a>
-          </div>
-        </motion.div>
-        <motion.div initial={{opacity:0,scale:.985}} animate={isInView?{opacity:1,scale:1}:{}} transition={{duration:.9,delay:.08}} className="ml-auto w-full overflow-hidden rounded-[2px] lg:h-[72svh] lg:max-h-[760px] lg:min-h-[560px]">
-          <img {...responsiveImageProps(leadCounselImage)} src={leadCounselImage} alt="Howard Choi, Buena Park personal injury lawyer" className="aspect-[4/5] h-full w-full object-cover object-center grayscale-[15%] lg:aspect-auto"/>
-        </motion.div>
+        </div>
+        <div className="w-full max-w-[460px] border border-white/15 bg-white/5 p-6 sm:p-9 md:ml-auto">
+          <MapPin aria-hidden="true" className="mb-4 h-5 w-5 text-white/75" />
+          <h3 className="editorial-serif text-3xl text-white">{ko ? "부에나파크 사무실" : es ? "Oficina de Buena Park" : "Buena Park office"}</h3>
+          <address className="mt-3 text-sm not-italic leading-6 text-white/80">{brand.address}</address>
+          <a href={brand.mapsHref} target="_blank" rel="noreferrer" className="mt-3 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-white underline underline-offset-4">
+            {ko ? "Google 지도에서 길찾기" : es ? "Cómo llegar en Google Maps" : "Get directions on Google Maps"} <ArrowUpRight className="h-3.5 w-3.5" />
+          </a>
+        </div>
       </div>
     </section>
   );

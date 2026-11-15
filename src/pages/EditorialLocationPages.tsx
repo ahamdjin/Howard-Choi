@@ -1,3 +1,5 @@
+import { PageReadingNote } from "@/components/editorial/PageReadingNote";
+import readingNotes from "../../content/learning/page-reading-notes/locations.json";
 import { whittierReading } from "@/data/whittierReading";
 import { norwalkReading } from "@/data/norwalkReading";
 import { cerritosReading } from "@/data/cerritosReading";
@@ -162,6 +164,7 @@ export const LocationsPage = ({ locale }: { locale: SiteLocale }) => (
         />
       </ReadingLayout>
       <SiteDepthSection locale={locale} topic="location-hub" />
+      <PageReadingNote notes={readingNotes} />
       <ConsultationCta locale={locale} />
     </main>
   </EditorialFrame>
@@ -540,6 +543,7 @@ export const LocationDetailPage = ({ locale }: { locale: SiteLocale }) => {
           </ReadingSectionBlock>
         </ReadingLayout>
         <div className="site-shell pb-12"><PageReviewed locale={locale} /></div>
+        <PageReadingNote notes={readingNotes} />
         <ConsultationCta locale={locale} />
       </main>
     </EditorialFrame>

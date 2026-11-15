@@ -1,3 +1,5 @@
+import { PageReadingNote } from "@/components/editorial/PageReadingNote";
+import readingNotes from "../../../content/learning/page-reading-notes/learning.json";
 import { pageVisualAfter } from "@/data/pageVisualPlans";
 import { TopicVisual } from "@/components/editorial/TopicVisual";
 import { ContentBlocks } from "@/components/editorial/ContentBlocks";
@@ -43,6 +45,7 @@ export function LearningHubPage({ hub }: { hub: keyof typeof learningHubs }) {
   return <EditorialFrame locale="en"><main className="detail-guide learning-hub">
     <ResourceIntro title={item.title} description={item.description} />
     <section className="site-shell py-8 md:py-12"><div><ResourceCards topics={item.topics} /></div></section>
+    <PageReadingNote notes={readingNotes} />
     <ConsultationCta locale="en" />
   </main></EditorialFrame>;
 }
@@ -82,6 +85,7 @@ export function LearningResourcePage({ resource: r }: { resource: LearningResour
       </ReadingSectionBlock>
     </ReadingLayout>
     <RelatedLearning resource={r} />
+    <PageReadingNote notes={readingNotes} />
     <ConsultationCta locale="en" />
   </main></EditorialFrame>;
 }

@@ -1,8 +1,11 @@
+import { PageReadingNote } from "@/components/editorial/PageReadingNote";
+import readingNotes from "../../../content/learning/page-reading-notes/site.json";
 import { TopicVisual } from "@/components/editorial/TopicVisual";
 import { SplitPageHero } from "@/components/editorial/SplitPageHero";
 import SiteDepthSection from "@/components/SiteDepthSection";
-import { ArrowRight, FileCheck2, Scale, ShieldCheck } from "lucide-react";
+import { ArrowRight, ArrowUpRight, FileCheck2, Scale, ShieldCheck } from "lucide-react";
 import heroCourthouse from "@/assets/law-firm/hero-courthouse.webp";
+import { californiaCaseExamples } from "@/data/californiaCaseExamples";
 import type { SiteLocale } from "@/data/injurySite";
 import { responsiveImageProps } from "@/lib/responsive-images";
 import {
@@ -21,6 +24,30 @@ const resultExamples = [
   { amount: "$100M+", type: "Total Client Recoveries", esType: "Recuperaciones totales de clientes", context: "Total recovery reported by the firm across client matters.", esContext: "Recuperación total reportada por la firma en asuntos de clientes." },
   { amount: "Since 2012", esAmount: "Desde 2012", type: "Licensed in California", esType: "Licenciado en California", context: "Admitted to the State Bar of California in October 2012, No. 284364.", esContext: "Admitido al State Bar of California en octubre de 2012, No. 284364." },
 ];
+
+const courtExamplesCopy = {
+  en: {
+    label: "California court examples",
+    intro: "These published California Supreme Court decisions explain how courts have handled shared fault, store inspections, and medical bills.",
+    facts: "What happened",
+    ruling: "What the court decided",
+    opinion: "Read the court opinion",
+  },
+  es: {
+    label: "Ejemplos de casos en California",
+    intro: "Estas decisiones publicadas por la Corte Suprema de California explican cómo los tribunales han tratado la culpa compartida, las inspecciones en tiendas y las facturas médicas.",
+    facts: "Qué ocurrió",
+    ruling: "Qué decidió la corte",
+    opinion: "Leer la decisión de la corte",
+  },
+  ko: {
+    label: "캘리포니아 법원 판례",
+    intro: "캘리포니아 대법원이 공개한 판례를 통해 법원이 비교과실, 매장 점검, 의료비 문제를 어떻게 판단했는지 살펴봅니다.",
+    facts: "사건 경위",
+    ruling: "법원의 판단",
+    opinion: "판결문 읽기",
+  },
+};
 
 export const ResultsPage = ({ locale }: { locale: SiteLocale }) => (
   <EditorialFrame locale={locale}>
@@ -50,11 +77,14 @@ export const ResultsPage = ({ locale }: { locale: SiteLocale }) => (
       <ReadingLayout
         locale={locale}
         label={isKo(locale) ? "사건 결과 · 안내" : isEs(locale) ? "Resultados · Guía" : "Case results · Guide"}
-        sections={isKo(locale)
-          ? [{ id: "principle", label: "표시 원칙" }, { id: "results", label: "사건 결과" }, { id: "calculator", label: "사건 가치 계산기" }, { id: "context", label: "결과의 의미" }]
-          : isEs(locale)
-            ? [{ id: "principle", label: "Cómo leer resultados" }, { id: "results", label: "Resultados seleccionados" }, { id: "calculator", label: "Estimador de valor" }, { id: "context", label: "Por qué importa el contexto" }]
-            : [{ id: "principle", label: "How to read results" }, { id: "results", label: "Selected outcomes" }, { id: "calculator", label: "Case value estimator" }, { id: "context", label: "Why context matters" }]}
+        sections={[
+          ...(isKo(locale)
+            ? [{ id: "principle", label: "표시 원칙" }, { id: "results", label: "사건 결과" }, { id: "calculator", label: "사건 가치 계산기" }, { id: "context", label: "결과의 의미" }]
+            : isEs(locale)
+              ? [{ id: "principle", label: "Cómo leer resultados" }, { id: "results", label: "Resultados seleccionados" }, { id: "calculator", label: "Estimador de valor" }, { id: "context", label: "Por qué importa el contexto" }]
+              : [{ id: "principle", label: "How to read results" }, { id: "results", label: "Selected outcomes" }, { id: "calculator", label: "Case value estimator" }, { id: "context", label: "Why context matters" }]),
+          { id: "court-examples", label: courtExamplesCopy[locale].label },
+        ]}
       >
         <ReadingSectionBlock
           id="principle"
@@ -121,9 +151,50 @@ export const ResultsPage = ({ locale }: { locale: SiteLocale }) => (
           title={isKo(locale) ? "두 사건이 완전히 같을 수는 없습니다." : isEs(locale) ? "La cifra cambia cuando cambian los hechos." : "The number changes when the facts change."}
           intro={isKo(locale) ? "책임, 보험 한도, 부상 정도, 치료, 증거와 당사자의 상황에 따라 결과는 크게 달라질 수 있습니다." : isEs(locale) ? "Un resultado puede verse afectado por disputas de responsabilidad, límites de póliza, otras partes responsables, causalidad médica, duración y tipo de tratamiento, necesidades médicas futuras, pérdidas de salario e ingresos, gravámenes, culpa comparativa y calidad de la evidencia." : "A result may be affected by liability disputes, policy limits, additional responsible parties, medical causation, the length and type of treatment, future medical needs, wage and earning losses, liens, comparative fault, and the quality of the supporting evidence."}
         />
+        <ReadingSectionBlock
+          id="court-examples"
+          locale={locale}
+          kicker=""
+          title={courtExamplesCopy[locale].label}
+          intro={courtExamplesCopy[locale].intro}
+        >
+          <div className="space-y-6">
+            {californiaCaseExamples.map((example) => {
+              const copy = example[locale];
+              const labels = courtExamplesCopy[locale];
+              return (
+                <article key={example.citation} className="border border-[#1E1C1A]/15 bg-[#faf8f4]">
+                  <div className="border-b border-[#1E1C1A]/15 px-5 py-6 sm:px-7 sm:py-7">
+                    <h3 style={serifStyle(locale)} className="editorial-serif text-balance text-2xl leading-tight text-[#1e1c1a] sm:text-3xl">{copy.title}</h3>
+                    <cite lang="en" className="mt-2 block text-sm leading-relaxed text-[#59534b]">{example.citation}</cite>
+                  </div>
+                  <div className="grid md:grid-cols-2">
+                    <div className="px-5 py-5 sm:px-7 sm:py-6">
+                      <h4 className="mb-2 text-sm font-semibold text-[#1e1c1a]">{labels.facts}</h4>
+                      <p className="text-pretty text-base leading-relaxed text-[#423e38]">{copy.facts}</p>
+                    </div>
+                    <div className="border-t border-[#1E1C1A]/15 bg-[#eee8de] px-5 py-5 sm:px-7 sm:py-6 md:border-l md:border-t-0">
+                      <h4 className="mb-2 text-sm font-semibold text-[#381907]">{labels.ruling}</h4>
+                      <p className="text-pretty text-base leading-relaxed text-[#423e38]">{copy.decision}</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-x-6 border-t border-[#1E1C1A]/15 px-5 py-2 sm:px-7">
+                    <a href={example.opinionUrl} aria-label={`${labels.opinion} · ${example.citation}`} className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-[#381907] underline decoration-[#381907]/40 underline-offset-4 hover:decoration-current">
+                      {labels.opinion}<ArrowUpRight aria-hidden="true" className="size-4 shrink-0" />
+                    </a>
+                    <a href={`${localePrefix(locale)}${example.guidePath}`} className="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-[#1e1c1a] underline decoration-[#1e1c1a]/40 underline-offset-4 hover:decoration-current">
+                      {copy.guide}<ArrowRight aria-hidden="true" className="size-4 shrink-0" />
+                    </a>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </ReadingSectionBlock>
         {locale === "en" && <TopicVisual pagePath="/results" />}
       </ReadingLayout>
       <SiteDepthSection locale={locale} topic="results" />
+      <PageReadingNote notes={readingNotes} />
       <ConsultationCta locale={locale} />
     </main>
   </EditorialFrame>

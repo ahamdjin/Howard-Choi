@@ -1,3 +1,5 @@
+import { PageReadingNote } from "@/components/editorial/PageReadingNote";
+import readingNotes from "../../../content/learning/page-reading-notes/site.json";
 import { pageVisualAfter } from "@/data/pageVisualPlans";
 import { TopicVisual } from "@/components/editorial/TopicVisual";
 import { ContentPhoto } from "@/components/editorial/ContentPhoto";
@@ -31,6 +33,7 @@ export function FirmApproachPage({ page }: { page: keyof typeof firmContent }) {
         <a className="editorial-inline-link" href="/faqs">FAQs</a>
       </nav>
     </ReadingLayout>
+    <PageReadingNote notes={readingNotes} />
     <ConsultationCta locale="en" />
   </main></EditorialFrame>;
 }

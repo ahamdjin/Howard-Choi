@@ -1,3 +1,5 @@
+import { PageReadingNote } from "@/components/editorial/PageReadingNote";
+import readingNotes from "../../content/learning/page-reading-notes/articles-ko.json";
 import { ArticleParagraph } from "@/components/blog/ArticleParagraph";
 import { ArticleAuthorBio } from "@/components/blog/ArticleAuthor";
 import { ARTICLE_READING_LAYOUT, ArticleHero, ArticleReadingSidebar } from "@/components/blog/ArticleReadingLayout";
@@ -169,6 +171,8 @@ const KoBlogDetail = () => {
           </div>
         </div>
       </article>
+
+      <PageReadingNote notes={readingNotes} />
 
       {related && (
         <section className="relative z-10 border-t border-foreground/10 bg-[#e9e6e1] py-14 md:py-18"><div className="site-shell"><span className="text-[11px] text-foreground/44">다음 글</span><Link to={`/ko/blogs/${related.slug}`} className="group mt-4 grid gap-7 lg:grid-cols-[1fr_0.7fr] lg:items-end"><h2 style={koSerif} className="max-w-[780px] text-[clamp(2rem,3.2vw,3.35rem)] font-medium leading-[1.2] tracking-[-0.045em]">{related.title}</h2><div className="flex items-center justify-between border-t border-foreground/15 pt-4 text-[12px] text-foreground/64"><span>{related.category}</span><span className="inline-flex items-center gap-2 transition-transform duration-300 group-hover:translate-x-1">글 읽기 <ArrowRight className="h-4 w-4" /></span></div></Link></div></section>

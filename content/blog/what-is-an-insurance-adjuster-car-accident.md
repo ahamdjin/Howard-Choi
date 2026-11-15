@@ -2,7 +2,7 @@
   "title": "What is an insurance adjuster?",
   "slug": "what-is-an-insurance-adjuster-car-accident",
   "published": true,
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved",
   "author": "Howard Choi",
   "metaTitle": "What Is an Insurance Adjuster?",
   "metaDescription": "Find out what insurance adjusters do after a California car crash, which records they may request, and how to respond to the first call.",
@@ -14,7 +14,9 @@
   "image": "/blog-images/imported-drafts/howard-choi-reviewing-documents.jpg",
   "alt": "Accident claim documents being reviewed",
   "intro": "An insurance adjuster investigates a claim and evaluates what the insurer may pay. After a California crash, the first useful question is whose insurance company the adjuster represents. That tells you which policy, losses, and requests the caller is likely to be handling.",
-  "takeaway": "Verify whose insurer is calling, which loss it is reviewing and whether it wants a recorded statement. Keep requests and decisions in writing."
+  "takeaway": "Verify whose insurer is calling, which loss it is reviewing and whether it wants a recorded statement. Keep requests and decisions in writing.",
+  "reviewedBy": "howard-choi",
+  "reviewConfirmationDate": "2026-11-15"
 }
 
 ## What an adjuster actually decides

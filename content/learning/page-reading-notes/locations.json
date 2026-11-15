@@ -1,0 +1,410 @@
+{
+  "/locations": {
+    "title": "Find the right local guide when the mailing address is unclear",
+    "paragraphs": [
+      "A business address, a freeway exit and the exact point of impact can suggest different places. Find the nearest cross street, direction of travel and any incident number before choosing a city guide. The agency listed on the paperwork is useful when you need a copy of its report. If you are deciding where to consult, use the office information separately from the location of the incident."
+    ],
+    "href": "/locations/buena-park",
+    "linkLabel": "See Buena Park office and collision resources"
+  },
+  "/locations/buena-park": {
+    "title": "Separate the storefront from the shared walkway",
+    "paragraphs": [
+      "For a fall near a Beach Boulevard business, sketch the route from the door you used to the exact spot. Mark whether you were on the store’s entry pad, a shared walkway or the parking aisle. A receipt can place you there in time. A wider photograph can help identify whose staff or cameras may have covered that stretch."
+    ],
+    "href": "/practice-areas/slip-and-fall",
+    "linkLabel": "See which records matter after a fall"
+  },
+  "/locations/anaheim": {
+    "title": "Document a changed rideshare pickup",
+    "paragraphs": [
+      "If a pickup was moved from a hotel entrance to a different curb, save the in-app messages and both location pins. Write down when the instruction came through and where you were when the injury occurred. That timeline can distinguish an incident inside a property from an event that took place as passengers were boarding a vehicle."
+    ],
+    "href": "/practice-areas/rideshare-accidents",
+    "linkLabel": "See how rideshare records fit into a claim"
+  },
+  "/locations/fullerton": {
+    "title": "Identify the rail crossing or station entrance precisely",
+    "paragraphs": [
+      "If an incident happened near a Fullerton station, record whether you were in a parking aisle, a street crossing or an area reached through an entrance. Save any parking ticket or ride receipt with the time shown. This makes it easier to ask the right property manager or agency for information about a particular corner or path."
+    ],
+    "href": "/faqs/pedestrian-accidents",
+    "linkLabel": "See what to document after a pedestrian injury"
+  },
+  "/locations/garden-grove": {
+    "title": "Identify which business could see a turning lane",
+    "paragraphs": [
+      "For a collision by a shopping-center driveway, record which driveway the vehicle used and whether it was entering or exiting. A photo from the street side can show which businesses face that lane. If you ask about video, provide the intersection or driveway, direction and time range so the business can identify the relevant camera."
+    ],
+    "href": "/practice-areas/car-accidents",
+    "linkLabel": "See how a car crash is investigated"
+  },
+  "/locations/cypress": {
+    "title": "Save the route from a campus or business parking lot",
+    "paragraphs": [
+      "A parking-lot collision can be described as happening at the same address even when the drivers used different entrances. Mark each approach and the stall or aisle where the contact occurred. Save any visitor check-in or receipt to help confirm the time. Ask the property office who handled the incident and how to request its reference number."
+    ],
+    "href": "/blogs/what-to-do-after-a-car-accident-in-california",
+    "linkLabel": "Read the post-crash evidence checklist"
+  },
+  "/locations/la-habra": {
+    "title": "Record the direction of travel at an angled turn",
+    "paragraphs": [
+      "For a crash at a driveway or offset intersection, write down the road each vehicle came from and where it was trying to turn. Photograph the lane arrows and sight lines if you can do so safely. That detail helps a reviewer distinguish a disagreement about the turn from a disagreement about where the first impact happened."
+    ],
+    "href": "/blogs/california-comparative-fault-personal-injury",
+    "linkLabel": "See why each driver’s actions matter"
+  },
+  "/locations/la-mirada": {
+    "title": "Use the incident location to find the investigating agency",
+    "paragraphs": [
+      "If an incident happened near a city or county boundary, save the exact street, nearest cross street and travel direction. The agency name on a crash exchange card or report request can help establish who investigated. Keep the agency reference separate from the insurance claim number so a callback goes to the right office."
+    ],
+    "href": "/blogs/notify-the-california-dmv-about-an-accident",
+    "linkLabel": "Read how to keep crash reports separate"
+  },
+  "/locations/cerritos": {
+    "title": "Record where the car was when a lot is shared",
+    "paragraphs": [
+      "When several businesses use the same lot, record the row, nearby entrance and nearest driveway. Note whether the vehicle was parked, backing out or moving along an aisle. A timestamped receipt can help narrow the time range for staff looking for video. Ask which business or manager controls any camera that faces the relevant row."
+    ],
+    "href": "/practice-areas/car-accidents",
+    "linkLabel": "Read how vehicle and scene evidence fit together"
+  },
+  "/locations/norwalk": {
+    "title": "Keep the lane history when a freeway backup reaches an exit",
+    "paragraphs": [
+      "Record the freeway, direction, exit and lane where you were just before impact. If you felt more than one impact, write down the order you remember and what you saw before each. Save the full dashcam sequence if available. A final image of the damaged cars cannot show how traffic slowed or who moved between lanes."
+    ],
+    "href": "/blogs/what-to-do-after-a-car-accident-in-california",
+    "linkLabel": "See what to keep after a collision"
+  },
+  "/locations/whittier": {
+    "title": "Match a pedestrian report to the correct corner",
+    "paragraphs": [
+      "Copy the street names and the corner you were crossing from. Add whether you were heading toward a driveway, bus stop or marked crosswalk. Save a map pin with any witness details, and record which direction the approaching vehicle was moving. A useful account lets someone else follow the same route you walked."
+    ],
+    "href": "/practice-areas/pedestrian-accidents",
+    "linkLabel": "See which records can clarify a pedestrian collision"
+  },
+  "/locations/costa-mesa": {
+    "title": "Identify the pickup door at a venue",
+    "paragraphs": [
+      "At a venue with more than one loading area, the event name alone may be too broad. Keep the ticket, the message naming the entrance and the timestamp of a pickup change. Add a simple map pin where the event occurred. These records can help match the incident to a specific curb or vehicle rather than the venue as a whole."
+    ],
+    "href": "/blogs/uber-lyft-accident-insurance-california",
+    "linkLabel": "See what a rideshare trip record can show"
+  },
+  "/locations/irvine": {
+    "title": "Use the building and level to identify a garage incident",
+    "paragraphs": [
+      "Record the structure’s address, level, entrance and closest stairwell or elevator. If an incident occurred on a ramp, note which direction each person was moving. A ticket, gate record or receipt can anchor the time. Ask who manages the structure before assuming a nearby business has responsibility for its maintenance or cameras."
+    ],
+    "href": "/practice-areas/slip-and-fall",
+    "linkLabel": "Read how property control can affect a fall claim"
+  },
+  "/locations/long-beach": {
+    "title": "Document a bicycle route through a traffic circle",
+    "paragraphs": [
+      "Identify the entry street, the exit you intended to use and the lane at the point of contact. Save a longer ride recording or tracked route if you have one. A full route helps distinguish where a driver joined the circle from where either person was leaving. Record what you observed yourself and who supplied any other details."
+    ],
+    "href": "/practice-areas/bicycle-accidents",
+    "linkLabel": "Read what to preserve after a bicycle collision"
+  },
+  "/locations/los-angeles": {
+    "title": "Find the right records when a commercial vehicle was involved",
+    "paragraphs": [
+      "Save any identifying plate or company information already on the report or photos. Note whether the vehicle appeared to be making a stop or moving through the area, and describe where it was positioned. Keep that observation separate from what you have verified about the driver’s employer or the vehicle owner."
+    ],
+    "href": "/practice-areas/truck-accidents",
+    "linkLabel": "See what can identify a commercial vehicle and its operator"
+  },
+  "/locations/huntington-beach": {
+    "title": "Pin down where a bike route meets traffic",
+    "paragraphs": [
+      "A path crossing, driveway and street corner can be close together but offer different views of traffic. Record the type of crossing you used and where a driver was turning. Save any recording leading up to contact so a reviewer can see how both people approached. Keep copies of any messages that change your understanding of the location."
+    ],
+    "href": "/faqs/bicycle-accidents",
+    "linkLabel": "Read questions about evidence after a bicycle crash"
+  },
+  "/locations/newport-beach": {
+    "title": "Follow the route from a parking area to the waterfront",
+    "paragraphs": [
+      "For a fall or pedestrian injury, record the parking level or aisle, the doorway or ramp you used, and the exact place of contact. Separate what happened in a vehicle area from what happened on a walkway. A location sketch can show which property or traffic feature needs attention even when the entire visit was described under one address."
+    ],
+    "href": "/practice-areas/pedestrian-accidents",
+    "linkLabel": "See how to document a walking route and point of impact"
+  },
+  "/es/locations": {
+    "title": "Busque la guía local por el punto exacto del incidente",
+    "paragraphs": [
+      "Un domicilio comercial y una salida de autopista pueden indicar lugares distintos del punto del impacto. Anote el cruce, el sentido de viaje y el número del informe antes de elegir una guía. Si necesita una copia del informe, empiece por la agencia identificada en sus documentos."
+    ],
+    "href": "/es/locations/buena-park",
+    "linkLabel": "Vea los recursos locales de Buena Park"
+  },
+  "/ko/locations": {
+    "title": "사고 지점을 기준으로 지역 안내를 찾으세요",
+    "paragraphs": [
+      "사업장 주소나 고속도로 출구 이름이 실제 충돌 지점과 다를 수 있습니다. 도시 안내를 고르기 전에 가까운 교차로, 진행 방향, 보고서 번호를 확인하세요. 보고서 사본은 서류에 적힌 조사 기관부터 문의하면 됩니다."
+    ],
+    "href": "/ko/locations/buena-park",
+    "linkLabel": "부에나파크 지역 자료 보기"
+  },
+  "/es/locations/buena-park": {
+    "title": "Distinga la entrada de la tienda del paso común",
+    "paragraphs": [
+      "Si se cayó cerca de un comercio en Beach Boulevard, dibuje el trayecto desde la puerta hasta el punto exacto. Señale si estaba en la entrada, un paso común o un carril del estacionamiento. Guarde un recibo y una fotografía amplia para ubicar la hora y el lugar."
+    ],
+    "href": "/es/practice-areas/slip-and-fall",
+    "linkLabel": "Vea qué registros importan después de una caída"
+  },
+  "/ko/locations/buena-park": {
+    "title": "매장 입구와 공용 통로를 구분하세요",
+    "paragraphs": [
+      "비치 블러바드 상점 근처에서 넘어졌다면 이용한 문에서 사고 지점까지 이동 경로를 그려 보세요. 매장 입구, 공용 통로, 주차장 통행로 중 어디였는지 표시하세요. 영수증과 넓게 찍은 사진은 시간과 위치를 확인하는 데 도움이 됩니다."
+    ],
+    "href": "/ko/practice-areas/slip-and-fall",
+    "linkLabel": "낙상 뒤 중요한 기록 보기"
+  },
+  "/es/locations/anaheim": {
+    "title": "Documente un cambio en el punto de recogida",
+    "paragraphs": [
+      "Si la recogida se trasladó de la entrada de un hotel a otra acera, guarde los mensajes y las dos ubicaciones en el mapa. Anote cuándo llegó la instrucción y dónde estaba usted cuando ocurrió la lesión. Esos datos ayudan a reconstruir la secuencia antes de subir al vehículo."
+    ],
+    "href": "/es/practice-areas/rideshare-accidents",
+    "linkLabel": "Vea cómo se usan los registros del viaje"
+  },
+  "/ko/locations/anaheim": {
+    "title": "탑승 장소가 바뀌었다면 기록을 남기세요",
+    "paragraphs": [
+      "호텔 입구에서 다른 연석으로 탑승 위치가 바뀌었다면 앱 메시지와 지도에 표시된 두 지점을 보관하세요. 변경 안내를 받은 시각과 다친 위치를 적어 두면 차량에 탑승하기 전 경위를 재구성하는 데 도움이 됩니다."
+    ],
+    "href": "/ko/practice-areas/rideshare-accidents",
+    "linkLabel": "승차공유 운행 기록이 청구에 쓰이는 방식 보기"
+  },
+  "/es/locations/fullerton": {
+    "title": "Identifique el cruce o la entrada de la estación",
+    "paragraphs": [
+      "Si el incidente ocurrió cerca de una estación en Fullerton, anote si estaba en un estacionamiento, en un cruce o dentro de una entrada. Guarde un boleto o recibo con la hora. Estos datos ayudan a pedir el registro correcto a la agencia o al administrador del lugar."
+    ],
+    "href": "/faqs/pedestrian-accidents",
+    "linkLabel": "Vea qué documentar tras una lesión peatonal (en inglés)"
+  },
+  "/ko/locations/fullerton": {
+    "title": "역 주변 사고라면 횡단 지점이나 출입구를 확인하세요",
+    "paragraphs": [
+      "풀러턴 역 근처에서 사고가 났다면 주차장 통행로, 도로 횡단 지점, 역 출입구 중 어디였는지 적어 두세요. 시간이 표시된 주차권이나 영수증을 보관하면 조사 기관이나 시설 관리인에게 필요한 기록을 구체적으로 문의할 수 있습니다."
+    ],
+    "href": "/faqs/pedestrian-accidents",
+    "linkLabel": "보행자 사고 뒤 기록할 내용 보기 (영어)"
+  },
+  "/es/locations/garden-grove": {
+    "title": "Identifique qué comercio podía ver el giro",
+    "paragraphs": [
+      "En un choque junto a un centro comercial, anote qué acceso usó el vehículo y si entraba o salía. Una foto amplia puede mostrar qué comercios dan a ese carril. Al preguntar por un video, indique el acceso, el sentido y un intervalo de tiempo."
+    ],
+    "href": "/es/practice-areas/car-accidents",
+    "linkLabel": "Vea cómo se investiga un choque"
+  },
+  "/ko/locations/garden-grove": {
+    "title": "회전 차로를 볼 수 있는 사업장을 확인하세요",
+    "paragraphs": [
+      "상가 진입로에서 충돌했다면 차량이 이용한 진입로와 들어가던 중이었는지 나오던 중이었는지 적으세요. 넓은 사진은 어느 매장이 해당 차로를 향하고 있는지 보여 줍니다. 영상에 대해 문의할 때는 진입로, 진행 방향, 시간대를 알려 주세요."
+    ],
+    "href": "/ko/practice-areas/car-accidents",
+    "linkLabel": "자동차 충돌 조사 방식 보기"
+  },
+  "/es/locations/cypress": {
+    "title": "Trace el recorrido por el estacionamiento",
+    "paragraphs": [
+      "Dos vehículos pueden compartir la misma dirección y haber usado entradas distintas. Marque el acceso y el carril o puesto donde ocurrió el contacto. Guarde un recibo o registro de entrada con la hora. Pregunte a la administración quién recibió el informe y cuál fue su referencia."
+    ],
+    "href": "/es/blogs/what-to-do-after-a-car-accident-in-california",
+    "linkLabel": "Lea qué conservar después de un choque"
+  },
+  "/ko/locations/cypress": {
+    "title": "주차장 안의 이동 경로를 표시하세요",
+    "paragraphs": [
+      "주소가 같더라도 차량마다 이용한 입구가 다를 수 있습니다. 각 차량이 지나온 입구와 충돌한 통행로나 주차 칸을 표시하세요. 시간 확인에 도움이 되는 방문 기록이나 영수증을 보관하고 관리 사무실에 누가 접수했는지, 접수 번호가 있는지도 물어보세요."
+    ],
+    "href": "/ko/blogs/what-to-do-after-a-car-accident-in-california",
+    "linkLabel": "충돌 뒤 보관할 자료 보기"
+  },
+  "/es/locations/la-habra": {
+    "title": "Anote el sentido de marcha antes del giro",
+    "paragraphs": [
+      "En un choque cerca de un acceso o cruce irregular, indique de qué calle venía cada vehículo y hacia dónde intentaba girar. Si puede hacerlo de forma segura, fotografíe las flechas del carril y la visibilidad. Eso aclara qué parte de la maniobra se discute."
+    ],
+    "href": "/es/blogs/california-comparative-fault-personal-injury",
+    "linkLabel": "Vea por qué importan las acciones de ambos conductores"
+  },
+  "/ko/locations/la-habra": {
+    "title": "회전하기 전 진행 방향을 적으세요",
+    "paragraphs": [
+      "진입로나 어긋난 교차로에서 사고가 났다면 각 차량이 어느 도로에서 와서 어느 방향으로 돌려고 했는지 적으세요. 안전하다면 차로 화살표와 시야가 드러나는 사진을 보관하세요. 어느 움직임을 두고 진술이 엇갈리는지 파악하기 쉽습니다."
+    ],
+    "href": "/ko/blogs/california-comparative-fault-personal-injury",
+    "linkLabel": "두 운전자의 행동이 과실 판단에 미치는 영향 보기"
+  },
+  "/es/locations/la-mirada": {
+    "title": "Identifique quién investigó por el sitio exacto",
+    "paragraphs": [
+      "Si el incidente ocurrió cerca de un límite municipal, anote la calle, el cruce más cercano y el sentido de viaje. Busque el nombre de la agencia en la tarjeta o el informe. Conserve la referencia de esa agencia por separado del número del seguro."
+    ],
+    "href": "/blogs/notify-the-california-dmv-about-an-accident",
+    "linkLabel": "Lea cómo distinguir los informes de un choque (en inglés)"
+  },
+  "/ko/locations/la-mirada": {
+    "title": "정확한 사고 지점과 조사 기관을 확인하세요",
+    "paragraphs": [
+      "도시 경계 근처에서 사고가 났다면 정확한 도로명, 가까운 교차로, 진행 방향을 기록하세요. 정보 교환 카드나 보고서에서 조사 기관을 확인하고 그 기관의 접수 번호를 보험 청구 번호와 따로 보관하세요."
+    ],
+    "href": "/blogs/notify-the-california-dmv-about-an-accident",
+    "linkLabel": "충돌 관련 보고서를 구분하는 방법 보기 (영어)"
+  },
+  "/es/locations/cerritos": {
+    "title": "Ubique el vehículo dentro de un estacionamiento compartido",
+    "paragraphs": [
+      "Anote la fila, la entrada más cercana y si el vehículo estaba estacionado, retrocedía o circulaba por un carril. Un recibo puede acotar la hora. Pregunte quién controla la cámara que da a esa fila antes de enviar la solicitud a un comercio."
+    ],
+    "href": "/es/practice-areas/car-accidents",
+    "linkLabel": "Lea cómo se usan las pruebas del vehículo y del lugar"
+  },
+  "/ko/locations/cerritos": {
+    "title": "공용 주차장에서 차량 위치를 정확히 적으세요",
+    "paragraphs": [
+      "주차 구역과 가까운 출입구를 표시하고 차량이 주차 중이었는지, 후진 중이었는지, 통행로를 달리고 있었는지 적으세요. 영수증으로 시간대를 좁힐 수 있습니다. 영상을 요청하기 전에 해당 구역을 비추는 카메라를 누가 관리하는지 확인하세요."
+    ],
+    "href": "/ko/practice-areas/car-accidents",
+    "linkLabel": "차량과 현장 증거가 쓰이는 방식 보기"
+  },
+  "/es/locations/norwalk": {
+    "title": "Conserve la secuencia cuando el tráfico se detuvo cerca de una salida",
+    "paragraphs": [
+      "Anote la autopista, la salida, el sentido y el carril. Si sintió más de un impacto, registre el orden que recuerda y qué vio antes de cada uno. Guarde el video completo si existe, con los segundos en que comenzaron a frenar los vehículos."
+    ],
+    "href": "/es/blogs/what-to-do-after-a-car-accident-in-california",
+    "linkLabel": "Vea qué guardar después de una colisión"
+  },
+  "/ko/locations/norwalk": {
+    "title": "출구 근처 정체에서 충돌 전후 순서를 남기세요",
+    "paragraphs": [
+      "고속도로 이름과 출구, 진행 방향, 차로를 적으세요. 충격을 여러 번 느꼈다면 기억나는 순서와 각 충격 전에 본 것을 기록하세요. 영상이 있다면 차량들이 감속하기 시작한 시점부터 전체 파일을 보관하세요."
+    ],
+    "href": "/ko/blogs/what-to-do-after-a-car-accident-in-california",
+    "linkLabel": "충돌 뒤 보관할 자료 보기"
+  },
+  "/es/locations/whittier": {
+    "title": "Ubique el punto de partida de un cruce peatonal",
+    "paragraphs": [
+      "Anote los nombres de las calles y la esquina desde la que salió. Indique si iba hacia un cruce marcado, una parada o un acceso. Guarde un punto en el mapa con la información de testigos y el sentido del vehículo que se acercaba."
+    ],
+    "href": "/es/practice-areas/pedestrian-accidents",
+    "linkLabel": "Vea qué puede aclarar una colisión peatonal"
+  },
+  "/ko/locations/whittier": {
+    "title": "보행자가 출발한 모퉁이를 확인하세요",
+    "paragraphs": [
+      "도로명과 출발한 모퉁이를 적고, 표시된 횡단보도나 정류장, 진입로 중 어디로 향했는지 표시하세요. 지도 위치와 함께 목격자 연락처와 차량이 접근한 방향도 기록해 두세요."
+    ],
+    "href": "/ko/practice-areas/pedestrian-accidents",
+    "linkLabel": "보행자 충돌 경위를 설명할 자료 보기"
+  },
+  "/es/locations/costa-mesa": {
+    "title": "Identifique la puerta exacta de recogida",
+    "paragraphs": [
+      "Si un recinto tiene más de una zona de carga, guarde el boleto y el mensaje que identifica la entrada. Anote la hora de cualquier cambio y marque el lugar del incidente. Así puede vincular los registros a una acera concreta del recinto."
+    ],
+    "href": "/es/blogs/uber-lyft-accident-insurance-california",
+    "linkLabel": "Vea qué puede mostrar un registro de viaje"
+  },
+  "/ko/locations/costa-mesa": {
+    "title": "행사장의 정확한 탑승 출입구를 확인하세요",
+    "paragraphs": [
+      "행사장에 승하차 구역이 여러 곳이라면 입장권과 출입구를 지정한 메시지를 보관하세요. 위치가 바뀐 시각과 사고가 난 곳을 표시해 두면 운행 기록이 행사장의 어느 연석과 관련된 것인지 알 수 있습니다."
+    ],
+    "href": "/ko/blogs/uber-lyft-accident-insurance-california",
+    "linkLabel": "승차공유 기록으로 확인할 수 있는 내용 보기"
+  },
+  "/es/locations/irvine": {
+    "title": "Ubique el incidente por edificio y nivel",
+    "paragraphs": [
+      "Anote el domicilio, el nivel, la entrada y la escalera o ascensor más cercano. Si ocurrió en una rampa, indique en qué dirección se movía cada persona. Un boleto o recibo ayuda a fijar la hora. Pregunte quién administra el estacionamiento."
+    ],
+    "href": "/es/practice-areas/slip-and-fall",
+    "linkLabel": "Lea cómo influye el control de una propiedad"
+  },
+  "/ko/locations/irvine": {
+    "title": "주차 시설의 건물과 층수를 기록하세요",
+    "paragraphs": [
+      "주차장 주소, 층, 입구, 가장 가까운 계단이나 엘리베이터를 적으세요. 경사로에서 사고가 났다면 각 사람이 이동하던 방향도 표시하세요. 주차권이나 영수증으로 시간을 확인하고 어느 곳에서 시설을 관리하는지 문의하세요."
+    ],
+    "href": "/ko/practice-areas/slip-and-fall",
+    "linkLabel": "시설 관리 주체가 낙상 청구에 미치는 영향 보기"
+  },
+  "/es/locations/long-beach": {
+    "title": "Documente la ruta en bicicleta por una glorieta",
+    "paragraphs": [
+      "Identifique la calle de entrada, la salida que pensaba usar y el carril del impacto. Guarde el recorrido o video completo si lo tiene. Anote de dónde llegó el otro vehículo y qué detalles observó usted personalmente. La secuencia ayuda a ubicar cada movimiento dentro de la glorieta."
+    ],
+    "href": "/practice-areas/bicycle-accidents",
+    "linkLabel": "Lea qué conservar tras un choque de bicicleta (en inglés)"
+  },
+  "/ko/locations/long-beach": {
+    "title": "회전교차로에서 자전거 이동 경로를 기록하세요",
+    "paragraphs": [
+      "진입한 도로, 나가려던 출구, 접촉 당시 차로를 적으세요. 경로 기록이나 전체 영상이 있다면 보관하세요. 상대 차량이 어디에서 들어왔는지와 본인이 직접 본 부분을 구분하면 교차로 안에서 두 이동 경로를 비교하기 쉽습니다."
+    ],
+    "href": "/practice-areas/bicycle-accidents",
+    "linkLabel": "자전거 충돌 뒤 보관할 자료 보기 (영어)"
+  },
+  "/es/locations/los-angeles": {
+    "title": "Ubique los registros de un vehículo comercial",
+    "paragraphs": [
+      "Guarde la placa y el nombre de la empresa que aparezca en el informe o las fotografías. Anote dónde estaba el vehículo y si parecía estar haciendo una parada. Separe esa observación de lo que haya verificado sobre el propietario y el empleador del conductor."
+    ],
+    "href": "/es/practice-areas/truck-accidents",
+    "linkLabel": "Vea qué datos identifican al vehículo y a su operador"
+  },
+  "/ko/locations/los-angeles": {
+    "title": "상업용 차량에 관한 기록을 찾으세요",
+    "paragraphs": [
+      "보고서나 사진에 있는 차량 번호와 회사 이름을 보관하세요. 차량이 있던 위치와 정차 중으로 보였는지도 적어 두세요. 관찰한 사실과 차량 소유자 또는 운전자 고용주에 대해 확인한 정보는 따로 표시하세요."
+    ],
+    "href": "/ko/practice-areas/truck-accidents",
+    "linkLabel": "상업용 차량과 운영자를 확인하는 데 필요한 자료 보기"
+  },
+  "/es/locations/huntington-beach": {
+    "title": "Identifique dónde se cruzó la ruta ciclista con el tráfico",
+    "paragraphs": [
+      "Anote si usaba un cruce de ciclovía, un acceso o una esquina. Señale dónde giraba el vehículo y guarde el tramo del video anterior al contacto. Si alguien le dio una ubicación distinta después, conserve el mensaje con la fecha y la fuente."
+    ],
+    "href": "/faqs/bicycle-accidents",
+    "linkLabel": "Lea qué pruebas ayudan tras un choque de bicicleta (en inglés)"
+  },
+  "/ko/locations/huntington-beach": {
+    "title": "자전거길이 차량 통행로와 만나는 지점을 표시하세요",
+    "paragraphs": [
+      "자전거길 횡단 지점, 차량 진입로, 도로 모퉁이 중 어디를 지나고 있었는지 적으세요. 차량이 돌던 위치도 표시하고 접촉 전 영상이 있으면 보관하세요. 이후 다른 위치를 전달받았다면 메시지와 날짜, 출처를 남기세요."
+    ],
+    "href": "/faqs/bicycle-accidents",
+    "linkLabel": "자전거 충돌 뒤 도움이 되는 증거 보기 (영어)"
+  },
+  "/es/locations/newport-beach": {
+    "title": "Trace el camino del estacionamiento al paseo costero",
+    "paragraphs": [
+      "Anote el nivel o carril del estacionamiento, la puerta o rampa que utilizó y el punto del incidente. Indique si ocurrió en un área de vehículos o en un paso peatonal. Un croquis ayuda a distinguir esos espacios aunque compartan la misma dirección."
+    ],
+    "href": "/es/practice-areas/pedestrian-accidents",
+    "linkLabel": "Vea cómo documentar el recorrido peatonal"
+  },
+  "/ko/locations/newport-beach": {
+    "title": "주차장에서 물가까지 걸은 경로를 그려 보세요",
+    "paragraphs": [
+      "주차 층이나 통행로, 이용한 문이나 경사로, 사고 지점을 차례로 적으세요. 차량 통행 구역에서 일어났는지 보행 통로에서 일어났는지도 표시하세요. 간단한 그림으로 같은 주소에 있는 서로 다른 구역을 설명할 수 있습니다."
+    ],
+    "href": "/ko/practice-areas/pedestrian-accidents",
+    "linkLabel": "보행 경로와 충돌 지점 기록 방법 보기"
+  }
+}

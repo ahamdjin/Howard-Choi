@@ -1,3 +1,5 @@
+import { PageReadingNote } from "@/components/editorial/PageReadingNote";
+import readingNotes from "../../content/learning/page-reading-notes/site.json";
 import { trackExternalFormSubmission } from "@/lib/inquiry-client";
 import SiteDepthSection from "@/components/SiteDepthSection";
 import { responsiveImageProps } from "@/lib/responsive-images";
@@ -573,6 +575,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
           </div>
         </section>
       <SiteDepthSection locale={locale} topic="calculator" />
+        <PageReadingNote notes={readingNotes} />
         </main>
     </EditorialFrame>
   );

@@ -1,0 +1,229 @@
+{
+  "/practice-areas/bicycle-accidents": {
+    "title": "Keep the bike and route evidence together",
+    "paragraphs": [
+      "Photograph the area where the bike was struck before replacing or repairing parts. If you use a ride tracker, save the original activity and use a separate screenshot to mark the route. The screenshots can help orient a reviewer, while the original record keeps the available time and location data. Note any bike lane obstruction, turn lane or parked vehicle that affected your path."
+    ],
+    "href": "/faqs/bicycle-accidents",
+    "linkLabel": "Read what evidence can help after a bicycle crash"
+  },
+  "/practice-areas/dog-bites": {
+    "title": "Record who had control of the animal at the time",
+    "paragraphs": [
+      "Write down what you observed about who was holding, walking or supervising the dog. If the owner and handler were different people, keep both details instead of guessing which person controlled the situation. Preserve the original messages or incident information, and save any reference from the agency or office you contacted. Keep treatment records in a separate folder with the same incident date."
+    ],
+    "href": "/faqs/dog-bite-injury",
+    "linkLabel": "Read questions about documenting a dog bite"
+  },
+  "/learning-hub": {
+    "title": "Find the guide for the decision in front of you",
+    "paragraphs": [
+      "Start by sorting what you need to do into a question about the incident, treatment, insurance or a proposed agreement. If a report is missing, open a guide about the type of accident and identify who holds the record. If an insurer has made a request, use the insurance FAQs to identify what the request is for. If your concern is a change in symptoms or work duties, the injury guides show how to keep your records organized.",
+      "Keep the current notice or document with you as you read. A guide can help you formulate a question such as whether a form covers one date of treatment or requests a much wider set of records."
+    ],
+    "href": "/faqs",
+    "linkLabel": "Find a guide by question"
+  },
+  "/faqs": {
+    "title": "Start with the document in front of you",
+    "paragraphs": [
+      "An adjuster’s letter may ask for a statement, a bill, a release or permission to request records. Underline what it asks for, who sent it and the response date. Then use the topic that matches that request. If you have two letters, check whether they refer to the same vehicle, person and claim number before treating them as a single issue.",
+      "Save the question that remains unanswered after you read. Take it into your next call with the sender, or keep it with the letter for a consultation."
+    ],
+    "href": "/faqs/insurance-claim",
+    "linkLabel": "Read the insurance claim FAQs"
+  },
+  "/blogs/guides": {
+    "title": "Use the guides as a reading order after an incident",
+    "paragraphs": [
+      "Start with the guide that matches the event. Use it to work out which records may be at risk of disappearing. Once you have those records or have asked about them, look at the insurance topic that matches the current request and the injury topic that fits your treatment. Keep a short list of sources and any separate reference numbers you found.",
+      "If time is tight, start with the earliest response date in the paperwork. Take the notice and your unanswered questions into the next call so the conversation addresses the actual request."
+    ],
+    "href": "/blogs/what-to-do-after-a-car-accident-in-california",
+    "linkLabel": "Open the California crash checklist"
+  },
+  "/injury-types": {
+    "title": "Describe the changes you can observe",
+    "paragraphs": [
+      "You can use these guides before you know the name of an injury. Start with the tasks that changed. For example, a person may need a different work assignment, a ride to appointments or help lifting groceries. Keep medical terms and recommendations from the clinician in the treatment records. Add your own dated description of what you did that day and what help you needed. This helps you explain what changed at a follow-up visit or consultation."
+    ],
+    "href": "/faqs/medical-treatment-after-an-accident",
+    "linkLabel": "Read how to organize your treatment records"
+  },
+  "/faqs/bicycle-accidents": {
+    "title": "Match a recording to the direction you were riding",
+    "paragraphs": [
+      "Keep the original camera file or ride export and use a separate map to mark the path. Note where you were riding before a driveway, parked vehicle or turn changed your route. If a witness saw the approach but missed the collision, record which part they observed. Their account can still help explain visibility or lane position."
+    ],
+    "href": "/practice-areas/bicycle-accidents",
+    "linkLabel": "Read the bicycle accident investigation guide"
+  },
+  "/faqs/case-value-and-settlement-process": {
+    "title": "Compare two offers using the same fields",
+    "paragraphs": [
+      "Use one sheet for the stated offer, expenses, proposed deductions and the claims the agreement would release. Mark estimated figures as estimates and list who can confirm a current balance. Note which parties would sign and when payment would be due under the proposed terms. Comparing those fields makes it easier to see why two offers with different headline numbers might call for different questions."
+    ],
+    "href": "/results",
+    "linkLabel": "Read how to interpret reported recoveries"
+  },
+  "/faqs/catastrophic-injury": {
+    "title": "Give each part of a care plan its own line",
+    "paragraphs": [
+      "List the current clinical recommendation, the person providing the help and any appointment or equipment still being arranged. Keep a note of whether the help is temporary, recurring or awaiting evaluation. Save invoices and keep a separate list of the unpaid time relatives spend helping. These records can help explain what was needed and who provided it over time."
+    ],
+    "href": "/practice-areas/serious-injuries",
+    "linkLabel": "Read the serious injury evidence guide"
+  },
+  "/faqs/dog-bite-injury": {
+    "title": "Keep incident information and treatment dates easy to match",
+    "paragraphs": [
+      "Record who was present, the property where the contact happened and the time you notified an agency or property manager. If you receive a reference number, save it with the date and the office that issued it. File medical visit dates and provider instructions under the same incident date so both records can be located without mixing the underlying facts."
+    ],
+    "href": "/practice-areas/dog-bites",
+    "linkLabel": "Read how a dog bite claim is investigated"
+  },
+  "/faqs/hiring-a-personal-injury-lawyer": {
+    "title": "Use the same practical question at each consultation",
+    "paragraphs": [
+      "Ask each lawyer how they would handle one real issue in your file, such as an insurer’s request for a recorded statement or a disputed treatment bill. Ask who would explain the response and how you would receive a copy. Take notes about the steps they describe and any documents they would request before giving you an assessment."
+    ],
+    "href": "/attorney",
+    "linkLabel": "Meet Howard Choi before your consultation"
+  },
+  "/faqs/insurance-claim": {
+    "title": "Find out which claim file the request belongs to",
+    "paragraphs": [
+      "One crash can generate separate claim numbers for vehicle damage and injuries, even at the same carrier. Write the claim number, adjuster name and requested document on each message. If you’re asked for a release or signature, verify which part of the claim the sender says it covers. Keep that wording with the original request for review."
+    ],
+    "href": "/blogs/what-is-an-insurance-adjuster-car-accident",
+    "linkLabel": "Read what to ask an adjuster"
+  },
+  "/faqs/medical-treatment-after-an-accident": {
+    "title": "Prepare a specific question for the next appointment",
+    "paragraphs": [
+      "Bring the last visit summary or restriction if you received one. Write down the activity that has become harder, when that change started and whether it varies with the task. Ask your clinician what to record before the next visit and where their updated instructions will appear. Keep copies of new instructions alongside earlier ones so the sequence remains clear."
+    ],
+    "href": "/practice-areas/personal-injury",
+    "linkLabel": "See how treatment records fit into an injury claim"
+  },
+  "/faqs/motorcycle-accidents": {
+    "title": "Preserve the condition of riding equipment",
+    "paragraphs": [
+      "Photograph the motorcycle and any damaged gear before changing or discarding it. Include broad images and closer details, and note who stored or inspected each item. If a carrier or repair shop asks you to transfer something, retain the paperwork and its location. That makes it possible to match later photographs and inspection notes to the original equipment."
+    ],
+    "href": "/practice-areas/motorcycle-accidents",
+    "linkLabel": "Read the motorcycle accident evidence guide"
+  },
+  "/faqs/ongoing-case-faqs": {
+    "title": "What to write down after a case update",
+    "paragraphs": [
+      "Record who is waiting for what and what date you should check back. If an update mentions a late medical record or a coverage question, note the provider or insurer responsible for it. If you receive a new letter between calls, store the original and send a brief message describing what changed before asking for the next update."
+    ],
+    "href": "/about/what-to-expect",
+    "linkLabel": "Follow the stages of an injury claim"
+  },
+  "/faqs/pedestrian-accidents": {
+    "title": "Explain what you could see at the curb",
+    "paragraphs": [
+      "Mark your starting point and destination first. Add where a turn lane, parked vehicle or landscaping limited the view. Record the signal or sign you were following if you remember it. If another person saw the driver from a different angle, keep their description separate from your own and note where they were standing."
+    ],
+    "href": "/practice-areas/pedestrian-accidents",
+    "linkLabel": "Read the pedestrian collision evidence guide"
+  },
+  "/faqs/personal-injury": {
+    "title": "Identify the question the other side is disputing",
+    "paragraphs": [
+      "An insurer may accept that the incident happened and still ask about treatment, time away from work or a particular expense. Save the exact question and attach only the records that address it. For example, a dated work restriction and a schedule showing missed shifts help answer different parts of an income question."
+    ],
+    "href": "/practice-areas/personal-injury",
+    "linkLabel": "See how evidence supports a personal injury claim"
+  },
+  "/faqs/rideshare-accidents": {
+    "title": "Verify the trip time with more than one record",
+    "paragraphs": [
+      "The time shown on the trip receipt may refer to booking, pickup or completion. Keep the entire record and label the collision time separately using the report, your messages or another timestamp. If you booked for someone else, preserve the messages that identify the actual passenger and pickup point."
+    ],
+    "href": "/blogs/uber-lyft-accident-insurance-california",
+    "linkLabel": "Read about trip status and insurance coverage"
+  },
+  "/injury-types/amputations": {
+    "title": "Track the equipment you actually receive and use",
+    "paragraphs": [
+      "Keep dated recommendations, orders, fitting appointments and repair or adjustment notes. Add a short record of transportation, home access and help with tasks that change when equipment is replaced or adjusted. A recommendation, a delivered item and the support you needed while waiting can each account for a different part of your recovery timeline."
+    ],
+    "href": "/practice-areas/serious-injuries",
+    "linkLabel": "Read about documenting long-term effects"
+  },
+  "/injury-types/burns": {
+    "title": "Keep the original record of treatment and work restrictions",
+    "paragraphs": [
+      "Save visit instructions and any restrictions your clinician gives you. If you are already keeping progress photos, preserve the originals with their dates and keep them private. Note when your work duties or routine changed and how long temporary arrangements lasted. Bring the record to your clinician if you need help explaining changes between appointments."
+    ],
+    "href": "/faqs/medical-treatment-after-an-accident",
+    "linkLabel": "See how to organize records between visits"
+  },
+  "/injury-types/fractures": {
+    "title": "Document the days when work duties changed",
+    "paragraphs": [
+      "Save notes that show when a clinician changed a lifting, driving or weight-bearing restriction. Ask your employer for a record of changed duties or hours when one is available. If you could do some work and needed help with other tasks, write down both. That detail can explain variations in pay and availability during recovery."
+    ],
+    "href": "/blogs/how-much-is-my-personal-injury-case-worth-california",
+    "linkLabel": "Read how records can document income loss"
+  },
+  "/injury-types/internal-injuries": {
+    "title": "Keep discharge and follow-up records in order",
+    "paragraphs": [
+      "A visit can generate separate imaging, procedure and discharge documents. File each under its actual service date, and keep the instructions from any later follow-up visit with it. If several offices call about the same incident, record who you spoke to and which report they were discussing. This gives your care team a clearer timeline to review."
+    ],
+    "href": "/faqs/medical-treatment-after-an-accident",
+    "linkLabel": "Read about preparing for follow-up appointments"
+  },
+  "/injury-types/meniscus-injuries": {
+    "title": "Describe the movement that is difficult",
+    "paragraphs": [
+      "For a knee injury, a note such as “walking is hard” may leave important details unclear. Record whether the difficulty comes when standing from a chair, turning, using stairs or completing a work task. Keep the date and any restrictions from your clinician. That gives the next appointment specific examples to discuss."
+    ],
+    "href": "/faqs/medical-treatment-after-an-accident",
+    "linkLabel": "Read how to track symptoms and work changes"
+  },
+  "/injury-types/ptsd": {
+    "title": "Write down changes you’re comfortable discussing",
+    "paragraphs": [
+      "Some people can more easily describe a change in their routine than name what they are feeling. If you are keeping notes for a clinician, record the situation, what you noticed and whether it affected sleep, work or travel. Keep treatment details private and ask how to share the information securely if it becomes relevant to a claim."
+    ],
+    "href": "/practice-areas/serious-injuries",
+    "linkLabel": "Read how an injury’s effects can be documented"
+  },
+  "/injury-types/road-rash": {
+    "title": "Keep photographs and damage records tied to the same date",
+    "paragraphs": [
+      "If you have photographs of injuries or damaged clothing, save the originals. Keep your treatment instructions and receipts with a dated inventory of items involved in the incident. Note when any equipment or clothing was repaired or replaced. A clear record can help distinguish injuries documented during treatment from damage recorded at the scene."
+    ],
+    "href": "/practice-areas/motorcycle-accidents",
+    "linkLabel": "See what to preserve after a motorcycle crash"
+  },
+  "/injury-types/rotator-cuff": {
+    "title": "Describe what changed with reaching and lifting",
+    "paragraphs": [
+      "Keep a dated record of work, household or recreational tasks that require reaching overhead, lifting or holding something away from the body. Write down any restrictions the provider issued, when they took effect and whether your employer changed the assignment. Observable changes can help you give a clear account at your next appointment."
+    ],
+    "href": "/blogs/how-much-is-my-personal-injury-case-worth-california",
+    "linkLabel": "Read what evidence can document work impact"
+  },
+  "/injury-types/spinal-injuries": {
+    "title": "Record who provides help and how often",
+    "paragraphs": [
+      "If a care plan calls for assistance, record who provides it, what tasks they do and when the arrangement changes. Keep appointment and equipment records in separate files so you can find them without reviewing the entire medical history. Note changes in the provider’s instructions and which parts of the plan are still being arranged."
+    ],
+    "href": "/practice-areas/serious-injuries",
+    "linkLabel": "Read about care and assistance records"
+  },
+  "/injury-types/whiplash": {
+    "title": "Write down the sequence of symptoms and work changes",
+    "paragraphs": [
+      "Keep the crash date, first visit and follow-up appointments on one timeline. Include when you first noticed a change and when it led you to modify driving, desk work or lifting. If a provider gives you new instructions, save the dated note. A timeline makes it easier to discuss changes in order at future appointments."
+    ],
+    "href": "/faqs/medical-treatment-after-an-accident",
+    "linkLabel": "See how to assemble a treatment timeline"
+  }
+}

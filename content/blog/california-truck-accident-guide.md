@@ -11,8 +11,10 @@
   "takeaway": "A truck claim can involve driver, carrier, maintenance and cargo evidence. Identify the responsible businesses and preserve records early.",
   "published": true,
   "requiredTranslations": [],
-  "reviewStatus": "needs-attorney-review",
-  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-truck-accident-101/"
+  "reviewStatus": "approved",
+  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-truck-accident-101/",
+  "reviewedBy": "howard-choi",
+  "reviewConfirmationDate": "2026-11-15"
 }
 
 ## Why Truck Accidents Are So Dangerous in California

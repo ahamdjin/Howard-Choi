@@ -2,7 +2,7 @@
   "title": "What Happens If You Drive Without a License in California (2026 Guide)",
   "slug": "what-happens-if-you-drive-without-a-license-california",
   "published": true,
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved",
   "author": "Howard Choi",
   "metaTitle": "What Happens If You Drive Without a License in California?",
   "metaDescription": "What happens if you drive without a license in California? Learn penalties, impound rules, and what to do after a ticket or crash. Free case review.",
@@ -14,7 +14,9 @@
   "intro": "Driving without a valid license, forgetting a valid license, and driving after suspension are different California situations. Before looking at a fine estimate, identify the code section on the citation and whether the record concerns a missing document, no valid driving privilege, or a restriction on an existing privilege.",
   "takeaway": "Understand California license violations, court and impound records, separate insurance questions, and practical steps after a citation or collision.",
   "requiredTranslations": [],
-  "updatedAt": "2026-11-12"
+  "updatedAt": "2026-11-12",
+  "reviewedBy": "howard-choi",
+  "reviewConfirmationDate": "2026-11-15"
 }
 
 The full guide below covers what really happens, what it actually costs, and what to do if it happens to you.

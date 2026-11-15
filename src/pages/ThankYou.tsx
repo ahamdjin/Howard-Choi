@@ -1,3 +1,5 @@
+import { PageReadingNote } from "@/components/editorial/PageReadingNote";
+import readingNotes from "../../content/learning/page-reading-notes/utility.json";
 import { ArrowLeft, Phone } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import KoreanNavigation from "@/components/KoreanNavigation";
@@ -73,6 +75,7 @@ const ThankYou = ({ locale = "en" }: ThankYouProps) => {
               </div>
             </div>
           </div>
+          <PageReadingNote notes={readingNotes} withinShell />
         </div>
       </main>
 

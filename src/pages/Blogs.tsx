@@ -1,3 +1,5 @@
+import { PageReadingNote } from "@/components/editorial/PageReadingNote";
+import readingNotes from "../../content/learning/page-reading-notes/site.json";
 import { LearningLinks } from "@/pages/learning/LearningPages";
 import SiteDepthSection from "@/components/SiteDepthSection";
 import { responsiveImageProps } from "@/lib/responsive-images";
@@ -87,6 +89,7 @@ const Blogs = () => {
             </div>
           </div>
         <SiteDepthSection locale="en" topic="blogs" />
+        <PageReadingNote notes={readingNotes} />
         </main>
       </div>
       <Footer />

@@ -11,8 +11,10 @@
   "takeaway": "Photograph the condition and preserve evidence of who controlled the property, how long the hazard existed and whether there was a warning.",
   "published": true,
   "requiredTranslations": [],
-  "reviewStatus": "needs-attorney-review",
-  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-slip-and-fall-accidents-101/"
+  "reviewStatus": "approved",
+  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-slip-and-fall-accidents-101/",
+  "reviewedBy": "howard-choi",
+  "reviewConfirmationDate": "2026-11-15"
 }
 
 ## Slip and Fall Accidents in California: What You Should Know

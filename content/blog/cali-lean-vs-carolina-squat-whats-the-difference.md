@@ -2,7 +2,7 @@
   "title": "Cali Lean vs. Carolina Squat: What’s the Difference?",
   "slug": "cali-lean-vs-carolina-squat-whats-the-difference",
   "published": true,
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved",
   "author": "Howard Choi",
   "metaTitle": "Cali Lean vs. Carolina Squat: Differences, Laws & Bans",
   "metaDescription": "What's the difference between a Cali Lean and a Carolina Squat? One started in Baja racing, the other is banned in 8 states. See the full comparison, state-by-state ban list, and safety risks.",
@@ -14,7 +14,9 @@
   "intro": "Cali Lean and Carolina Squat describe front-high truck stances, but the nickname alone does not establish how a vehicle was modified or whether it is legal. The important details are the actual measurements, applicable equipment rules, and the effect on visibility and handling.",
   "takeaway": "Compare Cali Lean and Carolina Squat modifications, understand California height-rule distinctions, and learn what evidence matters after a collision.",
   "requiredTranslations": [],
-  "updatedAt": "2026-11-12"
+  "updatedAt": "2026-11-12",
+  "reviewedBy": "howard-choi",
+  "reviewConfirmationDate": "2026-11-15"
 }
 
 The Cali Lean originated in Baja desert racing, where a raised nose protects the engine on rough terrain. The lift is moderate (2–4 inches) and functional. The Carolina Squat takes the same idea to extremes and often 6–10+ inches of front lift with a lowered rear, purely for aesthetics.

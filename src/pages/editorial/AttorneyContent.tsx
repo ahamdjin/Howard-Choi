@@ -44,7 +44,6 @@ export default function AttorneyContent({ locale }: { locale: SiteLocale }) {
             [ko ? "면허 상태" : es ? "Estado de licencia" : "License status", ko ? "활동 중 (Active)" : es ? "Activa" : "Active"],
             [ko ? "등록일" : es ? "Admitido en California" : "Admitted in California", ko ? "2012년 10월 2일" : es ? "2 de octubre de 2012" : "October 2, 2012"],
             [ko ? "로스쿨" : es ? "Facultad de derecho" : "Law school", "William Howard Taft University, Santa Ana, CA"],
-            [ko ? "등록 사무소" : es ? "Firma registrada" : "Firm of record", "Law Offices of Howard Choi, PC"],
             [ko ? "사용 언어" : es ? "Idiomas hablados" : "Languages spoken", ko ? "영어 · 한국어" : es ? "Inglés · Coreano" : "English · Korean"],
           ].map(([label, value]) => <div key={label} className="py-4"><dt className="text-xs text-[#675f55]">{label}</dt><dd className="mt-1 text-base font-medium">{value}</dd></div>)}</dl>
           <p className="mt-4 text-[12px] leading-5 text-[#675f55]">{ko ? "위 정보는 캘리포니아 주 변호사 협회(State Bar of California)의 공식 등록 기록을 기준으로 합니다." : es ? "Los datos anteriores corresponden al registro oficial del State Bar of California." : "The details above are as published on the official State Bar of California licensee record."}</p>

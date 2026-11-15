@@ -67,6 +67,10 @@ class Page(HTMLParser):
 def fetch(path):
     try:
         r = urllib.request.urlopen(BASE + path, timeout=20)
+        # Linked printable text resources need availability checks, not HTML
+        # titles, canonicals or H1s. Keep validating their actual MIME type.
+        if path.endswith('.txt') and r.headers.get_content_type() == 'text/plain':
+            return {'path': path, 'status': r.status, 'resource': True}
         body = r.read().decode()
         p = Page()
         p.feed(body)
@@ -103,6 +107,10 @@ warnings = []
 titles = collections.defaultdict(list)
 descs = collections.defaultdict(list)
 for (path, row) in sorted(seen.items()):
+    if row.get('resource') and row.get('status') == 200:
+        if path in sitemap:
+            issues.append({'path': path, 'issue': 'non_html_in_sitemap'})
+        continue
     if 'page' not in row:
         issues.append({'path': path, 'issue': 'fetch', 'detail': row})
         continue
@@ -148,7 +156,7 @@ for (path, row) in sorted(seen.items()):
         target = u.path.rstrip('/') or '/'
         if u.hostname not in ['www.buenaparkinjurylawyer.com', 'buenaparkinjurylawyer.com']:
             continue
-        if target in seen and 'page' not in seen[target]:
+        if target in seen and 'page' not in seen[target] and not (seen[target].get('resource') and seen[target].get('status') == 200):
             issues.append({'path': path, 'issue': 'broken_internal_link', 'target': target, 'status': seen[target].get('status')})
         if u.fragment and target in seen and ('page' in seen[target]) and (urllib.parse.unquote(u.fragment) not in seen[target]['page'].ids):
             issues.append({'path': path, 'issue': 'broken_fragment', 'target': target + '#' + u.fragment})

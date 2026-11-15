@@ -11,8 +11,10 @@
   "takeaway": "Identify the dog and owner, obtain medical care, preserve photographs and report details, and distinguish a bite from another kind of animal-related injury.",
   "published": true,
   "requiredTranslations": [],
-  "reviewStatus": "needs-attorney-review",
-  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-dog-bite-accidents-101/"
+  "reviewStatus": "approved",
+  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-dog-bite-accidents-101/",
+  "reviewedBy": "howard-choi",
+  "reviewConfirmationDate": "2026-11-15"
 }
 
 ## Bitten by a Dog? Here’s What You Need to Know

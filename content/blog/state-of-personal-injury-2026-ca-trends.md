@@ -2,7 +2,7 @@
   "title": "State of Personal Injury 2026 | 10 Trends Shaping an Industry",
   "slug": "state-of-personal-injury-2026-ca-trends",
   "published": true,
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved",
   "author": "Howard Choi",
   "metaTitle": "State of Personal Injury 2026: 10 Trends for Californians",
   "metaDescription": "Private equity, robotaxis, and a $77M ballot measure are reshaping California personal injury law in 2026. Here's what it means if you get hurt.",
@@ -14,7 +14,9 @@
   "intro": "Personal injury claims in 2026 sit at the intersection of technology, insurance, business investment, and legal reform. These ten issues explain what an injured Californian should ask about—not just what makes an industry headline.",
   "takeaway": "Explore ten personal injury issues involving funding, technology, legal reform, and insurance, with practical questions to ask before signing or settling.",
   "requiredTranslations": [],
-  "updatedAt": "2026-11-12"
+  "updatedAt": "2026-11-12",
+  "reviewedBy": "howard-choi",
+  "reviewConfirmationDate": "2026-11-15"
 }
 
 Changes in firm ownership, connected vehicles, funding arrangements, and proposals affecting legal fees can influence how a claim is investigated or financed. Their effects are not identical. A proposed rule is not an operative law, and a large verdict is not a reliable estimate of an individual case.

@@ -2,7 +2,7 @@
   "title": "What happens when your car is totaled?",
   "slug": "what-happens-when-car-is-totaled-california",
   "published": true,
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved",
   "author": "Howard Choi",
   "metaTitle": "What Happens When Your Car is Totaled?",
   "metaDescription": "Learn how a California insurer values a totaled car, what happens if you still owe money, and how to check the written settlement offer.",
@@ -14,7 +14,9 @@
   "image": "/blog-images/imported-drafts/howard-choi-collision-damage.jpg",
   "alt": "Vehicle with windshield and front-end collision damage",
   "intro": "When a car is totaled in California, the next step is to get the written valuation and see how the insurer calculated its offer. Check the vehicle details, comparable cars, adjustments, taxes and fees, and any deduction for salvage or your deductible. If you have a loan, obtain the lender’s payoff figure separately.",
-  "takeaway": "Ask for the valuation and check comparable vehicles, adjustments and deductions. Confirm the loan payoff and rental end date separately."
+  "takeaway": "Ask for the valuation and check comparable vehicles, adjustments and deductions. Confirm the loan payoff and rental end date separately.",
+  "reviewedBy": "howard-choi",
+  "reviewConfirmationDate": "2026-11-15"
 }
 
 ## What makes a car a total loss?

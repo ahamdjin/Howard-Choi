@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { clientReviews } from "@/data/clientReviews";
 import type { SiteLocale } from "@/data/injurySite";
+import ClientProof from "./ClientProof";
 
 const ClientSuccessFeature = ({ locale = "en" }: { locale?: SiteLocale }) => {
   const ko = locale === "ko";
@@ -10,10 +11,15 @@ const ClientSuccessFeature = ({ locale = "en" }: { locale?: SiteLocale }) => {
   const prefix = ko ? "/ko" : es ? "/es" : "";
   const [active, setActive] = useState(0);
   const touchStart = useRef<{ x: number; y: number } | null>(null);
-  const items = clientReviews[locale].filter((item) => item.approvedForPublication === true && Boolean(item.approvalReference));
-  if (!items.length) return null;
+  const approvedReviews = clientReviews[locale].filter((item) => item.approvedForPublication === true && Boolean(item.approvalReference));
+  const showArchivedReviews = import.meta.env.DEV && approvedReviews.length === 0;
+  const items = showArchivedReviews ? clientReviews[locale] : approvedReviews;
+  if (!items.length) return <ClientProof locale={locale} />;
   const review = items[active % items.length];
   const move = (direction: number) => setActive((value) => (value + direction + items.length) % items.length);
+  const reviewLabel = showArchivedReviews
+    ? ko ? "이전 후기 · 로컬 미리보기" : es ? "Reseña archivada · Vista previa local" : "Archived review · Local preview"
+    : ko ? "실제 의뢰인 후기" : es ? "Testimonio de cliente" : "Real client testimonial";
 
   return (
     <section id="reviews" aria-label={ko ? "의뢰인 경험" : es ? "Experiencias de clientes" : "Client experiences"} aria-roledescription="carousel" className="flex min-h-[100svh] w-full bg-[#f7f6f3] text-foreground">
@@ -44,7 +50,7 @@ const ClientSuccessFeature = ({ locale = "en" }: { locale?: SiteLocale }) => {
               <div className="mt-1 text-sm text-foreground/70">{review.location}</div>
             </div>
             <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-foreground/20 pt-5">
-              <span className="inline-flex min-h-11 items-center text-xs text-foreground/48">{ko ? "실제 의뢰인 후기" : es ? "Testimonio de cliente" : "Real client testimonial"}</span>
+              <span className="inline-flex min-h-11 items-center text-xs text-foreground/48">{reviewLabel}</span>
               <div className="flex items-center gap-3">
                 <button type="button" onClick={() => move(-1)} aria-label={ko ? "이전 후기" : es ? "Testimonio anterior" : "Previous review"} className="flex h-11 w-11 items-center justify-center rounded-full border border-foreground/35 hover:bg-white"><ArrowLeft className="h-4 w-4" /></button>
                 <span className="text-xs tabular-nums">{active + 1} / {items.length}</span>

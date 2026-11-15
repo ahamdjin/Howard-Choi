@@ -2,7 +2,7 @@
   "title": "Is it Necessary to Notify the California DMV About an Accident?",
   "slug": "notify-the-california-dmv-about-an-accident",
   "published": true,
-  "reviewStatus": "approved",
+  "reviewStatus": "pending-attorney-review",
   "author": "Howard Choi",
   "excerpt": "Learn when California requires an SR-1 accident report, how the 10-day deadline works, and why DMV, police, and insurance reports are separate.",
   "metaTitle": "When to Notify the California DMV About an Accident",
@@ -12,7 +12,8 @@
   "alt": "Accident claim documents being reviewed",
   "intro": "After a California car accident, notifying the police and your insurance company may not cover all your reporting duties. You may also need to submit a Report of Traffic Accident Occurring in California, known as an SR-1, to the California Department of Motor Vehicles.",
   "takeaway": "Learn when California requires an SR-1 accident report, how the 10-day deadline works, and why DMV, police, and insurance reports are separate.",
-  "requiredTranslations": []
+  "requiredTranslations": [],
+  "updatedAt": "2026-11-15"
 }
 
 **You must submit an SR-1 within 10 days if anyone was injured, anyone died, or the accident caused more than $1,000 in damage to any one person’s property.** This requirement applies regardless of fault. Neither a police report nor an insurance claim replaces the DMV report. [California DMV accident-reporting guidance](https://www.dmv.ca.gov/portal/dmv-virtual-office/accident-reporting/)
@@ -110,6 +111,28 @@ Consider speaking with an attorney if injuries are significant, fault is dispute
 The SR-1 deadline is not your lawsuit deadline. California personal-injury claims generally have a two-year filing period, but government claims, delayed discovery, claims involving minors, and other exceptions require individual review. Property-damage claims can follow a different deadline. Do not calculate a filing deadline from the date you submitted the DMV report. [California Courts filing-deadline guidance](https://selfhelp.courts.ca.gov/civil-lawsuit/statute-limitations)
 
 Reporting a crash and pursuing compensation remain separate processes.
+
+## Before you press submit: a reporting check
+
+A short review can catch a mix-up that creates extra correspondence later. Compare the accident date, driver details, vehicle plate and insurance information against the records you already have. The policy information should describe coverage on the collision date. If an item is unknown, use the current form’s instructions or ask the DMV how to complete that field; do not invent an answer to finish the form.
+
+| Record to keep | What it establishes | What still needs separate attention |
+| --- | --- | --- |
+| Police or CHP incident number | Which agency recorded or investigated the event | Whether a full report exists and whether you can obtain it |
+| Insurance claim confirmation | Which carrier received notice and assigned a reference | Coverage, liability, and whether an SR-1 was actually submitted |
+| DMV submission confirmation | A record of the SR-1 submission | Any later DMV request, correction or financial-responsibility notice |
+
+Keep a copy of what was submitted as well as the confirmation. A screenshot saying a form was received may not show the information entered on it. When an agent or representative files for you, ask for both items. This makes it easier to identify the source of an error if a later notice refers to the wrong date, vehicle or policy.
+
+## What if one record is wrong but the others are correct?
+
+Treat each record as a separate file. If the police report names the wrong vehicle owner, ask the investigating agency how to request review. If the insurer has an incorrect accident date, ask that carrier to correct its claim record. If the SR-1 contains an error, contact the DMV about the appropriate correction process and keep its response. A corrected insurance email does not establish that the DMV changed its record.
+
+Do not alter an official report yourself or describe a requested correction as one the agency has already accepted. Keep the original version, your request, supporting documents and any later response together. If an insurer is relying on the disputed entry, explain the specific issue and provide the evidence available now.
+
+**Hypothetical example.** A claim was opened using the date you called the insurer rather than the earlier date of the collision. Compare the claim acknowledgement with scene records and the policy effective dates. Identify the source of the discrepancy before sending more forms that repeat it. The example illustrates record checking, not a determination of coverage.
+
+If a notice threatens your driving privilege or sets a response date, address it promptly. You can [contact the office](/contact) about the injury-claim issues and bring the actual notice, submitted report and insurance correspondence. Do not wait for a correction request to resolve before checking an independent deadline.
 
 ## Frequently asked questions
 
