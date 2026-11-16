@@ -172,7 +172,8 @@
         "Organize the first medical visit and later appointments by date. Bring current restrictions and examples of how they affected work or daily activities. For instance, someone may have resumed a shift while handing off lifting duties, or returned to work while still needing rides to appointments. A dated schedule and the provider’s instructions can help explain what changed.",
         "Start the discussion with the decision you are facing. You may need to identify an agency, understand a disputed turn or work out which documents support a change in earnings. Howard can review what the current records establish and which questions require follow-up. No fee unless there is a recovery.",
         "It can be useful to bring a one-page timeline if the same trip produced several records. A collision near a freeway approach might appear under one location in the tow paperwork and another in your appointment notes because you described a nearby landmark. Add the direction you were traveling, where the vehicles stopped and where the officer met you. Keeping those points separate helps someone reading the file understand why the records may use different descriptions.",
-        "If you are deciding whether an in-person visit is practical, call ahead to discuss your options. Tell the office if getting there is difficult because you cannot drive or are relying on someone else for transportation. When arranging the appointment, mention any immediate records issue, such as a vehicle that will be moved or footage a business has agreed to hold for a short time. Bring the business’s response or notice so Howard can see what it actually says and decide what to review first."
+        "If you are deciding whether an in-person visit is practical, call ahead to discuss your options. Tell the office if getting there is difficult because you cannot drive or are relying on someone else for transportation. When arranging the appointment, mention any immediate records issue, such as a vehicle that will be moved or footage a business has agreed to hold for a short time. Bring the business’s response or notice so Howard can see what it actually says and decide what to review first.",
+        "Before traveling to the Beach Boulevard office, confirm your appointment time, Suite 216 and any access or transportation question with the office. Mention if someone is coming to help you communicate or organize records. Ask how the office wants to receive documents in advance, and use the agreed method for sensitive medical, financial or family material."
       ],
       "links": [
         {
@@ -182,6 +183,26 @@
         {
           "label": "Arrange a free consultation",
           "href": "/contact"
+        }
+      ]
+    },
+    {
+      "id": "consultation-priorities",
+      "title": "Bring the next insurance decision to your Buena Park consultation",
+      "label": "Decisions before signing",
+      "paragraphs": [
+        "Identify the decision that brought you to the office. It may be a request for a recorded statement, permission to obtain medical records, a rental return notice or a proposed settlement. Bring the complete message and its attachments, including the sender, claim number and any stated response date. If the same insurer has separate vehicle and injury handlers, identify both so a question reaches the person responsible for that part of the file.",
+        "Keep a vehicle payment and an injury settlement separate when describing the offer. A repair estimate can explain the cost to fix a bumper while leaving treatment, missed work and reimbursement questions unresolved. Bring the proposed release itself. A payment label or a short email summary may leave out terms that matter to the decision you are being asked to make.",
+        "For medical bills, bring the current provider statement and any explanation of benefits you already received. Mark which amounts were paid, adjusted or remain disputed. If you do not know the balance, say so. Howard can review the documents and discuss what needs to be confirmed before an offer can be evaluated. A guessed total makes that review harder."
+      ],
+      "links": [
+        {
+          "label": "What to ask an insurance adjuster",
+          "href": "/blogs/what-is-an-insurance-adjuster-car-accident"
+        },
+        {
+          "label": "Organizing medical bills while a claim is pending",
+          "href": "/blogs/medical-bills-while-car-accident-claim-pending-california"
         }
       ]
     },

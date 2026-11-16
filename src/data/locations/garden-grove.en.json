@@ -201,6 +201,26 @@
       "links": []
     },
     {
+      "id": "report-location-correction",
+      "title": "Correct a Garden Grove report without losing the original record",
+      "label": "Disputed report details",
+      "paragraphs": [
+        "If a Garden Grove collision report identifies the wrong driveway, vehicle or direction of travel, keep the copy you received and mark the precise entry on a separate page. Add the photographs, diagram or witness information that support your explanation. A statement about where you were headed is different from evidence of the lane you occupied. Explain which detail is wrong and which record helps establish it.",
+        "Contact the agency that prepared the report to ask about its correction or supplemental-information procedure. Garden Grove Police and another investigating agency may use different processes. Keep the date, incident number, documents submitted and response. Ask how you will learn whether a supplement is available. Sending a request does not establish that the report has changed or that the agency agrees with your account.",
+        "Keep the original and any later version together. If an adjuster relied on the disputed entry, identify it in writing and ask what other evidence the carrier will review while the request is pending. Send a later supplement with its date and confirm which handler received it. If the agency instead says there is no report available, retain that response and discuss the photographs, witness accounts and other records you do have."
+      ],
+      "links": [
+        {
+          "label": "How to request a correction to a crash report",
+          "href": "/blogs/correct-inaccurate-car-accident-police-report-california"
+        },
+        {
+          "label": "Filing a claim without a police report",
+          "href": "/blogs/car-insurance-claim-without-police-report-california"
+        }
+      ]
+    },
+    {
       "id": "data",
       "title": "Garden Grove collision injuries in context.",
       "label": "Local collision data",

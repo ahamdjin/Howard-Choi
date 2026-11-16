@@ -1,5 +1,5 @@
 {
-  "sourceHash": "622f48126cfe259c3ce30718946e39c73d90540bd6775f1def5e71f5620c8538",
+  "sourceHash": "5ed4728a867770fa4cf9cbc41a694a24d101f2a26bd8012dc5de6cb6ec0a8bea",
   "reviewStatus": "reviewed-for-source-parity",
   "content": {
     "slug": "garden-grove",
@@ -210,6 +210,26 @@
           "Cuando tenga el informe, compare la calle, la fecha, los sentidos de circulación y los vehículos con los materiales que guardó. Si algo no coincide, conserve ambas versiones. Señale el detalle concreto que quiere comentar en lugar de intentar reescribir todo lo ocurrido. Howard atiende a Garden Grove desde Buena Park y puede revisar el informe, las preguntas pendientes sobre las pruebas y los documentos que muestran el impacto de la lesión."
         ],
         "links": []
+      },
+      {
+        "id": "report-location-correction",
+        "title": "Solicitar la corrección de un informe de Garden Grove sin perder el registro original",
+        "label": "Datos del informe en disputa",
+        "paragraphs": [
+          "Si un informe de colisión de Garden Grove identifica mal la entrada, el vehículo o el sentido de circulación, conserve la copia recibida y señale el dato exacto en una hoja separada. Añada las fotos, el diagrama o la información de testigos que respalden su explicación. Decir hacia dónde iba es distinto de demostrar el carril que ocupaba. Explique qué dato es incorrecto y qué registro ayuda a comprobarlo.",
+          "Contacte a la agencia que elaboró el informe para preguntar por el procedimiento de corrección o de información complementaria. La policía de Garden Grove y otra agencia investigadora pueden usar procesos diferentes. Guarde la fecha, el número de incidente, los documentos enviados y la respuesta. Pregunte cómo sabrá si hay un suplemento disponible. Enviar una solicitud no demuestra que el informe haya cambiado ni que la agencia comparta su versión.",
+          "Conserve juntas la versión original y las posteriores. Si un ajustador se basó en el dato cuestionado, identifíquelo por escrito y pregunte qué otras pruebas revisará la aseguradora mientras se tramita la solicitud. Envíe el suplemento posterior con su fecha y confirme qué responsable lo recibió. Si la agencia dice que no hay informe disponible, guarde esa respuesta y comente las fotos, los testimonios y los demás registros que sí tiene."
+        ],
+        "links": [
+          {
+            "label": "Cómo solicitar la corrección de un informe de choque (en inglés)",
+            "href": "/blogs/correct-inaccurate-car-accident-police-report-california"
+          },
+          {
+            "label": "Presentar un reclamo sin informe policial (en inglés)",
+            "href": "/blogs/car-insurance-claim-without-police-report-california"
+          }
+        ]
       },
       {
         "id": "data",

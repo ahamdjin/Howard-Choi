@@ -6,6 +6,8 @@ import PracticeLearningResources, { PracticeSourceSections } from "@/components/
 import { getPracticeMessaging } from "@/data/practicePageMessaging";
 import { practiceSearchNames } from "@/data/practiceSeo";
 import { practiceConsultationFocus } from "@/data/practiceConsultationFocus";
+import { practiceLocalGuidance } from "@/data/practiceLocalGuidance";
+import { localizedContentHref } from "@/lib/localized-path";
 import SiteDepthSection from "@/components/SiteDepthSection";
 import { ArrowRight, CalendarClock, CheckCircle2, Compass, FileText, HelpCircle, Layers, MapPin, Scale, ShieldCheck, Sparkles, Umbrella } from "lucide-react";
 import { useParams } from "@tanstack/react-router";
@@ -80,6 +82,9 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
       { title: "Filing a claim without a police report", koTitle: "Filing a claim without a police report", slug: "car-insurance-claim-without-police-report-california" },
       { title: "How to request a correction to a crash report", koTitle: "How to request a correction to a crash report", slug: "correct-inaccurate-car-accident-police-report-california" },
       { title: "Handling medical bills while a claim is pending", koTitle: "Handling medical bills while a claim is pending", slug: "medical-bills-while-car-accident-claim-pending-california" },
+      { title: "Medical payments coverage after a crash", koTitle: "Medical payments coverage after a crash", slug: "medical-payments-coverage-medpay-california" },
+      { title: "Subrogation and recovering a deductible", koTitle: "Subrogation and recovering a deductible", slug: "what-is-subrogation-car-insurance-california" },
+      { title: "Rental reimbursement and return dates", koTitle: "Rental reimbursement and return dates", slug: "rental-car-reimbursement-after-accident-california" },
       { title: "Diminished value claims in California", koTitle: "Diminished value claims in California", slug: "diminished-value-claim-california" },
       { title: "How GAP insurance works", koTitle: "How GAP insurance works", slug: "insurance-how-does-gap-insurance-work" },
       { title: "Totaled cars: checking the valuation", koTitle: "Totaled cars: checking the valuation", slug: "what-happens-when-car-is-totaled-california" },
@@ -432,6 +437,7 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
   const esCopy = esPracticeContent[practice.slug];
   const esEnhancement = esPracticeEnhancements[practice.slug];
   const enhancement = practiceEnhancements[practice.slug];
+  const localGuidance = practiceLocalGuidance[practice.slug]?.[locale];
 
   const title = isKo(locale) ? practice.koTitle : isEs(locale) ? (esCopy?.shortTitle || practice.title) : practice.title;
   const heroTitle = getPracticeMessaging(practice.slug, locale)?.heading ?? (isKo(locale) ? `부에나파크 ${practice.koTitle} 변호사` : isEs(locale) ? (esCopy?.title || `Abogado de ${practice.title} en Buena Park`) : `Buena Park ${practiceSearchNames[practice.slug] || practice.title} Lawyer`);
@@ -473,6 +479,11 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
           imageAlt={practiceMedia[practice.slug]?.alt || ""}
           detail
         />
+        {localGuidance && <div className="site-shell py-7 md:py-10">
+          <div className="max-w-3xl space-y-4 text-pretty text-base leading-8 text-[#57514b]">
+            {localGuidance.introduction.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
+          </div>
+        </div>}
         <PracticeDetailHighlights locale={locale} subject={title} issues={[...issues]} />
         <nav aria-label={isKo(locale) ? "변호사와 상담 안내" : isEs(locale) ? "Abogado y consulta" : "Lawyer and consultation"} className="site-shell flex flex-wrap gap-x-7 gap-y-3 py-6 text-sm">
           <a href={locale === "en" ? "/practice-areas/personal-injury" : localePrefix(locale)} className="underline underline-offset-4">{isKo(locale) ? "부에나파크 개인상해 변호사" : isEs(locale) ? "Abogado de lesiones personales en Buena Park" : "Buena Park personal injury lawyer"}</a>
@@ -482,7 +493,7 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
         <ReadingLayout
           locale={locale}
           label={`${title} · ${isKo(locale) ? "안내" : isEs(locale) ? "Guía" : "Guide"}`}
-          sections={isKo(locale)
+          sections={[...(localGuidance ? [{ id: "local-claim-review", label: localGuidance.label }] : []), ...(isKo(locale)
             ? [
                 { id: "understand", label: "사건 이해" }, { id: "issues", label: "주요 쟁점" }, { id: "evidence", label: "증거" }, { id: "case-guide", label: "사건 유형별 상세 안내" }, { id: "research", label: "법적 쟁점과 증거" },
                 { id: "value", label: "손해와 가치" }, { id: "insurance", label: "보험" }, { id: "deadlines", label: "기한" },
@@ -499,8 +510,20 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
                   { id: "understand", label: "Further claim guidance" }, { id: "issues", label: "Key issues" }, { id: "evidence", label: "Evidence to preserve" }, { id: "case-guide", label: "Case-specific guidance" }, { id: "research", label: "Legal & evidence analysis" },
                   { id: "value", label: "Damages & case value" }, { id: "insurance", label: "Insurance & responsibility" }, { id: "deadlines", label: "California deadlines" },
                   { id: "faq", label: "Common questions" }, { id: "resources", label: "Guides & sources" }, { id: "related", label: "Related practice areas" }, { id: "areas", label: "Where we handle these" },
-                ]}
+                ])]}
         >
+          {localGuidance && <ReadingSectionBlock id="local-claim-review" locale={locale} kicker={localGuidance.label} title={localGuidance.title}>
+            <div className="max-w-3xl space-y-5 text-pretty text-base leading-8 text-[#57514b]">
+              {localGuidance.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
+            </div>
+            <ul className="mt-6 border-t border-[#1E1C1A]/12">
+              {localGuidance.links.map(link => <li key={link.href} className="border-b border-[#1E1C1A]/12">
+                <a className="group flex min-h-11 items-center justify-between gap-4 py-4 text-sm underline underline-offset-4" href={localizedContentHref(link.href, locale)}>
+                  <span>{link.label}</span><ArrowRight className="size-4 shrink-0" aria-hidden="true" />
+                </a>
+              </li>)}
+            </ul>
+          </ReadingSectionBlock>}
           {locale === "en" && <PracticeSourceSections slug={practice.slug} />}
           {locale === "en" && <ClaimVisualStory subject={practice.slug} />}
           <ReadingSectionBlock

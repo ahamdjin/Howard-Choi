@@ -4,6 +4,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { blogPosts } from "@/data/blogs";
 import { practiceAreas, serviceLocations } from "@/data/injurySite";
 import { absoluteUrl } from "@/lib/seo";
+import { pageUpdatedDates } from "@/data/pageUpdatedDates";
 
 const xmlEscape = (value: string) => value
   .replace(/&/g, "&amp;")
@@ -12,10 +13,13 @@ const xmlEscape = (value: string) => value
   .replace(/"/g, "&quot;")
   .replace(/'/g, "&apos;");
 
-const renderUrl = (path: string, lastmod?: string) => `
+const renderUrl = (path: string, lastmod?: string) => {
+  const updatedAt = pageUpdatedDates[path] ?? lastmod;
+  return `
   <url>
-    <loc>${xmlEscape(absoluteUrl(path))}</loc>${lastmod ? `\n    <lastmod>${xmlEscape(lastmod)}</lastmod>` : ""}
+    <loc>${xmlEscape(absoluteUrl(path))}</loc>${updatedAt ? `\n    <lastmod>${xmlEscape(updatedAt)}</lastmod>` : ""}
   </url>`;
+};
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {

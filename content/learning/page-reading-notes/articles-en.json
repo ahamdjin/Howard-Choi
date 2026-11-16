@@ -10,10 +10,10 @@
   "/blogs/what-happens-when-car-is-totaled-california": {
     "title": "Compare the valuation report with your actual vehicle",
     "paragraphs": [
-      "Check the trim, mileage, options and condition entries before looking at the final number. Record each mismatch alongside a photo, purchase record or other proof. If a comparison vehicle differs in a way that changes its usefulness, identify the specific feature or condition. A short list of documented discrepancies gives the adjuster something concrete to review."
+      "Check the trim, mileage, options and condition entries before looking at the final number. Record each mismatch alongside a photo, purchase record or other proof. If a comparison vehicle differs in a way that changes its usefulness, identify the specific feature or condition. A short list of documented discrepancies gives the adjuster something concrete to review. Keep the rental cutoff date with the valuation correspondence so you can plan transportation while a value dispute is being reviewed."
     ],
-    "href": "/blogs/diminished-value-claim-california",
-    "linkLabel": "Understand a separate type of vehicle value dispute"
+    "href": "/blogs/rental-car-reimbursement-after-accident-california",
+    "linkLabel": "Confirm rental approval and the return date"
   },
   "/blogs/what-is-auto-liability-insurance-california": {
     "title": "Identify whose policy you are reading",
@@ -28,8 +28,8 @@
     "paragraphs": [
       "Compare the final shop invoice with the insurer’s payment summary. Record who received the insurer’s payment, what you paid the shop and whether another payment is expected. Keep the deductible entry separate from any charge the shop says the carrier did not approve. If the carrier later sends a reimbursement, match it to the claim number."
     ],
-    "href": "/blogs/what-is-an-insurance-adjuster-car-accident",
-    "linkLabel": "Read what to ask the adjuster about payments"
+    "href": "/blogs/what-is-subrogation-car-insurance-california",
+    "linkLabel": "Understand deductible recovery through subrogation"
   },
   "/blogs/does-car-insurance-follow-the-car-or-driver-california": {
     "title": "Write down who gave permission and when",
@@ -202,10 +202,11 @@
   "/blogs/blunt-force-trauma-determining-liability-in-blunt-trauma-lawsuits": {
     "title": "Match a description of impact to its source",
     "paragraphs": [
-      "Record what struck the person, what part of the event you observed and which facts came from someone else. Keep the equipment or scene description separate from the clinician’s findings. If the accounts describe different points of contact, label each source and date so a reviewer can compare them without confusing observation with inference."
+      "Record what struck the person, what part of the event you observed and which facts came from someone else. Keep the equipment or scene description separate from the clinician’s findings. If the accounts describe different points of contact, label each source and date so a reviewer can compare them without confusing observation with inference.",
+      "If the injury was fatal, keep the accident evidence with any correspondence the family has received. A separate review can identify family relationships, available records and the scope of a proposed release."
     ],
-    "href": "/practice-areas/serious-injuries",
-    "linkLabel": "See how serious injury evidence is reviewed"
+    "href": "/practice-areas/wrongful-death",
+    "linkLabel": "Preparing a wrongful death claim review"
   },
   "/blogs/buena-park-wrongful-death-attorney": {
     "title": "Keep a private list of records the family already has",
@@ -378,17 +379,42 @@
   "/blogs/correct-inaccurate-car-accident-police-report-california": {
     "title": "Track which version each person has",
     "paragraphs": [
-      "When you receive a new page or supplement, note its date and compare it with the original. Keep a short list of which insurer or representative received each version. Ask the person reviewing your claim whether the new record addresses the disputed detail or whether they still need another source."
+      "When you receive a new page or supplement, note its date and compare it with the original. Keep a short list of which insurer or representative received each version. Ask the person reviewing your claim whether the new record addresses the disputed detail or whether they still need another source.",
+      "If Garden Grove Police prepared the report, use the local guide to connect the disputed entry with the agency request and any later supplement. Confirm the investigating agency before following a city-specific process."
     ],
-    "href": "/blogs/what-is-an-insurance-adjuster-car-accident",
-    "linkLabel": "Read how to keep an adjuster informed about new records"
+    "href": "/locations/garden-grove",
+    "linkLabel": "Garden Grove report requests and disputed details"
   },
   "/blogs/medical-bills-while-car-accident-claim-pending-california": {
     "title": "Match payments to the services they cover",
     "paragraphs": [
       "When a payment appears on a statement, check the service date, account number and name of the payer. An imaging office and the clinician who read the image may bill separately. If a payment or adjustment seems to be missing, ask the billing office for the account history before adding the balance to your ledger."
     ],
-    "href": "/faqs/medical-treatment-after-an-accident",
-    "linkLabel": "Read how to keep treatment and billing records organized"
+    "href": "/blogs/medical-payments-coverage-medpay-california",
+    "linkLabel": "Read how to check medical payments coverage"
+  },
+  "/blogs/medical-payments-coverage-medpay-california": {
+    "title": "Separate treatment dates from submission dates",
+    "paragraphs": [
+      "For each bill, record the treatment date, when the provider sent it and when the carrier acknowledged it. If an insurer says a document arrived late, compare its explanation with your submission receipt. Keep a copy of the policy provision it identifies and the document you supplied. That gives you a specific timeline to discuss instead of relying on memory."
+    ],
+    "href": "/blogs/medical-bills-while-car-accident-claim-pending-california",
+    "linkLabel": "Review the wider medical billing file"
+  },
+  "/blogs/what-is-subrogation-car-insurance-california": {
+    "title": "Keep the demand and the distribution together",
+    "paragraphs": [
+      "Save the original recovery demand with the final letter explaining what was collected. Compare the deductible entered in the demand with your receipt. If the final amount is smaller, ask which part reflects a partial recovery and which part reflects any allocated expenses. Keep the explanation with the payment so you can identify what remains unresolved."
+    ],
+    "href": "/blogs/car-insurance-deductible-after-accident-california",
+    "linkLabel": "Review how the original deductible was calculated"
+  },
+  "/blogs/rental-car-reimbursement-after-accident-california": {
+    "title": "Keep the return record with the authorization",
+    "paragraphs": [
+      "Save the approval showing the last covered date and the branch receipt showing when you returned the car. If the insurer changes its position after a total loss decision, ask for a written explanation of the cutoff. Compare any later bill with those records before treating the amount as either covered or entirely your responsibility."
+    ],
+    "href": "/blogs/what-happens-when-car-is-totaled-california",
+    "linkLabel": "Review the separate total loss decision"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "sourceHash": "c206ce79028bca13561021122b717309215b577123908329796c67a04465ccf4",
+  "sourceHash": "93b6aa37f442dfde6d4be2ffba1270ef81d83fa36fc13c557556791459233ad8",
   "reviewStatus": "reviewed-for-source-parity",
   "content": {
     "slug": "buena-park",
@@ -184,7 +184,8 @@
           "Organice la primera visita médica y las citas posteriores por fecha. Traiga las restricciones actuales y ejemplos de cómo afectaron al trabajo o las actividades diarias. Por ejemplo, alguien puede haber retomado un turno delegando las tareas de levantar objetos, o vuelto al trabajo mientras todavía necesita transporte para las citas. Un horario fechado y las instrucciones médicas ayudan a explicar qué cambió.",
           "Empiece por la decisión que enfrenta. Quizá necesita identificar una agencia, comprender un giro en disputa o determinar qué documentos respaldan un cambio de ingresos. Howard puede revisar lo que establecen los registros actuales y qué preguntas necesitan seguimiento. Sin honorarios a menos que se obtenga una compensación.",
           "Puede ser útil traer una cronología de una página si el mismo viaje produjo varios registros. Una colisión cerca de un acceso a autopista puede aparecer con una ubicación en los documentos de la grúa y otra en las notas de su cita porque describió un punto de referencia cercano. Añada la dirección en que viajaba, dónde se detuvieron los vehículos y dónde lo encontró el agente. Separar esos puntos ayuda a quien lee el expediente a entender las distintas descripciones.",
-          "Si está evaluando si una visita presencial es viable, llame antes para hablar de las opciones. Avise si llegar resulta difícil porque no puede conducir o depende de otra persona. Al programar la cita, mencione problemas inmediatos con los registros, como un vehículo que será trasladado o imágenes que un negocio aceptó conservar por poco tiempo. Traiga la respuesta o aviso del negocio para que Howard vea lo que dice y decida qué revisar primero."
+          "Si está evaluando si una visita presencial es viable, llame antes para hablar de las opciones. Avise si llegar resulta difícil porque no puede conducir o depende de otra persona. Al programar la cita, mencione problemas inmediatos con los registros, como un vehículo que será trasladado o imágenes que un negocio aceptó conservar por poco tiempo. Traiga la respuesta o aviso del negocio para que Howard vea lo que dice y decida qué revisar primero.",
+          "Antes de ir a la oficina de Beach Boulevard, confirme la hora de su cita, la Suite 216 y cualquier duda de acceso o transporte. Avise si alguien lo acompañará para ayudarle a comunicarse u organizar registros. Pregunte cómo debe enviar documentos antes de la cita y use el método acordado para información médica, financiera o familiar sensible."
         ],
         "links": [
           {
@@ -194,6 +195,26 @@
           {
             "label": "Programe una consulta gratuita",
             "href": "/contact"
+          }
+        ]
+      },
+      {
+        "id": "consultation-priorities",
+        "title": "Traiga a su consulta en Buena Park la próxima decisión sobre el seguro",
+        "label": "Decisiones antes de firmar",
+        "paragraphs": [
+          "Identifique la decisión que motivó su visita. Puede ser una solicitud de declaración grabada, autorización para obtener registros médicos, un aviso de devolución del alquiler o una propuesta de acuerdo. Traiga el mensaje completo y sus anexos, incluido el remitente, el número de reclamo y la fecha de respuesta indicada. Si la misma aseguradora tiene responsables distintos para el vehículo y las lesiones, identifique a ambos para dirigir cada pregunta a la persona correspondiente.",
+          "Distinga el pago del vehículo del acuerdo por lesiones al describir la oferta. Un presupuesto de reparación puede explicar cuánto cuesta arreglar una defensa sin resolver el tratamiento, el trabajo perdido ni los reembolsos. Traiga la propuesta de liberación completa. La descripción del pago o un resumen breve por correo pueden omitir condiciones importantes para la decisión que le piden tomar.",
+          "Para las facturas médicas, traiga el estado actual del proveedor y las explicaciones de beneficios recibidas. Marque los importes pagados, ajustados o todavía disputados. Si desconoce el saldo, indíquelo. Howard puede revisar los documentos y comentar qué necesita confirmarse antes de evaluar una oferta. Un total estimado sin respaldo dificulta esa revisión."
+        ],
+        "links": [
+          {
+            "label": "Qué preguntar a un ajustador de seguros (en inglés)",
+            "href": "/blogs/what-is-an-insurance-adjuster-car-accident"
+          },
+          {
+            "label": "Organizar facturas durante un reclamo pendiente (en inglés)",
+            "href": "/blogs/medical-bills-while-car-accident-claim-pending-california"
           }
         ]
       },
