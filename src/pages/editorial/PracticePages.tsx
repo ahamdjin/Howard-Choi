@@ -85,6 +85,8 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
       { title: "Medical payments coverage after a crash", koTitle: "Medical payments coverage after a crash", slug: "medical-payments-coverage-medpay-california" },
       { title: "Subrogation and recovering a deductible", koTitle: "Subrogation and recovering a deductible", slug: "what-is-subrogation-car-insurance-california" },
       { title: "Rental reimbursement and return dates", koTitle: "Rental reimbursement and return dates", slug: "rental-car-reimbursement-after-accident-california" },
+      { title: "When someone hits a parked car", koTitle: "When someone hits a parked car", slug: "what-to-do-if-someone-hits-your-parked-car-california" },
+      { title: "Accidents and a change in insurance rates", koTitle: "Accidents and a change in insurance rates", slug: "how-accidents-affect-car-insurance-rates-california" },
       { title: "Diminished value claims in California", koTitle: "Diminished value claims in California", slug: "diminished-value-claim-california" },
       { title: "How GAP insurance works", koTitle: "How GAP insurance works", slug: "insurance-how-does-gap-insurance-work" },
       { title: "Totaled cars: checking the valuation", koTitle: "Totaled cars: checking the valuation", slug: "what-happens-when-car-is-totaled-california" },
@@ -128,6 +130,7 @@ const practiceEnhancements: Record<string, PracticeEnhancement> = {
     ],
     sources: californiaCourtSources,
     guides: [
+      { title: "California motorcycle insurance and coverage", koTitle: "California motorcycle insurance and coverage", slug: "california-motorcycle-insurance" },
       { title: "California comparative fault explained", koTitle: "캘리포니아 비교과실 이해하기", slug: "california-comparative-fault-personal-injury" },
       { title: "How much is a California personal injury case worth?", koTitle: "캘리포니아 개인상해 사건 가치는 어떻게 정해지나요?", slug: "how-much-is-my-personal-injury-case-worth-california" },
       { title: "California personal injury deadlines", koTitle: "캘리포니아 개인상해 청구 기한", slug: "california-personal-injury-deadlines" },

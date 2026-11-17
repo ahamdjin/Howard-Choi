@@ -7,10 +7,13 @@
 - Sitemap: https://www.buenaparkinjurylawyer.com/sitemap.xml
 - Robots: https://www.buenaparkinjurylawyer.com/robots.txt
 
-## Primary indexed pages
+## Primary pages
 - https://www.buenaparkinjurylawyer.com/ — Home
 - https://www.buenaparkinjurylawyer.com/attorney — Howard Choi attorney profile and credentials
 - https://www.buenaparkinjurylawyer.com/about — Firm background and approach
+- https://www.buenaparkinjurylawyer.com/about/our-difference — Approach to representation and client communication
+- https://www.buenaparkinjurylawyer.com/about/what-to-expect — Consultation and claim process
+- https://www.buenaparkinjurylawyer.com/about/zero-fee-guarantee — Attorney fees and representation agreement
 - https://www.buenaparkinjurylawyer.com/results — Firm-reported case results and context
 - https://www.buenaparkinjurylawyer.com/practice-areas — Personal injury practice areas
 - https://www.buenaparkinjurylawyer.com/locations — Communities served
@@ -28,6 +31,8 @@
 - https://www.buenaparkinjurylawyer.com/practice-areas/slip-and-fall — Slip and fall / premises liability
 - https://www.buenaparkinjurylawyer.com/practice-areas/wrongful-death — Wrongful death
 - https://www.buenaparkinjurylawyer.com/practice-areas/serious-injuries — Serious injuries
+- https://www.buenaparkinjurylawyer.com/practice-areas/bicycle-accidents — Bicycle accident claims
+- https://www.buenaparkinjurylawyer.com/practice-areas/dog-bites — Dog bite injury claims
 
 ## Service areas
 - https://www.buenaparkinjurylawyer.com/locations/buena-park — Buena Park
@@ -40,6 +45,40 @@
 - https://www.buenaparkinjurylawyer.com/locations/cerritos — Cerritos
 - https://www.buenaparkinjurylawyer.com/locations/norwalk — Norwalk
 - https://www.buenaparkinjurylawyer.com/locations/whittier — Whittier
+- https://www.buenaparkinjurylawyer.com/locations/los-angeles — Los Angeles
+- https://www.buenaparkinjurylawyer.com/locations/long-beach — Long Beach
+- https://www.buenaparkinjurylawyer.com/locations/costa-mesa — Costa Mesa
+- https://www.buenaparkinjurylawyer.com/locations/huntington-beach — Huntington Beach
+- https://www.buenaparkinjurylawyer.com/locations/irvine — Irvine
+- https://www.buenaparkinjurylawyer.com/locations/newport-beach — Newport Beach
+
+## Learning resources
+- https://www.buenaparkinjurylawyer.com/learning-hub — Legal learning hub
+- https://www.buenaparkinjurylawyer.com/blogs/guides — Accident and injury guide directory
+- https://www.buenaparkinjurylawyer.com/faqs — Personal injury FAQ directory
+- https://www.buenaparkinjurylawyer.com/injury-types — Injury topic directory
+- https://www.buenaparkinjurylawyer.com/faqs/bicycle-accidents — Bicycle Accident FAQs
+- https://www.buenaparkinjurylawyer.com/faqs/case-value-and-settlement-process — Case Value & Settlement Process FAQs
+- https://www.buenaparkinjurylawyer.com/faqs/catastrophic-injury — Catastrophic Injury FAQs
+- https://www.buenaparkinjurylawyer.com/faqs/dog-bite-injury — Dog Bite Injury FAQs
+- https://www.buenaparkinjurylawyer.com/faqs/hiring-a-personal-injury-lawyer — Hiring a Personal Injury Lawyer FAQs
+- https://www.buenaparkinjurylawyer.com/faqs/insurance-claim — Insurance Claim FAQs
+- https://www.buenaparkinjurylawyer.com/faqs/medical-treatment-after-an-accident — Medical Treatment After an Accident FAQs
+- https://www.buenaparkinjurylawyer.com/faqs/motorcycle-accidents — Motorcycle Accident FAQs
+- https://www.buenaparkinjurylawyer.com/faqs/ongoing-case-faqs — Ongoing Case FAQs
+- https://www.buenaparkinjurylawyer.com/faqs/pedestrian-accidents — Pedestrian Accident FAQs
+- https://www.buenaparkinjurylawyer.com/faqs/personal-injury — Personal Injury FAQs
+- https://www.buenaparkinjurylawyer.com/faqs/rideshare-accidents — Rideshare Accident FAQs
+- https://www.buenaparkinjurylawyer.com/injury-types/amputations — Amputations
+- https://www.buenaparkinjurylawyer.com/injury-types/burns — Burns
+- https://www.buenaparkinjurylawyer.com/injury-types/fractures — Fractures & Broken Bones
+- https://www.buenaparkinjurylawyer.com/injury-types/internal-injuries — Internal Injuries
+- https://www.buenaparkinjurylawyer.com/injury-types/meniscus-injuries — Meniscus Injuries
+- https://www.buenaparkinjurylawyer.com/injury-types/ptsd — Post-Traumatic Stress Disorder (PTSD)
+- https://www.buenaparkinjurylawyer.com/injury-types/road-rash — Road Rash
+- https://www.buenaparkinjurylawyer.com/injury-types/rotator-cuff — Rotator Cuff Injuries
+- https://www.buenaparkinjurylawyer.com/injury-types/spinal-injuries — Spinal Cord Injuries
+- https://www.buenaparkinjurylawyer.com/injury-types/whiplash — Whiplash
 
 ## Legal guides
 - https://www.buenaparkinjurylawyer.com/blogs/what-is-auto-liability-insurance-california — What is liability insurance coverage?
@@ -94,6 +133,9 @@
 - https://www.buenaparkinjurylawyer.com/blogs/medical-payments-coverage-medpay-california — Medical payments coverage after a crash
 - https://www.buenaparkinjurylawyer.com/blogs/what-is-subrogation-car-insurance-california — Subrogation and recovering a deductible
 - https://www.buenaparkinjurylawyer.com/blogs/rental-car-reimbursement-after-accident-california — Rental reimbursement and return dates
+- https://www.buenaparkinjurylawyer.com/blogs/what-to-do-if-someone-hits-your-parked-car-california — When someone hits a parked car
+- https://www.buenaparkinjurylawyer.com/blogs/how-accidents-affect-car-insurance-rates-california — Accidents and a change in insurance rates
+- https://www.buenaparkinjurylawyer.com/blogs/california-motorcycle-insurance — California motorcycle insurance and coverage
 
 ## Attorney
 - Howard Jong-yol Choi

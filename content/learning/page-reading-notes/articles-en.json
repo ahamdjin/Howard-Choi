@@ -122,10 +122,11 @@
   "/blogs/california-motorcycle-accident-guide": {
     "title": "Document repairs before they change the evidence",
     "paragraphs": [
-      "Ask the shop which parts it plans to remove or replace, and save any photographs it has taken. Keep your own wider images of the motorcycle and close-ups of affected areas. If an adjuster wants to inspect the bike, confirm where it is and how long it will stay there before work begins."
+      "Ask the shop which parts it plans to remove or replace, and save any photographs it has taken. Keep your own wider images of the motorcycle and close-ups of affected areas. If an adjuster wants to inspect the bike, confirm where it is and how long it will stay there before work begins.",
+      "Keep the declarations for the motorcycle beside the repair estimate. Identify the policy period, covered bike and any equipment endorsement so an inspection or valuation question can be matched to the coverage being reviewed."
     ],
-    "href": "/practice-areas/motorcycle-accidents",
-    "linkLabel": "Read the motorcycle collision service guide"
+    "href": "/blogs/california-motorcycle-insurance",
+    "linkLabel": "Check the motorcycle policy and coverage for each loss"
   },
   "/blogs/california-pedestrian-accident-guide": {
     "title": "Record the view from the driver’s approach",
@@ -371,10 +372,11 @@
   "/blogs/car-insurance-claim-without-police-report-california": {
     "title": "Keep the agency response next to the claim request",
     "paragraphs": [
-      "If the agency says no written report is available, record who told you and when. Save any confirmation, call number or incident record. If the adjuster asks for a report later, send the agency response with your claim number and ask which other evidence it will accept for the coverage being reviewed."
+      "If the agency says no written report is available, record who told you and when. Save any confirmation, call number or incident record. If the adjuster asks for a report later, send the agency response with your claim number and ask which other evidence it will accept for the coverage being reviewed.",
+      "If you discovered damage to an unattended car, record when it was last undamaged and when you found it. Keep that time window with the agency response so the insurer can see what you know about the incident."
     ],
-    "href": "/faqs/insurance-claim",
-    "linkLabel": "Read how to track insurance document requests"
+    "href": "/blogs/what-to-do-if-someone-hits-your-parked-car-california",
+    "linkLabel": "Documenting damage discovered on a parked vehicle"
   },
   "/blogs/correct-inaccurate-car-accident-police-report-california": {
     "title": "Track which version each person has",
@@ -404,10 +406,11 @@
   "/blogs/what-is-subrogation-car-insurance-california": {
     "title": "Keep the demand and the distribution together",
     "paragraphs": [
-      "Save the original recovery demand with the final letter explaining what was collected. Compare the deductible entered in the demand with your receipt. If the final amount is smaller, ask which part reflects a partial recovery and which part reflects any allocated expenses. Keep the explanation with the payment so you can identify what remains unresolved."
+      "Save the original recovery demand with the final letter explaining what was collected. Compare the deductible entered in the demand with your receipt. If the final amount is smaller, ask which part reflects a partial recovery and which part reflects any allocated expenses. Keep the explanation with the payment so you can identify what remains unresolved.",
+      "If the next renewal also changes, request the rating explanation separately from the recovery letter. Match the accident date and driver so you can tell whether both departments are using the same record."
     ],
-    "href": "/blogs/car-insurance-deductible-after-accident-california",
-    "linkLabel": "Review how the original deductible was calculated"
+    "href": "/blogs/how-accidents-affect-car-insurance-rates-california",
+    "linkLabel": "Review a separate change to your renewal premium"
   },
   "/blogs/rental-car-reimbursement-after-accident-california": {
     "title": "Keep the return record with the authorization",
@@ -416,5 +419,29 @@
     ],
     "href": "/blogs/what-happens-when-car-is-totaled-california",
     "linkLabel": "Review the separate total loss decision"
+  },
+  "/blogs/what-to-do-if-someone-hits-your-parked-car-california": {
+    "title": "Track the time window alongside each camera request",
+    "paragraphs": [
+      "Record the earliest and latest supported time for the parked-car damage and the reason for each boundary, such as a receipt or earlier image. Keep that window beside each camera request. If a business supplies only part of the period, note the missing interval before concluding that no relevant vehicle appeared."
+    ],
+    "href": "/blogs/car-insurance-claim-without-police-report-california",
+    "linkLabel": "Review claim evidence when a report is unavailable"
+  },
+  "/blogs/how-accidents-affect-car-insurance-rates-california": {
+    "title": "Keep a correction request with the renewal it concerns",
+    "paragraphs": [
+      "Use the same accident date, vehicle and driver identifiers on your written request and supporting documents. Save the renewal notice before sending it. If the carrier later revises one figure, compare the revised declarations with that original notice so you can identify which change was made and whether another issue still needs a response."
+    ],
+    "href": "/blogs/what-is-an-insurance-adjuster-car-accident",
+    "linkLabel": "Prepare a focused request for the insurer"
+  },
+  "/blogs/california-motorcycle-insurance": {
+    "title": "Match the inspection request to the motorcycle claim",
+    "paragraphs": [
+      "Record where the bike is stored, who has access and which carrier requested an inspection. Keep the VIN and claim number on the correspondence. If a shop or salvage company proposes moving it, ask how the pending inspection will be handled and retain the response with the pickup or repair authorization."
+    ],
+    "href": "/practice-areas/motorcycle-accidents",
+    "linkLabel": "Discuss motorcycle evidence and injury questions"
   }
 }
