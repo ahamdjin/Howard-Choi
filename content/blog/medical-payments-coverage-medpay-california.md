@@ -9,7 +9,7 @@
   "excerpt": "Medical payments coverage may help pay eligible medical bills after a California crash. Learn who may qualify and how to track payments.",
   "category": "Auto Insurance",
   "publishedAt": "2026-11-16",
-  "updatedAt": "2026-11-16",
+  "updatedAt": "2026-11-19",
   "requiredTranslations": [],
   "image": "/blog-images/imported-drafts/howard-choi-medical-care.jpg",
   "alt": "Medical care in a clinical setting",
@@ -34,6 +34,8 @@ Look for medical payments coverage on the declarations page and obtain the polic
 The amount on a statement can differ from the amount still due. A provider may bill an initial charge, the health plan may apply an adjustment, and part of the balance may be the patient’s responsibility. Ask for a current statement if you see a credit or another payment on the account. Avoid submitting the original charge as an outstanding balance after another payer has addressed it.
 
 If the insurer asks for a broader medical authorization, ask what it needs to establish the eligibility of the specific bill. Compare the providers, date range and categories of records it requests. If it denies a bill, find out whether the issue is timing, eligibility, documentation, or a policy exclusion. Each reason calls for a different response.
+
+If the review concerns an earlier condition, compare the relevant treatment history with the changes after this crash. The [pre-existing injury guide](/blogs/car-accident-pre-existing-injury-california) explains how to organize that comparison without treating every older symptom as a new injury.
 
 ## A two-passenger example
 
@@ -75,6 +77,8 @@ Keep a copy of any check or electronic payment notice. If it covers more than on
 ### If a bill is denied because it arrived late
 
 Find out whether the carrier disputes the date of treatment, the date you gave notice, or the date it received the bill. Those are separate events. Request the specific policy term and keep proof of the original submission. If the doctor sent the bill directly, ask the office when it sent it and how. If the insurer could not identify the claim because the number was missing, resubmit the bill with the correct reference and ask how that affects its review.
+
+For a broader review of the decision, the [denied insurance claim guide](/blogs/car-insurance-claim-denied-california) explains how to match each stated reason with the records needed for a response.
 
 ### What to ask before you resolve the injury claim
 

@@ -9,7 +9,7 @@
   "excerpt": "Learn California motorcycle insurance minimums and which coverages may pay for a damaged bike, an injured rider, or a passenger after a crash.",
   "category": "Auto Insurance",
   "publishedAt": "2026-11-17",
-  "updatedAt": "2026-11-17",
+  "updatedAt": "2026-11-19",
   "requiredTranslations": [],
   "image": "/blog-images/imported-drafts/howard-choi-motorcycle-road.webp",
   "alt": "Motorcyclist riding on a road",
@@ -24,6 +24,8 @@ California DMV lists standard motor vehicle liability limits of $30,000 for inju
 Liability coverage is for covered losses the insured is legally responsible for causing to others. If a rider loses control and damages a parked car, the other owner may have a property damage claim. If the rider’s motorcycle also needs repairs, look to the bike’s physical damage coverage and the circumstances of the crash. The fact that the rider complied with minimum insurance requirements does not establish coverage for the motorcycle itself.
 
 Check that the insurance card lists the correct vehicle. Match the VIN and policy dates to the declarations. If you replaced a bike or changed how it is used, confirm when the insurer recorded the change and whether the policy has a provision for a newly acquired vehicle. A quote and an active policy are different documents. Keep proof of the effective date and any updates.
+
+If the vehicle is described as a moped or scooter, first [check its California vehicle classification](/blogs/mopeds-vs-scooters-california). The classification affects which registration, licensing and coverage questions to ask.
 
 ## Which coverage might pay each bill?
 

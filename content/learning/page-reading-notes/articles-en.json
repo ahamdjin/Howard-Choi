@@ -45,7 +45,13 @@
       "After a call, note what the adjuster asked for, what you already supplied and the promised date for the next update. If you send a document, describe the one question it addresses. Keep the original file and a copy of the message. That makes it easier to see if the next request repeats an earlier one or asks for something different."
     ],
     "href": "/faqs/insurance-claim",
-    "linkLabel": "See more questions about insurance communications"
+    "linkLabel": "See more questions about insurance communications",
+    "links": [
+      {
+        "href": "/blogs/car-insurance-claim-denied-california",
+        "label": "Responding to a denied California car insurance claim"
+      }
+    ]
   },
   "/blogs/cali-lean-vs-carolina-squat-whats-the-difference": {
     "title": "Document the vehicle setup before drawing conclusions",
@@ -335,7 +341,13 @@
       "Make one list of amounts already documented and another of figures still awaiting support. Note whether each medical or wage figure is paid, owed, estimated or disputed. When a new document arrives, record which assumption it changes. This helps you see whether a revised estimate reflects new evidence or a different way of counting the same item."
     ],
     "href": "/case-value-calculator",
-    "linkLabel": "Open the injury case value calculator"
+    "linkLabel": "Open the injury case value calculator",
+    "links": [
+      {
+        "href": "/blogs/car-accident-pre-existing-injury-california",
+        "label": "Documenting a crash that worsened an earlier injury"
+      }
+    ]
   },
   "/blogs/uber-lyft-accident-insurance-california": {
     "title": "Keep the entire trip history when the app changes status",
@@ -442,6 +454,36 @@
       "Record where the bike is stored, who has access and which carrier requested an inspection. Keep the VIN and claim number on the correspondence. If a shop or salvage company proposes moving it, ask how the pending inspection will be handled and retain the response with the pickup or repair authorization."
     ],
     "href": "/practice-areas/motorcycle-accidents",
-    "linkLabel": "Discuss motorcycle evidence and injury questions"
+    "linkLabel": "Discuss motorcycle evidence and injury questions",
+    "links": [
+      {
+        "href": "/blogs/mopeds-vs-scooters-california",
+        "label": "Checking whether a device is a moped or motorized scooter"
+      }
+    ]
+  },
+  "/blogs/mopeds-vs-scooters-california": {
+    "title": "Save the classification with the ride record",
+    "paragraphs": [
+      "Keep the manufacturer label and model information with the receipt or rental trip identifier. If the device has been modified, identify which description applies to its condition on the incident date. Keep the route evidence separate from the medical timeline so a question about classification does not obscure what happened at the collision."
+    ],
+    "href": "/blogs/california-motorcycle-insurance",
+    "linkLabel": "Compare separate motorcycle coverage questions"
+  },
+  "/blogs/car-insurance-claim-denied-california": {
+    "title": "Record what changed after reconsideration",
+    "paragraphs": [
+      "Keep the original denial beside the response to your new evidence. Identify whether the insurer changed its position on coverage, responsibility or one expense. If only part of the issue was resolved, write down what remains disputed before treating the review as complete."
+    ],
+    "href": "/blogs/what-is-an-insurance-adjuster-car-accident",
+    "linkLabel": "Prepare a focused follow-up to the adjuster"
+  },
+  "/blogs/car-accident-pre-existing-injury-california": {
+    "title": "Compare the same task before and after the crash",
+    "paragraphs": [
+      "If your concern is a change in work or daily activity, choose a specific task and record the earlier level of functioning, the observed change and the supporting record. Keep a medical restriction separate from your own account of how the task felt. Both can matter without establishing the same fact."
+    ],
+    "href": "/blogs/how-much-is-my-personal-injury-case-worth-california",
+    "linkLabel": "Review how documented losses support a claim valuation"
   }
 }
