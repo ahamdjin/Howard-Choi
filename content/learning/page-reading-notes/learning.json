@@ -2,18 +2,42 @@
   "/practice-areas/bicycle-accidents": {
     "title": "Keep the bike and route evidence together",
     "paragraphs": [
-      "Photograph the area where the bike was struck before replacing or repairing parts. If you use a ride tracker, save the original activity and use a separate screenshot to mark the route. The screenshots can help orient a reviewer, while the original record keeps the available time and location data. Note any bike lane obstruction, turn lane or parked vehicle that affected your path."
+      "Photograph the area where the bike was struck before replacing or repairing parts. If you use a ride tracker, save the original activity and use a separate screenshot to mark the route. The screenshots can help orient a reviewer, while the original record keeps the available time and location data. Note any bike lane obstruction, turn lane or parked vehicle that affected your path.",
+      "Preserve the bicycle and the original ride recording if you have them. An app’s simplified route may omit a brief turn, a stop or the exact point of contact. Keep the original file and describe any gap in the recording. If a shop inspects the bicycle, save its photographs and findings alongside your own images.",
+      "When the disagreement concerns a bike lane or driveway, record both the rider’s route and the vehicle’s approach. Separate an observed movement from a conclusion about who had priority. For the injury file, include work, school or transportation changes and the records that support them, rather than relying only on the repair estimate."
     ],
     "href": "/faqs/bicycle-accidents",
-    "linkLabel": "Read what evidence can help after a bicycle crash"
+    "linkLabel": "Read what evidence can help after a bicycle crash",
+    "links": [
+      {
+        "href": "/faqs/bicycle-accidents",
+        "label": "Questions about bicycle evidence and insurance"
+      },
+      {
+        "href": "/blogs/california-bicycle-accident-guide",
+        "label": "The California bicycle accident guide"
+      }
+    ]
   },
   "/practice-areas/dog-bites": {
     "title": "Record who had control of the animal at the time",
     "paragraphs": [
-      "Write down what you observed about who was holding, walking or supervising the dog. If the owner and handler were different people, keep both details instead of guessing which person controlled the situation. Preserve the original messages or incident information, and save any reference from the agency or office you contacted. Keep treatment records in a separate folder with the same incident date."
+      "Write down what you observed about who was holding, walking or supervising the dog. If the owner and handler were different people, keep both details instead of guessing which person controlled the situation. Preserve the original messages or incident information, and save any reference from the agency or office you contacted. Keep treatment records in a separate folder with the same incident date.",
+      "For a dog bite claim, record the owner or handler information you actually obtained, the incident location and any animal-control reference. Keep photographs with their dates and preserve messages about the dog. If you do not know who owned the animal, say so rather than assuming that the person holding the leash or occupying a property is the legal owner.",
+      "Treatment records can document different concerns over time, including follow-up care, scarring and changes in daily activities. Keep those records separate from discussions about an owner’s insurance. For a child, identify who can communicate with the office and ask how any proposed settlement would need to be reviewed before anyone signs."
     ],
     "href": "/faqs/dog-bite-injury",
-    "linkLabel": "Read questions about documenting a dog bite"
+    "linkLabel": "Read questions about documenting a dog bite",
+    "links": [
+      {
+        "href": "/blogs/california-dog-bite-accidents-guide",
+        "label": "Preparing the evidence for a California dog bite claim"
+      },
+      {
+        "href": "/faqs/dog-bite-injury",
+        "label": "Questions about dog bite injuries and insurance"
+      }
+    ]
   },
   "/learning-hub": {
     "title": "Find the guide for the decision in front of you",

@@ -6,7 +6,7 @@ export const Route = createFileRoute("/")({
   head: () => {
     const seo = buildSeo({
       title: "Buena Park Personal Injury & Car Accident Lawyer | Free Consultation",
-      description: "Injured in a crash? Work directly with Buena Park lawyer Howard Choi. Serving Orange and Los Angeles counties. Free consultation.",
+      description: "Buena Park injury lawyer Howard Choi helps with accident claims across Orange and Los Angeles counties. Direct attorney communication. Free consultation.",
       path: "/",
       alternatePath: "/ko",
       locale: "en-US",

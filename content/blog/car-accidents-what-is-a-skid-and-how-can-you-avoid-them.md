@@ -13,7 +13,7 @@
   "intro": "A car skids when its tires lose enough grip that the vehicle no longer follows the path the driver expects. You may turn the wheel and feel the front of the car continue wide. In another skid, the rear may swing to one side. The two events can feel similar in the first instant, but the part of the car that loses grip helps explain what is happening.",
   "takeaway": "Learn how skids start, how understeer and oversteer feel, what changes with ABS, and what evidence matters after a skid-related crash.",
   "requiredTranslations": [],
-  "updatedAt": "2026-11-15"
+  "updatedAt": "2026-11-18"
 }
 
 The most useful decisions happen before a skid starts. Set your speed for the surface, leave enough space to slow down gradually, and make steering and braking inputs smoothly. A driver approaching a wet curve should have already reduced speed before needing to turn. [California Driver’s Handbook](https://www.dmv.ca.gov/portal/handbook/california-driver-handbook/safe-driving/)
@@ -138,6 +138,12 @@ If a tire, brake component or road condition is disputed, flag it before repairs
 Bring a short timeline and identify what you know firsthand. A passenger may recall the vehicle’s movement without seeing the road surface; a witness may see a lane change without seeing the driver’s controls. State those limits instead of combining several accounts into one confident story.
 
 Useful questions include which fact remains disputed, whether original video or a vehicle inspection could address it, and which deadline needs attention while evidence is gathered. If responsibility may be shared, read the [California comparative-fault explanation](/blogs/california-comparative-fault-personal-injury). For questions about treatment records, insurer requests or the documents available now, [contact the office](/contact) for an individual review.
+
+## Preserve what happened before the skid, not only the final damage
+
+For a skid-related injury claim, write down the sequence before choosing a cause. Note where the vehicle was traveling, what changed in the road or traffic, and what you personally felt or saw. Preserve the original video if available and identify any part of the approach that it does not show. A final photograph of the vehicle cannot establish every steering, speed or braking input that preceded contact.
+
+If another person supplies a different explanation, keep that account with its source and date. Ask which point can be checked against the recording, scene evidence or a vehicle inspection. The [California crash guide](/blogs/what-to-do-after-a-car-accident-in-california) explains how to organize those records, and the [car accident service page](/practice-areas/car-accidents) connects the evidence to the injury and insurance questions. Avoid assuming that the fact a car slid settles responsibility for the collision.
 
 ## Frequently asked questions
 

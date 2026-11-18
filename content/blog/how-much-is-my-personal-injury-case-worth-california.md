@@ -5,11 +5,11 @@
   "excerpt": "Why there is no settlement formula, what actually moves the number up or down in a California injury claim, and why the figure you are quoted early is rarely the figure you end up with.",
   "category": "Case Value",
   "publishedAt": "2026-09-13",
-  "updatedAt": "2026-10-28",
+  "updatedAt": "2026-11-18",
   "alt": "Lady Justice and legal reference library",
   "intro": "There is no honest way to value every California personal injury case with one multiplier or one settlement table. Case value develops from the losses that can be supported, the responsibility for the accident, the available insurance or assets, and the strength of the evidence connecting those pieces. A calculator can organize the inputs, but the final range still depends on facts a simple formula cannot see.",
   "takeaway": "Case value is a combination of damages, liability, coverage, and proof. A larger medical bill by itself does not automatically mean a larger settlement.",
-  "reviewStatus": "approved",
+  "reviewStatus": "pending-attorney-review",
   "metaTitle": "How Much Is a California Personal Injury Case Worth?",
   "metaDescription": "Learn how treatment, lost income, future care, evidence and fault can affect the value of a California personal injury claim."
 }
@@ -134,3 +134,13 @@ For original authority, consult the California Judicial Council's CACI damages i
 Before comparing two offers, write down what each figure includes. Separate gross compensation from projected fees, litigation expenses, healthcare reimbursement claims and any other proposed deductions. Mark disputed or unknown deductions instead of silently treating them as zero. If a proposal depends on future information, identify which medical opinion, benefit record or coverage document is still missing.
 
 Then compare the scope of the release, not only the number. Ask whose claims are being released, whether any claims remain, and how unresolved treatment or reimbursement issues will be handled. A calculator cannot evaluate release language or confirm what will be left after distribution. A useful case-value conversation should explain the assumptions behind the estimate and which changes in evidence would justify revisiting it.
+
+## Questions about estimating a California personal injury claim
+
+### How much is a personal injury case worth in California?
+
+There is no dependable amount based only on the injury name or the city where it happened. Start with documented losses, then identify what is disputed about responsibility, the medical evidence and the coverage available. Keep confirmed amounts separate from estimates and pending balances. A useful evaluation explains which facts support the estimate and which missing record could change it. The [general injury-claim guide](/blogs/california-personal-injury-guide) shows how to organize those records before submitting a claim.
+
+### What should I ask when an insurer gives me a number?
+
+Ask what the amount covers and what the proposed release would close. Compare it with the same set of records rather than comparing two unexplained totals. Identify unresolved treatment, reimbursement questions and any loss that has not been documented. Keep the original offer with its date and assumptions. You can use a [consultation with the office](/contact) to discuss the records and decisions involved; an online estimate cannot review the actual release or policy.

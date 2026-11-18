@@ -6,15 +6,13 @@
   "excerpt": "Injured in an accident? This California personal injury guide covers common causes, injury types, legal rights, claim steps, and how Buena Park Injury Lawyer fights to win you maximum compensation.",
   "category": "Guides",
   "publishedAt": "2026-11-10",
-  "updatedAt": "2026-11-10",
+  "updatedAt": "2026-11-18",
   "intro": "Suffering an injury of any kind is difficult, but suffering an injury due to the negligence of someone else can be especially frustrating, overwhelming, and stressful. If you suffered an injury because of the negligent actions of another person or entity, you may be owed financial compensation. This is where a [personal injury lawyer](/practice-areas/personal-injury) comes in.",
   "takeaway": "An injury claim connects a legal duty, an unsafe act, the cause of the injury and supported losses. Each element needs evidence.",
   "published": true,
   "requiredTranslations": [],
-  "reviewStatus": "approved",
-  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-personal-injury-101/",
-  "reviewedBy": "howard-choi",
-  "reviewConfirmationDate": "2026-11-15"
+  "reviewStatus": "pending-attorney-review",
+  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-personal-injury-101/"
 }
 
 ## Introduction
@@ -22,6 +20,34 @@
 This guide is here to help you understand your rights, the legal process, and how to protect your future. Whether you were in a car accident, slipped on unsafe property, or were injured in another way, knowing what to expect can make a huge difference in your recovery and compensation.
 
 *Please remember that the information provided is for general guidance only and should not be considered a substitute for professional legal advice. Consult with a qualified attorney for advice tailored to your specific situation.
+
+## How to file a personal injury claim in California
+
+Start by identifying which process you need. Giving an insurer notice of an injury, requesting compensation with supporting records, and filing a civil lawsuit are different actions. An insurer's claim number is not a court case number. The [California Courts personal injury overview](https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury) explains the civil case context; the steps below help you prepare the information for an individual review.
+
+### Identify the event and the people involved
+
+Write a short account with the date, exact location, people or businesses involved, and the injury you are reporting. Distinguish what you saw from what someone later told you. Include a report reference if you have one, but do not invent a complete account to fill a gap. Keep the original photographs and correspondence so an account can be checked against its source.
+
+### Find the right claim contact and keep proof of delivery
+
+Identify which insurer or representative is handling which part of the event. Record the claim number, adjuster's contact and the date the claim was reported. If coverage or the correct recipient is uncertain, say that during the consultation. Keep the acknowledgement and a copy of what you actually sent, including any attachments. A message saved as a draft does not show that a recipient received it.
+
+### Organize the records by the question they answer
+
+Scene photographs, witness details and reports help explain the event. Treatment records, work restrictions, bills and income records help explain its consequences. Keep paid bills separate from open balances, estimates and costs paid by another source. Mark records that have been requested but have not arrived. The [case-value guide](/blogs/how-much-is-my-personal-injury-case-worth-california) explains why those distinctions matter to an evaluation.
+
+### Check the court deadline separately from the insurance discussion
+
+Ask which filing deadline applies to the actual people and facts. Do not treat an open claim file or ongoing negotiations as a substitute for checking the time to sue. A lawsuit begins through the court process, including a complaint and the required service steps. [California Courts explains the questions to consider before suing](https://selfhelp.courts.ca.gov/civil-lawsuit/before-sue). See the [California injury-deadlines guide](/blogs/california-personal-injury-deadlines) for the issues to raise promptly.
+
+### Use the correct guide for a workplace injury
+
+A workers' compensation claim uses a different process from an ordinary personal injury claim. If the event happened while working, identify the employer and the work activity as well as any other person or business involved. The [workers' compensation filing guide](/blogs/workers-comp-step-by-step-process-of-filing-a-workers-comp-claim-in-california) addresses that system. A work injury can raise questions about a separate third-party claim, but the existence of one process does not complete the other.
+
+### Make the first consultation specific
+
+Tell the office the decision you need help with: reporting the event, responding to a request, reviewing an offer, or checking a deadline. Bring the available records and a list of what is missing. The [personal injury service page](/practice-areas/personal-injury) explains how the review connects responsibility, documented losses and available coverage. Our [Buena Park office](/locations/buena-park) serves people across Orange and Los Angeles counties.
 
 ## What Is Personal Injury Law?
 

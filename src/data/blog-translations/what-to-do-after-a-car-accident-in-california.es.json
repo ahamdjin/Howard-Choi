@@ -144,9 +144,18 @@
         "Comience con un informe de una página que contenga la fecha, ubicación exacta, vehículos y personas involucradas, agencia investigadora y número de informe si está disponible, tratamiento hasta la fecha y contactos de seguros. Coloque los hechos no resueltos en una lista separada. Traiga registros originales donde estén disponibles, pero no posponga la conversación simplemente porque un informe o una factura médica aún no ha llegado.",
         "Mantenga un índice de documentos en lugar de repetir detalles médicos sensibles en múltiples mensajes de admisión. Etiquete los archivos por fecha y fuente, anote qué originales conserva y pregunte a la firma cómo quiere que se entreguen los registros de forma segura. Un formulario en un sitio web público es adecuado para una consulta inicial corta, no para un historial médico exhaustivo o una estrategia legal confidencial. Explique los plazos urgentes también por teléfono; presentar un formulario no establece por sí mismo representación ni confirma que la firma ha aceptado responsabilidad por una fecha de presentación."
       ]
+    },
+    {
+      "heading": "Preguntas sobre cómo preparar y presentar un reclamo por choque",
+      "paragraphs": [
+        "### ¿Qué consejos ayudan a preparar un reclamo sólido por accidente de auto en California?",
+        "Mantenga una relación clara entre cada afirmación y el documento que la respalda. Haga coincidir la fecha y el lugar del choque en fotografías, solicitudes de informes y comunicaciones con aseguradoras. Distinga lo que vio de la información recibida después. Para las lesiones, lleve una cronología de tratamiento y trabajo. Si un documento cambia, conserve la versión anterior e identifique la corrección. Tener más archivos ayuda solo cuando quien los revisa entiende qué muestra cada uno y qué pregunta sigue sin respuesta.",
+        "### ¿Abrir un reclamo de seguro significa que ya presenté una demanda?",
+        "No. Un expediente de seguro y un caso ante un tribunal civil son procesos distintos. Guarde juntos la confirmación del reclamo, el contacto de la aseguradora y las solicitudes de documentos, y consulte por separado el plazo legal para demandar. La [guía de reclamos por lesiones personales en California](/blogs/california-personal-injury-guide) explica la diferencia. Para una revisión individual del choque, tratamiento o solicitud de una aseguradora, consulte la [página de servicios por accidentes de auto](/practice-areas/car-accidents)."
+      ]
     }
   ],
-  "sourceHash": "b5176b0c5e2819502e5a555713c132c2859f5f7ceb468a64b320828063a6fbf5",
+  "sourceHash": "1ea2884796eb5bdaa7e687f4e75a97fb18782b327ba83763eabfe9cde95b1915",
   "reviewStatus": "translation-draft-pending-legal-language-review",
   "title": "Accidentes de tráfico 101"
 }

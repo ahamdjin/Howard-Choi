@@ -11,74 +11,182 @@
   "/practice-areas/personal-injury": {
     "title": "The timeline when symptoms change over time",
     "paragraphs": [
-      "Start your chronology with the incident and add each medical visit, work change and new restriction by date. If you returned to work and later needed different duties, preserve both records. If a family member took over childcare or errands, record when it started and what they did. A timeline that includes improvements and setbacks lets a reviewer see what changed and which period needs better documentation."
+      "Start your chronology with the incident and add each medical visit, work change and new restriction by date. If you returned to work and later needed different duties, preserve both records. If a family member took over childcare or errands, record when it started and what they did. A timeline that includes improvements and setbacks lets a reviewer see what changed and which period needs better documentation.",
+      "For a general personal injury claim, keep four questions separate: what happened, who may be responsible, what the injury changed, and which insurance or other resources may apply. A photograph may help with the first question without answering the others. Label each item by the question it supports instead of sending an undated collection of files.",
+      "An insurance claim and a civil lawsuit are different steps. If you are trying to understand how to file a personal injury claim in California, the general guide below explains the distinction and how to organize a first submission. If the injury happened while working, identify that fact early so the workers’ compensation process and any separate claim can be considered on their own terms."
     ],
     "href": "/faqs/medical-treatment-after-an-accident",
-    "linkLabel": "Read how to organize treatment questions"
+    "linkLabel": "Read how to organize treatment questions",
+    "links": [
+      {
+        "href": "/blogs/california-personal-injury-guide",
+        "label": "How to file and organize a California personal injury claim"
+      },
+      {
+        "href": "/",
+        "label": "Buena Park injury lawyer and office overview"
+      }
+    ]
   },
   "/practice-areas/car-accidents": {
     "title": "What to save when the drivers disagree about a lane change",
     "paragraphs": [
-      "Keep any dashcam clip that shows the vehicles before impact. Record the road, direction of travel, lane markings and where the first contact occurred. Take wider vehicle photos that show where the damage sits relative to each door or wheel. If the insurer attributes the crash to one driver’s movement, ask which frames, statements or observed damage support that account."
+      "Keep any dashcam clip that shows the vehicles before impact. Record the road, direction of travel, lane markings and where the first contact occurred. Take wider vehicle photos that show where the damage sits relative to each door or wheel. If the insurer attributes the crash to one driver’s movement, ask which frames, statements or observed damage support that account.",
+      "A lane-change dispute can continue even after a carrier agrees to pay a repair bill. Keep the written fault explanation with the version of the report and images the adjuster actually received. If you send additional evidence, record when it was delivered and ask which disputed point remains unresolved. An offer, a payment and an explanation of responsibility are different records.",
+      "For an injury consultation, bring a short treatment timeline and any work restriction alongside the collision file. Include the decision you need help making now: an insurer’s request for records, a proposed release, or a bill due while the claim remains open. That makes the next discussion more focused than starting with an unsupported settlement estimate."
     ],
     "href": "/blogs/california-comparative-fault-personal-injury",
-    "linkLabel": "Read how California handles shared fault"
+    "linkLabel": "Read how California handles shared fault",
+    "links": [
+      {
+        "href": "/blogs/car-insurance-claim-without-police-report-california",
+        "label": "Making a claim when no police report is available"
+      },
+      {
+        "href": "/blogs/medical-bills-while-car-accident-claim-pending-california",
+        "label": "Organizing medical bills while the injury claim is pending"
+      }
+    ]
   },
   "/practice-areas/truck-accidents": {
     "title": "Identify the truck and the trailer separately",
     "paragraphs": [
-      "A tractor, trailer and cargo can be managed by different businesses. If you can safely record identifying details, keep the unit or plate numbers for both vehicles, along with any carrier name and the investigating agency’s report number. Write down where the contact occurred on the trailer or tractor. Those details can help determine whose records may show the vehicle’s route, inspection or dispatch instructions."
+      "A tractor, trailer and cargo can be managed by different businesses. If you can safely record identifying details, keep the unit or plate numbers for both vehicles, along with any carrier name and the investigating agency’s report number. Write down where the contact occurred on the trailer or tractor. Those details can help determine whose records may show the vehicle’s route, inspection or dispatch instructions.",
+      "A company name painted on a trailer is a useful starting point, not a complete explanation of who controlled the driver or equipment. Preserve the name exactly as recorded and keep any identifiers from the collision paperwork. If an insurer or investigator later supplies another business name, retain that correspondence with its source and date.",
+      "Give the office the location and time of the crash and identify any inspection, towing or storage decision that is approaching. Company records and physical vehicle evidence may be held by different people. The first consultation can identify which missing information matters to the next decision and which records may require a preservation request."
     ],
     "href": "/blogs/truck-accident-evidence-eld-records-california",
-    "linkLabel": "See what records a truck crash can leave"
+    "linkLabel": "See what records a truck crash can leave",
+    "links": [
+      {
+        "href": "/blogs/truck-accident-evidence-eld-records-california",
+        "label": "Truck records, electronic logs and evidence preservation"
+      },
+      {
+        "href": "/blogs/what-to-do-after-a-car-accident-in-california",
+        "label": "Organizing your own collision and injury records"
+      }
+    ]
   },
   "/practice-areas/motorcycle-accidents": {
     "title": "Document the approach to the collision",
     "paragraphs": [
-      "When a driver says a rider appeared suddenly, the part that matters may be the few seconds before impact. Save an uninterrupted video if one exists. Record the direction of travel, any parked vehicles or obstructions and where each person was able to see cross traffic. Keep photos of the motorcycle and riding equipment before repairs or disposal. Different records answer questions about visibility, contact and injury."
+      "When a driver says a rider appeared suddenly, the part that matters may be the few seconds before impact. Save an uninterrupted video if one exists. Record the direction of travel, any parked vehicles or obstructions and where each person was able to see cross traffic. Keep photos of the motorcycle and riding equipment before repairs or disposal. Different records answer questions about visibility, contact and injury.",
+      "Keep an inventory of the motorcycle, helmet, clothing and any accessories damaged in the collision. Record who currently holds each item and whether an inspection has been requested. A repair estimate can describe replacement costs without preserving the physical evidence, so ask about that distinction before equipment is discarded or work begins.",
+      "The motorcycle policy, another driver’s policy and the rider’s health coverage can answer different payment questions. Bring the declarations and correspondence that apply to the collision date, even if a carrier has not made a decision. Describe a coverage question separately from a disagreement about riding position, visibility or the other vehicle’s movement."
     ],
     "href": "/faqs/motorcycle-accidents",
-    "linkLabel": "Read common motorcycle collision questions"
+    "linkLabel": "Read common motorcycle collision questions",
+    "links": [
+      {
+        "href": "/blogs/california-motorcycle-insurance",
+        "label": "Matching a motorcycle loss to the coverage being reviewed"
+      },
+      {
+        "href": "/blogs/california-motorcycle-accident-guide",
+        "label": "What to organize after a motorcycle accident"
+      }
+    ]
   },
   "/practice-areas/pedestrian-accidents": {
     "title": "Record where the crossing began and ended",
     "paragraphs": [
-      "Mark the curb you left and the place you were trying to reach. Note the direction of any turning driver and which signal you could see. A single picture of the impact area may omit the view from the corner, landscaping or parked vehicles. Wider scene photos and a clear map pin can help a reviewer understand what was visible before contact."
+      "Mark the curb you left and the place you were trying to reach. Note the direction of any turning driver and which signal you could see. A single picture of the impact area may omit the view from the corner, landscaping or parked vehicles. Wider scene photos and a clear map pin can help a reviewer understand what was visible before contact.",
+      "A witness who saw the impact may not have seen the signal change or the pedestrian begin crossing. Keep the witness’s own description with their contact details and note which part of the event they observed. A careful account preserves uncertainty instead of turning a brief observation into a complete reconstruction.",
+      "If the route included a bus stop, parking lot or driveway, draw those features on the same sketch. Keep the place where treatment began separate from the collision location. If walking or standing remains difficult, note the effect on commuting and work tasks with any supporting medical restrictions for the consultation."
     ],
     "href": "/faqs/pedestrian-accidents",
-    "linkLabel": "Read what can matter in a pedestrian claim"
+    "linkLabel": "Read what can matter in a pedestrian claim",
+    "links": [
+      {
+        "href": "/blogs/california-pedestrian-accident-guide",
+        "label": "Organizing a pedestrian collision and injury record"
+      },
+      {
+        "href": "/blogs/california-comparative-fault-personal-injury",
+        "label": "Understanding disputed responsibility in California"
+      }
+    ]
   },
   "/practice-areas/rideshare-accidents": {
     "title": "Preserve the trip record if the ride ended early",
     "paragraphs": [
-      "Save the booking receipt even if the driver canceled or ended the ride after the crash. Keep messages about the pickup or drop-off location, plus the time the trip appeared to start or end in the app. If the passenger and the person who booked the trip differ, ask the account holder to keep the original record. Put the actual collision time in a separate entry."
+      "Save the booking receipt even if the driver canceled or ended the ride after the crash. Keep messages about the pickup or drop-off location, plus the time the trip appeared to start or end in the app. If the passenger and the person who booked the trip differ, ask the account holder to keep the original record. Put the actual collision time in a separate entry.",
+      "An app receipt can identify a booked trip without showing every event during the collision. Preserve the original messages, the trip identifier and any notice that the ride was canceled or refunded. If your account no longer shows the trip, keep the support request and response rather than treating a missing screen as proof that no ride existed.",
+      "Separate correspondence from the platform, the driver’s insurer and your own carrier. Record which loss each person is reviewing and whether they requested a statement, medical record or inspection. Send the same date and trip identifiers with each relevant request so a coverage disagreement does not become a disagreement about which event is being discussed."
     ],
     "href": "/blogs/uber-lyft-accident-insurance-california",
-    "linkLabel": "Read about rideshare coverage and trip status"
+    "linkLabel": "Read about rideshare coverage and trip status",
+    "links": [
+      {
+        "href": "/blogs/uber-lyft-accident-insurance-california",
+        "label": "Which trip records matter to Uber and Lyft coverage"
+      },
+      {
+        "href": "/blogs/fullerton-uber-lyft-accident-lawyer",
+        "label": "Preparing questions after a rideshare collision"
+      }
+    ]
   },
   "/practice-areas/slip-and-fall": {
     "title": "Identify who controlled the exact spot",
     "paragraphs": [
-      "Write down whether you fell inside the store, on a shared walkway or in the parking lot. A store employee may have taken your report even when another business maintained that part of the property. Save a receipt or check-in record that helps establish the time, and take a wider photo showing the route. Ask for the report reference and record who responded."
+      "Write down whether you fell inside the store, on a shared walkway or in the parking lot. A store employee may have taken your report even when another business maintained that part of the property. Save a receipt or check-in record that helps establish the time, and take a wider photo showing the route. Ask for the report reference and record who responded.",
+      "If the condition was cleaned or repaired after the fall, keep the photograph or message that shows when that happened. Record who told you about earlier complaints or inspections and distinguish their statement from something you saw yourself. A change to the area does not, on its own, resolve what the property operator knew before the incident.",
+      "Bring the incident reference, location sketch, available photographs and treatment chronology to the consultation. If an insurer asks for a broad release or a recorded account, keep the request in its original form so the scope can be discussed. A consultation can begin even when the business has not provided its internal report."
     ],
     "href": "/results#court-examples",
-    "linkLabel": "Read a court example about store inspections"
+    "linkLabel": "Read a court example about store inspections",
+    "links": [
+      {
+        "href": "/blogs/california-slip-and-fall-accidents-guide",
+        "label": "Evidence and notice questions after a fall"
+      },
+      {
+        "href": "/blogs/california-personal-injury-guide",
+        "label": "Organizing an injury claim before submitting records"
+      }
+    ]
   },
   "/practice-areas/wrongful-death": {
     "title": "Organize practical records without sharing more than necessary",
     "paragraphs": [
-      "Families can start with a private list of who has each record. Note where to find the incident report, funeral invoices, employment or benefits paperwork, and any insurer correspondence. Keep a record of who has been asked to respond or sign. An initial message can describe the incident and what paperwork has arrived. A detailed family or medical record can stay private until the office explains what it needs and how to send it."
+      "Families can start with a private list of who has each record. Note where to find the incident report, funeral invoices, employment or benefits paperwork, and any insurer correspondence. Keep a record of who has been asked to respond or sign. An initial message can describe the incident and what paperwork has arrived. A detailed family or medical record can stay private until the office explains what it needs and how to send it.",
+      "When more than one relative is helping, choose a way to avoid duplicate or conflicting requests. One person can maintain a list of documents received without assuming authority to sign a release for the family. Mark who supplied each record and whether it is a complete copy. Tell the office about any estate proceeding or lawyer already involved.",
+      "Financial support can include more than a pay statement. Preserve records showing recurring household payments and describe practical help the person provided, such as regular transportation or caregiving. Keep observed contributions separate from estimates about the future. Howard can review which relationships, losses and claim procedures need legal analysis before a demand or signature is considered."
     ],
     "href": "/contact",
-    "linkLabel": "Contact the Buena Park office"
+    "linkLabel": "Contact the Buena Park office",
+    "links": [
+      {
+        "href": "/blogs/buena-park-wrongful-death-attorney",
+        "label": "Questions to prepare for a wrongful death consultation"
+      },
+      {
+        "href": "/blogs/california-wrongful-death-guide",
+        "label": "Understanding the different records in a wrongful death claim"
+      }
+    ]
   },
   "/practice-areas/serious-injuries": {
     "title": "Record what support a discharge plan actually requires",
     "paragraphs": [
-      "Keep the discharge instructions with a short account of the help someone needed at home. Note transportation, appointments, equipment and any tasks the family had to take over. If the plan changes after a follow-up appointment, save the newer guidance and when it took effect. Separating a recommendation from what happened at home helps explain both the care plan and its day-to-day impact."
+      "Keep the discharge instructions with a short account of the help someone needed at home. Note transportation, appointments, equipment and any tasks the family had to take over. If the plan changes after a follow-up appointment, save the newer guidance and when it took effect. Separating a recommendation from what happened at home helps explain both the care plan and its day-to-day impact.",
+      "When relatives are coordinating care, keep a dated list of appointments, recommended equipment and changes to the home routine. Identify whether help was recommended by a professional, provided by a family member, or still being arranged. This gives a reviewer a clearer picture than a single total for all care-related spending.",
+      "For concentration, memory or fatigue concerns, record the task affected and when the change was observed. Keep those observations separate from a diagnosis or prediction about recovery. Bring the relevant evaluations and work restrictions so the discussion can identify what is documented and which medical or financial questions remain open."
     ],
     "href": "/faqs/catastrophic-injury",
-    "linkLabel": "Read more about long-term care records"
+    "linkLabel": "Read more about long-term care records",
+    "links": [
+      {
+        "href": "/blogs/traumatic-brain-injury-evidence-after-california-accident",
+        "label": "Documenting the effects of a possible brain injury"
+      },
+      {
+        "href": "/blogs/how-much-is-my-personal-injury-case-worth-california",
+        "label": "How records support an injury claim valuation"
+      }
+    ]
   },
   "/es/practice-areas": {
     "title": "Elija la guía según lo que necesita averiguar",

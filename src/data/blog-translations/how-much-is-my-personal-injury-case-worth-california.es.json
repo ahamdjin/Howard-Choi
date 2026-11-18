@@ -134,8 +134,17 @@
         "Antes de comparar dos ofertas, escriba qué incluye cada cifra. Separe la compensación bruta de los honorarios proyectados, gastos litigiosos, reclamos de reembolso de atención médica y cualquier otra deducción propuesta. Marque las deducciones disputadas o desconocidas en lugar de tratarlas silenciosamente como cero. Si una propuesta depende de información futura, identifique qué opinión médica, registro de beneficios o documento de cobertura aún falta.",
         "Luego compare el alcance del liberación, no solo la cifra. Pregunte qué reclamaciones se están liberando, si quedan algunas reclamaciones y cómo se manejarán los tratamientos pendientes o los temas de reembolso. Una calculadora no puede evaluar el lenguaje de liberación ni confirmar lo que quedará después de la distribución. Una conversación útil sobre el valor del caso debe explicar las suposiciones detrás de la estimación y qué cambios en la evidencia justificarían revisarla."
       ]
+    },
+    {
+      "heading": "Preguntas para estimar un reclamo por lesiones personales en California",
+      "paragraphs": [
+        "### ¿Cuánto vale un caso de lesiones personales en California?",
+        "No existe una cantidad fiable basada solo en el nombre de la lesión o la ciudad donde ocurrió. Empiece con las pérdidas documentadas e identifique qué se discute sobre la responsabilidad, las pruebas médicas y la cobertura disponible. Separe las cantidades confirmadas de las estimaciones y saldos pendientes. Una evaluación útil explica qué hechos respaldan la estimación y qué documento faltante podría cambiarla. La [guía general de reclamos por lesiones](/blogs/california-personal-injury-guide) explica cómo organizar esos documentos antes de presentar un reclamo.",
+        "### ¿Qué debo preguntar cuando una aseguradora me propone una cantidad?",
+        "Pregunte qué cubre la cantidad y qué cerraría la liberación propuesta. Compárela con el mismo conjunto de documentos, en vez de comparar dos totales sin explicación. Identifique tratamiento pendiente, preguntas sobre reembolsos y pérdidas aún no documentadas. Guarde la oferta original con su fecha y supuestos. Una [consulta con la oficina](/contact) permite hablar de los documentos y decisiones involucrados; una estimación en línea no puede revisar la liberación o póliza reales."
+      ]
     }
   ],
-  "sourceHash": "b25d3ca3068ca21ead6a501a3efe3e38398f13a84ef9676b6ab67f2fe932c295",
+  "sourceHash": "882e08bc1eaf58b668c39679bb379923f91647b4183666a1beade1c548edac0c",
   "reviewStatus": "translation-draft-pending-legal-language-review"
 }

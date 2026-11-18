@@ -2,7 +2,7 @@
   "title": "Step-by-Step Process of Filing a Workers’ Comp Claim in CA",
   "slug": "workers-comp-step-by-step-process-of-filing-a-workers-comp-claim-in-california",
   "published": true,
-  "reviewStatus": "approved",
+  "reviewStatus": "pending-attorney-review",
   "author": "Howard Choi",
   "excerpt": "Learn how to report a California work injury, complete the DWC-1 form, obtain treatment, understand benefits, and respond to claim disputes.",
   "metaTitle": "Step-by-Step Process of Filing a Workers' Comp Claim in California",
@@ -13,11 +13,16 @@
   "intro": "A California workers’ compensation claim involves several separate tasks. You must notify your employer, submit a claim form, and arrange appropriate medical care. If a dispute develops, you may also need to file documents with the Workers’ Compensation Appeals Board, or WCAB. Completing one task does not necessarily protect the deadlines for another.",
   "takeaway": "Learn how to report a California work injury, complete the DWC-1 form, obtain treatment, understand benefits, and respond to claim disputes.",
   "requiredTranslations": [],
-  "reviewedBy": "howard-choi",
-  "reviewConfirmationDate": "2026-11-15"
+  "updatedAt": "2026-11-18"
 }
 
 Start with the reporting and filing steps below. Treatment, disability payments, medical evaluations, and return-to-work discussions can then overlap. They do not always happen in a fixed sequence.
+
+## Is this a workers' compensation claim or a personal injury claim?
+
+This article explains how to file a workers' compensation claim in California. That process includes the DWC 1 claim form and communication with the employer and claims administrator. The [California Division of Workers' Compensation filing instructions](https://www.dir.ca.gov/dwc/FileAClaim.htm) explain where that form goes and why you should keep a completed copy.
+
+If you meant “how to file a personal injury claim in California” after a road collision, a fall or another injury, start with the [general personal injury filing walkthrough](/blogs/california-personal-injury-guide). Sending a workplace claim form is not the same as notifying another person's insurer or starting a civil lawsuit. If a work injury also involved a different business or driver, keep that person's details and identify both possible processes during the consultation. Do not assume that an employer's incident report completes every claim or protects every deadline.
 
 ## Keep a copy of each handoff
 

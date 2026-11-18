@@ -8,6 +8,7 @@ import Navigation from "@/components/Navigation";
 import SpanishNavigation from "@/components/SpanishNavigation";
 import Hero from "@/components/Hero";
 import HomeImmediateTrust from "@/components/HomeImmediateTrust";
+import HomeInjuryClaimHelp from "@/components/HomeInjuryClaimHelp";
 import TrustBadges from "@/components/TrustBadges";
 import FirmSnapshot from "@/components/FirmSnapshot";
 import Locations from "@/components/Locations";
@@ -34,6 +35,7 @@ const Index = ({ locale = "en" }: { locale?: SiteLocale }) => {
         <div className="sticky top-0 z-0 h-[100svh] w-full"><Hero locale={locale} /></div>
         <div className="relative z-10 w-full bg-background">
           <HomeImmediateTrust locale={locale} />
+          {locale === "en" && <HomeInjuryClaimHelp />}
           <DirectAccess locale={locale} />
           <SelectedResult locale={locale} />
           <ClientSuccessFeature locale={locale} />

@@ -13,7 +13,7 @@
   "intro": "After a California car accident, notifying the police and your insurance company may not cover all your reporting duties. You may also need to submit a Report of Traffic Accident Occurring in California, known as an SR-1, to the California Department of Motor Vehicles.",
   "takeaway": "Learn when California requires an SR-1 accident report, how the 10-day deadline works, and why DMV, police, and insurance reports are separate.",
   "requiredTranslations": [],
-  "updatedAt": "2026-11-15"
+  "updatedAt": "2026-11-18"
 }
 
 **You must submit an SR-1 within 10 days if anyone was injured, anyone died, or the accident caused more than $1,000 in damage to any one person’s property.** This requirement applies regardless of fault. Neither a police report nor an insurance claim replaces the DMV report. [California DMV accident-reporting guidance](https://www.dmv.ca.gov/portal/dmv-virtual-office/accident-reporting/)
@@ -23,6 +23,12 @@ For immediate safety, evidence, and insurance steps, see [what to do after a car
 Knowing which reports you need can help you meet your obligations while arranging medical care, repairs, and any legal assistance.
 
 
+
+## Do I need to report an accident to DMV if insurance is handling it?
+
+Check the DMV reporting requirement separately from the insurer's claim. An insurer can be investigating repairs or fault while the DMV submission remains a different task. If someone says they submitted the SR-1 for you, ask for the completed report and evidence of submission rather than relying only on an insurance claim number. The [official DMV accident-reporting page](https://www.dmv.ca.gov/portal/dmv-virtual-office/accident-reporting/) identifies the reporting triggers and permitted submitters.
+
+Keep a simple status for each report: not yet submitted, submitted with proof, or a question still requiring confirmation. Record who is handling the task and the date of the most recent response. If a report is missing, make the next call about that specific record. For the separate safety, evidence and insurance steps, use the [California crash checklist](/blogs/what-to-do-after-a-car-accident-in-california). For changes to an existing police report, see the [report-correction guide](/blogs/correct-inaccurate-car-accident-police-report-california).
 
 ## Track the three reports separately
 

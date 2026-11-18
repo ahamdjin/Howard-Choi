@@ -18,6 +18,16 @@ import PageBreadcrumb from "@/components/PageBreadcrumb";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { blogPosts, getBlogBySlug } from "@/data/blogs";
+import "@/components/editorial/claim-guidance.css";
+
+const claimGuidanceSections: Record<string, "steps" | "questions" | "note"> = {
+  "How to file a personal injury claim in California": "steps",
+  "Is this a workers' compensation claim or a personal injury claim?": "note",
+  "Do I need to report an accident to DMV if insurance is handling it?": "note",
+  "Preserve what happened before the skid, not only the final damage": "note",
+  "Questions about estimating a California personal injury claim": "questions",
+  "Questions about building and filing a crash claim": "questions",
+};
 
 type ArticleSupport = {
   relatedHref: string;
@@ -275,11 +285,11 @@ const BlogDetail = () => {
 
                 <div className="border-t border-foreground/12">
                   {post.sections.map((section, index) => (
-                    <motion.section id={`article-section-${index + 1}`} key={section.heading} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.16 }} transition={{ duration: 0.62 }} className="scroll-mt-28 border-b border-foreground/10 py-10 last:border-b-0 md:py-12">
+                    <motion.section id={`article-section-${index + 1}`} key={section.heading} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.16 }} transition={{ duration: 0.62 }} className={claimGuidanceSections[section.heading] ? "article-guidance scroll-mt-28" : "scroll-mt-28 border-b border-foreground/10 py-10 last:border-b-0 md:py-12"}>
 
                       <h2 className="editorial-serif max-w-[700px] text-[clamp(2.05rem,3vw,3.15rem)] leading-[0.98] tracking-[-0.022em] text-foreground">{section.heading}</h2>
                       <div className="article-reading-width mt-6 max-w-[730px] space-y-6 text-[17px] leading-[1.75] text-foreground/84 md:text-[18px]">
-                        <ContentBlocks paragraphs={section.paragraphs} />
+                        <ContentBlocks paragraphs={section.paragraphs} presentation={claimGuidanceSections[section.heading] === "steps" ? "steps" : claimGuidanceSections[section.heading] === "questions" ? "questions" : undefined} />
                         {index === 1 && <ClaimVisualStory subject={post.slug} />}
                         {pageVisualAfter(`/blogs/${post.slug}`, index) && <TopicVisual pagePath={`/blogs/${post.slug}`} />}
                         {index === 7 && <ContentPhoto subject={post.slug} />}
