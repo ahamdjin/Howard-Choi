@@ -11,7 +11,7 @@ export const pageUpdatedDates: Record<string, string | undefined> = {
   "/blogs/car-insurance-claim-without-police-report-california": "2026-11-17",
   "/blogs/what-is-subrogation-car-insurance-california": "2026-11-17",
   "/blogs/california-motorcycle-accident-guide": "2026-11-17",
-  "/": "2026-11-18",
+  "/": "2026-11-19",
   "/practice-areas/personal-injury": "2026-11-19",
   "/practice-areas/truck-accidents": "2026-11-18",
   "/practice-areas/pedestrian-accidents": "2026-11-18",

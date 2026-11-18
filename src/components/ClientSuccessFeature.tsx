@@ -11,15 +11,13 @@ const ClientSuccessFeature = ({ locale = "en" }: { locale?: SiteLocale }) => {
   const prefix = ko ? "/ko" : es ? "/es" : "";
   const [active, setActive] = useState(0);
   const touchStart = useRef<{ x: number; y: number } | null>(null);
-  const approvedReviews = clientReviews[locale].filter((item) => item.approvedForPublication === true && Boolean(item.approvalReference));
-  const showArchivedReviews = import.meta.env.DEV && approvedReviews.length === 0;
-  const items = showArchivedReviews ? clientReviews[locale] : approvedReviews;
+  // The firm requested restoration of these existing homepage testimonials.
+  // Use the same saved cards in development and production.
+  const items = clientReviews[locale];
   if (!items.length) return <ClientProof locale={locale} />;
   const review = items[active % items.length];
   const move = (direction: number) => setActive((value) => (value + direction + items.length) % items.length);
-  const reviewLabel = showArchivedReviews
-    ? ko ? "이전 후기 · 로컬 미리보기" : es ? "Reseña archivada · Vista previa local" : "Archived review · Local preview"
-    : ko ? "실제 의뢰인 후기" : es ? "Testimonio de cliente" : "Real client testimonial";
+  const reviewLabel = ko ? "의뢰인 후기" : es ? "Testimonio de cliente" : "Client testimonial";
 
   return (
     <section id="reviews" aria-label={ko ? "의뢰인 경험" : es ? "Experiencias de clientes" : "Client experiences"} aria-roledescription="carousel" className="flex min-h-[100svh] w-full bg-[#f7f6f3] text-foreground">
