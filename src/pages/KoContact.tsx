@@ -1,3 +1,4 @@
+import { DeskIllustration } from "@/components/editorial/DeskIllustration";
 import { PageReadingNote } from "@/components/editorial/PageReadingNote";
 import readingNotes from "../../content/learning/page-reading-notes/site.json";
 import SiteDepthSection from "@/components/SiteDepthSection";
@@ -26,7 +27,7 @@ const KoContact = () => {
 
         <section className="mt-16 border-t border-foreground/12 pt-7 md:mt-20 md:pt-9">
           <div className="grid gap-8 lg:grid-cols-[0.38fr_1.62fr] lg:gap-12 xl:gap-16">
-            <div><span className="text-[9px] font-semibold tracking-[0.08em] text-muted-foreground">상담 전에 준비할 것</span></div>
+            <div><span className="text-[9px] font-semibold tracking-[0.08em] text-muted-foreground">상담 전에 준비할 것</span><DeskIllustration topic="preparation" /></div>
             <div>
               <h2 style={koSerif} className="max-w-[780px] text-[clamp(1.9rem,2.8vw,3rem)] font-medium leading-[1.3] tracking-[-0.04em]">현재 가지고 있는 사실부터 준비하세요. 첫 상담은 무엇이 더 필요한지 확인하는 과정입니다.</h2>
               <div className="mt-10 grid border-t border-foreground/12 md:grid-cols-3">

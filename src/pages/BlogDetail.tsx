@@ -1,3 +1,4 @@
+import { guidanceArt, SectionArt } from "@/components/editorial/CrashSectionVisual";
 import { PageReadingNote } from "@/components/editorial/PageReadingNote";
 import readingNotes from "../../content/learning/page-reading-notes/articles-en.json";
 import { pageVisualAfter } from "@/data/pageVisualPlans";
@@ -180,6 +181,15 @@ const BlogDetail = () => {
   const related = blogPosts.find((item) => item.slug !== post.slug);
   const support = articleSupport[post.slug];
 
+  const usedArt = new Set<string>();
+  const sectionArt = post.sections.map((section, index) => {
+    if (index === 1 || index === 7 || pageVisualAfter(`/blogs/${post.slug}`, index)) return;
+    const art = guidanceArt(section.heading);
+    if (!art || usedArt.has(art[0])) return;
+    usedArt.add(art[0]);
+    return art;
+  });
+
   return (
     <div className="min-h-screen overflow-x-clip bg-background">
       <Navigation />
@@ -278,8 +288,8 @@ const BlogDetail = () => {
                   </div>
                 )}
 
-                <motion.blockquote id="article-key-takeaway" initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.62 }} className="my-10 rounded-[3px] bg-[#1a1714] px-7 py-8 text-[#f3eee5] md:my-12 md:px-9 md:py-10">
-                  <div className="mb-5 text-[10px] uppercase tracking-[0.16em] text-[#f3eee5]/38">Key point</div>
+                <motion.blockquote id="article-key-takeaway" initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.62 }} className="my-10 border-l-4 border-[#987652] bg-[#f3efe8] px-5 py-7 text-[#302a25] sm:px-8 md:my-12 md:px-10 md:py-9">
+                  <div className="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-[#715538]">Key point</div>
                   <p className="article-key-point editorial-serif max-w-[680px]">“{post.takeaway}”</p>
                 </motion.blockquote>
 
@@ -287,6 +297,7 @@ const BlogDetail = () => {
                   {post.sections.map((section, index) => (
                     <motion.section id={`article-section-${index + 1}`} key={section.heading} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.16 }} transition={{ duration: 0.62 }} className={claimGuidanceSections[section.heading] ? "article-guidance scroll-mt-28" : "scroll-mt-28 border-b border-foreground/10 py-10 last:border-b-0 md:py-12"}>
 
+                      {sectionArt[index] && <SectionArt visual={sectionArt[index]} />}
                       <h2 className="editorial-serif max-w-[700px] text-[clamp(2.05rem,3vw,3.15rem)] leading-[0.98] tracking-[-0.022em] text-foreground">{section.heading}</h2>
                       <div className="article-reading-width mt-6 max-w-[730px] space-y-6 text-[17px] leading-[1.75] text-foreground/84 md:text-[18px]">
                         <ContentBlocks paragraphs={section.paragraphs} presentation={claimGuidanceSections[section.heading] === "steps" ? "steps" : claimGuidanceSections[section.heading] === "questions" ? "questions" : undefined} />

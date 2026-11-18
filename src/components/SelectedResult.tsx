@@ -60,7 +60,7 @@ const SelectedResult = ({ locale = "en" }: { locale?: SiteLocale }) => {
             {ko ? "사건 결과 보기" : es ? "Ver resultados" : "View case results"} <ArrowUpRight className="h-3.5 w-3.5" />
           </a>
         </div>
-        <div className="mt-8 grid gap-4 md:grid-cols-3 lg:mt-10">
+        <div className="mt-8 grid gap-4 border-t border-white/20 pt-6 md:grid-cols-3 lg:mt-10">
           {results.map((result) => (
             <div key={result.title} className="overflow-hidden rounded-[3px] bg-[#191919]">
               <div className="relative h-28 overflow-hidden md:h-36">
@@ -73,8 +73,8 @@ const SelectedResult = ({ locale = "en" }: { locale?: SiteLocale }) => {
                 </div>
               </div>
               <div className="p-5">
-                <div className="text-[13px] font-medium tracking-[-0.01em] text-white">{ko ? result.koTitle : es ? result.esTitle : result.title}</div>
-                <p className="mt-2 text-[12px] leading-5 text-white/52">{ko ? result.koDetail : es ? result.esDetail : result.detail}</p>
+                <div className="text-base font-medium tracking-[-0.01em] text-white">{ko ? result.koTitle : es ? result.esTitle : result.title}</div>
+                <p className="mt-2 text-sm leading-6 text-white/75">{ko ? result.koDetail : es ? result.esDetail : result.detail}</p>
               </div>
             </div>
           ))}

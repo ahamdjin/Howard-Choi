@@ -1,3 +1,4 @@
+import { DeskIllustration } from "@/components/editorial/DeskIllustration";
 import { PageReadingNote } from "@/components/editorial/PageReadingNote";
 import readingNotes from "../../content/learning/page-reading-notes/site.json";
 import { trackExternalFormSubmission } from "@/lib/inquiry-client";
@@ -516,6 +517,7 @@ export const CaseValueCalculatorPage = ({ locale }: { locale: SiteLocale }) => {
             <div className="flex flex-col justify-center lg:pl-6">
               <div className="text-[10px] text-[#211E1B]/70">{ko ? "05 · 다음 단계" : es ? "05 · Qué hacer después" : "05 · What to do next"}</div>
               <h2 className="mt-3 text-[22px] font-semibold tracking-[-0.025em]">{ko ? "계산 후에는 기록을 정리하세요." : es ? "Después de la estimación, documente el reclamo." : "After the estimate, document the claim."}</h2>
+              <DeskIllustration topic="preparation" />
               <div className="mt-7 border-t border-[#211E1B]/12">
                 {[
                   ko ? ["치료 기록", "진료기록, 청구서, 처방 및 향후 치료 계획을 보관하세요."] : es ? ["Registros de tratamiento", "Guarde expedientes médicos, facturas, recetas y planes de atención futura."] : ["Treatment records", "Keep medical records, bills, prescriptions, and future-care plans."],

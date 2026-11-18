@@ -1,3 +1,4 @@
+import { guidanceArt, SectionArt } from "@/components/editorial/CrashSectionVisual";
 import { PageReadingNote } from "@/components/editorial/PageReadingNote";
 import readingNotes from "../../../content/learning/page-reading-notes/locations.json";
 import { locationExperienceCopy, formatLocationText } from "@/data/locationExperienceCopy";
@@ -83,7 +84,10 @@ export default function LocationExperiencePage({ city, locale = "en" }: { city: 
       <div className="experience-reading">
         {guide.map(section => {
           const Icon = sectionIcons[section.id as keyof typeof sectionIcons];
+          const art = locale === "en" && ["evidence", "deadlines", "report-to-consultation"].includes(section.id)
+            ? guidanceArt(section.id) : undefined;
           return <section id={section.id} key={section.id} className={`experience-guide-section experience-guide-section--${section.id}`}>
+            {art && <SectionArt visual={art} />}
             {Icon && <Icon className="experience-section-icon" size={27} strokeWidth={1.4} aria-hidden="true" />}
             <h2>{section.title}</h2>
             {section.kind === "faq" || section.id === "questions" ? <div className="experience-faq" data-location-faq>{section.paragraphs.map((paragraph, index) => {

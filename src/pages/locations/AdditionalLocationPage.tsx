@@ -1,3 +1,4 @@
+import { DeskIllustration } from "@/components/editorial/DeskIllustration";
 import { Car, Truck, Bike, PersonStanding, Footprints, FileText, BriefcaseBusiness, MapPin } from "lucide-react";
 import { locationMedia } from "@/data/locationMedia";
 import { practiceMedia } from "@/data/practiceMedia";
@@ -50,6 +51,7 @@ export default function AdditionalLocationPage({ city }: { city: AdditionalLocat
             </ul>
           </ReadingSectionBlock>
           <ReadingSectionBlock id="consultation" kicker={city.name} locale="en" title="Speak with Howard Choi">
+            <DeskIllustration topic="preparation" />
             <p className="text-base leading-8">Howard serves {city.name} from the Buena Park office at 6301 Beach Blvd, Suite 216. Bring the incident details and available records to a free consultation. Ask which issues need investigation and what information would help clarify your next step.</p>
             <p className="mt-5 text-base leading-8">No fee unless there is a recovery. <a href="/about/zero-fee-guarantee" className="underline">Read the fee promise</a>, or <a href="/attorney" className="underline">get to know Howard</a> before calling.</p>
             <ConsultationCta locale="en" />

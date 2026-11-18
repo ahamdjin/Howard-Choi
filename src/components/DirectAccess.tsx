@@ -27,11 +27,15 @@ const DirectAccess = ({ locale = "en" }: { locale?: SiteLocale }) => {
             <a href="https://apps.calbar.ca.gov/attorney/Licensee/Detail/284364" target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center gap-2 text-[13px] text-white/75 underline underline-offset-4 transition-colors hover:text-white">{ko ? "State Bar에서 확인" : es ? "Verificar con el State Bar" : "Verify with the State Bar"} <ArrowUpRight className="h-3.5 w-3.5"/></a>
           </div>
         </div>
-        <div className="w-full max-w-[460px] border border-white/15 bg-white/5 p-6 sm:p-9 md:ml-auto">
-          <MapPin aria-hidden="true" className="mb-4 h-5 w-5 text-white/75" />
-          <h3 className="editorial-serif text-3xl text-white">{ko ? "부에나파크 사무실" : es ? "Oficina de Buena Park" : "Buena Park office"}</h3>
-          <address className="mt-3 text-sm not-italic leading-6 text-white/80">{brand.address}</address>
-          <a href={brand.mapsHref} target="_blank" rel="noreferrer" className="mt-3 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-white underline underline-offset-4">
+        <div className="w-full max-w-[460px] rounded-[3px] bg-[#f3eee5] text-[#211d18] p-6 sm:p-9 md:ml-auto">
+          <MapPin aria-hidden="true" className="mb-4 h-5 w-5 text-[#746451]" />
+          <h3 className="editorial-serif text-3xl">{ko ? "부에나파크 사무실" : es ? "Oficina de Buena Park" : "Buena Park office"}</h3>
+          <address className="mt-3 text-base not-italic leading-6">{brand.address}</address>
+          <p className="mt-4 border-t border-black/15 pt-4 text-sm leading-6">
+            {ko ? "방문 전 전화로 상담 시간과 찾아오는 방법을 문의하세요." : es ? "Antes de venir, llame para coordinar la visita y pedir indicaciones." : "Call before your visit to arrange a time and ask how to find the suite."}
+          </p>
+          <a href={brand.phoneHref} className="inline-flex min-h-11 items-center pr-5 font-medium underline underline-offset-4">{brand.phoneDisplay}</a>
+          <a href={brand.mapsHref} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center gap-2 text-sm font-medium underline underline-offset-4">
             {ko ? "Google 지도에서 길찾기" : es ? "Cómo llegar en Google Maps" : "Get directions on Google Maps"} <ArrowUpRight className="h-3.5 w-3.5" />
           </a>
         </div>

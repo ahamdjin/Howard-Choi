@@ -1,3 +1,4 @@
+import { PracticeSectionVisual } from "@/components/editorial/CrashSectionVisual";
 import { ConsultationCard } from "@/components/editorial/ConsultationCard";
 import { responsiveImageProps } from "@/lib/responsive-images";
 import { useEffect, useRef, useState, type ReactNode } from "react";
@@ -198,6 +199,7 @@ export const ReadingLayout = ({ locale, label, sections, children }: { locale: S
 
 export const ReadingSectionBlock = ({ id, locale, kicker, title, intro, children, tone = "plain", Icon }: { id: string; locale: SiteLocale; kicker: string; title: string; intro?: string; children?: ReactNode; tone?: "plain" | "warm"; Icon?: LucideIcon }) => (
   <section id={id} className={`editorial-reading-section ${tone === "warm" ? "editorial-reading-section--warm" : ""}`}>
+    <PracticeSectionVisual id={id} />
     <div className="editorial-reading-section__kicker flex items-center gap-2.5" hidden={!kicker && !Icon}>{Icon ? <Icon aria-hidden="true" className="h-3.5 w-3.5 shrink-0 stroke-[1.5] text-[#7b5b3e]" /> : null}{kicker}</div>
     <h2 style={serifStyle(locale)} className={isKo(locale) ? "editorial-reading-section__title text-[clamp(1.7rem,2.8vw,2.8rem)] font-medium leading-[1.35] tracking-[-0.035em]" : "editorial-reading-section__title editorial-serif text-[clamp(2rem,3.3vw,3.6rem)] leading-[1.02] tracking-[-0.03em]"}>{title}</h2>
     {intro ? <p className="editorial-reading-section__intro">{intro}</p> : null}

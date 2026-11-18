@@ -1,3 +1,4 @@
+import { DeskIllustration } from "@/components/editorial/DeskIllustration";
 import { PageReadingNote } from "@/components/editorial/PageReadingNote";
 import readingNotes from "../../../content/learning/page-reading-notes/locations.json";
 import { claimProcessCopy } from "@/data/claimProcessCopy";
@@ -145,7 +146,7 @@ export default function AnaheimLandingPage() {
         <SectionTitle eyebrow="When the accounts differ">Build a timeline that can be checked</SectionTitle>
         <div className="al-local-scenarios">
           <article>
-            <h3>Put the report next to the other evidence</h3>
+            <DeskIllustration topic="investigation" /><h3>Put the report next to the other evidence</h3>
             <p>Consider a crash at a resort driveway where one driver says they were already in the lane and the other says the car pulled out without stopping. Read the report for who gave each statement and what the responding officer personally observed. Then compare the vehicle positions, damage, and any independent account. A photo taken after cars were moved still helps identify damage, but it answers a different question from a photo taken before the vehicles moved. Give Howard both versions of the story and flag where the available records leave a gap.</p>
             <p>Anaheim Police provides a separate request route for non-fatal traffic collision reports. If an online search does not return a record, use the department’s request instructions and check which agency responded. Keep the report number with your incident timeline.</p>
             <a className="al-text-link" href="https://pd.anaheim.net/261/Request-a-Copy-of-a-Police-Report">Anaheim Police report request instructions</a>

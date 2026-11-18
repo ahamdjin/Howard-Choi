@@ -1,3 +1,4 @@
+import { DeskIllustration } from "@/components/editorial/DeskIllustration";
 import { PageReadingNote } from "@/components/editorial/PageReadingNote";
 import readingNotes from "../../../content/learning/page-reading-notes/articles-es.json";
 import { ArticleParagraph } from "@/components/blog/ArticleParagraph";
@@ -147,6 +148,7 @@ const EsBlogDetail = () => {
                 {post.leadParagraphs?.map((paragraph) => <ArticleParagraph key={paragraph} text={paragraph} className="mb-6 text-[17px] leading-8 text-foreground/80" />)}
 
                 <motion.blockquote id="article-key-takeaway" initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.62 }} className="my-10 rounded-[3px] bg-[#1a1714] px-7 py-8 text-[#f3eee5] md:my-12 md:px-9 md:py-10">
+                  <DeskIllustration topic="reading" />
                   <div className="mb-5 text-[10px] uppercase tracking-[0.16em] text-[#f3eee5]/38">Punto clave</div>
                   <p className="editorial-serif max-w-[680px] text-[clamp(1.8rem,2.65vw,2.65rem)] leading-[1.04] tracking-[-0.018em]">“{post.takeaway}”</p>
                 </motion.blockquote>

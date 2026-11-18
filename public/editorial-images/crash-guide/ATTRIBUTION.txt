@@ -1,0 +1,4 @@
+Automobile, camera and clipboard graphics from Twemoji by Twitter, Inc. and other contributors. Original artwork used unchanged.
+https://github.com/jdecked/twemoji
+Creative Commons Attribution 4.0 International
+https://creativecommons.org/licenses/by/4.0/

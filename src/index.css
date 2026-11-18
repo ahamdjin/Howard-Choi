@@ -700,7 +700,8 @@ nav + .relative > .sticky.top-0.h-\[100svh\] > section {
 }
 
 .inner-site-page .editorial-reading-section__title {
-  max-width: 900px;
+  max-width: min(28ch, 100%);
+  text-wrap: balance;
   margin-top: 1rem;
 }
 
@@ -710,6 +711,15 @@ nav + .relative > .sticky.top-0.h-\[100svh\] > section {
   font-size: 18px !important;
   line-height: 1.7 !important;
   color: rgba(30, 28, 26, 0.62);
+}
+
+/* Give the section summary its own reading surface before the detailed guidance. */
+.inner-site-page .editorial-reading-section > .editorial-reading-section__intro {
+  box-sizing: border-box;
+  padding: clamp(1rem, 2vw, 1.6rem) clamp(1.125rem, 2.6vw, 2rem);
+  border-inline-start: 3px solid #987652;
+  background: #f3efe8;
+  color: #443d36;
 }
 
 .inner-site-page .editorial-reading-section__body {
@@ -1296,4 +1306,120 @@ nav + .relative > .sticky.top-0.h-\[100svh\] > section {
   }
   .home-hero .home-hero-attorney { margin-top: 22px; padding-top: 16px; }
   .home-hero .home-hero-attorney > span { font-size: 11px; line-height: 1.5; }
+}
+
+/* English car-accident guide: claim narrative, related reading and evidence ledger. */
+.car-accident-guide #local-claim-review .editorial-reading-section__body {
+  display: grid;
+  align-items: start;
+  gap: clamp(1.5rem, 3vw, 3rem);
+}
+.car-accident-guide #local-claim-review ul {
+  margin: 0;
+  padding: 1rem 1.4rem;
+  background: #eee8dd;
+  border-top: 3px solid #927452;
+}
+.inner-site-page .car-accident-guide #evidence {
+  background: #f2ede4;
+  padding: clamp(1.25rem, 4vw, 3rem);
+  border-top: 3px solid #79634e;
+}
+.car-accident-guide #evidence .editorial-issue-row {
+  display: grid;
+  grid-template-columns: 2ch minmax(0,1fr);
+  align-items: baseline;
+  column-gap: 1rem;
+  row-gap: .3rem;
+  padding-block: 1rem;
+  border-top: 1px solid #cfc6b9;
+}
+.car-accident-guide #evidence em {
+  font: normal 1.25rem/1.28 Georgia, serif;
+  color: #30271f;
+}
+.car-accident-guide #evidence strong { grid-column: 2; }
+@media (min-width: 960px) {
+  .car-accident-guide #local-claim-review .editorial-reading-section__body {
+    grid-template-columns: minmax(0,1.7fr) minmax(13rem,1fr);
+  }
+  .car-accident-guide #evidence .editorial-issue-row {
+    grid-template-columns: 2ch 1fr 1fr;
+  }
+  .car-accident-guide #evidence strong { grid-column: 3; }
+}
+
+.car-accident-guide .crash-records {
+  margin-block: 1rem 3rem;
+  padding-block: clamp(1.5rem, 4vw, 3rem);
+  border-block: 1px solid #c7bdaa;
+}
+.crash-records figcaption {
+  font: normal clamp(1.8rem, 3vw, 2.8rem)/1.12 Georgia, serif;
+  margin-bottom: 1.4rem;
+}
+.crash-records__panels { display: grid; gap: .75rem; }
+.crash-records__panel {
+  display: flex; align-items: center; gap: 1.2rem;
+  background: #f1ece2; padding: 1.4rem;
+}
+.crash-records__panel img { width: 4rem; height: 4rem; flex-shrink: 0; }
+.crash-records__panel strong { font: normal 1.5rem/1.2 Georgia, serif; }
+.crash-records__panel p { margin-top: .4rem; color: #514c44; line-height: 1.5; }
+@media (min-width: 850px) {
+  .crash-records__panels { grid-template-columns: repeat(3, 1fr); }
+  .crash-records__panel { flex-direction: column; align-items: flex-start; padding: 2rem; }
+  .crash-records__panel img { width: 5.25rem; height: 5.25rem; }
+}
+
+.editorial-section-art {
+  overflow: hidden;
+  margin-block: 0 1.25rem;
+  background: #eee9dd;
+}
+.editorial-section-art img {
+  display: block; width: 100%; aspect-ratio: 300 / 245; object-fit: cover;
+}
+@media (min-width: 1050px) {
+  :is(.editorial-reading-section, .experience-guide-section, .legal-blog-article section):has(> .editorial-section-art) {
+    display: flow-root;
+  }
+  .editorial-section-art {
+    float: right;
+    width: 39%;
+    margin: 0 0 1.5rem clamp(1.5rem, 3vw, 3rem);
+  }
+  .editorial-reading-section:has(> .editorial-section-art) > .editorial-reading-section__body {
+    clear: both;
+  }
+  .editorial-reading-section:has(> .editorial-section-art) > .editorial-reading-section__intro {
+    overflow: hidden;
+  }
+}
+
+.desk-illustration {
+  position: relative;
+  isolation: isolate;
+  width: min(100%, 28rem);
+  aspect-ratio: 2.35;
+  margin-block: 1rem 1.5rem;
+  overflow: hidden;
+  border-radius: 4px;
+  background: radial-gradient(ellipse at 44% 110%, #cec1ad, transparent 65%), #eee7da;
+}
+.desk-illustration--estimate { background-color: #e2e7da; }
+.desk-illustration--reading { background-color: #e4e8ea; }
+.desk-illustration img {
+  position: absolute; inset: 7% auto auto 16%;
+  height: 82%; width: auto; object-fit: contain;
+}
+.desk-illustration img + img {
+  inset: auto 19% 6% auto; height: 57%; transform: rotate(8deg);
+}
+@media (min-width: 960px) {
+  .editorial-reading-section__body > .desk-illustration,
+  blockquote > .desk-illustration {
+    float: right; width: 38%; margin: 0 0 1rem 1.5rem;
+  }
+  :is(.editorial-reading-section__body,blockquote):has(> .desk-illustration) { display: flow-root; }
 }

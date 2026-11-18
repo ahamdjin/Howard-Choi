@@ -1,3 +1,4 @@
+import { PracticeVisualContext } from "@/components/editorial/CrashSectionVisual";
 import { PageReadingNote } from "@/components/editorial/PageReadingNote";
 import readingNotes from "../../../content/learning/page-reading-notes/practice.json";
 import { practiceSourceContents } from "@/data/learningResourceContent";
@@ -285,6 +286,13 @@ const koPracticeFaqs: Record<string, Array<[string, string]>> = {
   ],
 };
 
+const carEvidenceQuestions: Record<string, string> = {
+  "Scene and vehicle photos": "Where did the impact happen?",
+  "Police or collision report": "Which account did the investigator record?",
+  "Witnesses, video, and vehicle data": "Who else saw the crash?",
+  "Treatment records, bills, wage loss, insurer letters": "How has the injury affected daily life?",
+};
+
 export const PracticeAreasPage = ({ locale }: { locale: SiteLocale }) => (
   <EditorialFrame locale={locale}>
     <main>
@@ -452,6 +460,7 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
   const issues = isKo(locale) ? practice.koIssues : isEs(locale) ? (esCopy?.issues || practice.issues) : practice.issues;
   const evidenceTitle = isKo(locale) ? practice.koEvidenceTitle : isEs(locale) ? (esCopy?.evidenceTitle || practice.evidenceTitle) : practice.evidenceTitle;
   const evidenceIntro = isKo(locale) ? practice.koEvidenceIntro : isEs(locale) ? (esCopy?.evidenceIntro || practice.evidenceIntro) : practice.evidenceIntro;
+  const carAccidentPreview = locale === "en" && practice.slug === "car-accidents";
   const evidenceItems = isKo(locale) ? koreanPracticeDetails[practice.slug].evidenceItems : isEs(locale) ? (esEnhancement?.evidenceItems || practice.evidenceItems) : practice.evidenceItems;
   const valueIntro = isKo(locale) ? practice.koValueIntro : isEs(locale) ? (esCopy?.valueIntro || practice.valueIntro) : practice.valueIntro;
   const insuranceIntro = isKo(locale) ? practice.koInsuranceIntro : isEs(locale) ? (esCopy?.insuranceIntro || practice.insuranceIntro) : practice.insuranceIntro;
@@ -475,7 +484,7 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
 
   return (
     <EditorialFrame locale={locale}>
-      <main className="detail-guide">
+      <main className={carAccidentPreview ? "detail-guide car-accident-guide" : "detail-guide"}>
         <EditorialHero
           locale={locale}
           eyebrow={isKo(locale) ? "개인상해 · 업무 분야" : isEs(locale) ? "Lesiones personales · Área de práctica" : "Personal injury · Practice area"}
@@ -490,12 +499,30 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
             {localGuidance.introduction.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
           </div>
         </div>}
+        {carAccidentPreview && (
+          <figure className="site-shell crash-records">
+            <figcaption>Three records that help explain a crash</figcaption>
+            <div className="crash-records__panels">
+              {[
+                ["1f697", "The scene", "Street, lane and direction of travel"],
+                ["1f4f7", "The photos", "Vehicle damage and the surrounding intersection"],
+                ["1f4cb", "The paper trail", "Report number, medical bills and insurer letters"],
+              ].map(([asset, heading, detail]) => (
+                <div key={asset} className="crash-records__panel">
+                  <img src={`/editorial-images/crash-guide/${asset}.svg`} width="84" height="84" alt="" />
+                  <div><strong>{heading}</strong><p>{detail}</p></div>
+                </div>
+              ))}
+            </div>
+          </figure>
+        )}
         <PracticeDetailHighlights locale={locale} subject={title} issues={[...issues]} />
         <nav aria-label={isKo(locale) ? "변호사와 상담 안내" : isEs(locale) ? "Abogado y consulta" : "Lawyer and consultation"} className="site-shell flex flex-wrap gap-x-7 gap-y-3 py-6 text-sm">
           <a href={locale === "en" ? "/practice-areas/personal-injury" : localePrefix(locale)} className="underline underline-offset-4">{isKo(locale) ? "부에나파크 개인상해 변호사" : isEs(locale) ? "Abogado de lesiones personales en Buena Park" : "Buena Park personal injury lawyer"}</a>
           <a href={`${localePrefix(locale)}/attorney`} className="underline underline-offset-4">{isKo(locale) ? "Howard Choi 변호사 프로필" : isEs(locale) ? "Perfil de Howard Choi" : "Howard Choi’s credentials"}</a>
           <a href={`${localePrefix(locale)}/contact`} className="underline underline-offset-4">{isKo(locale) ? "사건 상담 문의" : isEs(locale) ? "Consultar su caso" : "Discuss your injury claim"}</a>
         </nav>
+        <PracticeVisualContext.Provider value={locale === "en" ? practice.slug : ""}>
         <ReadingLayout
           locale={locale}
           label={`${title} · ${isKo(locale) ? "안내" : isEs(locale) ? "Guía" : "Guide"}`}
@@ -551,7 +578,13 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
 
           <ReadingSectionBlock id="evidence" locale={locale} Icon={FileText} kicker={isKo(locale) ? "03 · 증거" : isEs(locale) ? "03 · Evidencia" : "03 · Evidence"} title={evidenceTitle} intro={evidenceIntro}>
             <div className="editorial-issue-list">
-              {evidenceItems.map((item, index) => <div key={item} className="editorial-issue-row"><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong></div>)}
+              {evidenceItems.map((item, index) => (
+                <div key={item} className="editorial-issue-row">
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  {carAccidentPreview && <em>{carEvidenceQuestions[item]}</em>}
+                  <strong>{item}</strong>
+                </div>
+              ))}
             </div>
           </ReadingSectionBlock>
 
@@ -697,6 +730,7 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
             <a href={`${localePrefix(locale)}/locations`} className="editorial-inline-link mt-7"><span>{isKo(locale) ? "전체 지역 보기" : isEs(locale) ? "Ver todas las zonas de servicio" : "See all service areas"}</span><ArrowRight className="h-4 w-4" /></a>
           </ReadingSectionBlock>
         </ReadingLayout>
+        </PracticeVisualContext.Provider>
         <div className="site-shell pb-12"><PageReviewed locale={locale} /></div>
         {locale === "en" && <PracticeLearningResources slug={practice.slug} />}
         <PageReadingNote notes={readingNotes} />

@@ -1,3 +1,4 @@
+import { DeskIllustration } from "@/components/editorial/DeskIllustration";
 import { PageReadingNote } from "@/components/editorial/PageReadingNote";
 import readingNotes from "../../../content/learning/page-reading-notes/site.json";
 import { TopicVisual } from "@/components/editorial/TopicVisual";
@@ -141,6 +142,7 @@ export const ResultsPage = ({ locale }: { locale: SiteLocale }) => (
               ? "El estimador de lesiones personales de California usa costos médicos, pérdida de ingresos, gravedad de la lesión, tratamiento, pérdidas futuras y culpa comparativa para mostrar un rango educativo. No necesita proporcionar datos de contacto para ver el resultado."
               : "The California personal-injury estimator uses medical costs, income loss, injury severity, treatment, future losses, and comparative fault to show an educational range. No contact information is required to see the result."}
         >
+          <DeskIllustration topic="estimate" />
           <a href={`${localePrefix(locale)}/case-value-calculator`} className="editorial-inline-link"><span>{isKo(locale) ? "사건 가치 계산기 시작" : isEs(locale) ? "Iniciar el estimador de valor del caso" : "Start the case value estimator"}</span><ArrowRight className="h-4 w-4" /></a>
         </ReadingSectionBlock>
 

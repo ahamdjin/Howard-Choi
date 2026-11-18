@@ -1,3 +1,4 @@
+import { DeskIllustration } from "@/components/editorial/DeskIllustration";
 import { PageReadingNote } from "@/components/editorial/PageReadingNote";
 import readingNotes from "../../../content/learning/page-reading-notes/site.json";
 import { TopicVisual } from "@/components/editorial/TopicVisual";
@@ -122,6 +123,7 @@ export const AboutFirmPage = ({ locale }: { locale: SiteLocale }) => (
           title={isKo(locale) ? "사건은 한 번에 만들어지지 않습니다." : isEs(locale) ? "Un caso se vuelve más claro con el tiempo." : "A CPA and accounting background behind the legal work."}
           intro={isKo(locale) ? "사고 직후의 증거부터 치료 경과, 보험 검토, 손실 기록과 해결 선택지까지 사건은 시간이 지나며 더 분명해집니다." : isEs(locale) ? "La primera llamada casi nunca tiene todas las respuestas. El panorama se aclara cuando preservamos evidencia, avanza el tratamiento, identificamos las pólizas aplicables y se entiende el costo real de la lesión." : "Before his legal career, Howard worked in accounting and became a CPA. That background still matters in personal injury cases, especially for self-employed clients, business owners, and claims involving complicated lost-income calculations. Proving what an accident cost someone financially can require much more than looking at one paycheck."}
         >
+          <DeskIllustration topic="preparation" />
           <div className="grid border-t border-[#1E1C1A]/12 sm:grid-cols-2 xl:grid-cols-4">
             {[
               ["01", isKo(locale) ? "초기 확인" : isEs(locale) ? "Primera revisión" : "Accounting first", isKo(locale) ? "사고, 치료, 보험과 긴급한 문제를 정리합니다." : isEs(locale) ? "Qué ocurrió, dónde está el tratamiento, qué pólizas intervienen y si existe un plazo o evidencia que podría perderse." : "Howard's accounting background came before his legal career and still shapes how he reads financial records."],

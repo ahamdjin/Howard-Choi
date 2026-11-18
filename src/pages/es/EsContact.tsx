@@ -1,3 +1,4 @@
+import { DeskIllustration } from "@/components/editorial/DeskIllustration";
 import { PageReadingNote } from "@/components/editorial/PageReadingNote";
 import readingNotes from "../../../content/learning/page-reading-notes/site.json";
 import SiteDepthSection from "@/components/SiteDepthSection";
@@ -24,7 +25,7 @@ const EsContact = () => {
 
         <section className="mt-16 border-t border-foreground/12 pt-7 md:mt-20 md:pt-9">
           <div className="grid gap-8 lg:grid-cols-[0.38fr_1.62fr] lg:gap-12 xl:gap-16">
-            <div><span className="text-[9px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">Antes de la consulta</span></div>
+            <div><span className="text-[9px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">Antes de la consulta</span><DeskIllustration topic="preparation" /></div>
             <div>
               <h2 className="editorial-serif max-w-[760px] text-[clamp(2rem,3vw,3.2rem)] leading-[1.02] tracking-[-0.025em]">Traiga lo que tenga. La primera llamada sirve sobre todo para identificar lo que falta.</h2>
               <div className="mt-10 grid border-t border-foreground/12 md:grid-cols-3">

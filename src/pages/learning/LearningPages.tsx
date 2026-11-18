@@ -1,3 +1,4 @@
+import { SectionArt, guidanceArt } from "@/components/editorial/CrashSectionVisual";
 import { PageReadingNote } from "@/components/editorial/PageReadingNote";
 import readingNotes from "../../../content/learning/page-reading-notes/learning.json";
 import { pageVisualAfter } from "@/data/pageVisualPlans";
@@ -63,6 +64,7 @@ export function LearningResourcePage({ resource: r }: { resource: LearningResour
   const category = service ? "Practice area" : r.kind === "faq" ? "Questions & answers" : "Injury types";
   const directory = service ? "/practice-areas" : r.kind === "faq" ? "/faqs" : "/injury-types";
   const sections = r.sections.map((s, i) => ({ id: `resource-section-${i+1}`, label: s.heading }));
+  const art = r.sections.map((section, index) => service && index !== 7 && !pageVisualAfter(r.path, index) ? guidanceArt(section.heading) : undefined);
   return <EditorialFrame locale="en"><main className={`detail-guide learning-detail learning-detail--${r.kind}`}>
     {r.kind === "faq" ? <ResourceIntro title={r.title} description={r.description} back="/faqs" backLabel="All FAQ topics" /> : <EditorialHero locale="en" eyebrow={`Buena Park · ${category}`} title={r.title} description={r.description} image={image.src} imageAlt={image.alt} detail />}
     {r.kind !== "faq" && <div className="site-shell resource-directory-links flex flex-wrap items-center justify-between gap-4 py-6"><a href={directory} className="inline-flex min-h-11 items-center text-sm underline underline-offset-4">← {service ? "All practice areas" : "All injury types"}</a><LearningLinks /></div>}
@@ -73,6 +75,7 @@ export function LearningResourcePage({ resource: r }: { resource: LearningResour
         {pageVisualAfter(r.path, i) && <TopicVisual pagePath={r.path} />}
       </section> : <div key={sections[i].id}>
         <ReadingSectionBlock id={sections[i].id} locale="en" kicker="" title={s.heading}>
+          {art[i] && <SectionArt visual={art[i]} />}
           <ContentBlocks paragraphs={s.paragraphs} />
         </ReadingSectionBlock>
         {pageVisualAfter(r.path, i) && <TopicVisual pagePath={r.path} />}

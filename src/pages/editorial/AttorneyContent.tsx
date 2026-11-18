@@ -1,3 +1,4 @@
+import { DeskIllustration } from "@/components/editorial/DeskIllustration";
 import { TopicVisual } from "@/components/editorial/TopicVisual";
 import { ConsultationCard } from "@/components/editorial/ConsultationCard";
 import { responsiveImageProps } from "@/lib/responsive-images";
@@ -56,6 +57,7 @@ export default function AttorneyContent({ locale }: { locale: SiteLocale }) {
       <div className="attorney-content-shell grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
         <img {...responsiveImageProps(reviewingDocuments)} src={reviewingDocuments} alt={ko ? "서류와 기록을 함께 검토하는 모습" : es ? "Revisión conjunta de documentos y registros del accidente" : "Reviewing accident documents and records together"} width={900} height={1000} loading="lazy" decoding="async" className="aspect-[4/3] w-full rounded-md object-cover lg:aspect-[4/5] lg:max-h-[580px]" />
         <div><p className="attorney-label">{ko ? "진행 방식" : es ? "Cómo ayudamos" : "How we help"}</p><h2 className="mt-4">{ko ? "한 단계씩 알아보세요." : es ? "Sepa qué sigue." : "Know what comes next."}</h2>
+          <DeskIllustration topic="preparation" />
           <ol className="mt-8 space-y-7">{steps.map(({ Icon, title, text }, index) => <li key={title} className="flex gap-4"><span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#f9f8f6] text-[#7b5b3e]"><Icon aria-hidden="true" className="h-6 w-6" strokeWidth={1.5} /></span><div><span className="text-xs text-[#675f55]">0{index + 1}</span><h3 className="mt-1">{title}</h3><p className="mt-2 leading-7 text-[#57514b]">{text}</p></div></li>)}</ol>
         </div>
       </div>

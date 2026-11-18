@@ -1,3 +1,4 @@
+import { DeskIllustration } from "@/components/editorial/DeskIllustration";
 import { PageReadingNote } from "@/components/editorial/PageReadingNote";
 import readingNotes from "../../../content/learning/page-reading-notes/practice.json";
 import { practiceSourceContents } from "@/data/learningResourceContent";
@@ -75,6 +76,8 @@ export default function PersonalInjuryPage() {
           <div>
             {topics.map((topic, index) => (
               <section key={topic.id} id={topic.id} className="mb-14 scroll-mt-28 border-t border-foreground/15 pt-7">
+                {topic.id === "evidence" && <DeskIllustration topic="investigation" />}
+                {topic.id === "losses" && <DeskIllustration topic="estimate" />}
                 <p className="text-xs tracking-widest text-[#755D46]">0{index + 1}</p>
                 <h2 className="editorial-serif mt-4 max-w-3xl text-3xl leading-tight md:text-4xl">{topic.title}</h2>
                 {topic.paragraphs.map((paragraph) => <p key={paragraph} className="mt-5 max-w-3xl text-base leading-8 text-foreground/75">{paragraph}</p>)}
