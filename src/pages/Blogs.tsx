@@ -1,3 +1,5 @@
+import { useSyncExternalStore } from "react";
+import { blogTopics, comparisons } from "@/data/blogTopics";
 import { PageReadingNote } from "@/components/editorial/PageReadingNote";
 import readingNotes from "../../content/learning/page-reading-notes/site.json";
 import { LearningLinks } from "@/pages/learning/LearningPages";
@@ -19,7 +21,25 @@ const resourcePaths = [
   { label: "I am worried about deadlines", body: "Review California filing deadlines, government-claim timing, and why evidence can disappear long before a lawsuit is due.", href: "/blogs/california-personal-injury-deadlines" },
 ];
 
+type Topic = keyof typeof blogTopics;
+const topicKeys = Object.keys(blogTopics) as Topic[];
+function listenForFilterChange(notify: () => void) {
+  window.addEventListener("hashchange", notify);
+  return () => window.removeEventListener("hashchange", notify);
+}
+
 const Blogs = () => {
+  const hash = useSyncExternalStore(listenForFilterChange, () => window.location.hash, () => "");
+  const parts = hash.slice(1).split("/");
+  const topic = topicKeys.find(key => parts.includes(key));
+  const compare = parts.includes("comparisons");
+  const posts = blogPosts.filter(post =>
+    (!topic || blogTopics[topic].slugs.has(post.slug)) && (!compare || comparisons.has(post.slug))
+  );
+  function selectFilter(nextTopic: Topic | undefined, nextCompare: boolean) {
+    window.location.hash = [nextTopic, nextCompare && "comparisons"].filter(Boolean).join("/") || "all-guides";
+    window.dispatchEvent(new Event("hashchange"));
+  }
   const { scrollY } = useScroll();
   const imageY = useTransform(scrollY, [0, 900], [0, 90]);
   const heroScale = useTransform(scrollY, [0, 900], [1, 1.018]);
@@ -71,11 +91,32 @@ const Blogs = () => {
 
             <div id="all-guides" className="scroll-mt-24 grid gap-5 border-b border-foreground/12 pb-6 lg:grid-cols-[0.38fr_1.62fr] lg:gap-12 xl:gap-16">
               <span className="text-[9px] font-medium uppercase tracking-[0.16em] text-muted-foreground">All guides</span>
-              <div className="flex items-end justify-between gap-6"><h2 className="editorial-serif text-[clamp(1.8rem,2.35vw,2.45rem)] leading-[1.08] tracking-[-0.02em]">California injury law, explained clearly.</h2><span className="hidden text-[10px] text-muted-foreground sm:block">{blogPosts.length} articles</span></div>
+              <div className="flex items-end justify-between gap-6"><h2 className="editorial-serif text-[clamp(1.8rem,2.35vw,2.45rem)] leading-[1.08] tracking-[-0.02em]">California injury law, explained clearly.</h2></div>
+            </div>
+
+            <div id="comparisons" className="scroll-mt-24 border-b border-foreground/15 bg-[#f3efe8] px-5 py-5 sm:px-7">
+              <fieldset>
+                <legend className="mb-3 font-medium">Browse by topic</legend>
+                <div className="flex flex-wrap gap-2">
+                  {([undefined, ...topicKeys] as const).map(key => (
+                    <button key={key ?? "all"} type="button" aria-pressed={topic === key}
+                      onClick={() => selectFilter(key, compare)}
+                      className="min-h-11 rounded-full border border-[#857c70] px-4 text-sm aria-pressed:bg-[#302a25] aria-pressed:text-white">
+                      {key ? blogTopics[key].label : "All topics"}
+                    </button>
+                  ))}
+                </div>
+              </fieldset>
+              <div className="mt-4 flex flex-wrap items-center gap-x-5 border-t border-foreground/15 pt-3 text-sm">
+                <label className="flex min-h-11 items-center gap-2"><input type="checkbox" checked={compare} onChange={() => selectFilter(topic, !compare)} /> Comparisons only</label>
+                <span role="status">{posts.length} {posts.length === 1 ? "article" : "articles"}</span>
+                {(topic || compare) && <button className="min-h-11 underline underline-offset-4" onClick={() => selectFilter(undefined, false)}>Clear filters</button>}
+              </div>
+              {posts.length === 0 && <p>No comparison guides in this topic yet. Choose All topics to see the available comparisons.</p>}
             </div>
 
             <div className="divide-y divide-foreground/12">
-              {blogPosts.map((post, index) => (
+              {posts.map((post, index) => (
                 <motion.article key={post.slug} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.16 }} transition={{ duration: 0.65, delay: Math.min(index * 0.05, 0.15) }} className="py-7 md:py-9 lg:py-10">
                   <Link to={`/blogs/${post.slug}`} className="group grid gap-7 lg:grid-cols-[0.72fr_1.28fr] lg:items-stretch lg:gap-10 xl:gap-14">
                     <div className="relative min-h-[280px] overflow-hidden bg-[#17130f] md:min-h-[340px]"><img {...responsiveImageProps(post.image)} src={post.image} alt={post.alt} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.018]" /><div className="absolute inset-0 bg-[#17130f]/10 transition-colors duration-500 group-hover:bg-transparent" /></div>

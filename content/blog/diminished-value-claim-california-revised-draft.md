@@ -13,7 +13,8 @@
   "intro": "Your car was damaged in an accident. The insurance company paid for repairs, and the body shop made it look almost new.",
   "takeaway": "Learn how to file a diminished value claim in California, calculate your car's lost value, gather proof, and handle insurance disputes after an accident.",
   "requiredTranslations": [],
-  "intendedSlug": "diminished-value-claim-california"
+  "intendedSlug": "diminished-value-claim-california",
+  "metaDescription": "Learn how to file a diminished value claim in California, calculate your car's lost value, gather proof, and handle insurance disputes after an accident."
 }
 
 But there is one problem.
@@ -413,7 +414,7 @@ The best approach depends on the amount at issue, the cost of obtaining more evi
 
 ## What If the Insurance Company Denies Your Diminished Value Claim?
 
-A denial does not necessarily mean that the insurer's valuation is correct.
+A denial does not necessarily mean that the insurer's valuation is correct. The [denied insurance claim guide](/blogs/car-insurance-claim-denied-california) explains how to identify the reason given and organize a written response.
 
 However, it also does not mean every denied claim is valid.
 
@@ -533,7 +534,7 @@ The insurer typically determines the vehicle's actual cash value immediately bef
 
 In a total loss situation, there is generally no repaired vehicle with a separate remaining reduction in value to claim.
 
-If you believe the total loss settlement undervalues your vehicle, the more relevant issue may be challenging the insurer's pre accident valuation.
+If you believe the [total loss settlement](/blogs/what-happens-when-car-is-totaled-california) undervalues your vehicle, the more relevant issue may be challenging the insurer's pre accident valuation.
 
 ## Can You File a Claim for a Leased or Financed Vehicle?
 

@@ -12,14 +12,17 @@
   "requiredTranslations": [],
   "author": "Howard Choi",
   "metaTitle": "California Bicycle Accident Evidence & Insurance Guide",
-  "image": "/blog-images/imported-drafts/bicycle-evidence.svg"
+  "image": "/blog-images/imported-drafts/bicycle-evidence.svg",
+  "metaDescription": "What cyclists should preserve after a California bike crash: road markings, cameras, collision reports, helmet evidence, insurance questions and legal deadlines."
 }
+
+For a general overview before using this evidence checklist, see the [California bicycle accident guide](/blogs/california-bicycle-accident-guide).
 
 ## Safety, medical care and reporting come first
 
 After a collision, move out of traffic only if it is safe to do so, seek emergency assistance when warranted, and follow the directions of responding medical personnel. A rider who is confused, vomiting repeatedly, experiencing worsening headache, weakness, seizures or unusual drowsiness needs urgent medical evaluation, not a discussion about responsibility at the scene. A bicycle rider can sustain head, spinal or orthopedic injury even when the bicycle still appears rideable. [CDC concussion danger signs](https://www.cdc.gov/heads-up/signs-symptoms/index.html)
 
-Write down the responding agency and report or incident number. A crash within a city may be investigated by local police; a highway collision may involve the California Highway Patrol. The CHP provides a crash-report request process for eligible parties, including bicyclists. The correct records office depends on which agency investigated. Do not assume every bicycle collision is automatically handled by CHP.
+Write down the responding agency and report or incident number. If the report misstates the direction of travel or the point of impact, see [how to request a correction to a California collision report](/blogs/correct-inaccurate-car-accident-police-report-california). A crash within a city may be investigated by local police; a highway collision may involve the California Highway Patrol. The CHP provides a crash-report request process for eligible parties, including bicyclists. The correct records office depends on which agency investigated. Do not assume every bicycle collision is automatically handled by CHP.
 
 [California DMV SR-1 reporting rules](/blogs/notify-the-california-dmv-about-an-accident) can apply to qualifying vehicle-related crashes that result in injury, death or sufficient property damage. The DMV describes a ten-day reporting deadline for covered accidents involving injury or death, or damage over its stated threshold. Whether a particular bicycle incident is reportable depends on the circumstances; confirm the rule rather than assuming every fall requires an SR-1.
 
@@ -107,7 +110,7 @@ This is a major reason to avoid waiting for the bicycle to be repaired, the road
 
 Bring the original scene photographs; rider and driver contact details; witnesses; report number; bicycle and helmet photographs; any ride tracking or camera files; insurance letters; treatment dates; work or school records; and a short description of the route, conditions and sequence. Be clear about what you did not see or cannot remember.
 
-Ask which traffic laws apply to the actual location, whether any public entity or commercial defendant is relevant, who controls possible camera footage, which policies require notice and what should be preserved before repairs. An effective consultation should also explain who will handle the claim and how lawyer fees and case costs work.
+Ask which traffic laws apply to the actual location, whether any public entity or commercial defendant is relevant, who controls possible camera footage, which policies require notice and what should be preserved before repairs. A [bicycle accident consultation](/practice-areas/bicycle-accidents) should also explain who will handle the claim and how lawyer fees and case costs work.
 
 Before arranging representation, confirm that the lawyer accepts bicycle-injury matters and clarify the scope of the engagement. Our [serious injury practice page](/practice-areas/serious-injuries) describes civil injury evaluation; you can [contact the firm](/contact) to ask whether a bicycle matter fits its services.
 
