@@ -30,7 +30,7 @@ Whether that argument goes anywhere depends on evidence, not assertion. Did the 
 
 ## The evidence that moves it
 
-Scene photographs showing final vehicle positions and lane markings. Camera footage. Independent witnesses. The physical damage pattern, which often tells you more about angle and speed than any statement does. The police report, though it is worth knowing that an officer's opinion about fault is not binding on anyone.
+Scene photographs showing final vehicle positions and lane markings. Camera footage. Independent witnesses. In a sideswipe, the [lane-change evidence guide](/blogs/unsafe-lane-change-accident-fault-california) explains how the approach and point of impact can clarify which vehicle moved first. The physical damage pattern, which often tells you more about angle and speed than any statement does. The police report, though it is worth knowing that an officer's opinion about fault is not binding on anyone.
 
 ## The adjuster's number is an opening position
 

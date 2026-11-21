@@ -132,7 +132,13 @@
       "Keep the declarations for the motorcycle beside the repair estimate. Identify the policy period, covered bike and any equipment endorsement so an inspection or valuation question can be matched to the coverage being reviewed."
     ],
     "href": "/blogs/california-motorcycle-insurance",
-    "linkLabel": "Check the motorcycle policy and coverage for each loss"
+    "linkLabel": "Check the motorcycle policy and coverage for each loss",
+    "links": [
+      {
+        "href": "/blogs/california-motorcycle-license-permit-requirements",
+        "label": "Check California motorcycle license and permit requirements"
+      }
+    ]
   },
   "/blogs/california-pedestrian-accident-guide": {
     "title": "Record the view from the driver’s approach",

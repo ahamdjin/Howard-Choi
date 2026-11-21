@@ -19,6 +19,8 @@ Evidence can disappear earlier than the legal filing deadline, but there is no u
 
 ## Get looked at, even if you feel fine
 
+If you are deciding where to seek care or whom to call after discharge, see [which doctor to see after a California crash](/blogs/what-doctor-to-see-after-car-accident-california).
+
 Some symptoms are not obvious at the roadside or may change over the following days. A collision's appearance cannot tell you whether someone has a concussion, neck injury or other condition. Seek emergency care for urgent symptoms, and arrange medical evaluation when an injury is possible; a clinician, not an insurance deadline, should guide treatment.
 
 Accurate clinical notes can also establish when symptoms arose and what treatment was recommended. An insurer may ask about a gap in care, but delay does not by itself prove that the person was uninjured. Tell the healthcare professional what happened, what you are experiencing and what you do not know; do not exaggerate symptoms to create a stronger claim.
@@ -94,7 +96,7 @@ Before accepting money for either property damage or injury, identify exactly wh
 
 ## A concrete example of why records change the case
 
-Imagine a driver argues the other car suddenly changed lanes. The early file includes one close-up bumper photograph, while a week later a nearby business confirms it recorded the lane positions. That wide footage, if still retained, could be more useful to the liability dispute than the repair invoice alone. Conversely, if the recording has been overwritten, the parties may be left with incompatible recollections.
+Imagine a driver argues the other car [made an unsafe lane change](/blogs/unsafe-lane-change-accident-fault-california). The early file includes one close-up bumper photograph, while a week later a nearby business confirms it recorded the lane positions. That wide footage, if still retained, could be more useful to the liability dispute than the repair invoice alone. Conversely, if the recording has been overwritten, the parties may be left with incompatible recollections.
 
 Now consider the injury record. The emergency visit documents neck pain, the later records document improvement, and a temporary work restriction explains three missed shifts. Those facts are more informative than assuming the total claim must be large or small because the bumper looked damaged. The example illustrates evidence handling, not a prediction of legal outcome.
 

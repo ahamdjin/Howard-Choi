@@ -26,6 +26,7 @@ export const blogTopics = {
   accidents: {
     label: "Accidents & Evidence",
     slugs: new Set([
+      "unsafe-lane-change-accident-fault-california",
       "blunt-force-trauma-determining-liability-in-blunt-trauma-lawsuits",
       "california-bicycle-accident-guide",
       "california-comparative-fault-personal-injury",
@@ -47,6 +48,7 @@ export const blogTopics = {
   injuries: {
     label: "Injuries & Compensation",
     slugs: new Set([
+      "what-doctor-to-see-after-car-accident-california",
       "buena-park-wrongful-death-attorney",
       "california-catastrophic-injury-guide",
       "california-personal-injury-deadlines",
@@ -63,6 +65,7 @@ export const blogTopics = {
   traffic: {
     label: "Traffic Laws & Safety",
     slugs: new Set([
+      "california-motorcycle-license-permit-requirements",
       "cali-lean-vs-carolina-squat-whats-the-difference",
       "california-seat-belt-laws",
       "california-window-tint-laws",
