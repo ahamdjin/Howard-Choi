@@ -22,6 +22,10 @@ const DirectAccess = ({ locale = "en" }: { locale?: SiteLocale }) => {
           <p className="mt-4 max-w-[550px] text-[15px] leading-6 text-white/70">
             {ko ? "Howard Choi는 캘리포니아 현직 변호사로 State Bar No. 284364이며 2012년에 등록되었습니다. Santa Ana의 William Howard Taft University에서 공부했으며 영어와 한국어를 구사합니다." : es ? "Howard Choi es un abogado activo de California, State Bar No. 284364, admitido en 2012. Estudió en William Howard Taft University en Santa Ana y habla inglés y coreano." : "Howard Choi is an active California lawyer, Bar No. 284364, admitted in 2012. He attended William Howard Taft University in Santa Ana and speaks English and Korean."}
           </p>
+          {locale === "en" && <p className="mt-5 max-w-[550px] border-l-2 border-[#bcaa93] pl-4 text-[15px] leading-7 text-white/85">
+            If the firm takes your case, Howard is the lawyer handling it.
+            {" "}<a className="text-white underline underline-offset-4" href="/about#attorney">Read how you’ll work with Howard</a>.
+          </p>}
           <div className="mt-5 flex flex-wrap items-center gap-x-7 gap-y-0">
             <a href={`${prefix}/attorney`} className="inline-flex min-h-11 items-center gap-2 text-[13px] font-medium text-white underline underline-offset-4">{ko ? "변호사 전체 프로필" : es ? "Perfil completo del abogado" : "Meet Howard Choi"} <ArrowUpRight className="h-3.5 w-3.5"/></a>
             <a href="https://apps.calbar.ca.gov/attorney/Licensee/Detail/284364" target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center gap-2 text-[13px] text-white/75 underline underline-offset-4 transition-colors hover:text-white">{ko ? "State Bar에서 확인" : es ? "Verificar con el State Bar" : "Verify with the State Bar"} <ArrowUpRight className="h-3.5 w-3.5"/></a>

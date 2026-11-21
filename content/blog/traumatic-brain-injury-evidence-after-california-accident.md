@@ -22,6 +22,8 @@ A person can sustain a concussion from a blow to the head or from a jolt to the 
 
 Do not treat this guide as an assessment of any specific person. A legal record should faithfully describe what clinicians observed and what the injured person reported, without guessing at diagnoses or minimizing urgent symptoms.
 
+When your family is ready to discuss the claim, the [brain and serious injury practice](/practice-areas/serious-injuries) shows how to prepare a dated example of a change at home or work for your first conversation.
+
 ## What the first 24 to 72 hours can establish
 
 The earliest records may include emergency medical services notes, emergency-department history, observations by family or coworkers, the timing of symptoms, neurological examinations, medications, and discharge instructions. They can be useful for showing the sequence between an accident and later changes. They can also contain gaps: the person may have been dazed, distracted by another injury or unable to give a complete account.

@@ -8,7 +8,7 @@
   "metaDescription": "Found an error in a California collision report? Learn how to document it, contact the investigating agency and keep your injury claim moving during review.",
   "excerpt": "Separate factual errors from disputed conclusions, prepare a focused request and preserve evidence while the investigating agency reviews the report.",
   "category": "Car Accidents",
-  "publishedAt": "2026-11-16",
+  "publishedAt": "2026-11-15",
   "updatedAt": "2026-11-16",
   "requiredTranslations": [],
   "image": "/blog-images/imported-drafts/howard-choi-reviewing-documents.jpg",

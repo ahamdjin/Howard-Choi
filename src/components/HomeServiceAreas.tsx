@@ -15,6 +15,8 @@ const featuredCounties = [
     cities: [
       { slug: "buena-park", name: "Buena Park", koName: "부에나파크" },
       { slug: "anaheim", name: "Anaheim", koName: "애너하임" },
+      { slug: "fullerton", name: "Fullerton", koName: "풀러턴" },
+      { slug: "garden-grove", name: "Garden Grove", koName: "가든그로브" },
       { slug: "irvine", name: "Irvine", koName: "어바인" },
     ],
   },

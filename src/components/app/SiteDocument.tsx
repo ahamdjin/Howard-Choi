@@ -103,7 +103,7 @@ export default function SiteDocument({ children }: { children: ReactNode }) {
             title="Google Tag Manager"
           />
         </noscript>
-        <div className={pathname === "/review" ? "min-h-screen bg-background p-0" : "min-h-screen bg-background px-[7px] pb-[7px]"}>
+        <div className={pathname === "/review" ? "min-h-screen bg-background p-0" : "min-h-screen bg-background px-[var(--page-frame)] pb-[var(--page-frame)]"}>
           {children}
         </div>
         <DeferredIntegrations externalFormPage={externalFormPage} disableChat={pathname === "/review"} />

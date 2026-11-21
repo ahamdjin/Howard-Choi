@@ -50,6 +50,10 @@ export default function HomeInjuryClaimHelp() {
             </div>)}
           </div>
         </div>
+        <nav aria-label="Injury-specific consultation help" className="mt-7 grid gap-px overflow-hidden border border-black/15 bg-black/10 sm:grid-cols-2">
+          <a className="bg-[#f4f0e9] p-5 underline underline-offset-4" href="/practice-areas/rideshare-accidents">Injured in an Uber or Lyft? See what to keep from the trip.</a>
+          <a className="bg-[#f4f0e9] p-5 underline underline-offset-4" href="/practice-areas/serious-injuries">Helping someone after a brain injury? Prepare for the first call.</a>
+        </nav>
         <p className="claim-help__closing">Before choosing a lawyer, read <a href="/attorney">Howard Choi’s background and credentials</a>, check the <a href="/locations/buena-park">Buena Park office information</a>, and ask who will explain new developments and insurance offers. A <a href="/contact">free consultation</a> is a chance to discuss those questions and the proposed next step.</p>
       </div>
     </section>

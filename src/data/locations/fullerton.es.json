@@ -1,5 +1,5 @@
 {
-  "sourceHash": "c2fca55cdb4e9e0be77e80bf5e035b6e62a2778f0e14af00fca9c169b85c3ff2",
+  "sourceHash": "62e0025675b45236dc7a43aada256386defe248e92da700830582a0ec327f666",
   "reviewStatus": "reviewed-for-source-parity",
   "content": {
     "slug": "fullerton",
@@ -135,7 +135,12 @@
           "Conserve el billete de tren, el recibo del estacionamiento o la confirmación de recogida si ayudan a precisar la hora. La hora de llegada establece una parte del recorrido. Aun así, pueden hacer falta testimonios, videos u otros registros para determinar cuándo ocurrió el contacto. Al preguntar por grabaciones, indique por dónde se aproximó y un intervalo breve de tiempo. Pregunte quién controla la cámara antes de suponer que pertenece al comercio más cercano.",
           "Si tiene varias fotografías de distintas entradas, señale la que realmente utilizó. Howard puede repasar el recorrido con usted e identificar qué permiten establecer los registros disponibles. Esto resulta especialmente útil cuando un informe utiliza una dirección postal, pero sus propias notas se refieren a un edificio de estacionamiento o a una entrada de la estación."
         ],
-        "links": []
+        "links": [
+          {
+            "label": "Qué guardar después de un accidente de Uber o Lyft en Fullerton (en inglés)",
+            "href": "/blogs/fullerton-uber-lyft-accident-lawyer"
+          }
+        ]
       },
       {
         "id": "campus-approach",

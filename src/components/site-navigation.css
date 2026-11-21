@@ -1,5 +1,5 @@
 .site-navigation-shell {
-  width: min(calc(100% - 2rem), 1600px);
+  width: min(calc(100% - 2 * var(--site-gutter)), var(--site-max-width));
   margin-inline: auto;
 }
 .mobile-site-navigation__inner {

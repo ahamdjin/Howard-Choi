@@ -8,7 +8,7 @@
   "metaTitle": "What is a Skid, and How Can You Avoid Them?",
   "category": "Car Accidents",
   "publishedAt": "2026-11-06",
-  "image": "/blog-images/imported-drafts/skid-traction.svg",
+  "image": "/blog-images/imported-drafts/skid-traction.webp",
   "alt": "Smooth inputs help preserve grip — Reduce speed before the curve",
   "intro": "A car skids when its tires lose enough grip that the vehicle no longer follows the path the driver expects. You may turn the wheel and feel the front of the car continue wide. In another skid, the rear may swing to one side. The two events can feel similar in the first instant, but the part of the car that loses grip helps explain what is happening.",
   "takeaway": "Learn how skids start, how understeer and oversteer feel, what changes with ABS, and what evidence matters after a skid-related crash.",

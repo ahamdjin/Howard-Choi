@@ -1,3 +1,6 @@
+import { guidePhotography as photos } from "@/data/guidePhotography";
+import "@/components/editorial/photo-guides.css";
+import { SkidComparison } from "@/components/blog/SkidComparison";
 import { guidanceArt, SectionArt } from "@/components/editorial/CrashSectionVisual";
 import { PageReadingNote } from "@/components/editorial/PageReadingNote";
 import readingNotes from "../../content/learning/page-reading-notes/articles-en.json";
@@ -20,6 +23,28 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { blogPosts, getBlogBySlug } from "@/data/blogs";
 import "@/components/editorial/claim-guidance.css";
+
+const skidSectionPhotos: Record<string, { src: string; alt: string }> = {
+  "Use the approach to a curve to set your margin": photos.skidCurve,
+  "What vehicle safety systems can do": photos.dashboard,
+  "If a skid leads to a collision": photos.rainView,
+  "Prepare questions for a skid-related claim review": photos.writtenNotes,
+  "Preserve what happened before the skid, not only the final damage": photos.treadGauge,
+  "Why tires lose grip": photos.skidGrip,
+  "Adjust your driving to the hazard you can see": photos.skidRain,
+  "Check the car before you need to rely on it": photos.skidCheck,
+  "Make the decision before the curve": photos.skidRoad,
+  "Reconstructing a skid when accounts disagree": photos.skidDriver,
+};
+
+const nextGuideBySlug: Record<string, string> = {
+  "unsafe-lane-change-accident-fault-california": "right-of-way-accident-claims-california",
+  "california-pedestrian-accident-guide": "california-jaywalking-pedestrian-accident-fault",
+  "third-party-car-insurance-claim-california": "report-track-progressive-car-accident-claim-california",
+  "right-of-way-accident-claims-california": "california-jaywalking-pedestrian-accident-fault",
+  "california-jaywalking-pedestrian-accident-fault": "right-of-way-accident-claims-california",
+  "report-track-progressive-car-accident-claim-california": "car-insurance-claim-denied-california",
+};
 
 const claimGuidanceSections: Record<string, "steps" | "questions" | "note"> = {
   "How to file a personal injury claim in California": "steps",
@@ -178,11 +203,14 @@ const BlogDetail = () => {
     );
   }
 
-  const related = blogPosts.find((item) => item.slug !== post.slug);
+  const related = getBlogBySlug(nextGuideBySlug[post.slug]) ?? blogPosts.find((item) => item.slug !== post.slug);
   const support = articleSupport[post.slug];
 
+  const skid = post.slug === "car-accidents-what-is-a-skid-and-how-can-you-avoid-them";
   const usedArt = new Set<string>();
   const sectionArt = post.sections.map((section, index) => {
+    const photo = skid && skidSectionPhotos[section.heading];
+    if (photo) return [photo.src, photo.alt] as [string, string];
     if (index === 1 || index === 7 || pageVisualAfter(`/blogs/${post.slug}`, index)) return;
     const art = guidanceArt(section.heading);
     if (!art || usedArt.has(art[0])) return;
@@ -195,7 +223,7 @@ const BlogDetail = () => {
       <Navigation />
       <motion.div aria-hidden="true" className="fixed inset-x-0 top-0 z-[120] h-[2px] origin-left bg-[#8b7864]" style={{ scaleX: scrollYProgress }} />
 
-      <article ref={articleRef} className="legal-blog-article relative">
+      <article data-photo-guide={skid ? "skid" : undefined} ref={articleRef} className="legal-blog-article relative">
         {ARTICLE_READING_LAYOUT ? <ArticleHero post={post} locale="en" /> : (
         <header className="relative flex min-h-[460px] items-end overflow-hidden bg-[#17130f] text-[#f3eee5] md:sticky md:top-0 md:h-[66svh] md:min-h-[540px]">
           <motion.img {...responsiveImageProps(post.image)} src={post.image} alt={post.alt} style={{ y: imageY, scale: imageScale }} loading="eager" fetchPriority="high" decoding="async" className="absolute inset-0 h-[118%] w-full object-cover" />
@@ -256,6 +284,8 @@ const BlogDetail = () => {
                   <ArticleParagraph className="article-introduction text-foreground/90" text={post.intro} />
                 </motion.div>
 
+                {skid && <SkidComparison />}
+
                 {post.slug === "how-long-car-accident-settlement-takes-california" && (
                   <section aria-labelledby="settlement-stages" className="mt-10 border-y border-foreground/15 py-8 md:mt-12 md:py-10">
                     <div className="mb-5 flex flex-wrap items-baseline justify-between gap-3">
@@ -299,6 +329,7 @@ const BlogDetail = () => {
 
                       {sectionArt[index] && <SectionArt visual={sectionArt[index]} />}
                       <h2 className="editorial-serif max-w-[700px] text-[clamp(2.05rem,3vw,3.15rem)] leading-[0.98] tracking-[-0.022em] text-foreground">{section.heading}</h2>
+                      {skid && section.heading === "Use the approach to a curve to set your margin" && <img src={post.image} alt={post.alt} width="1200" height="630" loading="lazy" className="my-6 w-full max-w-2xl" />}
                       <div className="article-reading-width mt-6 max-w-[730px] space-y-6 text-[17px] leading-[1.75] text-foreground/84 md:text-[18px]">
                         <ContentBlocks paragraphs={section.paragraphs} presentation={claimGuidanceSections[section.heading] === "steps" ? "steps" : claimGuidanceSections[section.heading] === "questions" ? "questions" : undefined} />
                         {index === 1 && <ClaimVisualStory subject={post.slug} />}

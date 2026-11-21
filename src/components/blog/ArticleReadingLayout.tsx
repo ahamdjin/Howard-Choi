@@ -1,3 +1,4 @@
+import { guidePhotography as photos } from "@/data/guidePhotography";
 import { ConsultationCard } from "@/components/editorial/ConsultationCard";
 import { guideTopics, injuryTopics } from "@/data/learningResources";
 import { ArticleByline } from "./ArticleAuthor";
@@ -64,12 +65,19 @@ export function ArticleHero({ post, locale }: Props) {
   const injury = locale === "en" && injuryTopics.some(topic => topic.path === path);
   const parent = guide ? "/blogs/guides" : injury ? "/injury-types" : prefix + "/blogs";
   const backLabel = guide ? "All guides" : injury ? "All injury types" : copy[locale].back;
-  return <header className="article-reading-hero">
+  const skid = locale === "en" && post.slug === "car-accidents-what-is-a-skid-and-how-can-you-avoid-them";
+  const cover = skid ? photos.skidHero : { src: post.image, alt: post.alt };
+  return <header className="article-reading-hero" data-photo-cover={skid ? "skid" : undefined}>
     <div className="site-shell">
       <Link to={parent} className="article-back"><ArrowLeft size={16} aria-hidden="true" />{backLabel}</Link>
       <div className="article-reading-meta"><span>{post.category}</span><span>{post.date}</span><span>{post.readingTime}</span><ArticleByline slug={post.slug} locale={locale} /></div>
       <h1>{post.title}</h1>
-      <img {...responsiveImageProps(post.image)} src={post.image} alt={post.alt} loading="eager" fetchPriority="high" decoding="async" className="article-reading-image" />
+      {skid && (
+        <p className="mx-auto mb-6 max-w-[60ch] text-pretty text-base leading-7 text-foreground/80 sm:text-lg">
+          A skid is a loss of tire grip that makes a vehicle slide away from its intended path. In a bend, the front may run wide or the rear may swing outward.
+        </p>
+      )}
+      <img {...responsiveImageProps(cover.src)} src={cover.src} alt={cover.alt} loading="eager" fetchPriority="high" decoding="async" className="article-reading-image" />
     </div>
   </header>;
 }
@@ -135,7 +143,7 @@ export function ArticleReadingSidebar({ post, locale }: Props) {
         <p className="article-tool-label">{c.summarize}</p>
         <div className="article-ai-links">
           {assistants.map(assistant => <a key={assistant.name} href={assistant.href} target="_blank" rel="noopener noreferrer" title={assistant.name} aria-label={c.summarize + " · " + assistant.name} onClick={assistant.copy ? () => { void copyText(prompt); } : undefined}>
-            <img src={"/icons/ai/" + assistant.icon + ".svg"} width="28" height="28" alt="" />
+            <img src={"/icons/ai/" + assistant.icon + ".webp"} width="28" height="28" alt="" />
           </a>)}
         </div>
         <p>{c.hint}</p>

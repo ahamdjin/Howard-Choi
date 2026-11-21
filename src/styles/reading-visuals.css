@@ -91,3 +91,8 @@ body.inner-site-page main :is(section,nav,figure)[class*="border-t"],body.inner-
 }
 
 @media(min-width:1024px){.site-navigation-shell button{white-space:nowrap}}
+
+/* Let structured rows use the column while keeping plain paragraphs readable. */
+.site-typography .editorial-reading-content .editorial-reading-section__body { max-width: none; }
+.site-typography .editorial-reading-section__body > p { max-width: 76ch; }
+.site-typography .editorial-reading-section > .editorial-reading-section__intro { max-width: 84ch; }

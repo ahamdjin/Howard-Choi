@@ -14,6 +14,7 @@ export const blogTopics = {
       "is-california-a-no-fault-state-or-an-at-fault-state",
       "medical-payments-coverage-medpay-california",
       "rental-car-reimbursement-after-accident-california",
+      "report-track-progressive-car-accident-claim-california",
       "third-party-car-insurance-claim-california",
       "uber-lyft-accident-insurance-california",
       "what-happens-when-car-is-totaled-california",
@@ -26,6 +27,8 @@ export const blogTopics = {
   accidents: {
     label: "Accidents & Evidence",
     slugs: new Set([
+      "right-of-way-accident-claims-california",
+      "california-jaywalking-pedestrian-accident-fault",
       "unsafe-lane-change-accident-fault-california",
       "blunt-force-trauma-determining-liability-in-blunt-trauma-lawsuits",
       "california-bicycle-accident-guide",

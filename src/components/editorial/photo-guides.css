@@ -1,0 +1,73 @@
+[data-photo-guide="rideshare-accidents"] {
+  --guide-paper: #f4f0e6;
+  --guide-accent: #815321;
+}
+[data-photo-guide="serious-injuries"] {
+  --guide-paper: #edf1ed;
+  --guide-accent: #35564c;
+}
+[data-photo-guide] .guide-preparation {
+  padding-block: clamp(2.75rem, 6vw, 5.5rem);
+  background: var(--guide-paper);
+  color: #272824;
+}
+.guide-preparation__opening {
+  display: grid;
+  gap: 1.25rem 4rem;
+  align-items: start;
+  margin-bottom: 2rem;
+}
+.site-typography .guide-preparation__opening h2 {
+  max-width: 18ch;
+  font-size: clamp(2.35rem, 4.4vw, 4.75rem);
+  line-height: 1.03;
+  letter-spacing: -.04em;
+  text-wrap: balance;
+}
+.guide-preparation__opening p {max-width: 63ch; line-height: 1.7;}
+.guide-preparation__opening a,
+.guide-preparation__links a {display: inline-flex; align-items: center; min-height: 44px; color: var(--guide-accent); text-decoration: underline; text-underline-offset: .25em;}
+.guide-preparation__steps {display: grid; gap: 2rem clamp(1rem, 2.8vw, 2.4rem);}
+.guide-preparation__steps img {width: 100%; aspect-ratio: 1.7; object-fit: cover;}
+.guide-preparation__steps dt span {display: block; margin: .95rem 0 .45rem; font: 500 1.65rem/1.12 Newsreader, Georgia, serif;}
+.guide-preparation__steps dd {max-width: 48ch; font-size: .97rem; line-height: 1.7;}
+.guide-preparation__links {display: flex; flex-wrap: wrap; gap: 0 2.25rem; padding-top: .75rem; margin-top: 2rem; border-top: 1px solid #babeae; font-size: .88rem;}
+.site-typography [data-photo-guide="serious-injuries"] .detail-hero--split {background: #e0e9e3;}
+.site-typography [data-photo-guide="serious-injuries"] .detail-hero--split figure {margin: 1rem clamp(1rem,3vw,3rem) 2rem; overflow: hidden; border-radius: 42% 42% 5px 5px / 27% 27% 5px 5px;}
+.site-typography [data-photo-guide="rideshare-accidents"] .detail-hero--split {background: #252824; color: #fff7e8;}
+.site-typography [data-photo-guide="rideshare-accidents"] .detail-hero--split :is(h1,p,span,li,nav,a) {color: inherit;}
+.site-typography [data-photo-guide="rideshare-accidents"] .detail-hero--split .border-t {border-color: #8c8b7f; color: #dedbcf;}
+.site-typography [data-photo-guide="rideshare-accidents"] .detail-hero--split a.rounded-full {border-color: #aca99b; color: #fff;}
+.site-typography [data-photo-guide="rideshare-accidents"] .detail-hero--split a.rounded-full:first-child {background: #ead5a5; color: #24271f;}
+.site-typography [data-photo-guide] .editorial-section-art {border-radius: 3px;}
+.site-typography [data-photo-cover="skid"] {background: #203136; color: #faf5ea; padding-block: clamp(2rem,4vw,4rem);}
+.site-typography [data-photo-cover="skid"] h1 {text-align: left; color: inherit; margin: .5rem 0 1rem; line-height: 1.05; max-width: 16ch;}
+.site-typography [data-photo-cover="skid"] .article-reading-meta {justify-content: start; color: #d3dbd5; margin-block: 1.4rem .6rem;}
+.site-typography [data-photo-cover="skid"] :is(.article-back,p,.article-reading-meta a) {color: #edf0e6;}
+.site-typography [data-photo-cover="skid"] p {margin-inline: 0; max-width: 45ch;}
+.site-typography [data-photo-cover="skid"] .article-reading-image {border-radius: 2px; margin: 0; max-width: none; aspect-ratio: 1.65;}
+[data-photo-guide="skid"] .article-key-point {text-wrap: pretty;}
+@media (min-width: 760px) {
+  .guide-preparation__opening {grid-template-columns: 1fr 1fr;}
+  .guide-preparation__steps {grid-template-columns: repeat(3, minmax(0,1fr));}
+  .site-typography [data-photo-cover="skid"] .site-shell {display: grid; grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr); column-gap: clamp(2rem,5vw,6rem); align-content: center;}
+  .site-typography [data-photo-cover="skid"] .article-reading-image {grid-area: 1 / 2 / 5 / 3; height: 100%; min-height: 340px;}
+  .site-typography [data-photo-cover="skid"] .article-back {align-self: start;}
+}
+@media (min-width: 1024px) {
+  .site-typography [data-photo-guide="rideshare-accidents"] .detail-hero--split > div {position: relative; isolation: isolate; grid-template-columns: minmax(0,1fr);}
+  .site-typography [data-photo-guide="rideshare-accidents"] .detail-hero--split figure {position: absolute; inset: 0 0 0 30%; z-index: -1;}
+  .site-typography [data-photo-guide="rideshare-accidents"] .detail-hero--split figure::after {content: ""; position: absolute; inset: 0; background: linear-gradient(90deg,#252824 0%,rgba(37,40,36,.93) 13%,rgba(37,40,36,.1) 68%);}
+  .site-typography [data-photo-guide="rideshare-accidents"] .detail-hero--split > div > div {max-width: min(57vw,calc((100vw - 1240px)/2 + 650px));}
+  .site-typography [data-photo-guide="serious-injuries"] .detail-hero--split figure {min-height: 500px;}
+}
+@media (max-width: 759px) {
+  .guide-preparation__steps > div {display: flow-root; border-top: 1px solid #c5c7ba; padding-top: 1rem;}
+  .guide-preparation__steps img {float: left; width: 34%; aspect-ratio: .93; margin-right: 1rem;}
+  .guide-preparation__steps dt span {margin-top: .2rem;}
+  .site-typography [data-photo-guide="serious-injuries"] .detail-hero--split figure {border-radius: 60px 4px 4px 4px; margin-top: 0;}
+}
+.site-typography .skid-comparison {background: #263c40; color: #faf6e9; border-radius: 4px;}
+.site-typography .skid-comparison :is(figcaption,strong,p,a) {color: inherit;}
+.skid-comparison__example {border-top: 1px solid #7d9192; padding-top: 1rem;}
+.skid-comparison__example svg {margin-bottom: 1rem; background: #203337;}

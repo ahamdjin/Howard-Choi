@@ -1,6 +1,6 @@
 import { responsiveImageProps } from "@/lib/responsive-images";
 import { Link } from "@/lib/router-compat";
-import brandLogo from "@/assets/law-firm/howard-choi-logo.png";
+import brandLogo from "@/assets/law-firm/howard-choi-mark.webp";
 import { brand, practiceAreas, serviceLocations } from "@/data/injurySite";
 import { esPracticeContent } from "@/data/esPracticeContent";
 import FooterContact from "@/components/FooterContact";

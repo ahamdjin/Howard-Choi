@@ -33,7 +33,7 @@ const EsBlogs = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-[#17130f]/90 via-[#17130f]/14 to-[#17130f]/22" />
           <div className="hero-bottom-readability" />
           <div className="site-shell relative z-10 flex min-h-[100svh] items-end pb-10 pt-24 md:h-full md:min-h-0 md:pb-12 lg:pb-14">
-            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.72 }} className="grid w-full gap-8 border-t border-white/18 pt-5 lg:grid-cols-[0.38fr_1.62fr] lg:gap-12 xl:gap-16">
+            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.72 }} className="grid w-full gap-8 border-t border-white/18 pt-5 lg:gap-5">
               <div><span className="text-[9px] font-medium uppercase tracking-[0.17em] text-[#f3eee5]/48">Recursos legales</span><div className="mt-4 hidden text-[10px] leading-5 text-[#f3eee5]/34 lg:block">Guías de lesiones de California<br />Buena Park, California</div></div>
               <div className="max-w-[980px]"><PageBreadcrumb locale="es" title="Guías" /><h1 className="editorial-serif text-[clamp(2.35rem,3.45vw,3.9rem)] leading-[1] tracking-[-0.026em]">Respuestas claras para las preguntas que aparecen después de un accidente.</h1><p className="mt-5 max-w-[700px] text-[14px] leading-6 text-[#f3eee5]/67 md:text-[15px] md:leading-7">Información práctica de California sobre reclamos por accidentes, seguro, evidencia, plazos, lesiones y valor del caso, respaldada por fuentes legales y oficiales dentro de cada guía.</p></div>
             </motion.div>

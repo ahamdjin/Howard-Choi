@@ -8,7 +8,7 @@
   "metaDescription": "Learn how to handle medical bills while a California injury claim is pending: insurance, payment questions, billing errors, assistance and settlement records.",
   "excerpt": "A practical guide to keeping treatment bills, insurance payments and reimbursement questions organized while an injury claim is unresolved.",
   "category": "Car Accidents",
-  "publishedAt": "2026-11-16",
+  "publishedAt": "2026-11-15",
   "updatedAt": "2026-11-16",
   "requiredTranslations": [],
   "image": "/blog-images/imported-drafts/howard-choi-medical-care.jpg",

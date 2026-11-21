@@ -8,7 +8,7 @@
 .claim-process-photo{aspect-ratio:10/7;width:100%;object-fit:cover;margin-bottom:24px}
 .claim-process-steps--photos>li{border:0;padding-top:0}
 .case-stories{display:flex;flex-direction:column;gap:55px}
-.case-story{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:46px;align-items:center;border-top:1px solid #d8cec0;padding-top:38px;scroll-margin-top:120px}
+.case-story{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(28px,3vw,54px);align-items:start;border-top:1px solid #d8cec0;padding-top:38px;scroll-margin-top:120px}
 .case-story:nth-child(even){grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
 .case-story:nth-child(even) .case-story-figure{order:2}
 .case-story-figure figcaption{font-size:11px;line-height:1.6;color:#655c52;margin-top:10px}

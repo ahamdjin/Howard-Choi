@@ -152,7 +152,9 @@ export const ResultsPage = ({ locale }: { locale: SiteLocale }) => (
           kicker={isKo(locale) ? "04 · 맥락" : isEs(locale) ? "04 · Contexto" : "04 · Context"}
           title={isKo(locale) ? "두 사건이 완전히 같을 수는 없습니다." : isEs(locale) ? "La cifra cambia cuando cambian los hechos." : "The number changes when the facts change."}
           intro={isKo(locale) ? "책임, 보험 한도, 부상 정도, 치료, 증거와 당사자의 상황에 따라 결과는 크게 달라질 수 있습니다." : isEs(locale) ? "Un resultado puede verse afectado por disputas de responsabilidad, límites de póliza, otras partes responsables, causalidad médica, duración y tipo de tratamiento, necesidades médicas futuras, pérdidas de salario e ingresos, gravámenes, culpa comparativa y calidad de la evidencia." : "A result may be affected by liability disputes, policy limits, additional responsible parties, medical causation, the length and type of treatment, future medical needs, wage and earning losses, liens, comparative fault, and the quality of the supporting evidence."}
-        />
+        >
+          {locale === "en" && <p>To discuss how those factors apply to your case, see <a className="underline underline-offset-4" href="/#consultation-questions">what to ask at your first consultation</a>.</p>}
+        </ReadingSectionBlock>
         <ReadingSectionBlock
           id="court-examples"
           locale={locale}

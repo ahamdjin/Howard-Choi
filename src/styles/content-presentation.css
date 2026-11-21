@@ -18,11 +18,11 @@
 .site-typography .content-photo{margin:2.5rem 0 3rem}
 .site-typography .content-photo img{width:100%;height:auto;aspect-ratio:2/1;object-fit:cover}
 .site-typography .content-photo figcaption{font-family:Inter,Arial,sans-serif;font-size:.8rem;line-height:1.6;margin-top:.8rem;color:#766b5f;max-width:68ch}
-.site-typography .resource-intro{max-width:1240px;padding-top:155px;padding-bottom:35px;border-bottom:1px solid #dcd5cb}
+.site-typography .resource-intro{padding-top:155px;padding-bottom:35px;border-bottom:1px solid #dcd5cb}
 .site-typography .resource-back{display:inline-flex;align-items:center;min-height:44px;font:500 .85rem Inter,Arial,sans-serif;color:#755d46}
 .site-typography .resource-intro h1{font-family:Newsreader,Georgia,serif;font-weight:400;font-size:clamp(2.5rem,5vw,4.5rem);line-height:1.07;max-width:22ch;margin:1rem 0 1.2rem;text-wrap:balance}
 .site-typography .resource-intro>p{font:400 1.1rem/1.7 Inter,Arial,sans-serif;color:#655b50;max-width:65ch;margin-bottom:1.3rem}
-.site-typography .learning-hub>section.site-shell{max-width:1240px}
+
 .site-typography .learning-hub section.site-shell>a{padding-block:1rem}
 .site-typography .learning-detail--faq .editorial-reading-grid{padding-top:2.5rem}
 .site-typography .faq-answer{scroll-margin-top:110px;padding:1.8rem 0 2rem;border-bottom:1px solid #ded6ca}

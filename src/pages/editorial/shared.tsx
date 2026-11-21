@@ -49,7 +49,7 @@ export const EditorialHero = ({ locale, eyebrow, title, description, image, deta
     return (
       <section className="detail-hero--split relative overflow-hidden border-b border-[#1E1C1A]/12 bg-[#F4F0E9] pt-[74px] text-[#1E1C1A]">
         <div className="grid min-h-[620px] lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)]">
-          <div className="flex flex-col justify-center px-5 py-12 sm:px-10 md:py-16 lg:pl-[max(3rem,calc((100vw-1240px)/2))] lg:pr-12">
+          <div className="detail-hero__copy flex flex-col justify-center pr-5 py-12 sm:pr-10 md:py-16 lg:pr-12">
             <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#755D46]">{eyebrow}</span>
             <div className="mt-8 max-w-[690px]">
               <PageBreadcrumb locale={locale} title={title} />
@@ -104,7 +104,7 @@ export const EditorialHero = ({ locale, eyebrow, title, description, image, deta
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(20,16,13,.86)_0%,rgba(20,16,13,.58)_48%,rgba(20,16,13,.30)_100%)]" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#17130f]/80 via-transparent to-[#17130f]/25" />
       <div className="site-shell relative z-10 flex min-h-[500px] items-end py-12 md:min-h-[560px] md:py-16">
-        <div className="grid w-full gap-8 border-t border-white/18 pt-5 lg:grid-cols-[minmax(180px,0.32fr)_minmax(0,1.68fr)] lg:gap-14">
+        <div className="grid w-full gap-8 border-t border-white/18 pt-5 lg:gap-5">
           <div>
             <div className="text-[9px] font-semibold uppercase tracking-[0.18em] text-white/52">{eyebrow}</div>
             <div className="mt-4 hidden text-[10px] leading-5 text-white/36 lg:block">{brand.phoneDisplay}<br />Buena Park, California</div>

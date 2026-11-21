@@ -5,7 +5,7 @@ import { AnimatePresence, m as motion } from "framer-motion";
 import { ArrowRight, ChevronDown, Menu, Phone, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useLocation } from "@/lib/router-compat";
-import brandLogo from "@/assets/law-firm/howard-choi-logo.png";
+import brandLogo from "@/assets/law-firm/howard-choi-mark.webp";
 import UtilityBar from "@/components/UtilityBar";
 import { brand, serviceLocations, type SiteLocale } from "@/data/injurySite";
 import { esPracticeContent } from "@/data/esPracticeContent";

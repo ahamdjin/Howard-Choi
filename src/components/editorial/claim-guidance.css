@@ -6,7 +6,7 @@
   padding: 88px 0 64px;
 }
 .claim-help__inner {
-  width: min(calc(100% - 80px), 1240px);
+  width: var(--site-content-width);
   margin-inline: auto;
 }
 .claim-help__heading {
@@ -204,7 +204,7 @@ html[lang="en"] .site-typography .article-guidance .content-prose p {
 .article-guidance .content-questions .content-prose { margin-top: 12px; }
 
 @media (max-width: 1023px) {
-  .claim-help__inner { width: min(calc(100% - 48px), 760px); }
+
   .claim-help__heading { grid-template-columns: 1fr; gap: 24px; margin-bottom: 32px; }
   .claim-help__heading > p { max-width: 64ch; }
   .claim-help__body { grid-template-columns: 1fr; gap: 32px; }
@@ -216,7 +216,7 @@ html[lang="en"] .site-typography .article-guidance .content-prose p {
 }
 @media (max-width: 767px) {
   .home-page .claim-help { min-height: 0; padding: 48px 0 40px; }
-  .claim-help__inner { width: calc(100% - 40px); }
+
   .claim-help__heading { gap: 20px; }
   .claim-help__heading > p { line-height: 1.75; }
   .claim-help__image { border-radius: 8px; }

@@ -15,8 +15,8 @@ type SplitPageHeroProps = {
 export function SplitPageHero({ locale, breadcrumb, title, description, action, children }: SplitPageHeroProps) {
   return (
     <section className="site-shell pt-28 md:pt-36">
-      <div className="mx-auto grid max-w-7xl overflow-hidden rounded-3xl border border-[#2b241e]/15 bg-[#fdfbf7] lg:grid-cols-2">
-        <div className="min-w-0 px-5 py-8 sm:p-8 lg:p-10 xl:p-12">
+      <div className="grid overflow-hidden border-y border-[#2b241e]/15 lg:grid-cols-2">
+        <div className="min-w-0 py-8 sm:py-10 lg:pr-12">
           <PageBreadcrumb locale={locale} title={breadcrumb} />
           <h1
             style={locale === "ko" ? { fontFamily: '"Noto Serif KR", serif' } : undefined}

@@ -13,12 +13,12 @@ export type CaseStory = {
 };
 
 /** Content stays city-specific; the reading rhythm and mobile behavior are shared. */
-export function CaseStories({ stories }: { stories: readonly CaseStory[] }) {
+export function CaseStories({ stories, startIndex = 0 }: { stories: readonly CaseStory[]; startIndex?: number }) {
   return <div className="case-stories">
     {stories.map((story, index) => <article key={story.id} id={story.id} className="case-story">
       <figure className="case-story-figure"><a className="case-story-photo" href={story.link.href} aria-label={story.link.label}>
         <img {...responsiveImageProps(story.image.src, "(max-width: 767px) 92vw, 42vw")} src={story.image.src} alt={story.image.alt} width={720} height={480} loading="lazy" decoding="async" />
-        <span>{String(index + 1).padStart(2, "0")} / {story.label}</span>
+        <span>{String(startIndex + index + 1).padStart(2, "0")} / {story.label}</span>
       </a>{story.image.credit && <figcaption><a href={story.image.credit.source} target="_blank" rel="noreferrer">{story.image.credit.label}</a> · <a href={story.image.credit.licenseUrl} target="_blank" rel="noreferrer">{story.image.credit.license}</a></figcaption>}</figure>
       <div className="case-story-copy">
         <h3>{story.title}</h3>

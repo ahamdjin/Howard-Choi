@@ -19,6 +19,7 @@ type SeoOptions = {
   locale?: "en-US" | "ko-US" | "es-US";
   type?: "website" | "article";
   image?: string;
+  imageAlt?: string;
   noindex?: boolean;
   followWhenNoindex?: boolean;
 };
@@ -30,6 +31,7 @@ export const buildSeo = ({
   locale = "en-US",
   type = "website",
   image = defaultSocialImage,
+  imageAlt,
   noindex = false,
   followWhenNoindex = false,
 }: SeoOptions) => {
@@ -66,6 +68,10 @@ export const buildSeo = ({
     const imageUrl = absoluteUrl(image);
     meta.push({ property: "og:image", content: imageUrl });
     meta.push({ name: "twitter:image", content: imageUrl });
+    if (imageAlt?.trim()) {
+      meta.push({ property: "og:image:alt", content: imageAlt });
+      meta.push({ name: "twitter:image:alt", content: imageAlt });
+    }
   }
 
   const links: Array<Record<string, string>> = noindex ? [] : [{ rel: "canonical", href: canonical }];

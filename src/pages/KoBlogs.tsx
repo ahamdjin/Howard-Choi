@@ -35,7 +35,7 @@ const KoBlogs = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-[#17130f]/90 via-[#17130f]/14 to-[#17130f]/22" />
           <div className="hero-bottom-readability" />
           <div className="site-shell relative z-10 flex min-h-[100svh] items-end pb-10 pt-24 md:h-full md:min-h-0 md:pb-12 lg:pb-14">
-            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.72 }} className="grid w-full gap-8 border-t border-white/18 pt-5 lg:grid-cols-[0.38fr_1.62fr] lg:gap-12 xl:gap-16">
+            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.72 }} className="grid w-full gap-8 border-t border-white/18 pt-5 lg:gap-5">
               <div><span className="text-[9px] font-medium uppercase tracking-[0.17em] text-[#f3eee5]/48">법률 자료</span><div className="mt-4 hidden text-[10px] leading-5 text-[#f3eee5]/34 lg:block">캘리포니아 사고·상해 가이드<br />Buena Park, California</div></div>
               <div className="max-w-[980px]"><PageBreadcrumb locale="ko" title="블로그" /><h1 style={koSerif} className="text-[clamp(2.1rem,3.1vw,3.45rem)] font-medium leading-[1.22] tracking-[-0.045em]">사고 이후 생기는 질문에 더 명확한 답을.</h1><p className="mt-5 max-w-[720px] text-[14px] leading-7 text-[#f3eee5]/67 md:text-[15px]">캘리포니아 교통사고, 보험, 증거, 기한, 부상과 사건 가치를 이해하기 쉽게 정리하며 각 가이드 안에서 공식 법률·기관 자료를 함께 제공합니다.</p></div>
             </motion.div>

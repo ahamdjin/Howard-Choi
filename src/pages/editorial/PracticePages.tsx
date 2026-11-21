@@ -1,3 +1,6 @@
+import { getBlogBySlug } from "@/data/blogs";
+import { guidePhotography as photos } from "@/data/guidePhotography";
+import { ClaimPreparationPanel } from "@/components/editorial/ClaimPreparationPanel";
 import { PracticeVisualContext } from "@/components/editorial/CrashSectionVisual";
 import { PageReadingNote } from "@/components/editorial/PageReadingNote";
 import readingNotes from "../../../content/learning/page-reading-notes/practice.json";
@@ -443,6 +446,11 @@ const relatedLocationSlugs: Record<string, string[]> = {
   "serious-injuries": ["buena-park", "fullerton", "whittier", "norwalk", "anaheim", "la-habra"],
 };
 
+const claimGuidesByPractice: Record<string, string[]> = {
+  "car-accidents": ["right-of-way-accident-claims-california", "report-track-progressive-car-accident-claim-california"],
+  "pedestrian-accidents": ["california-jaywalking-pedestrian-accident-fault"],
+};
+
 export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
   const params = useParams({ strict: false }) as { slug?: string };
   const practice = params.slug ? getPracticeArea(params.slug) : undefined;
@@ -451,6 +459,13 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
   const esCopy = esPracticeContent[practice.slug];
   const esEnhancement = esPracticeEnhancements[practice.slug];
   const enhancement = practiceEnhancements[practice.slug];
+  const guides = [...enhancement.guides];
+  if (locale === "en") {
+    for (const slug of claimGuidesByPractice[practice.slug] ?? []) {
+      const post = getBlogBySlug(slug);
+      if (post) guides.push({ slug, title: post.title, koTitle: post.title });
+    }
+  }
   const localGuidance = practiceLocalGuidance[practice.slug]?.[locale];
 
   const title = isKo(locale) ? practice.koTitle : isEs(locale) ? (esCopy?.shortTitle || practice.title) : practice.title;
@@ -461,6 +476,8 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
   const evidenceTitle = isKo(locale) ? practice.koEvidenceTitle : isEs(locale) ? (esCopy?.evidenceTitle || practice.evidenceTitle) : practice.evidenceTitle;
   const evidenceIntro = isKo(locale) ? practice.koEvidenceIntro : isEs(locale) ? (esCopy?.evidenceIntro || practice.evidenceIntro) : practice.evidenceIntro;
   const carAccidentPreview = locale === "en" && practice.slug === "car-accidents";
+  const photoTheme = locale === "en" && (practice.slug === "rideshare-accidents" || practice.slug === "serious-injuries") ? practice.slug : undefined;
+  const cover = photoTheme === "rideshare-accidents" ? photos.rideHero : photoTheme === "serious-injuries" ? photos.brainHero : practiceMedia[practice.slug];
   const evidenceItems = isKo(locale) ? koreanPracticeDetails[practice.slug].evidenceItems : isEs(locale) ? (esEnhancement?.evidenceItems || practice.evidenceItems) : practice.evidenceItems;
   const valueIntro = isKo(locale) ? practice.koValueIntro : isEs(locale) ? (esCopy?.valueIntro || practice.valueIntro) : practice.valueIntro;
   const insuranceIntro = isKo(locale) ? practice.koInsuranceIntro : isEs(locale) ? (esCopy?.insuranceIntro || practice.insuranceIntro) : practice.insuranceIntro;
@@ -484,16 +501,19 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
 
   return (
     <EditorialFrame locale={locale}>
-      <main className={carAccidentPreview ? "detail-guide car-accident-guide" : "detail-guide"}>
+      <main data-photo-guide={photoTheme} className={carAccidentPreview ? "detail-guide car-accident-guide" : "detail-guide"}>
         <EditorialHero
           locale={locale}
           eyebrow={isKo(locale) ? "개인상해 · 업무 분야" : isEs(locale) ? "Lesiones personales · Área de práctica" : "Personal injury · Practice area"}
           title={heroTitle}
-          description={description}
-          image={practiceMedia[practice.slug]?.src ?? heroCourthouse}
-          imageAlt={practiceMedia[practice.slug]?.alt || ""}
+          description={locale === "en" && practice.slug === "wrongful-death"
+            ? "If your family lost someone in an accident in Buena Park, you can speak with Howard Choi at his Beach Boulevard office. Bring any incident number or insurance letter you have. If you’re still waiting for the report, you can call to discuss what happened and which records to request first."
+            : description}
+          image={cover?.src ?? heroCourthouse}
+          imageAlt={cover?.alt || ""}
           detail
         />
+        {locale === "en" && (practice.slug === "rideshare-accidents" || practice.slug === "serious-injuries") && <ClaimPreparationPanel practice={practice.slug} />}
         {localGuidance && <div className="site-shell py-7 md:py-10">
           <div className="max-w-3xl space-y-4 text-pretty text-base leading-8 text-[#57514b]">
             {localGuidance.introduction.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
@@ -671,7 +691,7 @@ export const PracticeAreaDetailPage = ({ locale }: { locale: SiteLocale }) => {
               <div>
                 <div className="mb-3 text-[9px] font-semibold uppercase tracking-[0.16em] text-[#1E1C1A]/35">{isKo(locale) ? "관련 가이드" : isEs(locale) ? "Guías relacionadas" : "Related guides"}</div>
                 <div className="border-t border-[#1E1C1A]/12">
-                  {enhancement.guides.map((guide) => {
+                  {guides.map((guide) => {
                     const guideHref = localizedBlogHref(locale, guide.slug);
                     const englishOnly = locale !== "en" && guideHref.startsWith("/blogs/");
                     return (

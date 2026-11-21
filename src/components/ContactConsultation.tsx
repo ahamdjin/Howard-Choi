@@ -48,8 +48,8 @@ export default function ContactConsultation({ locale }: { locale: SiteLocale }) 
   const linkStyle = "underline decoration-foreground/30 underline-offset-4 hover:decoration-foreground";
 
   return (
-    <div className="mx-auto grid max-w-7xl rounded-3xl border border-foreground/15 bg-[#fdfbf7] lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
-      <section aria-labelledby="contact-heading" className="min-w-0 px-5 py-7 sm:p-8 lg:p-10 xl:p-12">
+    <div className="grid border-y border-foreground/15 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
+      <section aria-labelledby="contact-heading" className="min-w-0 py-7 sm:py-8 lg:py-10 lg:pr-12">
         <PageBreadcrumb locale={locale} title={labels.contact} />
         <h1 id="contact-heading" style={headingStyle} className="editorial-serif text-balance text-[clamp(2.6rem,4.6vw,4.8rem)] leading-[1.04]">
           {labels.heading}

@@ -100,7 +100,7 @@
   }
 
   .site-shell {
-    width: min(calc(100% - 1.5rem), 1600px);
+    width: var(--site-content-width);
     margin-inline: auto;
   }
 
@@ -162,11 +162,7 @@
     }
   }
 
-  @media (max-width: 640px) {
-    .site-shell {
-      width: min(calc(100% - 1.25rem), 1600px);
-    }
-  }
+
 }
 
 /* Mobile sections fill a screen and grow when their content needs more room. */
@@ -176,7 +172,7 @@
     min-height: calc(100svh - 60px);
     scroll-margin-top: 76px;
   }
-  .home-page .site-shell { width: 100%; max-width: none; padding-inline: 20px; }
+  .home-page .site-shell { width: var(--site-content-width); max-width: none; padding-inline: 0; }
   .home-page .mobile-practice-panels { margin-inline: -20px; gap: 0; }
   .home-page .mobile-practice-panels article > div { border-radius: 0; }
   .home-page > .relative > .sticky { position: relative; }
@@ -391,7 +387,7 @@ nav + .relative > .sticky.top-0.h-\[100svh\] > section {
   }
 
   .home-page .site-shell {
-    padding-inline: 16px;
+    padding-inline: 0;
   }
 
   input,
@@ -507,8 +503,8 @@ nav + .relative > .sticky.top-0.h-\[100svh\] > section {
 }
 
 .detail-guide > section:first-child .site-shell {
-  margin-left: max(20px, calc((100vw - 1120px) / 2));
-  width: calc(100% - 40px);
+  margin-inline: auto;
+  width: var(--site-content-width);
 }
 
 .inner-site-page .detail-guide .editorial-reading-section__intro {
@@ -546,8 +542,7 @@ nav + .relative > .sticky.top-0.h-\[100svh\] > section {
 .detail-guide summary::marker { color: #987652; }
 
 .inner-site-page .detail-guide .editorial-reading-grid {
-  width: calc(100% - 40px);
-  max-width: 1120px;
+  width: var(--site-content-width);
   margin-inline: auto;
 }
 
@@ -882,8 +877,7 @@ nav + .relative > .sticky.top-0.h-\[100svh\] > section {
 }
 
 .attorney-content-shell {
-  width: calc(100% - 40px);
-  max-width: 1120px;
+  width: var(--site-content-width);
   margin-inline: auto;
 }
 
@@ -1018,7 +1012,7 @@ nav + .relative > .sticky.top-0.h-\[100svh\] > section {
   }
 
   .inner-site-page .editorial-reading-content {
-    max-width: 980px;
+    max-width: none;
   }
 
   .inner-site-page .editorial-link-grid {
@@ -1422,4 +1416,18 @@ nav + .relative > .sticky.top-0.h-\[100svh\] > section {
     float: right; width: 38%; margin: 0 0 1rem 1.5rem;
   }
   :is(.editorial-reading-section__body,blockquote):has(> .desk-illustration) { display: flow-root; }
+}
+
+
+:root {
+  --site-max-width: 1600px;
+  --site-gutter: 1rem;
+  --page-frame: 7px;
+  --content-inset: calc(var(--site-gutter) - var(--page-frame));
+  --site-content-width: min(var(--site-max-width), calc(100% - 2 * var(--content-inset)));
+}
+
+.detail-hero--split { container-type: inline-size; }
+.detail-hero__copy {
+  padding-inline-start: max(var(--content-inset), calc((100cqw - var(--site-max-width)) / 2));
 }

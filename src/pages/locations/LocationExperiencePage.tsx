@@ -37,6 +37,20 @@ export default function LocationExperiencePage({ city, locale = "en" }: { city: 
   const feature = city.feature && city.sections.find(section => section.id === city.feature?.sectionId);
   const guide = city.sections.slice(1).filter(section => !stories.includes(section) && section !== caseOverview && section !== feature);
   const local = city.sections[0];
+  const fullerton = locale === "en" && city.slug === "fullerton";
+  const gardenGrove = locale === "en" && city.slug === "garden-grove";
+  const storyCards = stories.map(section => ({
+    id: section.id,
+    title: section.title,
+    label: section.label ?? section.title,
+    paragraphs: section.paragraphs,
+    image: localizedPracticeMedia(section.practice!, locale),
+    link: { href: href(section.link?.href ?? `/practice-areas/${section.practice}`), label: section.link?.label ?? t("practiceLink") },
+  }));
+  const featuredStories = storyCards.filter(story =>
+    (fullerton && story.id === "intersection-timing") ||
+    (gardenGrove && ["brookhurst-turn", "main-street-foot-traffic"].includes(story.id))
+  );
   return <EditorialFrame locale={locale}><main className="location-experience" lang={locale}>
     <EditorialHero locale={locale} eyebrow={t("serving")} title={city.heading ?? t("heading")} description={city.lead} image={photo.src} imageAlt={photo.alt} imagePosition={photo.position} imageCaption={city.heroCaption} imageFallback={office} detail />
     <div className="experience-credentials"><div className="site-shell">
@@ -53,6 +67,35 @@ export default function LocationExperiencePage({ city, locale = "en" }: { city: 
       <figure className="experience-city-photo"><img src={photo.src} alt={photo.alt} style={{objectPosition: photo.position}} width={800} height={700} loading="lazy" decoding="async" /></figure>
     </section>
 
+    {featuredStories.length > 0 && <section className="experience-section experience-warm" aria-labelledby="local-crash-heading">
+      <div className="site-shell">
+        <div className="grid gap-6 border-t border-black/20 pt-6 md:grid-cols-2 md:gap-12">
+          <h2 id="local-crash-heading" className="text-4xl leading-tight md:text-5xl">
+            {fullerton ? "After a crash in Fullerton" : "Driving or walking in Garden Grove"}
+          </h2>
+          <div>
+            <p>{fullerton
+              ? "If the collision report is still pending, bring the incident number, any photographs and the name of the agency that responded. Howard can discuss the collision with you while you wait for a copy."
+              : "A driver turning onto Brookhurst Street and someone walking from downtown parking may have very different views of the same collision. Start with the account closest to yours."}</p>
+            <nav aria-label="Local collision guidance" className="flex flex-wrap gap-x-6">
+              {fullerton ? <>
+                <a className="experience-link" href="https://www.cityoffullerton.com/government/departments/police/police-services/request-police-report">Request an existing Fullerton Police report</a>
+                <a className="experience-link" href="/blogs/what-to-do-after-a-car-accident-in-california">After-crash checklist</a>
+              </> : <>
+                <a className="experience-link" href="#brookhurst-turn">I was in a vehicle ↓</a>
+                <a className="experience-link" href="#main-street-foot-traffic">I was on foot ↓</a>
+              </>}
+            </nav>
+          </div>
+        </div>
+        <div className="mt-8"><CaseStories stories={featuredStories} /></div>
+        <div className="flex flex-wrap gap-x-7 border-t border-black/15">
+          <a className="experience-link" href="/about#attorney">How Howard handles your case</a>
+          <a className="experience-link" href="/contact">Discuss your accident with Howard <ArrowRight size={16} aria-hidden="true" /></a>
+        </div>
+      </div>
+    </section>}
+
     <section id="process" className="experience-section experience-warm"><div className="site-shell">
       <SectionHeading eyebrow={process.eyebrow} text={process.intro}>{process.title}</SectionHeading>
       <ClaimProcessSteps locale={locale} />
@@ -64,14 +107,7 @@ export default function LocationExperiencePage({ city, locale = "en" }: { city: 
     <section id="cases" className="experience-section site-shell">
       <SectionHeading eyebrow={t("representation")} text={t("casesIntro")}>{t("casesTitle")}</SectionHeading>
       {caseOverview && <div className="experience-case-overview"><h3>{caseOverview.title}</h3><div>{caseOverview.paragraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}</div>{caseOverview.link && <a className="experience-link" href={href(caseOverview.link.href)}>{caseOverview.link.label}<ArrowRight size={16} aria-hidden="true" /></a>}</div>}
-      <CaseStories stories={stories.map(section => ({
-        id: section.id,
-        title: section.title,
-        label: section.label ?? section.title,
-        paragraphs: section.paragraphs,
-        image: localizedPracticeMedia(section.practice!, locale),
-        link: { href: href(section.link?.href ?? `/practice-areas/${section.practice}`), label: section.link?.label ?? t("practiceLink") },
-      }))} />
+      <CaseStories startIndex={featuredStories.length} stories={storyCards.filter(story => !featuredStories.includes(story))} />
     </section>
 
     <section className="experience-contact"><div className="site-shell">

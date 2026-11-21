@@ -8,7 +8,7 @@
   "metaDescription": "You can generally open a California car insurance claim without a police report. See what evidence to provide and when separate reports are required.",
   "excerpt": "You can generally open a California car insurance claim without a police report. See what evidence to provide and when separate reports are required.",
   "category": "Auto Insurance",
-  "publishedAt": "2026-11-16",
+  "publishedAt": "2026-11-15",
   "updatedAt": "2026-11-16",
   "requiredTranslations": [],
   "image": "/blog-images/imported-drafts/howard-choi-car-collision.jpg",

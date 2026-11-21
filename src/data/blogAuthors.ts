@@ -1,4 +1,4 @@
-import portrait from "@/assets/law-firm/lead-counsel.avif";
+import portrait from "@/assets/law-firm/responsive/lead-counsel-96.webp";
 import type { SiteLocale } from "@/data/injurySite";
 
 export type BlogAuthor = {

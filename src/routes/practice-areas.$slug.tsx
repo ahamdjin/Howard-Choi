@@ -1,3 +1,4 @@
+import { guidePhotography } from "@/data/guidePhotography";
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { PracticeAreaDetailPage } from "@/pages/EditorialInnerPages";
 import { getPracticeArea } from "@/data/injurySite";
@@ -15,10 +16,14 @@ export const Route = createFileRoute("/practice-areas/$slug")({
     if (!loaderData) return {};
     const path = `/practice-areas/${loaderData.slug}`;
     const searchName = practiceSearchNames[loaderData.slug] || loaderData.title;
+    const covers = { "rideshare-accidents": guidePhotography.rideHero, "serious-injuries": guidePhotography.brainHero };
+    const cover = covers[loaderData.slug as keyof typeof covers];
     const seo = buildSeo({
       title: serviceSeo[loaderData.slug]?.title || `Buena Park ${searchName} Lawyer | Injury Claims`,
       description: serviceSeo[loaderData.slug]?.description || loaderData.description,
       path,
+      image: cover?.src,
+      imageAlt: cover?.alt,
       alternatePath: `/ko/practice-areas/${loaderData.slug}`,
       locale: "en-US",
     });

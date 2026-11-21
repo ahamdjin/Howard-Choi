@@ -20,6 +20,8 @@ A useful rideshare investigation asks whether the driver was offline, logged int
 
 Passengers can usually confirm part of that timeline through the trip receipt and app history. When another road user is injured by a rideshare driver, other records may be needed to establish the driver's status. For a local example, our [Fullerton rideshare accident guide](/blogs/fullerton-uber-lyft-accident-lawyer) covers trip records, current coverage questions, and consultation preparation.
 
+If you have the receipt but still cannot tell which insurer to contact, the [Buena Park rideshare accident practice](/practice-areas/rideshare-accidents) explains what to bring when you discuss the trip with Howard Choi.
+
 ## California uses different coverage periods
 
 California Public Utilities Commission requirements divide rideshare activity into coverage periods. During the period when a driver is logged in and waiting for a ride request, the required primary liability limits are lower than the commercial coverage that applies after a ride has been accepted.

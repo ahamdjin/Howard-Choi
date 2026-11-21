@@ -50,6 +50,7 @@ const Index = ({ locale = "en" }: { locale?: SiteLocale }) => {
         {locale === "en" && (
           <section className="site-shell border-t border-foreground/15 py-12 md:py-20">
             <h2 className="editorial-serif text-4xl">Start with a conversation about your injury</h2>
+            <p className="mt-4 max-w-2xl text-base leading-7">Before you call, set aside the paperwork you already have and write down the question you most want answered. These three prompts can help you prepare.</p>
             <ol className="mt-6 grid gap-6 text-sm leading-7 md:grid-cols-3">
               <li><strong className="block">1. Tell us what happened</strong>Share where you were hurt and what is most urgent for you now.</li>
               <li><strong className="block">2. Bring what you have</strong>A report number, photos or an insurance letter can help explain what needs attention.</li>

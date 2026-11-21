@@ -38,6 +38,22 @@ export const AboutFirmPage = ({ locale }: { locale: SiteLocale }) => (
         image={heroBoardroom}
       />
 
+      {locale === "en" && <section aria-labelledby="about-howard-heading" className="border-y border-black/15 bg-[#eee7dd]">
+        <div className="site-shell grid items-center gap-6 py-9 md:grid-cols-[1fr_1.2fr] md:gap-12 md:py-12">
+          <div>
+            <h2 id="about-howard-heading" className="editorial-serif text-4xl leading-tight">Who will handle your injury case?</h2>
+            <a className="editorial-inline-link mt-4 inline-flex min-h-11 items-center" href="https://apps.calbar.ca.gov/attorney/Licensee/Detail/284364">Howard Choi · California State Bar No. 284364</a>
+          </div>
+          <div className="border-t border-black/20 pt-5 md:border-l md:border-t-0 md:pl-8 md:pt-0">
+            <p className="max-w-prose text-base leading-7">When the firm accepts your case, <a href="/#approach" className="underline underline-offset-4">Howard handles it personally</a>. If an injury has cut into your earnings, his accounting background helps him look beyond a single pay stub, especially if you work for yourself.</p>
+            <div className="mt-3 flex flex-wrap gap-x-6">
+              <a href="/contact" className="editorial-inline-link inline-flex min-h-11 items-center">Arrange a consultation</a>
+              <a href="#process" className="editorial-inline-link inline-flex min-h-11 items-center">How Howard reviews lost income</a>
+            </div>
+          </div>
+        </div>
+      </section>}
+
       <ReadingLayout
         locale={locale}
         label={isKo(locale) ? "로펌 · 소개" : isEs(locale) ? "Firma · Acerca de" : "Firm · About"}
