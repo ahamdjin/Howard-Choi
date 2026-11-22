@@ -1,9 +1,9 @@
 {
   "title": "California’s Basic Speed Law: Can You Be Going Too Fast Below the Limit?",
   "slug": "california-basic-speed-law-driving-too-fast-for-conditions",
-  "published": false,
+  "published": true,
   "author": "Howard Choi",
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved",
   "metaTitle": "California Basic Speed Law: Driving Too Fast for Conditions",
   "metaDescription": "Learn how California’s Basic Speed Law applies in rain, traffic and poor visibility, and which details help explain speed after a collision.",
   "excerpt": "Learn how California’s Basic Speed Law applies in rain, traffic and poor visibility, and which details help explain speed after a collision.",

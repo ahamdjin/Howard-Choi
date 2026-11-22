@@ -1,9 +1,9 @@
 {
   "title": "California Cumulative Trauma Claims: When Work Injuries Develop Over Time",
   "slug": "cumulative-trauma-workers-comp-california",
-  "published": false,
+  "published": true,
   "author": "Howard Choi",
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved",
   "metaTitle": "Cumulative Trauma Workers’ Comp Claims in California",
   "metaDescription": "Learn how to report a California work injury that developed over time, describe repeated tasks, complete the DWC-1 and document changes in your ability to work.",
   "excerpt": "Learn how to report a California work injury that developed over time, describe repeated tasks, complete the DWC-1 and document changes in your ability to work.",

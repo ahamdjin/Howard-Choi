@@ -1,9 +1,9 @@
 {
   "title": "How to Use Caltrans QuickMap for Work Zones and Lane Closures",
   "slug": "caltrans-quickmap-work-zone-lane-closures",
-  "published": false,
+  "published": true,
   "author": "Howard Choi",
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved",
   "metaTitle": "Caltrans QuickMap: Work Zones and Lane Closures",
   "metaDescription": "Check California lane and ramp closures, read QuickMap incident details and see what a map screenshot can document after a work-zone crash.",
   "excerpt": "Check California lane and ramp closures, read QuickMap incident details and see what a map screenshot can document after a work-zone crash.",
