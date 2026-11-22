@@ -1,7 +1,7 @@
+import { Button, ArrowLink, ButtonLink } from "@/components/ui/button";
 import { responsiveImageProps, mobileHeroSource } from "@/lib/responsive-images";
 import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, m as motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 import type { SiteLocale } from "@/data/injurySite";
 import heroCityBoardroom from "@/assets/law-firm/hero-city-boardroom.webp";
 import heroCourthouse from "@/assets/law-firm/hero-courthouse.webp";
@@ -25,6 +25,7 @@ const Hero = ({ locale = "en" }: { locale?: SiteLocale }) => {
   const { scrollY } = useScroll();
   const [viewportHeight, setViewportHeight] = useState(900);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [paused, setPaused] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const es = locale === "es";
   const ko = locale === "ko";
@@ -53,13 +54,13 @@ const Hero = ({ locale = "en" }: { locale?: SiteLocale }) => {
 
   useEffect(() => {
     // On phones, never preload slide 2, 3 or 4. The mobile hero stays static.
-    if (window.matchMedia("(max-width: 767px)").matches) return;
+    if (paused || shouldReduceMotion || window.matchMedia("(max-width: 767px)").matches) return;
     const nextImage = new Image();
     const src = slides[(currentSlide + 1) % slides.length].image;
     nextImage.srcset = responsiveImageProps(src, "100vw").srcSet || "";
     nextImage.sizes = "100vw";
     nextImage.src = src;
-  }, [currentSlide]);
+  }, [currentSlide, paused, shouldReduceMotion]);
 
   const transitionEnd = viewportHeight * 0.95;
   const imageScale = useTransform(scrollY, [0, transitionEnd], [1, 1.07]);
@@ -120,7 +121,7 @@ const Hero = ({ locale = "en" }: { locale?: SiteLocale }) => {
                 alt={slides[currentSlide].alt[locale]}
                 loading="eager"
                 decoding="async"
-                {...{ fetchpriority: currentSlide === 0 ? "high" : "auto" }}
+                fetchPriority={currentSlide === 0 ? "high" : "auto"}
                 className="absolute inset-0 h-full w-full object-cover"
                 />
               </motion.picture>
@@ -132,7 +133,7 @@ const Hero = ({ locale = "en" }: { locale?: SiteLocale }) => {
       <motion.div className="absolute inset-0 bg-[#17130f]" style={shouldReduceMotion || isMobile ? { opacity: 0.42 } : { opacity: shadeOpacity }} />
       <div className="hero-bottom-readability" />
 
-      <motion.div className="absolute inset-0 z-10 flex items-end" style={shouldReduceMotion || isMobile ? undefined : { opacity: contentOpacity, y: contentY }}>
+      <motion.div className="home-hero-content absolute inset-0 z-10 flex items-end" style={shouldReduceMotion || isMobile ? undefined : { opacity: contentOpacity, y: contentY }}>
         <div className="home-hero-shell site-shell pb-24 md:pb-28">
           <div className="max-w-[700px] text-[#f3eee5]">
             <motion.p initial={false} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.18, duration: 0.7 }} className="home-hero-eyebrow mb-4 text-[13px] font-medium tracking-[-0.01em] text-[#f3eee5]/88 md:text-sm">
@@ -145,10 +146,8 @@ const Hero = ({ locale = "en" }: { locale?: SiteLocale }) => {
               {body}
             </motion.p>
             <motion.div initial={false} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.7 }} className="home-hero-actions mt-7 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <button onClick={() => document.getElementById("booking")?.scrollIntoView({ behavior: "smooth" })} className="liquid-cta inline-flex w-fit items-center gap-3 rounded-full px-6 py-3 text-[13px] font-medium">
-                <span className="relative z-10">{consultation}</span><ArrowRight className="relative z-10 h-4 w-4" />
-              </button>
-              <a href="tel:+17148448494" className="text-[13px] text-[#f3eee5]/82 transition-opacity hover:opacity-70 md:text-sm">{call} (+1) 714-844-8494</a>
+              <ArrowLink direction="right" variant="paper" href="#booking" className="w-fit">{consultation}</ArrowLink>
+              <ButtonLink variant="keyline" href="tel:+17148448494">{call} (+1) 714-844-8494</ButtonLink>
             </motion.div>
             <motion.p initial={false} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.58, duration: 0.7 }} className="home-hero-fee mt-5 text-[13px] text-[#f3eee5]/62">
               {fee}
@@ -162,7 +161,7 @@ const Hero = ({ locale = "en" }: { locale?: SiteLocale }) => {
               className="home-hero-attorney mt-7 block w-fit border-t border-[#f3eee5]/18 pt-5 transition-opacity hover:opacity-75"
             >
               <span className="block text-[12px] leading-4 text-[#f3eee5]/82">
-                <span className="block font-medium text-[#f3eee5]">Howard Choi</span>
+                <span className="block font-medium text-[#f3eee5]" translate="no">Howard Choi</span>
                 {ko ? "캘리포니아 변호사 · State Bar No. 284364 · 영어 · 한국어 · 스페인어 지원" : es ? "Abogado de California · State Bar No. 284364 · Atención en inglés, coreano y español" : <>California Personal Injury Lawyer · State Bar No. 284364 · English, Korean &amp; Spanish assistance</>}
               </span>
             </motion.a>
@@ -171,23 +170,25 @@ const Hero = ({ locale = "en" }: { locale?: SiteLocale }) => {
       </motion.div>
 
       <motion.div className="absolute inset-x-0 bottom-6 z-20 hidden md:block" style={shouldReduceMotion ? undefined : { opacity: contentOpacity }}>
-        <div className="site-shell flex gap-2">
+        <div className="site-shell flex items-center gap-2">
           {slides.map((_, index) => (
-            <button
+            <Button variant="control"
               key={index}
               type="button"
-              onClick={() => setCurrentSlide(index)}
-              className="h-px flex-1 overflow-hidden bg-[#f3eee5]/28"
+              onClick={() => { setPaused(true); setCurrentSlide(index); }}
+              aria-current={index === currentSlide ? "true" : undefined}
+              className="group flex h-11 min-w-0 flex-1 items-center"
               aria-label={ko ? `슬라이드 ${index + 1}로 이동` : es ? `Ir a la diapositiva ${index + 1}` : `Go to slide ${index + 1}`}
             >
-              {index < currentSlide ? <div className="h-full w-full bg-[#f3eee5]" /> : null}
+              <span className="block h-0.5 w-full overflow-hidden bg-white/35 group-hover:bg-white/60">
+              {index < currentSlide ? <span className="block h-full w-full bg-[#f3eee5]" /> : null}
               {index === currentSlide ? (
-                shouldReduceMotion ? (
-                  <div className="h-full w-full bg-[#f3eee5]" />
+                shouldReduceMotion || paused ? (
+                  <span className="block h-full w-full bg-[#f3eee5]" />
                 ) : (
-                  <motion.div
+                  <motion.span
                     key={`progress-${currentSlide}`}
-                    className="h-full w-full origin-left bg-[#f3eee5]"
+                    className="block h-full w-full origin-left bg-[#f3eee5]"
                     initial={{ scaleX: 0 }}
                     animate={{ scaleX: 1 }}
                     transition={{ duration: SLIDE_DURATION_SECONDS, ease: "linear" }}
@@ -195,7 +196,8 @@ const Hero = ({ locale = "en" }: { locale?: SiteLocale }) => {
                   />
                 )
               ) : null}
-            </button>
+              </span>
+            </Button>
           ))}
         </div>
       </motion.div>

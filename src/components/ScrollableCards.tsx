@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import { Children, cloneElement, isValidElement, useEffect, useRef, useState, type CSSProperties, type ReactElement, type ReactNode, type TouchEvent } from "react";
 import { ArrowLeft, ArrowRight, Pause, Play } from "lucide-react";
 
@@ -173,10 +174,10 @@ export default function ScrollableCards({
       <div className="showcase-deck__toolbar">
         <div className="flex flex-col gap-1">
           <span className="text-[11px] text-foreground/65">{label}</span>
-          <span className="text-[10px] tracking-[0.11em] text-foreground/45">DRAG / SWIPE · {ordinal} / {count}</span>
+          <span className="text-[10px] tracking-[0.11em] text-foreground/70"><span className="hidden md:inline">DRAG / SWIPE · </span>{ordinal} / {count}</span>
         </div>
         <div className="flex items-center gap-2">
-          <button
+          <Button variant="round"
             type="button"
             onClick={() => setManualPause((current) => !current)}
             aria-label={manualPause ? "Resume automatic slide rotation" : "Pause automatic slide rotation"}
@@ -184,13 +185,13 @@ export default function ScrollableCards({
             className="showcase-deck__control"
           >
             {manualPause ? <Play className="h-4 w-4" /> : <Pause className="h-4 w-4" />}
-          </button>
-          <button type="button" onClick={() => move(-1)} aria-label={previousLabel} className="showcase-deck__control">
+          </Button>
+          <Button variant="round" type="button" onClick={() => move(-1)} aria-label={previousLabel} className="showcase-deck__control">
             <ArrowLeft className="h-4 w-4" />
-          </button>
-          <button type="button" onClick={() => move(1)} aria-label={nextLabel} className="showcase-deck__control">
+          </Button>
+          <Button variant="round" type="button" onClick={() => move(1)} aria-label={nextLabel} className="showcase-deck__control">
             <ArrowRight className="h-4 w-4" />
-          </button>
+          </Button>
         </div>
       </div>
 

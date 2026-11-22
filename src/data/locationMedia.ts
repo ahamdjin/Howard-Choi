@@ -1,3 +1,5 @@
+import buenaParkCityHall from "@/assets/law-firm/buena-park-city-hall.webp";
+
 /** City-specific photographs researched on Wikimedia Commons, with attribution.
  * Source-file links expose the licensing information. Photos use direct 620px Wikimedia thumbnails where available,
  * and remain third-party assets to avoid large unoptimized bundles. */
@@ -44,7 +46,7 @@ export const locationMedia: Record<string, { src: string; alt: string; credit: s
     license: "CC BY-SA 3.0",
     source: "https://commons.wikimedia.org/wiki/File:Costa_Mesa_CA_(2013)_05.JPG",
   },
-  "buena-park": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Buena_Park_City_Hall.jpg/960px-Buena_Park_City_Hall.jpg", alt: "Photograph of Buena Park City Hall", credit: "Sony 1992", license: "CC0", source: "https://commons.wikimedia.org/wiki/File:Buena_Park_City_Hall.jpg" },
+  "buena-park": { src: buenaParkCityHall, alt: "Photograph of Buena Park City Hall", credit: "Sony 1992", license: "CC0", source: "https://commons.wikimedia.org/wiki/File:Buena_Park_City_Hall.jpg" },
   "anaheim": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Anaheim_City_Hall_West%2C_Anaheim%2C_CA%2C_lower_SE_corner.jpg/960px-Anaheim_City_Hall_West%2C_Anaheim%2C_CA%2C_lower_SE_corner.jpg", alt: "Photograph of Anaheim City Hall West,  Anaheim,  CA,  lower SE corner", credit: "Ken Lund", license: "CC BY-SA 2.0", source: "https://commons.wikimedia.org/wiki/File:Anaheim_City_Hall_West,_Anaheim,_CA,_lower_SE_corner.jpg" },
   "fullerton": { src: "https://upload.wikimedia.org/wikipedia/commons/7/77/Fullerton_Station.jpg", alt: "Photograph of Fullerton Station", credit: "Oakshade", license: "CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Fullerton_Station.jpg" },
   "garden-grove": { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Main_street_garden_grove.jpg/960px-Main_street_garden_grove.jpg", alt: "Photograph of Main street garden grove", credit: "Justin.skoda", license: "CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Main_street_garden_grove.jpg" },

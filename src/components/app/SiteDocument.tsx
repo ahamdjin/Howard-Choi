@@ -3,6 +3,7 @@ import "@/styles/reading-visuals.css";
 import { useEffect, type ReactNode } from "react";
 import { HeadContent, Scripts, useRouterState } from "@tanstack/react-router";
 import DeferredIntegrations from "@/components/DeferredIntegrations";
+import newsreaderFont from "@fontsource-variable/newsreader/files/newsreader-latin-opsz-normal.woff2?url";
 import heroJusticeLibrary from "@/assets/law-firm/hero-justice-library.webp";
 import { mobileHeroSource } from "@/lib/responsive-images";
 import { installContactAnalytics } from "@/lib/contact-analytics";
@@ -59,6 +60,10 @@ export default function SiteDocument({ children }: { children: ReactNode }) {
     <html lang={lang}>
       <head>
         <HeadContent />
+        {isHomepage && <>
+          {lang !== "ko" && <link rel="preload" as="font" type="font/woff2" href={newsreaderFont} crossOrigin="anonymous" />}
+          <link rel="preconnect" href="https://images.unsplash.com" />
+        </>}
         {/* Only homepages preload a mobile-sized hero. Desktop will not fetch
             this preload, and the same srcSet is used by the static mobile img. */}
         {isHomepage && (

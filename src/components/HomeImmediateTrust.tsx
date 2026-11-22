@@ -1,3 +1,5 @@
+import { Card } from "@/components/ui/card";
+import { ArrowLink } from "@/components/ui/button";
 import { BadgeCheck, Clock, Languages, Scale } from "lucide-react";
 import type { SiteLocale } from "@/data/injurySite";
 
@@ -12,31 +14,39 @@ const HomeImmediateTrust = ({ locale = "en" }: { locale?: SiteLocale }) => {
   const ko = locale === "ko";
   const es = locale === "es";
   return (
-    <aside aria-label={ko ? "이 로펌을 신뢰할 수 있는 이유" : es ? "Razones para confiar en esta firma" : "Why clients can trust this firm"} className="bg-[#f7f6f3] text-foreground">
+    <aside aria-label={ko ? "이 로펌을 신뢰할 수 있는 이유" : es ? "Razones para confiar en esta firma" : "Why clients can trust this firm"} className="home-trust bg-[#f7f6f3] text-foreground">
       <div className="site-shell py-8 md:py-10">
         <div className="grid gap-px border-y border-foreground/12 bg-foreground/10 sm:grid-cols-2 lg:grid-cols-4">
           {promises.map(({ icon: Icon, label, detail, koLabel, koDetail, esLabel, esDetail }) => (
-            <div key={label} className="flex items-start gap-3.5 bg-[#f7f6f3] px-5 py-6">
-              <Icon className="mt-0.5 h-4 w-4 shrink-0 text-foreground/45" strokeWidth={1.6} />
+            <Card key={label} className="border-0 shadow-none rounded-none flex items-start gap-3.5 bg-[#f7f6f3] px-5 py-6">
+              <Icon className="mt-0.5 h-4 w-4 shrink-0 text-foreground/70" strokeWidth={1.6} />
               <div>
                 <div className="text-[13px] font-medium leading-5 tracking-[-0.01em] text-foreground">{ko ? koLabel : es ? esLabel : label}</div>
-                <div className="mt-1 text-[11px] leading-4 text-foreground/45">{ko ? koDetail : es ? esDetail : detail}</div>
+                <div className="mt-1 text-[11px] leading-4 text-foreground/70">{ko ? koDetail : es ? esDetail : detail}</div>
               </div>
-            </div>
+            </Card>
           ))}
         </div>
-        <div className="mt-5 flex flex-wrap items-center justify-between gap-3 text-[12px] leading-5">
-          <p className="text-foreground/65">{ko ? "자동차 사고 후 보험, 증거 및 청구 절차가 궁금하신가요?" : es ? "¿Tuvo un accidente de auto y necesita orientación sobre el seguro y los siguientes pasos?" : "Injured in a car accident? Understand the evidence, insurance and next steps."}</p>
-          <a href={ko ? "/ko/practice-areas/car-accidents" : es ? "/es/practice-areas/car-accidents" : "/practice-areas/car-accidents"} className="font-medium underline underline-offset-4 hover:opacity-65">{ko ? "자동차 사고 법률 안내" : es ? "Abogado de accidentes de auto en Buena Park" : "Buena Park car accident lawyer"} →</a>
+        <div className="home-accident-guides">
+          <div className="mt-5 flex flex-wrap items-center justify-between gap-3 text-[12px] leading-5">
+            <div>
+              <h2 className="editorial-serif md:hidden">{ko ? "자동차 사고로 다치셨나요?" : es ? "¿Se lesionó en un choque?" : "Injured in a car accident?"}</h2>
+              <p className="text-foreground/75">
+                <span className="hidden md:inline">{ko ? "자동차 사고 후 " : es ? "¿Tuvo un accidente de auto? " : "Injured in a car accident? "}</span>
+                {ko ? "어떤 자료를 보관하고 보험사에 무엇을 확인해야 하는지 알아보세요." : es ? "Infórmese sobre qué pruebas guardar y qué preguntar cuando le llame la aseguradora." : "Find out what evidence to keep and what to ask when the insurer calls."}
+              </p>
+            </div>
+            <ArrowLink direction="right" variant="ink" href={ko ? "/ko/practice-areas/car-accidents" : es ? "/es/practice-areas/car-accidents" : "/practice-areas/car-accidents"}>
+              {ko ? "부에나파크 교통사고 변호사" : es ? "Abogado de accidentes de auto en Buena Park" : "Buena Park car accident lawyer"}
+            </ArrowLink>
+          </div>
+          <nav aria-label={ko ? "관련 상해 사건 유형" : es ? "Otras áreas de práctica" : "Related practice areas"} className="home-related-guides mt-3 flex flex-wrap items-center gap-x-3 gap-y-2">
+            <h3>{ko ? "관련 상해 사건 유형" : es ? "Otras áreas de práctica" : "Related practice areas"}</h3>
+            <ArrowLink href={ko ? "/ko/practice-areas/truck-accidents" : es ? "/es/practice-areas/truck-accidents" : "/practice-areas/truck-accidents"}>{ko ? "트럭 사고" : es ? "Accidentes de camión" : "Truck accident claims"}</ArrowLink>
+            <ArrowLink href={ko ? "/ko/practice-areas/rideshare-accidents" : es ? "/es/practice-areas/rideshare-accidents" : "/practice-areas/rideshare-accidents"}>{ko ? "우버·리프트 사고" : es ? "Accidentes de Uber y Lyft" : "Uber and Lyft accident claims"}</ArrowLink>
+            <ArrowLink href={ko ? "/ko/practice-areas/serious-injuries" : es ? "/es/practice-areas/serious-injuries" : "/practice-areas/serious-injuries"}>{ko ? "중대한 상해" : es ? "Lesiones graves y catastróficas" : "Brain and catastrophic injuries"}</ArrowLink>
+          </nav>
         </div>
-        {/* These are relevant follow-up options, not a keyword-stuffed link list.
-            The main car-accident link above remains the first recommendation. */}
-        <nav aria-label={ko ? "관련 사고 법률 안내" : es ? "Ayuda legal por tipo de accidente" : "Related injury legal help"} className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-[12px] leading-5 text-foreground/65">
-          <span className="text-foreground/45">{ko ? "관련 안내:" : es ? "También:" : "Other injury questions:"}</span>
-          <a href={ko ? "/ko/practice-areas/truck-accidents" : es ? "/es/practice-areas/truck-accidents" : "/practice-areas/truck-accidents"} className="underline underline-offset-4 hover:text-foreground">{ko ? "트럭 사고" : es ? "Accidentes de camión" : "Truck accident claims"}</a>
-          <a href={ko ? "/ko/practice-areas/rideshare-accidents" : es ? "/es/practice-areas/rideshare-accidents" : "/practice-areas/rideshare-accidents"} className="underline underline-offset-4 hover:text-foreground">{ko ? "우버·리프트 사고" : es ? "Accidentes de Uber y Lyft" : "Uber and Lyft accident claims"}</a>
-          <a href={ko ? "/ko/practice-areas/serious-injuries" : es ? "/es/practice-areas/serious-injuries" : "/practice-areas/serious-injuries"} className="underline underline-offset-4 hover:text-foreground">{ko ? "중대한 상해" : es ? "Lesiones graves" : "Brain and catastrophic injuries"}</a>
-        </nav>
       </div>
     </aside>
   );

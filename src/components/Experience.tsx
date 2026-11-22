@@ -1,10 +1,13 @@
+import damagePhoto from "@/assets/law-firm/collision-damage.jpg";
+import carePhoto from "@/assets/law-firm/medical-care.jpg";
+import documentsPhoto from "@/assets/law-firm/reviewing-documents.jpg";
+import meetingPhoto from "@/assets/law-firm/attorney-client-talking.jpg";
 import { responsiveImageProps } from "@/lib/responsive-images";
 import { AnimatePresence, m as motion, useInView, useReducedMotion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import ProcessAccordion from "@/components/ProcessAccordion";
 import type { SiteLocale } from "@/data/injurySite";
 
-const AUTO_ADVANCE_MS = 4800;
 
 const stepCopy = {
   en: [
@@ -27,20 +30,17 @@ const stepCopy = {
   ],
 } as const;
 
-const images = [
-  "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1400&q=88",
-  "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1400&q=88",
-  "https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1400&q=88",
-  "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=88",
-];
+const images = [damagePhoto, carePhoto, documentsPhoto, meetingPhoto];
 
 const Experience = ({ locale = "en" }: { locale?: SiteLocale }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.18 });
-  const reducedMotion = useReducedMotion();
+
   const [active, setActive] = useState(0);
-  const steps = stepCopy[locale].map((step, index) => ({ ...step, image: images[index] }));
-  useEffect(() => { if (!isInView || reducedMotion) return; const timer = window.setTimeout(() => setActive((current) => (current + 1) % steps.length), AUTO_ADVANCE_MS); return () => window.clearTimeout(timer); }, [active, isInView, reducedMotion, steps.length]);
+  const section = useRef<HTMLElement>(null);
+  const visible = useInView(section, { amount: 0.3 });
+  const reduced = useReducedMotion();
+  const [manual, setManual] = useState(false);
+  const steps = stepCopy[locale];
+  const image = images[active];
 
   const eyebrow = locale === "ko" ? "사고 변호사가 돕는 일" : locale === "es" ? "En qué ayuda un abogado de accidentes" : "What an accident lawyer helps with";
   const title = locale === "ko" ? "전화 후 진행되는 과정." : locale === "es" ? "Qué ocurre después de su llamada." : "What happens after you call.";
@@ -51,21 +51,28 @@ const Experience = ({ locale = "en" }: { locale?: SiteLocale }) => {
       : "Four stages every injury claim moves through: evidence, medical treatment, insurance, and what the loss is finally worth.";
 
   return (
-    <section id="approach" ref={ref} className="flex min-h-[100svh] items-center bg-background py-[clamp(3rem,6vh,5rem)]">
+    <section ref={section} id="approach" className="flex min-h-[100svh] items-center bg-background py-[clamp(3rem,6vh,5rem)]">
       <div className="site-shell w-full">
-        <motion.div initial={{ opacity: 0, y: 18 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.72 }} className="max-w-[620px]">
+        <div className="max-w-[620px]">
           <span className="mb-5 block text-[15px] font-semibold leading-none text-foreground">{eyebrow}</span>
           <h2 className="editorial-serif text-[clamp(3.15rem,4.3vw,4.25rem)] leading-[0.96] tracking-[-0.025em]">{title}</h2>
-          <p className="mt-5 max-w-[520px] text-[clamp(1.08rem,1.5vw,1.32rem)] leading-[1.28] text-foreground/58">{body}</p>
-        </motion.div>
+          <p className="mt-5 max-w-[520px] text-[clamp(1.08rem,1.5vw,1.32rem)] leading-[1.28] text-foreground/70">{body}</p>
+        </div>
         <div className="mt-[clamp(2.8rem,6vh,4.8rem)] grid gap-5 lg:grid-cols-2">
-          <motion.div initial={{ opacity: 0, x: -16 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.8, delay: 0.05 }} className="relative min-h-[390px] overflow-hidden rounded-[4px] bg-neutral-200 lg:h-full lg:min-h-0">
+          <div className="relative aspect-[16/9] md:min-h-[390px] lg:aspect-auto overflow-hidden rounded-[4px] bg-neutral-200 lg:h-full lg:min-h-0">
             <AnimatePresence mode="wait" initial={false}>
-              <motion.img {...responsiveImageProps(steps[active].image)} key={steps[active].image} src={steps[active].image} alt={locale === "es" ? `Etapa de ${steps[active].title} de un reclamo por lesiones` : locale === "ko" ? `상해 청구의 ${steps[active].title} 단계` : `${steps[active].title} stage of an injury claim`} initial={{ opacity: 0, scale: 1.018 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="absolute inset-0 h-full w-full object-cover" />
+              <motion.img width={1400} height={933} {...responsiveImageProps(image)} key={image} src={image} alt={locale === "es" ? `Etapa de ${steps[active].title} de un reclamo por lesiones` : locale === "ko" ? `상해 청구의 ${steps[active].title} 단계` : `${steps[active].title} stage of an injury claim`} initial={{ opacity: 0, scale: 1.018 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.58, ease: [0.22, 1, 0.36, 1] }} className="absolute inset-0 h-full w-full object-cover" />
             </AnimatePresence>
             <div className="absolute inset-0 bg-black/[0.06]" />
-          </motion.div>
-          <ProcessAccordion steps={steps} active={active} onSelect={setActive} inView={isInView} duration={AUTO_ADVANCE_MS} />
+          </div>
+          <ProcessAccordion
+            steps={steps}
+            active={active}
+            onSelect={(index) => { setManual(true); setActive(index); }}
+            running={visible && !manual && !reduced}
+            onElapsed={() => setActive((index) => (index + 1) % steps.length)}
+            korean={locale === "ko"}
+          />
         </div>
       </div>
     </section>

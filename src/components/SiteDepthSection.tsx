@@ -1,3 +1,5 @@
+import { ArrowLink } from "@/components/ui/button";
+import { GuidanceCard } from "@/components/editorial/EditorialCards";
 import { ArrowRight } from "lucide-react";
 import type { SiteLocale } from "@/data/injurySite";
 
@@ -133,23 +135,15 @@ function HomeAccidentGuidance({ locale }: { locale: SiteLocale }) {
           <h2 id="home-accident-guidance-heading" className="editorial-serif max-w-[520px] text-balance text-[clamp(2.25rem,4vw,4.5rem)] leading-[1.04]">{d.title[locale]}</h2>
           <p className="mt-5 max-w-[54ch] text-[16px] leading-7 text-[#57514b]">{d.intro[locale]}</p>
           <div className="mt-6 flex flex-col items-start gap-1.5">
-            <a href={`${prefix}/blogs/what-to-do-after-a-car-accident-in-california`} className="inline-flex min-h-11 items-center gap-3 rounded-[3px] bg-[#211c17] px-4 py-2.5 text-sm font-medium text-[#f7f6f3] hover:bg-[#3b3128] focus-visible:outline-offset-4">
-              {ko ? "부에나파크 교통사고 대응 가이드" : es ? "Guía tras un accidente de auto en Buena Park" : "Buena Park car accident guide"} <ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0" />
-            </a>
-            <a href={`${prefix}/locations/buena-park`} className="inline-flex min-h-11 items-center gap-2 text-sm font-medium underline underline-offset-4 hover:opacity-70">
-              {ko ? "부에나파크 사고 기록과 지역 안내" : es ? "Informes y recursos locales de Buena Park" : "Buena Park collision reports and local resources"} <ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0" />
-            </a>
+            <ArrowLink direction="right" variant="ink" href={`${prefix}/blogs/what-to-do-after-a-car-accident-in-california`}>{ko ? "부에나파크 교통사고 대응 가이드" : es ? "Guía tras un accidente de auto en Buena Park" : "Buena Park car accident guide"}</ArrowLink>
+            <ArrowLink direction="right" variant="editorial" href={`${prefix}/locations/buena-park`}>{ko ? "부에나파크 사고 기록과 지역 안내" : es ? "Informes y recursos locales de Buena Park" : "Buena Park collision reports and local resources"}</ArrowLink>
           </div>
         </div>
         <div className="grid gap-3">
           {d.points.map((point, index) => (
-            <article key={point.heading.en} className="rounded-[3px] border border-[#211c17]/15 bg-[#f8f5ee] px-5 py-5 sm:px-7 sm:py-6">
-              <h3 className="editorial-serif text-[clamp(1.4rem,2.15vw,1.9rem)] leading-tight">{point.heading[locale]}</h3>
-              <p className="mt-3 max-w-[68ch] text-[15px] leading-7 text-[#57514b]">{point.body[locale]}</p>
-              <a href={sources[index].href} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex min-h-11 items-center gap-2 text-sm font-medium underline underline-offset-4 hover:opacity-70">
-                {sources[index].label} <ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0" />
-              </a>
-            </article>
+            <GuidanceCard mobileDisclosure="crash-guidance" key={point.heading.en} title={point.heading[locale]} source={{ ...sources[index], target: "_blank" }}>
+              <p>{point.body[locale]}</p>
+            </GuidanceCard>
           ))}
         </div>
       </div>
@@ -173,7 +167,7 @@ export default function SiteDepthSection({ locale, topic }: { locale: SiteLocale
           </div>)}
         </div>
         <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 border-t border-[#211c17]/15 pt-5 text-[12px]">
-          <a href={d.source.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 underline underline-offset-4 hover:opacity-65"><span>{locale === "ko" ? "공식 근거: " : locale === "es" ? "Fuente oficial: " : "Original source: "}{d.source.label}</span><ArrowRight className="h-3.5 w-3.5" /></a>
+          <a href={d.source.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 underline underline-offset-4 hover:opacity-65"><span>{locale === "ko" ? "공식 근거: " : locale === "es" ? "Fuente oficial: " : "Original source: "}{d.source.label}</span><ArrowRight aria-hidden="true" className="h-3.5 w-3.5" /></a>
         </div>
       </div>
     </section>

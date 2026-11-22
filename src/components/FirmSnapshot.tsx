@@ -1,4 +1,5 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowLink } from "@/components/ui/button";
+import { GuidanceCard } from "@/components/editorial/EditorialCards";
 import type { SiteLocale } from "@/data/injurySite";
 
 const consultationExamples = [
@@ -47,20 +48,14 @@ const FirmSnapshot = ({ locale = "en" }: { locale?: SiteLocale }) => {
         <p className="mt-4 max-w-[65ch] text-[15px] leading-7 text-foreground/75">
           {ko ? "부상으로 일을 쉬어야 하거나 사고 경위에 다툼이 생겼다면, 먼저 어떤 자료가 필요한지 확인해 보세요. Howard Choi와 상담할 때 아래 사항을 참고할 수 있습니다." : es ? "Si faltó al trabajo por una lesión o hay desacuerdo sobre lo ocurrido, conviene saber qué documentos pueden ayudar. Estos son ejemplos de lo que puede comentar con Howard Choi en una consulta." : "If your injury kept you from working or there’s disagreement about what happened, a consultation can help you identify what records matter. Here’s what you can bring to a conversation with Howard Choi."}
         </p>
-        <div className="mt-7 grid gap-x-8 md:grid-cols-3">
+        <div className="my-7 grid gap-4 md:grid-cols-3">
           {consultationExamples.map(({ slug, title, body, link }) => (
-            <article key={slug} className="flex flex-col border-t border-foreground/15 py-5">
-              <h3 className="editorial-serif text-2xl leading-tight">{title[locale]}</h3>
-              <p className="mt-3 flex-1 text-[15px] leading-7 text-foreground/75">{body[locale]}</p>
-              <a href={`${prefix}/practice-areas/${slug}`} className="mt-3 inline-flex min-h-11 items-center gap-2 self-start text-sm font-medium underline underline-offset-4 hover:opacity-70">
-                {link[locale]} <ArrowUpRight aria-hidden="true" className="h-3.5 w-3.5 shrink-0" />
-              </a>
-            </article>
+            <GuidanceCard mobileDisclosure="consultation-examples" key={slug} title={title[locale]} source={{ href: `${prefix}/practice-areas/${slug}`, label: link[locale] }}>
+              <p>{body[locale]}</p>
+            </GuidanceCard>
           ))}
         </div>
-        <a href={prefix ? `${prefix}/about` : "/about/our-difference"} className="inline-flex min-h-11 items-center gap-2 rounded-[3px] bg-[#171717] px-4 py-3 text-sm font-medium text-white hover:opacity-80">
-          {ko ? "로펌 소개" : es ? "Sobre el despacho" : "How we build your case"} <ArrowUpRight aria-hidden="true" className="h-3.5 w-3.5" />
-        </a>
+        <ArrowLink variant="ink" href={prefix ? `${prefix}/about` : "/about/our-difference"}>{ko ? "로펌 소개" : es ? "Sobre el despacho" : "How we build your case"}</ArrowLink>
       </div>
     </section>
   );

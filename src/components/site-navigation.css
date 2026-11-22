@@ -31,3 +31,18 @@
     display: none !important;
   }
 }
+
+.navigation-consult {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding-inline: 14px;
+  border-radius: 5px;
+  background: #382b22;
+  color: #fffaf2;
+  font: 600 12px/1.2 Inter, sans-serif;
+  white-space: nowrap;
+}
+.navigation-consult:hover { background: #59402e; }
+.navigation-consult--mobile { padding-inline: 10px; }

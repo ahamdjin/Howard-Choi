@@ -1,5 +1,6 @@
+import { Card } from "@/components/ui/card";
+import { ArrowLink } from "@/components/ui/button";
 import { responsiveImageProps } from "@/lib/responsive-images";
-import { ArrowUpRight } from "lucide-react";
 import type { SiteLocale } from "@/data/injurySite";
 import courthouseImage from "@/assets/law-firm/hero-courthouse.webp";
 import boardroomImage from "@/assets/law-firm/hero-city-boardroom.webp";
@@ -56,13 +57,11 @@ const SelectedResult = ({ locale = "en" }: { locale?: SiteLocale }) => {
               {ko ? "사건 결과와 변호 경력" : es ? "Resultados y experiencia" : "Case results and experience"}
             </h2>
           </div>
-          <a href={`${prefix}/results`} className="inline-flex items-center gap-2 whitespace-nowrap rounded-[3px] bg-[#f3eee5] px-4 py-3 text-[11px] font-medium text-[#17130f] transition-opacity hover:opacity-85 lg:mb-2">
-            {ko ? "사건 결과 보기" : es ? "Ver resultados" : "View case results"} <ArrowUpRight className="h-3.5 w-3.5" />
-          </a>
+          <ArrowLink variant="paper" href={`${prefix}/results`} className="lg:mb-2">{ko ? "사건 결과 보기" : es ? "Ver resultados" : "View case results"}</ArrowLink>
         </div>
         <div className="mt-8 grid gap-4 border-t border-white/20 pt-6 md:grid-cols-3 lg:mt-10">
           {results.map((result) => (
-            <div key={result.title} className="overflow-hidden rounded-[3px] bg-[#191919]">
+            <Card key={result.title} className="border-0 shadow-none overflow-hidden rounded-[3px] bg-[#191919] text-white">
               <div className="relative h-28 overflow-hidden md:h-36">
                 <img {...responsiveImageProps(result.image)} src={result.image} alt={result.alt} loading="lazy" decoding="async" className="h-full w-full object-cover opacity-45" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] via-[#0f0f0f]/35 to-transparent" />
@@ -76,7 +75,7 @@ const SelectedResult = ({ locale = "en" }: { locale?: SiteLocale }) => {
                 <div className="text-base font-medium tracking-[-0.01em] text-white">{ko ? result.koTitle : es ? result.esTitle : result.title}</div>
                 <p className="mt-2 text-sm leading-6 text-white/75">{ko ? result.koDetail : es ? result.esDetail : result.detail}</p>
               </div>
-            </div>
+            </Card>
           ))}
         </div>
         <p className="mt-6 max-w-[760px] text-xs leading-5 text-white/65">

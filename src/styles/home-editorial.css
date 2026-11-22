@@ -1,0 +1,216 @@
+/* Full-bleed spreads share the same inside edge as the masthead. */
+.home-page {
+  --site-content-width: min(var(--site-max-width), calc(100% - 2 * var(--content-inset)));
+  --spread-space: clamp(3rem, 6vw, 6.5rem);
+}
+.home-page #home-main > div > section,
+.home-page #home-main > div > div > section {
+  width: 100%;
+  min-height: calc(100svh - 60px);
+  align-content: center;
+}
+.home-page #home-main a:not([data-button-variant]),
+.home-page footer a,
+.home-page #home-main a span,
+.home-page footer a span {
+  text-decoration: none;
+}
+.home-page #home-main a[class*="border-b"],
+.home-page #home-main a span[class*="border-b"],
+.home-page #home-main .editorial-inline-link { border-bottom-width: 0; }
+.home-page #home-main p a, .home-page footer p a {
+  font-weight: 650;
+  font-style: italic;
+}
+@media (hover:hover) {
+  .home-page :where(main,footer) a:hover { opacity: .78; }
+}
+.home-page .home-office img {
+  width: 100%; height: clamp(15rem, 36svh, 26rem); object-fit: cover; object-position: center 30%;
+}
+.home-page .home-attorney > .site-shell {
+  grid-template-columns: minmax(0, 1fr) minmax(0, .92fr);
+  gap: clamp(2rem, 6vw, 7rem);
+}
+.home-page .home-attorney h2 { max-width: 14ch; }
+.home-page .home-preparation {
+  padding-block: var(--spread-space); background: #eae2d5; color: #231f19;
+}
+.home-preparation__layout { display: grid; grid-template-columns: 1fr .88fr; gap: var(--spread-space); align-items: center; }
+.home-preparation__layout img { width: 100%; height: clamp(12rem, 31svh, 24rem); object-fit: cover; margin-bottom: 2rem; }
+.home-book-link { display: inline-flex; align-items: center; min-height: 46px; padding: .65rem 1.1rem; color: white; background: #28231d; }
+.home-page .claim-help__body { align-items: start; }
+.home-page .claim-help__image { aspect-ratio: 4 / 3; border-radius: 0; }
+.home-page .claim-help__image img { min-height: 0; }
+.home-page .claim-help__question { display: block; padding: 0; }
+.home-page .claim-help__question summary { display: flex; align-items: center; gap: 1rem; cursor: pointer; padding-block: 1.25rem; }
+.home-page .claim-help__question summary::-webkit-details-marker { display: none; }
+.home-page .claim-help__question h3 { margin: 0; }
+.home-page .claim-help__icon { flex: none; margin: 0; }
+.claim-toggle { margin-left: auto; font: 1.4rem/1 sans-serif; }
+.claim-toggle::before { content: "+"; }
+details[open] > summary .claim-toggle::before { content: "−"; }
+.home-page .claim-help__question > div { padding: 0 1rem 1.2rem 2.5rem; }
+.home-page .showcase-deck__toolbar { padding-inline-end: clamp(3.5rem, 5vw, 5rem); }
+@media (max-width: 767px) {
+  .home-page .home-attorney > .site-shell, .home-preparation__layout { grid-template-columns: 1fr; }
+  .home-page .home-office img { height: 16rem; }
+  .home-page .home-preparation__layout { gap: 2rem; }
+  .home-page .showcase-deck__toolbar { flex-wrap: wrap; }
+}
+.home-page .site-navigation-shell a span { text-decoration: none; }
+@media (prefers-reduced-motion: reduce) {
+  html:has(.home-page) { scroll-behavior: auto; }
+}
+/* The masthead reserves 44px in normal flow. Fit the opening spread below it. */
+.home-page #home-main .home-hero { height: calc(100svh - 44px); min-height: 0; }
+@media (max-height: 620px) {
+  .home-page #home-main .home-hero { min-height: 36rem; }
+}
+.home-page .claim-help { padding-block: clamp(2.5rem, 5vh, 4rem); }
+.home-page .claim-help__inner { display: grid; grid-template-columns: minmax(0,.95fr) minmax(0,1fr); gap: var(--spread-space); align-items: center; }
+.home-page .claim-help__heading { display: block; margin: 0; }
+.home-page .claim-help__heading > p { margin-block: 1rem 1.5rem; max-width: 60ch; }
+.home-page .claim-help__image { aspect-ratio: auto; height: clamp(12rem, 31svh, 21rem); }
+.home-page .claim-help__questions > nav { grid-template-columns: 1fr; }
+.claim-help__next { margin-top: 1.25rem; }
+.claim-help__next p { max-width: 64ch; }
+.claim-help__next nav { display: flex; flex-wrap: wrap; gap: 0 1.25rem; }
+.claim-help__next nav a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; }
+.home-attorney .site-shell > div:first-child p { color: #ece5dc; font-family: Inter,sans-serif; max-width: 56ch; }
+.home-page .home-attorney > .site-shell { align-items: start; }
+.home-page #home-main p a { font-style: normal; }
+.home-page aside[aria-label] li a:has(img) { border-color: transparent; background: transparent; }
+.home-page #research-home { padding-block: clamp(2.5rem,5vw,5rem); }
+.home-page .areas-intro { margin-bottom: 1.5rem; }
+.areas-intro > div:last-child { margin-top: 1rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 2rem; }
+.areas-intro > div:last-child a { margin: 0; }
+.call-notes { background: #e9e2d6; padding-block: var(--spread-space); }
+.call-notes__layout { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spread-space); align-items: start; }
+.call-notes h2 { max-width: 19ch; }
+.call-notes p { margin-block: 1.2rem; max-width: 50ch; }
+.call-notes dl > div { padding: 1rem 0; border-top: 1px solid #ab9c88; }
+.call-notes dt { font: 500 1.45rem/1.25 Newsreader,Georgia,serif; }
+.call-notes dd { margin-top: .35rem; max-width: 55ch; }
+@media (max-width: 850px) {
+  .home-page .claim-help__inner, .call-notes__layout { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+
+@media (max-width: 767px) {
+  .home-page {
+    --content-inset: clamp(0.875rem, 4vw, 1.5rem);
+    --spread-space: 2.5rem;
+  }
+  .home-page #home-main > div > section,
+  .home-page #home-main > div > div > section,
+  .home-page #faq > .site-shell {
+    min-height: 0;
+  }
+
+  /* Let the opening copy set the height on short screens and with enlarged text. */
+  .home-page #home-main .home-hero {
+    height: auto;
+    min-height: 0;
+  }
+  .home-page .home-hero-content {
+    position: relative;
+    min-height: calc(100svh - 44px - var(--page-frame));
+    padding-top: max(6rem, 17svh);
+    background: linear-gradient(to top, rgb(20 17 14 / 95%), rgb(20 17 14 / 60%) 60%, transparent);
+  }
+  .home-page .home-hero-shell { padding-bottom: 3rem; }
+  .home-page .home-hero-actions { align-items: stretch; gap: .5rem; }
+  .home-page .home-hero-actions a { width: 100%; }
+  .home-page .home-hero-description,
+  .home-page .home-hero-fee { color: #f3eee5; }
+
+  .home-page #home-main :is(.home-attorney, #practice, #areas, #approach, #results, #consultation-questions, #booking),
+  .home-page :is(#reviews, #faq) > .site-shell { padding-block: 2.5rem; }
+  .home-page .home-trust .site-shell { padding-block: 1.25rem; }
+  .home-trust .site-shell > .grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .home-trust .site-shell > .grid > div { display: grid; align-content: start; gap: .5rem; padding: .875rem; }
+  .home-page .claim-help__question > div { padding-inline: 0; }
+  .home-page .claim-help__image { height: auto; aspect-ratio: 2 / 1; }
+  .home-page .claim-help__next nav { gap: .5rem 1rem; }
+  .home-page .home-office img { height: auto; aspect-ratio: 2 / 1; }
+  .home-preparation__layout img { display: none; }
+  .home-page #approach .site-shell > .grid { margin-top: 1.5rem; }
+  .home-page #approach h3 button { padding: 1rem; }
+  .home-page #approach h3 button span { font-size: 1.55rem; line-height: 1.12; }
+  .home-page #approach [role="region"] > div { padding-inline: 1rem; }
+  .home-page .showcase-deck__toolbar { padding: 0; gap: .5rem; align-items: center; }
+  .home-page .showcase-deck__toolbar > div:first-child { flex: 1 1 7rem; }
+  .home-page .showcase-deck__toolbar span { font-size: .8125rem; }
+  .home-page .showcase-deck__card > .relative { padding: 3rem 1rem 1.25rem; }
+  .home-page #home-main .showcase-deck__card p { font-size: 1rem !important; line-height: 1.45 !important; }
+  .home-page .showcase-deck__card[data-slot="0"] { color: white; }
+  .home-page .home-topic { border-block-start: 1px solid rgb(45 37 28 / 20%); }
+  .home-topic summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 48px; padding: .875rem 0; cursor: pointer; font-weight: 600; }
+  .home-topic summary::-webkit-details-marker { display: none; }
+  .home-topic summary::after { content: "+"; }
+  .home-topic[open] summary::after { content: "−"; }
+  .home-topic > p { padding-bottom: 1rem; }
+  .home-page #booking input, .home-page #booking textarea { font-size: 16px; }
+  .home-page #booking button[type="submit"] { width: 100%; }
+  .home-page footer { padding-block: 2.5rem; }
+  .home-page footer .site-shell > .grid:first-child { gap: 1.75rem; padding-bottom: 2rem; }
+}
+
+@media (max-width: 767px) {
+  .home-shortcuts { border-bottom: 1px solid #c9beb0; background: #f2ece3; }
+  .home-shortcuts .site-shell { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0 .75rem; }
+  .home-page .home-hero-content { background: linear-gradient(to top, rgb(20 17 14 / 97%), rgb(20 17 14 / 68%) 52%, transparent 82%); }
+  .home-page #home-main .home-topic > summary { text-align: start; }
+  .home-page :is(#research-home, #when-to-call) .home-topic { border: 0; }
+  .home-page :is(#research-home, #when-to-call) .home-topic[open] { padding-bottom: .75rem; }
+  .home-page :is(#research-home, #when-to-call) .home-topic > div { margin-top: 0; }
+  .home-page #reviews .site-shell > .text-center { text-align: start; }
+  .home-page #reviews .site-shell > .text-center p { margin-inline: 0; }
+  .home-page #reviews [aria-roledescription="carousel"] { margin-top: 1.25rem; }
+  .home-page #reviews [aria-roledescription="carousel"] > .relative { aspect-ratio: 2.5; }
+}
+
+@media (max-width: 767px) {
+  /* Headings carry the story; body copy and navigation share a quieter reading face. */
+  .home-page #home-main :is(section,aside) p,
+  .home-page #home-main :is(.home-related-guides, .home-shortcuts, [data-button-variant]) {
+    font-family: Inter, "Noto Sans KR", Arial, sans-serif;
+  }
+  .home-page .home-accident-guides { padding-block: .75rem 1.25rem; }
+  .home-page .home-accident-guides > div { display: grid; justify-content: stretch; gap: .75rem; }
+  .home-page .home-accident-guides h2 { margin-bottom: .5rem; }
+  .home-page .home-accident-guides > div > a {
+    justify-self: start;
+    padding-inline: 0;
+    background: transparent;
+    color: #282119;
+    text-decoration: underline;
+    text-underline-offset: .28em;
+  }
+  .home-page .home-related-guides { display: grid; gap: 0; margin-top: 1.5rem; }
+  .home-page #home-main .home-related-guides h3 {
+    font-family: Inter, "Noto Sans KR", Arial, sans-serif;
+    font-size: .875rem !important;
+    font-weight: 600;
+    margin-bottom: .6rem;
+  }
+  .home-page .home-related-guides a {
+    justify-content: space-between;
+    border-top: 1px solid #cfc8bd;
+    padding-block: .75rem;
+    min-height: 48px;
+    text-align: start;
+    font-size: 1rem;
+  }
+  .home-page .home-related-guides a:last-child { border-bottom: 1px solid #cfc8bd; }
+  .home-page .claim-help__questions > nav a { justify-content: start; text-align: start; }
+}
+
+.home-page .home-hero {
+  border-bottom: var(--page-frame) solid hsl(var(--background));
+}
+.home-page #home-main .home-hero .home-hero-eyebrow {
+  font-family: inherit;
+  text-wrap: balance;
+  max-width: none;
+}

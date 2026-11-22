@@ -93,3 +93,5 @@ shown where the firm actually holds the award, issued in this firm's name.
 ## November 10 reading-layout archive additions
 - `/editorial-images/orange-county-courthouse.webp`: Cbl62, Old Orange County Courthouse, Santa Ana, 2012. Source: https://commons.wikimedia.org/wiki/File:Old_Orange_County_Courthouse,_Santa_Ana,_California.jpg . CC BY-SA 3.0: https://creativecommons.org/licenses/by-sa/3.0/ . Resized to 1200px and converted to WebP; adaptation retains the same license.
 - `/editorial-images/shoulder-examination.webp`: U.S. Navy / Robert Winn, shoulder examination aboard USS Nimitz, October 3, 2009, 091003-N-8960W-011. Public domain U.S. government photograph, via Wikimedia Commons. Resized to 1200px and converted to WebP. Illustrative only, not a firm client or endorsement.
+
+Local landmark photograph: `buena-park-city-hall.webp` shows Buena Park City Hall. Sony 1992, CC0, [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Buena_Park_City_Hall.jpg).

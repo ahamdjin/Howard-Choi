@@ -1,5 +1,6 @@
+import { Card } from "@/components/ui/card";
+import { ArrowLink } from "@/components/ui/button";
 import { responsiveImageProps } from "@/lib/responsive-images";
-import { ArrowUpRight } from "lucide-react";
 import type { SiteLocale } from "@/data/injurySite";
 import avvo from "@/assets/law-firm/badges/avvo.png";
 import aaoaTopHundred from "@/assets/law-firm/badges/aaoa-top-100.webp";
@@ -9,12 +10,12 @@ import naopiaTopTen from "@/assets/law-firm/badges/naopia-top-ten-attorney-2025.
 import truckingTopTen from "@/assets/law-firm/badges/trucking-trial-lawyers-top-10.webp";
 
 const badges = [
-  { src: avvo, alt: "Howard Choi on Avvo", href: "https://www.avvo.com/attorneys/90621-ca-howard-choi-4229558.html" },
-  { src: aaoaTopHundred, alt: "American Academy of Attorneys Top 100, 2025", href: "https://aaoaus.com/" },
-  { src: naopiaTopTen, alt: "NAOPIA Nation's Premier Top Ten Personal Injury Attorney, 2025", href: "https://www.naopia.com/" },
-  { src: lawyersOfDistinction, alt: "Lawyers of Distinction, 2026", href: "https://www.lawyersofdistinction.com/" },
-  { src: truckingTopTen, alt: "Trucking Trial Lawyers Association Top 10", href: "https://thettla.org/" },
-  { src: bbbAccredited, alt: "Better Business Bureau Accredited Business", href: "https://www.bbb.org/" },
+  { src: avvo, width: 300, height: 181, alt: "Howard Choi on Avvo", href: "https://www.avvo.com/attorneys/90621-ca-howard-choi-4229558.html" },
+  { src: aaoaTopHundred, width: 173, height: 122, alt: "American Academy of Attorneys Top 100, 2025", href: "https://aaoaus.com/" },
+  { src: naopiaTopTen, width: 130, height: 104, alt: "NAOPIA Nation's Premier Top Ten Personal Injury Attorney, 2025", href: "https://www.naopia.com/" },
+  { src: lawyersOfDistinction, width: 200, height: 200, alt: "Lawyers of Distinction, 2026", href: "https://www.lawyersofdistinction.com/" },
+  { src: truckingTopTen, width: 96, height: 96, alt: "Trucking Trial Lawyers Association Top 10", href: "https://thettla.org/" },
+  { src: bbbAccredited, width: 100, height: 162, alt: "Better Business Bureau Accredited Business", href: "https://www.bbb.org/" },
 ];
 
 const TrustBadges = ({ locale = "en" }: { locale?: SiteLocale }) => {
@@ -27,17 +28,15 @@ const TrustBadges = ({ locale = "en" }: { locale?: SiteLocale }) => {
     <aside aria-label={ko ? "수상 및 인증" : es ? "Premios y reconocimientos" : "Awards and recognition"} className="bg-background text-foreground">
       <div className="site-shell py-10 md:py-12">
         <div className="flex flex-wrap items-baseline justify-between gap-4 border-b border-foreground/12 pb-5">
-          <div className="text-[10px] uppercase tracking-[0.16em] text-foreground/36">{label}</div>
-          <a href={`${prefix}/attorney`} className="inline-flex items-center gap-2 text-[11px] font-medium underline underline-offset-4 transition-opacity hover:opacity-60">
-            {attorneyLabel} <ArrowUpRight className="h-3.5 w-3.5" />
-          </a>
+          <div className="text-[10px] uppercase tracking-[0.16em] text-foreground/70">{label}</div>
+          <ArrowLink variant="editorial" href={`${prefix}/attorney`}>{attorneyLabel}</ArrowLink>
         </div>
         <ul className="mt-6 grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:grid-cols-6">
           {badges.map((badge) => (
             <li key={badge.alt}>
-              <a href={badge.href} target="_blank" rel="noreferrer nofollow" className="flex h-[80px] items-center justify-center rounded-[3px] border border-[#8a6a48] bg-white px-3 py-2.5 transition-opacity hover:opacity-75">
-                <img {...responsiveImageProps(badge.src)} src={badge.src} alt={badge.alt} loading="lazy" decoding="async" className="max-h-[60px] w-auto max-w-full object-contain" />
-              </a>
+              <Card asChild className="rounded-sm border-0 bg-transparent shadow-none"><a href={badge.href} target="_blank" rel="noreferrer nofollow" className="flex h-[80px] items-center justify-center rounded-[3px] border border-[#8a6a48] bg-white px-3 py-2.5 transition-opacity hover:opacity-75">
+                <img {...responsiveImageProps(badge.src)} src={badge.src} width={badge.width} height={badge.height} alt={badge.alt} loading="lazy" decoding="async" className="max-h-[60px] w-auto max-w-full object-contain" />
+              </a></Card>
             </li>
           ))}
         </ul>

@@ -1,3 +1,5 @@
+import { PhotoLinkCard } from "@/components/editorial/EditorialCards";
+import { ArrowLink, ButtonLink } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
 import { serviceLocations, type SiteLocale } from "@/data/injurySite";
 import ScrollableCards from "@/components/ScrollableCards";
@@ -37,24 +39,22 @@ const HomeServiceAreas = ({ locale = "en" }: { locale?: SiteLocale }) => {
   return (
     <section id="areas" aria-labelledby="home-service-areas-heading" className="w-full bg-background py-16 text-foreground md:py-20 lg:py-24">
       <div className="site-shell">
-        <div className="mb-10 grid gap-7 lg:mb-12 lg:grid-cols-[1.25fr_0.75fr] lg:items-end lg:gap-12">
+        <div className="areas-intro">
           <div className="max-w-[860px]">
-            <div className="text-[10px] uppercase tracking-[0.16em] text-foreground/50">{ko ? "서비스 지역" : es ? "Zonas de servicio" : "Communities we serve"}</div>
+            <div className="text-[10px] uppercase tracking-[0.16em] text-foreground/70">{ko ? "서비스 지역" : es ? "Zonas de servicio" : "Communities we serve"}</div>
             <h2 id="home-service-areas-heading" className="editorial-serif mt-5 text-[clamp(2.5rem,4.6vw,4.9rem)] leading-[1.04] tracking-[-0.028em]">
               {ko ? <>부에나파크에서 시작해,<br /><span className="text-foreground/65">인근 지역까지 돕습니다.</span></> : es ? <>Una oficina en Buena Park.<br /><span className="text-foreground/65">Ayuda en ciudades cercanas.</span></> : <>One office in Buena Park.<br /><span className="text-foreground/65">Help across nearby communities.</span></>}
             </h2>
           </div>
           <div>
-            <p className="max-w-[520px] text-[14px] leading-7 text-foreground/70">
+            <p className="max-w-[70ch] text-[14px] leading-7 text-foreground/70">
               {ko
                 ? "사무실은 부에나파크 Beach Boulevard에 있습니다. 사고가 난 도시를 선택하면 사고 보고서 요청 방법, 보관할 자료와 지역별 다음 단계를 확인할 수 있습니다."
                 : es
                   ? "Nuestra oficina está en Beach Boulevard, en Buena Park. Elija la ciudad donde ocurrió el accidente para saber dónde pedir el informe, qué documentos guardar y cómo dar el siguiente paso."
                   : "Our office is on Beach Boulevard in Buena Park. Choose the city where you were injured to find out where to request a collision report, which records to keep, and what to do next."}
             </p>
-            <a href={`${prefix}/locations`} className="mt-5 inline-flex min-h-11 items-center gap-2 text-[12px] font-medium underline underline-offset-4">
-              {ko ? "모든 지역 보기" : es ? "Ver todas las ciudades" : "View all service locations"} <ArrowUpRight className="h-4 w-4" />
-            </a>
+            <ArrowLink variant="editorial" href={`${prefix}/locations`} className="mt-5">{ko ? "모든 지역 보기" : es ? "Ver todas las ciudades" : "View all service locations"}</ArrowLink>
           </div>
         </div>
 
@@ -65,9 +65,9 @@ const HomeServiceAreas = ({ locale = "en" }: { locale?: SiteLocale }) => {
               <ul className="mt-1 flex flex-wrap gap-x-5">
                 {county.cities.map((city) => (
                   <li key={city.slug}>
-                    <a href={`${prefix}/locations/${city.slug}`} className="inline-flex min-h-11 items-center text-sm underline underline-offset-4 hover:opacity-70">
+                    <ButtonLink variant="editorial" href={`${prefix}/locations/${city.slug}`}>
                       {ko ? city.koName : city.name}
-                    </a>
+                    </ButtonLink>
                   </li>
                 ))}
               </ul>
@@ -83,22 +83,23 @@ const HomeServiceAreas = ({ locale = "en" }: { locale?: SiteLocale }) => {
           {serviceLocations.map((location, index) => {
             const photo = locationMedia[location.slug];
             return (
-              <a
+              <PhotoLinkCard
                 key={location.slug}
                 href={`${prefix}/locations/${location.slug}`}
-                className="group relative flex min-h-[345px] w-[86%] shrink-0 snap-start flex-col justify-end overflow-hidden rounded-[4px] bg-[#181511] text-[#f3eee5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:w-[47%] lg:w-[31%] xl:w-[24%]"
+                className="min-h-[345px]"
               >
                 <img
+                  width={640} height={480} loading="lazy" decoding="async"
                   data-deck-index={index}
                   data-deck-src={photo.src}
                   data-deck-fallback={fallbackPhotos[index % fallbackPhotos.length]}
-                  onError={(event) => { const image = event.currentTarget; const fallback = image.dataset.deckFallback; if (fallback && !image.dataset.deckFailed) { image.dataset.deckFailed = "true"; image.removeAttribute("srcset"); image.src = fallback; } }}
+                  onError={(event) => { const image = event.currentTarget; const fallback = image.dataset.deckFallback; if (fallback && !image.dataset.deckFailed) { image.dataset.deckFailed = "true"; image.alt = ""; image.removeAttribute("srcset"); image.src = fallback; } }}
                   alt={photo.alt}
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.035]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#15110d]/95 via-[#15110d]/35 to-[#15110d]/15" />
                 <span className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-white/45 bg-[#15110d]/40">
-                  <ArrowUpRight className="h-4 w-4" />
+                  <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
                 </span>
                 <div className="relative px-5 pb-6 pt-12">
                   <span className="text-[10px] font-medium tracking-[0.13em] text-white/75">{String(index + 1).padStart(2, "0")} / {serviceLocations.length}</span>
@@ -111,10 +112,10 @@ const HomeServiceAreas = ({ locale = "en" }: { locale?: SiteLocale }) => {
                     <span className="mt-1 block text-[11px] text-white/65">California OTS</span>
                   </div>
                   <span className="mt-4 inline-flex items-center gap-2 border-b border-white/50 pb-1 text-[12px] font-medium">
-                    {ko ? "지역별 안내" : es ? "Explorar la ciudad" : "Explore local injury guidance"} <ArrowUpRight className="h-3.5 w-3.5" />
+                    {ko ? "지역별 안내" : es ? "Explorar la ciudad" : "Explore local injury guidance"} <ArrowUpRight aria-hidden="true" className="h-3.5 w-3.5" />
                   </span>
                 </div>
-              </a>
+              </PhotoLinkCard>
             );
           })}
         </ScrollableCards>

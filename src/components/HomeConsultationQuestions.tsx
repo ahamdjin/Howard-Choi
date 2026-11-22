@@ -1,4 +1,6 @@
-import { ArrowRight } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { Card } from "@/components/ui/card";
+import { ArrowLink } from "@/components/ui/button";
 import type { SiteLocale } from "@/data/injurySite";
 
 const content = {
@@ -37,30 +39,32 @@ const content = {
   },
 };
 export default function HomeConsultationQuestions({ locale }: { locale: SiteLocale }) {
+  const mobile = useIsMobile();
   const copy = content[locale];
   const practiceHref = locale === "en" ? "/practice-areas/personal-injury" : `/${locale}/practice-areas`;
 
   return (
     <section id="consultation-questions" aria-labelledby="consultation-questions-heading" className="!min-h-0 border-t border-foreground/15 bg-[#f7f6f3] py-14 md:py-20 lg:py-24">
       <div className="site-shell grid items-start gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-12 xl:gap-16">
-        <div className="rounded-[3px] bg-[#211c17] px-5 py-7 text-[#f7f6f3] sm:p-8 lg:p-10">
+        <Card className="border-0 shadow-none rounded-[3px] bg-[#211c17] px-5 py-7 text-[#f7f6f3] sm:p-8 lg:p-10">
           <h2 id="consultation-questions-heading" className="editorial-serif max-w-[17ch] text-balance text-[clamp(2rem,3.65vw,4rem)] leading-[1.05]">{copy.title}</h2>
           <p className="mt-5 max-w-[48ch] text-[15px] leading-7 text-[#eee7df]/90">{copy.intro}</p>
-          <a href="#booking" className="mt-6 inline-flex min-h-11 items-center gap-3 rounded-[3px] bg-[#f3eee5] px-4 py-2.5 text-sm font-medium text-[#211c17] hover:bg-white focus-visible:outline-offset-4">
-            {copy.consultation} <ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0" />
-          </a>
-        </div>
+          <ArrowLink direction="right" variant="paper" href="#booking" className="mt-6">{copy.consultation}</ArrowLink>
+        </Card>
         <div className="divide-y divide-foreground/15 border-y border-foreground/15">
-          {copy.items.map(([heading, body]) => (
+          {copy.items.map(([heading, body]) => mobile ? (
+            <details key={heading} name="consultation-topics" className="home-topic">
+              <summary>{heading}</summary>
+              <p>{body}</p>
+            </details>
+          ) : (
             <article key={heading} className="grid gap-2 py-5 sm:grid-cols-[0.7fr_1.3fr] sm:gap-6 lg:py-6">
               <h3 className="editorial-serif text-[clamp(1.35rem,2vw,1.8rem)] leading-tight">{heading}</h3>
               <p className="max-w-[67ch] text-[15px] leading-7 text-foreground/75">{body}</p>
             </article>
           ))}
           <div className="pt-2">
-            <a href={practiceHref} className="inline-flex min-h-11 items-center gap-2 text-sm font-medium underline underline-offset-4 hover:opacity-70">
-              {copy.practiceLink} <ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0" />
-            </a>
+            <ArrowLink direction="right" variant="editorial" href={practiceHref}>{copy.practiceLink}</ArrowLink>
           </div>
         </div>
       </div>

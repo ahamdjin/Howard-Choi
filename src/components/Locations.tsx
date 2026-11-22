@@ -1,3 +1,5 @@
+import { PhotoLinkCard } from "@/components/editorial/EditorialCards";
+import { ArrowLink } from "@/components/ui/button";
 import { practiceSearchNames } from "@/data/practiceSeo";
 import { responsiveImageProps } from "@/lib/responsive-images";
 import { ArrowUpRight } from "lucide-react";
@@ -46,10 +48,7 @@ const Locations = ({ locale = "en" }: { locale?: SiteLocale }) => {
           </div>
           <div>
             <p className="max-w-[550px] text-[15px] leading-7 text-muted-foreground">{body}</p>
-            <a href={`${prefix}/practice-areas`} className="mt-5 inline-flex min-h-11 items-center gap-2 text-[12px] font-medium underline underline-offset-4">
-              {ko ? "모든 업무 분야 보기" : es ? "Ver todas las áreas de práctica" : "View all eight practice areas"}
-              <ArrowUpRight className="h-4 w-4" />
-            </a>
+            <ArrowLink variant="editorial" href={`${prefix}/practice-areas`} className="mt-5">{ko ? "모든 업무 분야 보기" : es ? "Ver todas las áreas de práctica" : "View all eight practice areas"}</ArrowLink>
           </div>
         </div>
 
@@ -64,14 +63,15 @@ const Locations = ({ locale = "en" }: { locale?: SiteLocale }) => {
             const name = ko ? practice.koTitle : es ? (esCopy?.shortTitle || practice.title) : `${practiceSearchNames[practice.slug] || practice.title} Lawyer`;
             const description = ko ? practice.koDescription : es ? (esCopy?.description || practice.description) : summaries[practice.slug] || practice.description;
             return (
-              <a
+              <PhotoLinkCard
                 key={practice.slug}
                 href={`${prefix}/practice-areas/${practice.slug}`}
-                className="group relative flex min-h-[375px] w-[86%] shrink-0 snap-start flex-col justify-end overflow-hidden rounded-[4px] bg-[#181511] text-[#f3eee5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:w-[47%] lg:w-[31%] xl:w-[24%]"
+                className="min-h-[375px]"
               >
                 {media && (
                   <img
-                    data-deck-index={index}
+                    width={640} height={480} loading="lazy" decoding="async"
+                  data-deck-index={index}
                     data-deck-src={media.src}
                     data-deck-srcset={responsiveImageProps(media.src, "(max-width: 640px) 86vw, (max-width: 1024px) 47vw, 24vw").srcSet}
                     data-deck-sizes="(max-width: 640px) 86vw, (max-width: 1024px) 47vw, 24vw"
@@ -80,16 +80,16 @@ const Locations = ({ locale = "en" }: { locale?: SiteLocale }) => {
                   />
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#15110d]/95 via-[#15110d]/25 to-[#15110d]/10" />
-                <span className="absolute right-5 top-5 flex h-9 w-9 items-center justify-center rounded-full border border-white/35 bg-[#15110d]/35"><ArrowUpRight className="h-4 w-4" /></span>
+                <span className="absolute right-5 top-5 flex h-9 w-9 items-center justify-center rounded-full border border-white/35 bg-[#15110d]/35"><ArrowUpRight aria-hidden="true" className="h-4 w-4" /></span>
                 <div className="relative px-6 pb-7 pt-16">
                   <span className="text-[11px] tracking-[0.13em] text-white/70">{String(index + 1).padStart(2, "0")} / {practiceAreas.length}</span>
                   <h3 className="editorial-serif mt-3 text-[clamp(1.9rem,2.5vw,2.5rem)] leading-[1.06] tracking-[-0.02em]">{name}</h3>
                   <p className="mt-3 max-w-[340px] text-[13px] leading-[1.6] text-white/85">{description}</p>
                   <span className="mt-5 inline-flex items-center gap-2 border-b border-white/55 pb-1 text-[12px] font-medium">
-                    {ko ? "사고별 법률 안내" : es ? "Explorar orientación legal" : "Explore this practice area"} <ArrowUpRight className="h-3.5 w-3.5" />
+                    {ko ? "사고별 법률 안내" : es ? "Explorar orientación legal" : "Explore this practice area"} <ArrowUpRight aria-hidden="true" className="h-3.5 w-3.5" />
                   </span>
                 </div>
-              </a>
+              </PhotoLinkCard>
             );
           })}
         </ScrollableCards>

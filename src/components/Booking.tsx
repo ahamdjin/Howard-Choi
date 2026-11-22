@@ -1,25 +1,23 @@
+import { Card } from "@/components/ui/card";
+import { ButtonLink } from "@/components/ui/button";
 import { responsiveImageProps } from "@/lib/responsive-images";
-import { m as motion, useInView } from "framer-motion";
-import { useRef } from "react";
 import { MapPin, Phone } from "lucide-react";
 import WebsiteInquiryForm from "@/components/WebsiteInquiryForm";
 import { brand, type SiteLocale } from "@/data/injurySite";
 
 const Booking = ({ locale = "en" }: { locale?: SiteLocale }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.15 });
   const ko = locale === "ko";
   const es = locale === "es";
 
   return (
-    <section id="booking" ref={ref} style={{ minHeight: "100svh" }} className="relative isolate flex w-full items-center overflow-hidden bg-[#171717] py-20 text-white md:py-24">
-      <img {...responsiveImageProps("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1800&q=82")} src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1800&q=82" alt="" loading="lazy" decoding="async" className="absolute inset-0 -z-20 h-full w-full object-cover opacity-[0.18]" />
+    <section id="booking" style={{ minHeight: "100svh" }} className="relative isolate flex w-full items-center overflow-hidden bg-[#171717] py-20 text-white md:py-24">
+      <img width={1200} height={800} {...responsiveImageProps("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1800&q=82")} src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1800&q=82" alt="" loading="lazy" decoding="async" className="absolute inset-0 -z-20 h-full w-full object-cover opacity-[0.18]" />
       <div className="absolute inset-0 -z-10 bg-black/65" />
 
       <div className="site-shell">
-        <motion.div initial={{ opacity: 0, y: 22 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.75 }} className="grid gap-12 lg:grid-cols-[1fr_0.9fr] lg:items-start lg:gap-20">
+        <div className="grid gap-12 lg:grid-cols-[1fr_0.9fr] lg:items-start lg:gap-20">
           <div>
-            <span className="mb-5 block text-[10px] uppercase tracking-[0.18em] text-white/48">
+            <span className="mb-5 block text-[10px] uppercase tracking-[0.18em] text-white/75">
               {ko ? "상담 시작" : es ? "Inicie la conversación" : "Start the conversation"}
             </span>
             <h2 className="editorial-serif text-[clamp(2.6rem,4.4vw,4.6rem)] leading-[0.95] tracking-[-0.032em]">
@@ -30,23 +28,23 @@ const Booking = ({ locale = "en" }: { locale?: SiteLocale }) => {
             </p>
 
             <div className="mt-10 space-y-5 border-t border-white/12 pt-8">
-              <a href={brand.phoneHref} className="group flex items-center gap-4">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/18 transition-colors group-hover:border-white/45"><Phone className="h-4 w-4" strokeWidth={1.6} /></span>
-                <span><span className="block text-[10px] uppercase tracking-[0.16em] text-white/42">{ko ? "직접 전화" : es ? "Llamar directamente" : "Call directly"}</span><span className="text-[15px] text-white transition-opacity group-hover:opacity-75">{brand.phoneDisplay}</span></span>
-              </a>
-              <a href={brand.mapsHref} target="_blank" rel="noreferrer" className="group flex items-center gap-4">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/18 transition-colors group-hover:border-white/45"><MapPin className="h-4 w-4" strokeWidth={1.6} /></span>
-                <span><span className="block text-[10px] uppercase tracking-[0.16em] text-white/42">{ko ? "사무실" : es ? "Oficina" : "Office"}</span><span className="text-[14px] leading-5 text-white/82 transition-opacity group-hover:opacity-60">{brand.address}</span></span>
-              </a>
+              <ButtonLink variant="editorial" href={brand.phoneHref} className="group flex w-fit items-center gap-4">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/18 transition-colors group-hover:border-white/45"><Phone aria-hidden="true" className="h-4 w-4" strokeWidth={1.6} /></span>
+                <span><span className="block text-[10px] uppercase tracking-[0.16em] text-white/75">{ko ? "직접 전화" : es ? "Llamar directamente" : "Call directly"}</span><span className="text-[15px] text-white transition-opacity group-hover:opacity-75">{brand.phoneDisplay}</span></span>
+              </ButtonLink>
+              <ButtonLink variant="editorial" href={brand.mapsHref} target="_blank" rel="noreferrer" className="group flex w-fit items-center gap-4">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/18 transition-colors group-hover:border-white/45"><MapPin aria-hidden="true" className="h-4 w-4" strokeWidth={1.6} /></span>
+                <span><span className="block text-[10px] uppercase tracking-[0.16em] text-white/75">{ko ? "사무실" : es ? "Oficina" : "Office"}</span><span className="text-[14px] leading-5 text-white/82 transition-opacity group-hover:opacity-60">{brand.address}</span></span>
+              </ButtonLink>
             </div>
           </div>
 
-          <div className="rounded-[3px] bg-[#f7f6f3] p-6 text-foreground shadow-[0_30px_80px_rgba(0,0,0,0.35)] sm:p-8">
-            <div className="text-[10px] uppercase tracking-[0.16em] text-foreground/38">{ko ? "무료 상담" : es ? "Consulta gratuita" : "Free consultation"}</div>
+          <Card className="border-0 shadow-none rounded-[3px] bg-[#f7f6f3] p-6 text-foreground shadow-[0_30px_80px_rgba(0,0,0,0.35)] sm:p-8">
+            <div className="text-[10px] uppercase tracking-[0.16em] text-foreground/70">{ko ? "무료 상담" : es ? "Consulta gratuita" : "Free consultation"}</div>
             <h3 className="editorial-serif mt-3 text-[clamp(1.5rem,2vw,1.95rem)] leading-[1.1] tracking-[-0.02em]">{ko ? "연락을 요청하세요." : es ? "Solicite una llamada." : "Request a callback."}</h3>
             <WebsiteInquiryForm locale={locale} />
-          </div>
-        </motion.div>
+          </Card>
+        </div>
       </div>
     </section>
   );
