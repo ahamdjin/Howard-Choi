@@ -447,7 +447,9 @@ const relatedLocationSlugs: Record<string, string[]> = {
 };
 
 const claimGuidesByPractice: Record<string, string[]> = {
-  "car-accidents": ["right-of-way-accident-claims-california", "report-track-progressive-car-accident-claim-california"],
+  "car-accidents": ["right-of-way-accident-claims-california", "report-track-progressive-car-accident-claim-california", "california-basic-speed-law-driving-too-fast-for-conditions"],
+  "truck-accidents": ["caltrans-quickmap-work-zone-lane-closures"],
+  "serious-injuries": ["cumulative-trauma-workers-comp-california"],
   "pedestrian-accidents": ["california-jaywalking-pedestrian-accident-fault"],
 };
 

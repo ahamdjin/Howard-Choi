@@ -38,6 +38,14 @@ const skidSectionPhotos: Record<string, { src: string; alt: string }> = {
 };
 
 const nextGuideBySlug: Record<string, string> = {
+  "californias-minimum-speed-law": "california-basic-speed-law-driving-too-fast-for-conditions",
+  "car-accidents-what-is-a-skid-and-how-can-you-avoid-them": "california-basic-speed-law-driving-too-fast-for-conditions",
+  "california-truck-accident-guide": "caltrans-quickmap-work-zone-lane-closures",
+  "truck-accident-evidence-eld-records-california": "caltrans-quickmap-work-zone-lane-closures",
+  "workers-comp-step-by-step-process-of-filing-a-workers-comp-claim-in-california": "cumulative-trauma-workers-comp-california",
+  "california-basic-speed-law-driving-too-fast-for-conditions": "car-accidents-what-is-a-skid-and-how-can-you-avoid-them",
+  "caltrans-quickmap-work-zone-lane-closures": "unsafe-lane-change-accident-fault-california",
+  "cumulative-trauma-workers-comp-california": "workers-comp-step-by-step-process-of-filing-a-workers-comp-claim-in-california",
   "unsafe-lane-change-accident-fault-california": "right-of-way-accident-claims-california",
   "california-pedestrian-accident-guide": "california-jaywalking-pedestrian-accident-fault",
   "third-party-car-insurance-claim-california": "report-track-progressive-car-accident-claim-california",
@@ -203,7 +211,9 @@ const BlogDetail = () => {
     );
   }
 
-  const related = getBlogBySlug(nextGuideBySlug[post.slug]) ?? blogPosts.find((item) => item.slug !== post.slug);
+  const related = getBlogBySlug(nextGuideBySlug[post.slug])
+    ?? blogPosts.find((item) => item.slug !== post.slug && item.category === post.category)
+    ?? blogPosts.find((item) => item.slug !== post.slug);
   const support = articleSupport[post.slug];
 
   const skid = post.slug === "car-accidents-what-is-a-skid-and-how-can-you-avoid-them";

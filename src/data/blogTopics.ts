@@ -51,6 +51,7 @@ export const blogTopics = {
   injuries: {
     label: "Injuries & Compensation",
     slugs: new Set([
+      "cumulative-trauma-workers-comp-california",
       "what-doctor-to-see-after-car-accident-california",
       "buena-park-wrongful-death-attorney",
       "california-catastrophic-injury-guide",
@@ -68,6 +69,8 @@ export const blogTopics = {
   traffic: {
     label: "Traffic Laws & Safety",
     slugs: new Set([
+      "california-basic-speed-law-driving-too-fast-for-conditions",
+      "caltrans-quickmap-work-zone-lane-closures",
       "california-motorcycle-license-permit-requirements",
       "cali-lean-vs-carolina-squat-whats-the-difference",
       "california-seat-belt-laws",

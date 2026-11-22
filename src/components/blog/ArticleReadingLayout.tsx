@@ -3,7 +3,7 @@ import { ConsultationCard } from "@/components/editorial/ConsultationCard";
 import { guideTopics, injuryTopics } from "@/data/learningResources";
 import { ArticleByline } from "./ArticleAuthor";
 import { useEffect, useRef, useState } from "react";
-import { ArrowLeft, Check, Copy, Facebook, Linkedin } from "lucide-react";
+import { ArrowDown, ArrowLeft, Check, Copy, Facebook, Linkedin } from "lucide-react";
 import { absoluteUrl } from "@/lib/seo";
 import { Link } from "@/lib/router-compat";
 import { responsiveImageProps } from "@/lib/responsive-images";
@@ -69,6 +69,7 @@ export function ArticleHero({ post, locale }: Props) {
   const cover = skid ? photos.skidHero : { src: post.image, alt: post.alt };
   return <header className="article-reading-hero" data-photo-cover={skid ? "skid" : undefined}>
     <div className="site-shell">
+      <div className="article-cover-copy">
       <Link to={parent} className="article-back"><ArrowLeft size={16} aria-hidden="true" />{backLabel}</Link>
       <div className="article-reading-meta"><span>{post.category}</span><span>{post.date}</span><span>{post.readingTime}</span><ArticleByline slug={post.slug} locale={locale} /></div>
       <h1>{post.title}</h1>
@@ -77,6 +78,11 @@ export function ArticleHero({ post, locale }: Props) {
           A skid is a loss of tire grip that makes a vehicle slide away from its intended path. In a bend, the front may run wide or the rear may swing outward.
         </p>
       )}
+      <div className="article-cover-actions">
+        <a href="#article-key-takeaway">{copy[locale].takeaway}<ArrowDown size={16} aria-hidden="true" /></a>
+        <a href={prefix + "/contact"}>{copy[locale].cta}</a>
+      </div>
+      </div>
       <img {...responsiveImageProps(cover.src)} src={cover.src} alt={cover.alt} loading="eager" fetchPriority="high" decoding="async" className="article-reading-image" />
     </div>
   </header>;
