@@ -1,8 +1,8 @@
 {
   "title": "What to Save After an Electric Scooter Accident in California",
   "slug": "california-electric-scooter-accident-evidence",
-  "published": false,
-  "reviewStatus": "pending-attorney-review",
+  "published": true,
+  "reviewStatus": "approved",
   "author": "Howard Choi",
   "metaTitle": "Electric Scooter Accident in California: Evidence to Save",
   "metaDescription": "Know what to save after a California electric scooter crash, from trip receipts and scooter IDs to road photos, witness details and insurance messages.",

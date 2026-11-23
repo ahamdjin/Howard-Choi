@@ -1,8 +1,8 @@
 {
   "title": "California Motorcycle Helmet Laws: Riders, Passengers and Crash Evidence",
   "slug": "california-motorcycle-helmet-laws-after-crash",
-  "published": false,
-  "reviewStatus": "pending-attorney-review",
+  "published": true,
+  "reviewStatus": "approved",
   "author": "Howard Choi",
   "metaTitle": "California Motorcycle Helmet Laws and Crash Evidence",
   "metaDescription": "Learn which riders and passengers need a DOT-compliant helmet in California and what to preserve if helmet use becomes an issue after a motorcycle crash.",
