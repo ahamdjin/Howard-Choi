@@ -38,6 +38,12 @@ const skidSectionPhotos: Record<string, { src: string; alt: string }> = {
 };
 
 const nextGuideBySlug: Record<string, string> = {
+  "california-bicycle-accident-guide": "california-bicycle-accident-evidence-and-insurance",
+  "california-motorcycle-license-permit-requirements": "california-motorcycle-helmet-laws-after-crash",
+  "mopeds-vs-scooters-california": "california-electric-scooter-accident-evidence",
+  "california-bicycle-accident-evidence-and-insurance": "california-bicycle-accident-guide",
+  "california-motorcycle-helmet-laws-after-crash": "california-motorcycle-accident-guide",
+  "california-electric-scooter-accident-evidence": "mopeds-vs-scooters-california",
   "californias-minimum-speed-law": "california-basic-speed-law-driving-too-fast-for-conditions",
   "car-accidents-what-is-a-skid-and-how-can-you-avoid-them": "california-basic-speed-law-driving-too-fast-for-conditions",
   "california-truck-accident-guide": "caltrans-quickmap-work-zone-lane-closures",

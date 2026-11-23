@@ -16,7 +16,7 @@
   "metaDescription": "What cyclists should preserve after a California bike crash: road markings, cameras, collision reports, helmet evidence, insurance questions and legal deadlines."
 }
 
-For a general overview before using this evidence checklist, see the [California bicycle accident guide](/blogs/california-bicycle-accident-guide).
+For a general overview before using this evidence checklist, see the [California bicycle accident guide](/blogs/california-bicycle-accident-guide). The [Buena Park bicycle accident page](/practice-areas/bicycle-accidents) has local resources for injured cyclists.
 
 ## Safety, medical care and reporting come first
 
@@ -104,7 +104,7 @@ The ordinary California personal-injury limitations rule is often two years unde
 
 This is a major reason to avoid waiting for the bicycle to be repaired, the road hazard to be fixed or treatment to finish before investigating the responsible entity. The identity of the road owner, the nature of a maintenance problem and the scope of any government liability need careful legal analysis.
 
-[Insurance notices and court filing deadlines](/blogs/california-personal-injury-deadlines) can run on different timelines from evidence-retention questions. [California Courts government-claim guidance](https://selfhelp.courts.ca.gov/civil-lawsuit/government-claim) Get case-specific advice promptly rather than relying on a deadline printed in a general article.
+[Insurance notices and court filing deadlines](/blogs/california-personal-injury-deadlines) can run on different timelines from evidence-retention questions. See the [California Courts government-claim guidance](https://selfhelp.courts.ca.gov/civil-lawsuit/government-claim), and get case-specific advice promptly.
 
 ## Practical checklist for a lawyer review
 
