@@ -6,22 +6,18 @@
   "excerpt": "Hit by a car in California? Learn your rights, what steps to take, who’s at fault, and how much your pedestrian accident case could be worth. Buena Park Injury Lawyer fights for you.",
   "category": "Guides",
   "publishedAt": "2026-11-10",
-  "updatedAt": "2026-11-10",
+  "updatedAt": "2026-11-24",
   "intro": "Over the years, pedestrian accidents have surged, raising serious concerns about infrastructure, driver behavior, and pedestrian safety. At Buena Park Injury Lawyer, we are here for you if you or a loved one was struck by a vehicle while walking. From consultation to compensation, we’re ready to fight for everything you deserve, from your medical bills to lost income.",
   "takeaway": "Preserve crossing, signal, lighting and witness evidence as well as medical records; responsibility can extend beyond a single driver.",
   "published": true,
   "requiredTranslations": [],
-  "reviewStatus": "approved",
-  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-pedestrian-accident-101/",
-  "reviewedBy": "howard-choi",
-  "reviewConfirmationDate": "2026-11-15"
+  "reviewStatus": "approved-for-publication",
+  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-pedestrian-accident-101/"
 }
 
 ## Why Pedestrian Accidents Are Rising in California
 
 This guide will provide you with everything you need to know about [pedestrian accidents](/practice-areas/pedestrian-accidents) and safety. Let’s begin.
-
-*Please remember that the information provided is for general guidance only and should not be considered a substitute for professional legal advice. Consult with a qualified attorney for advice tailored to your specific situation.
 
 ## Alarming Statistics: Why Pedestrians Face the Highest Risk
 
@@ -195,6 +191,6 @@ After a pedestrian accident, prioritizing your health should be your only concer
 
 ## Where to go next
 
-Read the [topic FAQs](/faqs), explore [injury types](/injury-types), or [request a free consultation](/contact) about the facts of your case.
+Write down where the pedestrian entered the road, what the traffic signal showed, and which direction the vehicle was turning. If the crossing location is disputed, the [California jaywalking and fault guide](/blogs/california-jaywalking-pedestrian-accident-fault) explains why those details matter.
 
 For the underlying rules, see [California Courts: personal injury cases](https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury) and [government claim requirements](https://selfhelp.courts.ca.gov/civil-lawsuit/government-claim).

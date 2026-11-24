@@ -6,15 +6,13 @@
   "excerpt": "Injured in a rideshare accident? Learn your rights, how Uber & Lyft insurance works, and why hiring Buena Park Injury Lawyer can help you win the compensation you deserve.",
   "category": "Guides",
   "publishedAt": "2026-11-10",
-  "updatedAt": "2026-11-10",
+  "updatedAt": "2026-11-24",
   "intro": "Companies like Uber and Lyft have completely transformed the way we travel, offering a convenient and often cost-effective alternative to taxis and public transportation. These services, also known as Transportation Network Companies (TNCs), connect passengers with independent drivers through a mobile app.",
   "takeaway": "Save the ride receipt and app status. Liability and uninsured-motorist coverage are separate questions, and the accident date matters.",
   "published": true,
   "requiredTranslations": [],
-  "reviewStatus": "approved",
-  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-rideshare-accidents-101/",
-  "reviewedBy": "howard-choi",
-  "reviewConfirmationDate": "2026-11-15"
+  "reviewStatus": "approved-for-publication",
+  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-rideshare-accidents-101/"
 }
 
 ## Injured in a Rideshare Crash? Here’s What to Do Next
@@ -23,10 +21,8 @@ But as rideshare usage has increased, so have the number of accidents involving 
 
 - **Insurance coverage depends on driver status.** Uber and Lyft provide up to $1 million in liability coverage—but only when a ride has been accepted, or a passenger is onboard. If the driver is offline or just waiting for a request, coverage drops significantly or disappears entirely.
 - **One-third of rideshare drivers have been in a crash while working.** Despite what the companies report, accidents are common. Factors like app distractions, scanning for passengers, and rushing between rides contribute to higher crash rates than typical driving.
-- **You can’t sue Uber or Lyft directly in most cases.** Because drivers are classified as independent contractors (not employees), the companies are shielded from direct lawsuits. However, their insurance policies still apply based on the driver’s app status at the time of the crash.
+- **Identify who may be responsible and which policy applies.** The driver’s app status helps identify rideshare insurance. Whether a driver, another motorist, or a company can be held responsible depends on the conduct and facts of the crash.
 - **Multiple parties may share liability.** The rideshare driver, another motorist, or even a vehicle manufacturer could be at fault. An attorney can identify all liable parties to maximize your compensation.
-
-*Please remember that the information provided is for general guidance only and should not be considered a substitute for professional legal advice. Consult with a qualified attorney for advice tailored to your specific situation.
 
 ## Uber vs. Lyft: What You Should Know About the Big 2
 
@@ -76,8 +72,8 @@ While both Uber and Lyft offer generous liability insurance coverage, the covera
 | --- | --- | --- | --- |
 | ** Period 0 – App Off** | Driver is using their vehicle personally, not logged into the app | Driver’s personal auto insurance | Varies by driver’s policy |
 | ** Period 1 – App On, Waiting** | Driver is online but has not accepted a ride request | Uber/Lyft contingent coverage | $50K per person / $100K per accident (bodily injury) + $25K property damage |
-| ** Period 2 – Ride Accepted** | Driver has accepted a ride and is en route to pick up passenger | Uber/Lyft commercial coverage | Up to $1 million liability |
-| ** Period 3 – Passenger Onboard** | Passenger is in the vehicle during the trip | Uber/Lyft commercial coverage | Up to $1 million liability |
+| ** Period 2 – Ride Accepted** | Driver has accepted a ride and is en route to pick up passenger | Uber/Lyft commercial coverage | $1 million in required primary commercial liability coverage |
+| ** Period 3 – Passenger Onboard** | Passenger is in the vehicle during the trip | Uber/Lyft commercial coverage | $1 million in required primary commercial liability coverage |
 
 ** UM/UIM Coverage Update** **([SB 371 — Effective January 1, 2026](https://legiscan.com/CA/text/SB371/id/3269031)):** The UM/UIM coverage rideshare companies are required to carry was reduced from $1 million to $60,000 per person and $300,000 per incident. This means that if an uninsured or underinsured driver causes the crash, the compensation available through Uber or Lyft’s policy may fall short of covering serious injuries. For anyone involved in a rideshare accident, reviewing your own personal auto insurance policy for UM/UIM coverage is more important than ever.
 
@@ -132,8 +128,6 @@ We’re with you from day one until the final resolution—whether that’s a se
 
 Howard Choi offers a free consultation. There is no attorney fee unless there is a recovery. Review the written fee agreement before representation begins.
 
-Howard Choi offers a free consultation. There is no attorney fee unless there is a recovery. Review the written fee agreement before representation begins.
-
 ### Focused on Rideshare Cases
 
 Rideshare claims involve unique insurance and liability issues. Our deep experience with Uber and Lyft cases gives us the edge to fight effectively on your behalf.
@@ -152,13 +146,11 @@ Coverage depends on the driver’s app status, the parties at fault and the appl
 
 ### What if I was hit by a rideshare driver as a pedestrian or in another car?
 
-You may still be covered under Uber or Lyft’s insurance, but the amount depends on the driver’s app status at the time of the crash. If the driver had accepted a ride or had a passenger, the full $1 million policy applies. If they were only waiting for a request (Period 1), the contingent coverage of $50,000/$100,000 applies. If the app was off, you’d need to pursue the driver’s personal insurance.
+It depends on the driver’s app status and applicable policy. When a ride is accepted or a passenger is onboard, California requires $1 million in primary commercial coverage. While the driver is logged in and waiting for a request, different limits apply. If the app is off, start by identifying any applicable personal or other coverage. [Current CPUC insurance requirements](https://www.cpuc.ca.gov/tncinsurance)
 
-### Can I still get compensation if the rideshare driver was uninsured or underinsured?
+### What if another driver caused the crash and had little or no insurance?
 
-Yes. Both Uber and Lyft carry uninsured/underinsured motorist (UM/UIM) coverage that kicks in when another at-fault driver lacks adequate insurance. This coverage applies during Periods 2 and 3 and can help cover your medical bills and other damages even when the responsible party can’t pay.
-
-However, it’s important to understand that as of January 1, 2026, ** California’s SB 371** significantly reduced the required UM/UIM coverage. What was once $1 million in UM/UIM coverage per incident has been reduced to $60,000 per person and $300,000 per incident. For serious injuries, these limits can be exhausted quickly. If the available UM/UIM coverage falls short, your own personal auto insurance policy may be able to help bridge the gap.
+For a California crash on or after January 1, 2026, the CPUC lists required uninsured and underinsured motorist coverage of $60,000 per person and $300,000 per incident during Period 3, from passenger entry to exit. This is a separate requirement from the $1 million commercial liability coverage. Ask for the policy in effect on the crash date and check whether another applicable policy offers coverage. [Current CPUC insurance requirements](https://www.cpuc.ca.gov/tncinsurance)
 
 ### What happens if I’m injured while driving for Uber or Lyft?
 
@@ -184,6 +176,6 @@ You don’t have to fight this battle alone. Contact Buena Park Injury Lawyer to
 
 ## Where to go next
 
-Read the [topic FAQs](/faqs), explore [injury types](/injury-types), or [request a free consultation](/contact) about the facts of your case.
+Start with the trip receipt and the crash time. If you’re trying to identify which policy applies, use the [California Uber and Lyft insurance guide](/blogs/uber-lyft-accident-insurance-california) to match those records to the driver’s app status.
 
 For the underlying rules, see [California Courts: personal injury cases](https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury) and [government claim requirements](https://selfhelp.courts.ca.gov/civil-lawsuit/government-claim).

@@ -44,6 +44,14 @@
       ]
     },
     {
+      "heading": "무보험 운전자 보장으로 차량 수리비를 받을 수 있나요?",
+      "paragraphs": [
+        "무보험 운전자 신체상해 보장과 재산 피해 보장은 서로 다릅니다. 캘리포니아에서 무보험 운전자 재산 피해 보장은 일반적으로 $3,500 한도가 적용되며 무보험 운전자의 신원이 확인되어야 합니다. 상대 운전자가 도주해 신원을 확인하지 못한 경우 어떤 보장이 적용될 수 있는지 확인하세요.",
+        "충돌 보장은 상대 운전자의 보험 가입 여부와 관계없이 보험 약관과 [충돌 보장 자기부담금](/blogs/car-insurance-deductible-after-accident-california)에 따라 보장 대상 차량 손해를 지급할 수 있습니다. 충돌 보장 자기부담금 면제는 별도 보장입니다. 종합 보장은 보통 도난처럼 충돌 이외의 손해에 적용됩니다. [캘리포니아 보험국 자동차보험 안내](https://www.insurance.ca.gov/01-consumers/105-type/95-guides/01-auto/auto101.cfm)",
+        "수리 전에 파손 부위를 촬영하세요. 보험사가 차를 검사해야 하는지, 보험이 [사고 후 렌터카 비용](/blogs/rental-car-reimbursement-after-accident-california)을 보장하는지 확인하세요. 견인비, 보관료, 렌트비 영수증과 수리 견적서 및 청구서를 보관하세요."
+      ]
+    },
+    {
       "heading": "다른 운전자가 식별되었으나 보험 금액이 부족한 경우",
       "paragraphs": [
         "작은 책임 한도는 책임 보험이 아예 없는 것과 동일하지 않습니다. 수술, 장기 요양 또는 실업이 필요한 부상은 다른 운전자의 이용 가능한 보장을 초과하는 손실을 초래할 수 있습니다. 이 경우 저보험 운전자 보장이 관련될 수 있지만, 정책의 규정과 기본 책임 청구 처리 방식은 자격에 영향을 미칠 수 있습니다.",
@@ -107,6 +115,6 @@
       ]
     }
   ],
-  "sourceHash": "898afb4f869a3ca2848117d0e53db8e295db4b54e8a47b579333c1e7e5d9901f",
-  "reviewStatus": "translation-draft-pending-legal-language-review"
+  "sourceHash": "c08166242eefc7d46fe17b46524ac9630ae71a1083a8b14777f93ce3825e5103",
+  "reviewStatus": "approved-for-publication"
 }

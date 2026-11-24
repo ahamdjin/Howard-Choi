@@ -6,20 +6,16 @@
   "excerpt": "Dog bite laws in California favor victims. This guide explains your rights, who’s liable, and how Buena Park Injury Lawyer can help you file a strong claim for compensation.",
   "category": "Guides",
   "publishedAt": "2026-11-10",
-  "updatedAt": "2026-11-10",
+  "updatedAt": "2026-11-24",
   "intro": "If you or someone you love has been bitten by a dog in California, it’s important to know your rights. This guide walks you through the legal basics of [dog bite claims](/practice-areas/dog-bites), from liability laws to what to do immediately after an incident. Understanding your legal options is the first step toward getting the compensation you deserve.",
   "takeaway": "Identify the dog and owner, obtain medical care, preserve photographs and report details, and distinguish a bite from another kind of animal-related injury.",
   "published": true,
   "requiredTranslations": [],
-  "reviewStatus": "approved",
-  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-dog-bite-accidents-101/",
-  "reviewedBy": "howard-choi",
-  "reviewConfirmationDate": "2026-11-15"
+  "reviewStatus": "approved-for-publication",
+  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-dog-bite-accidents-101/"
 }
 
 ## Bitten by a Dog? Here’s What You Need to Know
-
-*Please remember that the information provided is for general guidance only and should not be considered a substitute for professional legal advice. Consult with a qualified attorney for advice tailored to your specific situation.
 
 ## California’s Strict Liability Dog Bite Laws Explained
 
@@ -107,8 +103,6 @@ Contact your local animal control agency or police department to report the inci
 Take photos of your injuries, the location of the bite, and the dog (if possible). Write down the date, time, and details of the incident. Collect names and contact information of any witnesses.
 
 Do not speak to the dog owner’s insurance company or sign any documents without legal advice. What you say could be used to weaken your case.
-
-Howard Choi offers a free consultation. There is no attorney fee unless there is a recovery. Review the written fee agreement before representation begins.
 
 Remember, time is of the essence. Acting quickly preserves evidence and helps build a stronger case.
 
@@ -201,6 +195,6 @@ At Buena Park Injury Lawyer, we understand how overwhelming this process can be�
 
 ## Where to go next
 
-Read the [topic FAQs](/faqs), explore [injury types](/injury-types), or [request a free consultation](/contact) about the facts of your case.
+For a first review, organize the dog owner’s identifying information, any animal-control incident number, and your treatment records. Use the [dog bite practice page](/practice-areas/dog-bites) to see which facts the firm asks about when the owner or account of the incident is disputed.
 
 For the underlying rules, see [California Courts: personal injury cases](https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury) and [government claim requirements](https://selfhelp.courts.ca.gov/civil-lawsuit/government-claim).

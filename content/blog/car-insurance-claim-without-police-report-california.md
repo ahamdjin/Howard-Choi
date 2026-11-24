@@ -2,14 +2,14 @@
   "title": "Can I file a car insurance claim without a police report?",
   "slug": "car-insurance-claim-without-police-report-california",
   "published": true,
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved",
   "author": "Howard Choi",
   "metaTitle": "Car Insurance Claim Without Police Report",
   "metaDescription": "You can generally open a California car insurance claim without a police report. See what evidence to provide and when separate reports are required.",
   "excerpt": "You can generally open a California car insurance claim without a police report. See what evidence to provide and when separate reports are required.",
   "category": "Auto Insurance",
   "publishedAt": "2026-11-15",
-  "updatedAt": "2026-11-16",
+  "updatedAt": "2026-11-24",
   "requiredTranslations": [],
   "image": "/blog-images/imported-drafts/howard-choi-car-collision.jpg",
   "alt": "Rear-end collision damage to a passenger car",
@@ -38,6 +38,8 @@ Add the other driver’s name, vehicle information, plate number and insurance d
 Ask nearby property owners about cameras as soon as you can. Identify the exact time window and where the camera was pointed. Save any receipt, parking record, or photograph that helps narrow the timing. A business may have a short retention period and may require a formal request before releasing footage. Record who controls it and what they told you about preservation.
 
 If your car was towed or inspected, obtain a copy of the tow record and estimate. These can show when it was moved and what damage was documented. If you sought medical care, keep the treatment dates and bills. A property damage estimate and a medical record answer different questions. Keep them in separate folders under the same crash date.
+
+If the crash happened during an Uber or Lyft trip, keep the trip receipt and the platform incident number alongside whatever crash records you have. The [California Uber and Lyft insurance guide](/blogs/uber-lyft-accident-insurance-california) explains how to report the crash and ask whether an insurer has opened a claim.
 
 ## How to handle a late report or a hit-and-run
 

@@ -6,22 +6,18 @@
   "excerpt": "If you’ve lost a loved one due to someone else’s negligence, California law gives you the right to seek compensation. This guide breaks down your legal rights, who can file, and what damages you may be entitled to.",
   "category": "Guides",
   "publishedAt": "2026-11-10",
-  "updatedAt": "2026-11-10",
+  "updatedAt": "2026-11-24",
   "intro": "Losing a loved one unexpectedly is one of life’s most devastating experiences. When that loss is caused by someone else’s negligence or wrongful act, the grief can be compounded by anger, confusion, and unanswered questions.",
   "takeaway": "Identify who is legally entitled to bring the claim, preserve the incident evidence and distinguish wrongful-death losses from a survival action.",
   "published": true,
   "requiredTranslations": [],
-  "reviewStatus": "approved",
-  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-wrongful-death-101/",
-  "reviewedBy": "howard-choi",
-  "reviewConfirmationDate": "2026-11-15"
+  "reviewStatus": "approved-for-publication",
+  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-wrongful-death-101/"
 }
 
 ## Understanding Your Rights After a Tragic Loss
 
 In California, wrongful death laws provide a path for surviving family members to seek justice and compensation. This guide offers a clear, comprehensive overview of your rights and legal options under California law.
-
-*Please remember that the information provided is for general guidance only and should not be considered a substitute for professional legal advice. Consult with a qualified attorney for advice tailored to your specific situation.
 
 ## What Counts as Wrongful Death Under California Law?
 
@@ -234,6 +230,6 @@ If you’ve lost someone due to another’s negligence, don’t wait. [Reach out
 
 ## Where to go next
 
-Read the [topic FAQs](/faqs), explore [injury types](/injury-types), or [request a free consultation](/contact) about the facts of your case.
+For an initial consultation, gather the incident report or agency name if you have it, the relevant family records, and any letters you have already received from an insurer. The [Buena Park wrongful-death guide](/blogs/buena-park-wrongful-death-attorney) explains what those records can help establish.
 
 For the underlying rules, see [California Courts: personal injury cases](https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury) and [government claim requirements](https://selfhelp.courts.ca.gov/civil-lawsuit/government-claim).

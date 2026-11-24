@@ -1,6 +1,6 @@
 {
-  "intro": "Un choque de Uber o Lyft puede parecer un accidente automovilístico ordinario en el lugar del siniestro, pero el análisis de seguros puede ser diferente. En California, la cobertura de las empresas de redes de transporte se vincula a lo que hacía el conductor en la aplicación cuando ocurrió el choque. El estado del conductor puede determinar qué capa de póliza debe evaluarse y qué registros del viaje deben preservarse.",
-  "takeaway": "En un accidente con vehículo de viajes compartidos en California, preserve el viaje y la línea de tiempo de la aplicación con tanto cuidado como la línea de tiempo del accidente. El estado del conductor puede afectar qué seguro aplica.",
+  "intro": "El seguro que puede pagar después de un choque de Uber o Lyft en California depende de quién causó el choque y de lo que hacía el conductor en la aplicación. ¿Esperaba una solicitud, iba a recoger al pasajero o ya lo transportaba? Empiece por la fecha del choque y el estado de la aplicación, y luego revise los límites y las pólizas de los conductores involucrados.",
+  "takeaway": "Identifique quién puede ser responsable y el estado de la aplicación al momento del impacto. La responsabilidad civil de viajes compartidos y la cobertura por conductor sin seguro para pasajeros aplican en situaciones distintas.",
   "leadParagraphs": [],
   "sections": [
     {
@@ -12,10 +12,19 @@
       ]
     },
     {
-      "heading": "California utiliza diferentes períodos de cobertura",
+      "heading": "Cobertura del seguro de viajes compartidos en California según el estado de la aplicación",
       "paragraphs": [
-        "Los requisitos de la Comisión Pública de Servicios Públicos de California dividen la actividad de los viajes compartidos en períodos de cobertura. Durante el período en que un conductor está conectado y esperando una solicitud de viaje, los límites primarios de responsabilidad requeridos son más bajos que la cobertura comercial que aplica después de que se ha aceptado un viaje.",
-        "Una vez que el conductor acepta el viaje y se dirige a recoger al pasajero, y durante el traslado del pasajero, California exige $1 million de responsabilidad civil comercial primaria. La cobertura UM/UIM es distinta: los resúmenes antiguos de CPUC muestran límites reemplazados; revise la legislación actual y la póliza vigente en la fecha del accidente."
+        "Los [requisitos de seguro de la Comisión de Servicios Públicos de California para viajes compartidos](https://www.cpuc.ca.gov/tncinsurance) explican los mínimos. Revise la póliza vigente en la fecha del choque.",
+        "| Estado del conductor en el momento del impacto | Requisitos de seguro para viajes compartidos en California |\n| --- | --- |\n| Aplicación apagada | Empiece por revisar el seguro de auto personal u otras pólizas aplicables. |\n| Período 1: Aplicación abierta, a la espera de una solicitud | Límites mínimos de responsabilidad primaria de $50,000 por persona y $100,000 por incidente por lesiones o muerte, más $30,000 por daños materiales. La CPUC también indica $200,000 en cobertura de responsabilidad excedente por incidente. |\n| Período 2: Viaje aceptado, pasajero aún sin recoger | $1 millón en cobertura comercial primaria obligatoria. |\n| Período 3: Pasajero dentro del vehículo | $1 millón en cobertura comercial primaria obligatoria. En choques desde el 1 de enero de 2026, la cobertura obligatoria por conductor sin seguro o con seguro insuficiente desde que el pasajero entra hasta que sale es de $60,000 por persona y $300,000 por incidente. |",
+        "Si el pasajero acababa de salir o el viaje acababa de terminar o cancelarse, anote las horas del viaje y de la aplicación. Según la [sección 5433 del Código de Servicios Públicos de California](https://law.justia.com/codes/california/code-puc/division-2/chapter-8/article-7/section-5433/), el período de responsabilidad puede extenderse hasta que termine la transacción en la aplicación o finalice el viaje, lo que ocurra después. La cobertura obligatoria por conductor sin seguro o con seguro insuficiente termina cuando sale el pasajero."
+      ]
+    },
+    {
+      "heading": "¿Cómo reporto un choque de Uber o Lyft y obtengo un número de reclamo?",
+      "paragraphs": [
+        "Atienda primero la seguridad y cualquier necesidad médica urgente. Luego abra el viaje específico en Uber y use la opción de reporte de incidentes de seguridad en los detalles, como explica la [guía de Uber para reportar choques](https://www.uber.com/us/en/safety/what-to-do-in-a-crash/). Para Lyft, empiece con el [formulario de accidentes de Lyft](https://help.lyft.com/hc/en-us/all/articles/360018628473-Report-an-accident-or-collision). Si iba fuera del vehículo y no tiene recibo, indique el vehículo o la matrícula y la hora y lugar del choque.",
+        "Pregunte si la referencia que recibió es un número de atención de la plataforma o un número de reclamo del seguro. Si ya se asignó una aseguradora, anote su nombre, número de reclamo, ajustador y teléfono o correo. Si solo tiene un número de atención, pregunte quién tramita el reclamo por lesiones. Si el informe policial está pendiente, indique el organismo y el número de incidente y consulte la [guía sobre cómo abrir un reclamo sin informe policial](/blogs/car-insurance-claim-without-police-report-california) para organizar los documentos que ya tiene.",
+        "El reporte en la aplicación y el aviso al DMV cumplen funciones distintas. California exige presentar un SR-1 por separado dentro de 10 días para un choque que reúna los requisitos y cause una lesión, una muerte o daños materiales superiores a $1,000. Si era pasajero, confirme quién conducía y guarde la información del incidente por si es necesaria para el reclamo. [Instrucciones del DMV de California para el SR-1](https://www.dmv.ca.gov/portal/dmv-virtual-office/accident-reporting/)"
       ]
     },
     {
@@ -29,7 +38,8 @@
       "heading": "Puede ser necesario revisar más de una póliza",
       "paragraphs": [
         "La póliza personal de auto del conductor, la póliza de la empresa de red de transporte, la póliza de otro conductor, la póliza del propietario del vehículo, una póliza de empleador o comercial, y la cobertura de conductores no asegurados e insuficientemente asegurados pueden volverse relevantes dependiendo de los hechos.",
-        "La existencia de una empresa de viajes compartidos no significa automáticamente que cada lesión esté cubierta por la misma póliza de $1 millón. El estado en la aplicación y el rol de cada vehículo aún deben establecerse."
+        "La existencia de una empresa de viajes compartidos no significa automáticamente que cada lesión esté cubierta por la misma póliza de $1 millón. El estado en la aplicación y el rol de cada vehículo aún deben establecerse.",
+        "Si abre un reclamo con la aseguradora de otro conductor, use la [guía para reclamar al seguro de otro conductor](/blogs/third-party-car-insurance-claim-california) para organizar el informe, el número de reclamo y las solicitudes de esa compañía. Si el conductor huyó o tenía un seguro insuficiente, la [guía de California sobre choques con fuga y conductores sin seguro](/blogs/california-uninsured-driver-hit-and-run-injury-claims) explica las preguntas sobre aviso, identificación y cobertura."
       ]
     },
     {
@@ -43,18 +53,12 @@
       "heading": "La lesión aún debe documentarse como cualquier otra reclamación",
       "paragraphs": [
         "La cobertura de viajes compartidos no reemplaza la necesidad de probar los daños. El tratamiento médico, el cuidado futuro, los salarios perdidos, el impacto en los ingresos, las limitaciones diarias y otras pérdidas aún necesitan un apoyo confiable.",
-        "Guarde la evidencia del viaje compartido y la evidencia médica/financiera juntas. Una explica qué cobertura puede aplicar; la otra explica cuánto costó realmente el choque a la persona lesionada."
+        "Guarde la evidencia del viaje compartido y la evidencia médica/financiera juntas. Una explica qué cobertura puede aplicar; la otra explica cuánto costó realmente el choque a la persona lesionada.",
+        "Si llegan facturas antes de que las aseguradoras acuerden la cobertura, pida al proveedor un estado de cuenta detallado y registre los pagos y las explicaciones de beneficios. La [guía sobre facturas médicas mientras se tramita un reclamo](/blogs/medical-bills-while-car-accident-claim-pending-california) explica qué aspectos conviene seguir mientras se investiga la responsabilidad."
       ]
     },
     {
-      "heading": "Cree una línea de tiempo del estado del viaje con evidencia real",
-      "paragraphs": [
-        "Comience con la solicitud de reserva, aceptación, llegada del conductor, recogida, hora del choque y cualquier cancelación o terminación del viaje. Preserve capturas de pantalla, recibo del viaje, confirmación por correo electrónico e identificador del viaje sin alterar sus marcas de tiempo. Si usted no era el pasajero, describa lo que pudo ver y qué parte podría tener los registros del viaje en lugar de adivinar si un conductor había aceptado una solicitud.",
-        "La Comisión Pública de Servicios Públicos de California describe los requisitos de seguro para las empresas de red de transporte que varían según el estado del conductor. 'El conductor tenía un adhesivo de Uber' no es un sustituto confiable del estado preciso en el momento del impacto. Esa distinción puede ser central al decidir qué cobertura debe revisarse, aunque por sí sola no decide quién causó el choque."
-      ]
-    },
-    {
-      "heading": "Si el conductor de viajes compartidos no causó el choque",
+      "heading": "¿Quién paga si otro conductor choca contra su Uber o Lyft?",
       "paragraphs": [
         "Un pasajero puede resultar lesionado cuando otro conductor pasa una señal, hace un giro inseguro o golpea por la parte trasera al vehículo de viajes compartidos. La evidencia vial aún debe mostrar el mecanismo real y la responsabilidad. Una póliza relacionada con viajes compartidos puede seguir siendo relevante para la investigación de seguros, pero su aplicabilidad depende de la persona cubierta, el estado en la aplicación y las disposiciones de la póliza aplicable.",
         "Recopile identificación e información de seguro para cada vehículo cuando sea seguro, además de fotografías que muestren la vía vial y los daños. Guarde notas sobre lo que dijeron la policía y la aseguradora en entradas separadas con fecha. No asuma que el primer ajustador que llama representa a todas las partes o a todas las fuentes de cobertura potencial."
@@ -68,21 +72,6 @@
       ]
     },
     {
-      "heading": "Qué preguntar antes de resolver cualquier reclamación de seguro",
-      "paragraphs": [
-        "Pregunte qué aseguradora está manejando qué parte del incidente, si otra póliza de responsabilidad está implicada, qué documentación médica y salarial es necesaria, si algún liberará afectará otras reclamaciones y qué plazos aplican. El lenguaje de una póliza real importa más que una descripción genérica de 'cobertura de $1 millón' en línea.",
-        "Cuando se alega que está involucrada una condición vial gubernamental o un vehículo público, pregunte prontamente si puede aplicar un plazo administrativo más corto. Mantenga el límite legal separado de las solicitudes de documentación de la aseguradora y de los tiempos de respuesta del soporte de la aplicación."
-      ]
-    },
-    {
-      "heading": "Tres períodos de seguro de viajes compartidos en California, lado a lado",
-      "paragraphs": [
-        "La Comisión Pública de Servicios Públicos de California organiza la actividad de las empresas de red de transporte en tres períodos. El Período 1 significa que un conductor está conectado a la aplicación y esperando una coincidencia. El requisito de cobertura primaria declarado por la CPUC para este período es al menos $50,000 por lesión o muerte de una persona, $100,000 por incidente por lesión o muerte, y $30,000 por daños a la propiedad, más un requisito aplicable de responsabilidad excesiva de $200,000. Estos son requisitos regulatorios de cobertura, no una promesa de que cualquier reclamante reciba esas sumas.",
-        "El Período 2 comienza cuando el conductor acepta una solicitud y se dirige al punto de recogida; el Período 3 cubre el viaje del pasajero. El requisito de responsabilidad civil comercial de $1 million es distinto de UM/UIM. Para accidentes desde el 1 de enero de 2026, los resúmenes antiguos de CPUC que describen $1 million en UM/UIM están desactualizados. Uber indica límites UM/UIM en California de $60,000 por persona y $300,000 por accidente. Confirme la plataforma y la póliza vigente en la fecha del accidente. [Actualización del seguro de Uber en California](https://www.uber.com/us/en/newsroom/california-insurance-reform/)",
-        "Cuando la aplicación está apagada, los problemas de cobertura personal de auto ordinarios pueden dominar. Incluso entonces, la identidad de los conductores, propietarios del vehículo, exclusiones aplicables, empleadores y otras aseguradoras deben evaluarse desde hechos reales y pólizas. La existencia de un distintivo de viajes compartidos o un teléfono abierto es insuficiente por sí solo para probar el período de cobertura."
-      ]
-    },
-    {
       "heading": "Una línea de tiempo del pasajero: documentos valiosos para guardar",
       "paragraphs": [
         "Imagine que viaja desde Buena Park a una ciudad cercana cuando otro vehículo golpea al automóvil de viajes compartidos. Guarde la confirmación de reserva, ubicación de recogida, información del conductor/vehículo, hora en que comenzó el viaje, hora del choque, cualquier aviso de cancelación y el recibo final o resumen del viaje. Preserve la correspondencia de soporte dentro de la aplicación y la correspondencia separada de reclamaciones de aseguradoras. Si es posible, guarde capturas de pantalla originales que muestren la hora e identificador de transacción.",
@@ -91,18 +80,20 @@
       ]
     },
     {
-      "heading": "Qué cambia cuando el conductor está esperando versus ya emparejado",
+      "heading": "¿Qué hago si la plataforma y la aseguradora dan respuestas distintas?",
       "paragraphs": [
-        "Suponga que un conductor estaba esperando una solicitud de viaje cuando ocurrió el choque. La pregunta no es si el conductor alguna vez trabajó para una plataforma de viajes compartidos; es si el conductor estaba activo en el Período 1 en ese momento. Eso puede cambiar la cobertura regulatoria que se está examinando.",
-        "Ahora suponga que la plataforma muestra que el conductor aceptó un viaje dos minutos antes del choque pero aún no había llegado al pasajero. El mismo conductor, vehículo y vía vial pueden implicar el Período 2 en su lugar. Por lo tanto, las marcas de tiempo precisas, los registros de la plataforma y las cuentas conflictivas pueden afectar el análisis de seguros incluso cuando la evidencia física del choque es idéntica.",
-        "Finalmente, si el pasajero estaba dentro del vehículo, revise las condiciones UM/UIM vigentes en la fecha del viaje. Los resúmenes regulatorios antiguos pueden mostrar límites reemplazados. La cobertura depende de la póliza y los hechos; una cifra antigua en internet no demuestra la protección actual."
+        "Compare las dos explicaciones. El servicio de atención de la plataforma quizá confirme cuándo acabó el viaje, mientras que el ajustador podría estar usando otra hora para el choque. Pídale al ajustador que indique por escrito la hora y el estado de la aplicación que tomó en cuenta, y qué registro respalda esa conclusión. Si la aseguradora se basa en una cancelación, pregunte cuándo se hizo efectiva y si ocurrió antes o después del impacto.",
+        "Guarde el recibo del viaje y el número de atención junto con la carta del reclamo. Si los relojes no coinciden, anote la hora de cada registro y la zona horaria, cuando esté disponible. Una llamada registrada por la policía, una foto original o un testigo independiente puede ayudar a fijar la hora del choque. Si iba fuera del vehículo de la plataforma y no tiene recibo, indique el vehículo y la hora del choque y pregunte qué datos puede obtener la aseguradora de la plataforma.",
+        "Antes de autorizar un finiquito, confirme qué aseguradora ofrece el pago y qué parte del reclamo cerraría. Una oferta por daños al vehículo y un finiquito por lesiones pueden abarcar pérdidas distintas. Guarde el documento propuesto junto con los mensajes para identificar qué queda pendiente."
       ]
     },
     {
       "heading": "Qué preguntar a cada ajustador de seguros",
       "paragraphs": [
         "Pregunte qué compañía y póliza representa la persona, en qué período de cobertura ha asumido la aseguradora, qué evidencia establece ese estado, si la aseguradora está aceptando o disputando la culpa, y qué documentos o notificaciones necesita. Guarde el texto exacto de los reconocimientos de cobertura, cartas de reserva de derechos y denegaciones. Que una aseguradora investigue una reclamación no es prueba de que todas las pólizas potencialmente aplicables han sido identificadas.",
-        "La información médica y salarial debe proporcionarse con precisión y en un alcance apropiadamente limitado. Una autorización médica amplia o un liberamiento temprano puede tener implicaciones más allá de la recopilación de registros rutinarios. Su propia aseguradora puede tener deberes contractuales de reporte y cooperación que no son idénticos a las obligaciones que tiene cuando trata con el portador de otra parte."
+        "La información médica y salarial debe proporcionarse con precisión y en un alcance apropiadamente limitado. Una autorización médica amplia o un liberamiento temprano puede tener implicaciones más allá de la recopilación de registros rutinarios. Su propia aseguradora puede tener deberes contractuales de reporte y cooperación que no son idénticos a las obligaciones que tiene cuando trata con el portador de otra parte.",
+        "Cuando se alega que está involucrada una condición vial gubernamental o un vehículo público, pregunte prontamente si puede aplicar un plazo administrativo más corto. Mantenga el límite legal separado de las solicitudes de documentación de la aseguradora y de los tiempos de respuesta del soporte de la aplicación.",
+        "Si la aseguradora deniega el reclamo, guarde la carta completa y pregunte a qué póliza, hora del choque y período de cobertura se refiere. Use la [guía de California sobre reclamos de auto denegados](/blogs/car-insurance-claim-denied-california) para identificar los documentos que responden a la razón indicada y anotar cualquier plazo de respuesta."
       ]
     },
     {
@@ -117,17 +108,11 @@
       "paragraphs": [
         "¿Es Uber o Lyft automáticamente responsable por cada choque que involucra a su conductor? No. La responsabilidad depende de la conducta, las relaciones legales y las reglas aplicables. Una póliza de empresa de red de transporte es una pregunta de cobertura, no un hallazgo automático de negligencia corporativa.",
         "¿Puede confiar en una sola captura de pantalla que muestra que se aceptó un viaje? Es una pieza útil de la línea de tiempo, pero puede no establecer todos los eventos críticos o si el estado cambió. Preserve los originales y busque información corroborante donde esté disponible.",
-        "¿De dónde provienen los límites indicados? CPUC explica las fases del viaje, mientras que la legislación vigente y la póliza aplicable deben revisarse para identificar cambios posteriores. California Courts explica las lesiones personales y los plazos. Son puntos de partida; un resumen regulatorio antiguo no demuestra las condiciones actuales de una póliza."
-      ]
-    },
-    {
-      "heading": "Cree un paquete de evidencia del estado del viaje",
-      "paragraphs": [
-        "Guarde el recibo del viaje, mensajes de reserva y cancelación, información de recogida y entrega, identidad del conductor y la hora original mostrada en su dispositivo. Explique si usted era un pasajero, otro conductor, un peatón o un ciclista. Si no vio la aplicación del conductor, dígalo; un distintivo de vehículo no le dice si el conductor estaba conectado, había aceptado un viaje o llevaba a un pasajero en el momento relevante.",
-        "Haga una lista corta de preguntas sin respuesta para la revisión de seguros: qué plataforma estuvo involucrada, si más de una aplicación pudo haber estado activa, quién es propietario del vehículo y qué aseguradora ha reconocido qué parte de la reclamación. No adivine un período de cobertura simplemente para ajustar un límite de póliza. El objetivo es una línea de tiempo reproducible que se pueda comparar con los registros de la plataforma y las aseguradoras, con la incertidumbre visible en lugar de llenada por suposición."
+        "¿De dónde provienen los límites indicados? CPUC explica las fases del viaje, mientras que la legislación vigente y la póliza aplicable deben revisarse para identificar cambios posteriores. California Courts explica las lesiones personales y los plazos. Son puntos de partida; un resumen regulatorio antiguo no demuestra las condiciones actuales de una póliza.",
+        "¿Puedo reportar un choque de Uber sin tener una cuenta? Uber ofrece una vía de reporte para pasajeros invitados, ocupantes de otro vehículo, peatones y testigos. Abra la [página oficial de Uber para reportar choques](https://www.uber.com/us/en/safety/what-to-do-in-a-crash/) y seleccione la opción para otras personas involucradas si corresponde. Tenga a mano la identificación del vehículo y la hora y lugar del choque."
       ]
     }
   ],
-  "sourceHash": "6c5508d20f8746dbbabad592c285c6168ba19f1a07f4186df5f25937881886a0",
-  "reviewStatus": "translation-draft-pending-legal-language-review"
+  "sourceHash": "2c50696ff5c37ae467da16710b427407994e4323b7f6cd7d3bc845592757fc3b",
+  "reviewStatus": "approved-for-publication"
 }

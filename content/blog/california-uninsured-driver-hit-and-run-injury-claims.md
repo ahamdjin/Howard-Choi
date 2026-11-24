@@ -9,7 +9,7 @@
   "alt": "Law office desk representing California insurance and collision documents",
   "intro": "When a driver leaves a collision or turns out to have no usable liability insurance, an injured person may face two separate problems: proving who caused the crash and finding an insurance policy that can respond. California uninsured and underinsured motorist rules are helpful to understand, but coverage is not automatic. The policy wording, insured person's status, nature of the collision, reporting, and timely notice all matter. This guide walks through the evidence and insurance questions in a practical order.",
   "takeaway": "Do not assume a hit-and-run makes recovery impossible or that an uninsured driver guarantees payment from your own insurer. Preserve the crash evidence, report the incident, check the actual coverage and deadlines, and document your injuries separately.",
-  "updatedAt": "2026-10-28",
+  "updatedAt": "2026-11-24",
   "metaTitle": "California Uninsured Driver & Hit-and-Run Injury Claims"
 }
 
@@ -52,6 +52,14 @@ Report the collision through the appropriate law-enforcement channel and retain 
 Record each potential source with exact business name and approximate camera viewpoint and time. Ask about preserving footage; do not assume it will be held indefinitely. Requesting footage can be different from obtaining a copy, and a formal preservation or disclosure process may be necessary.
 
 Separately, the California DMV explains that a driver involved in a reportable California accident must submit an SR-1 within ten days when someone was injured or killed or when the relevant property damage threshold was exceeded. A police or insurance report does not substitute for an SR-1 where the rule applies. Whether you personally must file depends on your involvement and circumstances.
+
+## Will uninsured motorist coverage pay to repair my car?
+
+Uninsured motorist bodily injury coverage is different from uninsured motorist property damage coverage. California uninsured motorist property damage coverage is commonly limited to $3,500 and requires identification of the uninsured driver. Do not assume it covers damage from an unknown hit-and-run driver.
+
+Collision coverage may pay for covered vehicle damage regardless of the other driver’s insurance status, subject to [your collision deductible](/blogs/car-insurance-deductible-after-accident-california) and policy terms. A collision deductible waiver is separate protection. Comprehensive coverage generally applies to noncollision losses, such as theft, rather than an ordinary crash. [California Department of Insurance auto guide](https://www.insurance.ca.gov/01-consumers/105-type/95-guides/01-auto/auto101.cfm)
+
+Photograph the damage before repairs. Ask whether the insurer needs to inspect the vehicle and whether your policy covers [rental expenses after an accident](/blogs/rental-car-reimbursement-after-accident-california). Save towing, storage, and rental receipts, along with repair estimates and invoices.
 
 ## When the other driver is identified but carries too little insurance
 

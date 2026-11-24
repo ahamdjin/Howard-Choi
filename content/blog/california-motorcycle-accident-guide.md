@@ -6,22 +6,18 @@
   "excerpt": "Injured in a motorcycle crash? This California rider's guide covers common causes, injuries, helmet & lane laws, and how Buena Park Injury Lawyer fights for max compensation.",
   "category": "Guides",
   "publishedAt": "2026-11-10",
-  "updatedAt": "2026-11-10",
+  "updatedAt": "2026-11-24",
   "intro": "At Buena Park Injury Lawyer, we stand with California motorcyclists who have been wronged on the road, whether it’s negligence from another driver, poor road conditions, or another factor. We understand the challenges that motorcycle riders face every day and are here for you if you have been injured.",
   "takeaway": "Road position, visibility, physical evidence and medical findings can help separate the facts of a motorcycle crash from assumptions about the rider.",
   "published": true,
   "requiredTranslations": [],
-  "reviewStatus": "approved",
-  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-motorcycle-accident-101/",
-  "reviewedBy": "howard-choi",
-  "reviewConfirmationDate": "2026-11-15"
+  "reviewStatus": "approved-for-publication",
+  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-motorcycle-accident-101/"
 }
 
 ## Introduction
 
 This guide will walk you through every aspect of a [motorcycle accident](/practice-areas/motorcycle-accidents), from the initial shock to settling with the insurance company. Let’s begin.
-
-*Please remember that the information provided is for general guidance only and should not be considered a substitute for professional legal advice. Consult with a qualified attorney for advice tailored to your specific situation.
 
 ## What Are the Most Common Causes of Motorcycle Accidents?
 
@@ -210,6 +206,6 @@ We are available for a [free consultation](/contact) whenever you are ready.
 
 ## Where to go next
 
-Read the [topic FAQs](/faqs), explore [injury types](/injury-types), or [request a free consultation](/contact) about the facts of your case.
+If an insurer asks about the rider’s helmet, save the helmet and any photographs showing its condition. The [California helmet law guide](/blogs/california-motorcycle-helmet-laws-after-crash) explains what to preserve and which questions concern the crash itself.
 
 For the underlying rules, see [California Courts: personal injury cases](https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury) and [government claim requirements](https://selfhelp.courts.ca.gov/civil-lawsuit/government-claim).

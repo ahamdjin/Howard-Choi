@@ -6,22 +6,18 @@
   "excerpt": "Slipped on someone else’s property? Our guide explains your rights, how to prove liability, and when to call Buena Park Injury Lawyer for a free legal consultation.",
   "category": "Guides",
   "publishedAt": "2026-11-10",
-  "updatedAt": "2026-11-10",
+  "updatedAt": "2026-11-24",
   "intro": "A slip and fall accident can happen in an instant, but the consequences can last much longer. From torn ligaments and back injuries to mounting medical bills, these incidents often leave individuals facing serious physical, psychological, and financial challenges. In California, property owners have a legal duty to keep their premises safe. When they fail to do so, and someone is injured as a result, they may be held legally responsible under premises liability laws.",
   "takeaway": "Photograph the condition and preserve evidence of who controlled the property, how long the hazard existed and whether there was a warning.",
   "published": true,
   "requiredTranslations": [],
-  "reviewStatus": "approved",
-  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-slip-and-fall-accidents-101/",
-  "reviewedBy": "howard-choi",
-  "reviewConfirmationDate": "2026-11-15"
+  "reviewStatus": "approved-for-publication",
+  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-slip-and-fall-accidents-101/"
 }
 
 ## Slip and Fall Accidents in California: What You Should Know
 
 This guide offers a clear, practical overview of what to do after a [slip and fall accident](/practice-areas/slip-and-fall) in California. Whether you were hurt in a store, at a rental property, or on public grounds, knowing your rights and acting quickly can make all the difference.
-
-*Please remember that the information provided is for general guidance only and should not be considered a substitute for professional legal advice. Consult with a qualified attorney for advice tailored to your specific situation.
 
 ## What Causes Most Slip and Fall Accidents?
 
@@ -251,6 +247,6 @@ At the end of the day, your well-being matters. Don’t settle for less than you
 
 ## Where to go next
 
-Read the [topic FAQs](/faqs), explore [injury types](/injury-types), or [request a free consultation](/contact) about the facts of your case.
+Record the exact spot where you fell, who received your incident report, and what may have changed at the scene since the fall. The [slip-and-fall practice page](/practice-areas/slip-and-fall) explains which details can help identify who controlled the area.
 
 For the underlying rules, see [California Courts: personal injury cases](https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury) and [government claim requirements](https://selfhelp.courts.ca.gov/civil-lawsuit/government-claim).

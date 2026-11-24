@@ -28,6 +28,7 @@ export const blogTopics = {
     label: "Accidents & Evidence",
     slugs: new Set([
       "right-of-way-accident-claims-california",
+      "california-rear-end-collision-fault-evidence",
       "california-jaywalking-pedestrian-accident-fault",
       "unsafe-lane-change-accident-fault-california",
       "blunt-force-trauma-determining-liability-in-blunt-trauma-lawsuits",

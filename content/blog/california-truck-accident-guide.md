@@ -6,15 +6,13 @@
   "excerpt": "From liability to payouts, this California truck accident guide breaks it all down – plus why hiring Buena Park Injury Lawyer can make all the difference.",
   "category": "Guides",
   "publishedAt": "2026-11-10",
-  "updatedAt": "2026-11-10",
+  "updatedAt": "2026-11-24",
   "intro": "Semi-trucks, delivery trucks like those used by Amazon and UPS, and buses fill our roads on a daily basis. Notable for their large size and weight, an accident with a commercial vehicle can lead to severe, life-threatening injuries for drivers of smaller vehicles and other road users.",
   "takeaway": "A truck claim can involve driver, carrier, maintenance and cargo evidence. Identify the responsible businesses and preserve records early.",
   "published": true,
   "requiredTranslations": [],
-  "reviewStatus": "approved",
-  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-truck-accident-101/",
-  "reviewedBy": "howard-choi",
-  "reviewConfirmationDate": "2026-11-15"
+  "reviewStatus": "approved-for-publication",
+  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-truck-accident-101/"
 }
 
 ## Why Truck Accidents Are So Dangerous in California
@@ -234,6 +232,6 @@ Our California team has the experience, resources, and relentless commitment to 
 
 ## Where to go next
 
-Read the [topic FAQs](/faqs), explore [injury types](/injury-types), or [request a free consultation](/contact) about the facts of your case.
+Record the carrier name and any tractor or trailer number in your photos. The [truck crash records guide](/blogs/truck-accident-evidence-eld-records-california) explains which carrier records may help establish the truck’s movements and why early preservation matters.
 
 For the underlying rules, see [California Courts: personal injury cases](https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury) and [government claim requirements](https://selfhelp.courts.ca.gov/civil-lawsuit/government-claim).

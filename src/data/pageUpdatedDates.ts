@@ -13,7 +13,7 @@ export const pageUpdatedDates: Record<string, string | undefined> = {
   "/blogs/california-motorcycle-accident-guide": "2026-11-21",
   "/": "2026-11-22",
   "/blogs/california-comparative-fault-personal-injury": "2026-11-21",
-  "/blogs": "2026-11-23",
+  "/blogs": "2026-11-24",
   "/practice-areas/personal-injury": "2026-11-19",
   "/practice-areas/truck-accidents": "2026-11-18",
   "/practice-areas/pedestrian-accidents": "2026-11-22",

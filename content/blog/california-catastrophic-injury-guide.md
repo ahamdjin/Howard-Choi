@@ -6,15 +6,13 @@
   "excerpt": "Learn what qualifies as a catastrophic injury in California, your legal options, and how Buena Park Injury Lawyer fights for full compensation. Expert guidance for life-changing injuries.",
   "category": "Guides",
   "publishedAt": "2026-11-10",
-  "updatedAt": "2026-11-10",
+  "updatedAt": "2026-11-24",
   "intro": "Catastrophic injuries are life-altering events that can have a profound and lasting impact on a person’s health, ability to work, and overall quality of life. Unlike minor injuries, these are severe and often require long-term medical treatment, rehabilitation, and ongoing care.",
   "takeaway": "A catastrophic-injury claim needs evidence of future care and changed function, not just the bills already received.",
   "published": true,
   "requiredTranslations": [],
-  "reviewStatus": "approved",
-  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-catastrophic-injury-101/",
-  "reviewedBy": "howard-choi",
-  "reviewConfirmationDate": "2026-11-15"
+  "reviewStatus": "approved-for-publication",
+  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-catastrophic-injury-101/"
 }
 
 ## What Is a Catastrophic Injury?
@@ -27,8 +25,6 @@ This guide aims to provide a foundational understanding of what catastrophic inj
 - **California has strict deadlines to file a claim.** You have 2 years from the date of injury to file a personal injury lawsuit. If a government entity is involved, you must file a claim within just 6 months. Missing these deadlines typically means forfeiting your right to compensation.
 - **Compensation can include economic, non-economic, and punitive damages.** Victims may recover costs for medical bills, lost wages, home modifications, pain and suffering, emotional distress, and loss of enjoyment of life. In cases of gross negligence, punitive damages may also be awarded.
 - **Acting quickly preserves evidence and protects your rights.** The sooner you contact an attorney, the better your chances of preserving critical evidence, avoiding insurance company tactics, and building a strong case for maximum compensation.
-
-*Please remember that the information provided is for general guidance only and should not be considered a substitute for professional legal advice. Consult with a qualified attorney for advice tailored to your specific situation.
 
 ## Legal Definition of “Catastrophic” in California
 
@@ -248,6 +244,10 @@ A lawyer can help identify the medical evidence, expected future losses and lega
 - Fight for the compensation you need, either through settlement or trial
 
 Howard Choi offers a free consultation. There is no attorney fee unless there is a recovery. Review the written fee agreement before representation begins.
+
+## What to organize when care is ongoing
+
+Keep current treatment bills together and make a separate list of recommended equipment, help at home, and work restrictions. If a brain injury is involved, the [brain injury evidence guide](/blogs/traumatic-brain-injury-evidence-after-california-accident) explains how early observations and later records fit together.
 
 ## Catastrophic Injury FAQs
 

@@ -2,19 +2,18 @@
   "title": "How Many People Have Died at Disneyland?",
   "slug": "disneyland-deaths",
   "published": true,
-  "reviewStatus": "approved",
+  "reviewStatus": "approved-for-publication",
   "author": "Howard Choi",
   "excerpt": "How many people have died at Disneyland? Explore documented fatal accidents, historic ride incidents, safety changes, and the facts behind the headlines.",
   "metaTitle": "Disneyland Deaths: Documented Incidents and Safety",
   "category": "Premises Liability",
   "publishedAt": "2026-11-08",
+  "updatedAt": "2026-11-24",
   "image": "/blog-images/imported-drafts/amusement-safety-records.svg",
   "alt": "Illustration showing incident facts, safety records, and legal review",
   "intro": "Disneyland has welcomed visitors to Anaheim, California, since 1955. For generations of families, it has been a place to enjoy famous attractions, meet favorite characters, and make lasting memories.",
   "takeaway": "How many people have died at Disneyland? Explore documented fatal accidents, historic ride incidents, safety changes, and the facts behind the headlines.",
-  "requiredTranslations": [],
-  "reviewedBy": "howard-choi",
-  "reviewConfirmationDate": "2026-11-15"
+  "requiredTranslations": []
 }
 
 But Disneyland has also experienced serious accidents. Some involved rides, while others happened in areas outside the attractions.
@@ -28,6 +27,8 @@ Historical reports confirm at least 10 fatal incidents associated with Disneylan
 To understand these numbers, it helps to look at the incidents, what investigators discovered, and how safety rules have changed.
 
 There is no single, consistently defined public total covering every type of death at Disneyland since its opening.
+
+In December 1998, the Los Angeles Times called Luan Phi Dawson the ninth visitor or employee fatally injured at Disneyland since opening, citing a tally the park had not confirmed. That is one source of the historical numbers people find when they search for a total. [December 1998 Los Angeles Times report](https://www.latimes.com/archives/la-xpm-1998-dec-27-mn-58078-story.html)
 
 Contemporary reporting in September 2003 described Marcelo Torres as the tenth death in Disneyland’s historical count. That figure was a snapshot from 2003, rather than a verified total for every later guest, employee, hotel, or medical incident. [Contemporary 2003 reporting](https://www.deseret.com/2003/9/6/19782721/disneyland-ride-kills-one-and-injures-10/)
 

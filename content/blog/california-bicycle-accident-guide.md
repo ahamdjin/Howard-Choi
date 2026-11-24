@@ -6,22 +6,18 @@
   "excerpt": "California leads the nation in bike crashes. Our guide shows how to navigate claims, prove fault, and recover damages. Buena Park Injury Lawyer stands with injured cyclists.",
   "category": "Guides",
   "publishedAt": "2026-11-10",
-  "updatedAt": "2026-11-10",
+  "updatedAt": "2026-11-24",
   "intro": "This comprehensive guide will walk you through every step of the [bicycle accident claims](/practice-areas/bicycle-accidents) process in California. From identifying common injuries and documenting evidence at the scene to navigating insurance claims and pursuing compensation, we cover what you need to know to make informed decisions.",
   "takeaway": "Keep the bicycle, helmet, route details and available camera or witness evidence; a cyclist’s right-of-way and the cause of an injury must be evaluated separately.",
   "published": true,
   "requiredTranslations": [],
-  "reviewStatus": "approved",
-  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-bicycle-accident-101/",
-  "reviewedBy": "howard-choi",
-  "reviewConfirmationDate": "2026-11-15"
+  "reviewStatus": "approved-for-publication",
+  "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-bicycle-accident-101/"
 }
 
 ## Biking in California: Risks, Rights & Your Road to Recovery
 
 Whether you’re a daily commuter or a weekend rider, this guide is designed to help you recover and move forward with confidence after an accident.
-
-*Please remember that the information provided is for general guidance only and should not be considered a substitute for professional legal advice. Consult with a qualified attorney for advice tailored to your specific situation.
 
 ## Why Bike Accidents Happen: Leading Causes in California
 
@@ -207,6 +203,6 @@ When you call Buena Park Injury Lawyer, you’re not just hiring a lawyer. You�
 
 ## Where to go next
 
-Read the [topic FAQs](/faqs), explore [injury types](/injury-types), or [request a free consultation](/contact) about the facts of your case.
+If a driver, road defect, or insurance dispute is involved, use the [bicycle crash evidence guide](/blogs/california-bicycle-accident-evidence-and-insurance) to identify the records that fit what happened. Start with your route, the crash location, and any video that may be overwritten.
 
 For the underlying rules, see [California Courts: personal injury cases](https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury) and [government claim requirements](https://selfhelp.courts.ca.gov/civil-lawsuit/government-claim).

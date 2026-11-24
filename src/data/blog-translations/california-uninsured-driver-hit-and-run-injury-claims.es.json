@@ -44,6 +44,14 @@
       ]
     },
     {
+      "heading": "¿La cobertura de motorista sin seguro paga la reparación de mi auto?",
+      "paragraphs": [
+        "La cobertura de lesiones corporales por un conductor sin seguro es distinta de la cobertura de daños materiales. En California, la cobertura de daños materiales por un conductor sin seguro suele estar limitada a $3,500 y requiere identificar al conductor sin seguro. Si el conductor huyó y sigue sin identificar, confirme qué cobertura puede aplicar.",
+        "La cobertura de colisión puede pagar daños cubiertos al vehículo independientemente de si el otro conductor tiene seguro, de acuerdo con [su deducible de colisión](/blogs/car-insurance-deductible-after-accident-california) y los términos de la póliza. La exención del deducible de colisión es una protección distinta. La cobertura amplia suele aplicarse a pérdidas que no se deben a una colisión, como el robo. [Guía de seguros de auto del Departamento de Seguros de California](https://www.insurance.ca.gov/01-consumers/105-type/95-guides/01-auto/auto101.cfm)",
+        "Fotografíe los daños antes de reparar el auto. Pregunte si la aseguradora necesita inspeccionar el vehículo y si su póliza paga [un auto de alquiler después del accidente](/blogs/rental-car-reimbursement-after-accident-california). Conserve los recibos de grúa, depósito y alquiler, así como los presupuestos y las facturas de reparación."
+      ]
+    },
+    {
       "heading": "Cuando el otro conductor está identificado pero tiene poco seguro",
       "paragraphs": [
         "Un límite pequeño de responsabilidad no es lo mismo que una póliza sin responsabilidad. Una lesión que requiere cirugía, cuidado a largo plazo o trabajo perdido puede crear pérdidas más allá de la cobertura disponible del otro conductor. La cobertura de conductor insuficientemente asegurado puede entonces ser relevante, pero las disposiciones de la pólisa y el manejo de la demanda de responsabilidad subyacente pueden afectar la elegibilidad.",
@@ -107,6 +115,6 @@
       ]
     }
   ],
-  "sourceHash": "898afb4f869a3ca2848117d0e53db8e295db4b54e8a47b579333c1e7e5d9901f",
-  "reviewStatus": "translation-draft-pending-legal-language-review"
+  "sourceHash": "c08166242eefc7d46fe17b46524ac9630ae71a1083a8b14777f93ce3825e5103",
+  "reviewStatus": "approved-for-publication"
 }

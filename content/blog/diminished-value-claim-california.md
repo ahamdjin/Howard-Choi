@@ -8,6 +8,7 @@
   "metaTitle": "Diminished Value Claim California",
   "category": "Auto Insurance",
   "publishedAt": "2026-11-05",
+  "updatedAt": "2026-11-24",
   "image": "/blog-images/imported-drafts/howard-choi-collision-damage.jpg",
   "alt": "Vehicle with windshield and front-end collision damage",
   "intro": "A repaired car can look right, drive well, and still sell for less because of its accident history. A diminished value claim seeks compensation for that remaining loss in market value. The challenge is showing how much value the collision took away and identifying a legally responsible party or applicable insurance coverage.",
@@ -191,6 +192,18 @@ Read the release before accepting a settlement. Identify which parties and claim
 A judgment is not the same as money received. Collection can require additional effort, so consider insurance and other realistic payment sources before choosing litigation. Keep settlement documents, payment records, and any judgment together.
 
 
+
+## Can you claim diminished value on a leased or financed car?
+
+It depends on who owns the vehicle and who has the legal right to recover the loss.
+
+A financed car is commonly owned by the borrower, subject to the lender's security interest.
+
+A leased vehicle is generally owned by the leasing company.
+
+The lease or financing agreement may affect who is entitled to payment and how an insurance settlement is handled.
+
+Before submitting a diminished value claim involving a leased vehicle, review the agreement and confirm who has the right to pursue the loss.
 
 ## Filing deadlines and claim timing
 

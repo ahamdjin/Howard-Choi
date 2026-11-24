@@ -8,6 +8,7 @@
   "metaTitle": "California Seat Belt Laws",
   "category": "Car Accidents",
   "publishedAt": "2026-11-04",
+  "updatedAt": "2026-11-24",
   "image": "/blog-images/imported-drafts/seat-belt-fit.svg",
   "alt": "Illustration showing the shoulder belt across the chest and the lap belt low across the hips",
   "intro": "The same seat belt can raise three questions. Was it legally required? Did it fit properly? What role, if any, did it play in an injury? Each question calls for different information. For the first, start with the passenger’s age and the law. For the second, look at how the belt sat across the body. After a crash, add the collision evidence and medical findings.",
@@ -26,6 +27,12 @@ California’s adult seat belt law generally requires drivers and passengers age
 Children follow separate restraint rules. Children under eight generally need an appropriate car seat or booster in the back seat, subject to exceptions. A child who has reached 4 feet 9 inches may use a properly fitting vehicle belt. Children under two generally need a rear-facing seat unless they weigh at least 40 pounds or measure at least 40 inches. Check the seat manufacturer’s limits as well. [California Highway Patrol child safety seats](https://www.chp.ca.gov/Programs-Services/Programs/Child-Safety-Seats)
 
 Starting January 1, 2027, California’s definition of proper belt restraint changes to incorporate a five-step fit test. Families should check whether a child can sit back, bend their knees at the edge of the seat, keep both straps in the right place, and stay in that position for the trip. A booster can help when the vehicle belt fits poorly. [Butte County child passenger guidance](https://www.buttecounty.net/872/California-Laws-Guidelines)
+
+## Can police stop you for a seat belt violation alone?
+
+Yes. California Highway Patrol guidance says officers may stop a vehicle when they reasonably suspect a passenger-restraint violation, even if they have not observed another traffic offense. See the [CHP restraint enforcement manual](https://www.chp.ca.gov/siteassets/policy/hpm/hpm-100.68/hpm-100.68-ch-5.pdf).
+
+Keep your belt fastened at traffic lights and during ordinary traffic stops. Section 27315 addresses vehicle operation and passenger travel on a highway. Whether it applies in a particular parked-vehicle situation depends on the facts and the statute, rather than simply whether the engine is running.
 
 ## What does a seat belt ticket cost?
 

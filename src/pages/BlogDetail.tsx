@@ -38,6 +38,8 @@ const skidSectionPhotos: Record<string, { src: string; alt: string }> = {
 };
 
 const nextGuideBySlug: Record<string, string> = {
+  "what-is-auto-liability-insurance-california": "uber-lyft-accident-insurance-california",
+  "what-to-do-after-a-car-accident-in-california": "california-rear-end-collision-fault-evidence",
   "california-bicycle-accident-guide": "california-bicycle-accident-evidence-and-insurance",
   "california-motorcycle-license-permit-requirements": "california-motorcycle-helmet-laws-after-crash",
   "mopeds-vs-scooters-california": "california-electric-scooter-accident-evidence",

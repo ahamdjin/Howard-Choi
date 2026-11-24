@@ -6,20 +6,18 @@
   "excerpt": "Injured in an accident? This California personal injury guide covers common causes, injury types, legal rights, claim steps, and how Buena Park Injury Lawyer fights to win you maximum compensation.",
   "category": "Guides",
   "publishedAt": "2026-11-10",
-  "updatedAt": "2026-11-18",
+  "updatedAt": "2026-11-24",
   "intro": "Suffering an injury of any kind is difficult, but suffering an injury due to the negligence of someone else can be especially frustrating, overwhelming, and stressful. If you suffered an injury because of the negligent actions of another person or entity, you may be owed financial compensation. This is where a [personal injury lawyer](/practice-areas/personal-injury) comes in.",
   "takeaway": "An injury claim connects a legal duty, an unsafe act, the cause of the injury and supported losses. Each element needs evidence.",
   "published": true,
   "requiredTranslations": [],
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved-for-publication",
   "sourceUrl": "https://dklaw.com/learning-hub/guides/ca-personal-injury-101/"
 }
 
 ## Introduction
 
 This guide is here to help you understand your rights, the legal process, and how to protect your future. Whether you were in a car accident, slipped on unsafe property, or were injured in another way, knowing what to expect can make a huge difference in your recovery and compensation.
-
-*Please remember that the information provided is for general guidance only and should not be considered a substitute for professional legal advice. Consult with a qualified attorney for advice tailored to your specific situation.
 
 ## How to file a personal injury claim in California
 
@@ -294,6 +292,6 @@ A person or entity who commits a tort. In personal injury cases, the tortfeasor 
 
 ## Where to go next
 
-Read the [topic FAQs](/faqs), explore [injury types](/injury-types), or [request a free consultation](/contact) about the facts of your case.
+If the other side says you contributed to the injury, write down exactly what conduct they dispute and which records could clarify it. The [California comparative fault guide](/blogs/california-comparative-fault-personal-injury) explains how that question fits into a claim.
 
 For the underlying rules, see [California Courts: personal injury cases](https://selfhelp.courts.ca.gov/civil-lawsuit/personal-injury) and [government claim requirements](https://selfhelp.courts.ca.gov/civil-lawsuit/government-claim).

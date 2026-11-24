@@ -2,14 +2,14 @@
   "title": "Car Insurance Claim Denied in California: What to Do Next",
   "slug": "car-insurance-claim-denied-california",
   "published": true,
-  "reviewStatus": "pending-attorney-review",
+  "reviewStatus": "approved",
   "author": "Howard Choi",
   "metaTitle": "Car Insurance Claim Denied in California: Next Steps",
   "metaDescription": "Learn what to do after a California car insurance claim denial: check the reason, organize evidence, request reconsideration and protect deadlines.",
   "excerpt": "A practical guide to checking a denial letter, responding with the right records and separating an insurance dispute from an injury claim.",
   "category": "Auto Insurance",
   "publishedAt": "2026-11-19",
-  "updatedAt": "2026-11-19",
+  "updatedAt": "2026-11-24",
   "requiredTranslations": [],
   "image": "/blog-images/imported-drafts/howard-choi-reviewing-documents.jpg",
   "alt": "Documents being reviewed at a desk",
@@ -32,6 +32,8 @@ A first-party claim seeks benefits under a policy that covers you. Examples can 
 California’s claims regulation requires a written first-party denial to explain its factual and legal grounds and identify applicable policy provisions when relied on. Request the complete explanation if you received only a brief message. The [Department of Insurance’s fair claims regulations](https://www.insurance.ca.gov/01-consumers/130-laws-regs-hearings/05-CCR/fair-claims-regs.cfm) link to section 2695.7, which addresses these requirements.
 
 If the other driver’s insurer disputes responsibility, identify what its insured allegedly did and the evidence for your account. A carrier’s position is not a court judgment. Conversely, proof that the other driver caused the crash does not establish that a particular policy covers that driver. The [third-party claim guide](/blogs/third-party-car-insurance-claim-california) discusses that separate relationship.
+
+If a rideshare insurer disputes whether the driver was waiting for a request, driving to pickup, or carrying a passenger, ask which timestamp and app record the carrier used. The [Uber and Lyft accident insurance guide](/blogs/uber-lyft-accident-insurance-california) shows which records can help check that decision.
 
 ## Match the response to the reason given
 
