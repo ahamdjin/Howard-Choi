@@ -44,6 +44,7 @@ export const blogTopics = {
       "california-truck-accident-guide",
       "correct-inaccurate-car-accident-police-report-california",
       "disneyland-deaths",
+      "elements-of-negligence-california",
       "fullerton-uber-lyft-accident-lawyer",
       "notify-the-california-dmv-about-an-accident",
       "traumatic-brain-injury-evidence-after-california-accident",
