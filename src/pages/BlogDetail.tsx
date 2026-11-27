@@ -62,6 +62,21 @@ const nextGuideBySlug: Record<string, string> = {
   "report-track-progressive-car-accident-claim-california": "car-insurance-claim-denied-california",
 };
 
+const contextualArticleLinks: Record<string, { heading: string; target: string; paragraph: string }> = {
+  "california-dog-bite-accidents-guide": {
+    heading: "California’s Strict Liability Dog Bite Laws Explained",
+    target: "exotic-animal-laws-by-state",
+    paragraph: "If your question is whether someone can keep a particular animal, see [how to check exotic animal ownership and permit rules](/blogs/exotic-animal-laws-by-state).",
+  },
+  "california-personal-injury-guide": {
+    heading: "How to file a personal injury claim in California",
+    target: "california-defamation-libel-slander-basics",
+    paragraph: "If the dispute involves harm to your reputation from something someone said or wrote, see the [California libel and slander guide](/blogs/california-defamation-libel-slander-basics) for the evidence and filing deadline that apply to that type of claim.",
+  },
+};
+
+const contextualOnlyArticles = new Set(Object.values(contextualArticleLinks).map(({ target }) => target));
+
 const claimGuidanceSections: Record<string, "steps" | "questions" | "note"> = {
   "How to file a personal injury claim in California": "steps",
   "Is this a workers' compensation claim or a personal injury claim?": "note",
@@ -219,10 +234,14 @@ const BlogDetail = () => {
     );
   }
 
-  const related = getBlogBySlug(nextGuideBySlug[post.slug])
-    ?? blogPosts.find((item) => item.slug !== post.slug && item.category === post.category)
-    ?? blogPosts.find((item) => item.slug !== post.slug);
+  const related = contextualOnlyArticles.has(post.slug) ? undefined : (
+    getBlogBySlug(nextGuideBySlug[post.slug])
+    ?? blogPosts.find((item) => item.slug !== post.slug && !contextualOnlyArticles.has(item.slug) && item.category === post.category)
+    ?? blogPosts.find((item) => item.slug !== post.slug && !contextualOnlyArticles.has(item.slug))
+  );
   const support = articleSupport[post.slug];
+  const contextualLink = contextualArticleLinks[post.slug];
+  const publishedContextualLink = contextualLink && getBlogBySlug(contextualLink.target) ? contextualLink : undefined;
 
   const skid = post.slug === "car-accidents-what-is-a-skid-and-how-can-you-avoid-them";
   const usedArt = new Set<string>();
@@ -350,6 +369,7 @@ const BlogDetail = () => {
                       {skid && section.heading === "Use the approach to a curve to set your margin" && <img src={post.image} alt={post.alt} width="1200" height="630" loading="lazy" className="my-6 w-full max-w-2xl" />}
                       <div className="article-reading-width mt-6 max-w-[730px] space-y-6 text-[17px] leading-[1.75] text-foreground/84 md:text-[18px]">
                         <ContentBlocks paragraphs={section.paragraphs} presentation={claimGuidanceSections[section.heading] === "steps" ? "steps" : claimGuidanceSections[section.heading] === "questions" ? "questions" : undefined} />
+                        {publishedContextualLink?.heading === section.heading && <ArticleParagraph text={publishedContextualLink.paragraph} />}
                         {index === 1 && <ClaimVisualStory subject={post.slug} />}
                         {pageVisualAfter(`/blogs/${post.slug}`, index) && <TopicVisual pagePath={`/blogs/${post.slug}`} />}
                         {index === 7 && <ContentPhoto subject={post.slug} />}
